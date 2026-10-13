@@ -1,0 +1,6 @@
+privado/
+__pycache__/
+.claude/
+gerador/wikily/
+gerador/i18n_missing.txt
+gerador/i18n_rest.txt

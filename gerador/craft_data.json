@@ -1,0 +1,3146 @@
+{
+ "pieces": [
+  {
+   "piece": "Dagger",
+   "prof": "Blacksmithing",
+   "steps": [
+    {
+     "tier": "base",
+     "name": "Orichalcum Dagger",
+     "lv": 3,
+     "combo": "Splendent Orichalcum Dagger",
+     "gear": null,
+     "chain": null,
+     "mats": [
+      [
+       "Orichalcum Ingot",
+       3
+      ],
+      [
+       "Refining Stone",
+       5
+      ],
+      [
+       "Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "expert",
+     "name": "Expert's Orichalcum Dagger",
+     "lv": 15,
+     "combo": "Expert's Splendent Orichalcum Dagger",
+     "gear": null,
+     "chain": "Splendent Orichalcum Dagger",
+     "mats": [
+      [
+       "Expert's Refining Stone",
+       5
+      ],
+      [
+       "Fine Orichalcum Ore",
+       6
+      ],
+      [
+       "Fine Odyle",
+       3
+      ]
+     ]
+    },
+    {
+     "tier": "artisan",
+     "name": "Artisan's Orichalcum Dagger",
+     "lv": 30,
+     "combo": "Artisan's Splendent Orichalcum Dagger",
+     "gear": null,
+     "chain": "Expert's Splendent Orichalcum Dagger",
+     "mats": [
+      [
+       "Artisan's Refining Stone",
+       5
+      ],
+      [
+       "Pure Orichalcum Ore",
+       8
+      ],
+      [
+       "Pure Odyle",
+       4
+      ]
+     ]
+    },
+    {
+     "tier": "true",
+     "name": "True Dragon Lord Dagger",
+     "lv": 55,
+     "combo": "Splendent True Dragon Lord Dagger",
+     "gear": null,
+     "chain": "Artisan's Splendent Orichalcum Dagger",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       4
+      ],
+      [
+       "Fine Thick Balaur Horn",
+       22
+      ],
+      [
+       "Wrathful Mind",
+       10
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       9
+      ],
+      [
+       "Radiant Odyle",
+       5
+      ]
+     ]
+    },
+    {
+     "tier": "trueS",
+     "name": "Splendent True Dragon Lord Dagger",
+     "lv": null,
+     "combo": null,
+     "gear": "True Dragon Lord Dagger",
+     "chain": null,
+     "mats": [
+      [
+       "Fine Thick Balaur Horn",
+       11
+      ],
+      [
+       "Wrathful Mind",
+       4
+      ]
+     ]
+    },
+    {
+     "tier": "white",
+     "name": "White Dragon Lord Dagger",
+     "lv": null,
+     "combo": "Splendent White Dragon Lord Dagger",
+     "gear": "Splendent True Dragon Lord Dagger",
+     "chain": "Artisan's Splendent Orichalcum Dagger",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       5
+      ],
+      [
+       "Fine Hard Balaur Horn",
+       29
+      ],
+      [
+       "Wrathful Mind",
+       3
+      ],
+      [
+       "Wrathful Will",
+       15
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       12
+      ],
+      [
+       "Radiant Odyle",
+       7
+      ]
+     ]
+    },
+    {
+     "tier": "whiteS",
+     "name": "Splendent White Dragon Lord Dagger",
+     "lv": null,
+     "combo": null,
+     "gear": "White Dragon Lord Dagger",
+     "chain": null,
+     "mats": [
+      [
+       "Fine Hard Balaur Horn",
+       15
+      ],
+      [
+       "Wrathful Will",
+       5
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       1
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "wise",
+     "name": "Wise Dragon Lord Dagger",
+     "lv": null,
+     "combo": "Splendent Wise Dragon Lord Dagger",
+     "gear": "Splendent White Dragon Lord Dagger",
+     "chain": "Artisan's Splendent Orichalcum Dagger",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       6
+      ],
+      [
+       "Fine Durable Balaur Horn",
+       41
+      ],
+      [
+       "Wrathful Mind",
+       3
+      ],
+      [
+       "Wrathful Will",
+       3
+      ],
+      [
+       "Wrathful Ego",
+       20
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       15
+      ],
+      [
+       "Radiant Odyle",
+       9
+      ]
+     ]
+    },
+    {
+     "tier": "wiseS",
+     "name": "Splendent Wise Dragon Lord Dagger",
+     "lv": null,
+     "combo": null,
+     "gear": "Wise Dragon Lord Dagger",
+     "chain": null,
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Fine Durable Balaur Horn",
+       21
+      ],
+      [
+       "Wrathful Ego",
+       7
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       2
+      ],
+      [
+       "Radiant Odyle",
+       3
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "Guard",
+   "prof": "Blacksmithing",
+   "steps": [
+    {
+     "tier": "base",
+     "name": "Orichalcum Guard",
+     "lv": 5,
+     "combo": "Splendent Orichalcum Guard",
+     "gear": null,
+     "chain": null,
+     "mats": [
+      [
+       "Orichalcum Ingot",
+       3
+      ],
+      [
+       "Refining Stone",
+       5
+      ],
+      [
+       "Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "expert",
+     "name": "Expert's Orichalcum Guard",
+     "lv": 20,
+     "combo": "Expert's Splendent Orichalcum Guard",
+     "gear": null,
+     "chain": "Splendent Orichalcum Guard",
+     "mats": [
+      [
+       "Expert's Refining Stone",
+       5
+      ],
+      [
+       "Fine Orichalcum Ore",
+       6
+      ],
+      [
+       "Fine Odyle",
+       3
+      ]
+     ]
+    },
+    {
+     "tier": "artisan",
+     "name": "Artisan's Orichalcum Guard",
+     "lv": 35,
+     "combo": "Artisan's Splendent Orichalcum Guard",
+     "gear": null,
+     "chain": "Expert's Splendent Orichalcum Guard",
+     "mats": [
+      [
+       "Artisan's Refining Stone",
+       5
+      ],
+      [
+       "Pure Orichalcum Ore",
+       8
+      ],
+      [
+       "Pure Odyle",
+       4
+      ]
+     ]
+    },
+    {
+     "tier": "true",
+     "name": "True Dragon Lord Guard",
+     "lv": 60,
+     "combo": "Splendent True Dragon Lord Guard",
+     "gear": null,
+     "chain": "Artisan's Splendent Orichalcum Guard",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       4
+      ],
+      [
+       "Fine Thick Balaur Horn",
+       22
+      ],
+      [
+       "Wrathful Mind",
+       10
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       9
+      ],
+      [
+       "Radiant Odyle",
+       5
+      ]
+     ]
+    },
+    {
+     "tier": "trueS",
+     "name": "Splendent True Dragon Lord Guard",
+     "lv": null,
+     "combo": null,
+     "gear": "True Dragon Lord Guard",
+     "chain": null,
+     "mats": [
+      [
+       "Fine Thick Balaur Horn",
+       11
+      ],
+      [
+       "Wrathful Mind",
+       4
+      ]
+     ]
+    },
+    {
+     "tier": "white",
+     "name": "White Dragon Lord Guard",
+     "lv": null,
+     "combo": "Splendent White Dragon Lord Guard",
+     "gear": "Splendent True Dragon Lord Guard",
+     "chain": "Artisan's Splendent Orichalcum Guard",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       5
+      ],
+      [
+       "Fine Hard Balaur Horn",
+       29
+      ],
+      [
+       "Wrathful Mind",
+       3
+      ],
+      [
+       "Wrathful Will",
+       15
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       12
+      ],
+      [
+       "Radiant Odyle",
+       7
+      ]
+     ]
+    },
+    {
+     "tier": "whiteS",
+     "name": "Splendent White Dragon Lord Guard",
+     "lv": null,
+     "combo": null,
+     "gear": "White Dragon Lord Guard",
+     "chain": null,
+     "mats": [
+      [
+       "Fine Hard Balaur Horn",
+       15
+      ],
+      [
+       "Wrathful Will",
+       5
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       1
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "wise",
+     "name": "Wise Dragon Lord Guard",
+     "lv": null,
+     "combo": "Splendent Wise Dragon Lord Guard",
+     "gear": "Splendent White Dragon Lord Guard",
+     "chain": "Artisan's Splendent Orichalcum Guard",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       6
+      ],
+      [
+       "Fine Durable Balaur Horn",
+       41
+      ],
+      [
+       "Wrathful Mind",
+       3
+      ],
+      [
+       "Wrathful Will",
+       3
+      ],
+      [
+       "Wrathful Ego",
+       20
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       15
+      ],
+      [
+       "Radiant Odyle",
+       9
+      ]
+     ]
+    },
+    {
+     "tier": "wiseS",
+     "name": "Splendent Wise Dragon Lord Guard",
+     "lv": null,
+     "combo": null,
+     "gear": "Wise Dragon Lord Guard",
+     "chain": null,
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Fine Durable Balaur Horn",
+       21
+      ],
+      [
+       "Wrathful Ego",
+       7
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       2
+      ],
+      [
+       "Radiant Odyle",
+       3
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "Breastplate",
+   "prof": "Armorsmithing",
+   "steps": [
+    {
+     "tier": "base",
+     "name": "Orichalcum Breastplate",
+     "lv": 3,
+     "combo": "Splendent Orichalcum Breastplate",
+     "gear": null,
+     "chain": null,
+     "mats": [
+      [
+       "Orichalcum Ingot",
+       2
+      ],
+      [
+       "Strong Leather",
+       4
+      ],
+      [
+       "Refining Stone",
+       3
+      ],
+      [
+       "Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "expert",
+     "name": "Expert's Orichalcum Breastplate",
+     "lv": 15,
+     "combo": "Expert's Splendent Orichalcum Breastplate",
+     "gear": null,
+     "chain": "Splendent Orichalcum Breastplate",
+     "mats": [
+      [
+       "Expert's Refining Stone",
+       3
+      ],
+      [
+       "Fine Orichalcum Ore",
+       4
+      ],
+      [
+       "Fine Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "artisan",
+     "name": "Artisan's Orichalcum Breastplate",
+     "lv": 30,
+     "combo": "Artisan's Splendent Orichalcum Breastplate",
+     "gear": null,
+     "chain": "Expert's Splendent Orichalcum Breastplate",
+     "mats": [
+      [
+       "Artisan's Refining Stone",
+       3
+      ],
+      [
+       "Pure Orichalcum Ore",
+       5
+      ],
+      [
+       "Pure Odyle",
+       3
+      ]
+     ]
+    },
+    {
+     "tier": "true",
+     "name": "True Dragon Lord Breastplate",
+     "lv": 55,
+     "combo": "Splendent True Dragon Lord Breastplate",
+     "gear": null,
+     "chain": "Artisan's Splendent Orichalcum Breastplate",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       3
+      ],
+      [
+       "Tanned Thick Balaur Leather",
+       15
+      ],
+      [
+       "Wrathful Mind",
+       7
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       6
+      ],
+      [
+       "Radiant Odyle",
+       3
+      ]
+     ]
+    },
+    {
+     "tier": "trueS",
+     "name": "Splendent True Dragon Lord Breastplate",
+     "lv": null,
+     "combo": null,
+     "gear": "True Dragon Lord Breastplate",
+     "chain": null,
+     "mats": [
+      [
+       "Tanned Thick Balaur Leather",
+       8
+      ],
+      [
+       "Wrathful Mind",
+       3
+      ]
+     ]
+    },
+    {
+     "tier": "white",
+     "name": "White Dragon Lord Breastplate",
+     "lv": null,
+     "combo": "Splendent White Dragon Lord Breastplate",
+     "gear": "Splendent True Dragon Lord Breastplate",
+     "chain": "Artisan's Splendent Orichalcum Breastplate",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       3
+      ],
+      [
+       "Tanned Hard Balaur Leather",
+       19
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       10
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       8
+      ],
+      [
+       "Radiant Odyle",
+       5
+      ]
+     ]
+    },
+    {
+     "tier": "whiteS",
+     "name": "Splendent White Dragon Lord Breastplate",
+     "lv": null,
+     "combo": null,
+     "gear": "White Dragon Lord Breastplate",
+     "chain": null,
+     "mats": [
+      [
+       "Tanned Hard Balaur Leather",
+       10
+      ],
+      [
+       "Wrathful Will",
+       4
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       1
+      ],
+      [
+       "Radiant Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "wise",
+     "name": "Wise Dragon Lord Breastplate",
+     "lv": null,
+     "combo": "Splendent Wise Dragon Lord Breastplate",
+     "gear": "Splendent White Dragon Lord Breastplate",
+     "chain": "Artisan's Splendent Orichalcum Breastplate",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       4
+      ],
+      [
+       "Tanned Durable Balaur Leather",
+       27
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       2
+      ],
+      [
+       "Wrathful Ego",
+       13
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       10
+      ],
+      [
+       "Radiant Odyle",
+       6
+      ]
+     ]
+    },
+    {
+     "tier": "wiseS",
+     "name": "Splendent Wise Dragon Lord Breastplate",
+     "lv": null,
+     "combo": null,
+     "gear": "Wise Dragon Lord Breastplate",
+     "chain": null,
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       1
+      ],
+      [
+       "Tanned Durable Balaur Leather",
+       14
+      ],
+      [
+       "Wrathful Ego",
+       5
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       2
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "Greaves",
+   "prof": "Armorsmithing",
+   "steps": [
+    {
+     "tier": "base",
+     "name": "Orichalcum Greaves",
+     "lv": 3,
+     "combo": "Splendent Orichalcum Greaves",
+     "gear": null,
+     "chain": null,
+     "mats": [
+      [
+       "Orichalcum Ingot",
+       2
+      ],
+      [
+       "Strong Leather",
+       3
+      ],
+      [
+       "Refining Stone",
+       2
+      ],
+      [
+       "Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "expert",
+     "name": "Expert's Orichalcum Greaves",
+     "lv": 15,
+     "combo": "Expert's Splendent Orichalcum Greaves",
+     "gear": null,
+     "chain": "Splendent Orichalcum Greaves",
+     "mats": [
+      [
+       "Expert's Refining Stone",
+       2
+      ],
+      [
+       "Fine Orichalcum Ore",
+       3
+      ],
+      [
+       "Fine Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "artisan",
+     "name": "Artisan's Orichalcum Greaves",
+     "lv": 30,
+     "combo": "Artisan's Splendent Orichalcum Greaves",
+     "gear": null,
+     "chain": "Expert's Splendent Orichalcum Greaves",
+     "mats": [
+      [
+       "Artisan's Refining Stone",
+       2
+      ],
+      [
+       "Pure Orichalcum Ore",
+       4
+      ],
+      [
+       "Pure Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "true",
+     "name": "True Dragon Lord Greaves",
+     "lv": 55,
+     "combo": "Splendent True Dragon Lord Greaves",
+     "gear": null,
+     "chain": "Artisan's Splendent Orichalcum Greaves",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Tanned Thick Balaur Leather",
+       11
+      ],
+      [
+       "Wrathful Mind",
+       5
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       4
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "trueS",
+     "name": "Splendent True Dragon Lord Greaves",
+     "lv": null,
+     "combo": null,
+     "gear": "True Dragon Lord Greaves",
+     "chain": null,
+     "mats": [
+      [
+       "Tanned Thick Balaur Leather",
+       6
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "white",
+     "name": "White Dragon Lord Greaves",
+     "lv": null,
+     "combo": "Splendent White Dragon Lord Greaves",
+     "gear": "Splendent True Dragon Lord Greaves",
+     "chain": "Artisan's Splendent Orichalcum Greaves",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Tanned Hard Balaur Leather",
+       14
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       8
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       6
+      ],
+      [
+       "Radiant Odyle",
+       4
+      ]
+     ]
+    },
+    {
+     "tier": "whiteS",
+     "name": "Splendent White Dragon Lord Greaves",
+     "lv": null,
+     "combo": null,
+     "gear": "White Dragon Lord Greaves",
+     "chain": null,
+     "mats": [
+      [
+       "Tanned Hard Balaur Leather",
+       7
+      ],
+      [
+       "Wrathful Will",
+       3
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       1
+      ],
+      [
+       "Radiant Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "wise",
+     "name": "Wise Dragon Lord Greaves",
+     "lv": null,
+     "combo": "Splendent Wise Dragon Lord Greaves",
+     "gear": "Splendent White Dragon Lord Greaves",
+     "chain": "Artisan's Splendent Orichalcum Greaves",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       4
+      ],
+      [
+       "Tanned Durable Balaur Leather",
+       20
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       2
+      ],
+      [
+       "Wrathful Ego",
+       11
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       8
+      ],
+      [
+       "Radiant Odyle",
+       5
+      ]
+     ]
+    },
+    {
+     "tier": "wiseS",
+     "name": "Splendent Wise Dragon Lord Greaves",
+     "lv": null,
+     "combo": null,
+     "gear": "Wise Dragon Lord Greaves",
+     "chain": null,
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       1
+      ],
+      [
+       "Tanned Durable Balaur Leather",
+       10
+      ],
+      [
+       "Wrathful Ego",
+       4
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       2
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "Helm",
+   "prof": "Armorsmithing",
+   "steps": [
+    {
+     "tier": "base",
+     "name": "Orichalcum Helm",
+     "lv": 3,
+     "combo": "Splendent Orichalcum Helm",
+     "gear": null,
+     "chain": null,
+     "mats": [
+      [
+       "Orichalcum Ingot",
+       1
+      ],
+      [
+       "Strong Leather",
+       3
+      ],
+      [
+       "Refining Stone",
+       2
+      ],
+      [
+       "Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "expert",
+     "name": "Expert's Orichalcum Helm",
+     "lv": 15,
+     "combo": "Expert's Splendent Orichalcum Helm",
+     "gear": null,
+     "chain": "Splendent Orichalcum Helm",
+     "mats": [
+      [
+       "Expert's Refining Stone",
+       2
+      ],
+      [
+       "Fine Orichalcum Ore",
+       3
+      ],
+      [
+       "Fine Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "artisan",
+     "name": "Artisan's Orichalcum Helm",
+     "lv": 30,
+     "combo": "Artisan's Splendent Orichalcum Helm",
+     "gear": null,
+     "chain": "Expert's Splendent Orichalcum Helm",
+     "mats": [
+      [
+       "Artisan's Refining Stone",
+       2
+      ],
+      [
+       "Pure Orichalcum Ore",
+       3
+      ],
+      [
+       "Pure Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "true",
+     "name": "True Dragon Lord Helm",
+     "lv": 55,
+     "combo": "Splendent True Dragon Lord Helm",
+     "gear": null,
+     "chain": "Artisan's Splendent Orichalcum Helm",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Tanned Thick Balaur Leather",
+       9
+      ],
+      [
+       "Wrathful Mind",
+       4
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       3
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "trueS",
+     "name": "Splendent True Dragon Lord Helm",
+     "lv": null,
+     "combo": null,
+     "gear": "True Dragon Lord Helm",
+     "chain": null,
+     "mats": [
+      [
+       "Tanned Thick Balaur Leather",
+       5
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "white",
+     "name": "White Dragon Lord Helm",
+     "lv": null,
+     "combo": "Splendent White Dragon Lord Helm",
+     "gear": "Splendent True Dragon Lord Helm",
+     "chain": "Artisan's Splendent Orichalcum Helm",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Tanned Hard Balaur Leather",
+       12
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       6
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       5
+      ],
+      [
+       "Radiant Odyle",
+       3
+      ]
+     ]
+    },
+    {
+     "tier": "whiteS",
+     "name": "Splendent White Dragon Lord Helm",
+     "lv": null,
+     "combo": null,
+     "gear": "White Dragon Lord Helm",
+     "chain": null,
+     "mats": [
+      [
+       "Tanned Hard Balaur Leather",
+       6
+      ],
+      [
+       "Wrathful Will",
+       2
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       1
+      ],
+      [
+       "Radiant Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "wise",
+     "name": "Wise Dragon Lord Helm",
+     "lv": null,
+     "combo": "Splendent Wise Dragon Lord Helm",
+     "gear": "Splendent White Dragon Lord Helm",
+     "chain": "Artisan's Splendent Orichalcum Helm",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       4
+      ],
+      [
+       "Tanned Durable Balaur Leather",
+       17
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       2
+      ],
+      [
+       "Wrathful Ego",
+       8
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       7
+      ],
+      [
+       "Radiant Odyle",
+       4
+      ]
+     ]
+    },
+    {
+     "tier": "wiseS",
+     "name": "Splendent Wise Dragon Lord Helm",
+     "lv": null,
+     "combo": null,
+     "gear": "Wise Dragon Lord Helm",
+     "chain": null,
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       1
+      ],
+      [
+       "Tanned Durable Balaur Leather",
+       9
+      ],
+      [
+       "Wrathful Ego",
+       3
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       2
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "Gloves",
+   "prof": "Armorsmithing",
+   "steps": [
+    {
+     "tier": "base",
+     "name": "Orichalcum Gloves",
+     "lv": 5,
+     "combo": "Splendent Orichalcum Gloves",
+     "gear": null,
+     "chain": null,
+     "mats": [
+      [
+       "Orichalcum Ingot",
+       1
+      ],
+      [
+       "Strong Leather",
+       2
+      ],
+      [
+       "Refining Stone",
+       2
+      ],
+      [
+       "Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "expert",
+     "name": "Expert's Orichalcum Gloves",
+     "lv": 20,
+     "combo": "Expert's Splendent Orichalcum Gloves",
+     "gear": null,
+     "chain": "Splendent Orichalcum Gloves",
+     "mats": [
+      [
+       "Expert's Refining Stone",
+       2
+      ],
+      [
+       "Fine Orichalcum Ore",
+       2
+      ],
+      [
+       "Fine Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "artisan",
+     "name": "Artisan's Orichalcum Gloves",
+     "lv": 35,
+     "combo": "Artisan's Splendent Orichalcum Gloves",
+     "gear": null,
+     "chain": "Expert's Splendent Orichalcum Gloves",
+     "mats": [
+      [
+       "Artisan's Refining Stone",
+       2
+      ],
+      [
+       "Pure Orichalcum Ore",
+       3
+      ],
+      [
+       "Pure Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "true",
+     "name": "True Dragon Lord Gloves",
+     "lv": 60,
+     "combo": "Splendent True Dragon Lord Gloves",
+     "gear": null,
+     "chain": "Artisan's Splendent Orichalcum Gloves",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Tanned Thick Balaur Leather",
+       7
+      ],
+      [
+       "Wrathful Mind",
+       3
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       2
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "trueS",
+     "name": "Splendent True Dragon Lord Gloves",
+     "lv": null,
+     "combo": null,
+     "gear": "True Dragon Lord Gloves",
+     "chain": null,
+     "mats": [
+      [
+       "Tanned Thick Balaur Leather",
+       4
+      ],
+      [
+       "Wrathful Mind",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "white",
+     "name": "White Dragon Lord Gloves",
+     "lv": null,
+     "combo": "Splendent White Dragon Lord Gloves",
+     "gear": "Splendent True Dragon Lord Gloves",
+     "chain": "Artisan's Splendent Orichalcum Gloves",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Tanned Hard Balaur Leather",
+       10
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       5
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       4
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "whiteS",
+     "name": "Splendent White Dragon Lord Gloves",
+     "lv": null,
+     "combo": null,
+     "gear": "White Dragon Lord Gloves",
+     "chain": null,
+     "mats": [
+      [
+       "Tanned Hard Balaur Leather",
+       5
+      ],
+      [
+       "Wrathful Will",
+       2
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       1
+      ],
+      [
+       "Radiant Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "wise",
+     "name": "Wise Dragon Lord Gloves",
+     "lv": null,
+     "combo": "Splendent Wise Dragon Lord Gloves",
+     "gear": "Splendent White Dragon Lord Gloves",
+     "chain": "Artisan's Splendent Orichalcum Gloves",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Tanned Durable Balaur Leather",
+       14
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       2
+      ],
+      [
+       "Wrathful Ego",
+       7
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       6
+      ],
+      [
+       "Radiant Odyle",
+       3
+      ]
+     ]
+    },
+    {
+     "tier": "wiseS",
+     "name": "Splendent Wise Dragon Lord Gloves",
+     "lv": null,
+     "combo": null,
+     "gear": "Wise Dragon Lord Gloves",
+     "chain": null,
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       1
+      ],
+      [
+       "Tanned Durable Balaur Leather",
+       7
+      ],
+      [
+       "Wrathful Ego",
+       3
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       2
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "Pauldrons",
+   "prof": "Armorsmithing",
+   "steps": [
+    {
+     "tier": "base",
+     "name": "Orichalcum Pauldrons",
+     "lv": 5,
+     "combo": "Splendent Orichalcum Pauldrons",
+     "gear": null,
+     "chain": null,
+     "mats": [
+      [
+       "Orichalcum Ingot",
+       1
+      ],
+      [
+       "Strong Leather",
+       3
+      ],
+      [
+       "Refining Stone",
+       2
+      ],
+      [
+       "Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "expert",
+     "name": "Expert's Orichalcum Pauldrons",
+     "lv": 20,
+     "combo": "Expert's Splendent Orichalcum Pauldrons",
+     "gear": null,
+     "chain": "Splendent Orichalcum Pauldrons",
+     "mats": [
+      [
+       "Expert's Refining Stone",
+       2
+      ],
+      [
+       "Fine Orichalcum Ore",
+       3
+      ],
+      [
+       "Fine Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "artisan",
+     "name": "Artisan's Orichalcum Pauldrons",
+     "lv": 35,
+     "combo": "Artisan's Splendent Orichalcum Pauldrons",
+     "gear": null,
+     "chain": "Expert's Splendent Orichalcum Pauldrons",
+     "mats": [
+      [
+       "Artisan's Refining Stone",
+       2
+      ],
+      [
+       "Pure Orichalcum Ore",
+       3
+      ],
+      [
+       "Pure Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "true",
+     "name": "True Dragon Lord Pauldrons",
+     "lv": 55,
+     "combo": "Splendent True Dragon Lord Pauldrons",
+     "gear": null,
+     "chain": "Artisan's Splendent Orichalcum Pauldrons",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Tanned Thick Balaur Leather",
+       9
+      ],
+      [
+       "Wrathful Mind",
+       4
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       3
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "trueS",
+     "name": "Splendent True Dragon Lord Pauldrons",
+     "lv": null,
+     "combo": null,
+     "gear": "True Dragon Lord Pauldrons",
+     "chain": null,
+     "mats": [
+      [
+       "Tanned Thick Balaur Leather",
+       5
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "white",
+     "name": "White Dragon Lord Pauldrons",
+     "lv": null,
+     "combo": "Splendent White Dragon Lord Pauldrons",
+     "gear": "Splendent True Dragon Lord Pauldrons",
+     "chain": "Artisan's Splendent Orichalcum Pauldrons",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Tanned Hard Balaur Leather",
+       12
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       6
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       5
+      ],
+      [
+       "Radiant Odyle",
+       3
+      ]
+     ]
+    },
+    {
+     "tier": "whiteS",
+     "name": "Splendent White Dragon Lord Pauldrons",
+     "lv": null,
+     "combo": null,
+     "gear": "White Dragon Lord Pauldrons",
+     "chain": null,
+     "mats": [
+      [
+       "Tanned Hard Balaur Leather",
+       6
+      ],
+      [
+       "Wrathful Will",
+       2
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       1
+      ],
+      [
+       "Radiant Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "wise",
+     "name": "Wise Dragon Lord Pauldrons",
+     "lv": null,
+     "combo": "Splendent Wise Dragon Lord Pauldrons",
+     "gear": "Splendent White Dragon Lord Pauldrons",
+     "chain": "Artisan's Splendent Orichalcum Pauldrons",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       4
+      ],
+      [
+       "Tanned Durable Balaur Leather",
+       17
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       2
+      ],
+      [
+       "Wrathful Ego",
+       8
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       7
+      ],
+      [
+       "Radiant Odyle",
+       4
+      ]
+     ]
+    },
+    {
+     "tier": "wiseS",
+     "name": "Splendent Wise Dragon Lord Pauldrons",
+     "lv": null,
+     "combo": null,
+     "gear": "Wise Dragon Lord Pauldrons",
+     "chain": null,
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       1
+      ],
+      [
+       "Tanned Durable Balaur Leather",
+       9
+      ],
+      [
+       "Wrathful Ego",
+       3
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       2
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "Boots",
+   "prof": "Armorsmithing",
+   "steps": [
+    {
+     "tier": "base",
+     "name": "Orichalcum Boots",
+     "lv": 10,
+     "combo": "Splendent Orichalcum Boots",
+     "gear": null,
+     "chain": null,
+     "mats": [
+      [
+       "Orichalcum Ingot",
+       1
+      ],
+      [
+       "Strong Leather",
+       3
+      ],
+      [
+       "Refining Stone",
+       2
+      ],
+      [
+       "Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "expert",
+     "name": "Expert's Orichalcum Boots",
+     "lv": 25,
+     "combo": "Expert's Splendent Orichalcum Boots",
+     "gear": null,
+     "chain": "Splendent Orichalcum Boots",
+     "mats": [
+      [
+       "Expert's Refining Stone",
+       2
+      ],
+      [
+       "Fine Orichalcum Ore",
+       3
+      ],
+      [
+       "Fine Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "artisan",
+     "name": "Artisan's Orichalcum Boots",
+     "lv": 40,
+     "combo": "Artisan's Splendent Orichalcum Boots",
+     "gear": null,
+     "chain": "Expert's Splendent Orichalcum Boots",
+     "mats": [
+      [
+       "Artisan's Refining Stone",
+       2
+      ],
+      [
+       "Pure Orichalcum Ore",
+       3
+      ],
+      [
+       "Pure Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "true",
+     "name": "True Dragon Lord Boots",
+     "lv": 60,
+     "combo": "Splendent True Dragon Lord Boots",
+     "gear": null,
+     "chain": "Artisan's Splendent Orichalcum Boots",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Tanned Thick Balaur Leather",
+       9
+      ],
+      [
+       "Wrathful Mind",
+       5
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       2
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "trueS",
+     "name": "Splendent True Dragon Lord Boots",
+     "lv": null,
+     "combo": null,
+     "gear": "True Dragon Lord Boots",
+     "chain": null,
+     "mats": [
+      [
+       "Tanned Thick Balaur Leather",
+       5
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "white",
+     "name": "White Dragon Lord Boots",
+     "lv": null,
+     "combo": "Splendent White Dragon Lord Boots",
+     "gear": "Splendent True Dragon Lord Boots",
+     "chain": "Artisan's Splendent Orichalcum Boots",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       3
+      ],
+      [
+       "Tanned Hard Balaur Leather",
+       12
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       8
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       5
+      ],
+      [
+       "Radiant Odyle",
+       3
+      ]
+     ]
+    },
+    {
+     "tier": "whiteS",
+     "name": "Splendent White Dragon Lord Boots",
+     "lv": null,
+     "combo": null,
+     "gear": "White Dragon Lord Boots",
+     "chain": null,
+     "mats": [
+      [
+       "Tanned Hard Balaur Leather",
+       6
+      ],
+      [
+       "Wrathful Will",
+       3
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       1
+      ],
+      [
+       "Radiant Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "wise",
+     "name": "Wise Dragon Lord Boots",
+     "lv": null,
+     "combo": "Splendent Wise Dragon Lord Boots",
+     "gear": "Splendent White Dragon Lord Boots",
+     "chain": "Artisan's Splendent Orichalcum Boots",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       3
+      ],
+      [
+       "Tanned Durable Balaur Leather",
+       17
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       2
+      ],
+      [
+       "Wrathful Ego",
+       11
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       8
+      ],
+      [
+       "Radiant Odyle",
+       4
+      ]
+     ]
+    },
+    {
+     "tier": "wiseS",
+     "name": "Splendent Wise Dragon Lord Boots",
+     "lv": null,
+     "combo": null,
+     "gear": "Wise Dragon Lord Boots",
+     "chain": null,
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       1
+      ],
+      [
+       "Tanned Durable Balaur Leather",
+       9
+      ],
+      [
+       "Wrathful Ego",
+       4
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       2
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "Cloak",
+   "prof": "Armorsmithing",
+   "steps": [
+    {
+     "tier": "base",
+     "name": "Orichalcum Cloak",
+     "lv": 10,
+     "combo": "Splendent Orichalcum Cloak",
+     "gear": null,
+     "chain": null,
+     "mats": [
+      [
+       "Orichalcum Ingot",
+       1
+      ],
+      [
+       "Strong Leather",
+       2
+      ],
+      [
+       "Refining Stone",
+       2
+      ],
+      [
+       "Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "expert",
+     "name": "Expert's Orichalcum Cloak",
+     "lv": 25,
+     "combo": "Expert's Splendent Orichalcum Cloak",
+     "gear": null,
+     "chain": "Splendent Orichalcum Cloak",
+     "mats": [
+      [
+       "Expert's Refining Stone",
+       2
+      ],
+      [
+       "Fine Orichalcum Ore",
+       2
+      ],
+      [
+       "Fine Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "artisan",
+     "name": "Artisan's Orichalcum Cloak",
+     "lv": 40,
+     "combo": "Artisan's Splendent Orichalcum Cloak",
+     "gear": null,
+     "chain": "Expert's Splendent Orichalcum Cloak",
+     "mats": [
+      [
+       "Artisan's Refining Stone",
+       2
+      ],
+      [
+       "Pure Orichalcum Ore",
+       3
+      ],
+      [
+       "Pure Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "true",
+     "name": "True Dragon Lord Cloak",
+     "lv": 60,
+     "combo": "Splendent True Dragon Lord Cloak",
+     "gear": null,
+     "chain": "Artisan's Splendent Orichalcum Cloak",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Tanned Thick Balaur Leather",
+       7
+      ],
+      [
+       "Wrathful Mind",
+       3
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       2
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "trueS",
+     "name": "Splendent True Dragon Lord Cloak",
+     "lv": null,
+     "combo": null,
+     "gear": "True Dragon Lord Cloak",
+     "chain": null,
+     "mats": [
+      [
+       "Tanned Thick Balaur Leather",
+       4
+      ],
+      [
+       "Wrathful Mind",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "white",
+     "name": "White Dragon Lord Cloak",
+     "lv": null,
+     "combo": "Splendent White Dragon Lord Cloak",
+     "gear": "Splendent True Dragon Lord Cloak",
+     "chain": "Artisan's Splendent Orichalcum Cloak",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Tanned Hard Balaur Leather",
+       10
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       5
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       4
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "whiteS",
+     "name": "Splendent White Dragon Lord Cloak",
+     "lv": null,
+     "combo": null,
+     "gear": "White Dragon Lord Cloak",
+     "chain": null,
+     "mats": [
+      [
+       "Tanned Hard Balaur Leather",
+       5
+      ],
+      [
+       "Wrathful Will",
+       2
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       1
+      ],
+      [
+       "Radiant Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "wise",
+     "name": "Wise Dragon Lord Cloak",
+     "lv": null,
+     "combo": "Splendent Wise Dragon Lord Cloak",
+     "gear": "Splendent White Dragon Lord Cloak",
+     "chain": "Artisan's Splendent Orichalcum Cloak",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Tanned Durable Balaur Leather",
+       14
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       2
+      ],
+      [
+       "Wrathful Ego",
+       7
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       6
+      ],
+      [
+       "Radiant Odyle",
+       3
+      ]
+     ]
+    },
+    {
+     "tier": "wiseS",
+     "name": "Splendent Wise Dragon Lord Cloak",
+     "lv": null,
+     "combo": null,
+     "gear": "Wise Dragon Lord Cloak",
+     "chain": null,
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       1
+      ],
+      [
+       "Tanned Durable Balaur Leather",
+       7
+      ],
+      [
+       "Wrathful Ego",
+       3
+      ],
+      [
+       "Radiant Orichalcum Ore",
+       2
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "Ring",
+   "prof": "Handicrafting",
+   "steps": [
+    {
+     "tier": "base",
+     "name": "Sapphire Ring",
+     "lv": 3,
+     "combo": "Splendent Sapphire Ring",
+     "gear": null,
+     "chain": null,
+     "mats": [
+      [
+       "Sapphire Decoration",
+       1
+      ],
+      [
+       "Refining Stone",
+       2
+      ],
+      [
+       "Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "expert",
+     "name": "Expert's Sapphire Ring",
+     "lv": 15,
+     "combo": "Expert's Splendent Sapphire Ring",
+     "gear": null,
+     "chain": "Splendent Sapphire Ring",
+     "mats": [
+      [
+       "Expert's Refining Stone",
+       2
+      ],
+      [
+       "Fine Sapphire Gemstone",
+       2
+      ],
+      [
+       "Fine Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "artisan",
+     "name": "Artisan's Sapphire Ring",
+     "lv": 30,
+     "combo": "Artisan's Splendent Sapphire Ring",
+     "gear": null,
+     "chain": "Expert's Splendent Sapphire Ring",
+     "mats": [
+      [
+       "Artisan's Refining Stone",
+       2
+      ],
+      [
+       "Pure Sapphire Gemstone",
+       3
+      ],
+      [
+       "Pure Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "true",
+     "name": "True Dragon Lord Ring",
+     "lv": 55,
+     "combo": "Splendent True Dragon Lord Ring",
+     "gear": null,
+     "chain": "Artisan's Splendent Sapphire Ring",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Enhanced Thick Balaur Scale",
+       8
+      ],
+      [
+       "Wrathful Mind",
+       4
+      ],
+      [
+       "Radiant Sapphire Gemstone",
+       3
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "trueS",
+     "name": "Splendent True Dragon Lord Ring",
+     "lv": null,
+     "combo": null,
+     "gear": "True Dragon Lord Ring",
+     "chain": null,
+     "mats": [
+      [
+       "Enhanced Thick Balaur Scale",
+       4
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "white",
+     "name": "White Dragon Lord Ring",
+     "lv": null,
+     "combo": "Splendent White Dragon Lord Ring",
+     "gear": "Splendent True Dragon Lord Ring",
+     "chain": "Artisan's Splendent Sapphire Ring",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Enhanced Hard Balaur Scale",
+       11
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       6
+      ],
+      [
+       "Radiant Sapphire Gemstone",
+       5
+      ],
+      [
+       "Radiant Odyle",
+       3
+      ]
+     ]
+    },
+    {
+     "tier": "whiteS",
+     "name": "Splendent White Dragon Lord Ring",
+     "lv": null,
+     "combo": null,
+     "gear": "White Dragon Lord Ring",
+     "chain": null,
+     "mats": [
+      [
+       "Enhanced Hard Balaur Scale",
+       6
+      ],
+      [
+       "Wrathful Will",
+       2
+      ],
+      [
+       "Radiant Sapphire Gemstone",
+       1
+      ],
+      [
+       "Radiant Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "wise",
+     "name": "Wise Dragon Lord Ring",
+     "lv": null,
+     "combo": "Splendent Wise Dragon Lord Ring",
+     "gear": "Splendent White Dragon Lord Ring",
+     "chain": "Artisan's Splendent Sapphire Ring",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Enhanced Durable Balaur Scale",
+       16
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       2
+      ],
+      [
+       "Wrathful Ego",
+       8
+      ],
+      [
+       "Radiant Sapphire Gemstone",
+       5
+      ],
+      [
+       "Radiant Odyle",
+       3
+      ]
+     ]
+    },
+    {
+     "tier": "wiseS",
+     "name": "Splendent Wise Dragon Lord Ring",
+     "lv": null,
+     "combo": null,
+     "gear": "Wise Dragon Lord Ring",
+     "chain": null,
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       1
+      ],
+      [
+       "Enhanced Durable Balaur Scale",
+       8
+      ],
+      [
+       "Wrathful Ego",
+       3
+      ],
+      [
+       "Radiant Sapphire Gemstone",
+       2
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "Earrings",
+   "prof": "Handicrafting",
+   "steps": [
+    {
+     "tier": "base",
+     "name": "Diamond Earrings",
+     "lv": 5,
+     "combo": "Splendent Diamond Earrings",
+     "gear": null,
+     "chain": null,
+     "mats": [
+      [
+       "Diamond Decoration",
+       1
+      ],
+      [
+       "Refining Stone",
+       3
+      ],
+      [
+       "Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "expert",
+     "name": "Expert's Diamond Earrings",
+     "lv": 20,
+     "combo": "Expert's Splendent Diamond Earrings",
+     "gear": null,
+     "chain": "Splendent Diamond Earrings",
+     "mats": [
+      [
+       "Expert's Refining Stone",
+       3
+      ],
+      [
+       "Fine Diamond Gemstone",
+       3
+      ],
+      [
+       "Fine Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "artisan",
+     "name": "Artisan's Diamond Earrings",
+     "lv": 35,
+     "combo": "Artisan's Splendent Diamond Earrings",
+     "gear": null,
+     "chain": "Expert's Splendent Diamond Earrings",
+     "mats": [
+      [
+       "Artisan's Refining Stone",
+       3
+      ],
+      [
+       "Pure Diamond Gemstone",
+       4
+      ],
+      [
+       "Pure Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "true",
+     "name": "True Dragon Lord Earrings",
+     "lv": 60,
+     "combo": "Splendent True Dragon Lord Earrings",
+     "gear": null,
+     "chain": "Artisan's Splendent Diamond Earrings",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       2
+      ],
+      [
+       "Enhanced Thick Balaur Scale",
+       11
+      ],
+      [
+       "Wrathful Mind",
+       5
+      ],
+      [
+       "Radiant Diamond Gemstone",
+       5
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "trueS",
+     "name": "Splendent True Dragon Lord Earrings",
+     "lv": null,
+     "combo": null,
+     "gear": "True Dragon Lord Earrings",
+     "chain": null,
+     "mats": [
+      [
+       "Enhanced Thick Balaur Scale",
+       6
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "white",
+     "name": "White Dragon Lord Earrings",
+     "lv": null,
+     "combo": "Splendent White Dragon Lord Earrings",
+     "gear": "Splendent True Dragon Lord Earrings",
+     "chain": "Artisan's Splendent Diamond Earrings",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       3
+      ],
+      [
+       "Enhanced Hard Balaur Scale",
+       15
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       8
+      ],
+      [
+       "Radiant Diamond Gemstone",
+       6
+      ],
+      [
+       "Radiant Odyle",
+       4
+      ]
+     ]
+    },
+    {
+     "tier": "whiteS",
+     "name": "Splendent White Dragon Lord Earrings",
+     "lv": null,
+     "combo": null,
+     "gear": "White Dragon Lord Earrings",
+     "chain": null,
+     "mats": [
+      [
+       "Enhanced Hard Balaur Scale",
+       8
+      ],
+      [
+       "Wrathful Will",
+       3
+      ],
+      [
+       "Radiant Diamond Gemstone",
+       1
+      ],
+      [
+       "Radiant Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "wise",
+     "name": "Wise Dragon Lord Earrings",
+     "lv": null,
+     "combo": "Splendent Wise Dragon Lord Earrings",
+     "gear": "Splendent White Dragon Lord Earrings",
+     "chain": "Artisan's Splendent Diamond Earrings",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       3
+      ],
+      [
+       "Enhanced Durable Balaur Scale",
+       21
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       2
+      ],
+      [
+       "Wrathful Ego",
+       11
+      ],
+      [
+       "Radiant Diamond Gemstone",
+       7
+      ],
+      [
+       "Radiant Odyle",
+       5
+      ]
+     ]
+    },
+    {
+     "tier": "wiseS",
+     "name": "Splendent Wise Dragon Lord Earrings",
+     "lv": null,
+     "combo": null,
+     "gear": "Wise Dragon Lord Earrings",
+     "chain": null,
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       1
+      ],
+      [
+       "Enhanced Durable Balaur Scale",
+       11
+      ],
+      [
+       "Wrathful Ego",
+       4
+      ],
+      [
+       "Radiant Diamond Gemstone",
+       2
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "Necklace",
+   "prof": "Handicrafting",
+   "steps": [
+    {
+     "tier": "base",
+     "name": "Ruby Necklace",
+     "lv": 10,
+     "combo": "Splendent Ruby Necklace",
+     "gear": null,
+     "chain": null,
+     "mats": [
+      [
+       "Ruby Decoration",
+       1
+      ],
+      [
+       "Refining Stone",
+       4
+      ],
+      [
+       "Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "expert",
+     "name": "Expert's Ruby Necklace",
+     "lv": 25,
+     "combo": "Expert's Splendent Ruby Necklace",
+     "gear": null,
+     "chain": "Splendent Ruby Necklace",
+     "mats": [
+      [
+       "Expert's Refining Stone",
+       4
+      ],
+      [
+       "Fine Ruby Gemstone",
+       4
+      ],
+      [
+       "Fine Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "artisan",
+     "name": "Artisan's Ruby Necklace",
+     "lv": 40,
+     "combo": "Artisan's Splendent Ruby Necklace",
+     "gear": null,
+     "chain": "Expert's Splendent Ruby Necklace",
+     "mats": [
+      [
+       "Artisan's Refining Stone",
+       4
+      ],
+      [
+       "Pure Ruby Gemstone",
+       5
+      ],
+      [
+       "Pure Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "true",
+     "name": "True Dragon Lord Necklace",
+     "lv": 60,
+     "combo": "Splendent True Dragon Lord Necklace",
+     "gear": null,
+     "chain": "Artisan's Splendent Ruby Necklace",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       3
+      ],
+      [
+       "Enhanced Thick Balaur Scale",
+       14
+      ],
+      [
+       "Wrathful Mind",
+       6
+      ],
+      [
+       "Radiant Ruby Gemstone",
+       6
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "trueS",
+     "name": "Splendent True Dragon Lord Necklace",
+     "lv": null,
+     "combo": null,
+     "gear": "True Dragon Lord Necklace",
+     "chain": null,
+     "mats": [
+      [
+       "Enhanced Thick Balaur Scale",
+       7
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ]
+     ]
+    },
+    {
+     "tier": "white",
+     "name": "White Dragon Lord Necklace",
+     "lv": null,
+     "combo": "Splendent White Dragon Lord Necklace",
+     "gear": "Splendent True Dragon Lord Necklace",
+     "chain": "Artisan's Splendent Ruby Necklace",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       3
+      ],
+      [
+       "Enhanced Hard Balaur Scale",
+       19
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       9
+      ],
+      [
+       "Radiant Ruby Gemstone",
+       8
+      ],
+      [
+       "Radiant Odyle",
+       5
+      ]
+     ]
+    },
+    {
+     "tier": "whiteS",
+     "name": "Splendent White Dragon Lord Necklace",
+     "lv": null,
+     "combo": null,
+     "gear": "White Dragon Lord Necklace",
+     "chain": null,
+     "mats": [
+      [
+       "Enhanced Hard Balaur Scale",
+       10
+      ],
+      [
+       "Wrathful Will",
+       3
+      ],
+      [
+       "Radiant Ruby Gemstone",
+       1
+      ],
+      [
+       "Radiant Odyle",
+       1
+      ]
+     ]
+    },
+    {
+     "tier": "wise",
+     "name": "Wise Dragon Lord Necklace",
+     "lv": null,
+     "combo": "Splendent Wise Dragon Lord Necklace",
+     "gear": "Splendent White Dragon Lord Necklace",
+     "chain": "Artisan's Splendent Ruby Necklace",
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       4
+      ],
+      [
+       "Enhanced Durable Balaur Scale",
+       26
+      ],
+      [
+       "Wrathful Mind",
+       2
+      ],
+      [
+       "Wrathful Will",
+       2
+      ],
+      [
+       "Wrathful Ego",
+       12
+      ],
+      [
+       "Radiant Ruby Gemstone",
+       8
+      ],
+      [
+       "Radiant Odyle",
+       7
+      ]
+     ]
+    },
+    {
+     "tier": "wiseS",
+     "name": "Splendent Wise Dragon Lord Necklace",
+     "lv": null,
+     "combo": null,
+     "gear": "Wise Dragon Lord Necklace",
+     "chain": null,
+     "mats": [
+      [
+       "Artisan's Ultimate Refining Stone",
+       1
+      ],
+      [
+       "Enhanced Durable Balaur Scale",
+       13
+      ],
+      [
+       "Wrathful Ego",
+       4
+      ],
+      [
+       "Radiant Ruby Gemstone",
+       2
+      ],
+      [
+       "Radiant Odyle",
+       2
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "sub": {
+  "Orichalcum Ingot": [
+   [
+    "Orichalcum Ore",
+    2
+   ],
+   [
+    "Orichalcum Solvent (Bound)",
+    1
+   ]
+  ],
+  "Fine Thick Balaur Horn": [
+   [
+    "Balaur's Essence",
+    2
+   ],
+   [
+    "Zircon Hammer (Bound)",
+    1
+   ]
+  ],
+  "Fine Hard Balaur Horn": [
+   [
+    "Balaur's Essence",
+    2
+   ],
+   [
+    "Lazuli Hammer (Bound)",
+    1
+   ]
+  ],
+  "Fine Durable Balaur Horn": [
+   [
+    "Balaur's Essence",
+    2
+   ],
+   [
+    "Moonstone Hammer (Bound)",
+    1
+   ]
+  ],
+  "Strong Leather": [
+   [
+    "Raw Leather",
+    2
+   ]
+  ],
+  "Tanned Thick Balaur Leather": [
+   [
+    "Balaur's Essence",
+    2
+   ],
+   [
+    "Lesser Dragon Leather Softener (Bound)",
+    1
+   ]
+  ],
+  "Tanned Hard Balaur Leather": [
+   [
+    "Balaur's Essence",
+    2
+   ],
+   [
+    "Intermediate Dragon Leather Softener (Bound)",
+    1
+   ]
+  ],
+  "Tanned Durable Balaur Leather": [
+   [
+    "Balaur's Essence",
+    2
+   ],
+   [
+    "Superior Dragon Leather Softener (Bound)",
+    1
+   ]
+  ],
+  "Diamond Decoration": [
+   [
+    "Diamond Gemstone",
+    2
+   ],
+   [
+    "Abrasive (Bound)",
+    1
+   ]
+  ],
+  "Ruby Decoration": [
+   [
+    "Ruby Gemstone",
+    2
+   ],
+   [
+    "Abrasive (Bound)",
+    1
+   ]
+  ],
+  "Sapphire Decoration": [
+   [
+    "Sapphire Gemstone",
+    2
+   ],
+   [
+    "Abrasive (Bound)",
+    1
+   ]
+  ],
+  "Enhanced Thick Balaur Scale": [
+   [
+    "Balaur's Essence",
+    2
+   ],
+   [
+    "Lesser Dragon Scale Hardener (Bound)",
+    1
+   ]
+  ],
+  "Enhanced Hard Balaur Scale": [
+   [
+    "Balaur's Essence",
+    2
+   ],
+   [
+    "Intermediate Dragon Scale Hardener (Bound)",
+    1
+   ]
+  ],
+  "Enhanced Durable Balaur Scale": [
+   [
+    "Balaur's Essence",
+    2
+   ],
+   [
+    "Superior Dragon Scale Hardener (Bound)",
+    1
+   ]
+  ]
+ }
+}

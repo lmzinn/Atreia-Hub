@@ -1,0 +1,1341 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atreia Hub - Aion 2</title>
+<style>
+:root{--bg:#f3f4fb;--panel:#fff;--side:#12142a;--side-ink:#dfe3fb;--side-mute:#8d94c4;--ink:#1c1f33;--mute:#5c6185;--line:#d9dcf0;
+--accent:#0a7fd4;--hl:#7c3aed;--hl2:#0ea5e9;--navy:#2b2670;--g:#2e7d32;--r:#c62828;--y:#8a6100;--head:#231f5a;--head-ink:#fff;--key:#e3e4fb;--zebra:#f5f5fd;
+--m:#e3f2e4;--h:#e2ecff;--s:#f8d7d3;--info:#e9f1ff;--warn:#fff6db;--good:#e8f5e9;--bad:#fdecea;
+--n-common:#eeedf3;--n-common-l:#8b8aa3;--n-rare:#dff0da;--n-rare-l:#2e7d32;--n-legend:#dcebfa;--n-legend-l:#1f5fbf;--n-unique:#ffe9b0;--n-unique-l:#b37a00;--n-ink:#22242f;--edge:#bcc2e0}
+:root[data-theme="dark"]{--bg:#090b14;--panel:#111527;--side:#06070e;--side-ink:#dde1fb;--side-mute:#7c84b3;--ink:#e6e8f8;--mute:#979dc2;--line:#262c4d;
+--accent:#56c7ff;--hl:#8b5cf6;--hl2:#38bdf8;--navy:#b7c4ff;--g:#6fcf73;--r:#f08080;--y:#e2b84a;--head:#1c1f4a;--head-ink:#f1f2ff;--key:#1b2147;--zebra:#151a33;
+--m:#173a2a;--h:#15295a;--s:#4a2030;--info:#131f42;--warn:#3a3116;--good:#16321f;--bad:#3d1c24;
+--n-common:#232843;--n-common-l:#5d6591;--n-rare:#173a2a;--n-rare-l:#58b35d;--n-legend:#15295a;--n-legend-l:#5b9bea;--n-unique:#4a3a10;--n-unique-l:#d9a520;--n-ink:#eef0fb;--edge:#343c66}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{--sw:230px;--ow:224px;margin:0;padding-left:var(--sw);background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,"Segoe UI",Calibri,sans-serif}
+a{color:var(--accent)}
+[hidden]{display:none!important}
+#side{position:fixed;inset:0 auto 0 0;width:var(--sw);background:var(--side);color:var(--side-ink);overflow-y:auto;padding:14px 12px 24px}
+#side .brand{font-weight:700;font-size:18px;margin:2px 4px 10px;width:fit-content;background:linear-gradient(90deg,#56c7ff,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.qwrap{position:relative;margin-bottom:10px}
+#q{width:100%;padding:8px 58px 8px 10px;border-radius:6px;border:1px solid #2e3566;background:#fff1;color:inherit;font:inherit}
+#q::placeholder{color:var(--side-mute)}
+#qn{position:absolute;right:9px;top:9px;font-size:12.5px;color:var(--side-mute)}
+.partbtn{display:flex;justify-content:space-between;align-items:center;width:100%;background:none;border:0;color:inherit;font:600 15px/1.3 inherit;padding:9px 8px;border-radius:6px;cursor:pointer;text-align:left}
+.partbtn:hover,.partbtn.on{background:#ffffff1a}
+.fold>summary{display:flex;align-items:center;gap:7px;list-style:none;cursor:pointer;font-weight:600;font-size:15px;line-height:1.3;padding:9px 8px;border-radius:6px}
+.fold>summary::-webkit-details-marker{display:none}
+.fold>summary::before{content:"▸";color:var(--side-mute);font-size:12px;width:9px}
+.fold[open]>summary::before{content:"▾"}
+.fold>summary:hover{background:#ffffff1a}
+.fold>.in{margin-left:12px;padding-left:5px;border-left:1px solid #ffffff26}
+.fold .fold>summary,.fold .partbtn{font-size:14px}
+.fold .fold .partbtn{font-weight:500}
+.partbtn small,.toc small{font-weight:400;font-size:12px;white-space:nowrap;margin-left:8px}
+.partbtn small{color:var(--side-mute)}
+#wrap{display:grid;grid-template-columns:minmax(calc(var(--ow) + 30px),1fr) minmax(0,1180px) minmax(0,1fr);align-items:start}
+#outline{position:sticky;top:22px;justify-self:end;overscroll-behavior:contain;width:var(--ow);max-height:calc(100vh - 44px);overflow-y:auto;scrollbar-width:thin;margin:22px 0 0 16px;padding:10px 10px 12px;background:var(--panel);border:1px solid color-mix(in srgb,var(--hl) 35%,var(--line));border-radius:10px;box-shadow:0 8px 26px #0004}
+#ohead{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 4px 8px;padding-bottom:7px;border-bottom:2px solid;border-image:linear-gradient(90deg,var(--hl2),var(--hl)) 1}
+#otitle{font-weight:700;font-size:15px;color:var(--navy)}
+#ofold{width:24px;height:24px;border-radius:5px;border:1px solid var(--line);background:none;color:var(--mute);cursor:pointer;font:700 14px/1 inherit;padding:0}
+#ofold:hover{border-color:var(--hl);color:var(--ink)}
+#outline.folded .toc{display:none}
+#outline.folded #ohead{margin-bottom:0;padding-bottom:0;border:0}
+.toc{list-style:none;margin:0;padding:0;display:none}
+.toc.on{display:block}
+.toc small{color:var(--mute)}
+.toc a{display:flex;justify-content:space-between;color:var(--ink);text-decoration:none;padding:5px 8px;border-radius:5px;font-size:13.5px;border-left:2px solid transparent}
+.toc a:hover{background:var(--zebra)}
+.toc a.cur{border-left-color:var(--hl2);background:var(--key);font-weight:600}
+.toc>li{position:relative}
+.toc>li>a{padding-left:24px}
+.tgl{position:absolute;left:3px;top:4px;width:20px;height:22px;border:0;border-radius:4px;background:none;color:var(--mute);cursor:pointer;font-size:12px;padding:0}
+.tgl:hover{background:var(--key);color:var(--ink)}
+.subtoc{list-style:none;margin:0 0 4px;padding:0 0 0 24px}
+.subtoc a{font-size:12.5px;padding:3px 8px;color:var(--mute)}
+.subtoc a:hover{color:var(--ink)}
+.subtoc a.cur{color:var(--accent);background:none;border-left-color:var(--hl)}
+.tools{margin-top:14px;border-top:1px solid #ffffff22;padding-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.tools button,.reset,.bctl button,.pbar button,.csum button,.tabs button{font:13px inherit;padding:5px 9px;border-radius:5px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.tools button{background:#ffffff14;color:var(--side-ink);border-color:#ffffff33}
+.foot{font-size:12px;color:var(--side-mute);margin:14px 4px 0;border-top:1px solid #ffffff22;padding-top:10px}
+main{position:relative;min-width:0;padding:22px 28px 80px}
+#top{position:absolute;top:20px;right:28px;display:flex;gap:8px;z-index:2}
+#top button{height:34px;min-width:34px;border-radius:17px;border:1px solid var(--line);background:var(--panel);color:var(--mute);cursor:pointer;font:13px inherit;padding:0 11px}
+#top button:hover{border-color:var(--accent)}
+#top button b{color:var(--ink)}
+#theme{font-size:17px!important;padding:0!important;color:var(--ink)!important}
+.part{display:none}
+.part.on{display:block}
+.part>header h1{margin:0;color:var(--navy);font-size:26px;padding-right:130px}
+.part>header .sub{margin:2px 0 12px;color:var(--mute);border-bottom:3px solid;border-image:linear-gradient(90deg,var(--hl2),var(--hl)) 1;padding-bottom:10px}
+.pbar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:0 0 12px;font-size:13.5px}
+.pbar label{display:flex;gap:6px;align-items:center;cursor:pointer;color:var(--mute)}
+details.sec{background:var(--panel);border:1px solid var(--line);border-radius:8px;margin:0 0 10px;scroll-margin-top:10px}
+details.sec[open]{border-color:color-mix(in srgb,var(--hl) 40%,var(--line))}
+details.sec>summary{cursor:pointer;padding:11px 14px;display:flex;gap:10px;align-items:baseline;list-style:none;font-weight:650;color:var(--navy);font-size:17px}
+details.sec>summary::-webkit-details-marker{display:none}
+details.sec>summary::before{content:"▸";color:var(--mute);font-size:13px}
+details.sec[open]>summary::before{content:"▾"}
+details.sec>summary .meta{font-weight:400;font-size:13px;color:var(--mute);flex:1}
+details.sec>summary .cnt{font-weight:400;font-size:12.5px;color:var(--mute);white-space:nowrap}
+details.sec>summary .cnt.done{color:var(--g);font-weight:600}
+.body{padding:2px 16px 14px;border-top:1px solid var(--line)}
+h3{color:var(--navy);font-size:15.5px;margin:18px 0 8px;border-bottom:1px solid var(--line);padding-bottom:3px;scroll-margin-top:12px}
+p{margin:8px 0}
+p.note{font-size:13px;color:var(--mute)}
+ul,ol{margin:6px 0;padding-left:22px}
+li{margin:3px 0}
+li.sub{margin-left:18px;list-style-type:"– "}
+.g{color:var(--g)}.r{color:var(--r)}.y{color:var(--y)}.n{color:var(--navy)}.mute{color:var(--mute)}
+.ic{display:inline-block;width:18px;height:18px;vertical-align:-4px;margin-right:4px;background-size:cover;border-radius:4px}
+table.data td .ic{width:22px;height:22px;vertical-align:-6px;margin-right:6px}
+table.bar .ic{display:block;width:32px;height:32px;margin:0 auto 3px}
+#tip .ic{width:22px;height:22px;vertical-align:-6px}
+.board g.dim image{opacity:.4}
+.tw{overflow-x:auto;margin:8px 0 10px}
+.tw.fit{overflow:visible}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:6px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+th,td.head{background:var(--head);color:var(--head-ink);font-weight:600}
+th{position:sticky;top:0;z-index:1}
+th .n,td.head .n{color:inherit}
+td.key{background:var(--key);font-weight:600}
+table.data tr:nth-child(even) td:not(.key):not(.head){background:var(--zebra)}
+table.bar{font-size:13px}
+table.bar td{border:1px solid var(--line);text-align:center;height:34px;min-width:40px;padding:5px 5px}
+table.bar td:first-child{text-align:left;min-width:58px}
+table.bar td.m{background:var(--m)}table.bar td.h{background:var(--h)}table.bar td.s{background:var(--s)}
+.mine{width:100%;padding:4px 6px;border:1px solid var(--line);border-radius:5px;background:var(--panel);color:var(--ink);font:inherit}
+.part[data-part="cfg"] table.data{table-layout:fixed}
+.part[data-part="cfg"] table.data th:first-child{width:38%}
+.part[data-part="cfg"] table.data th:nth-child(2){width:24%}
+td.box{text-align:center;width:1%}
+td p{margin:2px 0}
+input[type=checkbox]{width:17px;height:17px;accent-color:var(--hl);cursor:pointer;vertical-align:middle}
+.checks{margin:6px 0}
+label.chk{display:flex;gap:9px;align-items:flex-start;padding:4px 2px;cursor:pointer;border-radius:4px}
+label.chk:hover{background:var(--zebra)}
+label.chk input{margin-top:3px;flex:none}
+label.chk:has(input:checked)>span{color:var(--mute);text-decoration:line-through}
+body.hide-done label.chk:has(input:checked){display:none}
+tr:has(td.box input:checked) td:not(.box){color:var(--mute)}
+.flash{animation:flash 1.6s ease-out}
+@keyframes flash{0%,40%{background:#8b5cf655;box-shadow:0 0 0 3px #8b5cf655}100%{background:transparent;box-shadow:none}}
+.callout{border-left:5px solid var(--accent);background:var(--info);padding:8px 12px;margin:10px 0;border-radius:0 6px 6px 0}
+.callout.warn{border-color:#d4a017;background:var(--warn)}.callout.good{border-color:var(--g);background:var(--good)}.callout.bad{border-color:var(--r);background:var(--bad)}
+.resetrow{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-top:12px;font-size:12.5px;color:var(--mute)}
+.reset{font-size:12.5px;color:var(--mute)}
+.csum{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin:18px 0 10px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--zebra);font-size:14px}
+.csum .own{display:flex;gap:6px;align-items:center}
+.csum input{width:64px;padding:4px 6px;border:1px solid var(--line);border-radius:5px;background:var(--panel);color:var(--ink);font:inherit;text-align:center}
+.csum button{width:30px;padding:4px 0;font-weight:700}
+.csum .ok{color:var(--g);font-weight:600}.csum .over{color:var(--r);font-weight:600}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0;border-bottom:2px solid var(--line)}
+.tabs button{border-radius:6px 6px 0 0;border-bottom:0;padding:7px 14px;font-size:14px;margin-bottom:-2px}
+.tabs button.on{background:var(--head);color:var(--head-ink);border-color:var(--head);font-weight:600}
+.tabs button small{font-weight:400;opacity:.8;margin-left:6px}
+.tabpane h3{margin-top:12px}
+.board{margin:8px 0 6px}
+.bctl{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:13.5px;margin-bottom:6px}
+.bctl input[type=range]{flex:1;min-width:180px;accent-color:var(--hl)}
+.bupto{font-size:15px;font-weight:700;color:var(--hl);border:2px solid var(--hl);border-radius:6px;padding:2px 10px;white-space:nowrap}
+.board g.last rect{stroke:var(--hl);stroke-width:5;filter:drop-shadow(0 0 5px var(--hl));animation:lastnode 1.4s ease-in-out infinite}
+.board g.last text.o{fill:var(--hl);font-size:13px}
+@keyframes lastnode{50%{stroke-width:8;filter:drop-shadow(0 0 10px var(--hl))}}
+.binfo{min-height:22px;font-size:13.5px;margin:4px 0;color:var(--mute)}
+.board svg{width:100%;max-width:820px;height:auto;display:block;background:var(--panel);border:1px solid var(--line);border-radius:8px}
+.board .edge{stroke:var(--edge);stroke-width:3}
+.board g.nd{cursor:pointer}
+.board g.nd rect{stroke-width:2}
+.board g.common rect{fill:var(--n-common);stroke:var(--n-common-l)}
+.board g.rare rect{fill:var(--n-rare);stroke:var(--n-rare-l)}
+.board g.legend rect{fill:var(--n-legend);stroke:var(--n-legend-l)}
+.board g.unique rect{fill:var(--n-unique);stroke:var(--n-unique-l)}
+.board g.start rect{fill:var(--head);stroke:var(--head)}
+.board g.start text{fill:#fff}
+.board text{fill:var(--n-ink);font-family:system-ui,"Segoe UI",sans-serif;pointer-events:none}
+.board text.o{font-size:10px;font-weight:700}
+.board text.l{font-size:7px;font-weight:600}
+.board g.dim rect{fill:var(--panel);stroke:var(--line)}
+.board g.dim text{fill:var(--mute);opacity:.75}
+.board g.taken rect{stroke:var(--hl2);stroke-width:4}
+.board g.taken text.o{fill:var(--accent)}
+.board g.nd:not(.start):hover rect{stroke:var(--hl);stroke-width:4}
+.cctl{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin:12px 0 10px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--zebra);font-size:14px}
+.cctl label,.chead label{display:inline-flex;gap:7px;align-items:center}
+.tool select,.tool input[type=text],.num input,.cprice{padding:5px 7px;border:1px solid var(--line);border-radius:5px;background:var(--panel);color:var(--ink);font:inherit}
+.tool select{max-width:100%}
+.tool input[type=text]{width:130px}
+.num{display:inline-flex;gap:3px;align-items:center;white-space:nowrap}
+.num input{width:72px;text-align:center}
+.tool button{font:13px inherit;padding:5px 9px;border-radius:5px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.tool button:hover{border-color:var(--hl)}
+.num button{width:28px;padding:5px 0;font-weight:700}
+.cprice{width:110px;text-align:right}
+.cbar{margin:0 0 6px}
+.chead{color:var(--navy);font-weight:650;font-size:15.5px;margin:18px 0 8px;border-bottom:1px solid var(--line);padding-bottom:3px}
+.chead select{margin-left:6px;font-weight:400}
+.tool td small{display:block;color:var(--mute);font-weight:400;font-size:12.5px}
+.tool td.out{font-weight:700;color:var(--hl);white-space:nowrap;text-align:right}
+.tool td.out.miss.ok{color:var(--g)}
+.tool td.r{text-align:right}
+.tool table.csteps td:nth-child(2){min-width:230px}
+.tool table.csteps td:first-child{min-width:190px}
+.tool table.cpieces tr.off td{color:var(--mute)}
+.tool table.cpieces tr.off select{opacity:.55}
+.tool tr.tot td{font-weight:700;border-top:2px solid var(--line);background:var(--key)!important}
+.bsum{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.bchip{padding:5px 11px;border:1px solid var(--line);border-radius:14px;background:var(--panel);font-size:13px;color:var(--mute)}
+.bchip b{color:var(--hl);margin-left:4px}
+.btabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;border-bottom:2px solid var(--line)}
+.btabs button{border-radius:6px 6px 0 0;border-bottom:0;padding:8px 16px;font-size:14px;margin-bottom:-2px}
+.btabs button.on{background:var(--head);color:var(--head-ink);border-color:var(--head);font-weight:600}
+.btabs.sub{border-bottom-width:1px;margin-bottom:8px}
+.btabs.sub button{padding:5px 12px;font-size:13px}
+.btabs button small{font-weight:400;opacity:.8}
+.bic{width:26px;height:26px;border-radius:5px;vertical-align:-8px;margin-right:8px}
+.bskills td.key{white-space:nowrap}
+.bskills tr.off td.key,.bskills tr.off td.out{opacity:.55}
+.bskills td small{display:inline!important;margin-right:8px}
+.tool button.spec{display:inline-block;margin:2px 4px 2px 0;padding:3px 8px;font-size:12.5px;border-radius:12px;text-align:left}
+.tool button.spec.on{background:var(--hl);border-color:var(--hl);color:#fff}
+.tool button.spec:disabled{opacity:.4;cursor:default;border-color:var(--line)}
+.bbar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:0 0 4px;font-size:14px}
+.bbar b{color:var(--hl)}
+.bcols{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}
+.bboard{flex:1 1 560px;max-width:820px;margin:0}
+.bboard g.nd:not(.taken):not(.start){opacity:.5}
+.bboard g.nd:not(.start):hover{opacity:1}
+.bboard .edge.lit{stroke:var(--hl2);stroke-width:4}
+.bfx{flex:1 1 220px;min-width:200px;font-size:13.5px}
+.bfx .chead{margin-top:0}
+.bfx ul{list-style:none;padding:0;margin:0 0 10px;columns:1}
+.bfx li{margin:2px 0}
+.bfx li b{color:var(--hl)}
+.bfx .bic{width:20px;height:20px;vertical-align:-5px;margin-right:6px}
+.bfxh{margin:8px 0 4px;font-weight:600;color:var(--mute);font-size:12.5px;text-transform:uppercase;letter-spacing:.04em}
+.bgear select{width:100%;max-width:420px}
+.bgear tr.off td.key{color:var(--mute)}
+.bgear td.g3{color:var(--y)}.bgear td.g2{color:var(--accent)}.bgear td.g1{color:var(--g)}
+.brow{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin:6px 0}
+.brow .bl{min-width:110px;font-weight:600}
+.brow select{min-width:260px;max-width:100%}
+.brow .bi{font-size:13px;color:var(--mute);flex:1 1 300px}
+.bnotes{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);font:inherit;resize:vertical}
+.rtabs{display:inline-flex;flex-wrap:wrap;gap:4px}
+.rtabs button.on{background:var(--head);color:var(--head-ink);border-color:var(--head);font-weight:600}
+.rinfo{margin:8px 2px;font-size:13.5px;color:var(--mute)}
+.rinfo b{color:var(--ink)}
+.crt tr.grp td{background:var(--key)!important;font-weight:600;color:var(--navy);padding-top:4px;padding-bottom:4px}
+.crt td.key{font-weight:500}
+.crt .of{color:var(--mute);margin-left:6px}
+.crt td.st{color:var(--mute);font-size:13px}
+.crt tr.full td.st{color:var(--y);font-weight:600}
+.crt tr.done td{color:var(--mute)}
+.crt tr.done td.st{color:var(--g);font-weight:600}
+.crt tr.off td:not(:first-child){opacity:.4}
+#tip{position:fixed;z-index:20;max-width:300px;padding:8px 11px;border-radius:7px;background:#10151d;color:#eef2f7;font-size:13px;line-height:1.4;box-shadow:0 4px 16px #0006;pointer-events:none}
+#tip div{color:#b8c3d3}
+#tip .hint{font-size:12px;color:#8fa0b8;margin-top:3px}
+mark.hit{background:#c4b5fd;color:#000;border-radius:2px;padding:0 1px}
+mark.hit.cur{background:#38bdf8;outline:2px solid #38bdf8}
+#totop{position:fixed;right:18px;bottom:18px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:18px;cursor:pointer;box-shadow:0 2px 8px #0003;z-index:5}
+@media (max-width:1250px){body{--sw:180px;--ow:200px}main{padding-left:18px;padding-right:18px}}
+@media (max-width:760px){body{padding-left:0}#side{position:static;width:auto;inset:auto}#wrap{display:block}#outline{position:static;width:auto;max-height:none;margin:10px 14px 0}main{padding:14px}#top{top:12px;right:14px}.toc{columns:2}}
+@media print{#side,#outline,#top,#totop,.resetrow,.bctl,.pbar,.tabs,.cctl{display:none}body{padding-left:0}#wrap{display:block}main{margin:0;max-width:none}.part{display:block}details.sec{break-inside:avoid}.tabpane{display:block!important}}
+</style>
+</head>
+<body>
+<aside id="side">
+  <div class="brand">Atreia Hub - Aion 2</div>
+  <div class="qwrap"><input id="q" type="search" autocomplete="off" data-ui-ph="search"><span id="qn"></span></div>
+  <nav id="nav">__NAV__</nav>
+  <p class="foot" id="foot"></p>
+</aside>
+<div id="wrap">
+<aside id="outline"><div id="ohead"><span id="otitle"></span><button id="ofold" data-ui-title="fold"></button></div>__TOC__</aside>
+<main id="main">
+<div id="top"><button id="lang" data-ui-title="lang"></button><button id="theme" data-ui-title="theme"></button></div>
+__CONTENT__
+</main>
+</div>
+<button id="totop" data-ui-title="top" hidden>↑</button>
+<div id="tip" hidden></div>
+<script>
+const BOARDS = __BOARDS__, EN = __EN__, ICONS = __ICONS__, CALC = __CALC__, ROUTINE = __ROUTINE__, BLD = __BLD__, BIC = __BIC__, PUBLIC = __PUBLIC__, BUILT = '__BUILT__';
+const UI = {
+  pt: {search: 'Buscar…  ( / )', openall: 'Abrir tudo', closeall: 'Fechar tudo', exp: 'Exportar marcações', imp: 'Importar marcações',
+    foot: 'Gerado em {d}. As marcações ficam salvas neste navegador.', badfile: 'Não consegui ler esse arquivo.',
+    reset: 'Zerar as marcações desta seção', undo: 'Desfazer', resetAt: 'Zerado em {d}.',
+    next: 'Próximo item não marcado', hide: 'Esconder os marcados', alldone: 'Tudo marcado nesta parte.',
+    theme: 'Tema claro/escuro', fold: 'Recolher ou abrir os tópicos', mine: 'Seu valor', credit: 'Site de fãs, sem vínculo com a NCSOFT. Dados do jogo: wikily.gg.', subs: 'Abrir ou recolher os subtópicos', lang: 'Idioma: português / inglês', top: 'Voltar ao topo',
+    crystals: 'Cristais', upTo: 'Vai até o nº {n} de {t}', upNone: 'Nenhum nó ainda', siteGoal: 'Meta do site', topGoal: 'Topo do Global', markUpTo: 'Marcar como pegos até aqui', clearTaken: 'Limpar pegos',
+    clearAsk: 'Limpar os nós marcados como pegos em {b}?', takenHere: 'Pegos neste tabuleiro', node: ['nó', 'nós'], crystal: ['cristal', 'cristais'],
+    start: 'Início', no: 'Nº', topKR: 'dos top KR', cumul: 'acumulado', tipHint: 'Clique para marcar como pego', tipUn: 'Pego. Clique para desmarcar',
+    have: 'Tenho', plan: 'Plano (soma das barras)', left: 'sobram', short: 'faltam', spentAll: 'Já marcados como pegos'},
+  en: {search: 'Search…  ( / )', openall: 'Open all', closeall: 'Close all', exp: 'Export marks', imp: 'Import marks',
+    foot: 'Built on {d}. Your marks are saved in this browser.', badfile: 'Could not read that file.',
+    reset: 'Clear the marks in this section', undo: 'Undo', resetAt: 'Cleared on {d}.',
+    next: 'Next unmarked item', hide: 'Hide marked items', alldone: 'Everything in this part is marked.',
+    theme: 'Light/dark theme', fold: 'Fold or open the topics', mine: 'Your value', credit: 'Fan site, not affiliated with NCSOFT. Game data: wikily.gg.', subs: 'Open or fold the subtopics', lang: 'Language: Portuguese / English', top: 'Back to top',
+    crystals: 'Crystals', upTo: 'Goes up to No. {n} of {t}', upNone: 'No nodes yet', siteGoal: 'Site target', topGoal: 'Global top', markUpTo: 'Mark as taken up to here', clearTaken: 'Clear taken',
+    clearAsk: 'Clear the nodes marked as taken on {b}?', takenHere: 'Taken on this board', node: ['node', 'nodes'], crystal: ['crystal', 'crystals'],
+    start: 'Start', no: 'No.', topKR: 'of top KR players', cumul: 'running total', tipHint: 'Click to mark as taken', tipUn: 'Taken. Click to unmark',
+    have: 'I have', plan: 'Plan (sum of the sliders)', left: 'left over', short: 'short', spentAll: 'Already marked as taken'},
+};
+const KEY = 'aion2guia:v1';
+let S = {checks: {}, open: {}, part: null, theme: null, lang: 'pt', taken: {}, budget: {}, scroll: {}, resets: {}, tab: {}, hideDone: false, crystals: 0, fold: false, folders: {}, subShut: {}, mine: {}};
+try { S = Object.assign(S, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const u = k => (UI[S.lang] || UI.pt)[k] || UI.pt[k];
+const pl = (n, k) => n + ' ' + u(k)[n === 1 ? 0 : 1];
+const make = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+let searching = false;
+const repaint = [];  // things with language-dependent text built in script
+
+// ---------- skill icons ----------
+const icNames = Object.keys(ICONS), icOrder = [...icNames].sort((a, b) => b.length - a.length);
+const icRe = icNames.length ? new RegExp('(?<![\\w])(' + icOrder.map(n => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')(?![\\w])', 'g') : null;
+document.head.appendChild(make('style', '', icNames.map((n, i) => '.ic-' + i + '{background-image:url(' + ICONS[n] + ')}').join('\n')));
+const icon = name => make('i', 'ic ic-' + icNames.indexOf(name));
+function iconize(root) {
+  if (!icRe) return;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode: n =>
+    n.parentNode.closest('svg, button, a, .bctl, .binfo, .csum, .resetrow, .tabs, .pbar') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT});
+  const nodes = []; let n;
+  while ((n = walker.nextNode())) nodes.push(n);
+  const gameText = node => {
+    const td = node.parentNode.closest('td'), head = td && td.closest('table').rows[0].cells[td.cellIndex];
+    return !!head && /texto do jogo|game text|^n[ií]vel \d|^level \d/i.test(head.textContent.trim());
+  };
+  nodes.filter(node => !gameText(node)).forEach(node => {
+    [...node.data.matchAll(icRe)].reverse().forEach(m => {
+      const prev = node.previousSibling;
+      if (m.index === 0 && prev && prev.nodeType === 1 && prev.classList.contains('ic')) return;
+      const at = m.index ? node.splitText(m.index) : node;
+      at.parentNode.insertBefore(icon(m[1]), at);
+    });
+  });
+}
+
+// ---------- settings: a column for the reader's own values (public site) ----------
+if (PUBLIC) $$('.part[data-part=cfg] table.data').forEach(tb => {
+  const head = tb.rows[0], at = [...head.cells].findIndex(c => c.textContent.trim() === 'Sugestão');
+  if (at < 0) return;
+  const sec = tb.closest('details').id, th = make('th', 'head'); th.dataset.ui = 'mine'; head.cells[at].after(th);
+  [...tb.rows].slice(1).forEach(tr => {
+    if (tr.cells.length <= at) return;
+    const key = sec + '|' + tr.cells[0].textContent.trim(), inp = make('input', 'mine'), td = make('td');
+    inp.type = 'text'; inp.value = S.mine[key] || '';
+    inp.oninput = () => { if (inp.value) S.mine[key] = inp.value; else delete S.mine[key]; save(); };
+    td.appendChild(inp); tr.cells[at].after(td);
+  });
+});
+
+// ---------- theme and language ----------
+function applyTheme() {
+  const t = S.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.dataset.theme = t;
+  $('#theme').textContent = t === 'dark' ? '☀' : '☾';
+}
+$('#theme').onclick = () => { S.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'; save(); applyTheme(); };
+function applyLang() {
+  const en = S.lang === 'en';
+  document.documentElement.lang = en ? 'en' : 'pt-BR';
+  clearMarks();
+  $$('[data-t]').forEach(el => {
+    if (el._pt == null) el._pt = el.innerHTML;
+    const tr = EN[el.dataset.t];
+    el.innerHTML = en && tr != null ? tr : el._pt;
+  });
+  $$('.part[data-icons]').forEach(iconize);
+  $$('[data-ui]').forEach(el => el.textContent = u(el.dataset.ui));
+  $$('[data-ui-ph]').forEach(el => el.placeholder = u(el.dataset.uiPh));
+  $$('[data-ui-title]').forEach(el => el.title = u(el.dataset.uiTitle));
+  $('#lang').innerHTML = en ? 'PT · <b>EN</b>' : '<b>PT</b> · EN';
+  $('#foot').textContent = u('foot').replace('{d}', BUILT) + (PUBLIC ? ' ' + u('credit') : '');
+  repaint.forEach(f => f());
+  if (searching) runSearch();
+}
+$('#lang').onclick = () => { S.lang = S.lang === 'en' ? 'pt' : 'en'; save(); applyLang(); };
+
+// ---------- parts, sections, menu ----------
+function fitTables(root) {
+  $$('.tw', root || document).forEach(t => { t.classList.remove('fit'); if (t.clientWidth && t.scrollWidth <= t.clientWidth + 1) t.classList.add('fit'); });
+}
+const paintTitle = () => { const b = $('.partbtn.on span'); if (b) $('#otitle').textContent = b.textContent; };
+$$('details.fold').forEach(d => {
+  if (d.dataset.fold in S.folders) d.open = S.folders[d.dataset.fold];
+  d.addEventListener('toggle', () => { S.folders[d.dataset.fold] = d.open; save(); });
+});
+function paintFold() { $('#outline').classList.toggle('folded', !!S.fold); $('#ofold').textContent = S.fold ? '+' : '−'; }
+$('#ofold').onclick = () => { S.fold = !S.fold; save(); paintFold(); };
+paintFold();
+function showPart(id, keep) {
+  S.part = id; save();
+  $$('.part').forEach(p => p.classList.toggle('on', p.dataset.part === id));
+  $$('.partbtn').forEach(b => b.classList.toggle('on', b.dataset.part === id));
+  for (let f = $('.partbtn.on') && $('.partbtn.on').closest('.fold'); f; f = f.parentNode.closest('.fold')) f.open = true;
+  $$('.toc').forEach(t => t.classList.toggle('on', t.dataset.part === id));
+  paintTitle();
+  fitTables();
+  if (!keep) scrollTo({top: S.scroll[id] || 0, behavior: 'instant'});
+  markCurrent();
+}
+function push(hash) { try { history.pushState(null, '', '#' + hash); } catch (e) {} }
+let picked = null, pickedAt = 0;  // topic chosen in the menu: it stays lit until the reader scrolls away by hand
+function openSection(d, target) {
+  showPart(d.closest('.part').dataset.part, true);
+  d.open = true;
+  picked = (target && target.id) || d.id; pickedAt = Date.now();
+  const pane = target && target.closest('.tabpane');
+  if (pane) pane._show();
+  (target || d).scrollIntoView({behavior: 'smooth', block: 'start'});
+  markCurrent();  // right away: when the place is already on screen nothing scrolls
+}
+function route() {
+  const id = decodeURIComponent(location.hash.slice(1)), el = id && document.getElementById(id);
+  if (!el) return false;
+  if (el.matches('.part')) showPart(el.dataset.part);
+  else if (el.matches('details.sec')) openSection(el);
+  else if (el.closest('details.sec')) openSection(el.closest('details.sec'), el);
+  return true;
+}
+addEventListener('popstate', route);
+$$('.partbtn').forEach(b => b.onclick = () => { endSearch(); push('part-' + b.dataset.part); showPart(b.dataset.part); });
+$$('.toc > li > a').forEach(a => a.onclick = e => {
+  e.preventDefault(); endSearch();
+  const id = a.getAttribute('href').slice(1);
+  push(id); openSection(document.getElementById(id));
+});
+
+function count(root) {
+  const boxes = $$('input[type=checkbox][data-k]', root);
+  return [boxes.filter(b => b.checked).length, boxes.length];
+}
+function refreshCounts() {
+  $$('details.sec').forEach(d => {
+    const [a, n] = count(d), el = $('.cnt', d);
+    el.textContent = n ? a + '/' + n : '';
+    el.classList.toggle('done', n > 0 && a === n);
+    const link = $('.toc a[href="#' + d.id + '"] small');
+    if (link) link.textContent = n ? a + '/' + n : '';
+  });
+  $$('.part').forEach(p => {
+    const [a, n] = count(p);
+    $('.partbtn[data-part="' + p.dataset.part + '"] small').textContent = n ? a + '/' + n : '';
+  });
+}
+$$('input[type=checkbox][data-k]').forEach(b => {
+  const k = b.dataset.k;
+  b.checked = k in S.checks ? S.checks[k] : b.dataset.default === '1';
+  b.onchange = () => { S.checks[k] = b.checked; save(); refreshCounts(); };
+});
+
+// sections: remember open/closed; clear marks with undo
+const stamp = t => new Date(t).toLocaleString(S.lang === 'en' ? 'en-GB' : 'pt-BR', {day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'});
+$$('details.sec').forEach(d => {
+  d.dataset.def = d.open ? '1' : '';
+  if (d.id in S.open) d.open = S.open[d.id];
+  d.addEventListener('toggle', () => { if (d.open) fitTables(d); if (!searching) { S.open[d.id] = d.open; save(); markCurrent(); } });
+  const boxes = $$('input[type=checkbox][data-k]', d);
+  if (!boxes.length) return;
+  const row = make('div', 'resetrow'), btn = make('button', 'reset'), note = make('span'), undo = make('button', 'reset');
+  btn.dataset.ui = 'reset'; undo.dataset.ui = 'undo';
+  row.append(btn, note, undo); $('.body', d).appendChild(row);
+  const paint = () => {
+    const r = S.resets[d.id];
+    note.textContent = r ? u('resetAt').replace('{d}', stamp(r.t)) : '';
+    undo.hidden = !(r && r.prev);
+  };
+  btn.onclick = () => {
+    if (!boxes.some(b => b.checked)) return;
+    const prev = {};
+    boxes.forEach(b => { prev[b.dataset.k] = b.checked; b.checked = false; S.checks[b.dataset.k] = false; });
+    S.resets[d.id] = {t: Date.now(), prev}; save(); refreshCounts(); paint();
+  };
+  undo.onclick = () => {
+    const prev = S.resets[d.id].prev;
+    boxes.forEach(b => { if (b.dataset.k in prev) { b.checked = prev[b.dataset.k]; S.checks[b.dataset.k] = b.checked; } });
+    delete S.resets[d.id]; save(); refreshCounts(); paint();
+  };
+  repaint.push(paint);
+});
+
+// parts with tick boxes: jump to the next unmarked one, hide the marked ones
+const lastJump = {};
+$$('.part').forEach(p => {
+  if (!$('input[data-k]', p)) return;
+  const bar = make('div', 'pbar'), next = make('button'), lab = make('label'), box = make('input', 'hidedone'), txt = make('span');
+  next.dataset.ui = 'next'; txt.dataset.ui = 'hide'; box.type = 'checkbox'; box.checked = S.hideDone;
+  lab.append(box, txt); bar.append(next, lab); $('header', p).appendChild(bar);
+  box.onchange = () => { S.hideDone = box.checked; save(); document.body.classList.toggle('hide-done', S.hideDone); $$('.hidedone').forEach(x => x.checked = S.hideDone); };
+  next.onclick = () => {
+    const open = $$('input[data-k]', p).filter(b => !b.checked), last = lastJump[p.dataset.part];
+    if (!open.length) { alert(u('alldone')); return; }
+    const b = (last && open.find(x => last.compareDocumentPosition(x) & Node.DOCUMENT_POSITION_FOLLOWING)) || open[0];
+    lastJump[p.dataset.part] = b;
+    $$('.flash').forEach(x => x.classList.remove('flash'));
+    b.closest('details.sec').open = true;
+    const row = b.closest('label.chk') || b.closest('tr') || b;
+    row.scrollIntoView({behavior: 'smooth', block: 'center'});
+    row.classList.remove('flash'); void row.offsetWidth; row.classList.add('flash');
+  };
+});
+document.body.classList.toggle('hide-done', S.hideDone);
+
+// ---------- Daevanion boards ----------
+// tabs: one pane per sub-heading that holds a board
+$$('details.sec').forEach(d => {
+  const body = $('.body', d);
+  if (!$('.board', body)) return;
+  const groups = []; let cur = null;
+  [...body.children].forEach(k => { if (k.tagName === 'H3') groups.push(cur = [k]); else if (cur) cur.push(k); });
+  const withBoard = groups.filter(g => g.some(k => k.matches('.board') || $('.board', k)));
+  if (withBoard.length < 2) return;
+  const tabs = make('div', 'tabs'), panes = [];
+  body.insertBefore(tabs, withBoard[0][0]);
+  const show = i => {
+    S.tab[d.id] = i; save();
+    panes.forEach((p, j) => { p.hidden = j !== i; tabs.children[j].classList.toggle('on', j === i); });
+  };
+  withBoard.forEach((g, i) => {
+    const pane = make('div', 'tabpane'); body.insertBefore(pane, g[0]); g.forEach(k => pane.appendChild(k));
+    const name = $('.board', pane).dataset.board, btn = make('button', '', name);
+    btn.appendChild(make('small')); btn.dataset.board = name;
+    btn.onclick = () => { show(i); picked = ($('h3', pane) || d).id; pickedAt = Date.now(); markCurrent(); }; pane._show = () => show(i);
+    tabs.appendChild(btn); panes.push(pane);
+  });
+  show(Math.min(S.tab[d.id] || 0, panes.length - 1));
+});
+
+const NS = 'http://www.w3.org/2000/svg', C = 56, boards = [], tip = $('#tip');
+const el = (n, a, t) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (t != null) e.textContent = t; return e; };
+function wrap(label) {
+  const lines = []; let cur = '';
+  label.split(' ').forEach(w => { if (cur && (cur + ' ' + w).length > 10) { lines.push(cur); cur = w; } else cur = cur ? cur + ' ' + w : w; });
+  lines.push(cur); return lines.slice(0, 3);
+}
+function showTip(n, g, isTaken) {
+  tip.textContent = '';
+  const head = make('b', '', u('no') + ' ' + n.o + ' · ' + n.t);
+  if (n.i) head.prepend(icon(n.i));
+  tip.append(head,
+    make('div', '', pl(n.x, 'crystal') + (n.p != null ? ' · ' + n.p + '% ' + u('topKR') : '') + ' · ' + u('cumul') + ' ' + n.s),
+    make('div', 'hint', u(isTaken ? 'tipUn' : 'tipHint')));
+  tip.hidden = false;
+  const r = g.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = r.right + 8; if (x + w > innerWidth - 8) x = r.left - w - 8;
+  tip.style.left = Math.max(8, x) + 'px';
+  tip.style.top = Math.max(8, Math.min(r.top, innerHeight - h - 8)) + 'px';
+}
+let csum = null;
+function paintSum() {
+  if (!csum) return;
+  const shared = boards.filter(b => !b.solo);  // a board alone in its section (Azphel) has crystals of its own
+  const plan = shared.reduce((s, b) => s + b.budget(), 0), spent = shared.reduce((s, b) => s + b.spent(), 0), diff = S.crystals - plan;
+  $('.have', csum).textContent = u('have');
+  $('.unit', csum).textContent = u('crystal')[1];
+  $('.plan', csum).textContent = u('plan') + ': ' + plan;
+  const d = $('.diff', csum); d.textContent = Math.abs(diff) + ' ' + u(diff >= 0 ? 'left' : 'short'); d.className = 'diff ' + (diff >= 0 ? 'ok' : 'over');
+  $('.spent', csum).textContent = u('spentAll') + ': ' + spent;
+  $$('.tabs button[data-board]').forEach(btn => {
+    const b = boards.find(x => x.name === btn.dataset.board);
+    if (b) $('small', btn).textContent = b.budget() + '/' + b.total + (b.solo ? ' · PvP' : '');
+  });
+}
+$$('.board[data-board]').forEach(host => {
+  const b = BOARDS[host.dataset.board]; if (!b) return;
+  const taken = S.taken[b.name] = S.taken[b.name] || {};
+  let budget = b.def;
+  const same = () => boards.filter(x => x.name === b.name).forEach(x => x.paint());
+  host.innerHTML = '<div class="bctl"><span><span class="bl"></span>: <b class="bv"></b> / ' + b.total + '</span><b class="bupto"></b>' +
+    '<input type="range" min="0" max="' + b.total + '" step="1"><button class="bdef"></button><button class="btop"></button>' +
+    '<button class="bmark"></button><button class="bclr"></button></div><div class="binfo"></div>';
+  const svg = el('svg', {viewBox: '0 0 ' + b.size * C + ' ' + b.size * C});
+  b.edges.forEach(([c, r, w]) => svg.appendChild(el('line', {class: 'edge', x1: c * C + C / 2, y1: r * C + C / 2, x2: (c + (w === 'h')) * C + C / 2, y2: (r + (w === 'v')) * C + C / 2})));
+  let startText = null;
+  const groups = b.nodes.map(n => {
+    const g = el('g', {class: 'nd ' + n.k, transform: 'translate(' + (n.c * C + 3) + ' ' + (n.r * C + 3) + ')'});
+    g.appendChild(el('rect', {width: C - 6, height: C - 6, rx: 6}));
+    if (n.k === 'start') g.appendChild(startText = el('text', {class: 'o', x: (C - 6) / 2, y: 30, 'text-anchor': 'middle'}));
+    else {
+      g.appendChild(el('text', {class: 'o', x: 4, y: 12}, n.o));
+      if (n.i) g.appendChild(el('image', {href: ICONS[n.i], x: 27, y: 2, width: 19, height: 19}));
+      const lines = wrap(n.l), top = (n.i ? 19 : 13) + ((n.i ? 30 : 36) - lines.length * 8.5) / 2 + 7;
+      lines.forEach((t, i) => g.appendChild(el('text', {class: 'l', x: (C - 6) / 2, y: top + i * 8.5, 'text-anchor': 'middle'}, t)));
+      g.onclick = () => { if (taken[n.o]) delete taken[n.o]; else taken[n.o] = true; save(); same(); showTip(n, g, !!taken[n.o]); };
+      g.onmouseenter = () => showTip(n, g, !!taken[n.o]);
+      g.onmouseleave = () => { tip.hidden = true; };
+    }
+    svg.appendChild(g); return [n, g];
+  });
+  host.appendChild(svg);
+  const range = $('input[type=range]', host);
+  const spent = () => b.nodes.reduce((s, n) => s + (taken[n.o] ? n.x : 0), 0);
+  function paint() {
+    budget = S.budget[b.name] != null ? S.budget[b.name] : b.def;
+    range.value = budget; $('.bv', host).textContent = budget;
+    $('.bl', host).textContent = u('crystals');
+    $('.bdef', host).textContent = u('siteGoal') + ' (' + b.def + ')';
+    $('.btop', host).textContent = u('topGoal') + ' (' + b.top + ')';
+    $('.bmark', host).textContent = u('markUpTo'); $('.bclr', host).textContent = u('clearTaken');
+    if (startText) startText.textContent = u('start');
+    const last = b.nodes.reduce((m, n) => n.k !== 'start' && n.s <= budget ? Math.max(m, n.o) : m, 0);
+    $('.bupto', host).textContent = last ? u('upTo').replace('{n}', last).replace('{t}', b.nodes.length - 1) : u('upNone');
+    groups.forEach(([n, g]) => {
+      if (n.k === 'start') return;
+      g.classList.toggle('dim', n.s > budget);
+      g.classList.toggle('taken', !!taken[n.o]);
+      g.classList.toggle('last', n.o === last);
+      if (n.o === last) svg.appendChild(g);  // on top, so its glow is not covered by the neighbours
+    });
+    $('.binfo', host).textContent = u('takenHere') + ': ' + pl(Object.keys(taken).length, 'node') + ', ' + pl(spent(), 'crystal') + '.';
+    paintSum();
+  }
+  const setBudget = v => { S.budget[b.name] = v; save(); same(); };
+  range.oninput = () => setBudget(+range.value);
+  $('.bdef', host).onclick = () => setBudget(b.def);
+  $('.btop', host).onclick = () => setBudget(b.top);
+  $('.bmark', host).onclick = () => { b.nodes.forEach(n => { if (n.k !== 'start' && n.s <= budget) taken[n.o] = true; }); save(); same(); };
+  $('.bclr', host).onclick = () => { if (confirm(u('clearAsk').replace('{b}', b.name))) { Object.keys(taken).forEach(k => delete taken[k]); save(); same(); } };
+  boards.push({name: b.name, total: b.total, budget: () => (S.budget[b.name] != null ? S.budget[b.name] : b.def), spent, paint, solo: !!b.own});
+});
+if (boards.some(b => !b.solo)) {
+  const anchor = $('.tabs') || $('.board');
+  csum = make('div', 'csum');
+  csum.innerHTML = '<span class="own"><span class="have"></span><button class="dec">−</button><input type="number" min="0" max="999"><button class="inc">+</button>' +
+    '<span class="unit"></span></span><span class="plan"></span><span class="diff"></span><span class="spent"></span>';
+  anchor.parentNode.insertBefore(csum, anchor);
+  const inp = $('input', csum), set = v => { S.crystals = Math.max(0, Math.min(999, Math.round(v) || 0)); inp.value = S.crystals; save(); paintSum(); };
+  inp.value = S.crystals;
+  inp.onchange = () => set(+inp.value);
+  $('.dec', csum).onclick = () => set(S.crystals - 1);
+  $('.inc', csum).onclick = () => set(S.crystals + 1);
+  repaint.push(() => boards.forEach(b => b.paint()));
+}
+
+// ---------- tools: pieces shared by the calculators and the routine ----------
+const fmtN = (x, d) => x.toLocaleString(S.lang === 'en' ? 'en-US' : 'pt-BR', {maximumFractionDigits: d || 0, minimumFractionDigits: d || 0});
+function numBox(get, set, min, max, step, dec, after) {
+  const w = make('span', 'num'), down = make('button', '', '−'), inp = make('input'), up = make('button', '', '+');
+  const put = v => { const f = dec ? 100 : 1; v = Math.max(min, Math.min(max, Math.round((+v || 0) * f) / f)); set(v); inp.value = v; save(); after(); };
+  inp.type = 'number'; inp.min = min; inp.max = max; inp.step = dec ? 0.01 : 1; inp.value = get();
+  down.onclick = () => put(get() - step); up.onclick = () => put(get() + step); inp.onchange = () => put(inp.value);
+  w.append(down, inp, up); return w;
+}
+function pickBox(value, options, set, after) {
+  const sel = make('select');
+  options.forEach(([v, text, off]) => { const o = make('option', '', text); o.value = v; o.disabled = !!off; sel.appendChild(o); });
+  sel.value = value; sel.onchange = () => { set(sel.value); save(); after(); };
+  return sel;
+}
+const labeled = (text, control) => { const lab = make('label'); lab.append(make('span', '', text), control); return lab; };
+function toolTable(host, heads, cls) {
+  const w = make('div', 'tw'), tb = make('table', 'data ' + (cls || '')), tr = tb.insertRow();
+  heads.forEach(h => tr.appendChild(make('th', '', h))); w.appendChild(tb); host.appendChild(w); return tb;
+}
+
+// ---------- crafting calculator ----------
+const CUI = {
+  pt: {pieces: 'Peças que vou fabricar', piece: 'Peça', target: 'Quero chegar em', own: 'Já tenho', none: 'Nenhuma', qty: 'Quantidade', reset: 'Voltar ao padrão',
+    resetAsk: 'Voltar a calculadora ao padrão? Isso apaga as peças escolhidas, as chances, os preços e o que você marcou em "Tenho".',
+    stepsOf: 'Etapas de', step: 'Etapa', recipe: 'Receita (por craft)', succ: 'Sucesso %', combo: 'Combo %', have: 'Já tenho', crafts: 'Crafts em média',
+    lv: '{p} nível {n}', tc: '{p}, Transfer Crafting', onlyS: 'Só a versão Splendent segue adiante', onlyMiss: 'Só para as que não saíram Splendent no combo',
+    turns: 'Transforma: {g}', done: 'Você já tem essa peça, ou uma melhor.', nothing: 'Coloque quantidade em pelo menos uma peça.',
+    mats: 'Material total, em média', mat: 'Material', need: 'Preciso', inv: 'Tenho', miss: 'Falta', from: 'De onde vem', price: 'Preço por unidade (Kina)', cost: 'Custo do que falta (Kina)', total: 'Total',
+    src: {ore: 'Essence Extraction: Ore', odyle: 'Essence Extraction: Odyle', gem: 'Essence Extraction: Gem', mob: 'Monstros de nível 10 a 49',
+      stone: 'Monstros e Expeditions (Conquest)', exped: 'Expeditions (Conquest)', essence: 'Chefes de campo de nível 45 e Expeditions (Conquest)',
+      npc: 'Merchant da profissão ou Shop do menu'}},
+  en: {pieces: 'Pieces I am going to craft', piece: 'Piece', target: 'I want to reach', own: 'I have', none: 'None', qty: 'Quantity', reset: 'Back to defaults',
+    resetAsk: 'Put the calculator back to its defaults? This clears the chosen pieces, the chances, the prices and what you entered under "I have".',
+    stepsOf: 'Steps of', step: 'Step', recipe: 'Recipe (per craft)', succ: 'Success %', combo: 'Combo %', have: 'I have', crafts: 'Crafts on average',
+    lv: '{p} level {n}', tc: '{p}, Transfer Crafting', onlyS: 'Only the Splendent version moves on', onlyMiss: 'Only for the ones that did not come out Splendent on the combo',
+    turns: 'Transforms: {g}', done: 'You already have this piece, or a better one.', nothing: 'Set a quantity on at least one piece.',
+    mats: 'Total material, on average', mat: 'Material', need: 'I need', inv: 'I have', miss: 'Missing', from: 'Where it comes from', price: 'Price per unit (Kina)', cost: 'Cost of what is missing (Kina)', total: 'Total',
+    src: {ore: 'Essence Extraction: Ore', odyle: 'Essence Extraction: Odyle', gem: 'Essence Extraction: Gem', mob: 'Monsters of level 10 to 49',
+      stone: 'Monsters and Expeditions (Conquest)', exped: 'Expeditions (Conquest)', essence: 'Level 45 field bosses and Expeditions (Conquest)',
+      npc: 'Profession Merchant or the menu Shop'}},
+};
+const RANK = ['none', 'true', 'trueS', 'white', 'whiteS', 'wise', 'wiseS'], STAGES = [['true', 'trueS'], ['white', 'whiteS'], ['wise', 'wiseS']], CHAIN = ['base', 'expert', 'artisan'];
+const calcHost = $('#calc');
+if (calcHost && CALC.pieces) {
+  const fresh = () => ({list: {Dagger: {qty: 1, target: 'true', own: 'none'}}, view: 'Dagger', succ: {}, combo: {}, have: {}, price: {}, inv: {}});
+  const old = S.craft || {};
+  S.craft = Object.assign(fresh(), old.piece ? {list: {[old.piece]: {qty: old.qty || 1, target: old.target || 'true', own: old.own || 'none'}}, view: old.piece} : {}, old);
+  ['piece', 'target', 'own', 'qty'].forEach(k => delete S.craft[k]);  // the calculator used to hold a single piece
+  const cu = k => (CUI[S.lang] || CUI.pt)[k];
+  const entry = name => S.craft.list[name] || (S.craft.list[name] = {qty: 0, target: 'true', own: 'none'});
+  const pct = (map, key, def) => Math.max(1, Math.min(100, map[key] != null ? map[key] : def));
+  const active = () => CALC.pieces.filter(P => entry(P.piece).qty > 0);
+  // average number of crafts of every step that the target of this piece needs
+  function plan(P) {
+    const c = S.craft, e = entry(P.piece), key = t => P.prof + ':' + t;
+    const s = t => pct(c.succ, key(t), 80) / 100, k = t => pct(c.combo, key(t), 25) / 100;
+    const t = RANK.indexOf(e.target), o = RANK.indexOf(e.own), crafts = {};
+    if (o >= t) return {P, crafts, steps: [], done: true};
+    let chain = 0;
+    STAGES.forEach(([n, sp], i) => {
+      const rn = 2 * i + 1, rs = rn + 1;
+      if (t >= rn && o < rn) { crafts[n] = e.qty / s(n); chain += crafts[n]; }
+      if (t >= rs && o < rs) crafts[sp] = (o < rn ? e.qty * (1 - k(n)) : e.qty) / s(sp);
+    });
+    if (chain) [...CHAIN].reverse().forEach(tier => {
+      crafts[tier] = Math.max(0, chain - (c.have[P.piece + ':' + tier] || 0)) / (s(tier) * k(tier));
+      chain = crafts[tier];
+    });
+    return {P, crafts, steps: P.steps.filter(x => x.tier in crafts), t, o};
+  }
+  const price = name => S.craft.price[name] != null ? S.craft.price[name] : CALC.npc[name] || 0;
+  function totals(plans) {
+    const sum = {};
+    plans.forEach(pl => pl.steps.forEach(st => st.mats.forEach(([name, q]) =>
+      (CALC.sub[name] || [[name, 1]]).forEach(([raw, n]) => { sum[raw] = (sum[raw] || 0) + pl.crafts[st.tier] * q * n; }))));
+    return sum;
+  }
+  const viewed = () => { const a = active(); return a.find(P => P.piece === S.craft.view) || a[0]; };
+  const outs = [];  // cells that only change their number
+  function paint() {
+    const sum = totals(active().map(plan)), view = viewed(), vp = view && plan(view);
+    let all = 0;
+    outs.forEach(([cell, kind, key]) => {
+      if (kind === 'crafts') { const x = vp.crafts[key] || 0; cell.textContent = fmtN(x, x && x < 10 ? 1 : 0); return; }
+      const need = Math.ceil((sum[key] || 0) - 1e-9) || 0, miss = Math.max(0, need - (S.craft.inv[key] || 0));
+      if (kind === 'need') cell.textContent = fmtN(need);
+      if (kind === 'miss') { cell.textContent = fmtN(miss); cell.classList.toggle('ok', !miss); }
+      if (kind === 'cost') { const v = miss * price(key); all += v; cell.textContent = v ? fmtN(v) : '—'; }
+      if (kind === 'total') cell.textContent = all ? fmtN(all) : '—';
+    });
+  }
+  function render() {
+    const c = S.craft;
+    outs.length = 0; calcHost.textContent = '';
+    // ----- the pieces
+    calcHost.appendChild(make('p', 'chead', cu('pieces')));
+    const pieces = toolTable(calcHost, [cu('piece'), cu('qty'), cu('target'), cu('own')], 'cpieces');
+    CALC.pieces.forEach(P => {
+      const e = entry(P.piece), tr = pieces.insertRow(), name = t => P.steps.find(x => x.tier === t).name;
+      tr.className = e.qty ? '' : 'off';
+      const a = tr.insertCell(); a.className = 'key'; a.append(make('b', '', P.piece), make('small', '', P.prof));
+      tr.insertCell().appendChild(numBox(() => e.qty, v => { e.qty = v; }, 0, 20, 1, false, render));
+      tr.insertCell().appendChild(pickBox(e.target, RANK.slice(1).map(t => [t, name(t)]), v => { e.target = v; if (RANK.indexOf(e.own) >= RANK.indexOf(v)) e.own = 'none'; }, render));
+      tr.insertCell().appendChild(pickBox(e.own, RANK.slice(0, 6).map(t => [t, t === 'none' ? cu('none') : name(t), RANK.indexOf(t) >= RANK.indexOf(e.target)]), v => { e.own = v; }, render));
+    });
+    const reset = make('button', '', cu('reset'));
+    reset.onclick = () => { if (confirm(cu('resetAsk'))) { S.craft = fresh(); save(); render(); } };
+    const bar = make('div', 'cbar'); bar.appendChild(reset); calcHost.appendChild(bar);
+    const act = active();
+    if (!act.length) { calcHost.appendChild(make('p', 'note', cu('nothing'))); return; }
+    // ----- the steps of one of them
+    const P = viewed(), pl = plan(P), head = make('p', 'chead');
+    head.append(cu('stepsOf') + ' ', pickBox(P.piece, act.map(x => [x.piece, x.piece]), v => { c.view = v; }, render));
+    calcHost.appendChild(head);
+    if (pl.done) calcHost.appendChild(make('p', 'note', cu('done')));
+    else {
+      const steps = toolTable(calcHost, [cu('step'), cu('recipe'), cu('succ'), cu('combo'), cu('have'), cu('crafts')], 'csteps');
+      pl.steps.forEach(st => {
+        const tr = steps.insertRow(), key = P.prof + ':' + st.tier, chain = CHAIN.includes(st.tier);
+        const stage = STAGES.findIndex(x => x.includes(st.tier)), isS = stage >= 0 && STAGES[stage][1] === st.tier;
+        const a = tr.insertCell(); a.className = 'key'; a.appendChild(make('b', '', st.name));
+        a.appendChild(make('small', '', cu(st.lv ? 'lv' : 'tc').replace('{p}', P.prof).replace('{n}', st.lv)));
+        if (chain) a.appendChild(make('small', '', cu('onlyS')));
+        if (isS && pl.o < 2 * stage + 1) a.appendChild(make('small', '', cu('onlyMiss')));
+        const b = tr.insertCell();
+        b.appendChild(make('span', '', (st.chain ? ['1 ' + st.chain] : []).concat(st.mats.map(([n, q]) => q + ' ' + n)).join(' · ')));
+        if (st.gear) b.appendChild(make('small', '', cu('turns').replace('{g}', st.gear)));
+        tr.insertCell().appendChild(numBox(() => pct(c.succ, key, 80), v => { c.succ[key] = v; }, 1, 100, 5, true, paint));
+        // the combo only matters where the Splendent version is what moves on
+        const needsCombo = chain || (stage >= 0 && !isS && pl.t >= 2 * stage + 2);
+        const d = tr.insertCell();
+        if (needsCombo) d.appendChild(numBox(() => pct(c.combo, key, 25), v => { c.combo[key] = v; }, 1, 100, 5, true, paint)); else d.textContent = '—';
+        const e = tr.insertCell(), hk = P.piece + ':' + st.tier;
+        if (chain) e.appendChild(numBox(() => c.have[hk] || 0, v => { c.have[hk] = v; }, 0, 999, 1, false, paint)); else e.textContent = '—';
+        const f = tr.insertCell(); f.className = 'out'; outs.push([f, 'crafts', st.tier]);
+      });
+    }
+    // ----- the material of all of them
+    calcHost.appendChild(make('p', 'chead', cu('mats')));  // not an h3: the menu lists those and this one is redrawn
+    const mats = toolTable(calcHost, [cu('mat'), cu('need'), cu('inv'), cu('miss'), cu('from'), cu('price'), cu('cost')], 'cmats');
+    const field = (map, n, shown) => {
+      const inp = make('input', 'cprice'); inp.type = 'number'; inp.min = 0; inp.value = shown || ''; inp.placeholder = '0';
+      inp.oninput = () => { if (inp.value === '') delete map[n]; else map[n] = Math.max(0, +inp.value || 0); save(); paint(); };
+      return inp;
+    };
+    Object.keys(totals(act.map(plan))).forEach(n => {
+      const tr = mats.insertRow(), a = tr.insertCell(), b = tr.insertCell(), i = tr.insertCell(), m = tr.insertCell(), s = tr.insertCell(), p = tr.insertCell(), k = tr.insertCell();
+      a.className = 'key'; a.textContent = n; b.className = 'out'; m.className = 'out miss'; k.className = 'out'; s.textContent = cu('src')[CALC.src[n]] || '';
+      i.appendChild(field(c.inv, n, c.inv[n])); p.appendChild(field(c.price, n, price(n)));
+      outs.push([b, 'need', n], [m, 'miss', n], [k, 'cost', n]);
+    });
+    const tot = mats.insertRow(); tot.className = 'tot';
+    const tc = tot.insertCell(); tc.colSpan = 6; tc.textContent = cu('total');
+    const tv = tot.insertCell(); tv.className = 'out'; outs.push([tv, 'total']);
+    paint(); fitTables(calcHost);
+  }
+  repaint.push(render);
+}
+
+// ---------- enhancement calculator ----------
+const EUI = {
+  pt: {item: 'Peça', from: 'Do nível', to: 'Até o nível', lvl: 'Nível', chance: 'Chance', tries: 'Tentativas em média', kina1: 'Kina por tentativa', st1: 'Enhance Stone por tentativa',
+    kina: 'Kina em média', st: 'Enhance Stone em média', total: 'Total', scroll: 'Também gasta 1 {s} por tentativa: {n} em média.',
+    gUnique: 'Unique: armas, armaduras e joias', gEpic: 'Epic: armas, armaduras e joias', gOwn: 'Amuleto, cinto, bracelete e runa', il: 'Item level {n} · ex.: {x}', own: '{g} {r} · item level {n}',
+    pity: 'Do +11 em diante cada falha soma {n}% na tentativa seguinte; a média já conta isso.', drop: 'Nesta peça a falha baixa o nível. A conta supõe que baixa 1 nível por falha.', sure: 'Todos os níveis deste intervalo têm 100% de chance.'},
+  en: {item: 'Piece', from: 'From level', to: 'Up to level', lvl: 'Level', chance: 'Chance', tries: 'Attempts on average', kina1: 'Kina per attempt', st1: 'Enhance Stone per attempt',
+    kina: 'Kina on average', st: 'Enhance Stone on average', total: 'Total', scroll: 'It also spends 1 {s} per attempt: {n} on average.',
+    gUnique: 'Unique: weapons, armour and jewellery', gEpic: 'Epic: weapons, armour and jewellery', gOwn: 'Amulet, belt, bracelet and rune', il: 'Item level {n} · e.g. {x}', own: '{g} {r} · item level {n}',
+    pity: 'From +11 onwards each failure adds {n}% to the next attempt; the average already counts that.', drop: 'On this piece a failure lowers the level. The maths assumes it drops 1 level per failure.', sure: 'Every level in this range has a 100% chance.'},
+};
+const enhHost = $('#enh');
+if (enhHost && CALC.enh) {
+  const E = CALC.enh;
+  S.enh = Object.assign({tier: E.def, from: 0, to: 15}, S.enh || {});
+  const eu = k => (EUI[S.lang] || EUI.pt)[k];
+  const tier = () => E.tiers.find(t => t.id === S.enh.tier) || E.tiers[0];
+  // average number of attempts at every level to take the piece from level a to level b
+  function tries(T, a, b) {
+    const n = Array(T.lv.length + 1).fill(0);
+    if (T.drop) {  // a failure at level k sends the piece back: level k-1 has to be redone before trying k again
+      let prev = n.slice();
+      for (let k = 1; k <= b; k++) {
+        const p = T.lv[k - 1][0] / 100, cur = prev.map(x => x * (1 - p) / p);
+        cur[k] += 1 / p;
+        if (k > a) cur.forEach((x, j) => { n[j] += x; });
+        prev = cur;
+      }
+    } else for (let k = a + 1; k <= b; k++) {  // each failure raises the chance of the next attempt
+      let alive = 1, e = 0;
+      for (let i = 0; i < 400 && alive > 1e-10; i++) { e += alive; alive *= 1 - Math.min(1, (T.lv[k - 1][0] + i * T.pity) / 100); }
+      n[k] = e;
+    }
+    return n;
+  }
+  function render() {
+    const c = S.enh, T = tier(), max = T.lv.length;
+    c.to = Math.max(1, Math.min(max, c.to)); c.from = Math.max(0, Math.min(c.to - 1, c.from));
+    enhHost.textContent = '';
+    const sel = make('select'), groups = {gUnique: [], gEpic: [], gOwn: []};
+    E.tiers.forEach(t => groups[t.gear ? 'gOwn' : 'g' + t.grade].push(t));
+    Object.keys(groups).forEach(g => {
+      const og = make('optgroup'); og.label = eu(g);
+      groups[g].forEach(t => { const o = make('option', '', t.gear ? eu('own').replace('{g}', t.gear).replace('{r}', t.grade).replace('{n}', t.ilvl) : eu('il').replace('{n}', t.ilvl).replace('{x}', t.ex)); o.value = t.id; og.appendChild(o); });
+      sel.appendChild(og);
+    });
+    sel.value = T.id; sel.onchange = () => { c.tier = sel.value; save(); render(); };
+    const ctl = make('div', 'cctl');
+    ctl.append(labeled(eu('item'), sel), labeled(eu('from'), numBox(() => c.from, v => { c.from = v; }, 0, max - 1, 1, false, () => { if (c.to <= c.from) c.to = c.from + 1; save(); render(); })),
+      labeled(eu('to'), numBox(() => c.to, v => { c.to = v; }, 1, max, 1, false, () => { if (c.from >= c.to) c.from = c.to - 1; save(); render(); })));
+    enhHost.appendChild(ctl);
+    const n = tries(T, c.from, c.to), tb = toolTable(enhHost, [eu('lvl'), eu('chance'), eu('tries'), eu('kina1'), eu('st1'), eu('kina'), eu('st')], 'cenh');
+    let all = 0, kina = 0, stones = 0;
+    n.forEach((x, k) => {
+      if (!x) return;
+      const [p, kn, st] = T.lv[k - 1], tr = tb.insertRow();
+      all += x; kina += x * kn; stones += x * st;
+      [['+' + k, 'key'], [p + '%', ''], [fmtN(x, x % 1 ? 1 : 0), 'out'], [fmtN(kn), 'r'], [fmtN(st), 'r'], [fmtN(Math.round(x * kn)), 'out'], [fmtN(Math.round(x * st)), 'out']]
+        .forEach(([text, cls]) => { const td = tr.insertCell(); td.className = cls; td.textContent = text; });
+    });
+    const tot = tb.insertRow(); tot.className = 'tot';
+    [[eu('total'), ''], ['', ''], [fmtN(all, all % 1 ? 1 : 0), 'out'], ['', ''], ['', ''], [fmtN(Math.round(kina)), 'out'], [fmtN(Math.round(stones)), 'out']]
+      .forEach(([text, cls]) => { const td = tot.insertCell(); td.className = cls; td.textContent = text; });
+    const chancy = T.lv.slice(c.from, c.to).some(x => x[0] < 100);
+    const notes = [T.scroll && eu('scroll').replace('{s}', T.scroll).replace('{n}', fmtN(all, all % 1 ? 1 : 0)), !chancy ? eu('sure') : T.drop ? eu('drop') : eu('pity').replace('{n}', T.pity)];
+    notes.filter(Boolean).forEach(text => enhHost.appendChild(make('p', 'note', text)));
+    fitTables(enhHost);
+  }
+  repaint.push(render);
+}
+
+// ---------- daily and weekly routine ----------
+const RUI = {
+  pt: {chars: 'Personagens', name: 'Nome', main: 'Main', alt: 'Alt {n}', choose: 'Escolher o que aparece', chosen: 'Pronto', show: 'Mostrar',
+    daily: 'Reset diário em', weekly: 'Reset semanal em', at: 'às {t}', d: 'd', h: 'h', min: 'min',
+    charges: 'Entradas que acumulam', weeks: 'Limites da semana', act: 'Atividade', rate: 'Recarga', stored: 'Guardadas', limit: 'Limite', doneCol: 'Feitas', status: 'Situação',
+    perDay: '{n} por dia, até {c}', perWeek: '{n} por semana', perWeekH: '{n} h por semana',
+    full: 'No máximo: a próxima recarga se perde', empty: 'Sem entradas', done: 'Completo', none: 'Nada escolhido nesta lista.',
+    groups: {'Dungeons': 'Dungeons', 'Final bosses': 'Chefes finais', 'Sanctuary': 'Sanctuary', 'Abyss and growth time': 'Abyss e tempo de crescimento', 'Other': 'Outros'}},
+  en: {chars: 'Characters', name: 'Name', main: 'Main', alt: 'Alt {n}', choose: 'Choose what shows', chosen: 'Done', show: 'Show',
+    daily: 'Daily reset in', weekly: 'Weekly reset in', at: 'at {t}', d: 'd', h: 'h', min: 'min',
+    charges: 'Entries that stack up', weeks: 'Weekly limits', act: 'Activity', rate: 'Recharge', stored: 'Stored', limit: 'Limit', doneCol: 'Done', status: 'Status',
+    perDay: '{n} a day, up to {c}', perWeek: '{n} a week', perWeekH: '{n} h a week',
+    full: 'At the cap: the next recharge is lost', empty: 'No entries', done: 'Complete', none: 'Nothing chosen in this list.',
+    groups: {'Dungeons': 'Dungeons', 'Final bosses': 'Final bosses', 'Sanctuary': 'Sanctuary', 'Abyss and growth time': 'Abyss and growth time', 'Other': 'Other'}},
+};
+const rtHost = $('#routine');
+if (rtHost && ROUTINE.length) {
+  // the reset is at 07:00 UTC every day; the weekly one on Wednesday at the same time (1 Jan 1970 was a Thursday)
+  const HOUR = 3600000, DAY = 24 * HOUR, WEEK = 7 * DAY, DAY0 = 7 * HOUR, WEEK0 = 6 * DAY + 7 * HOUR;
+  S.rt = Object.assign({chars: 1, cur: 0, names: [], hide: {}, v: {}, day: null, week: null}, S.rt || {});
+  const ru = k => (RUI[S.lang] || RUI.pt)[k];
+  const stacks = a => a.per === 'day', vals = i => S.rt.v[i] || (S.rt.v[i] = {});
+  const val = (i, a) => { const v = vals(i)[a.id]; return v != null ? v : stacks(a) ? a.n : 0; };
+  const charName = i => S.rt.names[i] || (i ? ru('alt').replace('{n}', i) : ru('main'));
+  let editing = false;
+  // new day: every stacking entry gains its recharge, up to the cap; new week: the weekly counters go back to zero
+  function roll() {
+    const now = Date.now(), day = Math.floor((now - DAY0) / DAY), week = Math.floor((now - WEEK0) / WEEK), r = S.rt;
+    let changed = false;
+    if (r.day != null && day > r.day) for (let i = 0; i < 6; i++) if (i < r.chars || r.v[i]) ROUTINE.filter(stacks).forEach(a => { vals(i)[a.id] = Math.min(a.cap, val(i, a) + a.n * (day - r.day)); changed = true; });
+    if (r.week != null && week > r.week) Object.values(r.v).forEach(v => ROUTINE.filter(a => !stacks(a)).forEach(a => { delete v[a.id]; changed = true; }));
+    if (r.day !== day || r.week !== week) { r.day = day; r.week = week; save(); }
+    return changed;
+  }
+  const left = ms => { const m = Math.max(0, Math.ceil(ms / 60000)), d = Math.floor(m / 1440), h = Math.floor(m % 1440 / 60); return (d ? d + ' ' + ru('d') + ' ' : '') + (d || h ? h + ' ' + ru('h') + ' ' : '') + (d ? '' : m % 60 + ' ' + ru('min')); };
+  const clock = t => new Date(t).toLocaleTimeString(S.lang === 'en' ? 'en-GB' : 'pt-BR', {hour: '2-digit', minute: '2-digit'});
+  let info = null;
+  function paintInfo() {
+    if (!info) return;
+    const now = Date.now(), nextDay = (S.rt.day + 1) * DAY + DAY0, nextWeek = (S.rt.week + 1) * WEEK + WEEK0;
+    const weekday = new Date(nextWeek).toLocaleDateString(S.lang === 'en' ? 'en-GB' : 'pt-BR', {weekday: 'long'});
+    info.textContent = '';
+    info.append(ru('daily') + ' ', make('b', '', left(nextDay - now)), ' (' + ru('at').replace('{t}', clock(nextDay)) + ') · ' + ru('weekly') + ' ', make('b', '', left(nextWeek - now)), ' (' + weekday + ', ' + clock(nextWeek) + ')');
+  }
+  function render() {
+    roll();
+    const r = S.rt; r.cur = Math.min(r.cur, r.chars - 1);
+    rtHost.textContent = '';
+    const ctl = make('div', 'cctl'), tabs = make('span', 'rtabs'), name = make('input'), choose = make('button', '', ru(editing ? 'chosen' : 'choose'));
+    for (let i = 0; i < r.chars; i++) { const b = make('button', i === r.cur ? 'on' : '', charName(i)); b.onclick = () => { r.cur = i; save(); render(); }; tabs.appendChild(b); }
+    name.type = 'text'; name.maxLength = 16; name.value = charName(r.cur);
+    name.onchange = () => { r.names[r.cur] = name.value.trim(); save(); render(); };
+    choose.onclick = () => { editing = !editing; render(); };
+    ctl.append(labeled(ru('chars'), numBox(() => r.chars, v => { r.chars = v; }, 1, 6, 1, false, render)), tabs, labeled(ru('name'), name), choose);
+    info = make('div', 'rinfo');
+    rtHost.append(ctl, info);
+    paintInfo();
+    [[ru('charges'), ROUTINE.filter(stacks), [ru('act'), ru('rate'), ru('stored'), ru('status')]],
+     [ru('weeks'), ROUTINE.filter(a => !stacks(a)), [ru('act'), ru('limit'), ru('doneCol'), ru('status')]]].forEach(([title, list, heads]) => {
+      rtHost.appendChild(make('p', 'chead', title));
+      const shown = list.filter(a => editing || !r.hide[a.id]);
+      if (!shown.length) { rtHost.appendChild(make('p', 'note', ru('none'))); return; }
+      const tb = toolTable(rtHost, editing ? [ru('show')].concat(heads) : heads, 'crt');
+      let group = null;
+      shown.forEach(a => {
+        if (a.group !== group) { group = a.group; const g = tb.insertRow(); g.className = 'grp'; const td = g.insertCell(); td.colSpan = heads.length + (editing ? 1 : 0); td.textContent = ru('groups')[group] || group; }
+        const tr = tb.insertRow(), max = stacks(a) ? a.cap : a.n;
+        if (editing) { const box = make('input'); box.type = 'checkbox'; box.checked = !r.hide[a.id]; box.onchange = () => { if (box.checked) delete r.hide[a.id]; else r.hide[a.id] = true; save(); tr.classList.toggle('off', !box.checked); }; tr.insertCell().appendChild(box); tr.classList.toggle('off', !!r.hide[a.id]); }
+        const n = tr.insertCell(), rate = tr.insertCell(), c = tr.insertCell(), st = tr.insertCell();
+        n.className = 'key'; n.textContent = a.name; st.className = 'st';
+        rate.textContent = stacks(a) ? ru('perDay').replace('{n}', a.n).replace('{c}', a.cap) : ru(a.unit ? 'perWeekH' : 'perWeek').replace('{n}', a.n);
+        const mark = () => { const v = val(r.cur, a), full = stacks(a) && v >= max, done = !stacks(a) && v >= max;
+          tr.classList.toggle('full', full); tr.classList.toggle('done', done);
+          st.textContent = full ? ru('full') : done ? ru('done') : stacks(a) && !v ? ru('empty') : ''; };
+        c.append(numBox(() => val(r.cur, a), v => { vals(r.cur)[a.id] = v; }, 0, max, 1, false, mark), make('span', 'of', ' / ' + max + (a.unit ? ' h' : '')));
+        mark();
+      });
+    });
+    fitTables(rtHost);
+  }
+  repaint.push(render);
+  setInterval(() => { if (roll()) render(); else paintInfo(); }, 30000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) { if (roll()) render(); else paintInfo(); } });
+}
+
+// ---------- build editor ----------
+const BUI = {
+  pt: {build: 'Build', name: 'Nome', cls: 'Classe', race: 'Facção', newName: 'Minha build', add: 'Nova', copy: 'Duplicar', del: 'Apagar', delAsk: 'Apagar a build “{n}”? Não dá para desfazer.',
+    saveFile: 'Salvar em arquivo', loadFile: 'Carregar arquivo', badFile: 'Esse arquivo não é uma build deste site.', copyOf: '{n} (cópia)',
+    tabs: {skills: 'Skills', daev: 'Daevanion', gear: 'Equipamento', extra: 'Títulos, Arcana e asas', notes: 'Notas'},
+    sumPoints: 'Skill Points gastos', sumShards: 'Stigma Shards gastos', sumCrystals: 'Daevanion Crystals', sumAzphel: 'Crystals do Azphel', sumStig: 'Stigmas equipados',
+    A: 'Skills ativas', P: 'Passivas', S: 'Stigmas', skill: 'Skill', trained: 'Nível treinado', fromDaev: '+ Daevanion', fromGear: '+ equipamento', final: 'Nível final', specs: 'Specs', on: 'Equipado',
+    specSlots: '{a} de {b}', specAt: 'abre no nível {n}', noSpecs: 'Specs a partir do nível 8', stigFull: 'Já há 4 stigmas equipados.',
+    clear: 'Limpar este tabuleiro', all: 'Pegar tudo', nodes: '{a} de {b} nós', crystals: '{a} de {b} cristais', effects: 'Efeitos ativos', fxSkills: 'Níveis de skill', fxStats: 'Atributos', none: 'Nenhum nó pego ainda.',
+    daevHow: 'Clique num nó para pegá-lo: se ele estiver longe, o caminho mais barato até ele é pego junto. Clique num nó pego para soltá-lo; o que ficar desligado do início sai também.',
+    slot: 'Slot', item: 'Item', enh: 'Aprimoramento', stats: 'Atributos', empty: '— vazio —', il: 'item level {n}',
+    titles: 'Títulos equipados', Offensive: 'Ataque', Defensive: 'Defesa', Other: 'Outros', equipped: 'Efeito ao equipar', owned: 'Efeito por ter',
+    arcana: 'Arcana', set: 'Conjunto', wings: 'Asas', pet: 'Pet', notesHint: 'Rotação, prioridade de atributos, Manastones, o que falta pegar…',
+    slots: {main: 'Arma', off: 'Guard', Top: 'Top', Legs: 'Legs', Helm: 'Helm', Pauldrons: 'Pauldrons', Gloves: 'Gloves', Shoes: 'Shoes', Cloak: 'Cloak', Necklace: 'Necklace',
+      Earrings1: 'Earrings 1', Earrings2: 'Earrings 2', Ring1: 'Ring 1', Ring2: 'Ring 2', Bracelet1: 'Bracelet 1', Bracelet2: 'Bracelet 2', Amulet: 'Amulet', Belt: 'Belt', Rune1: 'Rune 1', Rune2: 'Rune 2'}},
+  en: {build: 'Build', name: 'Name', cls: 'Class', race: 'Faction', newName: 'My build', add: 'New', copy: 'Duplicate', del: 'Delete', delAsk: 'Delete the build “{n}”? This cannot be undone.',
+    saveFile: 'Save to file', loadFile: 'Load file', badFile: 'That file is not a build from this site.', copyOf: '{n} (copy)',
+    tabs: {skills: 'Skills', daev: 'Daevanion', gear: 'Gear', extra: 'Titles, Arcana and wings', notes: 'Notes'},
+    sumPoints: 'Skill Points spent', sumShards: 'Stigma Shards spent', sumCrystals: 'Daevanion Crystals', sumAzphel: 'Azphel crystals', sumStig: 'Stigmas equipped',
+    A: 'Active skills', P: 'Passives', S: 'Stigmas', skill: 'Skill', trained: 'Trained level', fromDaev: '+ Daevanion', fromGear: '+ gear', final: 'Final level', specs: 'Specs', on: 'Equipped',
+    specSlots: '{a} of {b}', specAt: 'opens at level {n}', noSpecs: 'Specs from level 8', stigFull: 'There are already 4 stigmas equipped.',
+    clear: 'Clear this board', all: 'Take everything', nodes: '{a} of {b} nodes', crystals: '{a} of {b} crystals', effects: 'Active effects', fxSkills: 'Skill levels', fxStats: 'Stats', none: 'No node taken yet.',
+    daevHow: 'Click a node to take it: if it is far away, the cheapest path to it is taken as well. Click a taken node to drop it; whatever gets cut off from the start goes too.',
+    slot: 'Slot', item: 'Item', enh: 'Enhancement', stats: 'Stats', empty: '— empty —', il: 'item level {n}',
+    titles: 'Equipped titles', Offensive: 'Attack', Defensive: 'Defence', Other: 'Other', equipped: 'Effect when equipped', owned: 'Effect when owned',
+    arcana: 'Arcana', set: 'Set', wings: 'Wings', pet: 'Pet', notesHint: 'Rotation, stat priority, Manastones, what is still missing…',
+    slots: {main: 'Weapon', off: 'Guard', Top: 'Top', Legs: 'Legs', Helm: 'Helm', Pauldrons: 'Pauldrons', Gloves: 'Gloves', Shoes: 'Shoes', Cloak: 'Cloak', Necklace: 'Necklace',
+      Earrings1: 'Earrings 1', Earrings2: 'Earrings 2', Ring1: 'Ring 1', Ring2: 'Ring 2', Bracelet1: 'Bracelet 1', Bracelet2: 'Bracelet 2', Amulet: 'Amulet', Belt: 'Belt', Rune1: 'Rune 1', Rune2: 'Rune 2'}},
+};
+const bldHost = $('#builder');
+if (bldHost && BLD.classes) {
+  const bu = k => (BUI[S.lang] || BUI.pt)[k];
+  const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+  const blank = () => ({id: uid(), name: bu('newName'), cls: 'Assassin', race: 1, lvl: {}, eq: {}, sp: {}, stig: [], dv: {}, gear: {}, titles: {}, arcana: {}, wings: '', pet: '', notes: ''});
+  S.builds = Object.assign({list: [], cur: null, tab: 'skills', board: 0}, S.builds || {});
+  if (!S.builds.list.length) S.builds.list.push(blank());
+  const cur = () => S.builds.list.find(b => b.id === S.builds.cur) || S.builds.list[0];
+  const bic = (b, name) => { const src = BIC[b.cls + '/' + name]; if (!src) return null; const i = make('img', 'bic'); i.src = src; i.alt = ''; return i; };
+  const SLOTS = [['main', 'weapons', b => BLD.weapon[b.cls]], ['off', 'weapons', () => 'Guard']]
+    .concat(['Top', 'Legs', 'Helm', 'Pauldrons', 'Gloves', 'Shoes', 'Cloak'].map(t => [t, 'armor', () => t]))
+    .concat([['Necklace', 'Necklace'], ['Earrings1', 'Earrings'], ['Earrings2', 'Earrings'], ['Ring1', 'Ring'], ['Ring2', 'Ring'], ['Bracelet1', 'Bracelet'], ['Bracelet2', 'Bracelet'],
+      ['Amulet', 'Amulet'], ['Belt', 'Belt'], ['Rune1', 'Rune'], ['Rune2', 'Rune']].map(([k, t]) => [k, 'accessories', () => t]));
+
+  // ----- skills: levels, points and specs
+  const maxTrain = s => s.cost.length;
+  const trained = (b, s) => b.lvl[s.n] != null ? b.lvl[s.n] : s.c === 'S' ? 0 : 1;
+  const paid = (b, kind) => BLD.skills[b.cls].filter(s => kind === 'S' ? s.c === 'S' : s.c !== 'S').reduce((sum, s) => sum + s.cost.slice(0, trained(b, s)).reduce((a, x) => a + x, 0), 0);
+  const specSlots = level => level >= 20 ? 3 : level >= 12 ? 2 : level >= 8 ? 1 : 0;
+
+  // ----- Daevanion: what is taken, the cheapest route to a node, what the nodes give
+  function board(b, i) {
+    const B = BLD.boards[b.cls][i], at = {};
+    B.nodes.forEach((n, j) => { at[n[0] + ',' + n[1]] = j; });
+    return {B, at, start: B.nodes.findIndex(n => !n[2]), taken: b.dv[i] || (b.dv[i] = {})};
+  }
+  const near = (I, j) => { const [c, r] = I.B.nodes[j]; return [[c + 1, r], [c - 1, r], [c, r + 1], [c, r - 1]].map(p => I.at[p[0] + ',' + p[1]]).filter(x => x != null); };
+  function cheapest(I, target) {  // not "route": the page already has a function with that name
+    const N = I.B.nodes, dist = {}, prev = {}, done = {};
+    N.forEach((n, j) => { if (j === I.start || I.taken[j]) dist[j] = 0; });
+    for (;;) {
+      let u = -1;
+      for (const j in dist) if (!done[j] && (u < 0 || dist[j] < dist[u])) u = +j;
+      if (u < 0) return [];
+      if (u === target) break;
+      done[u] = 1;
+      near(I, u).forEach(v => { const d = dist[u] + N[v][2]; if (dist[v] == null || d < dist[v]) { dist[v] = d; prev[v] = u; } });
+    }
+    const path = [];
+    for (let j = target; j != null && j !== I.start && !I.taken[j]; j = prev[j]) path.push(j);
+    return path;
+  }
+  function prune(I) {  // drop what is no longer linked to the start
+    const seen = {[I.start]: 1}, queue = [I.start];
+    while (queue.length) near(I, queue.pop()).forEach(v => { if (I.taken[v] && !seen[v]) { seen[v] = 1; queue.push(v); } });
+    Object.keys(I.taken).forEach(j => { if (!seen[j]) delete I.taken[j]; });
+  }
+  const spent = (b, i) => Object.keys(b.dv[i] || {}).reduce((s, j) => s + BLD.boards[b.cls][i].nodes[j][2], 0);
+  const gives = text => text.split('. ').map(part => /^(.*?) \+([\d.,]+)(%?)$/.exec(part)).filter(Boolean).map(m => [m[1], parseFloat(m[2].replace(/,/g, '')), m[3]]);
+  function effects(b) {
+    const names = new Set(BLD.skills[b.cls].map(s => s.n)), skills = {}, stats = {};
+    BLD.boards[b.cls].forEach((B, i) => Object.keys(b.dv[i] || {}).forEach(j => gives(B.nodes[j][3]).forEach(([name, v, unit]) => {
+      if (names.has(name) && !unit) skills[name] = (skills[name] || 0) + v;
+      else { const k = name + '|' + unit; stats[k] = Math.round(((stats[k] || 0) + v) * 100) / 100; }
+    })));
+    return {skills, stats};
+  }
+
+  // ----- the page
+  let body = null;
+  const paintTab = () => { body.textContent = ''; ({skills: tabSkills, daev: tabDaev, gear: tabGear, extra: tabExtra, notes: tabNotes})[S.builds.tab](cur()); fitTables(bldHost); paintChips(); };
+  let sum = null;
+  function paintChips() {
+    const b = cur(), pve = [0, 1, 2, 3].reduce((s, i) => s + spent(b, i), 0), total = [0, 1, 2, 3].reduce((s, i) => s + BLD.boards[b.cls][i].nodes.reduce((a, n) => a + n[2], 0), 0);
+    sum.textContent = '';
+    [[bu('sumPoints'), paid(b, 'A')], [bu('sumShards'), paid(b, 'S')], [bu('sumStig'), b.stig.length + ' / 4'], [bu('sumCrystals'), pve + ' / ' + total], [bu('sumAzphel'), spent(b, 4) + ' / ' + BLD.boards[b.cls][4].nodes.reduce((a, n) => a + n[2], 0)]]
+      .forEach(([label, value]) => { const chip = make('span', 'bchip'); chip.append(label + ' ', make('b', '', value)); sum.appendChild(chip); });
+  }
+  function render() {
+    const B = S.builds, b = cur(); B.cur = b.id;
+    bldHost.textContent = '';
+    const ctl = make('div', 'cctl'), name = make('input'), file = make('input');
+    const btn = (text, fn) => { const x = make('button', '', text); x.onclick = fn; return x; };
+    name.type = 'text'; name.maxLength = 40; name.value = b.name;
+    name.oninput = () => { b.name = name.value; save(); const o = ctl.querySelector('select option[value="' + b.id + '"]'); if (o) o.textContent = b.name; };
+    file.type = 'file'; file.accept = '.json,application/json'; file.hidden = true;
+    file.onchange = () => { const f = file.files[0]; if (!f) return; f.text().then(text => {
+      let d = null; try { d = JSON.parse(text); } catch (e) {}
+      if (!d || d.app !== 'aion2-build' || !d.build || !BLD.skills[d.build.cls]) { alert(bu('badFile')); return; }
+      const nb = Object.assign(blank(), d.build, {id: uid()}); B.list.push(nb); B.cur = nb.id; save(); render(); }); };
+    ctl.append(
+      labeled(bu('build'), pickBox(b.id, B.list.map(x => [x.id, x.name]), v => { B.cur = v; }, render)),
+      labeled(bu('name'), name),
+      labeled(bu('cls'), pickBox(b.cls, BLD.classes.map(c => [c, c]), v => { if (v !== b.cls) Object.assign(b, {cls: v, lvl: {}, eq: {}, sp: {}, stig: [], dv: {}}); delete b.gear.main; }, render)),
+      labeled(bu('race'), pickBox(String(b.race), [['1', 'Elyos'], ['2', 'Asmodians']], v => { b.race = +v; }, render)),
+      btn(bu('add'), () => { const nb = blank(); B.list.push(nb); B.cur = nb.id; save(); render(); }),
+      btn(bu('copy'), () => { const nb = Object.assign(JSON.parse(JSON.stringify(b)), {id: uid(), name: bu('copyOf').replace('{n}', b.name)}); B.list.push(nb); B.cur = nb.id; save(); render(); }),
+      btn(bu('del'), () => { if (!confirm(bu('delAsk').replace('{n}', b.name))) return; B.list = B.list.filter(x => x !== b); if (!B.list.length) B.list.push(blank()); B.cur = B.list[0].id; save(); render(); }),
+      btn(bu('saveFile'), () => { const a = make('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify({app: 'aion2-build', v: 1, build: b}, null, 1)], {type: 'application/json'}));
+        a.download = 'build-' + (b.name.replace(/[^\w\- ]+/g, '').trim().replace(/ +/g, '-') || b.cls) + '.json'; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); }),
+      btn(bu('loadFile'), () => file.click()), file);
+    sum = make('div', 'bsum');
+    const tabs = make('div', 'btabs');
+    Object.keys(bu('tabs')).forEach(k => { const t = make('button', B.tab === k ? 'on' : '', bu('tabs')[k]); t.onclick = () => { B.tab = k; save(); $$('button', tabs).forEach(x => x.classList.toggle('on', x === t)); paintTab(); }; tabs.appendChild(t); });
+    body = make('div', 'bbody');
+    bldHost.append(ctl, sum, tabs, body);
+    paintTab();
+  }
+
+  function tabSkills(b) {
+    const fx = effects(b).skills;
+    ['A', 'P', 'S'].forEach(kind => {
+      body.appendChild(make('p', 'chead', bu(kind)));
+      const heads = [bu('skill'), bu('trained'), bu('fromDaev'), bu('fromGear'), bu('final')].concat(kind === 'P' ? [] : [bu('specs')]);
+      const tb = toolTable(body, kind === 'S' ? [bu('on')].concat(heads) : heads, 'bskills');
+      BLD.skills[b.cls].filter(s => s.c === kind).forEach(s => {
+        const tr = tb.insertRow(), level = trained(b, s), bonus = level ? (fx[s.n] || 0) + (b.eq[s.n] || 0) : 0, final = level + bonus;
+        if (kind === 'S') {
+          const box = make('input'); box.type = 'checkbox'; box.checked = b.stig.includes(s.n);
+          box.onchange = () => { if (box.checked && b.stig.length >= 4) { box.checked = false; alert(bu('stigFull')); return; }
+            b.stig = box.checked ? b.stig.concat(s.n) : b.stig.filter(x => x !== s.n); if (box.checked && !trained(b, s)) b.lvl[s.n] = 1; save(); paintTab(); };
+          tr.insertCell().appendChild(box); tr.className = box.checked ? '' : 'off';
+        }
+        const a = tr.insertCell(); a.className = 'key'; a.title = s.d + (s.cd ? '\n' + 'Cooldown ' + s.cd : '');
+        const ic = bic(b, s.n); if (ic) a.appendChild(ic); a.appendChild(make('span', '', s.n));
+        tr.insertCell().appendChild(numBox(() => trained(b, s), v => { b.lvl[s.n] = v; }, kind === 'S' ? 0 : 1, maxTrain(s), 1, false, paintTab));
+        const d = tr.insertCell(); d.className = 'r'; d.textContent = fx[s.n] ? '+' + fx[s.n] : '—';
+        tr.insertCell().appendChild(numBox(() => b.eq[s.n] || 0, v => { b.eq[s.n] = v; }, 0, 20, 1, false, paintTab));
+        const f = tr.insertCell(); f.className = 'out'; f.textContent = final;
+        if (kind === 'P') return;
+        const sp = tr.insertCell(), slots = specSlots(final);
+        b.sp[s.n] = (b.sp[s.n] || []).filter(t => s.sp.some(x => x[0] === t && final >= x[1])).slice(0, slots);
+        if (!slots) { sp.className = 'mute'; sp.textContent = bu('noSpecs'); return; }
+        sp.appendChild(make('small', '', bu('specSlots').replace('{a}', b.sp[s.n].length).replace('{b}', slots)));
+        s.sp.forEach(([title, at]) => {
+          const chosen = b.sp[s.n].includes(title), chip = make('button', 'spec' + (chosen ? ' on' : ''), title);
+          chip.disabled = final < at || (!chosen && b.sp[s.n].length >= slots);
+          chip.title = bu('specAt').replace('{n}', at);
+          chip.onclick = () => { b.sp[s.n] = chosen ? b.sp[s.n].filter(x => x !== title) : b.sp[s.n].concat(title); save(); paintTab(); };
+          sp.appendChild(chip);
+        });
+      });
+    });
+  }
+
+  function tabDaev(b) {
+    const Bs = BLD.boards[b.cls], i = Math.min(S.builds.board || 0, Bs.length - 1), I = board(b, i), N = I.B.nodes, CELL = 56;
+    const pick = make('div', 'btabs sub');
+    Bs.forEach((B, j) => { const t = make('button', j === i ? 'on' : '', B.name); t.appendChild(make('small', '', ' ' + Object.keys(b.dv[j] || {}).length + '/' + (B.nodes.length - 1))); t.onclick = () => { S.builds.board = j; save(); paintTab(); }; pick.appendChild(t); });
+    const bar = make('div', 'bbar'), clear = make('button', '', bu('clear')), all = make('button', '', bu('all'));
+    clear.onclick = () => { b.dv[i] = {}; save(); paintTab(); };
+    all.onclick = () => { N.forEach((n, j) => { if (j !== I.start) I.taken[j] = 1; }); save(); paintTab(); };
+    bar.append(make('b', '', bu('nodes').replace('{a}', Object.keys(I.taken).length).replace('{b}', N.length - 1)), make('b', '', bu('crystals').replace('{a}', spent(b, i)).replace('{b}', N.reduce((a, n) => a + n[2], 0))), clear, all);
+    body.append(pick, bar, make('p', 'note', bu('daevHow')));
+    const cols = make('div', 'bcols'), host = make('div', 'board bboard'), svg = el('svg', {viewBox: '0 0 ' + I.B.size * CELL + ' ' + I.B.size * CELL});
+    N.forEach((n, j) => near(I, j).filter(v => v > j).forEach(v => svg.appendChild(el('line', {class: 'edge' + ((I.taken[j] || j === I.start) && (I.taken[v] || v === I.start) ? ' lit' : ''),
+      x1: n[0] * CELL + CELL / 2, y1: n[1] * CELL + CELL / 2, x2: N[v][0] * CELL + CELL / 2, y2: N[v][1] * CELL + CELL / 2}))));
+    const names = new Set(BLD.skills[b.cls].map(s => s.n));
+    N.forEach((n, j) => {
+      const kind = j === I.start ? 'start' : ['', 'common', 'rare', 'legend', 'unique'][n[2]] || 'unique';
+      const g = el('g', {class: 'nd ' + kind + (I.taken[j] ? ' taken' : ''), transform: 'translate(' + (n[0] * CELL + 3) + ' ' + (n[1] * CELL + 3) + ')'});
+      g.appendChild(el('rect', {width: CELL - 6, height: CELL - 6, rx: 6}));
+      if (j === I.start) g.appendChild(el('text', {class: 'o', x: (CELL - 6) / 2, y: 30, 'text-anchor': 'middle'}, u('start')));
+      else {
+        const label = n[3].split('. In the game')[0], first = gives(label)[0], skill = first && names.has(first[0]) ? first[0] : null;
+        g.appendChild(el('title', {}, label + ' · ' + pl(n[2], 'crystal')));
+        if (skill && BIC[b.cls + '/' + skill]) g.appendChild(el('image', {href: BIC[b.cls + '/' + skill], x: 15, y: 3, width: 20, height: 20}));
+        const lines = wrap(skill ? skill + ' +' + first[1] : label.replace(/\. /g, ' / ')), top = (skill ? 22 : 8) + ((skill ? 26 : 40) - lines.length * 8.5) / 2 + 7;
+        lines.forEach((t, k) => g.appendChild(el('text', {class: 'l', x: (CELL - 6) / 2, y: top + k * 8.5, 'text-anchor': 'middle'}, t)));
+        g.onclick = () => { if (I.taken[j]) { delete I.taken[j]; prune(I); } else cheapest(I, j).forEach(k => { I.taken[k] = 1; }); save(); paintTab(); };
+      }
+      svg.appendChild(g);
+    });
+    host.appendChild(svg);
+    const side = make('div', 'bfx'), fx = effects(b);
+    side.appendChild(make('p', 'chead', bu('effects')));
+    const list = (title, rows) => { if (!rows.length) return; side.appendChild(make('p', 'bfxh', title)); const ul = make('ul'); rows.forEach(r => { const li = make('li'); li.append(...r); ul.appendChild(li); }); side.appendChild(ul); };
+    list(bu('fxSkills'), Object.keys(fx.skills).sort().map(n => [bic(b, n) || '', n + ' ', make('b', '', '+' + fx.skills[n])]));
+    list(bu('fxStats'), Object.keys(fx.stats).sort().map(k => [k.split('|')[0] + ' ', make('b', '', '+' + fmtN(fx.stats[k], fx.stats[k] % 1 ? 1 : 0) + k.split('|')[1])]));
+    if (!Object.keys(fx.skills).length && !Object.keys(fx.stats).length) side.appendChild(make('p', 'note', bu('none')));
+    cols.append(host, side); body.appendChild(cols);
+  }
+
+  function tabGear(b) {
+    const tb = toolTable(body, [bu('slot'), bu('item'), bu('enh'), bu('stats')], 'bgear');
+    SLOTS.forEach(([slot, set, type]) => {
+      const want = type(b), items = BLD[set].filter(x => x[1] === want && (!x[6] || x[6] === b.race)), g = b.gear[slot] || {}, it = items.find(x => x[0] === g.n);
+      const tr = tb.insertRow(), a = tr.insertCell(), c = tr.insertCell(), e = tr.insertCell(), s = tr.insertCell();
+      a.className = 'key'; a.textContent = bu('slots')[slot];
+      const sel = make('select'), none = make('option', '', bu('empty')); none.value = ''; sel.appendChild(none);
+      BLD.grades.slice().reverse().forEach((grade, k) => {
+        const rows = items.filter(x => x[2] === BLD.grades.length - 1 - k); if (!rows.length) return;
+        const og = make('optgroup'); og.label = grade;
+        rows.forEach(x => { const o = make('option', '', x[0] + ' · ' + bu('il').replace('{n}', x[3])); o.value = x[0]; og.appendChild(o); });
+        sel.appendChild(og);
+      });
+      sel.value = it ? it[0] : '';
+      sel.onchange = () => { if (sel.value) b.gear[slot] = {n: sel.value, e: 0}; else delete b.gear[slot]; save(); paintTab(); };
+      c.appendChild(sel);
+      if (it) { e.appendChild(numBox(() => Math.min(g.e || 0, it[4]), v => { g.e = v; }, 0, it[4], 1, false, () => {})); e.appendChild(make('span', 'of', ' / +' + it[4])); s.textContent = it[5]; s.className = 'g' + it[2]; }
+      else { e.textContent = '—'; s.textContent = ''; tr.className = 'off'; }
+    });
+  }
+
+  function tabExtra(b) {
+    const choose = (host, label, value, options, set, info) => {
+      const row = make('div', 'brow'), sel = pickBox(value || '', [['', bu('empty')]].concat(options), set, paintTab);
+      row.append(make('span', 'bl', label), sel); if (info) row.appendChild(make('span', 'bi', info)); host.appendChild(row);
+    };
+    body.appendChild(make('p', 'chead', bu('titles')));
+    ['Offensive', 'Defensive', 'Other'].forEach(kind => {
+      const list = BLD.titles.filter(t => t[1] === kind), t = list.find(x => x[0] === b.titles[kind]);
+      choose(body, bu(kind), b.titles[kind], list.map(x => [x[0], x[0]]), v => { b.titles[kind] = v; }, t ? bu('equipped') + ': ' + t[2] + (t[3] ? ' · ' + bu('owned') + ': ' + t[3] : '') : '');
+    });
+    body.appendChild(make('p', 'chead', bu('arcana')));
+    ['Chalice', 'Parchment', 'Compass', 'Bell', 'Mirror'].forEach(kind => {
+      const list = BLD.arcana.filter(a => a[1] === kind), a = list.find(x => x[0] === b.arcana[kind]);
+      choose(body, kind, b.arcana[kind], list.map(x => [x[0], x[0]]), v => { b.arcana[kind] = v; }, a ? a[3] + (a[4] ? ' · ' + bu('set') + ': ' + a[4] : '') : '');
+    });
+    body.appendChild(make('p', 'chead', bu('wings')));
+    const w = BLD.wings.find(x => x[0] === b.wings);
+    choose(body, bu('wings'), b.wings, BLD.wings.map(x => [x[0], x[0]]), v => { b.wings = v; }, w ? bu('equipped') + ': ' + w[1] + (w[2] ? ' · ' + bu('owned') + ': ' + w[2] : '') : '');
+    body.appendChild(make('p', 'chead', bu('pet')));
+    choose(body, bu('pet'), b.pet, BLD.pets.map(x => [x, x]), v => { b.pet = v; }, '');
+  }
+
+  function tabNotes(b) {
+    const ta = make('textarea', 'bnotes'); ta.value = b.notes || ''; ta.placeholder = bu('notesHint'); ta.rows = 16;
+    ta.oninput = () => { b.notes = ta.value; save(); };
+    body.appendChild(ta);
+  }
+  repaint.push(render);
+}
+
+// ---------- sub-headings in the menu ----------
+const PIN = /^$a/;  // sub-headings that get a menu entry of their own
+function buildSub() {
+  $$('.subtoc, .tgl, .toc > li.pinbar').forEach(x => x.remove());
+  $$('details.sec').forEach(d => {
+    const hs = $$('h3', d), link = $('.toc a[href="#' + d.id + '"]');
+    if (!hs.length || !link) return;
+    const ul = make('ul', 'subtoc');
+    let last = link.parentNode;
+    hs.forEach((h, i) => {
+      h.id = d.id + '--' + (i + 1);
+      const pinned = PIN.test(h.textContent.trim()), li = make('li', pinned ? 'pinbar' : ''), a = make('a');
+      h.dataset.pin = pinned ? '1' : '';
+      if (pinned) a.append(make('span', '', h.textContent.split(' (')[0]), make('small'));
+      else a.textContent = h.textContent;
+      a.href = '#' + h.id;
+      a.onclick = e => { e.preventDefault(); endSearch(); push(h.id); openSection(d, h); };
+      li.appendChild(a);
+      if (pinned) { last.after(li); last = li; } else ul.appendChild(li);
+    });
+    link.after(ul);
+    // the arrow folds the subtopics; the title beside it still goes to the section
+    const tg = make('button', 'tgl'), paintT = () => { ul.hidden = !!S.subShut[d.id]; tg.textContent = ul.hidden ? '▸' : '▾'; };
+    tg.title = u('subs');
+    tg.onclick = () => { S.subShut[d.id] = !S.subShut[d.id]; save(); paintT(); markCurrent(); };
+    link.before(tg); paintT();
+  });
+  markCurrent();
+}
+repaint.push(buildSub, paintTitle);
+
+// ---------- search ----------
+const q = $('#q'), qn = $('#qn');
+let hits = [], hitIdx = -1, qTimer = 0;
+function fold(s) { const f = s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); return f.length === s.length ? f : s.toLowerCase(); }
+function clearMarks() {
+  $$('mark.hit').forEach(m => { const p = m.parentNode; p.replaceChild(document.createTextNode(m.textContent), m); p.normalize(); });
+  hits = []; hitIdx = -1;
+}
+function markIn(root, term) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode: n =>
+    n.parentNode.closest('svg, button, .bctl, .binfo, .csum, .resetrow, .tabs, .cctl, .num, .rinfo, .chead, .bsum, .bbar, .bfx, textarea') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT});
+  const nodes = []; let n, found = 0;
+  while ((n = walker.nextNode())) nodes.push(n);
+  nodes.forEach(node => {
+    const text = fold(node.data), at = [];
+    for (let i = text.indexOf(term); i >= 0; i = text.indexOf(term, i + term.length)) at.push(i);
+    at.reverse().forEach(i => {
+      const mid = node.splitText(i); mid.splitText(term.length);
+      const m = make('mark', 'hit'); mid.parentNode.replaceChild(m, mid); m.appendChild(mid);
+    });
+    found += at.length;
+  });
+  return found;
+}
+function goHit(dir) {
+  if (!hits.length) return;
+  if (hitIdx >= 0) hits[hitIdx].classList.remove('cur');
+  hitIdx = (hitIdx + dir + hits.length) % hits.length;
+  const h = hits[hitIdx]; h.classList.add('cur');
+  const d = h.closest('details.sec'); if (d) d.open = true;
+  const pane = h.closest('.tabpane'); if (pane) pane._show();
+  h.scrollIntoView({behavior: 'instant', block: 'center'});
+  qn.textContent = (hitIdx + 1) + '/' + hits.length;
+}
+function runSearch() {
+  const term = fold(q.value.trim());
+  clearMarks();
+  if (term.length < 2) { endSearch(true); return; }
+  searching = true;
+  $$('.part').forEach(p => p.classList.add('on'));
+  $$('details.sec').forEach(d => {
+    const found = markIn(d, term);
+    d.hidden = !found; if (found) d.open = true;
+  });
+  fitTables();
+  hits = $$('mark.hit'); hitIdx = -1;
+  qn.textContent = hits.length ? '' : '0';
+  goHit(1);
+}
+function endSearch(keepText) {
+  if (!searching && !q.value) return;
+  if (!keepText) q.value = '';
+  clearMarks(); qn.textContent = '';
+  if (!searching) return;
+  $$('details.sec').forEach(d => { d.hidden = false; d.open = d.id in S.open ? S.open[d.id] : d.dataset.def === '1'; });
+  searching = false;
+  showPart(S.part, true);
+}
+q.oninput = () => { clearTimeout(qTimer); qTimer = setTimeout(runSearch, 180); };
+q.onkeydown = e => {
+  if (e.key === 'Enter') { e.preventDefault(); clearTimeout(qTimer); if (!searching || !hits.length) runSearch(); else goHit(e.shiftKey ? -1 : 1); }
+  if (e.key === 'Escape') { endSearch(); q.blur(); }
+};
+addEventListener('keydown', e => {
+  if (e.key === '/' && !e.ctrlKey && !e.metaKey && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) { e.preventDefault(); q.focus(); q.select(); }
+});
+
+// ---------- scrolling: current section in the menu, remembered position, back to top ----------
+function markCurrent() {
+  const secs = $$('.part.on details.sec'), top = x => x.getBoundingClientRect().top, seen = x => x.offsetParent && top(x) < innerHeight - 60;
+  const page = document.documentElement, atEnd = scrollY > 0 && innerHeight + scrollY >= page.scrollHeight - 4;
+  const pick = picked && document.getElementById(picked);
+  let cur, h = null;
+  // while the page is still gliding to it (about a second), the picked topic counts even if not in sight yet
+  if (pick && pick.closest('.part.on') && (Date.now() - pickedAt < 1500 || (seen(pick) && pick.getBoundingClientRect().bottom > 0))) {
+    cur = pick.closest('details.sec');
+    h = pick.matches('h3') ? pick : $$('h3', cur).filter(x => x.offsetParent && top(x) < 120).pop();
+  } else {
+    picked = null;
+    // at the very end of the page the last sections never reach the top: the last one in sight is the current one
+    const line = atEnd ? x => seen(x) : x => top(x) < 120;
+    cur = secs.filter(line).pop() || secs[0];
+    h = cur && cur.open ? $$('h3', cur).filter(x => x.offsetParent && line(x)).pop() : null;
+  }
+  const id = h && h.dataset.pin ? h.id : cur && cur.id;  // inside Titles or Wings, their own entry lights up
+  $$('.toc > li > a').forEach(a => a.classList.toggle('cur', !!id && a.getAttribute('href') === '#' + id));
+  $$('.subtoc a').forEach(a => a.classList.toggle('cur', !!h && a.getAttribute('href') === '#' + h.id));
+  // keep the current topic in sight inside the topics bar
+  const at = $$('.toc.on .subtoc a.cur').find(a => a.offsetParent) || $('.toc.on > li > a.cur'), box = $('#outline');
+  if (!at || box.scrollHeight <= box.clientHeight) return;
+  const r = at.getBoundingClientRect(), b = box.getBoundingClientRect();
+  if (r.top < b.top + 50 || r.bottom > b.bottom - 30) box.scrollTop += r.top - b.top - box.clientHeight / 2;
+}
+let tick = 0, sTimer = 0;
+['wheel', 'touchmove'].forEach(ev => addEventListener(ev, () => { picked = null; }, {passive: true}));
+addEventListener('keydown', e => { if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(e.key)) picked = null; });
+addEventListener('scroll', () => {
+  tip.hidden = true;
+  if (tick) return;
+  tick = requestAnimationFrame(() => {
+    tick = 0;
+    $('#totop').hidden = scrollY < 600;
+    if (searching) return;
+    markCurrent();
+    S.scroll[S.part] = Math.round(scrollY);
+    clearTimeout(sTimer); sTimer = setTimeout(save, 400);
+  });
+}, {passive: true});
+$('#totop').onclick = () => scrollTo({top: 0, behavior: 'smooth'});
+addEventListener('resize', () => fitTables());
+
+applyTheme();
+applyLang();
+refreshCounts();
+const first = S.part && $('.part[data-part="' + S.part + '"]') ? S.part : $$('.part')[0].dataset.part;
+if (!route()) showPart(first);
+</script>
+</body>
+</html>
