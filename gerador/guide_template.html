@@ -552,6 +552,12 @@ padding:2px 7px;margin-left:-8px;width:100%;max-width:440px}
 .tool table.bgear{table-layout:fixed;width:100%;min-width:760px}
 .bgear th:nth-child(1){width:140px}.bgear th:nth-child(2){width:330px}.bgear th:nth-child(3){width:180px}
 .bgear td:last-child{font-size:12.5px;line-height:1.35}
+.bgear td:nth-child(3){white-space:nowrap}
+.bgear td:nth-child(3) .num{display:inline-flex;align-items:center;gap:4px;vertical-align:middle}
+.bgear td:nth-child(3) .num input{width:38px;padding-left:2px;padding-right:2px;text-align:center}
+.bgear td:nth-child(3) .num button{width:28px;padding:0}
+.bgear td:nth-child(3) .num button,.bgear td:nth-child(3) .num input{height:30px;box-sizing:border-box}
+.bgear td:nth-child(3) .of{margin-left:8px;font-size:12px;color:var(--mute);vertical-align:middle}
 .bgear td{vertical-align:middle;height:40px}
 .bgear .sbox{max-width:none}
 /* selectors you can type in */
@@ -1468,7 +1474,7 @@ const BUI = {
     specSlots: '{a} de {b}', specAt: 'abre no nível {n}', noSpecs: 'Specs a partir do nível 8', stigFull: 'Já há 4 stigmas equipados.',
     clear: 'Limpar este tabuleiro', all: 'Pegar tudo', nodes: '{a} de {b} nós', crystals: '{a} de {b} cristais', effects: 'Efeitos ativos', fxSkills: 'Níveis de skill', fxStats: 'Atributos', none: 'Nenhum nó pego ainda.',
     daevHow: 'Clique num nó para pegá-lo: se ele estiver longe, o caminho mais barato até ele é pego junto. Clique num nó pego para soltá-lo; o que ficar desligado do início sai também.',
-    slot: 'Slot', item: 'Item', enh: 'Aprimoramento', stats: 'Atributos', empty: '— vazio —', il: 'item level {n}', search: 'Digite para buscar…', noMatch: 'Nada com esse nome',
+    slot: 'Slot', item: 'Item', enh: 'Aprimoramento', stats: 'Atributos', empty: '— vazio —', il: 'item level {n}', search: 'Digite para buscar…', noMatch: 'Nada com esse nome', maxEnh: 'máx. +{n}',
     titles: 'Títulos equipados', Offensive: 'Ataque', Defensive: 'Defesa', Other: 'Outros', equipped: 'Efeito ao equipar', owned: 'Efeito por ter',
     arcana: 'Arcana', set: 'Conjunto', wings: 'Asas', pet: 'Pet', notesHint: 'Rotação, prioridade de atributos, Manastones, o que falta pegar…',
     slots: {main: 'Arma', off: 'Guard', Top: 'Top', Legs: 'Legs', Helm: 'Helm', Pauldrons: 'Pauldrons', Gloves: 'Gloves', Shoes: 'Shoes', Cloak: 'Cloak', Necklace: 'Necklace',
@@ -1481,7 +1487,7 @@ const BUI = {
     specSlots: '{a} of {b}', specAt: 'opens at level {n}', noSpecs: 'Specs from level 8', stigFull: 'There are already 4 stigmas equipped.',
     clear: 'Clear this board', all: 'Take everything', nodes: '{a} of {b} nodes', crystals: '{a} of {b} crystals', effects: 'Active effects', fxSkills: 'Skill levels', fxStats: 'Stats', none: 'No node taken yet.',
     daevHow: 'Click a node to take it: if it is far away, the cheapest path to it is taken as well. Click a taken node to drop it; whatever gets cut off from the start goes too.',
-    slot: 'Slot', item: 'Item', enh: 'Enhancement', stats: 'Stats', empty: '— empty —', il: 'item level {n}', search: 'Type to search…', noMatch: 'Nothing by that name',
+    slot: 'Slot', item: 'Item', enh: 'Enhancement', stats: 'Stats', empty: '— empty —', il: 'item level {n}', search: 'Type to search…', noMatch: 'Nothing by that name', maxEnh: 'max +{n}',
     titles: 'Equipped titles', Offensive: 'Attack', Defensive: 'Defence', Other: 'Other', equipped: 'Effect when equipped', owned: 'Effect when owned',
     arcana: 'Arcana', set: 'Set', wings: 'Wings', pet: 'Pet', notesHint: 'Rotation, stat priority, Manastones, what is still missing…',
     slots: {main: 'Weapon', off: 'Guard', Top: 'Top', Legs: 'Legs', Helm: 'Helm', Pauldrons: 'Pauldrons', Gloves: 'Gloves', Shoes: 'Shoes', Cloak: 'Cloak', Necklace: 'Necklace',
@@ -1688,7 +1694,7 @@ if (bldHost && BLD.classes) {
         .map(x => [x[0], x[0] + ' · ' + bu('il').replace('{n}', x[3])])]).filter(([, rows]) => rows.length);
       c.appendChild(searchBox(it ? it[0] : '', groups, {search: bu('search'), empty: bu('empty'), none: bu('noMatch')},
         v => { if (v) b.gear[slot] = {n: v, e: 0}; else delete b.gear[slot]; }, paintTab));
-      if (it) { e.appendChild(numBox(() => Math.min(g.e || 0, it[4]), v => { g.e = v; }, 0, it[4], 1, false, () => {})); e.appendChild(make('span', 'of', ' / +' + it[4])); s.textContent = it[5]; s.className = 'g' + it[2]; }
+      if (it) { e.appendChild(numBox(() => Math.min(g.e || 0, it[4]), v => { g.e = v; }, 0, it[4], 1, false, () => {})); e.appendChild(make('span', 'of', bu('maxEnh').replace('{n}', it[4]))); s.textContent = it[5]; s.className = 'g' + it[2]; }
       else { e.textContent = '—'; s.textContent = ''; tr.className = 'off'; }
     });
   }
