@@ -606,6 +606,48 @@ background:var(--panel);box-shadow:0 14px 34px #0007;font-size:13.5px}
 .tool .kpop input,.kpop input{margin:0 0 5px;height:30px;padding:0 9px;border-radius:7px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:13px}
 .kpop .sopt{display:flex;align-items:center;gap:8px}
 .kpop .sopt img{width:22px;height:22px;border-radius:4px;flex:none}
+/* progression: the character bar, in the build editor's style */
+.pchars{margin:4px 0 16px}
+.pchars .bhud{margin:0}
+.tool .bswitch button svg{width:17px;height:17px}
+.tool .bswitch button:not(.newb) svg{margin-left:5px;color:var(--hl2)}
+.pemb svg{width:34px;height:34px;fill:none;stroke:var(--hl2);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pmeta{display:flex;flex-direction:column;gap:6px;max-width:440px;font-size:13px;color:var(--mute)}
+.pbar2{height:8px;border-radius:99px;background:color-mix(in srgb,var(--hl) 14%,var(--panel));overflow:hidden;border:1px solid color-mix(in srgb,var(--hl) 25%,var(--line))}
+.pbar2 i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--hl),var(--hl2));transition:width .25s}
+.pchars .phow{margin:8px 2px 0;font-size:12.5px;color:var(--mute)}
+/* progression: a picture per character */
+.bemb.pick{cursor:pointer;position:relative;transition:box-shadow .15s,transform .15s}
+.bemb.pick:hover{box-shadow:0 0 0 2px var(--hl),0 0 22px color-mix(in srgb,var(--hl) 40%,transparent);transform:translateY(-1px)}
+.bemb.pick::after{content:"✎";position:absolute;right:-6px;bottom:-6px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:11px;
+background:var(--panel);border:1px solid color-mix(in srgb,var(--hl) 50%,var(--line));color:var(--ink);opacity:0;transition:opacity .15s}
+.bemb.pick:hover::after{opacity:1}
+.pchars .bemb .tic{width:48px;height:48px;margin:0;background:none;border-radius:0}
+.pchars .bswitch button .tic{width:24px;height:24px;border-radius:50%;margin:0 0 0 0;background:color-mix(in srgb,var(--hl) 14%,var(--panel))}
+.ppop{padding:8px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:6px;margin:0 0 6px}
+.ptile2{display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 4px 6px;border-radius:10px;border:1px solid var(--line);
+background:var(--panel);color:var(--ink);font:inherit;cursor:pointer}
+.ptile2:hover{border-color:var(--hl);background:color-mix(in srgb,var(--hl) 14%,var(--panel))}
+.ptile2.on{border-color:var(--hl);box-shadow:inset 0 0 0 1px var(--hl)}
+.ptile2 .tic{width:40px;height:40px;margin:0;border-radius:8px}
+.ptile2 .pnone{width:40px;height:40px;display:grid;place-items:center;font-size:20px;color:var(--mute)}
+.ptile2 small{font-size:11px;line-height:1.2;text-align:center;color:var(--mute)}
+/* the character panel on the Routine, and its Membership toggle */
+.bcard .bacts.cside{align-self:stretch;flex-direction:column;justify-content:space-between;align-items:flex-end;gap:10px}
+.bacts-top,.bacts-bottom{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.tool .bcard .bacts-bottom button.danger{height:28px;padding:0 10px;font-size:12.5px;color:var(--mute)}
+.tool .bcard .bacts-bottom button.danger svg{width:14px;height:14px}
+@media (max-width:700px){.bcard .bacts.cside{flex-direction:row;justify-content:space-between;align-items:center}}
+.bcard .rtoday{margin:0;padding:0;border:0;background:none;box-shadow:none;gap:6px}
+.bcard .rtoday .rtt{display:none}
+.tool button.rsubt{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 13px}
+.rsubbox{width:14px;height:14px;border-radius:4px;border:2px solid color-mix(in srgb,var(--hl) 45%,var(--mute));display:inline-grid;place-content:center}
+.tool button.rsubt.on{border-color:var(--hl);background:color-mix(in srgb,var(--hl) 18%,var(--panel))}
+.tool button.rsubt.on .rsubbox{border-color:transparent;background:linear-gradient(135deg,var(--hl2),var(--hl))}
+.tool button.rsubt.on .rsubbox::after{content:"";width:7px;height:4px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+.tool .bcard .bacts button.on{border-color:var(--hl);background:color-mix(in srgb,var(--hl) 18%,var(--panel))}
+.tool .bcard .bacts button:disabled{opacity:.4;cursor:default}
 </style>
 </head>
 <body>
@@ -630,7 +672,8 @@ const BOARDS = __BOARDS__, EN = __EN__, ICONS = __ICONS__, CALC = __CALC__, ROUT
 const UI = {
   pt: {search: 'Buscar…  ( / )', openall: 'Abrir tudo', closeall: 'Fechar tudo', exp: 'Exportar marcações', imp: 'Importar marcações',
     foot: 'Gerado em {d}. As marcações ficam salvas neste navegador.', badfile: 'Não consegui ler esse arquivo.',
-    markAll: 'Marcar tudo', reset: 'Desmarcar tudo', undo: 'Desfazer',
+    markAll: 'Marcar tudo', reset: 'Desmarcar tudo', undo: 'Desfazer', pChar: 'Personagem', pAdd: 'Personagem', pName: 'Nome', pDone: '{a} de {b} marcados', pDel: 'Excluir', pDelAsk: 'Excluir o personagem “{n}”? As marcações da Progressão e da Rotina dele somem e não dá para desfazer.', pPic: 'Escolher imagem', pClasses: 'Classes', pWings: 'Asas', pNoPic: 'Sem imagem', main: 'Main', alt: 'Alt {n}',
+    pHow: 'Cada personagem tem as próprias marcações. Os personagens são os mesmos da Rotina.',
     next: 'Próximo item não marcado', hide: 'Esconder os marcados', alldone: 'Tudo marcado nesta parte.',
     theme: 'Tema claro/escuro', home: 'Início', fold: 'Recolher ou abrir os tópicos', badLink: 'Não consegui abrir o que veio nesse link.', mine: 'Seu valor', credit: 'Site de fãs, sem vínculo com a NCSOFT. Dados e imagens do jogo: wikily.gg e metabot.gg.', subs: 'Abrir ou recolher os subtópicos', lang: 'Idioma: português / inglês', top: 'Voltar ao topo',
     crystals: 'Cristais', upTo: 'Vai até o nº {n} de {t}', upNone: 'Nenhum nó ainda', siteGoal: 'Meta do site', topGoal: 'Topo do Global', markUpTo: 'Marcar como pegos até aqui', clearTaken: 'Limpar pegos',
@@ -639,7 +682,8 @@ const UI = {
     have: 'Tenho', plan: 'Plano (soma das barras)', left: 'sobram', short: 'faltam', spentAll: 'Já marcados como pegos'},
   en: {search: 'Search…  ( / )', openall: 'Open all', closeall: 'Close all', exp: 'Export marks', imp: 'Import marks',
     foot: 'Built on {d}. Your marks are saved in this browser.', badfile: 'Could not read that file.',
-    markAll: 'Tick all', reset: 'Untick all', undo: 'Undo',
+    markAll: 'Tick all', reset: 'Untick all', undo: 'Undo', pChar: 'Character', pAdd: 'Character', pName: 'Name', pDone: '{a} of {b} ticked', pDel: 'Delete', pDelAsk: 'Delete the character “{n}”? Its Progressão marks and Routine counters go too, and this cannot be undone.', pPic: 'Choose a picture', pClasses: 'Classes', pWings: 'Wings', pNoPic: 'No picture', main: 'Main', alt: 'Alt {n}',
+    pHow: 'Each character has its own marks. The characters are the same as in the Routine.',
     next: 'Next unmarked item', hide: 'Hide marked items', alldone: 'Everything in this part is marked.',
     theme: 'Light/dark theme', home: 'Home', fold: 'Fold or open the topics', badLink: 'Could not open what came in that link.', mine: 'Your value', credit: 'Fan site, not affiliated with NCSOFT. Game data and pictures: wikily.gg and metabot.gg.', subs: 'Open or fold the subtopics', lang: 'Language: Portuguese / English', top: 'Back to top',
     crystals: 'Crystals', upTo: 'Goes up to No. {n} of {t}', upNone: 'No nodes yet', siteGoal: 'Site target', topGoal: 'Global top', markUpTo: 'Mark as taken up to here', clearTaken: 'Clear taken',
@@ -823,14 +867,23 @@ function refreshCounts() {
   $$('.part').forEach(p => {
     const [a, n] = count(p);
     $('.partbtn[data-part="' + p.dataset.part + '"] small').textContent = n ? a + '/' + n : '';
+    if (progMeta && p === progPart) progMeta();
     const bar = $('.pprog', p);
     if (bar) { $('i', bar).style.width = (n ? 100 * a / n : 0) + '%'; $('b', bar).textContent = a + ' / ' + n + ' · ' + Math.round(n ? 100 * a / n : 0) + '%'; }
   });
 }
+// the Progressão page keeps one set of marks per character (the Routine's characters); the first one keeps the old marks
+const progPart = $('#part-prog');
+const inProg = el => !!progPart && progPart.contains(el);
+let progMeta = null;  // repaints the progress shown in the character card
+const progChars = () => Math.max(1, (S.rt && S.rt.chars) || 1);
+const progName = i => (S.rt && S.rt.names && S.rt.names[i]) || (i ? u('alt').replace('{n}', i) : u('main'));
+if ((S.progChar || 0) >= progChars()) S.progChar = 0;
+const marks = el => { const i = inProg(el) ? S.progChar || 0 : 0; if (!i) return S.checks; S.checksBy = S.checksBy || {}; return S.checksBy[i] || (S.checksBy[i] = {}); };
+const loadBox = b => { const m = marks(b), k = b.dataset.k; b.checked = k in m ? m[k] : b.dataset.default === '1'; };
 $$('input[type=checkbox][data-k]').forEach(b => {
-  const k = b.dataset.k;
-  b.checked = k in S.checks ? S.checks[k] : b.dataset.default === '1';
-  b.onchange = () => { S.checks[k] = b.checked; save(); refreshCounts(); };
+  loadBox(b);
+  b.onchange = () => { marks(b)[b.dataset.k] = b.checked; save(); refreshCounts(); };
 });
 
 // sections: remember open/closed; clear marks with undo
@@ -844,19 +897,20 @@ $$('details.sec').forEach(d => {
   const row = make('div', 'resetrow'), all = make('button', 'reset'), btn = make('button', 'reset'), undo = make('button', 'reset');
   all.dataset.ui = 'markAll'; btn.dataset.ui = 'reset'; undo.dataset.ui = 'undo';
   row.append(all, btn, undo); $('.body', d).appendChild(row);
-  const paint = () => { const r = S.resets[d.id]; undo.hidden = !(r && r.prev); };
+  const rk = () => d.id + (inProg(d) && S.progChar ? ':' + S.progChar : '');  // the undo belongs to the character too
+  const paint = () => { const r = S.resets[rk()]; undo.hidden = !(r && r.prev); };
   const setAll = on => {
     if (boxes.every(b => b.checked === on)) return;
     const prev = {};
-    boxes.forEach(b => { prev[b.dataset.k] = b.checked; b.checked = on; S.checks[b.dataset.k] = on; });
-    S.resets[d.id] = {t: Date.now(), prev}; save(); refreshCounts(); paint();
+    boxes.forEach(b => { prev[b.dataset.k] = b.checked; b.checked = on; marks(b)[b.dataset.k] = on; });
+    S.resets[rk()] = {t: Date.now(), prev}; save(); refreshCounts(); paint();
   };
   all.onclick = () => setAll(true);
   btn.onclick = () => setAll(false);
   undo.onclick = () => {
-    const prev = S.resets[d.id].prev;
-    boxes.forEach(b => { if (b.dataset.k in prev) { b.checked = prev[b.dataset.k]; S.checks[b.dataset.k] = b.checked; } });
-    delete S.resets[d.id]; save(); refreshCounts(); paint();
+    const prev = S.resets[rk()].prev;
+    boxes.forEach(b => { if (b.dataset.k in prev) { b.checked = prev[b.dataset.k]; marks(b)[b.dataset.k] = b.checked; } });
+    delete S.resets[rk()]; save(); refreshCounts(); paint();
   };
   repaint.push(paint);
 });
@@ -1112,11 +1166,97 @@ function popPick(anchor, options, current, words, done) {
   draw(); q.focus();
   setTimeout(() => { addEventListener('mousedown', away, true); addEventListener('scroll', away, true); });
 }
+// a grid of pictures that opens under `anchor`: groups = [[heading, [[key, label], …]], …]; '' is no picture
+function picPick(anchor, groups, current, words, done) {
+  $$('.ppop').forEach(x => x.remove());
+  const box = make('div', 'slist ppop'), r = anchor.getBoundingClientRect();
+  const close = () => { box.remove(); removeEventListener('mousedown', away, true); removeEventListener('scroll', away, true); };
+  const away = e => { if (!box.contains(e.target)) close(); };
+  const tile = (key, label) => {
+    const b = make('button', 'ptile2' + (key === current ? ' on' : '')); b.type = 'button'; b.title = label;
+    const img = key && tic(key, 'tic'); b.append(img || make('span', 'pnone', '∅'), make('small', '', label));
+    b.onmousedown = e => { e.preventDefault(); close(); done(key); }; return b;
+  };
+  const grid0 = make('div', 'pgrid'); grid0.appendChild(tile('', words.none)); box.appendChild(grid0);
+  groups.forEach(([head, items]) => { const g = make('div', 'pgrid'); items.forEach(([k, l]) => g.appendChild(tile(k, l))); box.append(make('div', 'sgrp', head), g); });
+  document.body.appendChild(box);
+  box.style.left = Math.max(8, Math.min(r.left, innerWidth - 448)) + 'px'; box.style.width = '440px';
+  const below = innerHeight - r.bottom;
+  if (below < 300 && r.top > below) { box.style.bottom = (innerHeight - r.top + 6) + 'px'; box.style.maxHeight = Math.min(420, r.top - 12) + 'px'; }
+  else { box.style.top = (r.bottom + 6) + 'px'; box.style.maxHeight = Math.min(420, below - 12) + 'px'; }
+  setTimeout(() => { addEventListener('mousedown', away, true); addEventListener('scroll', away, true); });
+}
 const labeled = (text, control) => { const lab = make('label'); lab.append(make('span', '', text), control); return lab; };
 function toolTable(host, heads, cls) {
   const w = make('div', 'tw'), tb = make('table', 'data ' + (cls || '')), tr = tb.insertRow();
   heads.forEach(h => tr.appendChild(make('th', '', h))); w.appendChild(tb); host.appendChild(w); return tb;
 }
+
+// ---------- characters: one panel shared by the Progressão and the Routine (the list lives in S.rt) ----------
+const charsChanged = () => { if (progPart) $$('input[type=checkbox][data-k]', progPart).forEach(loadBox); refreshCounts(); repaint.forEach(f => f()); };
+function deleteChar(i) {
+  const n = progChars(), r = S.rt; if (n < 2) return;
+  const shift = (get, put) => { const all = [...Array(n)].map((_, j) => get(j)); all.splice(i, 1); all.forEach((x, j) => put(j, x)); };
+  const marksAll = [...Array(n)].map((_, j) => j ? (S.checksBy || {})[j] || {} : S.checks);
+  marksAll.splice(i, 1); S.checks = marksAll[0]; S.checksBy = {}; marksAll.slice(1).forEach((m, j) => { S.checksBy[j + 1] = m; });
+  r.names = r.names || []; r.names.splice(i, 1);
+  const hides = [...Array(n)].map((_, j) => j ? (r.hideBy || {})[j] || {} : r.hide || {});
+  hides.splice(i, 1); r.hide = hides[0]; r.hideBy = {}; hides.slice(1).forEach((h, j) => { r.hideBy[j + 1] = h; });
+  const pics = r.pics || {}; r.pics = {}; shift(j => pics[j], (j, k) => { if (k) r.pics[j] = k; });
+  const v = r.v || {}, old = [...Array(n)].map((_, j) => v[j]); old.forEach((_, j) => delete v[j]); old.splice(i, 1); old.forEach((x, j) => { if (x) v[j] = x; }); r.v = v;
+  Object.keys(S.resets || {}).forEach(k => { const el = document.getElementById(k.split(':')[0]); if (el && inProg(el)) delete S.resets[k]; });  // undo of the Progressão: gone
+  r.chars = n - 1;
+  if ((r.cur || 0) > i) r.cur--; r.cur = Math.min(r.cur || 0, r.chars - 1);
+  if ((S.progChar || 0) > i) S.progChar--; S.progChar = Math.min(S.progChar || 0, r.chars - 1);
+  save();
+}
+// cur: the open character on this page; pick(i) opens another; acts: this page's own buttons; meta: what goes under the name
+function charHud(cur, pick, acts, meta, icon) {
+  const hud = make('div', 'bhud'), sw = make('div', 'bswitch'), card = make('div', 'bcard'), emb = make('span', 'bemb pemb pick');
+  const main = make('div', 'bmain'), name = make('input', 'bname'), side = make('div', 'bacts');
+  const picOf = i => { const k = S.rt && S.rt.pics && S.rt.pics[i]; return (k && tic(k, 'tic')) || null; };
+  for (let i = 0; i < progChars(); i++) {
+    const b = make('button', i === cur ? 'on' : ''), text = make('span', '', progName(i));
+    b.type = 'button'; b.append(picOf(i) || pico(icon, ''), text); b.onclick = () => pick(i);
+    if (i === cur) name.oninput = () => { text.textContent = name.value.trim() || progName(i); };
+    sw.appendChild(b);
+  }
+  if (progChars() < 6) {
+    const add = make('button', 'newb'); add.type = 'button'; add.append(pico('plus', ''), u('pAdd'));
+    add.onclick = () => { S.rt = S.rt || {}; S.rt.chars = progChars() + 1; pick(S.rt.chars - 1); };
+    sw.appendChild(add);
+  }
+  emb.appendChild(picOf(cur) || pico(icon, '')); emb.title = u('pPic');
+  emb.onclick = () => {
+    const classes = [...BLD.classes].sort().map(c => ['type:' + BLD.weapon[c], c]).filter(([k]) => TIC[k]);
+    const wings = BLD.wings.map(w => [w[0], w[0].replace(/ Wings$/, '')]).filter(([k]) => TIC[k]);
+    picPick(emb, [[u('pClasses'), classes], [u('pWings'), wings]], (S.rt && S.rt.pics || {})[cur] || '', {none: u('pNoPic')}, k => {
+      S.rt = S.rt || {}; S.rt.pics = S.rt.pics || {}; if (k) S.rt.pics[cur] = k; else delete S.rt.pics[cur]; save(); charsChanged();
+    });
+  };
+  name.type = 'text'; name.maxLength = 16; name.value = progName(cur); name.setAttribute('aria-label', u('pName'));
+  name.onchange = () => { S.rt = S.rt || {}; S.rt.names = S.rt.names || []; S.rt.names[cur] = name.value.trim(); save(); charsChanged(); };
+  const del = make('button', 'danger'); del.type = 'button'; del.append(pico('trash', ''), u('pDel')); del.disabled = progChars() < 2;
+  del.onclick = () => { if (confirm(u('pDelAsk').replace('{n}', progName(cur)))) { deleteChar(cur); charsChanged(); } };
+  const top = make('div', 'bacts-top'), bottom = make('div', 'bacts-bottom');  // the page's actions on top, Delete in the bottom corner
+  top.append(...acts); bottom.appendChild(del); side.classList.add('cside'); side.append(top, bottom);
+  main.append(name, meta); card.append(emb, main, side); hud.append(sw, card);
+  return hud;
+}
+
+const progBar = make('div', 'tool pchars');
+function drawProgBar() {
+  if (!progPart) return;
+  // the characters can change on the Routine page too: if the open one is gone, show the first one's marks
+  if ((S.progChar || 0) >= progChars()) { S.progChar = 0; save(); $$('input[type=checkbox][data-k]', progPart).forEach(loadBox); refreshCounts(); }
+  const meta = make('div', 'pmeta'), label = make('span'), bar = make('div', 'pbar2'), fill = make('i');
+  bar.appendChild(fill); meta.append(label, bar);
+  progMeta = () => { const [a, n] = count(progPart); label.textContent = u('pDone').replace('{a}', a).replace('{b}', n) + ' · ' + Math.round(n ? 100 * a / n : 0) + '%'; fill.style.width = (n ? 100 * a / n : 0) + '%'; };
+  progBar.textContent = '';
+  progBar.append(charHud(S.progChar || 0, i => { S.progChar = i; save(); charsChanged(); }, [], meta, 'prog'), make('p', 'phow', u('pHow')));
+  progMeta();
+}
+if (progPart) { progPart.insertBefore(progBar, $('details.sec', progPart)); drawProgBar(); repaint.push(drawProgBar); }
 
 // ---------- crafting calculator ----------
 const CUI = {
@@ -1395,7 +1535,9 @@ if (rtHost && ROUTINE.length) {
   const capOf = a => S.rt.sub && a.capSub ? a.capSub : a.cap, limOf = a => S.rt.sub && a.nSub ? a.nSub : a.n, maxOf = a => stacks(a) ? capOf(a) : limOf(a);
   const own = (i, a) => vals(a.srv ? 'srv' : i);  // some counters belong to the server, not to the character
   const live = a => !a.subOnly || !!S.rt.sub;  // some counters exist only with the Membership
-  const hidden = a => !live(a) || (S.rt.hide[a.id] != null ? !!S.rt.hide[a.id] : !!a.off);
+  // what shows is chosen per character: the first one keeps the old choices (S.rt.hide), the others S.rt.hideBy[index]
+  const hideMap = () => { const i = S.rt.cur || 0; if (!i) return S.rt.hide; S.rt.hideBy = S.rt.hideBy || {}; return S.rt.hideBy[i] || (S.rt.hideBy[i] = {}); };
+  const hidden = a => { const h = hideMap(); return !live(a) || (h[a.id] != null ? !!h[a.id] : !!a.off); };
   const val = (i, a) => { const v = own(i, a)[a.id]; return v != null ? Math.min(v, maxOf(a)) : stacks(a) ? a.n : 0; };
   const isDone = (i, a) => stacks(a) ? !val(i, a) : val(i, a) >= maxOf(a);
   const charName = i => S.rt.names[i] || (i ? ru('alt').replace('{n}', i) : ru('main'));
@@ -1471,17 +1613,14 @@ if (rtHost && ROUTINE.length) {
     roll();
     const r = S.rt; r.cur = Math.min(r.cur, r.chars - 1);
     rtHost.textContent = '';
-    const ctl = make('div', 'cctl'), tabs = make('span', 'rtabs'), name = make('input'), choose = make('button', '', ru(editing ? 'chosen' : 'choose'));
-    for (let i = 0; i < r.chars; i++) { const b = make('button', i === r.cur ? 'on' : '', charName(i)); b.onclick = () => { r.cur = i; save(); render(); }; tabs.appendChild(b); }
-    name.type = 'text'; name.maxLength = 16; name.value = charName(r.cur);
-    name.onchange = () => { r.names[r.cur] = name.value.trim(); save(); render(); };
-    choose.onclick = () => { editing = !editing; render(); };
-    const sub = make('input'), subLab = make('label', 'rsub');
-    sub.type = 'checkbox'; sub.checked = !!r.sub; sub.onchange = () => { r.sub = sub.checked; save(); render(); };
-    subLab.append(sub, ru('sub')); subLab.title = ru('subHow');
-    ctl.append(labeled(ru('chars'), numBox(() => r.chars, v => { r.chars = v; }, 1, 6, 1, false, render)), tabs, labeled(ru('name'), name), subLab, choose);
-    rtHost.appendChild(ctl);
-    today = make('div', 'rtoday'); rtHost.appendChild(today);
+    drawProgBar();  // the same characters as the Progressão page: keep its bar in step
+    const choose = make('button', editing ? 'on' : '', ru(editing ? 'chosen' : 'choose')), sub = make('button', 'rsubt' + (r.sub ? ' on' : ''));
+    choose.type = 'button'; choose.onclick = () => { editing = !editing; render(); };
+    sub.type = 'button'; sub.append(make('i', 'rsubbox'), 'Membership'); sub.title = ru('subHow'); sub.setAttribute('aria-pressed', r.sub ? 'true' : 'false');
+    sub.onclick = () => { r.sub = !r.sub; save(); render(); };
+    today = make('div', 'rtoday');
+    const wrap = make('div', 'pchars'); wrap.appendChild(charHud(r.cur, i => { r.cur = i; save(); charsChanged(); }, [sub, choose], today, 'rot'));
+    rtHost.appendChild(wrap);
     const grid = make('div', 'rcols'); rtHost.appendChild(grid);
     [['day', ru('charges'), ROUTINE.filter(daily)], ['week', ru('weeks'), ROUTINE.filter(a => !daily(a))]].forEach(([key, title, list]) => {
       const col = make('div', 'rcol'), head = make('div', 'rcolh'), names = make('div'), c = cols[key] = {done: make('small'), reset: make('span', 'rreset'), rows: []};
@@ -1493,7 +1632,7 @@ if (rtHost && ROUTINE.length) {
         if (a.group !== group) { group = a.group; if (group) col.appendChild(make('p', 'rgrp', ru('groups')[group] || group)); }
         const card = make('label', 'ritem'), max = maxOf(a), words = make('div', 'rwords'), warn = make('span', 'rwarn'), tick = make('input');
         if (editing) { const box = make('input'); box.type = 'checkbox'; box.checked = !hidden(a); box.title = ru('show');
-          box.onchange = () => { r.hide[a.id] = !box.checked; save(); card.classList.toggle('off', !box.checked); }; card.appendChild(box); card.classList.toggle('off', hidden(a)); }
+          box.onchange = () => { hideMap()[a.id] = !box.checked; save(); card.classList.toggle('off', !box.checked); }; card.appendChild(box); card.classList.toggle('off', hidden(a)); }
         else c.rows.push([a, card]);
         card.appendChild(thumbOf(a));
         const title = make('b', '', a.name);
