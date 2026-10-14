@@ -7,7 +7,7 @@ Site de apoio para Aion 2 (servidores Global), feito por fãs: tudo num lugar s�
 - **Progressão:** objetivos por faixa de Gear Score, com checklist.
 - **Crafting:** calculadora de craft para qualquer classe e facção (armas, armadura e joias da linha Dragon Lord), calculadora de aprimoramento e onde pôr os pontos de Essence Extraction.
 - **Onde consigo?:** de onde vem cada material, item, Arcana e título, com o ícone de cada um.
-- **Configurações:** tema, cor de destaque, idioma e lembretes de evento.
+- **Configurações:** tema, nove cores de destaque, idioma e lembretes de evento (aviso na tela, som e notificação do navegador).
 
 O site é um arquivo só (`index.html`), em português e inglês, mais a pasta `finder_icons/` com os ícones da busca “Onde consigo?”. O que você marca fica salvo no seu navegador; nada é enviado para servidor.
 
@@ -16,7 +16,7 @@ O site é um arquivo só (`index.html`), em português e inglês, mais a pasta `
 - Dados e ícones do jogo (skills, tabuleiros, itens, receitas, custos, limites): [wikily.gg](https://wikily.gg/aion-2).
 - Contadores da Rotina e arte de algumas dungeons: [metabot.gg](https://metabot.gg/en/aion-2). Imagem do Dimensional Invasion: [thegameswiki.com](https://thegameswiki.com/aion-2).
 - Crafting: planilha [Aion 2 Content Guide](https://docs.google.com/spreadsheets/d/1bNxC1wd0S_ILGYAyWnO0aTo_G_AOrjkv7bTcOj_NRz8/), do Screamheart.
-- Progressão: baseada no guia de início indicado na própria página.
+- Progressão: baseada no [documento de progressão inicial](https://docs.google.com/document/d/1Iu01j2KDeZ4ebVKifo42SaWYmp7WTBHVw5YKRjLgX1U/edit?tab=t.0) do guia de início.
 
 Site de fãs, sem vínculo com a NCSOFT. Aion 2 e seus nomes, ícones e dados pertencem à NCSOFT.
 

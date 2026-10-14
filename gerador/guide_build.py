@@ -33,6 +33,7 @@ SRC = os.path.join(ROOT, 'fontes')        # the DOCX of the public pages
 PRIVATE = os.path.join(ROOT, 'privado')   # out of the repository: the owner's builds, their sources and the full translation file
 PUBLIC = '--local' not in sys.argv and len(args) < 5
 PROG = os.path.join(SRC, 'Progressão Aion 2 Global.docx')
+PROG_SOURCE = 'https://docs.google.com/document/d/1Iu01j2KDeZ4ebVKifo42SaWYmp7WTBHVw5YKRjLgX1U/edit?tab=t.0'  # the document the page is based on
 CFG = os.path.join(SRC, 'Checklist de Configurações - Aion 2 Global.docx')
 if len(args) >= 5:
     OUT, PROG, ASN, CFG, BOARDS = args[:5]
@@ -127,6 +128,16 @@ for pid, name, path in PARTS:
         doc = {'find': tool_parts.finder_part, 'set': tool_parts.settings_part}[pid](strings, own_en)
     else:
         doc = convert(path, pid, boxes=pid not in NO_BOXES, drop=DROP if pid in NO_BOXES else (), swap=((PUBLIC_SWAP if PUBLIC else ()) + SWAP) if pid in NO_BOXES else (), strings=strings)
+        if pid == 'prog':  # the page ends at the last Gear Score goal; what the DOCX has after it is left out
+            last = next(i for i, sec in enumerate(doc['sections']) if sec['id'].startswith('prog-6o-objetivo'))
+            doc['sections'], first = doc['sections'][:last + 1], doc['sections'][0]
+            first['html'], cut = re.subn(r'<tr>(?:(?!</tr>).)*Próximas sugestões: Odyle, pets e estátuas(?:(?!</tr>).)*</tr>', '', first['html'], flags=re.S)
+            assert cut == 1, cut
+            credit = f'<a href="{PROG_SOURCE}" target="_blank" rel="noopener">'
+            pt, en = f'Baseado no {credit}documento de progressão inicial</a> do guia de início.', f'Based on the {credit}initial progression document</a> of the starter guide.'
+            strings.append(pt)
+            own_en[pt] = en
+            first['html'] += f'<p class="note" data-t="{len(strings) - 1}">{pt}</p>'
         if PUBLIC and pid == 'cfg':  # the last section only points at the owner's build pages
             doc['subtitle'] = 'Configurações de referência, para repetir em cada personagem'
             doc['sections'] = [sec for sec in doc['sections'] if not sec['title'].startswith('5.')]
