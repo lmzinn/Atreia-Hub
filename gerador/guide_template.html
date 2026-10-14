@@ -515,6 +515,61 @@ table.bskills tr.specrow.off{opacity:.55}
 .setrow>:nth-child(2){min-width:0}
 .setrow>.swatches{flex:1;align-items:center;min-height:32px}
 @media (max-width:700px){.setrow{flex-wrap:wrap}.setrow>span:first-child{flex-basis:100%;padding-top:0}}
+/* build editor: the HUD at the top */
+.bhud{display:flex;flex-direction:column;gap:12px;margin:12px 0}
+.bswitch{display:flex;flex-wrap:wrap;gap:6px}
+.tool .bswitch button{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 13px 0 5px;border-radius:999px;font-size:13px}
+.tool .bswitch button .tic{width:24px;height:24px;border-radius:50%;margin:0;background:color-mix(in srgb,var(--hl) 14%,var(--panel))}
+.tool .bswitch button.on{border-color:var(--hl);background:color-mix(in srgb,var(--hl) 20%,var(--panel));box-shadow:inset 0 0 0 1px var(--hl);font-weight:600}
+.tool .bswitch button.newb{border-style:dashed;color:var(--mute);padding-left:10px}
+.tool .bswitch button.newb:hover{color:var(--ink)}
+.bcard{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;padding:16px 18px;border-radius:16px;
+border:1px solid color-mix(in srgb,var(--hl) 38%,var(--line));
+background:radial-gradient(120% 140% at 0% 0%,color-mix(in srgb,var(--hl) 22%,var(--panel)),color-mix(in srgb,var(--hl2) 7%,var(--panel)) 65%);box-shadow:0 10px 28px #0003}
+.bemb{flex:none;width:66px;height:66px;border-radius:18px;display:grid;place-items:center;
+background:radial-gradient(circle at 30% 25%,color-mix(in srgb,var(--hl2) 45%,transparent),color-mix(in srgb,var(--hl) 30%,var(--panel)) 70%);
+border:1px solid color-mix(in srgb,var(--hl) 55%,var(--line));box-shadow:0 0 22px color-mix(in srgb,var(--hl) 30%,transparent)}
+.bemb .tic{width:48px;height:48px;margin:0;background:none;border-radius:0}
+.bmain{flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:8px}
+.tool input.bname{font:inherit;font-size:21px;font-weight:700;color:var(--navy);background:transparent;border:1px solid transparent;border-radius:9px;
+padding:2px 7px;margin-left:-8px;width:100%;max-width:440px}
+.tool input.bname:hover{border-color:color-mix(in srgb,var(--hl) 30%,var(--line))}
+.tool input.bname:focus{border-color:var(--hl);outline:none;background:var(--panel)}
+.bmeta{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center}
+.bmeta label{display:inline-flex;align-items:center;gap:8px}
+.bmeta label>span{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--mute)}
+.tool .bmeta select{height:30px;border-radius:999px;padding:0 12px;background:color-mix(in srgb,var(--hl) 10%,var(--panel));border-color:color-mix(in srgb,var(--hl) 35%,var(--line))}
+.bcard .bacts{flex:none;display:flex;flex-wrap:wrap;gap:6px;padding:0;border:0;flex-basis:auto}
+.tool .bcard .bacts button{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 13px}
+.tool .bacts button svg,.tool .bswitch button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.tool .bcard .bacts button.danger:hover{border-color:#ef4444;color:#f87171;background:color-mix(in srgb,#ef4444 10%,var(--panel))}
+.bsum{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:0 0 14px}
+.bchip{display:flex;flex-direction:column;gap:1px;padding:9px 13px;border-radius:12px}
+.bchip b{font-size:18px;line-height:1.2;margin:0;color:var(--hl)}
+.bchip small{font-size:12px;color:var(--mute)}
+@media (max-width:700px){.bcard .bacts{flex-basis:100%}}
+/* gear table: the same columns whether a slot is filled or not */
+.tool table.bgear{table-layout:fixed;width:100%;min-width:760px}
+.bgear th:nth-child(1){width:140px}.bgear th:nth-child(2){width:330px}.bgear th:nth-child(3){width:180px}
+.bgear td:last-child{font-size:12.5px;line-height:1.35}
+.bgear td{vertical-align:middle;height:40px}
+.bgear .sbox{max-width:none}
+/* selectors you can type in */
+.sbox{position:relative;width:100%;max-width:420px}
+.tool .sbox input{width:100%;box-sizing:border-box;height:32px;padding:0 30px 0 10px;border-radius:8px;border:1px solid var(--line);color:var(--ink);font:inherit;font-size:13.5px;
+background:var(--panel) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-4-4'/%3E%3C/svg%3E") no-repeat right 9px center/15px}
+.tool .sbox input:hover{border-color:color-mix(in srgb,var(--hl) 45%,var(--line))}
+.tool .sbox input:focus{outline:none;border-color:var(--hl);box-shadow:0 0 0 3px color-mix(in srgb,var(--hl) 22%,transparent)}
+.slist{position:fixed;z-index:80;overflow:auto;padding:5px;border-radius:11px;border:1px solid color-mix(in srgb,var(--hl) 55%,var(--line));
+background:var(--panel);box-shadow:0 14px 34px #0007;font-size:13.5px}
+.sgrp{padding:8px 9px 3px;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--mute)}
+.sopt{padding:6px 9px;border-radius:7px;cursor:pointer;color:var(--ink);line-height:1.3}
+.sopt.empty{color:var(--mute)}
+.sopt:hover,.sopt.cur{background:color-mix(in srgb,var(--hl) 20%,var(--panel))}
+.sopt.on{color:var(--hl);font-weight:600}
+.snone{padding:8px 9px;color:var(--mute)}
+.brow .sbox{flex:0 0 300px;width:300px}
+@media (max-width:900px){.brow .sbox{flex:1 1 220px}}
 </style>
 </head>
 <body>
@@ -571,11 +626,18 @@ const shared = {};    // what to do with a build or a roster that arrives in a l
 const shown = {};     // pages that redraw themselves when they are opened
 
 // ---------- skill icons ----------
-const icNames = Object.keys(ICONS), icOrder = [...icNames].sort((a, b) => b.length - a.length);
-const icRe = icNames.length ? new RegExp('(?<![\\w])(' + icOrder.map(n => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')(?![\\w])', 'g') : null;
-document.head.appendChild(make('style', '', icNames.map((n, i) => '.ic-' + i + '{background-image:url(' + ICONS[n] + ')}').join('\n')));
-const icon = name => make('i', 'ic ic-' + icNames.indexOf(name));
+// ICONS: {class: {skill or passive: picture}}; a build page says its class in data-icons
+const IC = {}, icCss = [];
+Object.keys(ICONS).forEach(cls => {
+  const names = Object.keys(ICONS[cls]), ids = {};
+  names.forEach(n => { ids[n] = 'ic-' + icCss.length; icCss.push('.' + ids[n] + '{background-image:url(' + ICONS[cls][n] + ')}'); });
+  const order = [...names].sort((a, b) => b.length - a.length);
+  IC[cls] = {ids, re: names.length ? new RegExp('(?<![\\w])(' + order.map(n => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')(?![\\w])', 'g') : null};
+});
+document.head.appendChild(make('style', '', icCss.join('\n')));
+const icon = (name, cls) => make('i', 'ic ' + ((IC[cls] || {ids: {}}).ids[name] || ''));
 function iconize(root) {
+  const cls = root.dataset.icons, icRe = IC[cls] && IC[cls].re;
   if (!icRe) return;
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode: n =>
     n.parentNode.closest('svg, button, a, .bctl, .binfo, .csum, .resetrow, .tabs, .pbar') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT});
@@ -590,7 +652,7 @@ function iconize(root) {
       const prev = node.previousSibling;
       if (m.index === 0 && prev && prev.nodeType === 1 && prev.classList.contains('ic')) return;
       const at = m.index ? node.splitText(m.index) : node;
-      at.parentNode.insertBefore(icon(m[1]), at);
+      at.parentNode.insertBefore(icon(m[1], cls), at);
     });
   });
 }
@@ -775,6 +837,10 @@ const PICO = {
   set: 'M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1M15 4v4M9 10v4M17 16v4',
   find: 'M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM20 20l-4-4',
   bell: 'M6 16v-5a6 6 0 0 1 12 0v5l2 2H4l2-2zM10 21a2 2 0 0 0 4 0',
+  plus: 'M12 5v14M5 12h14',
+  copy: 'M9 9h11v11H9zM5 15H4V4h11v1',
+  link: 'M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1',
+  trash: 'M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3',
 };
 const pico = (id, cls) => { const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('class', cls);
   const p = document.createElementNS('http://www.w3.org/2000/svg', 'path'); p.setAttribute('d', PICO[id] || PICO.home); s.appendChild(p); return s; };
@@ -804,7 +870,7 @@ $$('details.sec').forEach(d => {
   };
   withBoard.forEach((g, i) => {
     const pane = make('div', 'tabpane'); body.insertBefore(pane, g[0]); g.forEach(k => pane.appendChild(k));
-    const name = $('.board', pane).dataset.board, btn = make('button', '', name);
+    const name = $('.board', pane).dataset.board, btn = make('button', '', name.split('/').pop());
     btn.appendChild(make('small')); btn.dataset.board = name;
     btn.onclick = () => { show(i); picked = ($('h3', pane) || d).id; pickedAt = Date.now(); markCurrent(); }; pane._show = () => show(i);
     tabs.appendChild(btn); panes.push(pane);
@@ -819,10 +885,10 @@ function wrap(label) {
   label.split(' ').forEach(w => { if (cur && (cur + ' ' + w).length > 10) { lines.push(cur); cur = w; } else cur = cur ? cur + ' ' + w : w; });
   lines.push(cur); return lines.slice(0, 3);
 }
-function showTip(n, g, isTaken) {
+function showTip(n, g, isTaken, cls) {
   tip.textContent = '';
   const head = make('b', '', u('no') + ' ' + n.o + ' · ' + n.t);
-  if (n.i) head.prepend(icon(n.i));
+  if (n.i) head.prepend(icon(n.i, cls));
   tip.append(head,
     make('div', '', pl(n.x, 'crystal') + (n.p != null ? ' · ' + n.p + '% ' + u('topKR') : '') + ' · ' + u('cumul') + ' ' + n.s),
     make('div', 'hint', u(isTaken ? 'tipUn' : 'tipHint')));
@@ -832,16 +898,19 @@ function showTip(n, g, isTaken) {
   tip.style.left = Math.max(8, x) + 'px';
   tip.style.top = Math.max(8, Math.min(r.top, innerHeight - h - 8)) + 'px';
 }
-let csum = null;
+const csums = {};  // class -> its crystal summary
+// crystals the reader has: the Assassin keeps the old S.crystals, the other classes one number each
+const haveOf = cls => cls === 'Assassin' ? S.crystals : (S.crystalsBy || {})[cls] || 0;
 function paintSum() {
-  if (!csum) return;
-  const shared = boards.filter(b => !b.solo);  // a board alone in its section (Azphel) has crystals of its own
-  const plan = shared.reduce((s, b) => s + b.budget(), 0), spent = shared.reduce((s, b) => s + b.spent(), 0), diff = S.crystals - plan;
-  $('.have', csum).textContent = u('have');
-  $('.unit', csum).textContent = u('crystal')[1];
-  $('.plan', csum).textContent = u('plan') + ': ' + plan;
-  const d = $('.diff', csum); d.textContent = Math.abs(diff) + ' ' + u(diff >= 0 ? 'left' : 'short'); d.className = 'diff ' + (diff >= 0 ? 'ok' : 'over');
-  $('.spent', csum).textContent = u('spentAll') + ': ' + spent;
+  Object.keys(csums).forEach(cls => {
+    const csum = csums[cls], shared = boards.filter(b => b.cls === cls && !b.solo);  // a board alone in its section (Azphel) has crystals of its own
+    const plan = shared.reduce((s, b) => s + b.budget(), 0), spent = shared.reduce((s, b) => s + b.spent(), 0), diff = haveOf(cls) - plan;
+    $('.have', csum).textContent = u('have');
+    $('.unit', csum).textContent = u('crystal')[1];
+    $('.plan', csum).textContent = u('plan') + ': ' + plan;
+    const d = $('.diff', csum); d.textContent = Math.abs(diff) + ' ' + u(diff >= 0 ? 'left' : 'short'); d.className = 'diff ' + (diff >= 0 ? 'ok' : 'over');
+    $('.spent', csum).textContent = u('spentAll') + ': ' + spent;
+  });
   $$('.tabs button[data-board]').forEach(btn => {
     const b = boards.find(x => x.name === btn.dataset.board);
     if (b) $('small', btn).textContent = b.budget() + '/' + b.total + (b.solo ? ' · PvP' : '');
@@ -864,11 +933,11 @@ $$('.board[data-board]').forEach(host => {
     if (n.k === 'start') g.appendChild(startText = el('text', {class: 'o', x: (C - 6) / 2, y: 30, 'text-anchor': 'middle'}));
     else {
       g.appendChild(el('text', {class: 'o', x: 4, y: 12}, n.o));
-      if (n.i) g.appendChild(el('image', {href: ICONS[n.i], x: 27, y: 2, width: 19, height: 19}));
+      if (n.i) g.appendChild(el('image', {href: ICONS[b.cls][n.i], x: 27, y: 2, width: 19, height: 19}));
       const lines = wrap(n.l), top = (n.i ? 19 : 13) + ((n.i ? 30 : 36) - lines.length * 8.5) / 2 + 7;
       lines.forEach((t, i) => g.appendChild(el('text', {class: 'l', x: (C - 6) / 2, y: top + i * 8.5, 'text-anchor': 'middle'}, t)));
-      g.onclick = () => { if (taken[n.o]) delete taken[n.o]; else taken[n.o] = true; save(); same(); showTip(n, g, !!taken[n.o]); };
-      g.onmouseenter = () => showTip(n, g, !!taken[n.o]);
+      g.onclick = () => { if (taken[n.o]) delete taken[n.o]; else taken[n.o] = true; save(); same(); showTip(n, g, !!taken[n.o], b.cls); };
+      g.onmouseenter = () => showTip(n, g, !!taken[n.o], b.cls);
       g.onmouseleave = () => { tip.hidden = true; };
     }
     svg.appendChild(g); return [n, g];
@@ -901,20 +970,27 @@ $$('.board[data-board]').forEach(host => {
   $('.bdef', host).onclick = () => setBudget(b.def);
   $('.btop', host).onclick = () => setBudget(b.top);
   $('.bmark', host).onclick = () => { b.nodes.forEach(n => { if (n.k !== 'start' && n.s <= budget) taken[n.o] = true; }); save(); same(); };
-  $('.bclr', host).onclick = () => { if (confirm(u('clearAsk').replace('{b}', b.name))) { Object.keys(taken).forEach(k => delete taken[k]); save(); same(); } };
-  boards.push({name: b.name, total: b.total, budget: () => (S.budget[b.name] != null ? S.budget[b.name] : b.def), spent, paint, solo: !!b.own});
+  $('.bclr', host).onclick = () => { if (confirm(u('clearAsk').replace('{b}', b.name.split('/').pop()))) { Object.keys(taken).forEach(k => delete taken[k]); save(); same(); } };
+  boards.push({name: b.name, cls: b.cls, total: b.total, budget: () => (S.budget[b.name] != null ? S.budget[b.name] : b.def), spent, paint, solo: !!b.own, host});
 });
-if (boards.some(b => !b.solo)) {
-  const anchor = $('.tabs') || $('.board');
-  csum = make('div', 'csum');
+[...new Set(boards.filter(b => !b.solo).map(b => b.cls))].forEach(cls => {
+  const first = boards.find(b => b.cls === cls && !b.solo).host, sec = first.closest('details.sec');
+  const anchor = $('.tabs', sec) || first;
+  const csum = csums[cls] = make('div', 'csum');
   csum.innerHTML = '<span class="own"><span class="have"></span><button class="dec">−</button><input type="number" min="0" max="999"><button class="inc">+</button>' +
     '<span class="unit"></span></span><span class="plan"></span><span class="diff"></span><span class="spent"></span>';
   anchor.parentNode.insertBefore(csum, anchor);
-  const inp = $('input', csum), set = v => { S.crystals = Math.max(0, Math.min(999, Math.round(v) || 0)); inp.value = S.crystals; save(); paintSum(); };
-  inp.value = S.crystals;
+  const inp = $('input', csum), set = v => {
+    v = Math.max(0, Math.min(999, Math.round(v) || 0));
+    if (cls === 'Assassin') S.crystals = v; else (S.crystalsBy = S.crystalsBy || {})[cls] = v;
+    inp.value = v; save(); paintSum();
+  };
+  inp.value = haveOf(cls);
   inp.onchange = () => set(+inp.value);
-  $('.dec', csum).onclick = () => set(S.crystals - 1);
-  $('.inc', csum).onclick = () => set(S.crystals + 1);
+  $('.dec', csum).onclick = () => set(haveOf(cls) - 1);
+  $('.inc', csum).onclick = () => set(haveOf(cls) + 1);
+});
+if (boards.length) {
   repaint.push(() => boards.forEach(b => b.paint()));
 }
 
@@ -932,6 +1008,45 @@ function pickBox(value, options, set, after) {
   options.forEach(([v, text, off]) => { const o = make('option', '', text); o.value = v; o.disabled = !!off; sel.appendChild(o); });
   sel.value = value; sel.onchange = () => { set(sel.value); save(); after(); };
   return sel;
+}
+// a selector you can type in: groups = [[heading or '', [[value, text], …]], …]; '' is the empty choice
+function searchBox(value, groups, words, set, after) {
+  const box = make('div', 'sbox'), inp = make('input'), list = make('div', 'slist');
+  const all = groups.flatMap(([, items]) => items), label = v => (all.find(x => x[0] === v) || [])[1] || '';
+  inp.type = 'text'; inp.placeholder = words.search; inp.value = label(value); inp.autocomplete = 'off';
+  let hits = [], at = 0;
+  const mark = () => hits.forEach(([, o], i) => o.classList.toggle('cur', i === at));
+  const pick = v => { set(v); save(); close(); after(); };
+  const place = () => { const r = inp.getBoundingClientRect(), below = innerHeight - r.bottom;
+    list.style.left = r.left + 'px'; list.style.width = Math.max(r.width, 260) + 'px';
+    if (below < 240 && r.top > below) { list.style.top = ''; list.style.bottom = (innerHeight - r.top + 4) + 'px'; list.style.maxHeight = Math.min(340, r.top - 12) + 'px'; }
+    else { list.style.bottom = ''; list.style.top = (r.bottom + 4) + 'px'; list.style.maxHeight = Math.min(340, below - 12) + 'px'; } };
+  function draw() {
+    const q = fold(inp.value.trim()), every = !q || inp.value === label(value);  // the chosen name still in the box: show the whole list
+    list.textContent = ''; hits = [];
+    const none = make('div', 'sopt empty', words.empty); none.onmousedown = e => { e.preventDefault(); pick(''); }; list.appendChild(none);
+    groups.forEach(([head, items]) => {
+      const found = items.filter(([, text]) => every || fold(text).includes(q));
+      if (!found.length) return;
+      if (head) list.appendChild(make('div', 'sgrp', head));
+      found.forEach(([v, text]) => { const o = make('div', 'sopt' + (v === value ? ' on' : ''), text); o.onmousedown = e => { e.preventDefault(); pick(v); }; list.appendChild(o); hits.push([v, o]); });
+    });
+    if (!hits.length) list.appendChild(make('div', 'snone', words.none));
+    at = every ? Math.max(0, hits.findIndex(([v]) => v === value)) : 0; mark();
+    if (every && hits[at]) hits[at][1].scrollIntoView({block: 'nearest'});
+  }
+  const onScroll = e => { if (!list.contains(e.target)) close(); };
+  function close() { box.classList.remove('open'); list.remove(); removeEventListener('scroll', onScroll, true); }
+  inp.onfocus = () => { inp.select(); box.classList.add('open'); document.body.appendChild(list); place(); draw(); addEventListener('scroll', onScroll, true); };
+  inp.oninput = () => { if (!list.isConnected) inp.onfocus(); draw(); };
+  inp.onclick = () => { if (!list.isConnected) inp.onfocus(); };
+  inp.onblur = () => { close(); inp.value = label(value); };
+  inp.onkeydown = e => {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); at = Math.max(0, Math.min(hits.length - 1, at + (e.key === 'ArrowDown' ? 1 : -1))); mark(); if (hits[at]) hits[at][1].scrollIntoView({block: 'nearest'}); }
+    else if (e.key === 'Enter') { e.preventDefault(); if (hits[at]) pick(hits[at][0]); }
+    else if (e.key === 'Escape') inp.blur();
+  };
+  box.appendChild(inp); return box;
 }
 const labeled = (text, control) => { const lab = make('label'); lab.append(make('span', '', text), control); return lab; };
 function toolTable(host, heads, cls) {
@@ -1346,27 +1461,27 @@ if (rtHost && ROUTINE.length) {
 // ---------- build editor ----------
 const BUI = {
   pt: {build: 'Build', name: 'Nome', cls: 'Classe', race: 'Facção', newName: 'Minha build', homeStat: '{n} build(s) · aberta: {b}', add: 'Nova', copy: 'Duplicar', del: 'Apagar', delAsk: 'Apagar a build “{n}”? Não dá para desfazer.',
-    saveFile: 'Salvar em arquivo', loadFile: 'Carregar arquivo', copyLink: 'Copiar link', linkDone: 'Link da build copiado. Quem abrir já vê a build:', badFile: 'Esse arquivo não é uma build deste site.', copyOf: '{n} (cópia)',
+    copyLink: 'Copiar link', linkDone: 'Link da build copiado. Quem abrir já vê a build:', badFile: 'Esse arquivo não é uma build deste site.', copyOf: '{n} (cópia)',
     tabs: {skills: 'Skills', daev: 'Daevanion', gear: 'Equipamento', extra: 'Títulos, Arcana e asas', notes: 'Notas'},
     sumPoints: 'Skill Points gastos', sumShards: 'Stigma Shards gastos', sumCrystals: 'Daevanion Crystals', sumAzphel: 'Crystals do Azphel', sumStig: 'Stigmas equipados',
     A: 'Skills ativas', P: 'Passivas', S: 'Stigmas', skill: 'Skill', trained: 'Nível treinado', fromDaev: '+ Daevanion', fromGear: '+ equipamento', final: 'Nível final', specs: 'Specs', on: 'Equipado',
     specSlots: '{a} de {b}', specAt: 'abre no nível {n}', noSpecs: 'Specs a partir do nível 8', stigFull: 'Já há 4 stigmas equipados.',
     clear: 'Limpar este tabuleiro', all: 'Pegar tudo', nodes: '{a} de {b} nós', crystals: '{a} de {b} cristais', effects: 'Efeitos ativos', fxSkills: 'Níveis de skill', fxStats: 'Atributos', none: 'Nenhum nó pego ainda.',
     daevHow: 'Clique num nó para pegá-lo: se ele estiver longe, o caminho mais barato até ele é pego junto. Clique num nó pego para soltá-lo; o que ficar desligado do início sai também.',
-    slot: 'Slot', item: 'Item', enh: 'Aprimoramento', stats: 'Atributos', empty: '— vazio —', il: 'item level {n}',
+    slot: 'Slot', item: 'Item', enh: 'Aprimoramento', stats: 'Atributos', empty: '— vazio —', il: 'item level {n}', search: 'Digite para buscar…', noMatch: 'Nada com esse nome',
     titles: 'Títulos equipados', Offensive: 'Ataque', Defensive: 'Defesa', Other: 'Outros', equipped: 'Efeito ao equipar', owned: 'Efeito por ter',
     arcana: 'Arcana', set: 'Conjunto', wings: 'Asas', pet: 'Pet', notesHint: 'Rotação, prioridade de atributos, Manastones, o que falta pegar…',
     slots: {main: 'Arma', off: 'Guard', Top: 'Top', Legs: 'Legs', Helm: 'Helm', Pauldrons: 'Pauldrons', Gloves: 'Gloves', Shoes: 'Shoes', Cloak: 'Cloak', Necklace: 'Necklace',
       Earrings1: 'Earrings 1', Earrings2: 'Earrings 2', Ring1: 'Ring 1', Ring2: 'Ring 2', Bracelet1: 'Bracelet 1', Bracelet2: 'Bracelet 2', Amulet: 'Amulet', Belt: 'Belt', Rune1: 'Rune 1', Rune2: 'Rune 2'}},
   en: {build: 'Build', name: 'Name', cls: 'Class', race: 'Faction', newName: 'My build', homeStat: '{n} build(s) · open: {b}', add: 'New', copy: 'Duplicate', del: 'Delete', delAsk: 'Delete the build “{n}”? This cannot be undone.',
-    saveFile: 'Save to file', loadFile: 'Load file', copyLink: 'Copy link', linkDone: 'Build link copied. Whoever opens it sees the build:', badFile: 'That file is not a build from this site.', copyOf: '{n} (copy)',
+    copyLink: 'Copy link', linkDone: 'Build link copied. Whoever opens it sees the build:', badFile: 'That file is not a build from this site.', copyOf: '{n} (copy)',
     tabs: {skills: 'Skills', daev: 'Daevanion', gear: 'Gear', extra: 'Titles, Arcana and wings', notes: 'Notes'},
     sumPoints: 'Skill Points spent', sumShards: 'Stigma Shards spent', sumCrystals: 'Daevanion Crystals', sumAzphel: 'Azphel crystals', sumStig: 'Stigmas equipped',
     A: 'Active skills', P: 'Passives', S: 'Stigmas', skill: 'Skill', trained: 'Trained level', fromDaev: '+ Daevanion', fromGear: '+ gear', final: 'Final level', specs: 'Specs', on: 'Equipped',
     specSlots: '{a} of {b}', specAt: 'opens at level {n}', noSpecs: 'Specs from level 8', stigFull: 'There are already 4 stigmas equipped.',
     clear: 'Clear this board', all: 'Take everything', nodes: '{a} of {b} nodes', crystals: '{a} of {b} crystals', effects: 'Active effects', fxSkills: 'Skill levels', fxStats: 'Stats', none: 'No node taken yet.',
     daevHow: 'Click a node to take it: if it is far away, the cheapest path to it is taken as well. Click a taken node to drop it; whatever gets cut off from the start goes too.',
-    slot: 'Slot', item: 'Item', enh: 'Enhancement', stats: 'Stats', empty: '— empty —', il: 'item level {n}',
+    slot: 'Slot', item: 'Item', enh: 'Enhancement', stats: 'Stats', empty: '— empty —', il: 'item level {n}', search: 'Type to search…', noMatch: 'Nothing by that name',
     titles: 'Equipped titles', Offensive: 'Attack', Defensive: 'Defence', Other: 'Other', equipped: 'Effect when equipped', owned: 'Effect when owned',
     arcana: 'Arcana', set: 'Set', wings: 'Wings', pet: 'Pet', notesHint: 'Rotation, stat priority, Manastones, what is still missing…',
     slots: {main: 'Weapon', off: 'Guard', Top: 'Top', Legs: 'Legs', Helm: 'Helm', Pauldrons: 'Pauldrons', Gloves: 'Gloves', Shoes: 'Shoes', Cloak: 'Cloak', Necklace: 'Necklace',
@@ -1439,40 +1554,43 @@ if (bldHost && BLD.classes) {
     const b = cur(), pve = [0, 1, 2, 3].reduce((s, i) => s + spent(b, i), 0), total = [0, 1, 2, 3].reduce((s, i) => s + BLD.boards[b.cls][i].nodes.reduce((a, n) => a + n[2], 0), 0);
     sum.textContent = '';
     [[bu('sumPoints'), paid(b, 'A')], [bu('sumShards'), paid(b, 'S')], [bu('sumStig'), b.stig.length + ' / 4'], [bu('sumCrystals'), pve + ' / ' + total], [bu('sumAzphel'), spent(b, 4) + ' / ' + BLD.boards[b.cls][4].nodes.reduce((a, n) => a + n[2], 0)]]
-      .forEach(([label, value]) => { const chip = make('span', 'bchip'); chip.append(label + ' ', make('b', '', value)); sum.appendChild(chip); });
+      .forEach(([label, value]) => { const chip = make('span', 'bchip'); chip.append(make('b', '', value), make('small', '', label)); sum.appendChild(chip); });
   }
   function render() {
     const B = S.builds, b = cur(); B.cur = b.id;
     if ([BUI.pt.newName, BUI.en.newName].includes(b.name)) b.name = bu('newName');  // an untouched default name follows the language
     bldHost.textContent = '';
-    const ctl = make('div', 'cctl'), acts = make('div', 'bacts'), name = make('input'), file = make('input');
-    const btn = (text, fn) => { const x = make('button', '', text); x.onclick = fn; return x; };
-    name.type = 'text'; name.maxLength = 40; name.value = b.name;
-    name.oninput = () => { b.name = name.value; save(); const o = ctl.querySelector('select option[value="' + b.id + '"]'); if (o) o.textContent = b.name; };
-    file.type = 'file'; file.accept = '.json,application/json'; file.hidden = true;
-    file.onchange = () => { const f = file.files[0]; if (!f) return; f.text().then(text => {
-      let d = null; try { d = JSON.parse(text); } catch (e) {}
-      if (!d || d.app !== 'aion2-build' || !d.build || !BLD.skills[d.build.cls]) { alert(bu('badFile')); return; }
-      const nb = Object.assign(blank(), d.build, {id: uid()}); B.list.push(nb); B.cur = nb.id; save(); render(); }); };
-    ctl.append(
-      labeled(bu('build'), pickBox(b.id, B.list.map(x => [x.id, x.name]), v => { B.cur = v; }, render)),
-      labeled(bu('name'), name),
-      labeled(bu('cls'), pickBox(b.cls, BLD.classes.map(c => [c, c]), v => { if (v !== b.cls) Object.assign(b, {cls: v, lvl: {}, eq: {}, sp: {}, stig: [], dv: {}}); delete b.gear.main; }, render)),
-      labeled(bu('race'), pickBox(String(b.race), [['1', 'Elyos'], ['2', 'Asmodians']], v => { b.race = +v; }, render)),
-      acts);
+    const hud = make('div', 'bhud'), pick = make('div', 'bswitch'), card = make('div', 'bcard'), emb = make('span', 'bemb');
+    const main = make('div', 'bmain'), meta = make('div', 'bmeta'), acts = make('div', 'bacts'), name = make('input', 'bname');
+    const weapon = x => tic('type:' + BLD.weapon[x.cls], 'tic');
+    const act = (icon, text, fn, cls) => { const x = make('button', cls || ''); x.append(pico(icon, ''), text); x.onclick = fn; return x; };
+    // the builds, one chip each
+    const abc = (p, q) => p.localeCompare(q, undefined, {numeric: true, sensitivity: 'base'});  // the lists in alphabetical order
+    [...B.list].sort((x, y) => abc(x.name, y.name)).forEach(x => {
+      const chip = make('button', x === b ? 'on' : ''), label = make('span', '', x.name);
+      chip.append(weapon(x) || '', label); chip.title = x.cls; chip.onclick = () => { B.cur = x.id; save(); render(); };
+      if (x === b) name.oninput = () => { b.name = name.value; save(); label.textContent = b.name; };
+      pick.appendChild(chip);
+    });
+    pick.appendChild(act('plus', bu('add'), () => { const nb = blank(); B.list.push(nb); B.cur = nb.id; save(); render(); }, 'newb'));
+    // the open one
+    emb.appendChild(weapon(b) || '');
+    name.type = 'text'; name.maxLength = 40; name.value = b.name; name.setAttribute('aria-label', bu('name'));
+    meta.append(
+      labeled(bu('cls'), pickBox(b.cls, [...BLD.classes].sort(abc).map(c => [c, c]), v => { if (v !== b.cls) Object.assign(b, {cls: v, lvl: {}, eq: {}, sp: {}, stig: [], dv: {}}); delete b.gear.main; }, render)),
+      labeled(bu('race'), pickBox(String(b.race), [['2', 'Asmodians'], ['1', 'Elyos']], v => { b.race = +v; }, render)));
+    main.append(name, meta);
     acts.append(
-      btn(bu('add'), () => { const nb = blank(); B.list.push(nb); B.cur = nb.id; save(); render(); }),
-      btn(bu('copy'), () => { const nb = Object.assign(JSON.parse(JSON.stringify(b)), {id: uid(), name: bu('copyOf').replace('{n}', b.name)}); B.list.push(nb); B.cur = nb.id; save(); render(); }),
-      btn(bu('del'), () => { if (!confirm(bu('delAsk').replace('{n}', b.name))) return; B.list = B.list.filter(x => x !== b); if (!B.list.length) B.list.push(blank()); B.cur = B.list[0].id; save(); render(); }),
-      btn(bu('saveFile'), () => { const a = make('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify({app: 'aion2-build', v: 1, build: b}, null, 1)], {type: 'application/json'}));
-        a.download = 'build-' + (b.name.replace(/[^\w\- ]+/g, '').trim().replace(/ +/g, '-') || b.cls) + '.json'; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); }),
-      btn(bu('loadFile'), () => file.click()), file,
-      btn(bu('copyLink'), () => { const d = Object.assign({}, b); delete d.id; copyLink('build', d, bu('linkDone')); }));
+      act('copy', bu('copy'), () => { const nb = Object.assign(JSON.parse(JSON.stringify(b)), {id: uid(), name: bu('copyOf').replace('{n}', b.name)}); B.list.push(nb); B.cur = nb.id; save(); render(); }),
+      act('link', bu('copyLink'), () => { const d = Object.assign({}, b); delete d.id; copyLink('build', d, bu('linkDone')); }),
+      act('trash', bu('del'), () => { if (!confirm(bu('delAsk').replace('{n}', b.name))) return; B.list = B.list.filter(x => x !== b); if (!B.list.length) B.list.push(blank()); B.cur = B.list[0].id; save(); render(); }, 'danger'));
+    card.append(emb, main, acts);
+    hud.append(pick, card);
     sum = make('div', 'bsum');
     const tabs = make('div', 'btabs');
     Object.keys(bu('tabs')).forEach(k => { const t = make('button', B.tab === k ? 'on' : '', bu('tabs')[k]); t.onclick = () => { B.tab = k; save(); $$('button', tabs).forEach(x => x.classList.toggle('on', x === t)); paintTab(); }; tabs.appendChild(t); });
     body = make('div', 'bbody');
-    bldHost.append(ctl, sum, tabs, body);
+    bldHost.append(hud, sum, tabs, body);
     paintTab();
   }
 
@@ -1566,16 +1684,10 @@ if (bldHost && BLD.classes) {
       const want = type(b), items = BLD[set].filter(x => x[1] === want && (!x[6] || x[6] === b.race)), g = b.gear[slot] || {}, it = items.find(x => x[0] === g.n);
       const tr = tb.insertRow(), a = tr.insertCell(), c = tr.insertCell(), e = tr.insertCell(), s = tr.insertCell();
       a.className = 'key'; a.append(tic('type:' + want) || '', bu('slots')[slot]);
-      const sel = make('select'), none = make('option', '', bu('empty')); none.value = ''; sel.appendChild(none);
-      BLD.grades.slice().reverse().forEach((grade, k) => {
-        const rows = items.filter(x => x[2] === BLD.grades.length - 1 - k); if (!rows.length) return;
-        const og = make('optgroup'); og.label = grade;
-        rows.forEach(x => { const o = make('option', '', x[0] + ' · ' + bu('il').replace('{n}', x[3])); o.value = x[0]; og.appendChild(o); });
-        sel.appendChild(og);
-      });
-      sel.value = it ? it[0] : '';
-      sel.onchange = () => { if (sel.value) b.gear[slot] = {n: sel.value, e: 0}; else delete b.gear[slot]; save(); paintTab(); };
-      c.appendChild(sel);
+      const groups = BLD.grades.slice().reverse().map((grade, k) => [grade, items.filter(x => x[2] === BLD.grades.length - 1 - k)
+        .map(x => [x[0], x[0] + ' · ' + bu('il').replace('{n}', x[3])])]).filter(([, rows]) => rows.length);
+      c.appendChild(searchBox(it ? it[0] : '', groups, {search: bu('search'), empty: bu('empty'), none: bu('noMatch')},
+        v => { if (v) b.gear[slot] = {n: v, e: 0}; else delete b.gear[slot]; }, paintTab));
       if (it) { e.appendChild(numBox(() => Math.min(g.e || 0, it[4]), v => { g.e = v; }, 0, it[4], 1, false, () => {})); e.appendChild(make('span', 'of', ' / +' + it[4])); s.textContent = it[5]; s.className = 'g' + it[2]; }
       else { e.textContent = '—'; s.textContent = ''; tr.className = 'off'; }
     });
@@ -1583,7 +1695,7 @@ if (bldHost && BLD.classes) {
 
   function tabExtra(b) {
     const choose = (host, label, value, options, set, info, pic) => {
-      const row = make('div', 'brow'), sel = pickBox(value || '', [['', bu('empty')]].concat(options), set, paintTab);
+      const row = make('div', 'brow'), sel = searchBox(value || '', [['', options]], {search: bu('search'), empty: bu('empty'), none: bu('noMatch')}, set, paintTab);
       const art = tic(pic, 'tic big'); row.append(make('span', 'bl', label), sel); if (art) row.appendChild(art); if (info) row.appendChild(make('span', 'bi', info)); host.appendChild(row);
     };
     body.appendChild(make('p', 'chead', bu('titles')));

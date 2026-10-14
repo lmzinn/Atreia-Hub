@@ -38,37 +38,46 @@ CFG = os.path.join(SRC, 'Checklist de Configurações - Aion 2 Global.docx')
 if len(args) >= 5:
     OUT, PROG, ASN, CFG, BOARDS = args[:5]
     PVP = args[5] if len(args) > 5 else ''
+    RGR = RGRP = ''
 elif PUBLIC:
     OUT, ASN, PVP, BOARDS = os.path.join(ROOT, 'index.html'), '', '', ''
+    RGR = RGRP = ''
 else:
     OUT = args[0] if args else os.path.join(PRIVATE, 'Guia Aion 2.html')
     ASN = os.path.join(PRIVATE, 'bldasn', 'Build Assassin PvE - Aion 2 Global.docx')
     PVP = os.path.join(PRIVATE, 'bldpvp', 'Assassin PvP - Aion 2 Global.docx')
     BOARDS = os.path.join(PRIVATE, 'boards_asn.json')
+    RGR = os.path.join(PRIVATE, 'bldrgr', 'Build Ranger PvE - Aion 2 Global.docx')
+    RGRP = os.path.join(PRIVATE, 'bldrgr', 'Ranger PvP - Aion 2 Global.docx')
 # the routine and crafting parts have no DOCX: their text is in routine_part.py and craft_part.py, their data in JSON
 TOOLS = tool_parts.__file__  # the parts written there always exist
 PARTS = [('rot', 'Rotina', ROUTINE), ('bld', 'Minha build', BUILDER), ('prog', 'Progressão', PROG),
-         ('asn', 'Assassin PvE', ASN), ('pvp', 'Assassin PvP', PVP), ('craft', 'Crafting', CRAFT), ('find', 'Onde consigo?', tool_parts.FINDER),
+         ('asn', 'Assassin PvE', ASN), ('pvp', 'Assassin PvP', PVP), ('rgr', 'Ranger PvE', RGR), ('rgrp', 'Ranger PvP', RGRP), ('craft', 'Crafting', CRAFT), ('find', 'Onde consigo?', tool_parts.FINDER),
          ('set', 'Configurações', TOOLS)]
 PARTS = [part for part in PARTS if part[2] and os.path.exists(part[2])]
 # folders of the left menu: the pages of a class sit inside Classes > <class>
-FOLDER = {'asn': ('Classes', 'Assassin'), 'pvp': ('Classes', 'Assassin')}
+FOLDER = {'asn': ('Classes', 'Assassin'), 'pvp': ('Classes', 'Assassin'), 'rgr': ('Classes', 'Ranger'), 'rgrp': ('Classes', 'Ranger')}
 SHORT = {
     'Critical Hit': 'Crit Hit', 'Critical Hit Resist': 'Crit Resist', 'Max HP': 'HP', 'Max MP': 'MP',
     'Critical Damage Boost': 'Crit Dmg Boost', 'Critical Damage Tolerance': 'Crit Dmg Tolerance',
     'Revitalization Contract': 'Revital. Contract', 'Heightened Sixth Sense': 'Sixth Sense',
     'Cooldown Reduction': 'Cooldown Reduct.', 'Insignia Explosion': 'Insignia Explos.',
+    "Hunter's Resolve": "Hunter's Resolve", 'Unyielding Resolve': 'Unyield. Resolve', 'Concentrated Fire': 'Concentr. Fire',
 }
 # the settings part is reference only on the page: no tick boxes, so the sentences about ticking go too
 NO_BOXES = {'cfg'}
-# parts where every skill name gets its icon (icons/icons.json: skill name -> file in icons/)
-ICON_PARTS = {'asn', 'pvp'}
+# parts where every skill name gets its icon, and the class whose icons they use: {class: {skill: data URI}}. The
+# Assassin ones are the owner's files in icons/ (icons.json: skill name -> file); the others come from the build editor
+ICON_PARTS = {'asn': 'Assassin', 'pvp': 'Assassin', 'rgr': 'Ranger', 'rgrp': 'Ranger'}
 ICON_DIR = os.path.join(PRIVATE, 'icons')  # the icons of the owner's build pages
 icons = {}
 if not PUBLIC and os.path.exists(os.path.join(ICON_DIR, 'icons.json')):
+    icons['Assassin'] = {}
     for skill, name in json.load(open(os.path.join(ICON_DIR, 'icons.json'), encoding='utf8')).items():
         data = open(os.path.join(ICON_DIR, name), 'rb').read()
-        icons[skill] = 'data:image/webp;base64,' + base64.b64encode(data).decode()
+        icons['Assassin'][skill] = 'data:image/webp;base64,' + base64.b64encode(data).decode()
+if not PUBLIC and RGR and os.path.exists(RGR):
+    icons['Ranger'] = {k.split('/', 1)[1]: v for k, v in builder_icons().items() if k.startswith('Ranger/')}
 # the builds were renumbered on 14 Oct 2026; the settings checklist still points at the old sections
 SWAP = (('Seção 1 da build', 'Seção 2 da build'), ('Seção 5 da build', 'Seção 3 da build'))
 # the public site: the settings table shows a reference value and each reader writes their own beside it
@@ -145,7 +154,7 @@ for pid, name, path in PARTS:
         sec['html'] = re.sub(r'<li[^>]*>(?:(?!</li>).)*título sem texto no documento original(?:(?!</li>).)*</li>', '', sec['html'])
     nav.append(f'<button class="partbtn" data-part="{pid}"><span{t(name)}>{html.escape(name)}</span><small></small></button>')
     toc.append(f'<ul class="toc" data-part="{pid}">')
-    mark_icons = ' data-icons="1"' if pid in ICON_PARTS else ''
+    mark_icons = f' data-icons="{ICON_PARTS[pid]}"' if pid in ICON_PARTS else ''
     content.append(f'<section class="part" data-part="{pid}" id="part-{pid}"{mark_icons}><header>'
                    f'<h1{t(doc["title"])}>{html.escape(doc["title"])}</h1>'
                    f'<p class="sub"{t(doc["subtitle"])}>{html.escape(doc["subtitle"])}</p></header>')
@@ -185,21 +194,27 @@ if '--missing' in sys.argv:
     print(len(missing), 'texts without an English version -> i18n_missing.txt')
     sys.exit()
 
-TOP_NODES = {'Nezekan': 65, 'Zikel': 61, 'Vaizel': 58, 'Triniel': 73, 'Azphel': 27}  # top 10 Global, 13 Oct 2026
+# nodes open by the median of the Global top 10 of each class (shugo.gg): Assassin on 13 Oct 2026, Ranger on 14 Oct
+TOP_NODES = {'Assassin': {'Nezekan': 65, 'Zikel': 61, 'Vaizel': 58, 'Triniel': 73, 'Azphel': 27},
+             'Ranger': {'Nezekan': 60, 'Zikel': 56, 'Vaizel': 60, 'Triniel': 75, 'Azphel': 23}}
+# the boards of each class, in the site's order; the Assassin ones keep their old keys (the marks saved in the browser
+# are under them), the others are "Class/Board"
+CLASS_BOARDS = [('Assassin', BOARDS, '')] + ([('Ranger', os.path.join(PRIVATE, 'boards_rgr.json'), 'Ranger/')] if 'Ranger' in icons else [])
 boards = {}
-for b in json.load(open(BOARDS, encoding='utf8')) if BOARDS and os.path.exists(BOARDS) else []:
-    first = [n for n in b['nodes'] if not n['later'] and n['kind'] != 'start']
-    boards[b['name']] = {
-        'name': b['name'], 'size': b['size'], 'total': b['crystals'], 'def': max(n['spent'] for n in first),
-        'own': b['name'] == 'Azphel',  # PvP board: crystals of its own, kept out of the PvE total
-        # crystals spent by the median top-40 Global Assassin (shugo.gg, 13 Oct 2026): nodes open, in the site's order
-        'top': max(n['spent'] for n in b['nodes'] if n['kind'] != 'start' and n['order'] <= TOP_NODES[b['name']]),
-        'edges': b['edges'],
-        'nodes': [{'c': n['col'], 'r': n['row'], 'k': n['kind'], 'o': n['order'], 'l': SHORT.get(n['name'], n['name']),
-                   't': n['tip'].split('\n')[0].split('. In the game')[0], 'x': n['cost'], 'p': n['pct'], 's': n['spent'],
-                   **({'i': n['name']} if n['name'] in icons else {})}
-                  for n in b['nodes']],
-    }
+for cls, path, prefix in CLASS_BOARDS:
+    for b in json.load(open(path, encoding='utf8')) if path and os.path.exists(path) else []:
+        first = [n for n in b['nodes'] if not n['later'] and n['kind'] != 'start']
+        mine = icons.get(cls, {})
+        boards[prefix + b['name']] = {
+            'name': prefix + b['name'], 'cls': cls, 'size': b['size'], 'total': b['crystals'], 'def': max(n['spent'] for n in first),
+            'own': b['name'] == 'Azphel',  # PvP board: crystals of its own, kept out of the PvE total
+            'top': max(n['spent'] for n in b['nodes'] if n['kind'] != 'start' and n['order'] <= TOP_NODES[cls][b['name']]),
+            'edges': b['edges'],
+            'nodes': [{'c': n['col'], 'r': n['row'], 'k': n['kind'], 'o': n['order'], 'l': SHORT.get(n['name'], n['name']),
+                       't': n['tip'].split('\n')[0].split('. In the game')[0], 'x': n['cost'], 'p': n['pct'], 's': n['spent'],
+                       **({'i': n['name']} if n['name'] in mine else {})}
+                      for n in b['nodes']],
+        }
 
 
 def js(value):
@@ -228,5 +243,5 @@ if sheets and os.path.normcase(beside) != os.path.normcase(SHEETS):
 if PUBLIC and i18n_path != i18n_public:
     used = {s: i18n[s] for s in dict.fromkeys(strings) if s in i18n and s not in own_en}
     json.dump(used, open(i18n_public, 'w', encoding='utf8', newline='\n'), ensure_ascii=False, indent=0, sort_keys=True)
-print('wrote', OUT, len(page) // 1024, 'KB |', page.count('data-k='), 'checkboxes |', len(boards), 'boards |', len(icons), 'icons |',
+print('wrote', OUT, len(page) // 1024, 'KB |', page.count('data-k='), 'checkboxes |', len(boards), 'boards |', sum(len(v) for v in icons.values()), 'icons |',
       sum(e is not None for e in english), 'of', len(strings), 'texts in English')

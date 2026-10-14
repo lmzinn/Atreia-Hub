@@ -32,19 +32,17 @@ def builder_part(strings, english):
     link = f'<a href="{WIKILY}" target="_blank" rel="noopener">wikily.gg</a>'
     tool = (
         el('p', 'Monte a build de qualquer classe: skills, specs, stigmas, Daevanion, equipamento, títulos, Arcana, asas e '
-                'notas. Fica salva neste navegador; use “Salvar em arquivo” para guardar ou mandar para alguém.',
+                'notas. Fica salva neste navegador; use “Copiar link” para mandar para alguém.',
            'Put together the build of any class: skills, specs, stigmas, Daevanion, gear, titles, Arcana, wings and notes. '
-           'It is saved in this browser; use “Save to file” to keep it or send it to someone.')
+           'It is saved in this browser; use “Copy link” to send it to someone.')
         + '<div id="builder" class="tool"></div>')
     how = ul(
-        ('<b>Várias builds:</b> “Nova” cria outra, “Duplicar” copia a atual (útil para PvE e PvP). O seletor Build troca '
+        ('<b>Várias builds:</b> “Nova” cria outra, “Duplicar” copia a atual (útil para PvE e PvP). Os botões no alto trocam '
          'entre elas.',
          '<b>Several builds:</b> “New” creates another one, “Duplicate” copies the current one (handy for PvE and PvP). '
-         'The Build selector switches between them.'),
-        ('<b>Arquivo:</b> “Salvar em arquivo” baixa um .json com a build aberta. “Carregar arquivo” acrescenta a build do '
-         'arquivo à lista, sem apagar as suas.',
-         '<b>File:</b> “Save to file” downloads a .json with the open build. “Load file” adds the build from the file to '
-         'the list, without deleting yours.'),
+         'The buttons at the top switch between them.'),
+        ('<b>Copiar link:</b> gera um endereço com a build aberta; quem abrir recebe uma cópia dela, sem apagar as suas.',
+         '<b>Copy link:</b> makes an address with the open build; whoever opens it gets a copy of it, without losing theirs.'),
         ('<b>Nível treinado:</b> o que você comprou com Skill Points (até 10) ou Stigma Shards (até 20). A página soma o '
          'que foi gasto; ela não sabe quantos pontos o seu personagem tem.',
          '<b>Trained level:</b> what you bought with Skill Points (up to 10) or Stigma Shards (up to 20). The page adds up '
