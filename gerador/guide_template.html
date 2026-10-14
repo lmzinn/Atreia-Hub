@@ -576,6 +576,36 @@ background:var(--panel);box-shadow:0 14px 34px #0007;font-size:13.5px}
 .snone{padding:8px 9px;color:var(--mute)}
 .brow .sbox{flex:0 0 300px;width:300px}
 @media (max-width:900px){.brow .sbox{flex:1 1 220px}}
+/* build editor: the skill bar */
+.kbox{margin:0 0 14px}
+.klegend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:2px 0 8px;font-size:12.5px;color:var(--mute)}
+.kdot{width:12px;height:12px;border-radius:4px;display:inline-block;margin-right:-8px}
+.kbar{width:100%;min-width:640px;table-layout:fixed;border-collapse:collapse;margin:0}
+.kbar th{width:64px;font-size:12px;font-weight:600;color:var(--mute);text-align:left;padding:4px 8px;background:var(--key);border:1px solid var(--line)}
+.kbar td{border:1px solid var(--line)}
+.kc{height:60px;text-align:center;vertical-align:middle;cursor:pointer;font-size:11.5px;font-weight:600;line-height:1.2;padding:4px 3px;color:var(--ink);transition:background .12s}
+.kc .bic{display:block;margin:0 auto 3px;width:26px;height:26px;border-radius:5px}
+.kc:hover{box-shadow:inset 0 0 0 2px var(--hl)}
+.kc .kplus{font-size:18px;color:var(--mute);opacity:0;transition:opacity .12s}
+.kc:hover .kplus{opacity:.8}
+.kc.ka,.kdot.ka{background:color-mix(in srgb,#3b82f6 20%,var(--panel))}
+.kc.ks,.kdot.ks{background:color-mix(in srgb,#ef4444 20%,var(--panel))}
+.kc.kmac,.kdot.kmac,.kc.km{background:color-mix(in srgb,#22c55e 18%,var(--panel))}
+.kc.km b{font-size:12.5px}
+.kc.koff{opacity:.5}
+.kkeys td{background:var(--key);padding:4px 5px}
+.kkey{display:flex;align-items:center;justify-content:center;gap:5px}
+.kkey b{font-size:13px}
+.tool input.kname{min-width:0;width:100%;text-align:center;font:inherit;font-size:12.5px;font-weight:700;color:var(--ink);background:transparent;border:1px solid transparent;border-radius:6px;padding:2px 3px}
+.tool input.kname:hover{border-color:var(--line)}.tool input.kname:focus{outline:none;border-color:var(--hl);background:var(--panel)}
+.tool button.kmt{flex:none;height:18px;padding:0 5px;font-size:10px;font-weight:700;border-radius:5px;opacity:.45}
+.tool button.kmt:hover{opacity:.8}
+.tool button.kmt.on{opacity:1;color:#86efac;border-color:#22c55e;background:color-mix(in srgb,#22c55e 22%,var(--panel))}
+.kbox .tw+.tw{margin-top:10px}
+.kpop{display:flex;flex-direction:column}
+.tool .kpop input,.kpop input{margin:0 0 5px;height:30px;padding:0 9px;border-radius:7px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:13px}
+.kpop .sopt{display:flex;align-items:center;gap:8px}
+.kpop .sopt img{width:22px;height:22px;border-radius:4px;flex:none}
 </style>
 </head>
 <body>
@@ -1054,6 +1084,34 @@ function searchBox(value, groups, words, set, after) {
   };
   box.appendChild(inp); return box;
 }
+// a list that opens over the page under `anchor`: options = [[value, text, picture?], …]; '' is the empty choice
+function popPick(anchor, options, current, words, done) {
+  $$('.kpop').forEach(x => x.remove());  // only one open at a time
+  const list = make('div', 'slist kpop'), q = make('input'), rows = make('div');
+  q.type = 'text'; q.placeholder = words.search; q.autocomplete = 'off';
+  list.append(q, rows); document.body.appendChild(list);
+  const r = anchor.getBoundingClientRect(), below = innerHeight - r.bottom;
+  list.style.left = Math.max(8, Math.min(r.left, innerWidth - 288)) + 'px'; list.style.width = '280px';
+  if (below < 260 && r.top > below) { list.style.bottom = (innerHeight - r.top + 4) + 'px'; list.style.maxHeight = Math.min(360, r.top - 12) + 'px'; }
+  else { list.style.top = (r.bottom + 4) + 'px'; list.style.maxHeight = Math.min(360, below - 12) + 'px'; }
+  let first = null;
+  const close = () => { list.remove(); removeEventListener('mousedown', away, true); removeEventListener('scroll', away, true); };
+  const away = e => { if (!list.contains(e.target)) close(); };
+  const pick = v => { close(); done(v); };
+  const draw = () => {
+    const f = fold(q.value.trim()); rows.textContent = ''; first = null;
+    const none = make('div', 'sopt empty', words.empty); none.onmousedown = e => { e.preventDefault(); pick(''); }; rows.appendChild(none);
+    options.filter(([, text]) => !f || fold(text).includes(f)).forEach(([v, text, pic]) => {
+      const o = make('div', 'sopt' + (v === current ? ' on' : '')); if (pic) o.appendChild(pic); o.append(text);
+      o.onmousedown = e => { e.preventDefault(); pick(v); }; rows.appendChild(o); if (!first) first = v;
+    });
+    if (!first) rows.appendChild(make('div', 'snone', words.none));
+  };
+  q.oninput = draw;
+  q.onkeydown = e => { if (e.key === 'Escape') close(); if (e.key === 'Enter' && first) pick(first); };
+  draw(); q.focus();
+  setTimeout(() => { addEventListener('mousedown', away, true); addEventListener('scroll', away, true); });
+}
 const labeled = (text, control) => { const lab = make('label'); lab.append(make('span', '', text), control); return lab; };
 function toolTable(host, heads, cls) {
   const w = make('div', 'tw'), tb = make('table', 'data ' + (cls || '')), tr = tb.insertRow();
@@ -1469,6 +1527,9 @@ const BUI = {
   pt: {build: 'Build', name: 'Nome', cls: 'Classe', race: 'Facção', newName: 'Minha build', homeStat: '{n} build(s) · aberta: {b}', add: 'Nova', copy: 'Duplicar', del: 'Apagar', delAsk: 'Apagar a build “{n}”? Não dá para desfazer.',
     copyLink: 'Copiar link', linkDone: 'Link da build copiado. Quem abrir já vê a build:', badFile: 'Esse arquivo não é uma build deste site.', copyOf: '{n} (cópia)',
     tabs: {skills: 'Skills', daev: 'Daevanion', gear: 'Equipamento', extra: 'Títulos, Arcana e asas', notes: 'Notas'},
+    barTitle: 'Barra de skills', row: 'Linha {n}', key: 'Tecla', macro: 'Macro', macroCol: 'Coluna que a macro dispara', lmb: 'Clique esquerdo', rmb: 'Clique direito', side: 'Botão lateral',
+    kSkill: 'Skill', kStig: 'Stigma', kMacro: 'Disparada pela macro', keyName: 'Nome da tecla',
+    barHow: 'Clique num espaço para escolher a skill: aparecem as ativas e os stigmas marcados como equipados na aba Skills. Clique em M para marcar a coluna que a macro dispara. A linha 0 é a de baixo, encostada na tecla, como no jogo; os nomes da segunda barra você pode trocar.',
     sumPoints: 'Skill Points gastos', sumShards: 'Stigma Shards gastos', sumCrystals: 'Daevanion Crystals', sumAzphel: 'Crystals do Azphel', sumStig: 'Stigmas equipados',
     A: 'Skills ativas', P: 'Passivas', S: 'Stigmas', skill: 'Skill', trained: 'Nível treinado', fromDaev: '+ Daevanion', fromGear: '+ equipamento', final: 'Nível final', specs: 'Specs', on: 'Equipado',
     specSlots: '{a} de {b}', specAt: 'abre no nível {n}', noSpecs: 'Specs a partir do nível 8', stigFull: 'Já há 4 stigmas equipados.',
@@ -1482,6 +1543,9 @@ const BUI = {
   en: {build: 'Build', name: 'Name', cls: 'Class', race: 'Faction', newName: 'My build', homeStat: '{n} build(s) · open: {b}', add: 'New', copy: 'Duplicate', del: 'Delete', delAsk: 'Delete the build “{n}”? This cannot be undone.',
     copyLink: 'Copy link', linkDone: 'Build link copied. Whoever opens it sees the build:', badFile: 'That file is not a build from this site.', copyOf: '{n} (copy)',
     tabs: {skills: 'Skills', daev: 'Daevanion', gear: 'Gear', extra: 'Titles, Arcana and wings', notes: 'Notes'},
+    barTitle: 'Skill bar', row: 'Row {n}', key: 'Key', macro: 'Macro', macroCol: 'Column the macro fires', lmb: 'Left click', rmb: 'Right click', side: 'Side button',
+    kSkill: 'Skill', kStig: 'Stigma', kMacro: 'Fired by the macro', keyName: 'Key name',
+    barHow: 'Click a slot to choose the skill: the active skills and the stigmas ticked as equipped on the Skills tab show up. Click M to mark the column the macro fires. Row 0 is the bottom one, next to the key, as in the game; you can rename the keys of the second bar.',
     sumPoints: 'Skill Points spent', sumShards: 'Stigma Shards spent', sumCrystals: 'Daevanion Crystals', sumAzphel: 'Azphel crystals', sumStig: 'Stigmas equipped',
     A: 'Active skills', P: 'Passives', S: 'Stigmas', skill: 'Skill', trained: 'Trained level', fromDaev: '+ Daevanion', fromGear: '+ gear', final: 'Final level', specs: 'Specs', on: 'Equipped',
     specSlots: '{a} of {b}', specAt: 'opens at level {n}', noSpecs: 'Specs from level 8', stigFull: 'There are already 4 stigmas equipped.',
@@ -1552,13 +1616,55 @@ if (bldHost && BLD.classes) {
     return {skills, stats};
   }
 
+  // ----- the skill bar: what sits on each key, in the game's stacks (row 0 is the bottom one, the first to fire)
+  let barHost = null;
+  function drawBar() {
+    if (!barHost) return;
+    const b = cur(), bar = b.bar = Object.assign({cells: {}, macro: {}, keys: {}}, b.bar || {}), kind = {};
+    BLD.skills[b.cls].forEach(s => { kind[s.n] = s.c; });
+    const choices = () => [['@macro', bu('macro')]].concat(BLD.skills[b.cls].filter(s => s.c === 'A' || (s.c === 'S' && b.stig.includes(s.n)))
+      .map(s => [s.n, s.n, bic(b, s.n)]));
+    const words = {search: bu('search'), empty: bu('empty'), none: bu('noMatch')};
+    barHost.textContent = '';
+    const legend = make('div', 'klegend');
+    [['ka', bu('kSkill')], ['ks', bu('kStig')], ['kmac', bu('kMacro')]].forEach(([c, text]) => { const i = make('span', 'kdot ' + c); legend.append(i, make('span', '', text)); });
+    barHost.appendChild(legend);
+    [['a', ['1', '2', '3', '4', '5', '6', '7', '8'], 4], ['b', ['Q', 'E', bu('lmb'), bu('rmb'), bu('side'), 'F'], 3]].forEach(([id, keys, rows]) => {
+      const wrap = make('div', 'tw'), tb = make('table', 'kbar'); wrap.appendChild(tb); barHost.appendChild(wrap);
+      for (let r = rows - 1; r >= 0; r--) {
+        const tr = tb.insertRow(); tr.appendChild(make('th', '', bu('row').replace('{n}', r)));
+        keys.forEach((k, i) => {
+          const at = id + ':' + i + ':' + r, v = bar.cells[at] || '', td = tr.insertCell();
+          td.className = 'kc ' + (!v ? 'kempty' : v === '@macro' ? 'km' : bar.macro[id + ':' + i] ? 'kmac' : kind[v] === 'S' ? 'ks' : 'ka');
+          if (v === '@macro') td.appendChild(make('b', '', bu('macro')));
+          else if (v) { const ic = bic(b, v); if (ic) td.appendChild(ic); td.appendChild(make('span', '', v)); if (kind[v] === 'S' && !b.stig.includes(v)) td.classList.add('koff'); }
+          else td.appendChild(make('span', 'kplus', '+'));
+          td.onclick = () => popPick(td, choices(), v, words, nv => { if (nv) bar.cells[at] = nv; else delete bar.cells[at]; save(); drawBar(); });
+        });
+      }
+      const kr = tb.insertRow(); kr.className = 'kkeys'; kr.appendChild(make('th', '', bu('key')));
+      keys.forEach((k, i) => {
+        const td = kr.insertCell(), box = make('div', 'kkey'), col = id + ':' + i;
+        if (id === 'b') {
+          const inp = make('input', 'kname'); inp.type = 'text'; inp.maxLength = 24; inp.value = bar.keys[i] || k; inp.title = bu('keyName');
+          inp.onchange = () => { const v = inp.value.trim(); if (v && v !== k) bar.keys[i] = v; else { delete bar.keys[i]; inp.value = k; } save(); };
+          box.appendChild(inp);
+        } else box.appendChild(make('b', '', k));
+        const m = make('button', 'kmt' + (bar.macro[col] ? ' on' : ''), 'M'); m.type = 'button'; m.title = bu('macroCol');
+        m.onclick = () => { if (bar.macro[col]) delete bar.macro[col]; else bar.macro[col] = true; save(); drawBar(); };
+        box.appendChild(m); td.appendChild(box);
+      });
+    });
+    barHost.appendChild(make('p', 'note', bu('barHow')));
+  }
+
   // ----- the page
   let body = null;
   const paintTab = () => { body.textContent = ''; ({skills: tabSkills, daev: tabDaev, gear: tabGear, extra: tabExtra, notes: tabNotes})[S.builds.tab](cur()); fitTables(bldHost); paintChips(); };
   let sum = null;
   function paintChips() {
     const b = cur(), pve = [0, 1, 2, 3].reduce((s, i) => s + spent(b, i), 0), total = [0, 1, 2, 3].reduce((s, i) => s + BLD.boards[b.cls][i].nodes.reduce((a, n) => a + n[2], 0), 0);
-    sum.textContent = '';
+    sum.textContent = ''; drawBar();
     [[bu('sumPoints'), paid(b, 'A')], [bu('sumShards'), paid(b, 'S')], [bu('sumStig'), b.stig.length + ' / 4'], [bu('sumCrystals'), pve + ' / ' + total], [bu('sumAzphel'), spent(b, 4) + ' / ' + BLD.boards[b.cls][4].nodes.reduce((a, n) => a + n[2], 0)]]
       .forEach(([label, value]) => { const chip = make('span', 'bchip'); chip.append(make('b', '', value), make('small', '', label)); sum.appendChild(chip); });
   }
@@ -1583,7 +1689,7 @@ if (bldHost && BLD.classes) {
     emb.appendChild(weapon(b) || '');
     name.type = 'text'; name.maxLength = 40; name.value = b.name; name.setAttribute('aria-label', bu('name'));
     meta.append(
-      labeled(bu('cls'), pickBox(b.cls, [...BLD.classes].sort(abc).map(c => [c, c]), v => { if (v !== b.cls) Object.assign(b, {cls: v, lvl: {}, eq: {}, sp: {}, stig: [], dv: {}}); delete b.gear.main; }, render)),
+      labeled(bu('cls'), pickBox(b.cls, [...BLD.classes].sort(abc).map(c => [c, c]), v => { if (v !== b.cls) Object.assign(b, {cls: v, lvl: {}, eq: {}, sp: {}, stig: [], dv: {}, bar: {}}); delete b.gear.main; }, render)),
       labeled(bu('race'), pickBox(String(b.race), [['2', 'Asmodians'], ['1', 'Elyos']], v => { b.race = +v; }, render)));
     main.append(name, meta);
     acts.append(
@@ -1593,10 +1699,13 @@ if (bldHost && BLD.classes) {
     card.append(emb, main, acts);
     hud.append(pick, card);
     sum = make('div', 'bsum');
+    const barBox = make('details', 'more kbox'); barBox.open = !B.barShut;
+    barBox.ontoggle = () => { B.barShut = !barBox.open; save(); fitTables(barBox); };
+    barBox.append(make('summary', '', bu('barTitle')), barHost = make('div', 'in'));
     const tabs = make('div', 'btabs');
     Object.keys(bu('tabs')).forEach(k => { const t = make('button', B.tab === k ? 'on' : '', bu('tabs')[k]); t.onclick = () => { B.tab = k; save(); $$('button', tabs).forEach(x => x.classList.toggle('on', x === t)); paintTab(); }; tabs.appendChild(t); });
     body = make('div', 'bbody');
-    bldHost.append(hud, sum, tabs, body);
+    bldHost.append(hud, sum, barBox, tabs, body);
     paintTab();
   }
 
@@ -1707,7 +1816,7 @@ if (bldHost && BLD.classes) {
     body.appendChild(make('p', 'chead', bu('titles')));
     ['Offensive', 'Defensive', 'Other'].forEach(kind => {
       const list = BLD.titles.filter(t => t[1] === kind), t = list.find(x => x[0] === b.titles[kind]);
-      choose(body, bu(kind), b.titles[kind], list.map(x => [x[0], x[0]]), v => { b.titles[kind] = v; }, t ? bu('equipped') + ': ' + t[2] + (t[3] ? ' · ' + bu('owned') + ': ' + t[3] : '') : '');
+      choose(body, bu(kind), b.titles[kind], list.map(x => [x[0], x[0]]), v => { b.titles[kind] = v; }, t ? bu('equipped') + ': ' + t[2] : '');
     });
     body.appendChild(make('p', 'chead', bu('arcana')));
     ['Chalice', 'Parchment', 'Compass', 'Bell', 'Mirror'].forEach(kind => {
@@ -1716,7 +1825,7 @@ if (bldHost && BLD.classes) {
     });
     body.appendChild(make('p', 'chead', bu('wings')));
     const w = BLD.wings.find(x => x[0] === b.wings);
-    choose(body, bu('wings'), b.wings, BLD.wings.map(x => [x[0], x[0]]), v => { b.wings = v; }, w ? bu('equipped') + ': ' + w[1] + (w[2] ? ' · ' + bu('owned') + ': ' + w[2] : '') : '', w && w[0]);
+    choose(body, bu('wings'), b.wings, BLD.wings.map(x => [x[0], x[0]]), v => { b.wings = v; }, w ? bu('equipped') + ': ' + w[1] : '', w && w[0]);
     body.appendChild(make('p', 'chead', bu('pet')));
     choose(body, bu('pet'), b.pet, BLD.pets.map(x => [x, x]), v => { b.pet = v; }, '');
   }
