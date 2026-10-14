@@ -1,337 +1,542 @@
 [
  {
-  "id": "deus-research-base-transcendence",
-  "group": "Dungeons",
-  "name": "Deus Research Base (Transcendence)",
+  "id": "duty-missions",
+  "group": "",
+  "name": "Duty Missions",
+  "per": "day",
+  "n": 5,
+  "ico": "target",
+  "note": [
+   "Missões Wanted: 5 conclusões por dia. Dá para guardar até 20 e atualizar a lista 10 vezes.",
+   "Wanted missions: 5 completions a day. Up to 20 can be held and the list refreshed 10 times."
+  ],
+  "srv": 1,
+  "pic": "Command: Verteron (Bound)"
+ },
+ {
+  "id": "reach-kinah-cap",
+  "group": "",
+  "name": "Reach Kinah cap",
+  "per": "day",
+  "n": 1,
+  "ico": "dungeon",
+  "note": [
+   "Limite diário de ganho de 1.000.000 Kinah. No limite entra o debuff Item Drop and Obtain Restriction.",
+   "Daily gain limit of 1,000,000 Kinah. At the limit you get the Item Drop and Obtain Restriction debuff."
+  ],
+  "pic": "Kina Chest: 400,000 Kina"
+ },
+ {
+  "id": "attendance",
+  "group": "",
+  "name": "Attendance",
+  "per": "day",
+  "n": 1,
+  "ico": "dungeon",
+  "note": [
+   "A recompensa do dia de cada quadro de presença.",
+   "The day's reward of each attendance board."
+  ],
+  "srv": 1,
+  "pic": "Daeva's Campaign Supply Chest (Bound)"
+ },
+ {
+  "id": "abyss-supply-emergency-requests",
+  "group": "",
+  "name": "Abyss Supply: Emergency Requests",
+  "per": "day",
+  "n": 10,
+  "ico": "layers",
+  "note": [
+   "Pedidos de emergência do Abyss entregues hoje.",
+   "Abyss emergency requests delivered today."
+  ],
+  "pic": "Latesran Western Root Command (Bound)"
+ },
+ {
+  "id": "nightmare",
+  "group": "",
+  "name": "Nightmare",
   "per": "day",
   "n": 2,
-  "cap": 4
+  "ico": "dungeon",
+  "note": [
+   "Chefes solo: 2 tentativas por dia, guarda até {c}. Só gasta quando você vence.",
+   "Solo bosses: 2 attempts a day, stores up to {c}. Only spent when you win."
+  ],
+  "cap": 14,
+  "pic": "Nightmare Dungeon Challenge Ticket (Bound)"
  },
  {
-  "id": "draupnir-conquest",
-  "group": "Dungeons",
-  "name": "Draupnir (Conquest)",
+  "id": "shugo-festival",
+  "group": "",
+  "name": "Shugo Festival",
   "per": "day",
-  "n": 2,
-  "cap": 14
+  "n": 3,
+  "ico": "dungeon",
+  "note": [
+   "Chaves para pegar a recompensa do festival: 3 por dia, guarda até {c}.",
+   "Keys to claim the festival reward: 3 a day, stores up to {c}."
+  ],
+  "cap": 12,
+  "capSub": 21,
+  "srv": 1,
+  "pic": "Shugo Festival Reward Key (Bound)"
  },
  {
-  "id": "ferocious-horn-den-conquest",
-  "group": "Dungeons",
-  "name": "Ferocious Horn Den (Conquest)",
+  "id": "odyle-energy-crafts-substance-morph",
+  "group": "",
+  "name": "Odyle Energy crafts (Substance Morph)",
+  "per": "week",
+  "n": 20,
+  "ico": "dungeon",
+  "note": [
+   "Odyle Energy feita no Substance Morph: 16 por semana por conta e 4 por personagem.",
+   "Odyle Energy made at Substance Morph: 16 a week per account and 4 per character."
+  ],
+  "both": 1,
+  "pic": "Odyle Energy (Bound)"
+ },
+ {
+  "id": "odyle-energy-bought-wind-breeze-merchant-membership",
+  "group": "",
+  "name": "Odyle Energy bought (Wind Breeze Merchant, membership)",
+  "per": "week",
+  "n": 20,
+  "ico": "dungeon",
+  "note": [
+   "Odyle Energy comprada no Wind Breeze Merchant: 16 por conta e 4 por personagem. Só com Membership.",
+   "Odyle Energy bought at the Wind Breeze Merchant: 16 per account and 4 per character. Membership only."
+  ],
+  "both": 1,
+  "subOnly": 1,
+  "pic": "Small Odyle Energy (Bound)"
+ },
+ {
+  "id": "unknown-fissure-daily-dungeon",
+  "group": "",
+  "name": "Unknown Fissure (daily dungeon)",
+  "per": "week",
+  "n": 14,
+  "ico": "dungeon",
+  "note": [
+   "A dungeon diária: 14 entradas por semana.",
+   "The daily dungeon: 14 entries a week."
+  ],
+  "srv": 1,
+  "pic": "Unknown Fissure Challenge Ticket (Bound)"
+ },
+ {
+  "id": "ascension-trial",
+  "group": "",
+  "name": "Ascension Trial",
+  "per": "week",
+  "n": 3,
+  "ico": "dungeon",
+  "note": [
+   "3 entradas por semana.",
+   "3 entries a week."
+  ],
+  "pic": "Ascension Trial Challenge Ticket (Bound)"
+ },
+ {
+  "id": "abyss-time",
+  "group": "",
+  "name": "Abyss time",
+  "per": "week",
+  "n": 7,
+  "ico": "layers",
+  "note": [
+   "{c} horas por semana em cada camada do Abyss.",
+   "{c} hours a week in each layer of the Abyss."
+  ],
+  "unit": "h",
+  "nSub": 14,
+  "pic": "Lower Abyss Rift Stone"
+ },
+ {
+  "id": "abyss-supply-weekly-requests",
+  "group": "",
+  "name": "Abyss Supply: Weekly Requests",
+  "per": "week",
+  "n": 10,
+  "ico": "layers",
+  "note": [
+   "Pedidos semanais do Abyss entregues.",
+   "Abyss weekly requests delivered."
+  ],
+  "pic": "Latesran Western Root Command: Veteran (Bound)"
+ },
+ {
+  "id": "duty-commands-bought-scrolls",
+  "group": "",
+  "name": "Duty Commands (bought scrolls)",
+  "per": "week",
+  "n": 32,
+  "ico": "target",
+  "note": [
+   "Pergaminhos de Command comprados: 12 na capital e 5 de cada grau em cada raiz do Lower Abyss.",
+   "Command scrolls bought: 12 in the capital and 5 of each grade at each Lower Abyss root."
+  ],
+  "srv": 1,
+  "pic": "Latesran Eastern Root Command: Elite (Bound)"
+ },
+ {
+  "id": "arena",
+  "group": "",
+  "name": "Arena",
+  "per": "week",
+  "n": 80,
+  "ico": "dungeon",
+  "note": [
+   "Arena of Solitude (1v1) e Arena of Cooperation (5v5): Victory Reward em 30 vitórias e Participation Reward em 10 partidas, em cada uma.",
+   "Arena of Solitude (1v1) and Arena of Cooperation (5v5): Victory Reward at 30 wins and Participation Reward at 10 matches, on each."
+  ],
+  "pic": "Silver Fragment of Merit (Bound)"
+ },
+ {
+  "id": "battlefield",
+  "group": "",
+  "name": "Battlefield",
+  "per": "week",
+  "n": 6,
+  "ico": "dungeon",
+  "note": [
+   "Arena of Tactics: Victory Reward em 3 vitórias e Participation Reward em 3 partidas.",
+   "Arena of Tactics: Victory Reward at 3 wins and Participation Reward at 3 matches."
+  ],
+  "pic": "Abyss Points"
+ },
+ {
+  "id": "daeva-pass-exp",
+  "group": "",
+  "name": "Daeva Pass EXP",
+  "per": "week",
+  "n": 1,
+  "ico": "pass",
+  "note": [
+   "O limite semanal de EXP de cada passe. Marque quando bater.",
+   "Each pass's weekly EXP limit. Tick it when you reach it."
+  ],
+  "pic": "Daeva Pass Shop Coin"
+ },
+ {
+  "id": "abyss-corridors",
+  "group": "Other dailies",
+  "name": "Abyss Corridors",
   "per": "day",
-  "n": 2,
-  "cap": 14
+  "n": 1,
+  "ico": "layers",
+  "note": [
+   "O tempo (2:10) em cada corredor que os artefatos da sua facção abrem, até o próximo Artifact Siege.",
+   "The time (2:10) in each corridor your faction's artifacts open, until the next Artifact Siege."
+  ],
+  "off": 1
  },
  {
-  "id": "fire-temple-conquest",
-  "group": "Dungeons",
-  "name": "Fire Temple (Conquest)",
+  "id": "dimensional-invasion",
+  "group": "Other dailies",
+  "name": "Dimensional Invasion",
   "per": "day",
-  "n": 2,
-  "cap": 14
+  "n": 1,
+  "ico": "portal",
+  "note": [
+   "Chave de recompensa do evento de defesa que acontece toda hora, aos :30. 1 por dia, guarda até {c}.",
+   "Reward key of the defence event that runs every hour at :30. 1 a day, stores up to {c}."
+  ],
+  "cap": 7,
+  "srv": 1,
+  "off": 1,
+  "pic": "Dimensional Merit Chest: Unique (Bound)"
  },
  {
-  "id": "krao-cave-conquest",
-  "group": "Dungeons",
-  "name": "Krao Cave (Conquest)",
-  "per": "day",
-  "n": 2,
-  "cap": 14
- },
- {
-  "id": "shattered-arkanis-transcendence",
-  "group": "Dungeons",
-  "name": "Shattered Arkanis (Transcendence)",
-  "per": "day",
-  "n": 2,
-  "cap": 4
- },
- {
-  "id": "urugugu-canyon-conquest",
-  "group": "Dungeons",
-  "name": "Urugugu Canyon (Conquest)",
-  "per": "day",
-  "n": 2,
-  "cap": 14
- },
- {
-  "id": "vakron-sky-island-conquest",
-  "group": "Dungeons",
-  "name": "Vakron Sky Island (Conquest)",
-  "per": "day",
-  "n": 2,
-  "cap": 14
- },
- {
-  "id": "azure-breath-island-exploration",
-  "group": "Dungeons",
-  "name": "Azure Breath Island (Exploration)",
+  "id": "subjugation",
+  "group": "Other weeklies",
+  "name": "Subjugation",
   "per": "week",
-  "n": 7
+  "n": 3,
+  "ico": "swords",
+  "note": [
+   "3 tickets por semana para as dungeons de 4 jogadores.",
+   "3 tickets a week for the 4-player dungeons."
+  ],
+  "off": 1
  },
  {
-  "id": "cradle-of-nihility-conquest",
-  "group": "Dungeons",
-  "name": "Cradle of Nihility (Conquest)",
+  "id": "silent-graveyard",
+  "group": "Other weeklies",
+  "name": "Silent Graveyard",
   "per": "week",
-  "n": 7
+  "n": 7,
+  "ico": "growth",
+  "note": [
+   "Growth dungeon: 7 horas por semana, contadas só lá dentro.",
+   "Growth dungeon: 7 hours a week, counted only while inside."
+  ],
+  "unit": "h",
+  "off": 1
  },
  {
-  "id": "cradle-of-nihility-exploration",
-  "group": "Dungeons",
-  "name": "Cradle of Nihility (Exploration)",
+  "id": "fafnite-amphitheater",
+  "group": "Other weeklies",
+  "name": "Fafnite Amphitheater",
   "per": "week",
-  "n": 7
+  "n": 7,
+  "ico": "growth",
+  "note": [
+   "Growth dungeon: 7 horas por semana, contadas só lá dentro.",
+   "Growth dungeon: 7 hours a week, counted only while inside."
+  ],
+  "unit": "h",
+  "off": 1
  },
  {
-  "id": "draupnir-exploration",
-  "group": "Dungeons",
-  "name": "Draupnir (Exploration)",
+  "id": "remaining-unobtained-cube-count",
+  "group": "Other weeklies",
+  "name": "Remaining Unobtained Cube Count",
   "per": "week",
-  "n": 7
- },
- {
-  "id": "dying-dramata-s-nest-conquest",
-  "group": "Dungeons",
-  "name": "Dying Dramata's Nest (Conquest)",
-  "per": "week",
-  "n": 7
- },
- {
-  "id": "dying-dramata-s-nest-exploration",
-  "group": "Dungeons",
-  "name": "Dying Dramata's Nest (Exploration)",
-  "per": "week",
-  "n": 7
- },
- {
-  "id": "ferocious-horn-den-exploration",
-  "group": "Dungeons",
-  "name": "Ferocious Horn Den (Exploration)",
-  "per": "week",
-  "n": 7
- },
- {
-  "id": "fire-temple-exploration",
-  "group": "Dungeons",
-  "name": "Fire Temple (Exploration)",
-  "per": "week",
-  "n": 7
- },
- {
-  "id": "hall-of-illusion-exploration",
-  "group": "Dungeons",
-  "name": "Hall of Illusion (Exploration)",
-  "per": "week",
-  "n": 7
- },
- {
-  "id": "krao-cave-exploration",
-  "group": "Dungeons",
-  "name": "Krao Cave (Exploration)",
-  "per": "week",
-  "n": 7
- },
- {
-  "id": "urugugu-canyon-exploration",
-  "group": "Dungeons",
-  "name": "Urugugu Canyon (Exploration)",
-  "per": "week",
-  "n": 7
- },
- {
-  "id": "vakron-sky-island-exploration",
-  "group": "Dungeons",
-  "name": "Vakron Sky Island (Exploration)",
-  "per": "week",
-  "n": 7
+  "n": 10,
+  "ico": "cube",
+  "note": [
+   "Quantas vezes dá para sair de Conquest ou Transcendence sem pegar o cubo. Em 0, não entra mais até quarta.",
+   "How many times you can leave Conquest or Transcendence without taking the cube. At 0 you cannot enter until Wednesday."
+  ],
+  "srv": 1,
+  "off": 1,
+  "pic": "Key: Hidden Cube (Bound)"
  },
  {
   "id": "conquest-final-bosses",
-  "group": "Final bosses",
+  "group": "Other weeklies",
   "name": "Conquest final bosses",
   "per": "week",
-  "n": 35
- },
- {
-  "id": "ordeal-final-bosses",
-  "group": "Final bosses",
-  "name": "Ordeal final bosses",
-  "per": "week",
-  "n": 7
+  "n": 35,
+  "ico": "boss",
+  "note": [
+   "Teto de chefes finais de Conquest na semana.",
+   "Cap of Conquest final bosses in the week."
+  ],
+  "off": 1
  },
  {
   "id": "transcendence-final-bosses",
-  "group": "Final bosses",
+  "group": "Other weeklies",
   "name": "Transcendence final bosses",
   "per": "week",
-  "n": 28
+  "n": 28,
+  "ico": "boss",
+  "note": [
+   "Teto de chefes finais de Transcendence na semana.",
+   "Cap of Transcendence final bosses in the week."
+  ],
+  "off": 1
  },
  {
   "id": "abyssal-forge",
   "group": "Sanctuary",
   "name": "Abyssal Forge",
   "per": "week",
-  "n": 4
+  "n": 4,
+  "ico": "layers",
+  "note": [
+   "Raid: 4 tentativas por semana. Em 13/out/2026 não estava aberto no Global.",
+   "Raid: 4 attempts a week. On 13 Oct 2026 it was not open on Global."
+  ],
+  "off": 1
  },
  {
   "id": "abyssal-forge-final-boss",
   "group": "Sanctuary",
   "name": "Abyssal Forge final boss",
   "per": "week",
-  "n": 1
+  "n": 1,
+  "ico": "boss",
+  "note": [
+   "Chefe final do raid: 1 por semana. Em 13/out/2026 não estava aberto no Global.",
+   "Final boss of the raid: 1 a week. On 13 Oct 2026 it was not open on Global."
+  ],
+  "off": 1
  },
  {
   "id": "chalice-of-muspel",
   "group": "Sanctuary",
   "name": "Chalice of Muspel",
   "per": "week",
-  "n": 4
+  "n": 4,
+  "ico": "raid",
+  "note": [
+   "Raid: 4 tentativas por semana. Em 13/out/2026 não estava aberto no Global.",
+   "Raid: 4 attempts a week. On 13 Oct 2026 it was not open on Global."
+  ],
+  "off": 1
  },
  {
   "id": "chalice-of-muspel-final-boss",
   "group": "Sanctuary",
   "name": "Chalice of Muspel final boss",
   "per": "week",
-  "n": 2
+  "n": 2,
+  "ico": "boss",
+  "note": [
+   "Chefe final do raid: 2 por semana. Em 13/out/2026 não estava aberto no Global.",
+   "Final boss of the raid: 2 a week. On 13 Oct 2026 it was not open on Global."
+  ],
+  "off": 1
  },
  {
   "id": "corroded-decontamination-facility",
   "group": "Sanctuary",
   "name": "Corroded Decontamination Facility",
   "per": "week",
-  "n": 4
+  "n": 4,
+  "ico": "raid",
+  "note": [
+   "Raid: 4 tentativas por semana. Em 13/out/2026 não estava aberto no Global.",
+   "Raid: 4 attempts a week. On 13 Oct 2026 it was not open on Global."
+  ],
+  "off": 1
  },
  {
   "id": "corroded-decontamination-facility-final-boss",
   "group": "Sanctuary",
   "name": "Corroded Decontamination Facility final boss",
   "per": "week",
-  "n": 2
- },
- {
-  "id": "exp-boost-colony-draft-level-1",
-  "group": "Abyss and growth time",
-  "name": "EXP Boost Colony Draft Level 1",
-  "per": "week",
-  "n": 7,
-  "unit": "h"
- },
- {
-  "id": "exp-boost-colony-draft-level-2",
-  "group": "Abyss and growth time",
-  "name": "EXP Boost Colony Draft Level 2",
-  "per": "week",
-  "n": 7,
-  "unit": "h"
- },
- {
-  "id": "exp-boost-colony-draft-level-3",
-  "group": "Abyss and growth time",
-  "name": "EXP Boost Colony Draft Level 3",
-  "per": "week",
-  "n": 7,
-  "unit": "h"
- },
- {
-  "id": "exp-boost-colony-draft-level-4",
-  "group": "Abyss and growth time",
-  "name": "EXP Boost Colony Draft Level 4",
-  "per": "week",
-  "n": 7,
-  "unit": "h"
- },
- {
-  "id": "fafnite-amphitheater",
-  "group": "Abyss and growth time",
-  "name": "Fafnite Amphitheater",
-  "per": "week",
-  "n": 7,
-  "unit": "h"
- },
- {
-  "id": "lower-abyss",
-  "group": "Abyss and growth time",
-  "name": "Lower Abyss",
-  "per": "week",
-  "n": 7,
-  "unit": "h"
- },
- {
-  "id": "middle-abyss",
-  "group": "Abyss and growth time",
-  "name": "Middle Abyss",
-  "per": "week",
-  "n": 7,
-  "unit": "h"
- },
- {
-  "id": "silent-graveyard",
-  "group": "Abyss and growth time",
-  "name": "Silent Graveyard",
-  "per": "week",
-  "n": 7,
-  "unit": "h"
- },
- {
-  "id": "upper-abyss",
-  "group": "Abyss and growth time",
-  "name": "Upper Abyss",
-  "per": "week",
-  "n": 7,
-  "unit": "h"
- },
- {
-  "id": "dimensional-invasion",
-  "group": "Other",
-  "name": "Dimensional Invasion",
-  "per": "day",
-  "n": 1,
-  "cap": 7
- },
- {
-  "id": "nightmare",
-  "group": "Other",
-  "name": "Nightmare",
-  "per": "day",
   "n": 2,
-  "cap": 14
+  "ico": "boss",
+  "note": [
+   "Chefe final do raid: 2 por semana. Em 13/out/2026 não estava aberto no Global.",
+   "Final boss of the raid: 2 a week. On 13 Oct 2026 it was not open on Global."
+  ],
+  "off": 1
  },
  {
-  "id": "shugo-festival",
-  "group": "Other",
-  "name": "Shugo Festival",
-  "per": "day",
-  "n": 3,
-  "cap": 12
- },
- {
-  "id": "ascension-trial",
-  "group": "Other",
-  "name": "Ascension Trial",
+  "id": "krao-cave-exploration",
+  "group": "Exploration",
+  "name": "Krao Cave (Exploration)",
   "per": "week",
-  "n": 3
+  "n": 7,
+  "ico": "dungeon",
+  "note": [
+   "7 recompensas de Exploration por semana nesta dungeon.",
+   "7 Exploration rewards a week in this dungeon."
+  ],
+  "off": 1
  },
  {
-  "id": "sprout-badge",
-  "group": "Other",
-  "name": "Sprout Badge",
+  "id": "urugugu-canyon-exploration",
+  "group": "Exploration",
+  "name": "Urugugu Canyon (Exploration)",
   "per": "week",
-  "n": 14
+  "n": 7,
+  "ico": "dungeon",
+  "note": [
+   "7 recompensas de Exploration por semana nesta dungeon.",
+   "7 Exploration rewards a week in this dungeon."
+  ],
+  "off": 1
  },
  {
-  "id": "subjugation",
-  "group": "Other",
-  "name": "Subjugation",
+  "id": "fire-temple-exploration",
+  "group": "Exploration",
+  "name": "Fire Temple (Exploration)",
   "per": "week",
-  "n": 3
+  "n": 7,
+  "ico": "dungeon",
+  "note": [
+   "7 recompensas de Exploration por semana nesta dungeon.",
+   "7 Exploration rewards a week in this dungeon."
+  ],
+  "off": 1
  },
  {
-  "id": "unknown-fissure-daily-dungeon",
-  "group": "Other",
-  "name": "Unknown Fissure (Daily Dungeon)",
+  "id": "draupnir-exploration",
+  "group": "Exploration",
+  "name": "Draupnir (Exploration)",
   "per": "week",
-  "n": 14
+  "n": 7,
+  "ico": "dungeon",
+  "note": [
+   "7 recompensas de Exploration por semana nesta dungeon.",
+   "7 Exploration rewards a week in this dungeon."
+  ],
+  "off": 1
+ },
+ {
+  "id": "vakron-sky-island-exploration",
+  "group": "Exploration",
+  "name": "Vakron Sky Island (Exploration)",
+  "per": "week",
+  "n": 7,
+  "ico": "dungeon",
+  "note": [
+   "7 recompensas de Exploration por semana nesta dungeon.",
+   "7 Exploration rewards a week in this dungeon."
+  ],
+  "off": 1
+ },
+ {
+  "id": "ferocious-horn-den-exploration",
+  "group": "Exploration",
+  "name": "Ferocious Horn Den (Exploration)",
+  "per": "week",
+  "n": 7,
+  "ico": "dungeon",
+  "note": [
+   "7 recompensas de Exploration por semana nesta dungeon.",
+   "7 Exploration rewards a week in this dungeon."
+  ],
+  "off": 1
+ },
+ {
+  "id": "azure-breath-island-exploration",
+  "group": "Exploration",
+  "name": "Azure Breath Island (Exploration)",
+  "per": "week",
+  "n": 7,
+  "ico": "dungeon",
+  "note": [
+   "7 recompensas de Exploration por semana nesta dungeon.",
+   "7 Exploration rewards a week in this dungeon."
+  ],
+  "off": 1
+ },
+ {
+  "id": "cradle-of-nihility-exploration",
+  "group": "Exploration",
+  "name": "Cradle of Nihility (Exploration)",
+  "per": "week",
+  "n": 7,
+  "ico": "dungeon",
+  "note": [
+   "7 recompensas de Exploration por semana nesta dungeon.",
+   "7 Exploration rewards a week in this dungeon."
+  ],
+  "off": 1
+ },
+ {
+  "id": "dying-dramata-s-nest-exploration",
+  "group": "Exploration",
+  "name": "Dying Dramata's Nest (Exploration)",
+  "per": "week",
+  "n": 7,
+  "ico": "dungeon",
+  "note": [
+   "7 recompensas de Exploration por semana nesta dungeon.",
+   "7 Exploration rewards a week in this dungeon."
+  ],
+  "off": 1
+ },
+ {
+  "id": "hall-of-illusion-exploration",
+  "group": "Exploration",
+  "name": "Hall of Illusion (Exploration)",
+  "per": "week",
+  "n": 7,
+  "ico": "dungeon",
+  "note": [
+   "7 recompensas de Exploration por semana nesta dungeon.",
+   "7 Exploration rewards a week in this dungeon."
+  ],
+  "off": 1
  }
 ]

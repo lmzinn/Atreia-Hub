@@ -13,7 +13,9 @@ import datetime
 import html
 import json
 import os
+import hashlib
 import re
+import shutil
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -22,6 +24,7 @@ from guide_convert import convert  # noqa: E402
 from craft_part import DATA as CRAFT, calc_data, craft_part  # noqa: E402
 from routine_part import DATA as ROUTINE, routine_data, routine_part  # noqa: E402
 from builder_part import DATA as BUILDER, builder_data, builder_icons, builder_part  # noqa: E402
+import tool_parts  # noqa: E402
 
 sys.stdout.reconfigure(encoding='utf8', errors='replace')
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
@@ -42,8 +45,10 @@ else:
     PVP = os.path.join(PRIVATE, 'bldpvp', 'Assassin PvP - Aion 2 Global.docx')
     BOARDS = os.path.join(PRIVATE, 'boards_asn.json')
 # the routine and crafting parts have no DOCX: their text is in routine_part.py and craft_part.py, their data in JSON
-PARTS = [('rot', 'Rotina', ROUTINE), ('bld', 'Minha build', BUILDER), ('prog', 'Progressão', PROG), ('asn', 'Assassin PvE', ASN), ('pvp', 'Assassin PvP', PVP),
-         ('craft', 'Crafting', CRAFT), ('cfg', 'Configurações', CFG)]
+TOOLS = tool_parts.__file__  # the parts written there always exist
+PARTS = [('rot', 'Rotina', ROUTINE), ('bld', 'Minha build', BUILDER), ('prog', 'Progressão', PROG),
+         ('asn', 'Assassin PvE', ASN), ('pvp', 'Assassin PvP', PVP), ('craft', 'Crafting', CRAFT), ('find', 'Onde consigo?', tool_parts.FINDER),
+         ('set', 'Configurações', TOOLS)]
 PARTS = [part for part in PARTS if part[2] and os.path.exists(part[2])]
 # folders of the left menu: the pages of a class sit inside Classes > <class>
 FOLDER = {'asn': ('Classes', 'Assassin'), 'pvp': ('Classes', 'Assassin')}
@@ -118,11 +123,15 @@ for pid, name, path in PARTS:
         doc = routine_part(strings, own_en)
     elif pid == 'bld':
         doc = builder_part(strings, own_en)
+    elif pid in ('find', 'set'):
+        doc = {'find': tool_parts.finder_part, 'set': tool_parts.settings_part}[pid](strings, own_en)
     else:
         doc = convert(path, pid, boxes=pid not in NO_BOXES, drop=DROP if pid in NO_BOXES else (), swap=((PUBLIC_SWAP if PUBLIC else ()) + SWAP) if pid in NO_BOXES else (), strings=strings)
         if PUBLIC and pid == 'cfg':  # the last section only points at the owner's build pages
             doc['subtitle'] = 'Configurações de referência, para repetir em cada personagem'
             doc['sections'] = [sec for sec in doc['sections'] if not sec['title'].startswith('5.')]
+    for sec in doc['sections']:  # bullets that only said the original document had a heading with no text under it
+        sec['html'] = re.sub(r'<li[^>]*>(?:(?!</li>).)*título sem texto no documento original(?:(?!</li>).)*</li>', '', sec['html'])
     nav.append(f'<button class="partbtn" data-part="{pid}"><span{t(name)}>{html.escape(name)}</span><small></small></button>')
     toc.append(f'<ul class="toc" data-part="{pid}">')
     mark_icons = ' data-icons="1"' if pid in ICON_PARTS else ''
@@ -186,14 +195,25 @@ def js(value):
     return json.dumps(value, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
 
+# the pictures of 'Onde consigo?' are files beside the page (finder_data.py makes them): they go with every copy of it
+SHEETS = os.path.join(ROOT, 'finder_icons')
+sheets = sorted(os.listdir(SHEETS)) if os.path.isdir(SHEETS) else []
+sheets_version = hashlib.sha1(b''.join(open(os.path.join(SHEETS, f), 'rb').read() for f in sheets)).hexdigest()[:8]
 page = open(os.path.join(HERE, 'guide_template.html'), encoding='utf8').read()
 for token, value in (('__NAV__', ''.join(nav)), ('__TOC__', ''.join(toc)), ('__CONTENT__', ''.join(content)), ('__BOARDS__', js(boards)),
                      ('__EN__', js(english)), ('__ICONS__', js(icons)), ('__CALC__', js(calc_data() if os.path.exists(CRAFT) else {})),
                      ('__ROUTINE__', js(routine_data() if os.path.exists(ROUTINE) else [])),
-                     ('__PUBLIC__', 'true' if PUBLIC else 'false'), ('__BLD__', js(builder_data() if os.path.exists(BUILDER) else {})), ('__BIC__', js(builder_icons())), ('__BUILT__', datetime.date.today().strftime('%d/%m/%Y'))):
+                     ('__PUBLIC__', 'true' if PUBLIC else 'false'), ('__FIND__', js(tool_parts.finder_data())), ('__NEWS__', js(tool_parts.news_data())), ('__FICV__', sheets_version),
+                     ('__TIC__', js(json.load(open(os.path.join(HERE, 'term_icons.json'), encoding='utf8'))
+                                    if os.path.exists(os.path.join(HERE, 'term_icons.json')) else {})),  # pictures, made by icons_data.py
+                     ('__BLD__', js(builder_data() if os.path.exists(BUILDER) else {})), ('__BIC__', js(builder_icons())), ('__BUILT__', datetime.date.today().strftime('%d/%m/%Y'))):
     assert page.count(token) == 1, token
     page = page.replace(token, value)
 open(OUT, 'w', encoding='utf8', newline='\n').write(page)
+beside = os.path.join(os.path.dirname(os.path.abspath(OUT)), 'finder_icons')
+if sheets and os.path.normcase(beside) != os.path.normcase(SHEETS):
+    shutil.rmtree(beside, ignore_errors=True)
+    shutil.copytree(SHEETS, beside)
 if PUBLIC and i18n_path != i18n_public:
     used = {s: i18n[s] for s in dict.fromkeys(strings) if s in i18n and s not in own_en}
     json.dump(used, open(i18n_public, 'w', encoding='utf8', newline='\n'), ensure_ascii=False, indent=0, sort_keys=True)

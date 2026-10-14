@@ -1,12 +1,12 @@
 """The 'Rotina' part of the guide: daily and weekly limits with counters that reset by themselves (drawn by the page
-script into #routine). The list of activities is routine_data.json, made by routine_data.py from wikily.gg's Homework
-Checklist, read on 13 Oct 2026. The text lives here, in Portuguese and English."""
+script into #routine). The list of counters is routine_data.json, made by routine_data.py. The text lives here, in
+Portuguese and English."""
 import json
 import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, 'routine_data.json')
-WIKILY = 'https://wikily.gg/aion-2/homework'
+METABOT = 'https://metabot.gg/en/aion-2/guides/daily-weekly-checklist'
 
 
 def routine_data():
@@ -24,36 +24,59 @@ def routine_part(strings, english):
     def ul(*items):
         return '<ul>' + ''.join(el('li', pt, en) for pt, en in items) + '</ul>'
 
-    link = f'<a href="{WIKILY}" target="_blank" rel="noopener">Homework Checklist</a>'
+    link = f'<a href="{METABOT}" target="_blank" rel="noopener">metabot.gg</a>'
     tool = (
-        el('p', 'O que dá para fazer hoje e nesta semana, por personagem. Use − e + conforme for gastando as entradas; a '
-                'página recarrega e zera sozinha no reset.',
-           'What can be done today and this week, per character. Use − and + as you spend the entries; the page '
-           'recharges and clears by itself at the reset.')
+        el('p', 'O que vence sozinho: o que zera todo dia e o que zera na quarta. Marque cada linha quando fizer; a página '
+                'desmarca sozinha no reset.',
+           'What runs out by itself: what clears every day and what clears on Wednesday. Tick each row when you do it; the '
+           'page unticks by itself at the reset.')
         + '<div id="routine" class="tool"></div>')
     how = ul(
-        ('<b>Entradas que acumulam:</b> recarregam todo dia e ficam guardadas até um máximo. O número é quantas você '
-         'tem agora: aperte − a cada entrada usada. Na primeira vez, ajuste para o que o jogo mostra.',
-         '<b>Entries that stack up:</b> they recharge every day and are kept up to a cap. The number is how many you '
-         'have now: press − for each entry you use. The first time, set it to what the game shows.'),
-        ('<b>“No máximo”:</b> a entrada já está no teto, então a recarga do próximo reset se perde. É a primeira a gastar.',
-         '<b>“At the cap”:</b> the entry is already at its cap, so the recharge of the next reset is lost. Spend it first.'),
-        ('<b>Limites da semana:</b> o número é quantas você já fez. Volta a zero no reset semanal.',
-         '<b>Weekly limits:</b> the number is how many you have done. It goes back to zero at the weekly reset.'),
-        ('<b>Reset:</b> todo dia às 07:00 UTC (04:00 em Brasília); o semanal é na quarta, no mesmo horário. A página '
-         'mostra no horário do seu computador. No jogo, o tooltip de cada contador mostra a contagem oficial.',
-         '<b>Reset:</b> every day at 07:00 UTC (04:00 in Brasília); the weekly one is on Wednesday, at the same time. The '
-         'page shows it in your computer\'s time. In the game, the tooltip of each counter shows the official countdown.'),
-        ('<b>Se a página ficar fechada por dias,</b> ela soma as recargas dos dias que passaram ao abrir.',
-         '<b>If the page stays closed for days,</b> it adds the recharges of the days that went by when you open it.'),
-        ('<b>Escolher o que aparece:</b> esconde as atividades que você não faz. Vale para todos os personagens.',
-         '<b>Choose what shows:</b> hides the activities you do not do. It applies to every character.'),
-        ('<b>Personagens:</b> até 6, cada um com os próprios números. O campo Nome troca o nome da aba.',
-         '<b>Characters:</b> up to 6, each with its own numbers. The Name field renames the tab.'),
-        ('Com membership, o Shugo Festival guarda até 21 em vez de 12; a página usa 12.',
-         'With a membership, Shugo Festival stores up to 21 instead of 12; the page uses 12.'),
-        (f'Lista e limites: {link} do wikily.gg, lido em 13/out/2026.',
-         f'List and limits: wikily.gg\'s {link}, read on 13 Oct 2026.'),
+        ('<b>Marcar:</b> clique na linha quando terminar aquilo. O nome fica riscado e a linha conta em “feitos”, no '
+         'alto da coluna. Clique de novo para desmarcar.',
+         '<b>Ticking:</b> click the row when you finish it. The name is struck through and the row counts as “done”, at the '
+         'top of the column. Click again to untick.'),
+        ('<b>Diário:</b> desmarca sozinho todo dia no reset. <b>Semanal:</b> desmarca sozinho na quarta.',
+         '<b>Daily:</b> unticks by itself every day at the reset. <b>Weekly:</b> unticks by itself on Wednesday.'),
+        ('<b>⚠ na linha:</b> aparece em Nightmare e Shugo Festival, que acumulam até um máximo. Se a linha fica sem marcar '
+         'por dias seguidos (7 no Nightmare, 4 no Shugo Festival), a página avisa que as entradas devem estar no máximo e a '
+         'próxima recarga se perde.',
+         '<b>⚠ on the row:</b> shows on Nightmare and Shugo Festival, which stack up to a cap. If the row goes unticked for '
+         'days in a row (7 on Nightmare, 4 on Shugo Festival), the page warns that the entries should be at the cap and the '
+         'next recharge is lost.'),
+        ('<b>Por que não tem as dungeons de Conquest e Transcendence:</b> elas gastam Odyle Energy, que é uma reserva '
+         'só para todas as dungeons e depende da assinatura. Não é um contador por dungeon.',
+         '<b>Why Conquest and Transcendence dungeons are not here:</b> they spend Odyle Energy, which is one pool for '
+         'every dungeon and depends on the subscription. It is not a counter per dungeon.'),
+        ('<b>Tenho Membership:</b> com a assinatura, o Shugo Festival guarda até 21 em vez de 12, e o tempo de Abyss '
+         'passa de 7 para 14 horas. Também aparece a compra semanal de Odyle Energy no Wind Breeze Merchant.',
+         '<b>I have the Membership:</b> with the subscription, Shugo Festival stores up to 21 instead of 12, and Abyss '
+         'time goes from 7 to 14 hours. The weekly Odyle Energy purchase at the Wind Breeze Merchant shows up too.'),
+        ('<b>Etiqueta SERVIDOR:</b> o contador vale para todos os seus personagens do servidor, então o número é o mesmo em '
+         'todas as abas. Com PERSONAGEM, cada aba tem o seu.',
+         '<b>SERVER tag:</b> the counter is for all your characters on the server, so the number is the same on every tab. '
+         'With CHAR, each tab has its own.'),
+        ('<b>Escolher o que aparece:</b> liga e desliga cada contador. O que aparece de início é a lista do app do Shugo.GG, mais '
+         'Nightmare e Shugo Festival. Dimensional Invasion, Abyss Corridors, Subjugation, Silent Graveyard, Fafnite '
+         'Amphitheater, chefes finais e Exploration por dungeon vêm desligados.',
+         '<b>Choose what shows:</b> turns each counter on and off. What shows at first is the list of the Shugo.GG app, plus '
+         'Nightmare and Shugo Festival. Dimensional Invasion, Abyss Corridors, Subjugation, Silent Graveyard, Fafnite '
+         'Amphitheater, final bosses and Exploration per dungeon start turned off.'),
+        ('<b>Sanctuary:</b> os três raids vêm desligados, porque em 13/out/2026 nenhum estava aberto no Global. O Abyssal '
+         'Forge: Ludra saiu do ar no lançamento e a NCSOFT ainda vai anunciar a volta; ligue em “Escolher o que aparece” quando abrir.',
+         '<b>Sanctuary:</b> the three raids start turned off, because on 13 Oct 2026 none was open on Global. Abyssal Forge: '
+         'Ludra was taken down at launch and NCSOFT has yet to announce its return; turn them on under “Choose what shows” when '
+         'they open.'),
+        ('<b>Reset:</b> todo dia às 07:00 UTC (04:00 em Brasília); o semanal é na quarta, no mesmo horário. No jogo, o '
+         'tooltip de cada contador mostra a contagem oficial.',
+         '<b>Reset:</b> every day at 07:00 UTC (04:00 in Brasília); the weekly one is on Wednesday, at the same time. In '
+         'the game, the tooltip of each counter shows the official countdown.'),
+        ('<b>Se a página ficar fechada por dias,</b> ela aplica ao abrir os resets que passaram.',
+         '<b>If the page stays closed for days,</b> it applies the resets that went by when you open it.'),
+        (f'Lista e limites do que aparece de início: app do Shugo.GG, em 13/out/2026. Nightmare, Shugo Festival, o que muda com '
+         f'a assinatura e os contadores desligados: tabela do cliente Global publicada pelo {link}, lida no mesmo dia.',
+         f'List and limits of what shows at first: the Shugo.GG app, on 13 Oct 2026. Nightmare, Shugo Festival, what the '
+         f'subscription changes and the counters that start off: the Global client table published by {link}, read the same day.'),
     )
     english.update({'Rotina': 'Routine', 'Diário e semanal, com reset automático': 'Daily and weekly, with automatic reset',
                     'Rotina diária e semanal': 'Daily and weekly routine', 'Como funciona': 'How it works'})

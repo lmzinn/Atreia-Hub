@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Atreia Hub - Aion 2</title>
 <style>
-:root{--bg:#f3f4fb;--panel:#fff;--side:#12142a;--side-ink:#dfe3fb;--side-mute:#8d94c4;--ink:#1c1f33;--mute:#5c6185;--line:#d9dcf0;
+:root{--bg:#f3f4fb;--panel:#fff;--side:#eceefb;--side2:#e1e4f6;--side-ink:#1c1f33;--side-mute:#5c6185;--side-hover:#1c1f3312;--side-line:#1c1f3324;--side-field:#ffffffc0;--side-edge:#c5c9e6;--ink:#1c1f33;--mute:#5c6185;--line:#d9dcf0;
 --accent:#0a7fd4;--hl:#7c3aed;--hl2:#0ea5e9;--navy:#2b2670;--g:#2e7d32;--r:#c62828;--y:#8a6100;--head:#231f5a;--head-ink:#fff;--key:#e3e4fb;--zebra:#f5f5fd;
 --m:#e3f2e4;--h:#e2ecff;--s:#f8d7d3;--info:#e9f1ff;--warn:#fff6db;--good:#e8f5e9;--bad:#fdecea;
 --n-common:#eeedf3;--n-common-l:#8b8aa3;--n-rare:#dff0da;--n-rare-l:#2e7d32;--n-legend:#dcebfa;--n-legend-l:#1f5fbf;--n-unique:#ffe9b0;--n-unique-l:#b37a00;--n-ink:#22242f;--edge:#bcc2e0}
-:root[data-theme="dark"]{--bg:#090b14;--panel:#111527;--side:#06070e;--side-ink:#dde1fb;--side-mute:#7c84b3;--ink:#e6e8f8;--mute:#979dc2;--line:#262c4d;
+:root[data-theme="dark"]{--bg:#090b14;--panel:#111527;--side:#0b0d1d;--side2:#06070e;--side-ink:#dde1fb;--side-mute:#7c84b3;--side-hover:#ffffff1a;--side-line:#ffffff22;--side-field:#ffffff11;--side-edge:#2e3566;--ink:#e6e8f8;--mute:#979dc2;--line:#262c4d;
 --accent:#56c7ff;--hl:#8b5cf6;--hl2:#38bdf8;--navy:#b7c4ff;--g:#6fcf73;--r:#f08080;--y:#e2b84a;--head:#1c1f4a;--head-ink:#f1f2ff;--key:#1b2147;--zebra:#151a33;
 --m:#173a2a;--h:#15295a;--s:#4a2030;--info:#131f42;--warn:#3a3116;--good:#16321f;--bad:#3d1c24;
 --n-common:#232843;--n-common-l:#5d6591;--n-rare:#173a2a;--n-rare-l:#58b35d;--n-legend:#15295a;--n-legend-l:#5b9bea;--n-unique:#4a3a10;--n-unique-l:#d9a520;--n-ink:#eef0fb;--edge:#343c66}
@@ -19,19 +19,19 @@ body{--sw:230px;--ow:224px;margin:0;padding-left:var(--sw);background:var(--bg);
 a{color:var(--accent)}
 [hidden]{display:none!important}
 #side{position:fixed;inset:0 auto 0 0;width:var(--sw);background:var(--side);color:var(--side-ink);overflow-y:auto;padding:14px 12px 24px}
-#side .brand{font-weight:700;font-size:18px;margin:2px 4px 10px;width:fit-content;background:linear-gradient(90deg,#56c7ff,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+#side .brand{font-weight:700;font-size:18px;margin:2px 4px 10px;width:fit-content;background:linear-gradient(90deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .qwrap{position:relative;margin-bottom:10px}
-#q{width:100%;padding:8px 58px 8px 10px;border-radius:6px;border:1px solid #2e3566;background:#fff1;color:inherit;font:inherit}
+#q{width:100%;padding:8px 58px 8px 10px;border-radius:6px;border:1px solid var(--side-edge);background:var(--side-field);color:inherit;font:inherit}
 #q::placeholder{color:var(--side-mute)}
 #qn{position:absolute;right:9px;top:9px;font-size:12.5px;color:var(--side-mute)}
 .partbtn{display:flex;justify-content:space-between;align-items:center;width:100%;background:none;border:0;color:inherit;font:600 15px/1.3 inherit;padding:9px 8px;border-radius:6px;cursor:pointer;text-align:left}
-.partbtn:hover,.partbtn.on{background:#ffffff1a}
+.partbtn:hover,.partbtn.on{background:var(--side-hover)}
 .fold>summary{display:flex;align-items:center;gap:7px;list-style:none;cursor:pointer;font-weight:600;font-size:15px;line-height:1.3;padding:9px 8px;border-radius:6px}
 .fold>summary::-webkit-details-marker{display:none}
 .fold>summary::before{content:"▸";color:var(--side-mute);font-size:12px;width:9px}
 .fold[open]>summary::before{content:"▾"}
-.fold>summary:hover{background:#ffffff1a}
-.fold>.in{margin-left:12px;padding-left:5px;border-left:1px solid #ffffff26}
+.fold>summary:hover{background:var(--side-hover)}
+.fold>.in{margin-left:12px;padding-left:5px;border-left:1px solid var(--side-line)}
 .fold .fold>summary,.fold .partbtn{font-size:14px}
 .fold .fold .partbtn{font-weight:500}
 .partbtn small,.toc small{font-weight:400;font-size:12px;white-space:nowrap;margin-left:8px}
@@ -58,10 +58,10 @@ a{color:var(--accent)}
 .subtoc a{font-size:12.5px;padding:3px 8px;color:var(--mute)}
 .subtoc a:hover{color:var(--ink)}
 .subtoc a.cur{color:var(--accent);background:none;border-left-color:var(--hl)}
-.tools{margin-top:14px;border-top:1px solid #ffffff22;padding-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.tools{margin-top:14px;border-top:1px solid var(--side-line);padding-top:10px;display:flex;flex-wrap:wrap;gap:6px}
 .tools button,.reset,.bctl button,.pbar button,.csum button,.tabs button{font:13px inherit;padding:5px 9px;border-radius:5px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
-.tools button{background:#ffffff14;color:var(--side-ink);border-color:#ffffff33}
-.foot{font-size:12px;color:var(--side-mute);margin:14px 4px 0;border-top:1px solid #ffffff22;padding-top:10px}
+.tools button{background:var(--side-hover);color:var(--side-ink);border-color:var(--side-line)}
+.foot{font-size:12px;color:var(--side-mute);margin:14px 4px 0;border-top:1px solid var(--side-line);padding-top:10px}
 main{position:relative;min-width:0;padding:22px 28px 80px}
 #top{position:absolute;top:20px;right:28px;display:flex;gap:8px;z-index:2}
 #top button{height:34px;min-width:34px;border-radius:17px;border:1px solid var(--line);background:var(--panel);color:var(--mute);cursor:pointer;font:13px inherit;padding:0 11px}
@@ -72,8 +72,6 @@ main{position:relative;min-width:0;padding:22px 28px 80px}
 .part.on{display:block}
 .part>header h1{margin:0;color:var(--navy);font-size:26px;padding-right:130px}
 .part>header .sub{margin:2px 0 12px;color:var(--mute);border-bottom:3px solid;border-image:linear-gradient(90deg,var(--hl2),var(--hl)) 1;padding-bottom:10px}
-.pbar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:0 0 12px;font-size:13.5px}
-.pbar label{display:flex;gap:6px;align-items:center;cursor:pointer;color:var(--mute)}
 details.sec{background:var(--panel);border:1px solid var(--line);border-radius:8px;margin:0 0 10px;scroll-margin-top:10px}
 details.sec[open]{border-color:color-mix(in srgb,var(--hl) 40%,var(--line))}
 details.sec>summary{cursor:pointer;padding:11px 14px;display:flex;gap:10px;align-items:baseline;list-style:none;font-weight:650;color:var(--navy);font-size:17px}
@@ -121,7 +119,6 @@ label.chk{display:flex;gap:9px;align-items:flex-start;padding:4px 2px;cursor:poi
 label.chk:hover{background:var(--zebra)}
 label.chk input{margin-top:3px;flex:none}
 label.chk:has(input:checked)>span{color:var(--mute);text-decoration:line-through}
-body.hide-done label.chk:has(input:checked){display:none}
 tr:has(td.box input:checked) td:not(.box){color:var(--mute)}
 .flash{animation:flash 1.6s ease-out}
 @keyframes flash{0%,40%{background:#8b5cf655;box-shadow:0 0 0 3px #8b5cf655}100%{background:transparent;box-shadow:none}}
@@ -247,32 +244,267 @@ mark.hit.cur{background:#38bdf8;outline:2px solid #38bdf8}
 @media (max-width:1250px){body{--sw:180px;--ow:200px}main{padding-left:18px;padding-right:18px}}
 @media (max-width:760px){body{padding-left:0}#side{position:static;width:auto;inset:auto}#wrap{display:block}#outline{position:static;width:auto;max-height:none;margin:10px 14px 0}main{padding:14px}#top{top:12px;right:14px}.toc{columns:2}}
 @media print{#side,#outline,#top,#totop,.resetrow,.bctl,.pbar,.tabs,.cctl{display:none}body{padding-left:0}#wrap{display:block}main{margin:0;max-width:none}.part{display:block}details.sec{break-inside:avoid}.tabpane{display:block!important}}
+/* ---------- look: glow, cards, icons (kept at the end so it wins over the rules above) ---------- */
+:root{--g1:color-mix(in srgb,var(--hl2) 70%,#000);--g2:color-mix(in srgb,var(--hl) 80%,#000);--tint:color-mix(in srgb,var(--hl) 8%,transparent)}
+:root[data-theme="dark"]{--g1:color-mix(in srgb,var(--hl2) 62%,#fff);--g2:color-mix(in srgb,var(--hl) 55%,#fff);--tint:color-mix(in srgb,var(--hl) 12%,transparent)}
+body{background:radial-gradient(1100px 560px at 88% -10%,color-mix(in srgb,var(--hl2) 13%,transparent),transparent 62%),radial-gradient(900px 520px at 22% -8%,color-mix(in srgb,var(--hl) 15%,transparent),transparent 60%),var(--bg);background-attachment:fixed}
+::selection{background:color-mix(in srgb,var(--hl) 45%,transparent)}
+*{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--hl) 45%,transparent) transparent}
+#side{background:linear-gradient(180deg,var(--side),var(--side2) 70%);border-right:1px solid var(--side-line);padding-top:18px}
+#side .brand{cursor:pointer;font-size:17px;letter-spacing:.01em;margin:0 4px 14px;display:flex;align-items:center;gap:8px}
+#side .brand::before{content:"";width:26px;height:26px;border-radius:8px;flex:none;background:linear-gradient(135deg,var(--hl2),var(--hl));box-shadow:0 0 16px color-mix(in srgb,var(--hl) 50%,transparent);-webkit-mask:none}
+#q{border-radius:9px}
+.partbtn{gap:10px;justify-content:flex-start;border-radius:9px;transition:background .15s}
+.partbtn span{flex:1}
+.nico{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;opacity:.7}
+.partbtn.on{background:linear-gradient(90deg,color-mix(in srgb,var(--hl) 25%,transparent),color-mix(in srgb,var(--hl2) 8%,transparent));box-shadow:inset 3px 0 0 var(--hl2)}
+.partbtn.on .nico{opacity:1;color:var(--g1)}
+.fold>summary{border-radius:9px}
+.part.on{animation:partin .22s ease}
+@keyframes partin{from{transform:translateY(6px)}}
+.part>header{display:flex;gap:16px;align-items:center;padding:20px 22px;margin:0 0 16px;border-radius:14px;border:1px solid color-mix(in srgb,var(--hl) 32%,var(--line));background:linear-gradient(120deg,color-mix(in srgb,var(--hl) 20%,var(--panel)),var(--panel) 55%,color-mix(in srgb,var(--hl2) 13%,var(--panel)));box-shadow:0 10px 30px #0002}
+.part>header .htext{flex:1;min-width:0}
+.part>header h1{font-size:27px;padding-right:130px;width:fit-content;max-width:100%;background:linear-gradient(90deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.part>header .sub{margin:3px 0 0;padding:0;border:0}
+.hico{display:grid;place-items:center;flex:none;width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--hl2),var(--hl));box-shadow:0 6px 20px color-mix(in srgb,var(--hl) 35%,transparent)}
+.hico svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pprog{display:flex;align-items:center;gap:12px;margin-top:10px;font-size:13px;color:var(--mute)}
+.pprog b{white-space:nowrap;color:var(--ink)}
+.ptrack{display:block;flex:1;max-width:420px;height:8px;border-radius:5px;background:color-mix(in srgb,var(--hl) 16%,var(--line));overflow:hidden}
+.ptrack i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,var(--hl2),var(--hl));transition:width .3s}
+details.sec{border-radius:12px;transition:border-color .2s,box-shadow .2s}
+details.sec:hover{border-color:color-mix(in srgb,var(--hl) 42%,var(--line))}
+details.sec[open]{box-shadow:0 8px 26px #0002}
+details.sec>summary{padding:13px 16px;border-radius:12px}
+details.sec>summary:hover{background:var(--tint)}
+details.sec>summary::before{color:var(--hl2)}
+details.sec>summary .cnt:not(:empty){padding:2px 9px;border-radius:10px;background:var(--key)}
+h3{border-bottom:0;border-left:3px solid var(--hl2);padding:1px 0 1px 10px}
+th,td.head{background:linear-gradient(180deg,color-mix(in srgb,var(--hl) 26%,var(--head)),var(--head))}
+table.data tr:hover td:not(.key):not(.head){background:color-mix(in srgb,var(--hl2) 8%,var(--panel))}
+table.data tr:first-child th:first-child{border-top-left-radius:9px}
+table.data tr:first-child th:last-child{border-top-right-radius:9px}
+.callout{border-radius:0 10px 10px 0}
+.reset,.bctl button,.csum button,.tabs button,.tool button{border-radius:8px;transition:border-color .15s,background .15s}
+.tool button:hover,.reset:hover,.bctl button:hover{background:var(--tint)}
+.tabs button.on,.btabs button.on,.rtabs button.on{background:linear-gradient(135deg,var(--hl),color-mix(in srgb,var(--hl2) 60%,var(--hl)));border-color:transparent;color:#fff}
+.cctl,.csum{border-radius:12px;background:color-mix(in srgb,var(--hl) 6%,var(--zebra))}
+.bchip{border-color:color-mix(in srgb,var(--hl) 30%,var(--line));background:var(--tint)}
+input[type=checkbox]{appearance:none;-webkit-appearance:none;width:18px;height:18px;border:2px solid color-mix(in srgb,var(--hl) 45%,var(--mute));border-radius:5px;background:var(--panel);display:inline-grid;place-content:center;transition:background .12s,border-color .12s}
+input[type=checkbox]:hover{border-color:var(--hl2)}
+input[type=checkbox]:checked{border-color:transparent;background:linear-gradient(135deg,var(--hl2),var(--hl))}
+input[type=checkbox]:checked::after{content:"";width:9px;height:5px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+/* the − and + buttons do the job of the browser's own little arrows */
+.num input::-webkit-outer-spin-button,.num input::-webkit-inner-spin-button,.csum input::-webkit-outer-spin-button,.csum input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.num input,.csum input{-moz-appearance:textfield;appearance:textfield}
+#outline{background:color-mix(in srgb,var(--panel) 90%,transparent);backdrop-filter:blur(8px);border-radius:14px}
+body.no-toc #outline{display:none}
+body.no-toc #wrap{grid-template-columns:1fr minmax(0,1180px) 1fr}
+#wrap>#outline{grid-column:1}
+#wrap>main{grid-column:2}
+#totop{background:linear-gradient(135deg,var(--hl2),var(--hl));color:#fff;border:0}
+#top button{backdrop-filter:blur(6px)}
+.tic{width:24px;height:24px;border-radius:6px;vertical-align:-7px;margin-right:8px;background:#0003}
+.tic.big{width:36px;height:36px;border-radius:8px;margin:0;vertical-align:middle;flex:none}
+.tic.inl{width:18px;height:18px;border-radius:4px;vertical-align:-4px;margin-right:4px}
+.tic.none{display:inline-block;background:var(--key);opacity:.5}
+.thumb{width:64px;height:36px;border-radius:7px;object-fit:contain;background:#0003;vertical-align:middle;margin-right:12px;box-shadow:0 0 0 1px var(--line)}
+img.thumb[src*="image/webp"]{background:#0003}
+.thumb.none{display:inline-grid;place-items:center;box-shadow:none}
+.thumb.none svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pic{display:flex;align-items:center;gap:10px}
+.brow .tic.big{width:32px;height:32px}
+/* the quick glossary pairs the Portuguese terms of the guide with the game's English ones: no use in English */
+html[lang=en] #prog-glossario-rapido,html[lang=en] .toc li:has(a[href="#prog-glossario-rapido"]){display:none}
+/* routine as cards */
+.rtoday{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0 2px;padding:12px 14px;border-radius:12px;border:1px solid color-mix(in srgb,var(--hl) 30%,var(--line));background:var(--tint)}
+.rtt{margin-right:6px;color:var(--navy)}
+.rpill{padding:4px 11px;border-radius:14px;background:var(--panel);border:1px solid var(--line);font-size:13px}
+.rpill.warn{border-color:#d4a017;color:var(--y);font-weight:600}
+.rgrp{margin:12px 0 6px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:8px}
+.ritem{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:11px;border:1px solid var(--line);background:var(--panel);transition:border-color .15s}
+.ritem:hover{border-color:color-mix(in srgb,var(--hl) 45%,var(--line))}
+.ritem .thumb{margin:0;flex:none}
+.rwords{flex:1;min-width:0}
+.rwords b{display:block;font-size:13.5px;font-weight:600;line-height:1.3}
+.rwords small{color:var(--mute);font-size:12px}
+.rwarn{flex:none;width:20px;text-align:center;font-size:16px;cursor:help}
+.ritem.full{border-color:#d4a017}
+.ritem.full .rwarn{color:var(--y)}
+.ritem.done{opacity:.6}
+.ritem.done .rwarn{color:var(--g);font-weight:700}
+.ritem.off{opacity:.4}
+/* home: events, today, news */
+.hchip{display:inline-block;margin-top:10px;padding:4px 12px;border-radius:14px;font-size:12.5px;border:1px solid color-mix(in srgb,var(--hl) 35%,var(--line));background:var(--tint);color:var(--ink)}
+#hq{margin-top:14px;width:min(460px,100%);padding:10px 14px;border-radius:11px;border:1px solid color-mix(in srgb,var(--hl) 35%,var(--line));background:var(--panel);color:var(--ink);font:inherit}
+.hhead{margin:22px 0 10px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.hevents{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.hev{display:flex;flex-direction:column;gap:3px;padding:12px 14px;border-radius:13px;border:1px solid var(--line);background:var(--panel);position:relative}
+.hev b{font-size:14.5px;color:var(--navy);padding-right:30px}
+.hev .when{font-size:13px;color:var(--mute)}
+.hev .when strong{color:var(--ink)}
+.hev.live{border-color:var(--g);box-shadow:0 0 0 1px var(--g),0 8px 22px color-mix(in srgb,var(--g) 22%,transparent)}
+.hev .livetag{align-self:flex-start;padding:1px 8px;border-radius:9px;background:var(--g);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em}
+.hev .bell{position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:none;color:var(--mute);cursor:pointer;font-size:14px;padding:0}
+.hev .bell{display:grid;place-items:center}
+.hev .bell svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.hev .bell:hover{border-color:var(--hl2);color:var(--ink)}
+.hev .bell.on{background:linear-gradient(135deg,var(--hl2),var(--hl));border-color:transparent;color:#fff}
+.hcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+.hbox{padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--panel)}
+.hbox .hhead{margin-top:0}
+.hbox ul{list-style:none;margin:0;padding:0}
+.hbox li{padding:6px 0;border-bottom:1px solid var(--line);font-size:14px}
+.hbox li:last-child{border-bottom:0}
+.hbox li.warn{color:var(--y);font-weight:600}
+.hbox li.go{cursor:pointer}
+.hbox li.go:hover{color:var(--accent)}
+.hbox li time{display:inline-block;min-width:52px;color:var(--mute);font-size:12.5px}
+/* finder, settings */
+.fq{width:min(520px,100%);padding:10px 14px;border-radius:11px;border:1px solid color-mix(in srgb,var(--hl) 35%,var(--line));background:var(--panel);color:var(--ink);font:inherit;margin:8px 0 12px}
+.fres{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:10px}
+.fitem{padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel)}
+.fhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.fic{flex:none;width:40px;height:40px;border-radius:9px;background:color-mix(in srgb,var(--hl) 12%,#0004) no-repeat;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--hl) 30%,var(--line))}
+.fkind{font-size:12px;color:var(--mute);border:1px solid var(--line);border-radius:10px;padding:1px 8px}
+.fitem ul{margin:0;padding-left:18px;font-size:13.5px}
+.swatches{display:flex;flex-wrap:wrap;gap:8px}
+.tool button.sw{display:flex;align-items:center;gap:8px;padding:6px 12px}
+.sw i{width:18px;height:18px;border-radius:50%;display:inline-block}
+.tool button.sw.on{border-color:var(--hl);box-shadow:0 0 0 2px color-mix(in srgb,var(--hl) 40%,transparent)}
+.setrow{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:8px 0}
+.setrow>span:first-child{min-width:190px;font-weight:600}
+.setrow label{display:inline-flex;gap:6px;align-items:center}
+.rsub{cursor:pointer}
+/* home */
+#part-home{padding-top:44px}
+.hero{display:flex;gap:22px;align-items:center;padding:34px 34px;border-radius:18px;border:1px solid color-mix(in srgb,var(--hl) 35%,var(--line));background:radial-gradient(600px 240px at 12% 0%,color-mix(in srgb,var(--hl) 30%,transparent),transparent 70%),radial-gradient(520px 260px at 92% 100%,color-mix(in srgb,var(--hl2) 22%,transparent),transparent 70%),var(--panel);box-shadow:0 14px 40px #0003}
+.hmark{display:grid;place-items:center;flex:none;width:84px;height:84px;border-radius:22px;background:linear-gradient(135deg,var(--hl2),var(--hl));box-shadow:0 10px 34px color-mix(in srgb,var(--hl) 45%,transparent)}
+.hmark svg{width:44px;height:44px;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.hname{font-size:40px;font-weight:800;line-height:1.1;letter-spacing:-.01em;width:fit-content;background:linear-gradient(90deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hsub{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:4px}
+.htag{margin:10px 0 0;font-size:16px;color:var(--ink)}
+.hcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px;margin-top:18px}
+.hcard{display:flex;flex-direction:column;gap:6px;align-items:flex-start;text-align:left;padding:18px;border-radius:14px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s}
+.hcard:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--hl) 55%,var(--line));box-shadow:0 12px 30px color-mix(in srgb,var(--hl) 22%,transparent)}
+.hcard .hico{width:44px;height:44px;border-radius:12px;margin-bottom:4px}
+.hcard .hico svg{width:23px;height:23px}
+.hcard b{font-size:17px;color:var(--navy)}
+.hcard .hdesc{font-size:13.5px;color:var(--mute);min-height:38px}
+.hcard .ptrack{width:100%;max-width:none;flex:none;margin-top:4px}
+.hcard .hstat{font-size:12.5px;color:var(--accent);font-weight:600}
+@media (max-width:760px){#wrap>main,#wrap>#outline{grid-column:auto}.hero{flex-direction:column;align-items:flex-start;padding:22px}.hname{font-size:30px}.part>header h1{padding-right:0;font-size:22px}}
+@media print{.hico,.pprog,#part-home{display:none}}
+/* ---------- one palette: every surface takes a little of the accent ---------- */
+:root{--bg:color-mix(in srgb,var(--hl) 5%,#f4f5fb);--zebra:color-mix(in srgb,var(--hl) 4%,#f8f9fd);--key:color-mix(in srgb,var(--hl) 11%,#f0f1fb);
+--line:color-mix(in srgb,var(--hl) 18%,#dcdff0);--head:color-mix(in srgb,var(--hl) 62%,#1c1b45);--navy:color-mix(in srgb,var(--hl) 55%,#14163a);
+--accent:color-mix(in srgb,var(--hl2) 78%,#00122e);--side:color-mix(in srgb,var(--hl) 9%,#eef0fb);--side2:color-mix(in srgb,var(--hl) 15%,#e3e6f6);
+--side-edge:color-mix(in srgb,var(--hl) 24%,#cdd1ea)}
+:root[data-theme="dark"]{--bg:color-mix(in srgb,var(--hl) 5%,#07080f);--panel:color-mix(in srgb,var(--hl) 8%,#0f1220);--zebra:color-mix(in srgb,var(--hl) 5%,#131728);
+--key:color-mix(in srgb,var(--hl) 17%,#141830);--line:color-mix(in srgb,var(--hl) 24%,#20253f);--head:color-mix(in srgb,var(--hl) 42%,#12142c);
+--navy:color-mix(in srgb,var(--hl2) 30%,#e4e8ff);--mute:color-mix(in srgb,var(--hl) 12%,#9aa1c4);--accent:color-mix(in srgb,var(--hl2) 80%,#fff);
+--side:color-mix(in srgb,var(--hl) 10%,#090b17);--side2:color-mix(in srgb,var(--hl) 4%,#05060c);--side-edge:color-mix(in srgb,var(--hl) 30%,#20253f)}
+details.sec[open]>summary{background:linear-gradient(90deg,var(--tint),transparent 70%)}
+.chead{border-bottom-color:color-mix(in srgb,var(--hl) 30%,var(--line))}
+.toc a.cur{background:var(--tint)}
+/* routine cards */
+.thumb{box-shadow:0 0 0 1px color-mix(in srgb,var(--hl) 40%,var(--line));background:color-mix(in srgb,var(--hl) 20%,#0b0d1d)}
+.thumb.none{box-shadow:0 4px 12px color-mix(in srgb,var(--hl) 30%,transparent)}
+.tone-a{background:linear-gradient(135deg,var(--hl2),var(--hl))}
+.tone-b{background:linear-gradient(135deg,var(--hl),color-mix(in srgb,var(--hl) 48%,#0a0618))}
+.tone-c{background:linear-gradient(135deg,color-mix(in srgb,var(--hl2) 72%,#fff),color-mix(in srgb,var(--hl2) 65%,var(--hl)))}
+.tone-d{background:linear-gradient(135deg,color-mix(in srgb,var(--hl2) 45%,var(--hl)),color-mix(in srgb,var(--hl) 45%,#05040f))}
+.ritem{border-left:3px solid color-mix(in srgb,var(--hl) 42%,var(--line));background:linear-gradient(100deg,color-mix(in srgb,var(--hl) 7%,var(--panel)),var(--panel) 60%)}
+.ritem:hover{border-left-color:var(--hl2)}
+.ritem.full{border-color:#d4a017;border-left-color:#d4a017}
+.ritem.done{border-left-color:var(--g)}
+.rgrp{display:flex;align-items:center;gap:8px}
+.rgrp::before{content:"";width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--hl2),var(--hl))}
+.rtoday{background:linear-gradient(100deg,color-mix(in srgb,var(--hl) 16%,var(--panel)),color-mix(in srgb,var(--hl2) 8%,var(--panel)))}
+.rpill{border-color:color-mix(in srgb,var(--hl) 30%,var(--line))}
+/* home */
+.hev{border-top:2px solid color-mix(in srgb,var(--hl) 55%,var(--line));background:linear-gradient(180deg,color-mix(in srgb,var(--hl) 8%,var(--panel)),var(--panel) 70%)}
+.hev.live{border-top-color:var(--g)}
+.hbox{border-top:2px solid color-mix(in srgb,var(--hl2) 55%,var(--line))}
+.hcard{background:linear-gradient(160deg,color-mix(in srgb,var(--hl) 9%,var(--panel)),var(--panel) 55%)}
+.hhead{display:flex;align-items:center;gap:8px}
+.hhead::before{content:"";width:14px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--hl2),var(--hl))}
+.fitem,.bchip{border-color:color-mix(in srgb,var(--hl) 26%,var(--line))}
+/* routine: square item icons and scope tags */
+.ritem .thumb{width:42px;height:42px;border-radius:10px;object-fit:cover}
+.ritem img.thumb[src]{padding:3px;object-fit:contain}
+.ritem img.thumb.wide{padding:0;object-fit:cover}
+.rtag{display:inline-block;margin-right:6px;padding:0 6px;border-radius:5px;font-size:9.5px;font-weight:700;letter-spacing:.06em;line-height:16px;vertical-align:1px;
+color:color-mix(in srgb,var(--hl2) 75%,var(--ink));border:1px solid color-mix(in srgb,var(--hl2) 55%,var(--line))}
+.rtag.srv{color:color-mix(in srgb,var(--hl) 70%,var(--ink));border-color:color-mix(in srgb,var(--hl) 60%,var(--line))}
+/* routine: Daily beside Weekly, one row per counter */
+.rcols{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;margin-top:12px}
+.rcol{padding:14px 14px 10px;border-radius:14px;border:1px solid var(--line);background:var(--panel);min-width:0}
+.rcolh{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin:0 2px 10px}
+.rcolh b{display:block;font-size:17px;color:var(--navy)}
+.rcolh small{color:var(--mute);font-size:12.5px}
+.rreset{color:var(--accent);font-weight:600;font-size:13px;white-space:nowrap;padding-top:3px}
+.rcol .ritem{margin-bottom:6px;background:linear-gradient(100deg,color-mix(in srgb,var(--hl) 9%,var(--panel)),color-mix(in srgb,var(--hl) 3%,var(--panel)) 60%)}
+.rcol .rwords small{display:block;line-height:1.35;margin-top:1px}
+.rcol .ritem.done .rwords b{text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--mute) 70%,transparent);color:var(--mute)}
+.rcol .ritem.done .rtag{opacity:.6}
+.rcol label.ritem{cursor:pointer}
+.rcol .rtick{flex:none;width:24px;height:24px;border-radius:7px;margin:0 2px 0 4px}
+.rcol .rtick:checked::after{width:12px;height:6px}
+.rcol .rgrp{margin-top:14px}
+.rcol .ritem{gap:9px;padding:8px 9px}
+.rcol .ritem .thumb{width:38px;height:38px}
+.rcol .rwarn:empty{display:none}
+.rcol .rtag{font-size:9px;padding:0 5px;margin-right:5px}
+@media (max-width:1450px){.rcols{grid-template-columns:1fr}}
+/* crafting calculator: pieces to click, and the blocks that stay closed until asked for */
+.ptiles{display:flex;flex-wrap:wrap;gap:12px 26px;margin:6px 0 4px}
+.pgroup>small{display:block;color:var(--mute);font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.prow{display:flex;flex-wrap:wrap;gap:7px}
+.tool button.ptile{display:flex;align-items:center;gap:8px;padding:5px 12px 5px 6px;border-radius:11px;font-size:13.5px}
+.tool button.ptile .tic.big{width:30px;height:30px;opacity:.55;transition:opacity .15s}
+.tool button.ptile:hover .tic.big,.tool button.ptile.on .tic.big{opacity:1}
+.tool button.ptile.on{border-color:var(--hl);background:color-mix(in srgb,var(--hl) 18%,var(--panel));box-shadow:inset 0 0 0 1px var(--hl);font-weight:600}
+.cctl>button{margin-left:auto}
+.chead label{margin-left:16px;font-weight:400;font-size:13.5px;color:var(--ink);cursor:pointer}
+.tool table.cmats tr.grp td{background:color-mix(in srgb,var(--hl) 10%,var(--panel));color:var(--navy);font-weight:600;font-size:12.5px;letter-spacing:.03em;padding-top:5px;padding-bottom:5px}
+.tool table.cmats{min-width:min(100%,560px)}
+details.more{margin:14px 0 6px;border:1px solid color-mix(in srgb,var(--hl) 22%,var(--line));border-radius:11px;background:color-mix(in srgb,var(--hl) 4%,var(--panel))}
+details.more>summary{display:flex;align-items:center;gap:8px;list-style:none;cursor:pointer;padding:9px 13px;border-radius:11px;font-weight:600;font-size:14.5px;color:var(--navy)}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::before{content:"▸";color:var(--hl2);font-size:12px}
+details.more[open]>summary::before{content:"▾"}
+details.more>summary:hover{background:var(--tint)}
+details.more>.in{padding:0 13px 10px}
+details.more>.in>:first-child{margin-top:4px}
 </style>
 </head>
 <body>
 <aside id="side">
   <div class="brand">Atreia Hub - Aion 2</div>
   <div class="qwrap"><input id="q" type="search" autocomplete="off" data-ui-ph="search"><span id="qn"></span></div>
-  <nav id="nav">__NAV__</nav>
+  <nav id="nav"><button class="partbtn" data-part="home"><span data-ui="home"></span><small></small></button>__NAV__</nav>
   <p class="foot" id="foot"></p>
 </aside>
 <div id="wrap">
 <aside id="outline"><div id="ohead"><span id="otitle"></span><button id="ofold" data-ui-title="fold"></button></div>__TOC__</aside>
 <main id="main">
 <div id="top"><button id="lang" data-ui-title="lang"></button><button id="theme" data-ui-title="theme"></button></div>
+<section class="part" data-part="home" id="part-home"><div id="home"></div></section>
 __CONTENT__
 </main>
 </div>
 <button id="totop" data-ui-title="top" hidden>↑</button>
 <div id="tip" hidden></div>
 <script>
-const BOARDS = __BOARDS__, EN = __EN__, ICONS = __ICONS__, CALC = __CALC__, ROUTINE = __ROUTINE__, BLD = __BLD__, BIC = __BIC__, PUBLIC = __PUBLIC__, BUILT = '__BUILT__';
+const BOARDS = __BOARDS__, EN = __EN__, ICONS = __ICONS__, CALC = __CALC__, ROUTINE = __ROUTINE__, BLD = __BLD__, BIC = __BIC__, PUBLIC = __PUBLIC__, FIND = __FIND__, NEWS = __NEWS__, TIC = __TIC__, BUILT = '__BUILT__';
 const UI = {
   pt: {search: 'Buscar…  ( / )', openall: 'Abrir tudo', closeall: 'Fechar tudo', exp: 'Exportar marcações', imp: 'Importar marcações',
     foot: 'Gerado em {d}. As marcações ficam salvas neste navegador.', badfile: 'Não consegui ler esse arquivo.',
     reset: 'Zerar as marcações desta seção', undo: 'Desfazer', resetAt: 'Zerado em {d}.',
     next: 'Próximo item não marcado', hide: 'Esconder os marcados', alldone: 'Tudo marcado nesta parte.',
-    theme: 'Tema claro/escuro', fold: 'Recolher ou abrir os tópicos', mine: 'Seu valor', credit: 'Site de fãs, sem vínculo com a NCSOFT. Dados do jogo: wikily.gg.', subs: 'Abrir ou recolher os subtópicos', lang: 'Idioma: português / inglês', top: 'Voltar ao topo',
+    theme: 'Tema claro/escuro', home: 'Início', fold: 'Recolher ou abrir os tópicos', badLink: 'Não consegui abrir o que veio nesse link.', mine: 'Seu valor', credit: 'Site de fãs, sem vínculo com a NCSOFT. Dados e imagens do jogo: wikily.gg e metabot.gg.', subs: 'Abrir ou recolher os subtópicos', lang: 'Idioma: português / inglês', top: 'Voltar ao topo',
     crystals: 'Cristais', upTo: 'Vai até o nº {n} de {t}', upNone: 'Nenhum nó ainda', siteGoal: 'Meta do site', topGoal: 'Topo do Global', markUpTo: 'Marcar como pegos até aqui', clearTaken: 'Limpar pegos',
     clearAsk: 'Limpar os nós marcados como pegos em {b}?', takenHere: 'Pegos neste tabuleiro', node: ['nó', 'nós'], crystal: ['cristal', 'cristais'],
     start: 'Início', no: 'Nº', topKR: 'dos top KR', cumul: 'acumulado', tipHint: 'Clique para marcar como pego', tipUn: 'Pego. Clique para desmarcar',
@@ -281,14 +513,14 @@ const UI = {
     foot: 'Built on {d}. Your marks are saved in this browser.', badfile: 'Could not read that file.',
     reset: 'Clear the marks in this section', undo: 'Undo', resetAt: 'Cleared on {d}.',
     next: 'Next unmarked item', hide: 'Hide marked items', alldone: 'Everything in this part is marked.',
-    theme: 'Light/dark theme', fold: 'Fold or open the topics', mine: 'Your value', credit: 'Fan site, not affiliated with NCSOFT. Game data: wikily.gg.', subs: 'Open or fold the subtopics', lang: 'Language: Portuguese / English', top: 'Back to top',
+    theme: 'Light/dark theme', home: 'Home', fold: 'Fold or open the topics', badLink: 'Could not open what came in that link.', mine: 'Your value', credit: 'Fan site, not affiliated with NCSOFT. Game data and pictures: wikily.gg and metabot.gg.', subs: 'Open or fold the subtopics', lang: 'Language: Portuguese / English', top: 'Back to top',
     crystals: 'Crystals', upTo: 'Goes up to No. {n} of {t}', upNone: 'No nodes yet', siteGoal: 'Site target', topGoal: 'Global top', markUpTo: 'Mark as taken up to here', clearTaken: 'Clear taken',
     clearAsk: 'Clear the nodes marked as taken on {b}?', takenHere: 'Taken on this board', node: ['node', 'nodes'], crystal: ['crystal', 'crystals'],
     start: 'Start', no: 'No.', topKR: 'of top KR players', cumul: 'running total', tipHint: 'Click to mark as taken', tipUn: 'Taken. Click to unmark',
     have: 'I have', plan: 'Plan (sum of the sliders)', left: 'left over', short: 'short', spentAll: 'Already marked as taken'},
 };
 const KEY = 'aion2guia:v1';
-let S = {checks: {}, open: {}, part: null, theme: null, lang: 'pt', taken: {}, budget: {}, scroll: {}, resets: {}, tab: {}, hideDone: false, crystals: 0, fold: false, folders: {}, subShut: {}, mine: {}};
+let S = {checks: {}, open: {}, part: null, theme: null, lang: 'pt', taken: {}, budget: {}, scroll: {}, resets: {}, tab: {}, hideDone: false, crystals: 0, fold: false, folders: {}, subShut: {}, mine: {}, accent: 'violet'};
 try { S = Object.assign(S, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -297,6 +529,9 @@ const pl = (n, k) => n + ' ' + u(k)[n === 1 ? 0 : 1];
 const make = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 let searching = false;
 const repaint = [];  // things with language-dependent text built in script
+const homeStat = {};  // one line about each page, for its card on the home page
+const shared = {};    // what to do with a build or a roster that arrives in a link
+const shown = {};     // pages that redraw themselves when they are opened
 
 // ---------- skill icons ----------
 const icNames = Object.keys(ICONS), icOrder = [...icNames].sort((a, b) => b.length - a.length);
@@ -321,6 +556,24 @@ function iconize(root) {
       at.parentNode.insertBefore(icon(m[1]), at);
     });
   });
+}
+
+// ---------- pictures of materials, gear and dungeons ----------
+if (TIC.Kina) TIC.Kinah = TIC.Kina;  // the progression page spells it the old way
+const tic = (key, cls) => { if (!TIC[key]) return null; const i = make('img', cls || 'tic'); i.src = TIC[key]; i.alt = ''; i.loading = 'lazy'; return i; };
+// in the text pages: a small picture before the name of every material and currency
+const TERMS = Object.keys(TIC).filter(k => !k.includes(':') && !/Wings|Chalice|Parchment|Compass|Bell|Mirror/.test(k)).sort((a, b) => b.length - a.length);
+const termRe = TERMS.length ? new RegExp('(?<![\\w])(' + TERMS.map(n => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')(?![\\w])', 'g') : null;
+function termize(root) {
+  if (!termRe) return;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode: n =>
+    n.parentNode.closest('svg, button, a, select, .tool, .resetrow, summary, h3') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT});
+  const nodes = []; let n;
+  while ((n = walker.nextNode())) nodes.push(n);
+  nodes.forEach(node => [...node.data.matchAll(termRe)].reverse().forEach(m => {
+    const at = m.index ? node.splitText(m.index) : node;
+    at.parentNode.insertBefore(tic(m[1], 'tic inl'), at);
+  }));
 }
 
 // ---------- settings: a column for the reader's own values (public site) ----------
@@ -354,6 +607,7 @@ function applyLang() {
     el.innerHTML = en && tr != null ? tr : el._pt;
   });
   $$('.part[data-icons]').forEach(iconize);
+  $$('.part[data-part=prog], .part[data-part=craft]').forEach(termize);
   $$('[data-ui]').forEach(el => el.textContent = u(el.dataset.ui));
   $$('[data-ui-ph]').forEach(el => el.placeholder = u(el.dataset.uiPh));
   $$('[data-ui-title]').forEach(el => el.title = u(el.dataset.uiTitle));
@@ -382,7 +636,10 @@ function showPart(id, keep) {
   $$('.partbtn').forEach(b => b.classList.toggle('on', b.dataset.part === id));
   for (let f = $('.partbtn.on') && $('.partbtn.on').closest('.fold'); f; f = f.parentNode.closest('.fold')) f.open = true;
   $$('.toc').forEach(t => t.classList.toggle('on', t.dataset.part === id));
+  document.body.classList.toggle('no-toc', !$('.toc.on'));  // the home page has no topics
   paintTitle();
+  if (id === 'home') paintHome();
+  if (shown[id]) shown[id]();
   fitTables();
   if (!keep) scrollTo({top: S.scroll[id] || 0, behavior: 'instant'});
   markCurrent();
@@ -399,6 +656,8 @@ function openSection(d, target) {
   markCurrent();  // right away: when the place is already on screen nothing scrolls
 }
 function route() {
+  const link = /^#(build)=(.+)$/.exec(location.hash);
+  if (link) { unpack(link[2]).then(obj => shared[link[1]] && shared[link[1]](obj)).catch(() => alert(u('badLink'))); return false; }
   const id = decodeURIComponent(location.hash.slice(1)), el = id && document.getElementById(id);
   if (!el) return false;
   if (el.matches('.part')) showPart(el.dataset.part);
@@ -429,6 +688,8 @@ function refreshCounts() {
   $$('.part').forEach(p => {
     const [a, n] = count(p);
     $('.partbtn[data-part="' + p.dataset.part + '"] small').textContent = n ? a + '/' + n : '';
+    const bar = $('.pprog', p);
+    if (bar) { $('i', bar).style.width = (n ? 100 * a / n : 0) + '%'; $('b', bar).textContent = a + ' / ' + n + ' · ' + Math.round(n ? 100 * a / n : 0) + '%'; }
   });
 }
 $$('input[type=checkbox][data-k]').forEach(b => {
@@ -467,27 +728,29 @@ $$('details.sec').forEach(d => {
   repaint.push(paint);
 });
 
-// parts with tick boxes: jump to the next unmarked one, hide the marked ones
-const lastJump = {};
-$$('.part').forEach(p => {
-  if (!$('input[data-k]', p)) return;
-  const bar = make('div', 'pbar'), next = make('button'), lab = make('label'), box = make('input', 'hidedone'), txt = make('span');
-  next.dataset.ui = 'next'; txt.dataset.ui = 'hide'; box.type = 'checkbox'; box.checked = S.hideDone;
-  lab.append(box, txt); bar.append(next, lab); $('header', p).appendChild(bar);
-  box.onchange = () => { S.hideDone = box.checked; save(); document.body.classList.toggle('hide-done', S.hideDone); $$('.hidedone').forEach(x => x.checked = S.hideDone); };
-  next.onclick = () => {
-    const open = $$('input[data-k]', p).filter(b => !b.checked), last = lastJump[p.dataset.part];
-    if (!open.length) { alert(u('alldone')); return; }
-    const b = (last && open.find(x => last.compareDocumentPosition(x) & Node.DOCUMENT_POSITION_FOLLOWING)) || open[0];
-    lastJump[p.dataset.part] = b;
-    $$('.flash').forEach(x => x.classList.remove('flash'));
-    b.closest('details.sec').open = true;
-    const row = b.closest('label.chk') || b.closest('tr') || b;
-    row.scrollIntoView({behavior: 'smooth', block: 'center'});
-    row.classList.remove('flash'); void row.offsetWidth; row.classList.add('flash');
-  };
+// ---------- page headers: an icon, and a progress bar on the pages with tick boxes ----------
+const PICO = {
+  home: 'M3 11.5 12 4l9 7.5M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9',
+  rot: 'M8 3v3M16 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zM9 15l2 2 4-4',
+  bld: 'M12 3l8 3v6c0 4.5-3.2 7.6-8 9-4.8-1.4-8-4.5-8-9V6l8-3zM9 12l2 2 4-4',
+  prog: 'M3 17l6-6 4 4 8-8M15 7h6v6',
+  asn: 'M14.5 4.5l5 5M4 20l1-4L16 5l3 3L8 19l-4 1zM13 8l3 3',
+  pvp: 'M5 4l14 14M19 4L5 18M4 15l5 5M20 15l-5 5',
+  craft: 'M3 21l8.5-8.5M12 6l6 6M14 4l6 6-3 3-6-6 3-3zM5 15l4 4',
+  set: 'M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1M15 4v4M9 10v4M17 16v4',
+  find: 'M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM20 20l-4-4',
+  bell: 'M6 16v-5a6 6 0 0 1 12 0v5l2 2H4l2-2zM10 21a2 2 0 0 0 4 0',
+};
+const pico = (id, cls) => { const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('class', cls);
+  const p = document.createElementNS('http://www.w3.org/2000/svg', 'path'); p.setAttribute('d', PICO[id] || PICO.home); s.appendChild(p); return s; };
+$$('.partbtn').forEach(b => b.prepend(pico(b.dataset.part, 'nico')));
+$$('.part > header').forEach(h => {
+  const p = h.parentNode, tile = make('span', 'hico'), text = make('div', 'htext');
+  tile.appendChild(pico(p.dataset.part, ''));
+  [...h.children].forEach(k => text.appendChild(k));
+  h.append(tile, text);
+  if ($('input[data-k]', p)) { const bar = make('div', 'pprog'); bar.innerHTML = '<div class="ptrack"><i></i></div><b></b>'; text.appendChild(bar); }
 });
-document.body.classList.toggle('hide-done', S.hideDone);
 
 // ---------- Daevanion boards ----------
 // tabs: one pane per sub-heading that holds a board
@@ -643,36 +906,47 @@ function toolTable(host, heads, cls) {
 
 // ---------- crafting calculator ----------
 const CUI = {
-  pt: {pieces: 'Peças que vou fabricar', piece: 'Peça', target: 'Quero chegar em', own: 'Já tenho', none: 'Nenhuma', qty: 'Quantidade', reset: 'Voltar ao padrão',
-    resetAsk: 'Voltar a calculadora ao padrão? Isso apaga as peças escolhidas, as chances, os preços e o que você marcou em "Tenho".',
+  pt: {race: 'Facção', cls: 'Classe', allW: 'Todas as armas', pick: 'Clique nas peças que vai fabricar', kina: 'Mostrar custo em Kina', stepsSum: 'Etapas, chances e peças Splendent guardadas (opcional)',
+    groups: {weapon: 'Arma e Guard', armor: 'Armadura', acc: 'Joias'},
+    pieces: 'Peças escolhidas', homeStat: '{n} peça(s) na calculadora', piece: 'Peça', target: 'Quero chegar em', own: 'Já tenho', none: 'Nenhuma', qty: 'Quantidade', reset: 'Voltar ao padrão',
+    resetAsk: 'Voltar a calculadora ao padrão? Isso apaga a classe, as peças escolhidas, as chances, os preços e o que você marcou em "Tenho".',
     stepsOf: 'Etapas de', step: 'Etapa', recipe: 'Receita (por craft)', succ: 'Sucesso %', combo: 'Combo %', have: 'Já tenho', crafts: 'Crafts em média',
     lv: '{p} nível {n}', tc: '{p}, Transfer Crafting', onlyS: 'Só a versão Splendent segue adiante', onlyMiss: 'Só para as que não saíram Splendent no combo',
-    turns: 'Transforma: {g}', done: 'Você já tem essa peça, ou uma melhor.', nothing: 'Coloque quantidade em pelo menos uma peça.',
+    turns: 'Transforma: {g}', done: 'Você já tem essa peça, ou uma melhor.', nothing: 'Nenhuma peça escolhida ainda.',
     mats: 'Material total, em média', mat: 'Material', need: 'Preciso', inv: 'Tenho', miss: 'Falta', from: 'De onde vem', price: 'Preço por unidade (Kina)', cost: 'Custo do que falta (Kina)', total: 'Total',
-    src: {ore: 'Essence Extraction: Ore', odyle: 'Essence Extraction: Odyle', gem: 'Essence Extraction: Gem', mob: 'Monstros de nível 10 a 49',
+    src: {ore: 'Essence Extraction: Ore', log: 'Essence Extraction: Log', gem: 'Essence Extraction: Gem', odyle: 'Essence Extraction: Odyle', mob: 'Drop de monstros',
       stone: 'Monstros e Expeditions (Conquest)', exped: 'Expeditions (Conquest)', essence: 'Chefes de campo de nível 45 e Expeditions (Conquest)',
       npc: 'Merchant da profissão ou Shop do menu'}},
-  en: {pieces: 'Pieces I am going to craft', piece: 'Piece', target: 'I want to reach', own: 'I have', none: 'None', qty: 'Quantity', reset: 'Back to defaults',
-    resetAsk: 'Put the calculator back to its defaults? This clears the chosen pieces, the chances, the prices and what you entered under "I have".',
+  en: {race: 'Faction', cls: 'Class', allW: 'All weapons', pick: 'Click the pieces you are going to craft', kina: 'Show the cost in Kina', stepsSum: 'Steps, chances and Splendent pieces in stock (optional)',
+    groups: {weapon: 'Weapon and Guard', armor: 'Armour', acc: 'Jewellery'},
+    pieces: 'Chosen pieces', homeStat: '{n} piece(s) in the calculator', piece: 'Piece', target: 'I want to reach', own: 'I have', none: 'None', qty: 'Quantity', reset: 'Back to defaults',
+    resetAsk: 'Put the calculator back to its defaults? This clears the class, the chosen pieces, the chances, the prices and what you entered under "I have".',
     stepsOf: 'Steps of', step: 'Step', recipe: 'Recipe (per craft)', succ: 'Success %', combo: 'Combo %', have: 'I have', crafts: 'Crafts on average',
     lv: '{p} level {n}', tc: '{p}, Transfer Crafting', onlyS: 'Only the Splendent version moves on', onlyMiss: 'Only for the ones that did not come out Splendent on the combo',
-    turns: 'Transforms: {g}', done: 'You already have this piece, or a better one.', nothing: 'Set a quantity on at least one piece.',
+    turns: 'Transforms: {g}', done: 'You already have this piece, or a better one.', nothing: 'No piece chosen yet.',
     mats: 'Total material, on average', mat: 'Material', need: 'I need', inv: 'I have', miss: 'Missing', from: 'Where it comes from', price: 'Price per unit (Kina)', cost: 'Cost of what is missing (Kina)', total: 'Total',
-    src: {ore: 'Essence Extraction: Ore', odyle: 'Essence Extraction: Odyle', gem: 'Essence Extraction: Gem', mob: 'Monsters of level 10 to 49',
+    src: {ore: 'Essence Extraction: Ore', log: 'Essence Extraction: Log', gem: 'Essence Extraction: Gem', odyle: 'Essence Extraction: Odyle', mob: 'Monster drops',
       stone: 'Monsters and Expeditions (Conquest)', exped: 'Expeditions (Conquest)', essence: 'Level 45 field bosses and Expeditions (Conquest)',
       npc: 'Profession Merchant or the menu Shop'}},
 };
 const RANK = ['none', 'true', 'trueS', 'white', 'whiteS', 'wise', 'wiseS'], STAGES = [['true', 'trueS'], ['white', 'whiteS'], ['wise', 'wiseS']], CHAIN = ['base', 'expert', 'artisan'];
 const calcHost = $('#calc');
 if (calcHost && CALC.pieces) {
-  const fresh = () => ({list: {Dagger: {qty: 1, target: 'true', own: 'none'}}, view: 'Dagger', succ: {}, combo: {}, have: {}, price: {}, inv: {}});
+  const CLASSES = [...new Set(CALC.pieces.map(P => P.cls).filter(Boolean))], RACES = [...new Set(CALC.pieces.map(P => P.race))];
+  const builds = S.builds && S.builds.list || [], mine = (builds.find(b => b.id === S.builds.cur) || builds[0] || {}).cls;  // the class of the build being edited
+  const fresh = () => ({race: RACES[0], cls: CLASSES.includes(mine) ? mine : CLASSES[0], list: {}, view: '', succ: {}, combo: {}, have: {}, price: {}, inv: {}, kina: false, stepsOpen: false});
   const old = S.craft || {};
   S.craft = Object.assign(fresh(), old.piece ? {list: {[old.piece]: {qty: old.qty || 1, target: old.target || 'true', own: old.own || 'none'}}, view: old.piece} : {}, old);
   ['piece', 'target', 'own', 'qty'].forEach(k => delete S.craft[k]);  // the calculator used to hold a single piece
+  if (!old.cls && Object.values(old.list || {}).some(e => e.qty)) S.craft.cls = 'Assassin';  // lists from before the class could be chosen
+  if (!RACES.includes(S.craft.race)) S.craft.race = RACES[0];
+  if (S.craft.cls !== 'all' && !CLASSES.includes(S.craft.cls)) S.craft.cls = CLASSES[0];
   const cu = k => (CUI[S.lang] || CUI.pt)[k];
   const entry = name => S.craft.list[name] || (S.craft.list[name] = {qty: 0, target: 'true', own: 'none'});
   const pct = (map, key, def) => Math.max(1, Math.min(100, map[key] != null ? map[key] : def));
-  const active = () => CALC.pieces.filter(P => entry(P.piece).qty > 0);
+  // the pieces of the chosen faction: every armour piece and jewel, the guard, and the weapon of the chosen class
+  const offered = () => CALC.pieces.filter(P => P.race === S.craft.race && (P.group !== 'weapon' || S.craft.cls === 'all' || P.cls === S.craft.cls));
+  const active = () => offered().filter(P => entry(P.piece).qty > 0);
   // average number of crafts of every step that the target of this piece needs
   function plan(P) {
     const c = S.craft, e = entry(P.piece), key = t => P.prof + ':' + t;
@@ -699,12 +973,13 @@ if (calcHost && CALC.pieces) {
     return sum;
   }
   const viewed = () => { const a = active(); return a.find(P => P.piece === S.craft.view) || a[0]; };
+  homeStat.craft = () => cu('homeStat').replace('{n}', active().length);
   const outs = [];  // cells that only change their number
   function paint() {
     const sum = totals(active().map(plan)), view = viewed(), vp = view && plan(view);
     let all = 0;
     outs.forEach(([cell, kind, key]) => {
-      if (kind === 'crafts') { const x = vp.crafts[key] || 0; cell.textContent = fmtN(x, x && x < 10 ? 1 : 0); return; }
+      if (kind === 'crafts') { const x = vp && vp.crafts[key] || 0; cell.textContent = fmtN(x, x && x < 10 ? 1 : 0); return; }
       const need = Math.ceil((sum[key] || 0) - 1e-9) || 0, miss = Math.max(0, need - (S.craft.inv[key] || 0));
       if (kind === 'need') cell.textContent = fmtN(need);
       if (kind === 'miss') { cell.textContent = fmtN(miss); cell.classList.toggle('ok', !miss); }
@@ -715,29 +990,71 @@ if (calcHost && CALC.pieces) {
   function render() {
     const c = S.craft;
     outs.length = 0; calcHost.textContent = '';
-    // ----- the pieces
+    // ----- faction, class and the pieces to click
+    const ctl = make('div', 'cctl'), reset = make('button', '', cu('reset'));
+    reset.onclick = () => { if (confirm(cu('resetAsk'))) { S.craft = fresh(); save(); render(); } };
+    ctl.append(labeled(cu('race'), pickBox(c.race, RACES.map(x => [x, x]), v => { c.race = v; }, render)),
+      labeled(cu('cls'), pickBox(c.cls, CLASSES.map(x => [x, x]).concat([['all', cu('allW')]]), v => { c.cls = v; }, render)), reset);
+    calcHost.append(ctl, make('p', 'chead', cu('pick')));
+    const tiles = make('div', 'ptiles'), shownNow = offered(); calcHost.appendChild(tiles);
+    ['weapon', 'armor', 'acc'].forEach(g => {
+      const grp = make('div', 'pgroup'), row = make('div', 'prow');
+      shownNow.filter(P => (P.group === 'guard' ? 'weapon' : P.group) === g).forEach(P => {
+        const e = entry(P.piece), b = make('button', 'ptile' + (e.qty ? ' on' : ''));
+        b.type = 'button'; b.title = P.prof; b.setAttribute('aria-pressed', e.qty ? 'true' : 'false');
+        b.append(tic('piece:' + P.piece, 'tic big') || '', make('span', '', P.piece));
+        b.onclick = () => { e.qty = e.qty ? 0 : 1; save(); render(); };
+        row.appendChild(b);
+      });
+      grp.append(make('small', '', cu('groups')[g]), row); tiles.appendChild(grp);
+    });
+    const act = active();
+    if (!act.length) { calcHost.appendChild(make('p', 'note', cu('nothing'))); return; }
+    // ----- the chosen ones: how many, up to where, and what is already owned
     calcHost.appendChild(make('p', 'chead', cu('pieces')));
     const pieces = toolTable(calcHost, [cu('piece'), cu('qty'), cu('target'), cu('own')], 'cpieces');
-    CALC.pieces.forEach(P => {
+    act.forEach(P => {
       const e = entry(P.piece), tr = pieces.insertRow(), name = t => P.steps.find(x => x.tier === t).name;
-      tr.className = e.qty ? '' : 'off';
-      const a = tr.insertCell(); a.className = 'key'; a.append(make('b', '', P.piece), make('small', '', P.prof));
+      const a = tr.insertCell(), box = make('div', 'pic'), words = make('span'); a.className = 'key';
+      words.append(make('b', '', P.piece), make('small', '', P.prof)); box.append(tic('piece:' + P.piece, 'tic big') || '', words); a.appendChild(box);
       tr.insertCell().appendChild(numBox(() => e.qty, v => { e.qty = v; }, 0, 20, 1, false, render));
       tr.insertCell().appendChild(pickBox(e.target, RANK.slice(1).map(t => [t, name(t)]), v => { e.target = v; if (RANK.indexOf(e.own) >= RANK.indexOf(v)) e.own = 'none'; }, render));
       tr.insertCell().appendChild(pickBox(e.own, RANK.slice(0, 6).map(t => [t, t === 'none' ? cu('none') : name(t), RANK.indexOf(t) >= RANK.indexOf(e.target)]), v => { e.own = v; }, render));
     });
-    const reset = make('button', '', cu('reset'));
-    reset.onclick = () => { if (confirm(cu('resetAsk'))) { S.craft = fresh(); save(); render(); } };
-    const bar = make('div', 'cbar'); bar.appendChild(reset); calcHost.appendChild(bar);
-    const act = active();
-    if (!act.length) { calcHost.appendChild(make('p', 'note', cu('nothing'))); return; }
-    // ----- the steps of one of them
+    // ----- the material of all of them
+    const mhead = make('p', 'chead'), klab = make('label'), kbox = make('input');
+    kbox.type = 'checkbox'; kbox.checked = !!c.kina; kbox.onchange = () => { c.kina = kbox.checked; save(); render(); };
+    klab.append(kbox, cu('kina')); mhead.append(cu('mats'), klab); calcHost.appendChild(mhead);  // not an h3: the menu lists those and this one is redrawn
+    const mats = toolTable(calcHost, [cu('mat'), cu('need'), cu('inv'), cu('miss')].concat(c.kina ? [cu('price'), cu('cost')] : []), 'cmats');
+    const field = (map, n, shown) => {
+      const inp = make('input', 'cprice'); inp.type = 'number'; inp.min = 0; inp.value = shown || ''; inp.placeholder = '0';
+      inp.oninput = () => { if (inp.value === '') delete map[n]; else map[n] = Math.max(0, +inp.value || 0); save(); paint(); };
+      return inp;
+    };
+    const order = Object.keys(cu('src')), names = Object.keys(totals(act.map(plan))).sort((x, y) => order.indexOf(CALC.src[x]) - order.indexOf(CALC.src[y]));
+    names.forEach((n, at) => {
+      if (!at || CALC.src[n] !== CALC.src[names[at - 1]]) { const g = mats.insertRow().insertCell(); g.parentNode.className = 'grp'; g.colSpan = c.kina ? 6 : 4; g.textContent = cu('src')[CALC.src[n]] || ''; }
+      const tr = mats.insertRow(), a = tr.insertCell(), b = tr.insertCell(), i = tr.insertCell(), m = tr.insertCell();
+      a.className = 'key'; a.append(tic(n) || '', n); b.className = 'out'; m.className = 'out miss';
+      i.appendChild(field(c.inv, n, c.inv[n]));
+      outs.push([b, 'need', n], [m, 'miss', n]);
+      if (c.kina) { const p = tr.insertCell(), k = tr.insertCell(); k.className = 'out'; p.appendChild(field(c.price, n, price(n))); outs.push([k, 'cost', n]); }
+    });
+    if (c.kina) {
+      const tot = mats.insertRow(); tot.className = 'tot';
+      const tc = tot.insertCell(); tc.colSpan = 5; tc.textContent = cu('total');
+      const tv = tot.insertCell(); tv.className = 'out'; outs.push([tv, 'total']);
+    }
+    // ----- the steps of one of them, for whoever wants to tune the chances
+    const more = make('details', 'more'), inner = make('div', 'in');
+    more.open = !!c.stepsOpen; more.ontoggle = () => { if (c.stepsOpen !== more.open) { c.stepsOpen = more.open; save(); } fitTables(more); };
+    more.append(make('summary', '', cu('stepsSum')), inner); calcHost.appendChild(more);
     const P = viewed(), pl = plan(P), head = make('p', 'chead');
     head.append(cu('stepsOf') + ' ', pickBox(P.piece, act.map(x => [x.piece, x.piece]), v => { c.view = v; }, render));
-    calcHost.appendChild(head);
-    if (pl.done) calcHost.appendChild(make('p', 'note', cu('done')));
+    inner.appendChild(head);
+    if (pl.done) inner.appendChild(make('p', 'note', cu('done')));
     else {
-      const steps = toolTable(calcHost, [cu('step'), cu('recipe'), cu('succ'), cu('combo'), cu('have'), cu('crafts')], 'csteps');
+      const steps = toolTable(inner, [cu('step'), cu('recipe'), cu('succ'), cu('combo'), cu('have'), cu('crafts')], 'csteps');
       pl.steps.forEach(st => {
         const tr = steps.insertRow(), key = P.prof + ':' + st.tier, chain = CHAIN.includes(st.tier);
         const stage = STAGES.findIndex(x => x.includes(st.tier)), isS = stage >= 0 && STAGES[stage][1] === st.tier;
@@ -758,23 +1075,6 @@ if (calcHost && CALC.pieces) {
         const f = tr.insertCell(); f.className = 'out'; outs.push([f, 'crafts', st.tier]);
       });
     }
-    // ----- the material of all of them
-    calcHost.appendChild(make('p', 'chead', cu('mats')));  // not an h3: the menu lists those and this one is redrawn
-    const mats = toolTable(calcHost, [cu('mat'), cu('need'), cu('inv'), cu('miss'), cu('from'), cu('price'), cu('cost')], 'cmats');
-    const field = (map, n, shown) => {
-      const inp = make('input', 'cprice'); inp.type = 'number'; inp.min = 0; inp.value = shown || ''; inp.placeholder = '0';
-      inp.oninput = () => { if (inp.value === '') delete map[n]; else map[n] = Math.max(0, +inp.value || 0); save(); paint(); };
-      return inp;
-    };
-    Object.keys(totals(act.map(plan))).forEach(n => {
-      const tr = mats.insertRow(), a = tr.insertCell(), b = tr.insertCell(), i = tr.insertCell(), m = tr.insertCell(), s = tr.insertCell(), p = tr.insertCell(), k = tr.insertCell();
-      a.className = 'key'; a.textContent = n; b.className = 'out'; m.className = 'out miss'; k.className = 'out'; s.textContent = cu('src')[CALC.src[n]] || '';
-      i.appendChild(field(c.inv, n, c.inv[n])); p.appendChild(field(c.price, n, price(n)));
-      outs.push([b, 'need', n], [m, 'miss', n], [k, 'cost', n]);
-    });
-    const tot = mats.insertRow(); tot.className = 'tot';
-    const tc = tot.insertCell(); tc.colSpan = 6; tc.textContent = cu('total');
-    const tv = tot.insertCell(); tv.className = 'out'; outs.push([tv, 'total']);
     paint(); fitTables(calcHost);
   }
   repaint.push(render);
@@ -855,45 +1155,103 @@ if (enhHost && CALC.enh) {
 const RUI = {
   pt: {chars: 'Personagens', name: 'Nome', main: 'Main', alt: 'Alt {n}', choose: 'Escolher o que aparece', chosen: 'Pronto', show: 'Mostrar',
     daily: 'Reset diário em', weekly: 'Reset semanal em', at: 'às {t}', d: 'd', h: 'h', min: 'min',
-    charges: 'Entradas que acumulam', weeks: 'Limites da semana', act: 'Atividade', rate: 'Recarga', stored: 'Guardadas', limit: 'Limite', doneCol: 'Feitas', status: 'Situação',
+    charges: 'Diário', weeks: 'Semanal', act: 'Atividade', rate: 'Recarga', stored: 'Guardadas', limit: 'Limite', doneCol: 'Feitas', status: 'Situação',
     perDay: '{n} por dia, até {c}', perWeek: '{n} por semana', perWeekH: '{n} h por semana',
-    full: 'No máximo: a próxima recarga se perde', empty: 'Sem entradas', done: 'Completo', none: 'Nada escolhido nesta lista.',
-    groups: {'Dungeons': 'Dungeons', 'Final bosses': 'Chefes finais', 'Sanctuary': 'Sanctuary', 'Abyss and growth time': 'Abyss e tempo de crescimento', 'Other': 'Outros'}},
+    full: 'Sem marcar há dias: deve estar no máximo, e a próxima recarga se perde', fullCount: '{n} no máximo', today: 'Para fazer hoje', tFull: 'Deve estar no máximo, faça primeiro',
+    tick: 'Marcar como feito', tWeek: 'Semana: {a} de {b} feitos', tDaily: 'Diárias por fazer: {n}', tDailyDone: 'Diárias de hoje feitas',
+    sub: 'Tenho Membership', subHow: 'Com a assinatura: Shugo Festival guarda até 21, Abyss time passa para 14 horas e aparece a compra de Odyle Energy.', doneOf: '{a} de {b} feitos', resetsAt: 'zera {d} às {t}', dayWord: ['hoje', 'amanhã'], resetIn: 'reset em {t}', srv: 'por servidor', tagSrv: 'SERVIDOR', tagChar: 'PERSONAGEM', perDayFlat: '{n} por dia, não acumula', empty: 'Sem entradas', done: 'Completo', none: 'Nada escolhido nesta lista.',
+    groups: {'Exploration': 'Exploration, por dungeon', 'Dungeons': 'Dungeons', 'Final bosses': 'Chefes finais', 'Sanctuary': 'Sanctuary', 'Other dailies': 'Outras diárias', 'Other weeklies': 'Outros limites da semana'}},
   en: {chars: 'Characters', name: 'Name', main: 'Main', alt: 'Alt {n}', choose: 'Choose what shows', chosen: 'Done', show: 'Show',
     daily: 'Daily reset in', weekly: 'Weekly reset in', at: 'at {t}', d: 'd', h: 'h', min: 'min',
-    charges: 'Entries that stack up', weeks: 'Weekly limits', act: 'Activity', rate: 'Recharge', stored: 'Stored', limit: 'Limit', doneCol: 'Done', status: 'Status',
+    charges: 'Daily', weeks: 'Weekly', act: 'Activity', rate: 'Recharge', stored: 'Stored', limit: 'Limit', doneCol: 'Done', status: 'Status',
     perDay: '{n} a day, up to {c}', perWeek: '{n} a week', perWeekH: '{n} h a week',
-    full: 'At the cap: the next recharge is lost', empty: 'No entries', done: 'Complete', none: 'Nothing chosen in this list.',
-    groups: {'Dungeons': 'Dungeons', 'Final bosses': 'Final bosses', 'Sanctuary': 'Sanctuary', 'Abyss and growth time': 'Abyss and growth time', 'Other': 'Other'}},
+    full: 'Not ticked for days: it should be at its cap, and the next recharge is lost', fullCount: '{n} at the cap', today: 'To do today', tFull: 'Should be at the cap, do it first',
+    tick: 'Mark as done', tWeek: 'Week: {a} of {b} done', tDaily: 'Dailies left: {n}', tDailyDone: 'Dailies done for today',
+    sub: 'I have the Membership', subHow: 'With the subscription: Shugo Festival stores up to 21, Abyss time goes to 14 hours and the Odyle Energy purchase shows up.', doneOf: '{a} of {b} done', resetsAt: 'resets {d} at {t}', dayWord: ['today', 'tomorrow'], resetIn: 'reset in {t}', srv: 'per server', tagSrv: 'SERVER', tagChar: 'CHAR', perDayFlat: '{n} a day, does not stack', empty: 'No entries', done: 'Complete', none: 'Nothing chosen in this list.',
+    groups: {'Exploration': 'Exploration, per dungeon', 'Dungeons': 'Dungeons', 'Final bosses': 'Final bosses', 'Sanctuary': 'Sanctuary', 'Other dailies': 'Other dailies', 'Other weeklies': 'Other weekly limits'}},
 };
 const rtHost = $('#routine');
 if (rtHost && ROUTINE.length) {
   // the reset is at 07:00 UTC every day; the weekly one on Wednesday at the same time (1 Jan 1970 was a Thursday)
   const HOUR = 3600000, DAY = 24 * HOUR, WEEK = 7 * DAY, DAY0 = 7 * HOUR, WEEK0 = 6 * DAY + 7 * HOUR;
-  S.rt = Object.assign({chars: 1, cur: 0, names: [], hide: {}, v: {}, day: null, week: null}, S.rt || {});
+  S.rt = Object.assign({chars: 1, cur: 0, names: [], hide: {}, v: {}, day: null, week: null, sub: false}, S.rt || {});
   const ru = k => (RUI[S.lang] || RUI.pt)[k];
-  const stacks = a => a.per === 'day', vals = i => S.rt.v[i] || (S.rt.v[i] = {});
-  const val = (i, a) => { const v = vals(i)[a.id]; return v != null ? v : stacks(a) ? a.n : 0; };
+  // three kinds of counter: stacks up (recharges every day up to a cap), daily limit, weekly limit
+  const daily = a => a.per === 'day', stacks = a => daily(a) && !!a.cap, vals = i => S.rt.v[i] || (S.rt.v[i] = {});
+  const capOf = a => S.rt.sub && a.capSub ? a.capSub : a.cap, limOf = a => S.rt.sub && a.nSub ? a.nSub : a.n, maxOf = a => stacks(a) ? capOf(a) : limOf(a);
+  const own = (i, a) => vals(a.srv ? 'srv' : i);  // some counters belong to the server, not to the character
+  const live = a => !a.subOnly || !!S.rt.sub;  // some counters exist only with the Membership
+  const hidden = a => !live(a) || (S.rt.hide[a.id] != null ? !!S.rt.hide[a.id] : !!a.off);
+  const val = (i, a) => { const v = own(i, a)[a.id]; return v != null ? Math.min(v, maxOf(a)) : stacks(a) ? a.n : 0; };
+  const isDone = (i, a) => stacks(a) ? !val(i, a) : val(i, a) >= maxOf(a);
   const charName = i => S.rt.names[i] || (i ? ru('alt').replace('{n}', i) : ru('main'));
+  // cards with no game art get a drawn icon: [path, tone of the accent]
+  const RICO = {
+    target: ['M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 16.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zM12 12h.01', 'a'],
+    portal: ['M12 3a9 9 0 1 0 9 9M12 7a5 5 0 1 0 5 5M12 11a1 1 0 1 0 1 1M17 3v4h4', 'a'],
+    raid: ['M4 21V10l2-1V6h2v2h3V6h2v2h3V6h2v3l2 1v11zM10 21v-5a2 2 0 0 1 4 0v5', 'b'],
+    boss: ['M12 3a8 8 0 0 0-5 14.2V20h10v-2.8A8 8 0 0 0 12 3zM9 12h.01M15 12h.01M10 20v-2M14 20v-2', 'b'],
+    swords: ['M5 4l14 14M19 4L5 18M4 15l5 5M20 15l-5 5', 'b'],
+    layers: ['M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5M3 17l9 5 9-5', 'd'],
+    growth: ['M12 21v-9M12 12c0-4-3-6-7-6 0 4 3 6 7 6zM12 15c0-3 3-5 7-5 0 3-3 5-7 5z', 'c'],
+    cube: ['M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zM12 12l8-4.5M12 12L4 7.5M12 12v9', 'c'],
+    pass: ['M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4zM14 6v12', 'a'],
+    dungeon: ['M5 21V10a7 7 0 0 1 14 0v11M5 21h14M12 21v-7M9 14h6', 'a'],
+  };
+  const thumbOf = a => {
+    const art = tic('rt:' + a.id, 'thumb') || tic('dg:' + a.name.replace(/ \((Conquest|Exploration|Transcendence)\)$/, '').replace(/ final boss$/, ''), 'thumb') || tic('dg:' + a.name, 'thumb') || tic('dg:' + a.name.split(':')[0], 'thumb');
+    if (art) { if (!TIC['rt:' + a.id]) art.classList.add('wide'); return art; }
+    const [d, tone] = RICO[a.ico] || RICO.dungeon, tile = make('span', 'thumb none tone-' + tone), svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'), path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    svg.setAttribute('viewBox', '0 0 24 24'); path.setAttribute('d', d); svg.appendChild(path); tile.appendChild(svg);
+    return tile;
+  };
   let editing = false;
   // new day: every stacking entry gains its recharge, up to the cap; new week: the weekly counters go back to zero
   function roll() {
     const now = Date.now(), day = Math.floor((now - DAY0) / DAY), week = Math.floor((now - WEEK0) / WEEK), r = S.rt;
     let changed = false;
-    if (r.day != null && day > r.day) for (let i = 0; i < 6; i++) if (i < r.chars || r.v[i]) ROUTINE.filter(stacks).forEach(a => { vals(i)[a.id] = Math.min(a.cap, val(i, a) + a.n * (day - r.day)); changed = true; });
-    if (r.week != null && week > r.week) Object.values(r.v).forEach(v => ROUTINE.filter(a => !stacks(a)).forEach(a => { delete v[a.id]; changed = true; }));
+    const owners = ['srv'];
+    for (let i = 0; i < 6; i++) if (i < r.chars || r.v[i]) owners.push(i);
+    if (r.day != null && day > r.day) owners.forEach(o => ROUTINE.filter(daily).forEach(a => {
+      if ((o === 'srv') !== !!a.srv) return;
+      const v = vals(o);
+      if (stacks(a)) v[a.id] = Math.min(capOf(a), (v[a.id] != null ? v[a.id] : a.n) + a.n * (day - r.day)); else delete v[a.id];
+      changed = true;
+    }));
+    if (r.week != null && week > r.week) Object.values(r.v).forEach(v => ROUTINE.filter(a => !daily(a)).forEach(a => { delete v[a.id]; changed = true; }));
     if (r.day !== day || r.week !== week) { r.day = day; r.week = week; save(); }
     return changed;
   }
   const left = ms => { const m = Math.max(0, Math.ceil(ms / 60000)), d = Math.floor(m / 1440), h = Math.floor(m % 1440 / 60); return (d ? d + ' ' + ru('d') + ' ' : '') + (d || h ? h + ' ' + ru('h') + ' ' : '') + (d ? '' : m % 60 + ' ' + ru('min')); };
   const clock = t => new Date(t).toLocaleTimeString(S.lang === 'en' ? 'en-GB' : 'pt-BR', {hour: '2-digit', minute: '2-digit'});
-  let info = null;
+  // what there is to do today, for the box on this page and for the home page
+  function todayData() {
+    const r = S.rt, on = ROUTINE.filter(a => !hidden(a)), dl = on.filter(daily), wk = on.filter(a => !daily(a));
+    return {full: on.filter(a => stacks(a) && val(r.cur, a) >= capOf(a)).map(a => a.name), dailyLeft: dl.filter(a => !isDone(r.cur, a)).length, dailyAny: dl.length,
+      weekDone: wk.filter(a => isDone(r.cur, a)).length, weekTotal: wk.length, who: charName(r.cur)};
+  }
+  function todayLines(d) {  // [[class, text], …]
+    return (d.full.length ? [['warn', '\u26A0 ' + ru('tFull') + ': ' + d.full.join(', ')]] : [])
+      .concat(d.dailyAny ? [['', ru(d.dailyLeft ? 'tDaily' : 'tDailyDone').replace('{n}', d.dailyLeft)]] : [])
+      .concat([['', ru('tWeek').replace('{a}', d.weekDone).replace('{b}', d.weekTotal)]]);
+  }
+  let today = null;
+  function paintToday() {
+    if (!today) return;
+    today.textContent = '';
+    today.appendChild(make('b', 'rtt', ru('today')));
+    todayLines(todayData()).forEach(([cls, text]) => today.appendChild(make('span', 'rpill ' + cls, text)));
+  }
+  homeStat.today = () => { roll(); const d = todayData(); return {who: d.who, lines: todayLines(d)}; };
+  const cols = {};  // day / week: {done, reset, rows: [[activity, card]]}
   function paintInfo() {
-    if (!info) return;
-    const now = Date.now(), nextDay = (S.rt.day + 1) * DAY + DAY0, nextWeek = (S.rt.week + 1) * WEEK + WEEK0;
-    const weekday = new Date(nextWeek).toLocaleDateString(S.lang === 'en' ? 'en-GB' : 'pt-BR', {weekday: 'long'});
-    info.textContent = '';
-    info.append(ru('daily') + ' ', make('b', '', left(nextDay - now)), ' (' + ru('at').replace('{t}', clock(nextDay)) + ') · ' + ru('weekly') + ' ', make('b', '', left(nextWeek - now)), ' (' + weekday + ', ' + clock(nextWeek) + ')');
+    const now = Date.now(), next = {day: (S.rt.day + 1) * DAY + DAY0, week: (S.rt.week + 1) * WEEK + WEEK0}, lang = S.lang === 'en' ? 'en-GB' : 'pt-BR';
+    Object.keys(cols).forEach(k => {
+      const c = cols[k], gap = Math.round((new Date(next[k]).setHours(0, 0, 0, 0) - new Date(now).setHours(0, 0, 0, 0)) / DAY), done = c.rows.filter(([a]) => isDone(S.rt.cur, a)).length;
+      c.done.textContent = ru('doneOf').replace('{a}', done).replace('{b}', c.rows.length) + ' · ' +
+        ru('resetsAt').replace('{d}', gap < 2 ? ru('dayWord')[gap] : new Date(next[k]).toLocaleDateString(lang, {weekday: 'long'})).replace('{t}', clock(next[k]));
+      c.reset.textContent = ru('resetIn').replace('{t}', left(next[k] - now));
+    });
   }
   function render() {
     roll();
@@ -904,42 +1262,56 @@ if (rtHost && ROUTINE.length) {
     name.type = 'text'; name.maxLength = 16; name.value = charName(r.cur);
     name.onchange = () => { r.names[r.cur] = name.value.trim(); save(); render(); };
     choose.onclick = () => { editing = !editing; render(); };
-    ctl.append(labeled(ru('chars'), numBox(() => r.chars, v => { r.chars = v; }, 1, 6, 1, false, render)), tabs, labeled(ru('name'), name), choose);
-    info = make('div', 'rinfo');
-    rtHost.append(ctl, info);
-    paintInfo();
-    [[ru('charges'), ROUTINE.filter(stacks), [ru('act'), ru('rate'), ru('stored'), ru('status')]],
-     [ru('weeks'), ROUTINE.filter(a => !stacks(a)), [ru('act'), ru('limit'), ru('doneCol'), ru('status')]]].forEach(([title, list, heads]) => {
-      rtHost.appendChild(make('p', 'chead', title));
-      const shown = list.filter(a => editing || !r.hide[a.id]);
-      if (!shown.length) { rtHost.appendChild(make('p', 'note', ru('none'))); return; }
-      const tb = toolTable(rtHost, editing ? [ru('show')].concat(heads) : heads, 'crt');
-      let group = null;
-      shown.forEach(a => {
-        if (a.group !== group) { group = a.group; const g = tb.insertRow(); g.className = 'grp'; const td = g.insertCell(); td.colSpan = heads.length + (editing ? 1 : 0); td.textContent = ru('groups')[group] || group; }
-        const tr = tb.insertRow(), max = stacks(a) ? a.cap : a.n;
-        if (editing) { const box = make('input'); box.type = 'checkbox'; box.checked = !r.hide[a.id]; box.onchange = () => { if (box.checked) delete r.hide[a.id]; else r.hide[a.id] = true; save(); tr.classList.toggle('off', !box.checked); }; tr.insertCell().appendChild(box); tr.classList.toggle('off', !!r.hide[a.id]); }
-        const n = tr.insertCell(), rate = tr.insertCell(), c = tr.insertCell(), st = tr.insertCell();
-        n.className = 'key'; n.textContent = a.name; st.className = 'st';
-        rate.textContent = stacks(a) ? ru('perDay').replace('{n}', a.n).replace('{c}', a.cap) : ru(a.unit ? 'perWeekH' : 'perWeek').replace('{n}', a.n);
-        const mark = () => { const v = val(r.cur, a), full = stacks(a) && v >= max, done = !stacks(a) && v >= max;
-          tr.classList.toggle('full', full); tr.classList.toggle('done', done);
-          st.textContent = full ? ru('full') : done ? ru('done') : stacks(a) && !v ? ru('empty') : ''; };
-        c.append(numBox(() => val(r.cur, a), v => { vals(r.cur)[a.id] = v; }, 0, max, 1, false, mark), make('span', 'of', ' / ' + max + (a.unit ? ' h' : '')));
-        mark();
+    const sub = make('input'), subLab = make('label', 'rsub');
+    sub.type = 'checkbox'; sub.checked = !!r.sub; sub.onchange = () => { r.sub = sub.checked; save(); render(); };
+    subLab.append(sub, ru('sub')); subLab.title = ru('subHow');
+    ctl.append(labeled(ru('chars'), numBox(() => r.chars, v => { r.chars = v; }, 1, 6, 1, false, render)), tabs, labeled(ru('name'), name), subLab, choose);
+    rtHost.appendChild(ctl);
+    today = make('div', 'rtoday'); rtHost.appendChild(today);
+    const grid = make('div', 'rcols'); rtHost.appendChild(grid);
+    [['day', ru('charges'), ROUTINE.filter(daily)], ['week', ru('weeks'), ROUTINE.filter(a => !daily(a))]].forEach(([key, title, list]) => {
+      const col = make('div', 'rcol'), head = make('div', 'rcolh'), names = make('div'), c = cols[key] = {done: make('small'), reset: make('span', 'rreset'), rows: []};
+      names.append(make('b', '', title), c.done); head.append(names, c.reset); col.appendChild(head); grid.appendChild(col);
+      const shownNow = list.filter(a => live(a) && (editing || !hidden(a)));
+      if (!shownNow.length) col.appendChild(make('p', 'note', ru('none')));
+      let group = '';
+      shownNow.forEach(a => {
+        if (a.group !== group) { group = a.group; if (group) col.appendChild(make('p', 'rgrp', ru('groups')[group] || group)); }
+        const card = make('label', 'ritem'), max = maxOf(a), words = make('div', 'rwords'), warn = make('span', 'rwarn'), tick = make('input');
+        if (editing) { const box = make('input'); box.type = 'checkbox'; box.checked = !hidden(a); box.title = ru('show');
+          box.onchange = () => { r.hide[a.id] = !box.checked; save(); card.classList.toggle('off', !box.checked); }; card.appendChild(box); card.classList.toggle('off', hidden(a)); }
+        else c.rows.push([a, card]);
+        card.appendChild(thumbOf(a));
+        const title = make('b', '', a.name);
+        if (a.srv || a.both) title.prepend(make('span', 'rtag srv', ru('tagSrv')));
+        if (!a.srv || a.both) title.prepend(make('span', 'rtag', ru('tagChar')));
+        const rate = stacks(a) ? ru('perDay').replace('{n}', a.n).replace('{c}', max) : daily(a) ? ru('perDayFlat').replace('{n}', max) : ru(a.unit ? 'perWeekH' : 'perWeek').replace('{n}', max);
+        words.append(title, make('small', '', a.note ? a.note[S.lang === 'en' ? 1 : 0].replace('{c}', max) : rate));
+        let before = a.n;  // what a stacking entry held before the tick, given back if the tick is undone
+        const mark = () => { const full = stacks(a) && val(r.cur, a) >= max, done = isDone(r.cur, a);
+          tick.checked = done; card.classList.toggle('full', full); card.classList.toggle('done', done);
+          warn.textContent = full ? '\u26A0' : ''; warn.title = full ? ru('full') : ''; paintToday(); paintInfo(); };
+        tick.type = 'checkbox'; tick.className = 'rtick'; tick.title = ru('tick');
+        tick.onchange = () => { const v = own(r.cur, a);
+          if (stacks(a)) { if (tick.checked) before = val(r.cur, a) || a.n; v[a.id] = tick.checked ? 0 : before; }
+          else if (tick.checked) v[a.id] = 999; else delete v[a.id];
+          save(); mark(); };
+        card.append(words, warn); if (!editing) card.appendChild(tick); col.appendChild(card); mark();
       });
     });
     fitTables(rtHost);
   }
   repaint.push(render);
   setInterval(() => { if (roll()) render(); else paintInfo(); }, 30000);
+  homeStat.rot = () => { roll(); const full = ROUTINE.filter(a => stacks(a) && !hidden(a) && val(S.rt.cur, a) >= capOf(a)).length;
+    return ru('daily') + ' ' + left((S.rt.day + 1) * DAY + DAY0 - Date.now()) + (full ? ' · ' + ru('fullCount').replace('{n}', full) : ''); };
   document.addEventListener('visibilitychange', () => { if (!document.hidden) { if (roll()) render(); else paintInfo(); } });
 }
 
 // ---------- build editor ----------
 const BUI = {
-  pt: {build: 'Build', name: 'Nome', cls: 'Classe', race: 'Facção', newName: 'Minha build', add: 'Nova', copy: 'Duplicar', del: 'Apagar', delAsk: 'Apagar a build “{n}”? Não dá para desfazer.',
-    saveFile: 'Salvar em arquivo', loadFile: 'Carregar arquivo', badFile: 'Esse arquivo não é uma build deste site.', copyOf: '{n} (cópia)',
+  pt: {build: 'Build', name: 'Nome', cls: 'Classe', race: 'Facção', newName: 'Minha build', homeStat: '{n} build(s) · aberta: {b}', add: 'Nova', copy: 'Duplicar', del: 'Apagar', delAsk: 'Apagar a build “{n}”? Não dá para desfazer.',
+    saveFile: 'Salvar em arquivo', loadFile: 'Carregar arquivo', copyLink: 'Copiar link', linkDone: 'Link da build copiado. Quem abrir já vê a build:', badFile: 'Esse arquivo não é uma build deste site.', copyOf: '{n} (cópia)',
     tabs: {skills: 'Skills', daev: 'Daevanion', gear: 'Equipamento', extra: 'Títulos, Arcana e asas', notes: 'Notas'},
     sumPoints: 'Skill Points gastos', sumShards: 'Stigma Shards gastos', sumCrystals: 'Daevanion Crystals', sumAzphel: 'Crystals do Azphel', sumStig: 'Stigmas equipados',
     A: 'Skills ativas', P: 'Passivas', S: 'Stigmas', skill: 'Skill', trained: 'Nível treinado', fromDaev: '+ Daevanion', fromGear: '+ equipamento', final: 'Nível final', specs: 'Specs', on: 'Equipado',
@@ -951,8 +1323,8 @@ const BUI = {
     arcana: 'Arcana', set: 'Conjunto', wings: 'Asas', pet: 'Pet', notesHint: 'Rotação, prioridade de atributos, Manastones, o que falta pegar…',
     slots: {main: 'Arma', off: 'Guard', Top: 'Top', Legs: 'Legs', Helm: 'Helm', Pauldrons: 'Pauldrons', Gloves: 'Gloves', Shoes: 'Shoes', Cloak: 'Cloak', Necklace: 'Necklace',
       Earrings1: 'Earrings 1', Earrings2: 'Earrings 2', Ring1: 'Ring 1', Ring2: 'Ring 2', Bracelet1: 'Bracelet 1', Bracelet2: 'Bracelet 2', Amulet: 'Amulet', Belt: 'Belt', Rune1: 'Rune 1', Rune2: 'Rune 2'}},
-  en: {build: 'Build', name: 'Name', cls: 'Class', race: 'Faction', newName: 'My build', add: 'New', copy: 'Duplicate', del: 'Delete', delAsk: 'Delete the build “{n}”? This cannot be undone.',
-    saveFile: 'Save to file', loadFile: 'Load file', badFile: 'That file is not a build from this site.', copyOf: '{n} (copy)',
+  en: {build: 'Build', name: 'Name', cls: 'Class', race: 'Faction', newName: 'My build', homeStat: '{n} build(s) · open: {b}', add: 'New', copy: 'Duplicate', del: 'Delete', delAsk: 'Delete the build “{n}”? This cannot be undone.',
+    saveFile: 'Save to file', loadFile: 'Load file', copyLink: 'Copy link', linkDone: 'Build link copied. Whoever opens it sees the build:', badFile: 'That file is not a build from this site.', copyOf: '{n} (copy)',
     tabs: {skills: 'Skills', daev: 'Daevanion', gear: 'Gear', extra: 'Titles, Arcana and wings', notes: 'Notes'},
     sumPoints: 'Skill Points spent', sumShards: 'Stigma Shards spent', sumCrystals: 'Daevanion Crystals', sumAzphel: 'Azphel crystals', sumStig: 'Stigmas equipped',
     A: 'Active skills', P: 'Passives', S: 'Stigmas', skill: 'Skill', trained: 'Trained level', fromDaev: '+ Daevanion', fromGear: '+ gear', final: 'Final level', specs: 'Specs', on: 'Equipped',
@@ -973,6 +1345,7 @@ if (bldHost && BLD.classes) {
   S.builds = Object.assign({list: [], cur: null, tab: 'skills', board: 0}, S.builds || {});
   if (!S.builds.list.length) S.builds.list.push(blank());
   const cur = () => S.builds.list.find(b => b.id === S.builds.cur) || S.builds.list[0];
+  homeStat.bld = () => bu('homeStat').replace('{n}', S.builds.list.length).replace('{b}', cur().name + ' · ' + cur().cls);
   const bic = (b, name) => { const src = BIC[b.cls + '/' + name]; if (!src) return null; const i = make('img', 'bic'); i.src = src; i.alt = ''; return i; };
   const SLOTS = [['main', 'weapons', b => BLD.weapon[b.cls]], ['off', 'weapons', () => 'Guard']]
     .concat(['Top', 'Legs', 'Helm', 'Pauldrons', 'Gloves', 'Shoes', 'Cloak'].map(t => [t, 'armor', () => t]))
@@ -1035,6 +1408,7 @@ if (bldHost && BLD.classes) {
   }
   function render() {
     const B = S.builds, b = cur(); B.cur = b.id;
+    if ([BUI.pt.newName, BUI.en.newName].includes(b.name)) b.name = bu('newName');  // an untouched default name follows the language
     bldHost.textContent = '';
     const ctl = make('div', 'cctl'), name = make('input'), file = make('input');
     const btn = (text, fn) => { const x = make('button', '', text); x.onclick = fn; return x; };
@@ -1055,7 +1429,8 @@ if (bldHost && BLD.classes) {
       btn(bu('del'), () => { if (!confirm(bu('delAsk').replace('{n}', b.name))) return; B.list = B.list.filter(x => x !== b); if (!B.list.length) B.list.push(blank()); B.cur = B.list[0].id; save(); render(); }),
       btn(bu('saveFile'), () => { const a = make('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify({app: 'aion2-build', v: 1, build: b}, null, 1)], {type: 'application/json'}));
         a.download = 'build-' + (b.name.replace(/[^\w\- ]+/g, '').trim().replace(/ +/g, '-') || b.cls) + '.json'; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); }),
-      btn(bu('loadFile'), () => file.click()), file);
+      btn(bu('loadFile'), () => file.click()), file,
+      btn(bu('copyLink'), () => { const d = Object.assign({}, b); delete d.id; copyLink('build', d, bu('linkDone')); }));
     sum = make('div', 'bsum');
     const tabs = make('div', 'btabs');
     Object.keys(bu('tabs')).forEach(k => { const t = make('button', B.tab === k ? 'on' : '', bu('tabs')[k]); t.onclick = () => { B.tab = k; save(); $$('button', tabs).forEach(x => x.classList.toggle('on', x === t)); paintTab(); }; tabs.appendChild(t); });
@@ -1064,6 +1439,14 @@ if (bldHost && BLD.classes) {
     paintTab();
   }
 
+  shared.build = obj => {  // a build that came in a link: add it, unless the same one is already here
+    const B = S.builds, nb = Object.assign(blank(), obj, {id: uid()}), same = x => JSON.stringify(Object.assign({}, x, {id: 0}));
+    if (!BLD.skills[nb.cls]) { alert(bu('badFile')); return; }
+    const old = B.list.find(x => same(x) === same(nb));
+    if (old) B.cur = old.id; else { B.list.push(nb); B.cur = nb.id; }
+    save(); try { history.replaceState(null, '', '#part-bld'); } catch (e) {}
+    showPart('bld'); render();
+  };
   function tabSkills(b) {
     const fx = effects(b).skills;
     ['A', 'P', 'S'].forEach(kind => {
@@ -1143,7 +1526,7 @@ if (bldHost && BLD.classes) {
     SLOTS.forEach(([slot, set, type]) => {
       const want = type(b), items = BLD[set].filter(x => x[1] === want && (!x[6] || x[6] === b.race)), g = b.gear[slot] || {}, it = items.find(x => x[0] === g.n);
       const tr = tb.insertRow(), a = tr.insertCell(), c = tr.insertCell(), e = tr.insertCell(), s = tr.insertCell();
-      a.className = 'key'; a.textContent = bu('slots')[slot];
+      a.className = 'key'; a.append(tic('type:' + want) || '', bu('slots')[slot]);
       const sel = make('select'), none = make('option', '', bu('empty')); none.value = ''; sel.appendChild(none);
       BLD.grades.slice().reverse().forEach((grade, k) => {
         const rows = items.filter(x => x[2] === BLD.grades.length - 1 - k); if (!rows.length) return;
@@ -1160,9 +1543,9 @@ if (bldHost && BLD.classes) {
   }
 
   function tabExtra(b) {
-    const choose = (host, label, value, options, set, info) => {
+    const choose = (host, label, value, options, set, info, pic) => {
       const row = make('div', 'brow'), sel = pickBox(value || '', [['', bu('empty')]].concat(options), set, paintTab);
-      row.append(make('span', 'bl', label), sel); if (info) row.appendChild(make('span', 'bi', info)); host.appendChild(row);
+      row.append(make('span', 'bl', label), tic(pic, 'tic big') || make('span', 'tic big none'), sel); if (info) row.appendChild(make('span', 'bi', info)); host.appendChild(row);
     };
     body.appendChild(make('p', 'chead', bu('titles')));
     ['Offensive', 'Defensive', 'Other'].forEach(kind => {
@@ -1172,11 +1555,11 @@ if (bldHost && BLD.classes) {
     body.appendChild(make('p', 'chead', bu('arcana')));
     ['Chalice', 'Parchment', 'Compass', 'Bell', 'Mirror'].forEach(kind => {
       const list = BLD.arcana.filter(a => a[1] === kind), a = list.find(x => x[0] === b.arcana[kind]);
-      choose(body, kind, b.arcana[kind], list.map(x => [x[0], x[0]]), v => { b.arcana[kind] = v; }, a ? a[3] + (a[4] ? ' · ' + bu('set') + ': ' + a[4] : '') : '');
+      choose(body, kind, b.arcana[kind], list.map(x => [x[0], x[0]]), v => { b.arcana[kind] = v; }, a ? a[3] + (a[4] ? ' · ' + bu('set') + ': ' + a[4] : '') : '', a && a[0]);
     });
     body.appendChild(make('p', 'chead', bu('wings')));
     const w = BLD.wings.find(x => x[0] === b.wings);
-    choose(body, bu('wings'), b.wings, BLD.wings.map(x => [x[0], x[0]]), v => { b.wings = v; }, w ? bu('equipped') + ': ' + w[1] + (w[2] ? ' · ' + bu('owned') + ': ' + w[2] : '') : '');
+    choose(body, bu('wings'), b.wings, BLD.wings.map(x => [x[0], x[0]]), v => { b.wings = v; }, w ? bu('equipped') + ': ' + w[1] + (w[2] ? ' · ' + bu('owned') + ': ' + w[2] : '') : '', w && w[0]);
     body.appendChild(make('p', 'chead', bu('pet')));
     choose(body, bu('pet'), b.pet, BLD.pets.map(x => [x, x]), v => { b.pet = v; }, '');
   }
@@ -1187,6 +1570,241 @@ if (bldHost && BLD.classes) {
     body.appendChild(ta);
   }
   repaint.push(render);
+}
+
+// ---------- share links: a build or a roster packed into the address ----------
+const SITE = 'https://lmzinn.github.io/Atreia-Hub/';
+async function pack(obj) {
+  const raw = new TextEncoder().encode(JSON.stringify(obj));
+  let bytes = raw, tag = 'j';
+  if (window.CompressionStream) { bytes = new Uint8Array(await new Response(new Blob([raw]).stream().pipeThrough(new CompressionStream('deflate-raw'))).arrayBuffer()); tag = 'z'; }
+  let bin = ''; bytes.forEach(b => { bin += String.fromCharCode(b); });
+  return tag + btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+async function unpack(text) {
+  const bytes = Uint8Array.from(atob(text.slice(1).replace(/-/g, '+').replace(/_/g, '/')), c => c.charCodeAt(0));
+  const raw = text[0] === 'z' ? new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).arrayBuffer()) : bytes;
+  return JSON.parse(new TextDecoder().decode(raw));
+}
+async function copyLink(kind, obj, done) {
+  // a link made from a local file would only work on this computer: point it at the published site
+  const url = (location.protocol === 'https:' ? location.origin + location.pathname : SITE) + '#' + kind + '=' + await pack(obj);
+  try { await navigator.clipboard.writeText(url); alert(done + '\n\n' + url.slice(0, 80) + '…'); } catch (e) { prompt(done, url); }
+}
+
+// ---------- accent colour ----------
+const ACCENTS = {violet: null, blue: ['#3b82f6', '#22d3ee'], emerald: ['#10b981', '#2dd4bf'], rose: ['#ec4899', '#f97316'], amber: ['#f59e0b', '#fb7185']};
+function applyAccent() {
+  const a = ACCENTS[S.accent], st = document.documentElement.style;
+  ['--hl', '--hl2'].forEach((v, i) => { if (a) st.setProperty(v, a[i]); else st.removeProperty(v); });
+}
+
+// ---------- events of the day: São Paulo time, as published for the South America servers ----------
+const SP = 3 * 3600000, MIN = 60000, SEASON_END = Date.UTC(2026, 11, 16, 0, 0);
+const EVENTS = [
+  {id: 'shugo', name: 'Shugo Festival', len: 10, min: 0},
+  {id: 'dim', name: 'Dimensional Invasion', len: 15, min: 30},
+  {id: 'rift', name: 'Spacetime Rift', len: 60, min: 0, hours: [2, 5, 8, 11, 14, 17, 20, 23]},
+  {id: 'kaira', name: 'Watcher Kaira', len: 30, min: 0, hours: [1, 4, 7, 10, 13, 16, 19, 22]},
+  {id: 'siege', name: 'Artifact Siege', len: 30, min: 0, hours: [21], days: [1, 4, 6]},
+  {id: 'daily', len: 0, min: 0, hours: [4]},
+  {id: 'weekly', len: 0, min: 0, hours: [4], days: [3]},
+];
+function occurrence(e, now) {  // [start, end] of the one running now, or of the next one
+  const sp = now - SP, first = Math.floor((sp - e.len * MIN) / 3600000) * 3600000;
+  for (let k = 0; k < 24 * 8; k++) {
+    const c = first + k * 3600000 + e.min * MIN, d = new Date(c);
+    if (e.hours && !e.hours.includes(d.getUTCHours())) continue;
+    if (e.days && !e.days.includes(d.getUTCDay())) continue;
+    if (c + e.len * MIN > sp) return [c + SP, c + SP + e.len * MIN];
+  }
+  return [now, now];
+}
+const HUI = {
+  pt: {tag: 'Tudo de Aion 2 num lugar só: rotina, build, progressão e crafting.', sub: 'Aion 2 · servidores Global', done: '{a} de {b} marcados',
+    season: 'Season 1 termina em {t}', find: 'Onde consigo…? Digite um material ou item e aperte Enter', events: 'Agora e a seguir', live: 'AGORA', ends: 'termina em {t}', inT: 'em {t}',
+    daily: 'Reset diário', weekly: 'Reset semanal', remind: 'Avisar antes de começar', soon: 'Começa em {t}, às {h}.', noNotify: 'Este navegador não deixa o site mandar avisos aqui. No site publicado funciona.',
+    denied: 'O navegador bloqueou os avisos deste site. Libere nas permissões do site para usar os lembretes.',
+    today: 'Para fazer hoje', next: 'Próximos objetivos', news: 'Novidades', pages: 'Páginas', evNote: 'Horários do servidor da América do Sul, segundo o shugo.gg; a NCSOFT não publicou a tabela oficial.',
+    d: {rot: 'Entradas diárias e limites da semana, por personagem, com reset automático.', bld: 'Monte, salve e compartilhe a build de qualquer classe.',
+      prog: 'Objetivos por faixa de Gear Score, com checklist.', asn: 'A build de PvE do Assassin, com barra, skills e Daevanion.', pvp: 'A build de PvP do Assassin, no mesmo modelo.',
+      craft: 'Calculadoras de craft e de aprimoramento, linha Dragon Lord e Essence Extraction.', find: 'De onde vem cada material, item, Arcana e título.', set: 'Aparência do site, lembretes e dados salvos.'}},
+  en: {tag: 'Everything for Aion 2 in one place: routine, build, progression and crafting.', sub: 'Aion 2 · Global servers', done: '{a} of {b} marked',
+    season: 'Season 1 ends in {t}', find: 'Where do I get…? Type a material or item and press Enter', events: 'Now and next', live: 'NOW', ends: 'ends in {t}', inT: 'in {t}',
+    daily: 'Daily reset', weekly: 'Weekly reset', remind: 'Remind me before it starts', soon: 'Starts in {t}, at {h}.', noNotify: 'This browser does not let the site send notifications here. On the published site it works.',
+    denied: 'The browser blocked notifications from this site. Allow them in the site permissions to use the reminders.',
+    today: 'To do today', next: 'Next objectives', news: 'News', pages: 'Pages', evNote: 'Times of the South America server, according to shugo.gg; NCSOFT has not published the official table.',
+    d: {rot: 'Daily entries and weekly limits, per character, with automatic reset.', bld: 'Create, save and share the build of any class.',
+      prog: 'Objectives by Gear Score bracket, with a checklist.', asn: 'The Assassin PvE build, with bar, skills and Daevanion.', pvp: 'The Assassin PvP build, in the same layout.',
+      craft: 'Crafting and enhancement calculators, the Dragon Lord line and Essence Extraction.', find: 'Where each material, item, Arcana and title comes from.', set: 'Look of the site, reminders and saved data.'}},
+};
+const hu = k => (HUI[S.lang] || HUI.pt)[k];
+const span = ms => { const m = Math.max(0, Math.ceil(ms / MIN)), d = Math.floor(m / 1440), h = Math.floor(m % 1440 / 60); return (d ? d + ' d ' : '') + (d || h ? h + ' h ' : '') + (d ? '' : m % 60 + ' min'); };
+const hhmm = t => new Date(t).toLocaleTimeString(S.lang === 'en' ? 'en-GB' : 'pt-BR', {hour: '2-digit', minute: '2-digit'});
+const evName = e => e.name || hu(e.id);
+
+// reminders: a browser notification a few minutes before the chosen events, while the site is open
+S.notify = Object.assign({lead: 5, ev: {}}, S.notify || {});
+const canNotify = 'Notification' in window, reminded = {};
+function remindTick() {
+  if (!canNotify || Notification.permission !== 'granted') return;
+  const now = Date.now();
+  EVENTS.forEach(e => {
+    if (!S.notify.ev[e.id]) return;
+    const start = occurrence(e, now)[0], key = e.id + start;
+    if (start > now && start - now <= S.notify.lead * MIN && !reminded[key]) { reminded[key] = 1; new Notification(evName(e), {body: hu('soon').replace('{t}', span(start - now)).replace('{h}', hhmm(start))}); }
+  });
+}
+setInterval(remindTick, 20000);
+function toggleRemind(id, after) {
+  if (!canNotify) { alert(hu('noNotify')); return; }
+  const flip = () => { if (S.notify.ev[id]) delete S.notify.ev[id]; else S.notify.ev[id] = true; save(); after(); };
+  if (!S.notify.ev[id] && Notification.permission !== 'granted') Notification.requestPermission().then(p => { if (p === 'granted') flip(); else alert(hu('denied')); });
+  else flip();
+}
+
+// ---------- home page ----------
+function paintHome() {
+  const host = $('#home'), now = Date.now();
+  if (!host || (document.activeElement && document.activeElement.id === 'hq')) return;  // not while the search is being typed
+  host.textContent = '';
+  const hero = make('div', 'hero'), mark = make('span', 'hmark'), words = make('div', 'hwords');
+  mark.appendChild(pico('home', ''));
+  words.append(make('div', 'hname', $('.brand').textContent.split(' - ')[0]), make('div', 'hsub', hu('sub')), make('p', 'htag', hu('tag')));
+  if (SEASON_END > now) words.appendChild(make('span', 'hchip', hu('season').replace('{t}', span(SEASON_END - now))));
+  if ($('.partbtn[data-part=find]')) {
+    const q = make('input'); q.id = 'hq'; q.type = 'search'; q.placeholder = hu('find'); q.autocomplete = 'off';
+    q.onkeydown = e => { if (e.key === 'Enter' && q.value.trim()) { S.findQ = q.value.trim(); save(); q.blur(); $('.partbtn[data-part=find]').click(); } };
+    words.appendChild(make('div')).appendChild(q);
+  }
+  hero.append(mark, words);
+  host.appendChild(hero);
+  // events
+  host.appendChild(make('p', 'hhead', hu('events')));
+  const strip = make('div', 'hevents');
+  EVENTS.map(e => [e, occurrence(e, now)]).sort((a, b) => a[1][0] - b[1][0]).forEach(([e, [start, end]]) => {
+    const live = start <= now && end > now, card = make('div', 'hev' + (live ? ' live' : '')), when = make('span', 'when'), bell = make('button', 'bell' + (S.notify.ev[e.id] ? ' on' : ''));
+    bell.appendChild(pico('bell', ''));
+    if (live) card.appendChild(make('span', 'livetag', hu('live')));
+    card.appendChild(make('b', '', evName(e)));
+    when.append(make('strong', '', live ? hu('ends').replace('{t}', span(end - now)) : hu('inT').replace('{t}', span(start - now))), ' · ' + hhmm(live ? end : start));
+    bell.title = hu('remind'); bell.onclick = () => toggleRemind(e.id, paintHome);
+    card.append(when, bell); strip.appendChild(card);
+  });
+  host.append(strip, make('p', 'note', hu('evNote')));
+  // to do today, and news
+  const cols = make('div', 'hcols'), box = title => { const b = make('div', 'hbox'); b.appendChild(make('p', 'hhead', title)); b.appendChild(make('ul')); cols.appendChild(b); return b.lastChild; };
+  if (homeStat.today) {
+    const t = homeStat.today(), ul = box(hu('today') + ' · ' + t.who);
+    t.lines.forEach(([cls, text]) => { const li = make('li', cls + ' go', text); li.onclick = () => $('.partbtn[data-part=rot]').click(); ul.appendChild(li); });
+    $$('#part-prog input[data-k]').filter(b => !b.checked).slice(0, 3).forEach(b => {
+      const row = b.closest('label.chk') || b.closest('tr'), li = make('li', 'go', '☐ ' + (row ? row.textContent.trim().replace(/\s+/g, ' ').slice(0, 90) : ''));
+      li.onclick = () => { showPart('prog', true); b.closest('details.sec').open = true; row.scrollIntoView({block: 'center'}); row.classList.remove('flash'); void row.offsetWidth; row.classList.add('flash'); };
+      ul.appendChild(li);
+    });
+  }
+  if (NEWS.length) {
+    const ul = box(hu('news'));
+    NEWS.slice(0, 6).forEach(n => { const li = make('li'), tm = make('time', '', n.d.slice(8, 10) + '/' + n.d.slice(5, 7)); li.append(tm, ' ' + (S.lang === 'en' ? n.en : n.pt)); ul.appendChild(li); });
+  }
+  host.appendChild(cols);
+  // pages
+  host.appendChild(make('p', 'hhead', hu('pages')));
+  const cards = make('div', 'hcards');
+  $$('.partbtn').filter(b => b.dataset.part !== 'home').forEach(b => {
+    const id = b.dataset.part, card = make('button', 'hcard'), tile = make('span', 'hico'), [a, n] = count($('#part-' + id));
+    tile.appendChild(pico(id, ''));
+    const stat = homeStat[id] ? homeStat[id]() : n ? hu('done').replace('{a}', a).replace('{b}', n) : '';
+    card.append(tile, make('b', '', $('span', b).textContent), make('span', 'hdesc', hu('d')[id] || ''));
+    if (n) { const bar = make('span', 'ptrack'), fill = make('i'); fill.style.width = 100 * a / n + '%'; bar.appendChild(fill); card.appendChild(bar); }
+    if (stat) card.appendChild(make('span', 'hstat', stat));
+    card.onclick = () => b.click();
+    cards.appendChild(card);
+  });
+  host.appendChild(cards);
+}
+repaint.push(() => { if (S.part === 'home') paintHome(); });
+setInterval(() => { if (S.part === 'home' && !document.hidden) paintHome(); }, 20000);
+$('.brand').onclick = () => $('.partbtn[data-part=home]').click();
+
+// ---------- "where do I get it?" ----------
+const findHost = $('#finder');
+if (findHost && FIND.length) {
+  const FUI = {pt: {ph: 'Nome do material, item, Arcana, asa ou título', hint: 'Digite pelo menos duas letras.', none: 'Nada encontrado com esse nome.', more: 'Mostrando os 40 primeiros; digite mais para afinar.'},
+    en: {ph: 'Name of the material, item, Arcana, wings or title', hint: 'Type at least two letters.', none: 'Nothing found with that name.', more: 'Showing the first 40; type more to narrow it down.'}};
+  const fu = k => (FUI[S.lang] || FUI.pt)[k];
+  const drawFinder = () => {
+    findHost.textContent = '';
+    const inp = make('input', 'fq'), res = make('div', 'fres'), note = make('p', 'note');
+    inp.type = 'search'; inp.placeholder = fu('ph'); inp.value = S.findQ || ''; inp.autocomplete = 'off';
+    const run = () => {
+      S.findQ = inp.value; save();
+      const term = fold(inp.value.trim());
+      res.textContent = ''; note.textContent = '';
+      if (term.length < 2) { note.textContent = fu('hint'); return; }
+      const all = FIND.filter(r => fold(r[0]).includes(term)).sort((a, b) => (fold(a[0]).startsWith(term) ? 0 : 1) - (fold(b[0]).startsWith(term) ? 0 : 1));
+      if (!all.length) { note.textContent = fu('none'); return; }
+      if (all.length > 40) note.textContent = fu('more');
+      all.slice(0, 40).forEach(([name, kind, sources, pic]) => {
+        const card = make('div', 'fitem'), head = make('div', 'fhead'), ul = make('ul'), art = make('span', 'fic');
+        // the pictures are in sheets of 200 squares, 20 a row, 40px each (finder_data.py)
+        if (pic >= 0) { art.style.backgroundImage = 'url(finder_icons/' + Math.floor(pic / 200) + '.webp?v=__FICV__)'; art.style.backgroundPosition = -(pic % 20) * 40 + 'px ' + -Math.floor(pic % 200 / 20) * 40 + 'px'; }
+        head.append(art, make('b', '', name), make('span', 'fkind', kind));
+        sources.forEach(s => ul.appendChild(make('li', '', s)));
+        card.append(head, ul); res.appendChild(card);
+      });
+    };
+    inp.oninput = run;
+    findHost.append(inp, note, res); run();
+  };
+  repaint.push(drawFinder);
+  shown.find = drawFinder;
+}
+
+// ---------- site settings ----------
+const setHost = $('#settings');
+if (setHost) {
+  const XUI = {pt: {look: 'Aparência', theme: 'Tema', auto: 'Automático (o do sistema)', dark: 'Escuro', light: 'Claro', accent: 'Cor de destaque', lang: 'Idioma',
+      notif: 'Lembretes de evento', notifHow: 'Aviso do navegador antes de o evento começar, enquanto o site estiver aberto em uma aba.', lead: 'Avisar com antecedência de', mins: '{n} minutos',
+      which: 'Avisar destes eventos', test: 'Testar aviso', testBody: 'Os lembretes estão funcionando.', data: 'Dados salvos', dataHow: 'Marcações, rotina e builds ficam só neste navegador.',
+      wipe: 'Apagar tudo deste navegador', wipeAsk: 'Apagar tudo que este site salvou neste navegador (marcações, rotina, builds)? Não dá para desfazer.',
+      colors: {violet: 'Violeta e azul', blue: 'Azul', emerald: 'Verde', rose: 'Rosa e laranja', amber: 'Âmbar'}},
+    en: {look: 'Look', theme: 'Theme', auto: 'Automatic (the system one)', dark: 'Dark', light: 'Light', accent: 'Accent colour', lang: 'Language',
+      notif: 'Event reminders', notifHow: 'A browser notification before the event starts, while the site is open in a tab.', lead: 'Remind me this long before', mins: '{n} minutes',
+      which: 'Remind me of these events', test: 'Test reminder', testBody: 'The reminders are working.', data: 'Saved data', dataHow: 'Marks, routine and builds are kept in this browser only.',
+      wipe: 'Delete everything from this browser', wipeAsk: 'Delete everything this site saved in this browser (marks, routine, builds)? This cannot be undone.',
+      colors: {violet: 'Violet and blue', blue: 'Blue', emerald: 'Green', rose: 'Pink and orange', amber: 'Amber'}}};
+  const xu = k => (XUI[S.lang] || XUI.pt)[k];
+  const drawSettings = () => {
+    setHost.textContent = '';
+    const row = (label, ...things) => { const r = make('div', 'setrow'); r.append(make('span', '', label), ...things); setHost.appendChild(r); return r; };
+    setHost.appendChild(make('p', 'chead', xu('look')));
+    row(xu('theme'), pickBox(S.theme || 'auto', [['auto', xu('auto')], ['dark', xu('dark')], ['light', xu('light')]], v => { S.theme = v === 'auto' ? null : v; }, applyTheme));
+    const sw = make('div', 'swatches');
+    Object.keys(ACCENTS).forEach(k => {
+      const b = make('button', 'sw' + ((S.accent || 'violet') === k ? ' on' : '')), dot = make('i'), pair = ACCENTS[k] || ['#8b5cf6', '#38bdf8'];
+      dot.style.background = 'linear-gradient(135deg,' + pair[1] + ',' + pair[0] + ')';
+      b.append(dot, xu('colors')[k]); b.onclick = () => { S.accent = k; save(); applyAccent(); drawSettings(); }; sw.appendChild(b);
+    });
+    row(xu('accent'), sw);
+    row(xu('lang'), pickBox(S.lang, [['pt', 'Português'], ['en', 'English']], v => { S.lang = v; }, applyLang));
+    setHost.appendChild(make('p', 'chead', xu('notif')));
+    setHost.appendChild(make('p', 'note', xu('notifHow')));
+    row(xu('lead'), pickBox(String(S.notify.lead), [2, 5, 10, 15].map(n => [String(n), xu('mins').replace('{n}', n)]), v => { S.notify.lead = +v; }, () => {}));
+    const evs = make('div', 'swatches');
+    EVENTS.forEach(e => { const lab = make('label'), box = make('input'); box.type = 'checkbox'; box.checked = !!S.notify.ev[e.id]; box.onclick = ev => { ev.preventDefault(); toggleRemind(e.id, drawSettings); }; lab.append(box, evName(e)); evs.appendChild(lab); });
+    row(xu('which'), evs);
+    const test = make('button', '', xu('test'));
+    test.onclick = () => { if (!canNotify) { alert(hu('noNotify')); return; } Notification.requestPermission().then(p => { if (p === 'granted') new Notification($('.brand').textContent, {body: xu('testBody')}); else alert(hu('denied')); }); };
+    row('', test);
+    setHost.appendChild(make('p', 'chead', xu('data')));
+    setHost.appendChild(make('p', 'note', xu('dataHow')));
+    const wipe = make('button', '', xu('wipe'));
+    wipe.onclick = () => { if (confirm(xu('wipeAsk'))) { try { localStorage.removeItem(KEY); } catch (e) {} location.reload(); } };
+    row('', wipe);
+  };
+  repaint.push(drawSettings);
+  shown.set = drawSettings;
 }
 
 // ---------- sub-headings in the menu ----------
@@ -1250,6 +1868,7 @@ function goHit(dir) {
   hitIdx = (hitIdx + dir + hits.length) % hits.length;
   const h = hits[hitIdx]; h.classList.add('cur');
   const d = h.closest('details.sec'); if (d) d.open = true;
+  const block = h.closest('details.more'); if (block) block.open = true;
   const pane = h.closest('.tabpane'); if (pane) pane._show();
   h.scrollIntoView({behavior: 'instant', block: 'center'});
   qn.textContent = (hitIdx + 1) + '/' + hits.length;
@@ -1332,6 +1951,7 @@ $('#totop').onclick = () => scrollTo({top: 0, behavior: 'smooth'});
 addEventListener('resize', () => fitTables());
 
 applyTheme();
+applyAccent();
 applyLang();
 refreshCounts();
 const first = S.part && $('.part[data-part="' + S.part + '"]') ? S.part : $$('.part')[0].dataset.part;
