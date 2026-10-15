@@ -1575,6 +1575,7 @@ if (rtHost && ROUTINE.length) {
   const live = a => !a.subOnly || !!S.rt.sub;  // some counters exist only with the Membership
   // what shows is chosen per character: the first one keeps the old choices (S.rt.hide), the others S.rt.hideBy[index]
   const hideMap = () => { const i = S.rt.cur || 0; if (!i) return S.rt.hide; S.rt.hideBy = S.rt.hideBy || {}; return S.rt.hideBy[i] || (S.rt.hideBy[i] = {}); };
+  const rname = a => S.lang === 'en' ? a.name : a.pt || a.name;  // the counter's name in the page's language
   const hidden = a => { const h = hideMap(); return !live(a) || (h[a.id] != null ? !!h[a.id] : !!a.off); };
   const val = (i, a) => { const v = own(i, a)[a.id]; return v != null ? Math.min(v, maxOf(a)) : stacks(a) ? a.n : 0; };
   const isDone = (i, a) => stacks(a) ? !val(i, a) : val(i, a) >= maxOf(a);
@@ -1621,7 +1622,7 @@ if (rtHost && ROUTINE.length) {
   // what there is to do today, for the box on this page and for the home page
   function todayData() {
     const r = S.rt, on = ROUTINE.filter(a => !hidden(a)), dl = on.filter(daily), wk = on.filter(a => !daily(a));
-    return {full: on.filter(a => stacks(a) && val(r.cur, a) >= capOf(a)).map(a => a.name), dailyLeft: dl.filter(a => !isDone(r.cur, a)).length, dailyAny: dl.length,
+    return {full: on.filter(a => stacks(a) && val(r.cur, a) >= capOf(a)).map(rname), dailyLeft: dl.filter(a => !isDone(r.cur, a)).length, dailyAny: dl.length,
       weekDone: wk.filter(a => isDone(r.cur, a)).length, weekTotal: wk.length, who: charName(r.cur)};
   }
   function todayLines(d) {  // [[class, text], …]
@@ -1673,7 +1674,7 @@ if (rtHost && ROUTINE.length) {
           box.onchange = () => { hideMap()[a.id] = !box.checked; save(); card.classList.toggle('off', !box.checked); }; card.appendChild(box); card.classList.toggle('off', hidden(a)); }
         else c.rows.push([a, card]);
         card.appendChild(thumbOf(a));
-        const title = make('b', '', a.name);
+        const title = make('b', '', rname(a)); if (rname(a) !== a.name) title.title = a.name;  // the game's English name on hover
         if (a.srv || a.both) title.prepend(make('span', 'rtag srv', ru('tagSrv')));
         if (!a.srv || a.both) title.prepend(make('span', 'rtag', ru('tagChar')));
         const rate = stacks(a) ? ru('perDay').replace('{n}', a.n).replace('{c}', max) : daily(a) ? ru('perDayFlat').replace('{n}', max) : ru(a.unit ? 'perWeekH' : 'perWeek').replace('{n}', max);

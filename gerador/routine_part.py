@@ -38,8 +38,8 @@ def routine_part(strings, english):
          'top of the column. Click again to untick.'),
         ('<b>Diário:</b> desmarca sozinho todo dia no reset. <b>Semanal:</b> desmarca sozinho na quarta.',
          '<b>Daily:</b> unticks by itself every day at the reset. <b>Weekly:</b> unticks by itself on Wednesday.'),
-        ('<b>⚠ na linha:</b> aparece em Nightmare e Shugo Festival, que acumulam até um máximo. Se a linha fica sem marcar '
-         'por dias seguidos (7 no Nightmare, 4 no Shugo Festival), a página avisa que as entradas devem estar no máximo e a '
+        ('<b>⚠ na linha:</b> aparece em Nightmare e Festival Shugo, que acumulam até um máximo. Se a linha fica sem marcar '
+         'por dias seguidos (7 no Nightmare, 4 no Festival Shugo), a página avisa que as entradas devem estar no máximo e a '
          'próxima recarga se perde.',
          '<b>⚠ on the row:</b> shows on Nightmare and Shugo Festival, which stack up to a cap. If the row goes unticked for '
          'days in a row (7 on Nightmare, 4 on Shugo Festival), the page warns that the entries should be at the cap and the '
@@ -48,17 +48,17 @@ def routine_part(strings, english):
          'só para todas as dungeons e depende da assinatura. Não é um contador por dungeon.',
          '<b>Why Conquest and Transcendence dungeons are not here:</b> they spend Odyle Energy, which is one pool for '
          'every dungeon and depends on the subscription. It is not a counter per dungeon.'),
-        ('<b>Tenho Membership:</b> com a assinatura, o Shugo Festival guarda até 21 em vez de 12, e o tempo de Abyss '
+        ('<b>Membership:</b> com a assinatura, o Festival Shugo guarda até 21 em vez de 12, e o tempo no Abyss '
          'passa de 7 para 14 horas. Também aparece a compra semanal de Odyle Energy no Wind Breeze Merchant.',
-         '<b>I have the Membership:</b> with the subscription, Shugo Festival stores up to 21 instead of 12, and Abyss '
+         '<b>Membership:</b> with the subscription, Shugo Festival stores up to 21 instead of 12, and Abyss '
          'time goes from 7 to 14 hours. The weekly Odyle Energy purchase at the Wind Breeze Merchant shows up too.'),
         ('<b>Etiqueta SERVIDOR:</b> o contador vale para todos os seus personagens do servidor, então o número é o mesmo em '
          'todas as abas. Com PERSONAGEM, cada aba tem o seu.',
          '<b>SERVER tag:</b> the counter is for all your characters on the server, so the number is the same on every tab. '
          'With CHAR, each tab has its own.'),
         ('<b>Escolher o que aparece:</b> liga e desliga cada contador. O que aparece de início é a lista do app do Shugo.GG, mais '
-         'Nightmare e Shugo Festival. Dimensional Invasion, Abyss Corridors, Subjugation, Silent Graveyard, Fafnite '
-         'Amphitheater, chefes finais e Exploration por dungeon vêm desligados.',
+         'Nightmare e Festival Shugo. Invasão Dimensional, Corredores do Abyss, Subjugação, Silent Graveyard, Fafnite '
+         'Amphitheater, chefes finais e Exploração por dungeon vêm desligados. Passe o mouse no nome para ver como ele aparece no jogo.',
          '<b>Choose what shows:</b> turns each counter on and off. What shows at first is the list of the Shugo.GG app, plus '
          'Nightmare and Shugo Festival. Dimensional Invasion, Abyss Corridors, Subjugation, Silent Graveyard, Fafnite '
          'Amphitheater, final bosses and Exploration per dungeon start turned off.'),
@@ -73,7 +73,7 @@ def routine_part(strings, english):
          'the game, the tooltip of each counter shows the official countdown.'),
         ('<b>Se a página ficar fechada por dias,</b> ela aplica ao abrir os resets que passaram.',
          '<b>If the page stays closed for days,</b> it applies the resets that went by when you open it.'),
-        (f'Lista e limites do que aparece de início: app do Shugo.GG, em 13/out/2026. Nightmare, Shugo Festival, o que muda com '
+        (f'Lista e limites do que aparece de início: app do Shugo.GG, em 13/out/2026. Nightmare, Festival Shugo, o que muda com '
          f'a assinatura e os contadores desligados: tabela do cliente Global publicada pelo {link}, lida no mesmo dia.',
          f'List and limits of what shows at first: the Shugo.GG app, on 13 Oct 2026. Nightmare, Shugo Festival, what the '
          f'subscription changes and the counters that start off: the Global client table published by {link}, read the same day.'),

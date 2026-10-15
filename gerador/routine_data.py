@@ -100,7 +100,34 @@ def icon(name):
     return 'dungeon'
 
 
-rows = [dict({'id': re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-'), 'group': group, 'name': name, 'per': per, 'n': n, 'ico': icon(name),
+# the names in Portuguese, for the page in Portuguese (the English name stays as the id and on the English page;
+# names of places and dungeons stay as in the game)
+PT = {
+    'Duty Missions': 'Missões de Dever', 'Reach Kinah cap': 'Limite diário de Kinah', 'Attendance': 'Presença diária',
+    'Abyss Supply: Emergency Requests': 'Abyss: pedidos de emergência', 'Nightmare': 'Nightmare', 'Shugo Festival': 'Festival Shugo',
+    'Odyle Energy crafts (Substance Morph)': 'Odyle Energy fabricada (Substance Morph)',
+    'Odyle Energy bought (Wind Breeze Merchant, membership)': 'Odyle Energy comprada (Membership)',
+    'Unknown Fissure (daily dungeon)': 'Unknown Fissure (dungeon diária)', 'Ascension Trial': 'Ascension Trial',
+    'Abyss time': 'Tempo no Abyss', 'Abyss Supply: Weekly Requests': 'Abyss: pedidos semanais',
+    'Duty Commands (bought scrolls)': 'Pergaminhos de comando comprados', 'Arena': 'Arena', 'Battlefield': 'Campo de batalha',
+    'Daeva Pass EXP': 'EXP do Daeva Pass', 'Abyss Corridors': 'Corredores do Abyss', 'Dimensional Invasion': 'Invasão Dimensional',
+    'Subjugation': 'Subjugação', 'Silent Graveyard': 'Silent Graveyard', 'Fafnite Amphitheater': 'Fafnite Amphitheater',
+    'Remaining Unobtained Cube Count': 'Cubos ainda não pegos', 'Conquest final bosses': 'Chefes finais do Conquest',
+    'Transcendence final bosses': 'Chefes finais do Transcendence',
+}
+
+
+def pt_name(name):
+    if name in PT:
+        return PT[name]
+    if name.endswith(' final boss'):
+        return name[:-len(' final boss')] + ': chefe final'
+    if name.endswith(' (Exploration)'):
+        return name[:-len(' (Exploration)')] + ' (Exploração)'
+    return name
+
+
+rows = [dict({'id': re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-'), 'group': group, 'name': name, 'pt': pt_name(name), 'per': per, 'n': n, 'ico': icon(name),
               'note': [pt, en]}, **more) for group, name, per, n, more, pt, en in ROWS]
 assert len({r['id'] for r in rows}) == len(rows)
 json.dump(rows, open('routine_data.json', 'w', encoding='utf8'), ensure_ascii=False, indent=1)
