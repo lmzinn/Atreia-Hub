@@ -55,7 +55,10 @@ def builder_part(strings, english):
          'escolhida quando a skill chega ao nível em que ela abre (passe o mouse para ver).',
          '<b>Specs:</b> 1 fits from final level 8, 2 from 12 and 3 from 20. A spec can only be picked once the skill '
          'reaches the level at which it opens (hover to see it).'),
-        ('<b>Stigmas:</b> marque “Equipado” em até 4.', '<b>Stigmas:</b> tick “Equipped” on up to 4.'),
+        ('<b>Stigmas:</b> marque “Equipado” em até 4. As specs dos stigmas não se escolhem: todas ligam sozinhas quando o '
+         'stigma chega ao nível de cada uma (5, 10, 15 e 20).',
+         '<b>Stigmas:</b> tick “Equipped” on up to 4. Stigma specs are not chosen: each one switches on by itself when the '
+         'stigma reaches its level (5, 10, 15 and 20).'),
         ('<b>Daevanion:</b> clicar num nó distante pega também o caminho mais barato até ele. Os quatro primeiros '
          'tabuleiros somam nos Daevanion Crystals; o Azphel tem cristais próprios.',
          '<b>Daevanion:</b> clicking a far node also takes the cheapest path to it. The first four boards add up under '

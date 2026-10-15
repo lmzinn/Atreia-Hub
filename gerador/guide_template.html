@@ -648,6 +648,33 @@ background:var(--panel);color:var(--ink);font:inherit;cursor:pointer}
 .tool button.rsubt.on .rsubbox::after{content:"";width:7px;height:4px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
 .tool .bcard .bacts button.on{border-color:var(--hl);background:color-mix(in srgb,var(--hl) 18%,var(--panel))}
 .tool .bcard .bacts button:disabled{opacity:.4;cursor:default}
+/* characters: dragging a pill to a new place */
+.tool .bswitch button[draggable=true]{cursor:grab}
+.tool .bswitch button.dragging{opacity:.45}
+.tool .bswitch button.dropat.before{box-shadow:-4px 0 0 -1px var(--hl2)}
+.tool .bswitch button.dropat.after{box-shadow:4px 0 0 -1px var(--hl2)}
+/* stigma specs: shown, not chosen */
+.tool .specs button.spec.auto{cursor:default;pointer-events:none}
+.tool .specs button.spec.auto:not(.on){opacity:.4}
+/* reminder sound: the settings row and the call to click while the page is silent */
+.sndrow{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+.sndrow label{display:inline-flex;gap:6px;align-items:center}
+#sndcall{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:70;padding:9px 16px;border-radius:999px;cursor:pointer;font:inherit;font-size:13.5px;
+color:var(--ink);background:color-mix(in srgb,var(--hl) 22%,var(--panel));border:1px solid var(--hl);box-shadow:0 8px 24px #0006;animation:toastin .25s ease-out}
+#sndcall{display:inline-flex;align-items:center;gap:8px}
+#sndcall svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#sndcall:hover{background:color-mix(in srgb,var(--hl) 32%,var(--panel))}
+/* settings: compact volume, buttons in the page's style */
+.sndrow .num{display:inline-flex;align-items:center;gap:3px}
+.sndrow .num input{width:38px;height:30px;box-sizing:border-box;padding:0 2px;text-align:center}
+.sndrow .num button{width:26px;height:30px;padding:0}
+.tool button.sbtn{display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 13px;border-radius:9px}
+.tool button.sbtn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.tool button.sbtn:not(.danger){border-color:color-mix(in srgb,var(--hl) 45%,var(--line));background:color-mix(in srgb,var(--hl) 12%,var(--panel))}
+.tool button.sbtn:not(.danger):hover{background:color-mix(in srgb,var(--hl) 22%,var(--panel))}
+.tool button.sbtn.danger{color:var(--mute)}
+.tool button.sbtn.danger:hover{border-color:#ef4444;color:#f87171;background:color-mix(in srgb,#ef4444 10%,var(--panel))}
+.setfoot{display:flex;justify-content:flex-start;margin:6px 0 2px}
 </style>
 </head>
 <body>
@@ -672,7 +699,7 @@ const BOARDS = __BOARDS__, EN = __EN__, ICONS = __ICONS__, CALC = __CALC__, ROUT
 const UI = {
   pt: {search: 'Buscar…  ( / )', openall: 'Abrir tudo', closeall: 'Fechar tudo', exp: 'Exportar marcações', imp: 'Importar marcações',
     foot: 'Gerado em {d}. As marcações ficam salvas neste navegador.', badfile: 'Não consegui ler esse arquivo.',
-    markAll: 'Marcar tudo', reset: 'Desmarcar tudo', undo: 'Desfazer', pChar: 'Personagem', pAdd: 'Personagem', pName: 'Nome', pDone: '{a} de {b} marcados', pDel: 'Excluir', pDelAsk: 'Excluir o personagem “{n}”? As marcações da Progressão e da Rotina dele somem e não dá para desfazer.', pPic: 'Escolher imagem', pClasses: 'Classes', pWings: 'Asas', pNoPic: 'Sem imagem', main: 'Main', alt: 'Alt {n}',
+    markAll: 'Marcar tudo', reset: 'Desmarcar tudo', undo: 'Desfazer', pChar: 'Personagem', pAdd: 'Personagem', pName: 'Nome', pDone: '{a} de {b} marcados', pDrag: 'Arraste para mudar a ordem', pDel: 'Excluir', pDelAsk: 'Excluir o personagem “{n}”? As marcações da Progressão e da Rotina dele somem e não dá para desfazer.', pPic: 'Escolher imagem', pClasses: 'Classes', pWings: 'Asas', pNoPic: 'Sem imagem', main: 'Main', alt: 'Alt {n}',
     pHow: 'Cada personagem tem as próprias marcações. Os personagens são os mesmos da Rotina.',
     next: 'Próximo item não marcado', hide: 'Esconder os marcados', alldone: 'Tudo marcado nesta parte.',
     theme: 'Tema claro/escuro', home: 'Início', fold: 'Recolher ou abrir os tópicos', badLink: 'Não consegui abrir o que veio nesse link.', mine: 'Seu valor', credit: 'Site de fãs, sem vínculo com a NCSOFT. Dados e imagens do jogo: wikily.gg e metabot.gg.', subs: 'Abrir ou recolher os subtópicos', lang: 'Idioma: português / inglês', top: 'Voltar ao topo',
@@ -682,7 +709,7 @@ const UI = {
     have: 'Tenho', plan: 'Plano (soma das barras)', left: 'sobram', short: 'faltam', spentAll: 'Já marcados como pegos'},
   en: {search: 'Search…  ( / )', openall: 'Open all', closeall: 'Close all', exp: 'Export marks', imp: 'Import marks',
     foot: 'Built on {d}. Your marks are saved in this browser.', badfile: 'Could not read that file.',
-    markAll: 'Tick all', reset: 'Untick all', undo: 'Undo', pChar: 'Character', pAdd: 'Character', pName: 'Name', pDone: '{a} of {b} ticked', pDel: 'Delete', pDelAsk: 'Delete the character “{n}”? Its Progressão marks and Routine counters go too, and this cannot be undone.', pPic: 'Choose a picture', pClasses: 'Classes', pWings: 'Wings', pNoPic: 'No picture', main: 'Main', alt: 'Alt {n}',
+    markAll: 'Tick all', reset: 'Untick all', undo: 'Undo', pChar: 'Character', pAdd: 'Character', pName: 'Name', pDone: '{a} of {b} ticked', pDrag: 'Drag to change the order', pDel: 'Delete', pDelAsk: 'Delete the character “{n}”? Its Progressão marks and Routine counters go too, and this cannot be undone.', pPic: 'Choose a picture', pClasses: 'Classes', pWings: 'Wings', pNoPic: 'No picture', main: 'Main', alt: 'Alt {n}',
     pHow: 'Each character has its own marks. The characters are the same as in the Routine.',
     next: 'Next unmarked item', hide: 'Hide marked items', alldone: 'Everything in this part is marked.',
     theme: 'Light/dark theme', home: 'Home', fold: 'Fold or open the topics', badLink: 'Could not open what came in that link.', mine: 'Your value', credit: 'Fan site, not affiliated with NCSOFT. Game data and pictures: wikily.gg and metabot.gg.', subs: 'Open or fold the subtopics', lang: 'Language: Portuguese / English', top: 'Back to top',
@@ -1194,22 +1221,24 @@ function toolTable(host, heads, cls) {
 
 // ---------- characters: one panel shared by the Progressão and the Routine (the list lives in S.rt) ----------
 const charsChanged = () => { if (progPart) $$('input[type=checkbox][data-k]', progPart).forEach(loadBox); refreshCounts(); repaint.forEach(f => f()); };
-function deleteChar(i) {
-  const n = progChars(), r = S.rt; if (n < 2) return;
-  const shift = (get, put) => { const all = [...Array(n)].map((_, j) => get(j)); all.splice(i, 1); all.forEach((x, j) => put(j, x)); };
-  const marksAll = [...Array(n)].map((_, j) => j ? (S.checksBy || {})[j] || {} : S.checks);
-  marksAll.splice(i, 1); S.checks = marksAll[0]; S.checksBy = {}; marksAll.slice(1).forEach((m, j) => { S.checksBy[j + 1] = m; });
-  r.names = r.names || []; r.names.splice(i, 1);
-  const hides = [...Array(n)].map((_, j) => j ? (r.hideBy || {})[j] || {} : r.hide || {});
-  hides.splice(i, 1); r.hide = hides[0]; r.hideBy = {}; hides.slice(1).forEach((h, j) => { r.hideBy[j + 1] = h; });
-  const pics = r.pics || {}; r.pics = {}; shift(j => pics[j], (j, k) => { if (k) r.pics[j] = k; });
-  const v = r.v || {}, old = [...Array(n)].map((_, j) => v[j]); old.forEach((_, j) => delete v[j]); old.splice(i, 1); old.forEach((x, j) => { if (x) v[j] = x; }); r.v = v;
+// order: the old place of each character, in the new order (a place left out is a deleted character)
+function remapChars(order) {
+  const n = progChars(), r = S.rt = S.rt || {}, pick = all => order.map(j => all[j]);
+  const marks = pick([...Array(n)].map((_, j) => j ? (S.checksBy || {})[j] || {} : S.checks));
+  S.checks = marks[0] || {}; S.checksBy = {}; marks.slice(1).forEach((m, j) => { S.checksBy[j + 1] = m; });
+  const hides = pick([...Array(n)].map((_, j) => j ? (r.hideBy || {})[j] || {} : r.hide || {}));
+  r.hide = hides[0] || {}; r.hideBy = {}; hides.slice(1).forEach((h, j) => { r.hideBy[j + 1] = h; });
+  r.names = pick([...Array(n)].map((_, j) => progName(j)));  // written out, so "Main" or "Alt 1" stays with its character
+  const pics = r.pics || {}; r.pics = {}; order.forEach((j, k) => { if (pics[j]) r.pics[k] = pics[j]; });
+  const v = r.v || {}, old = [...Array(n)].map((_, j) => v[j]); old.forEach((_, j) => delete v[j]); order.forEach((j, k) => { if (old[j]) v[k] = old[j]; }); r.v = v;
   Object.keys(S.resets || {}).forEach(k => { const el = document.getElementById(k.split(':')[0]); if (el && inProg(el)) delete S.resets[k]; });  // undo of the Progressão: gone
-  r.chars = n - 1;
-  if ((r.cur || 0) > i) r.cur--; r.cur = Math.min(r.cur || 0, r.chars - 1);
-  if ((S.progChar || 0) > i) S.progChar--; S.progChar = Math.min(S.progChar || 0, r.chars - 1);
+  const follow = c => { const k = order.indexOf(c || 0); return k >= 0 ? k : Math.min(c || 0, order.length - 1); };
+  r.cur = follow(r.cur); S.progChar = follow(S.progChar);
+  r.chars = order.length;
   save();
 }
+function deleteChar(i) { const n = progChars(); if (n > 1) remapChars([...Array(n).keys()].filter(j => j !== i)); }
+let dragFrom = null;
 // cur: the open character on this page; pick(i) opens another; acts: this page's own buttons; meta: what goes under the name
 function charHud(cur, pick, acts, meta, icon) {
   const hud = make('div', 'bhud'), sw = make('div', 'bswitch'), card = make('div', 'bcard'), emb = make('span', 'bemb pemb pick');
@@ -1218,6 +1247,15 @@ function charHud(cur, pick, acts, meta, icon) {
   for (let i = 0; i < progChars(); i++) {
     const b = make('button', i === cur ? 'on' : ''), text = make('span', '', progName(i));
     b.type = 'button'; b.append(picOf(i) || pico(icon, ''), text); b.onclick = () => pick(i);
+    if (progChars() > 1) {  // drag a pill onto another to put it in that place
+      b.draggable = true; b.title = u('pDrag');
+      b.ondragstart = e => { dragFrom = i; b.classList.add('dragging'); e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData('text/plain', String(i)); };
+      b.ondragend = () => { dragFrom = null; $$('.bswitch .dragging, .bswitch .dropat').forEach(x => x.classList.remove('dragging', 'dropat', 'before', 'after')); };
+      b.ondragover = e => { if (dragFrom == null || dragFrom === i) return; e.preventDefault(); b.classList.add('dropat', dragFrom > i ? 'before' : 'after'); };
+      b.ondragleave = () => b.classList.remove('dropat', 'before', 'after');
+      b.ondrop = e => { e.preventDefault(); const from = dragFrom; dragFrom = null; if (from == null || from === i) return;
+        const order = [...Array(progChars()).keys()]; order.splice(i, 0, order.splice(from, 1)[0]); remapChars(order); charsChanged(); };
+    }
     if (i === cur) name.oninput = () => { text.textContent = name.value.trim() || progName(i); };
     sw.appendChild(b);
   }
@@ -1671,7 +1709,7 @@ const BUI = {
     barHow: 'Clique num espaço para escolher a skill: aparecem as ativas e os stigmas marcados como equipados na aba Skills. Clique em M para marcar a coluna que a macro dispara. A linha 0 é a de baixo, encostada na tecla, como no jogo; os nomes da segunda barra você pode trocar.',
     sumPoints: 'Skill Points gastos', sumShards: 'Stigma Shards gastos', sumCrystals: 'Daevanion Crystals', sumAzphel: 'Crystals do Azphel', sumStig: 'Stigmas equipados',
     A: 'Skills ativas', P: 'Passivas', S: 'Stigmas', skill: 'Skill', trained: 'Nível treinado', fromDaev: '+ Daevanion', fromGear: '+ equipamento', final: 'Nível final', specs: 'Specs', on: 'Equipado',
-    specSlots: '{a} de {b}', specAt: 'abre no nível {n}', noSpecs: 'Specs a partir do nível 8', stigFull: 'Já há 4 stigmas equipados.',
+    specSlots: '{a} de {b}', stigOn: '{a} de {b} ligadas · ligam sozinhas', stigAt: 'liga sozinha no nível {n}', specAt: 'abre no nível {n}', noSpecs: 'Specs a partir do nível 8', stigFull: 'Já há 4 stigmas equipados.',
     clear: 'Limpar este tabuleiro', all: 'Pegar tudo', nodes: '{a} de {b} nós', crystals: '{a} de {b} cristais', effects: 'Efeitos ativos', fxSkills: 'Níveis de skill', fxStats: 'Atributos', none: 'Nenhum nó pego ainda.',
     daevHow: 'Clique num nó para pegá-lo: se ele estiver longe, o caminho mais barato até ele é pego junto. Clique num nó pego para soltá-lo; o que ficar desligado do início sai também.',
     slot: 'Slot', item: 'Item', enh: 'Aprimoramento', stats: 'Atributos', empty: '— vazio —', il: 'item level {n}', search: 'Digite para buscar…', noMatch: 'Nada com esse nome', maxEnh: 'máx. +{n}',
@@ -1687,7 +1725,7 @@ const BUI = {
     barHow: 'Click a slot to choose the skill: the active skills and the stigmas ticked as equipped on the Skills tab show up. Click M to mark the column the macro fires. Row 0 is the bottom one, next to the key, as in the game; you can rename the keys of the second bar.',
     sumPoints: 'Skill Points spent', sumShards: 'Stigma Shards spent', sumCrystals: 'Daevanion Crystals', sumAzphel: 'Azphel crystals', sumStig: 'Stigmas equipped',
     A: 'Active skills', P: 'Passives', S: 'Stigmas', skill: 'Skill', trained: 'Trained level', fromDaev: '+ Daevanion', fromGear: '+ gear', final: 'Final level', specs: 'Specs', on: 'Equipped',
-    specSlots: '{a} of {b}', specAt: 'opens at level {n}', noSpecs: 'Specs from level 8', stigFull: 'There are already 4 stigmas equipped.',
+    specSlots: '{a} of {b}', stigOn: '{a} of {b} on · they switch on by themselves', stigAt: 'switches on by itself at level {n}', specAt: 'opens at level {n}', noSpecs: 'Specs from level 8', stigFull: 'There are already 4 stigmas equipped.',
     clear: 'Clear this board', all: 'Take everything', nodes: '{a} of {b} nodes', crystals: '{a} of {b} crystals', effects: 'Active effects', fxSkills: 'Skill levels', fxStats: 'Stats', none: 'No node taken yet.',
     daevHow: 'Click a node to take it: if it is far away, the cheapest path to it is taken as well. Click a taken node to drop it; whatever gets cut off from the start goes too.',
     slot: 'Slot', item: 'Item', enh: 'Enhancement', stats: 'Stats', empty: '— empty —', il: 'item level {n}', search: 'Type to search…', noMatch: 'Nothing by that name', maxEnh: 'max +{n}',
@@ -1879,8 +1917,19 @@ if (bldHost && BLD.classes) {
         if (kind === 'P') return;
         const under = tb.insertRow(), sp = under.insertCell(), line = make('div', 'specline'), slots = specSlots(final);
         under.className = 'specrow ' + tr.className; sp.colSpan = heads.length + (kind === 'S' ? 1 : 0); sp.appendChild(line);
-        b.sp[s.n] = (b.sp[s.n] || []).filter(t => s.sp.some(x => x[0] === t && final >= x[1])).slice(0, slots);
         const chips = make('div', 'specs');
+        if (kind === 'S') {  // a stigma's specs are all on once it reaches their level: nothing to pick
+          delete b.sp[s.n];
+          const on = s.sp.filter(([, at]) => final >= at).length;
+          line.append(make('small', '', bu('specs') + ' · ' + bu('stigOn').replace('{a}', on).replace('{b}', s.sp.length)), chips);
+          s.sp.forEach(([title, at]) => {
+            const chip = make('button', 'spec auto' + (final >= at ? ' on' : '')); chip.type = 'button'; chip.tabIndex = -1;
+            chip.append(make('span', '', title), make('small', 'splv', 'Lv ' + at)); chip.title = bu('stigAt').replace('{n}', at);
+            chips.appendChild(chip);
+          });
+          return;
+        }
+        b.sp[s.n] = (b.sp[s.n] || []).filter(t => s.sp.some(x => x[0] === t && final >= x[1])).slice(0, slots);
         line.append(make('small', '', slots ? bu('specs') + ' · ' + bu('specSlots').replace('{a}', b.sp[s.n].length).replace('{b}', slots) : bu('noSpecs')), chips);
         s.sp.forEach(([title, at]) => {
           const chosen = b.sp[s.n].includes(title), chip = make('button', 'spec' + (chosen ? ' on' : ''));
@@ -2050,7 +2099,8 @@ const hhmm = t => new Date(t).toLocaleTimeString(S.lang === 'en' ? 'en-GB' : 'pt
 const evName = e => e.name || hu(e.id);
 
 // reminders: a browser notification a few minutes before the chosen events, while the site is open
-S.notify = Object.assign({lead: 5, ev: {}, sound: true}, S.notify || {});
+S.notify = Object.assign({lead: 5, ev: {}, sound: true, snd: 'chime', vol: 70}, S.notify || {});
+if (S.notify.sound === false && S.notify.snd !== 'off') { S.notify.snd = 'off'; S.notify.sound = true; }  // the old on/off tick
 const canNotify = 'Notification' in window, reminded = {};
 function toast(title, body) {
   let box = $('#toast');
@@ -2058,21 +2108,44 @@ function toast(title, body) {
   const card = make('div', 'toast'); card.append(make('b', '', title), make('span', '', body));
   card.onclick = () => card.remove(); box.appendChild(card); setTimeout(() => card.remove(), 15000);
 }
-function beep() {
+// the jingles: [frequency in Hz, start in s, length in s, wave] for each note
+const SOUNDS = {
+  chime: [[1047, 0, .5, 'sine'], [1568, .12, .7, 'sine'], [2093, .24, .9, 'sine']],
+  coin: [[988, 0, .08, 'square'], [1319, .08, .45, 'square']],
+  fanfare: [[523, 0, .12, 'triangle'], [659, .12, .12, 'triangle'], [784, .24, .12, 'triangle'], [1047, .36, .5, 'triangle'], [784, .5, .12, 'triangle'], [1047, .62, .6, 'triangle']],
+  capture: [[784, 0, .1, 'square'], [988, .12, .1, 'square'], [1175, .24, .1, 'square'], [1568, .4, .55, 'triangle']],
+};
+let audioCtx = null;
+const audioOn = () => !!audioCtx && audioCtx.state === 'running';
+function unlockAudio() {  // browsers keep a page silent until the reader clicks on it
+  try { audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)(); if (audioCtx.state !== 'running') audioCtx.resume().then(paintSoundCall, () => {}); } catch (e) {}
+  paintSoundCall();
+}
+['pointerdown', 'keydown'].forEach(ev => addEventListener(ev, unlockAudio, {capture: true, passive: true}));
+function playSound(kind, times) {
+  const notes = SOUNDS[kind]; if (!notes) return;
   try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)(), now = ctx.currentTime;
-    [880, 1175].forEach((hz, i) => {
-      const osc = ctx.createOscillator(), vol = ctx.createGain(), at = now + i * 0.18;
-      osc.frequency.value = hz; vol.gain.setValueAtTime(0.0001, at); vol.gain.exponentialRampToValueAtTime(0.18, at + 0.02); vol.gain.exponentialRampToValueAtTime(0.0001, at + 0.4);
-      osc.connect(vol); vol.connect(ctx.destination); osc.start(at); osc.stop(at + 0.45);
+    unlockAudio(); const ctx = audioCtx, vol = Math.max(0, Math.min(100, S.notify.vol)) / 100 * .35;
+    for (let k = 0; k < (times || 1); k++) notes.forEach(([hz, at, len, wave]) => {
+      const osc = ctx.createOscillator(), g = ctx.createGain(), t0 = ctx.currentTime + .02 + k * 1.1 + at;
+      osc.type = wave; osc.frequency.value = hz;
+      g.gain.setValueAtTime(.0001, t0); g.gain.exponentialRampToValueAtTime(Math.max(.0002, vol), t0 + .015); g.gain.exponentialRampToValueAtTime(.0001, t0 + len);
+      osc.connect(g); g.connect(ctx.destination); osc.start(t0); osc.stop(t0 + len + .05);
     });
-    setTimeout(() => ctx.close(), 1200);
   } catch (e) {}
 }
-// the card on the page always shows; the system notification only where the browser and the system allow it
+// while reminders are on and the page is still silent, a small call to click
+function paintSoundCall() {
+  let pill = $('#sndcall');
+  const need = !audioOn() && S.notify.snd !== 'off' && Object.keys(S.notify.ev || {}).length > 0;
+  if (!need) { if (pill) pill.remove(); return; }
+  if (!pill) { pill = make('button'); pill.id = 'sndcall'; pill.type = 'button'; pill.onclick = () => { unlockAudio(); playSound(S.notify.snd); }; document.body.appendChild(pill); }
+  pill.textContent = ''; pill.append(pico('bell', ''), S.lang === 'en' ? 'Click to turn on the reminder sound' : 'Clique para ativar o som dos lembretes');
+}
+setTimeout(paintSoundCall, 1500);
 function announce(title, body) {
   toast(title, body);
-  if (S.notify.sound !== false) beep();
+  if (S.notify.snd !== 'off') playSound(S.notify.snd, 2);  // twice, to be heard over the game
   if (canNotify && Notification.permission === 'granted') try { new Notification(title, {body}); } catch (e) {}
 }
 function remindTick() {
@@ -2085,6 +2158,7 @@ function remindTick() {
 }
 setInterval(remindTick, 20000);
 function toggleRemind(id, after) {
+  setTimeout(paintSoundCall);  // turning a reminder on may need the call to click
   if (S.notify.ev[id]) delete S.notify.ev[id]; else S.notify.ev[id] = true;
   save(); after();
   if (S.notify.ev[id] && canNotify && Notification.permission === 'default') try { Notification.requestPermission().then(after, () => {}); } catch (e) {}
@@ -2192,14 +2266,16 @@ if (findHost && FIND.length) {
 const setHost = $('#settings');
 if (setHost) {
   const XUI = {pt: {look: 'Aparência', theme: 'Tema', auto: 'Automático (o do sistema)', dark: 'Escuro', light: 'Claro', accent: 'Cor de destaque', lang: 'Idioma',
-      notif: 'Lembretes de evento', notifHow: 'Com o site aberto em uma aba: aviso na tela, som e notificação do navegador.', lead: 'Antecedência', mins: '{n} minutos', sound: 'Som', soundOn: 'Tocar um som',
+      notif: 'Lembretes de evento', notifHow: 'Com o site aberto em uma aba: aviso na tela, som e notificação do navegador.', lead: 'Antecedência', mins: '{n} minutos', sound: 'Som', soundOn: 'Tocar um som', vol: 'Volume', listen: 'Ouvir', sounds: {chime: 'Sino', coin: 'Moeda', fanfare: 'Fanfarra', capture: 'Captura', off: 'Sem som'},
+      locked: 'O navegador só libera o som depois de um clique na página: depois de abrir o site, clique em qualquer lugar uma vez.',
       perm: {granted: 'Notificação do navegador: permitida. Se ela não aparecer, ligue as notificações do navegador no Windows e desligue o Não perturbe.', denied: 'Notificação do navegador: bloqueada (cadeado ao lado do endereço). O aviso na tela continua funcionando.',
         default: 'Notificação do navegador: ainda não permitida. Clique em Testar aviso.', none: 'Este navegador não tem notificação; o aviso na tela funciona.'},
       which: 'Eventos', test: 'Testar aviso', testBody: 'Os lembretes estão funcionando.', data: 'Dados salvos', dataHow: 'Marcações, rotina e builds ficam só neste navegador.',
       wipe: 'Apagar tudo', wipeAsk: 'Apagar tudo que este site salvou neste navegador (marcações, rotina, builds)? Não dá para desfazer.',
       colors: {violet: 'Violeta e azul', blue: 'Azul', cyan: 'Ciano', emerald: 'Verde', lime: 'Lima', amber: 'Âmbar', red: 'Vermelho', rose: 'Rosa e laranja', purple: 'Roxo'}},
     en: {look: 'Look', theme: 'Theme', auto: 'Automatic (the system one)', dark: 'Dark', light: 'Light', accent: 'Accent colour', lang: 'Language',
-      notif: 'Event reminders', notifHow: 'With the site open in a tab: a card on the page, a sound and a browser notification.', lead: 'How long before', mins: '{n} minutes', sound: 'Sound', soundOn: 'Play a sound',
+      notif: 'Event reminders', notifHow: 'With the site open in a tab: a card on the page, a sound and a browser notification.', lead: 'How long before', mins: '{n} minutes', sound: 'Sound', soundOn: 'Play a sound', vol: 'Volume', listen: 'Listen', sounds: {chime: 'Chime', coin: 'Coin', fanfare: 'Fanfare', capture: 'Capture', off: 'No sound'},
+      locked: 'The browser only lets the page make sound after a click on it: after opening the site, click anywhere once.',
       perm: {granted: 'Browser notification: allowed. If it does not show, turn the browser notifications on in Windows and Do not disturb off.', denied: 'Browser notification: blocked (padlock beside the address). The card on the page still works.',
         default: 'Browser notification: not allowed yet. Click Test reminder.', none: 'This browser has no notifications; the card on the page works.'},
       which: 'Events', test: 'Test reminder', testBody: 'The reminders are working.', data: 'Saved data', dataHow: 'Marks, routine and builds are kept in this browser only.',
@@ -2225,21 +2301,24 @@ if (setHost) {
     const evs = make('div', 'swatches');
     EVENTS.forEach(e => { const lab = make('label'), box = make('input'); box.type = 'checkbox'; box.checked = !!S.notify.ev[e.id]; box.onclick = ev => { ev.preventDefault(); toggleRemind(e.id, drawSettings); }; lab.append(box, evName(e)); evs.appendChild(lab); });
     row(xu('which'), evs);
-    const snd = make('label'), sbox = make('input'); sbox.type = 'checkbox'; sbox.checked = S.notify.sound !== false;
-    sbox.onchange = () => { S.notify.sound = sbox.checked; save(); }; snd.append(sbox, xu('soundOn'));
-    row(xu('sound'), snd);
-    const test = make('button', '', xu('test')), perm = make('p', 'note');
+    const snd = make('div', 'sndrow'), test = make('button', 'sbtn'), perm = make('p', 'note');
     const state = () => { perm.textContent = xu('perm')[canNotify ? Notification.permission : 'none']; };
+    test.type = 'button'; test.append(pico('bell', ''), xu('test'));
     test.onclick = () => {
       const fire = () => { state(); announce($('.brand').textContent, xu('testBody')); };
       if (canNotify && Notification.permission === 'default') try { Notification.requestPermission().then(fire, fire); } catch (e) { fire(); } else fire();
     };
-    row('', test); state(); setHost.appendChild(perm);
+    snd.append(pickBox(S.notify.snd, Object.entries(xu('sounds')), v => { S.notify.snd = v; }, () => { playSound(S.notify.snd); paintSoundCall(); }),
+      labeled(xu('vol'), numBox(() => S.notify.vol, v => { S.notify.vol = v; }, 0, 100, 10, false, () => playSound(S.notify.snd))), test);
+    row(xu('sound'), snd);
+    if (!audioOn()) setHost.appendChild(make('p', 'note', xu('locked')));
+    state(); setHost.appendChild(perm);
     setHost.appendChild(make('p', 'chead', xu('data')));
     setHost.appendChild(make('p', 'note', xu('dataHow')));
-    const wipe = make('button', '', xu('wipe'));
+    const wipe = make('button', 'sbtn danger'), foot = make('div', 'setfoot');
+    wipe.type = 'button'; wipe.append(pico('trash', ''), xu('wipe'));
     wipe.onclick = () => { if (confirm(xu('wipeAsk'))) { try { localStorage.removeItem(KEY); } catch (e) {} location.reload(); } };
-    row('', wipe);
+    foot.appendChild(wipe); setHost.appendChild(foot);
   };
   repaint.push(drawSettings);
   shown.set = drawSettings;
