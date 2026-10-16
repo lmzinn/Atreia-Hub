@@ -134,6 +134,12 @@ def craft_part(strings, english):
              '<b>Amulet, belt and rune</b> also spend 1 Enhance Scroll (Bound) of the item itself per attempt.'),
             ('<b>Clash Rune:</b> a falha baixa o nível. A conta supõe 1 nível por falha; não achei confirmação.',
              '<b>Clash Rune:</b> a failure lowers the level. The maths assumes 1 level per failure; I found no confirmation.'),
+            ('<b>Atributos no nível:</b> o bônus total da peça naquele nível, da armaria oficial do jogo (o mesmo do editor '
+             'de build). Arma e guarda ganham igual; todas as partes de armadura também; e colar, brinco, anel e bracelete '
+             'também. Por isso, nas peças comuns, escolha o tipo.',
+             '<b>Stats at the level:</b> the total bonus of the piece at that level, from the official armory (the same as in '
+             'the build editor). Weapon and guard gain the same; so do all armour pieces; and so do necklace, earring, ring '
+             'and bracelet. That is why the common pieces ask for the type.'),
             ('Custos e chances: ' + link(WIKILY + 'enhancement', 'Enhancement') + ' do wikily.gg, lido em 13/out/2026.',
              'Costs and chances: wikily.gg\'s ' + link(WIKILY + 'enhancement', 'Enhancement') + ', read on 13 Oct 2026.'),
         )))

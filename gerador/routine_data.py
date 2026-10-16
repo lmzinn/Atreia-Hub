@@ -48,6 +48,11 @@ ROWS = [
      '{c} horas por semana em cada camada do Abyss.', '{c} hours a week in each layer of the Abyss.'),
     ('', 'Abyss Supply: Weekly Requests', 'week', 10, {'pic': 'Latesran Western Root Command: Veteran (Bound)'},
      'Pedidos semanais do Abyss entregues.', 'Abyss weekly requests delivered.'),
+    ('', 'Abyss Entry Stone missions', 'week', 2, {},
+     'Season Missions > Abyss > Weekly: “Spend 1 Hour in the Abyss” e “Defeat the Boss Guardian Lord Nahma Once”. Cada uma '
+     'dá Abyss Entry Stone (desde o patch de 14/out/2026). O Nahma aparece sexta e domingo às 21:00.',
+     'Season Missions > Abyss > Weekly: “Spend 1 Hour in the Abyss” and “Defeat the Boss Guardian Lord Nahma Once”. Each one '
+     'gives Abyss Entry Stones (since the 14 Oct 2026 patch). Nahma shows up on Friday and Sunday at 21:00.'),
     ('', 'Duty Commands (bought scrolls)', 'week', 32, {'srv': 1, 'pic': 'Latesran Eastern Root Command: Elite (Bound)'},
      'Pergaminhos de Command comprados: 12 na capital e 5 de cada grau em cada raiz do Lower Abyss.',
      'Command scrolls bought: 12 in the capital and 5 of each grade at each Lower Abyss root.'),
@@ -109,7 +114,7 @@ PT = {
     'Odyle Energy bought (Wind Breeze Merchant, membership)': 'Odyle Energy comprada (Membership)',
     'Unknown Fissure (daily dungeon)': 'Unknown Fissure (dungeon diária)', 'Ascension Trial': 'Ascension Trial',
     'Abyss time': 'Tempo no Abyss', 'Abyss Supply: Weekly Requests': 'Abyss: pedidos semanais',
-    'Duty Commands (bought scrolls)': 'Pergaminhos de comando comprados', 'Arena': 'Arena', 'Battlefield': 'Campo de batalha',
+    'Abyss Entry Stone missions': 'Abyss: missões da Entry Stone', 'Duty Commands (bought scrolls)': 'Pergaminhos de comando comprados', 'Arena': 'Arena', 'Battlefield': 'Campo de batalha',
     'Daeva Pass EXP': 'EXP do Daeva Pass', 'Abyss Corridors': 'Corredores do Abyss', 'Dimensional Invasion': 'Invasão Dimensional',
     'Subjugation': 'Subjugação', 'Silent Graveyard': 'Silent Graveyard', 'Fafnite Amphitheater': 'Fafnite Amphitheater',
     'Remaining Unobtained Cube Count': 'Cubos ainda não pegos', 'Conquest final bosses': 'Chefes finais do Conquest',

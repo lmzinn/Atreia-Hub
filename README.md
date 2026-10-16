@@ -3,17 +3,19 @@
 Site de apoio para Aion 2 (servidores Global), feito por fãs: tudo num lugar só.
 
 - **Rotina:** entradas diárias e limites semanais por personagem, com reset automático.
-- **Minha build:** editor de build para as 8 classes (skills, specs, stigmas, Daevanion, equipamento, títulos, Arcana, asas), com salvar e carregar em arquivo.
+- **Minha build:** editor de build para as 8 classes (skills, specs, stigmas, barra de skills, Daevanion com zoom, equipamento com o bônus de aprimoramento, títulos, Arcana, asas), compartilhado por link.
 - **Progressão:** objetivos por faixa de Gear Score, com checklist.
 - **Crafting:** calculadora de craft para qualquer classe e facção (armas, armadura e joias da linha Dragon Lord), calculadora de aprimoramento e onde pôr os pontos de Essence Extraction.
 - **Onde consigo?:** de onde vem cada material, item, Arcana e título, com o ícone de cada um.
-- **Configurações:** tema, nove cores de destaque, idioma e lembretes de evento (aviso na tela, som e notificação do navegador).
+- **Timers:** no canto de todas as páginas, os resets diário e semanal, o evento que está acontecendo e os próximos, com lembrete em cada um.
+- **Configurações:** tema, nove cores de destaque, idioma, timers no canto e lembretes de evento (aviso na tela, som e notificação do navegador).
 
 O site é um arquivo só (`index.html`), em português e inglês, mais a pasta `finder_icons/` com os ícones da busca “Onde consigo?”. O que você marca fica salvo no seu navegador; nada é enviado para servidor.
 
 ## Créditos
 
 - Dados e ícones do jogo (skills, tabuleiros, itens, receitas, custos, limites): [wikily.gg](https://wikily.gg/aion-2).
+- Bônus de aprimoramento do equipamento: armaria oficial do jogo (aion2.plaync.com). Horários dos eventos: [shugo.gg](https://shugo.gg/timers).
 - Contadores da Rotina e arte de algumas dungeons: [metabot.gg](https://metabot.gg/en/aion-2). Imagem do Dimensional Invasion: [thegameswiki.com](https://thegameswiki.com/aion-2).
 - Crafting: planilha [Aion 2 Content Guide](https://docs.google.com/spreadsheets/d/1bNxC1wd0S_ILGYAyWnO0aTo_G_AOrjkv7bTcOj_NRz8/), do Screamheart.
 - Progressão: baseada no [documento de progressão inicial](https://docs.google.com/document/d/1Iu01j2KDeZ4ebVKifo42SaWYmp7WTBHVw5YKRjLgX1U/edit?tab=t.0) do guia de início.
@@ -31,3 +33,5 @@ py -I gerador/guide_build.py
 Isso refaz o `index.html` a partir de `fontes/` (os DOCX das páginas de texto) e de `gerador/` (o modelo da página, as páginas escritas em Python e os dados em JSON).
 
 Os scripts `wk_all.py`, `bld_data.py`, `craft_data.py`, `enh_fetch.py`, `enh_data.py`, `routine_data.py`, `icons_data.py` e `finder_data.py`, em `gerador/`, baixam os dados do wikily de novo e refazem os JSON e as imagens; servem para depois de um patch do jogo. Os dois últimos precisam do Pillow.
+
+O bônus de aprimoramento vem da armaria oficial: `enh_fetch_bonus.py` lê o equipamento de personagens em `enh_raw.json` (só responde para a peça que o personagem está usando) e `enh_bonus.py` monta a tabela do editor (`enh_bonus.json`, também gravada em `builder_data.json`).

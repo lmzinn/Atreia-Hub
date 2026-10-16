@@ -180,6 +180,19 @@
   "pic": "Latesran Western Root Command: Veteran (Bound)"
  },
  {
+  "id": "abyss-entry-stone-missions",
+  "group": "",
+  "name": "Abyss Entry Stone missions",
+  "pt": "Abyss: missões da Entry Stone",
+  "per": "week",
+  "n": 2,
+  "ico": "layers",
+  "note": [
+   "Season Missions > Abyss > Weekly: “Spend 1 Hour in the Abyss” e “Defeat the Boss Guardian Lord Nahma Once”. Cada uma dá Abyss Entry Stone (desde o patch de 14/out/2026). O Nahma aparece sexta e domingo às 21:00.",
+   "Season Missions > Abyss > Weekly: “Spend 1 Hour in the Abyss” and “Defeat the Boss Guardian Lord Nahma Once”. Each one gives Abyss Entry Stones (since the 14 Oct 2026 patch). Nahma shows up on Friday and Sunday at 21:00."
+  ]
+ },
+ {
   "id": "duty-commands-bought-scrolls",
   "group": "",
   "name": "Duty Commands (bought scrolls)",

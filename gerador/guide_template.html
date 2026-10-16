@@ -240,10 +240,9 @@ tr:has(td.box input:checked) td:not(.box){color:var(--mute)}
 #tip .hint{font-size:12px;color:#8fa0b8;margin-top:3px}
 mark.hit{background:#c4b5fd;color:#000;border-radius:2px;padding:0 1px}
 mark.hit.cur{background:#38bdf8;outline:2px solid #38bdf8}
-#totop{position:fixed;right:18px;bottom:18px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:18px;cursor:pointer;box-shadow:0 2px 8px #0003;z-index:5}
 @media (max-width:1250px){body{--sw:180px;--ow:200px}main{padding-left:18px;padding-right:18px}}
 @media (max-width:760px){body{padding-left:0}#side{position:static;width:auto;inset:auto}#wrap{display:block}#outline{position:static;width:auto;max-height:none;margin:10px 14px 0}main{padding:14px}#top{top:12px;right:14px}.toc{columns:2}}
-@media print{#side,#outline,#top,#totop,.resetrow,.bctl,.pbar,.tabs,.cctl{display:none}body{padding-left:0}#wrap{display:block}main{margin:0;max-width:none}.part{display:block}details.sec{break-inside:avoid}.tabpane{display:block!important}}
+@media print{#side,#outline,#top,.resetrow,.bctl,.pbar,.tabs,.cctl{display:none}body{padding-left:0}#wrap{display:block}main{margin:0;max-width:none}.part{display:block}details.sec{break-inside:avoid}.tabpane{display:block!important}}
 /* ---------- look: glow, cards, icons (kept at the end so it wins over the rules above) ---------- */
 :root{--g1:color-mix(in srgb,var(--hl2) 70%,#000);--g2:color-mix(in srgb,var(--hl) 80%,#000);--tint:color-mix(in srgb,var(--hl) 8%,transparent)}
 :root[data-theme="dark"]{--g1:color-mix(in srgb,var(--hl2) 62%,#fff);--g2:color-mix(in srgb,var(--hl) 55%,#fff);--tint:color-mix(in srgb,var(--hl) 12%,transparent)}
@@ -302,7 +301,6 @@ body.no-toc #outline{display:none}
 body.no-toc #wrap{grid-template-columns:1fr minmax(0,1180px) 1fr}
 #wrap>#outline{grid-column:1}
 #wrap>main{grid-column:2}
-#totop{background:linear-gradient(135deg,var(--hl2),var(--hl));color:#fff;border:0}
 #top button{backdrop-filter:blur(6px)}
 .tic{width:24px;height:24px;border-radius:6px;vertical-align:-7px;margin-right:8px;background:#0003}
 .tic.big{width:36px;height:36px;border-radius:8px;margin:0;vertical-align:middle;flex:none}
@@ -677,7 +675,6 @@ color:var(--ink);background:color-mix(in srgb,var(--hl) 22%,var(--panel));border
 .tool button.sbtn.danger:hover{border-color:#ef4444;color:#f87171;background:color-mix(in srgb,#ef4444 10%,var(--panel))}
 .setfoot{display:flex;justify-content:flex-start;margin:6px 0 2px}
 /* timers: the pill in the corner and its panel */
-body.hastimer #totop{bottom:86px}
 #tpill{position:fixed;right:18px;bottom:16px;z-index:65;display:flex;flex-direction:column;gap:5px;min-width:250px;max-width:calc(100vw - 32px);padding:9px 12px 8px;
 border-radius:14px;border:1px solid color-mix(in srgb,var(--hl) 40%,var(--line));background:color-mix(in srgb,var(--hl) 8%,var(--panel));color:var(--ink);font:inherit;
 text-align:left;cursor:pointer;box-shadow:0 10px 28px #0007}
@@ -737,7 +734,7 @@ border-radius:16px;border:1px solid color-mix(in srgb,var(--hl) 40%,var(--line))
 #tpane .bell svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 #tpane .bell.on{color:var(--hl2);border-color:var(--hl2);background:color-mix(in srgb,var(--hl) 14%,var(--panel))}
 #tpane .tnote{margin:10px 2px 0;font-size:11px;color:var(--mute);line-height:1.4}
-@media (max-width:600px){#tpill{right:12px;left:12px;min-width:0}#tpane{right:12px;left:12px;width:auto;bottom:92px}body.hastimer #totop{bottom:92px}#sndcall{bottom:100px}}
+@media (max-width:600px){#tpill{right:12px;left:12px;min-width:0}#tpane{right:12px;left:12px;width:auto;bottom:92px}#sndcall{bottom:100px}}
 @media print{#tpill,#tpane{display:none}}
 /* timers in the look of the site: gradient tiles, the hero glow, the brand gradient */
 #tpane{border-color:color-mix(in srgb,var(--hl) 50%,var(--line));background:radial-gradient(420px 220px at 0% 0%,color-mix(in srgb,var(--hl) 22%,transparent),transparent 70%),radial-gradient(380px 260px at 100% 100%,color-mix(in srgb,var(--hl2) 14%,transparent),transparent 70%),var(--panel)}
@@ -778,6 +775,36 @@ border:1px solid color-mix(in srgb,var(--hl) 45%,var(--line));background:color-m
 .bboard .bzctl button:hover:not(:disabled){background:color-mix(in srgb,var(--hl) 22%,transparent)}
 .bboard .bzctl button:disabled{opacity:.35;cursor:default}
 .bboard .bzctl button.pct{width:auto;min-width:48px;padding:0 6px;font-size:12px;font-variant-numeric:tabular-nums;color:var(--mute)}
+/* zoom control: a small lens until the mouse is on it */
+.bboard{padding-bottom:36px}
+.bboard .bzctl{left:0;bottom:0;padding:2px;gap:1px;border-radius:9px;opacity:.75;transition:opacity .15s,box-shadow .15s;box-shadow:0 3px 10px #0005;outline:none}
+.bboard .bzctl .zi{display:grid;place-items:center;width:24px;height:24px}
+.bboard .bzctl .zi svg{width:15px;height:15px;fill:none;stroke:var(--hl2);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bboard .bzctl:not(:hover):not(:focus-within) button{display:none}
+.bboard .bzctl:hover,.bboard .bzctl:focus-within{opacity:1;box-shadow:0 6px 18px #0007}
+.bboard .bzctl:hover .zi,.bboard .bzctl:focus-within .zi{display:none}
+/* home: the short card of the events, with the button to the timers */
+.hshort{display:flex;align-items:center;gap:16px;margin-bottom:22px;padding:14px 16px;border-radius:14px;border:1px solid color-mix(in srgb,var(--hl) 35%,var(--line));
+background:radial-gradient(420px 140px at 0% 0%,color-mix(in srgb,var(--hl) 16%,transparent),transparent 70%),var(--panel)}
+.hshort .hsinfo{display:flex;flex-direction:column;gap:8px;flex:1;min-width:0}
+.hshort .hsl{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hshort .hsl .ttile{width:30px;height:30px;border-radius:9px}
+.hshort .hsl .ttile svg{width:16px;height:16px}
+.hshort .hsl.live .ttile{background:var(--g);box-shadow:0 4px 12px color-mix(in srgb,var(--g) 35%,transparent)}
+.hshort .livetag,.hshort .nexttag{padding:1px 8px;border-radius:9px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.hshort .livetag{background:var(--g);color:#fff}
+.hshort .nexttag{border:1px solid color-mix(in srgb,var(--hl) 50%,var(--line));color:var(--hl2)}
+.hshort .hsl b{font-size:14.5px;color:var(--navy)}
+.hshort .hsw{font-size:13px;color:var(--mute)}
+.hshort .hslater{margin:0;font-size:12.5px;color:var(--mute);padding-left:40px}
+.hshort .hsopen{flex:none;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 16px;border-radius:11px;border:0;cursor:pointer;font:inherit;font-size:13.5px;font-weight:600;color:#fff;background:linear-gradient(135deg,var(--hl2),var(--hl));box-shadow:0 6px 18px color-mix(in srgb,var(--hl) 35%,transparent)}
+.hshort .hsopen:hover{filter:brightness(1.1)}
+.hshort .hsopen svg{width:17px;height:17px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:600px){.hshort{flex-direction:column;align-items:stretch}.hshort .hsopen{justify-content:center}}
+body:not(.hastimer) #tpane{bottom:18px}
+/* enhancement calculator: the stats column */
+.cenh td.gain{font-size:12.5px;color:var(--hl2);white-space:normal;min-width:150px}
+.cenh tr.tot td.gain{font-weight:700}
 </style>
 </head>
 <body>
@@ -795,7 +822,6 @@ border:1px solid color-mix(in srgb,var(--hl) 45%,var(--line));background:color-m
 __CONTENT__
 </main>
 </div>
-<button id="totop" data-ui-title="top" hidden>↑</button>
 <div id="tip" hidden></div>
 <script>
 const BOARDS = __BOARDS__, EN = __EN__, ICONS = __ICONS__, CALC = __CALC__, ROUTINE = __ROUTINE__, BLD = __BLD__, BIC = __BIC__, PUBLIC = __PUBLIC__, FIND = __FIND__, NEWS = __NEWS__, TIC = __TIC__, BUILT = '__BUILT__';
@@ -805,7 +831,7 @@ const UI = {
     markAll: 'Marcar tudo', reset: 'Desmarcar tudo', undo: 'Desfazer', pChar: 'Personagem', pAdd: 'Personagem', pName: 'Nome', pDone: '{a} de {b} marcados', pDrag: 'Arraste para mudar a ordem', pDel: 'Excluir', pDelAsk: 'Excluir o personagem “{n}”? As marcações da Progressão e da Rotina dele somem e não dá para desfazer.', pPic: 'Escolher imagem', pClasses: 'Classes', pWings: 'Asas', pNoPic: 'Sem imagem', main: 'Main', alt: 'Alt {n}',
     pHow: 'Cada personagem tem as próprias marcações. Os personagens são os mesmos da Rotina.',
     next: 'Próximo item não marcado', hide: 'Esconder os marcados', alldone: 'Tudo marcado nesta parte.',
-    theme: 'Tema claro/escuro', home: 'Início', fold: 'Recolher ou abrir os tópicos', badLink: 'Não consegui abrir o que veio nesse link.', mine: 'Seu valor', credit: 'Site de fãs, sem vínculo com a NCSOFT. Dados e imagens do jogo: wikily.gg e metabot.gg.', subs: 'Abrir ou recolher os subtópicos', lang: 'Idioma: português / inglês', top: 'Voltar ao topo',
+    theme: 'Tema claro/escuro', home: 'Início', fold: 'Recolher ou abrir os tópicos', badLink: 'Não consegui abrir o que veio nesse link.', mine: 'Seu valor', credit: 'Site de fãs, sem vínculo com a NCSOFT. Dados e imagens do jogo: wikily.gg e metabot.gg.', subs: 'Abrir ou recolher os subtópicos', lang: 'Idioma: português / inglês',
     crystals: 'Cristais', upTo: 'Vai até o nº {n} de {t}', upNone: 'Nenhum nó ainda', siteGoal: 'Meta do site', topGoal: 'Topo do Global', markUpTo: 'Marcar como pegos até aqui', clearTaken: 'Limpar pegos',
     clearAsk: 'Limpar os nós marcados como pegos em {b}?', takenHere: 'Pegos neste tabuleiro', node: ['nó', 'nós'], crystal: ['cristal', 'cristais'],
     start: 'Início', no: 'Nº', topKR: 'dos top KR', cumul: 'acumulado', tipHint: 'Clique para marcar como pego', tipUn: 'Pego. Clique para desmarcar',
@@ -815,7 +841,7 @@ const UI = {
     markAll: 'Tick all', reset: 'Untick all', undo: 'Undo', pChar: 'Character', pAdd: 'Character', pName: 'Name', pDone: '{a} of {b} ticked', pDrag: 'Drag to change the order', pDel: 'Delete', pDelAsk: 'Delete the character “{n}”? Its Progressão marks and Routine counters go too, and this cannot be undone.', pPic: 'Choose a picture', pClasses: 'Classes', pWings: 'Wings', pNoPic: 'No picture', main: 'Main', alt: 'Alt {n}',
     pHow: 'Each character has its own marks. The characters are the same as in the Routine.',
     next: 'Next unmarked item', hide: 'Hide marked items', alldone: 'Everything in this part is marked.',
-    theme: 'Light/dark theme', home: 'Home', fold: 'Fold or open the topics', badLink: 'Could not open what came in that link.', mine: 'Your value', credit: 'Fan site, not affiliated with NCSOFT. Game data and pictures: wikily.gg and metabot.gg.', subs: 'Open or fold the subtopics', lang: 'Language: Portuguese / English', top: 'Back to top',
+    theme: 'Light/dark theme', home: 'Home', fold: 'Fold or open the topics', badLink: 'Could not open what came in that link.', mine: 'Your value', credit: 'Fan site, not affiliated with NCSOFT. Game data and pictures: wikily.gg and metabot.gg.', subs: 'Open or fold the subtopics', lang: 'Language: Portuguese / English',
     crystals: 'Crystals', upTo: 'Goes up to No. {n} of {t}', upNone: 'No nodes yet', siteGoal: 'Site target', topGoal: 'Global top', markUpTo: 'Mark as taken up to here', clearTaken: 'Clear taken',
     clearAsk: 'Clear the nodes marked as taken on {b}?', takenHere: 'Taken on this board', node: ['node', 'nodes'], crystal: ['crystal', 'crystals'],
     start: 'Start', no: 'No.', topKR: 'of top KR players', cumul: 'running total', tipHint: 'Click to mark as taken', tipUn: 'Taken. Click to unmark',
@@ -1063,6 +1089,7 @@ const PICO = {
   trash: 'M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3',
   clock: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2',
   close: 'M6 6l12 12M18 6 6 18',
+  zoom: 'M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM20 20l-4-4M11 8v6M8 11h6',
   down: 'M6 9l6 6 6-6',
   daily: 'M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7',
   weekly: 'M8 3v3M16 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z',
@@ -1592,16 +1619,29 @@ const EUI = {
   pt: {item: 'Peça', from: 'Do nível', to: 'Até o nível', lvl: 'Nível', chance: 'Chance', tries: 'Tentativas em média', kina1: 'Kina por tentativa', st1: 'Enhance Stone por tentativa',
     kina: 'Kina em média', st: 'Enhance Stone em média', total: 'Total', scroll: 'Também gasta 1 {s} por tentativa: {n} em média.',
     gUnique: 'Unique: armas, armaduras e joias', gEpic: 'Epic: armas, armaduras e joias', gOwn: 'Amuleto, cinto, bracelete e runa', il: 'Item level {n} · ex.: {x}', own: '{g} {r} · item level {n}',
+    kind: 'Tipo', kinds: {W: 'Arma ou guarda', A: 'Armadura', X: 'Colar, brinco, anel ou bracelete'}, gain: 'Atributos no nível', gainTot: 'Ganho no intervalo',
+    est: '≈ estimado: ninguém consultado na armaria oficial usava esta raridade e item level; o valor vem dos itens vizinhos.',
     pity: 'Do +11 em diante cada falha soma {n}% na tentativa seguinte; a média já conta isso.', drop: 'Nesta peça a falha baixa o nível. A conta supõe que baixa 1 nível por falha.', sure: 'Todos os níveis deste intervalo têm 100% de chance.'},
   en: {item: 'Piece', from: 'From level', to: 'Up to level', lvl: 'Level', chance: 'Chance', tries: 'Attempts on average', kina1: 'Kina per attempt', st1: 'Enhance Stone per attempt',
     kina: 'Kina on average', st: 'Enhance Stone on average', total: 'Total', scroll: 'It also spends 1 {s} per attempt: {n} on average.',
     gUnique: 'Unique: weapons, armour and jewellery', gEpic: 'Epic: weapons, armour and jewellery', gOwn: 'Amulet, belt, bracelet and rune', il: 'Item level {n} · e.g. {x}', own: '{g} {r} · item level {n}',
+    kind: 'Type', kinds: {W: 'Weapon or guard', A: 'Armour', X: 'Necklace, earring, ring or bracelet'}, gain: 'Stats at the level', gainTot: 'Gain in the range',
+    est: '≈ estimated: nobody checked in the official armory wore this grade and item level; the value comes from the nearby items.',
     pity: 'From +11 onwards each failure adds {n}% to the next attempt; the average already counts that.', drop: 'On this piece a failure lowers the level. The maths assumes it drops 1 level per failure.', sure: 'Every level in this range has a 100% chance.'},
 };
 const enhHost = $('#enh');
 if (enhHost && CALC.enh) {
   const E = CALC.enh;
-  S.enh = Object.assign({tier: E.def, from: 0, to: 15}, S.enh || {});
+  S.enh = Object.assign({tier: E.def, from: 0, to: 15, kind: 'W'}, S.enh || {});
+  // the stats a level gives (BLD.enh, made by enh_bonus.py): [[stat, value, unit], ...] at level L of a piece with n levels
+  const OWNG = {Amulet: 'Am', Belt: 'Be', Bracelet: 'X', Rune: 'Ru'};
+  function gainAt(key, n, L) {
+    const B = typeof BLD !== 'undefined' && BLD.enh;
+    if (!B || !L) return [];
+    if (B.lv[key]) return Object.entries(B.lv[key]).map(([s, v]) => [s, parseFloat(v[L - 1]) || 0, /%/.test(v[n - 1]) ? '%' : '']);
+    return Object.entries(B.top[key] || {}).map(([s, T]) => { const b = Math.floor(T / n); return [s, b * L + Math.max(0, L - (n - (T - b * n))), '']; });
+  }
+  const gainText = list => list.filter(x => x[1]).map(([s, v, u]) => s + ' +' + v.toLocaleString(S.lang === 'en' ? 'en-US' : 'pt-BR', {maximumFractionDigits: 1}) + u).join(', ') || '—';
   const eu = k => (EUI[S.lang] || EUI.pt)[k];
   const tier = () => E.tiers.find(t => t.id === S.enh.tier) || E.tiers[0];
   // average number of attempts at every level to take the piece from level a to level b
@@ -1637,21 +1677,27 @@ if (enhHost && CALC.enh) {
     const ctl = make('div', 'cctl');
     ctl.append(labeled(eu('item'), sel), labeled(eu('from'), numBox(() => c.from, v => { c.from = v; }, 0, max - 1, 1, false, () => { if (c.to <= c.from) c.to = c.from + 1; save(); render(); })),
       labeled(eu('to'), numBox(() => c.to, v => { c.to = v; }, 1, max, 1, false, () => { if (c.from >= c.to) c.from = c.to - 1; save(); render(); })));
+    if (!T.gear) ctl.appendChild(labeled(eu('kind'), pickBox(c.kind, Object.entries(eu('kinds')), v => { c.kind = v; }, render)));
     enhHost.appendChild(ctl);
-    const n = tries(T, c.from, c.to), tb = toolTable(enhHost, [eu('lvl'), eu('chance'), eu('tries'), eu('kina1'), eu('st1'), eu('kina'), eu('st')], 'cenh');
+    const gkey = (T.gear ? OWNG[T.gear] : c.kind) + '|' + T.grade + '|' + T.ilvl, gest = typeof BLD !== 'undefined' && BLD.enh && BLD.enh.est.includes(gkey);
+    const n = tries(T, c.from, c.to), tb = toolTable(enhHost, [eu('lvl'), eu('chance'), eu('tries'), eu('kina1'), eu('st1'), eu('kina'), eu('st'), eu('gain')], 'cenh');
     let all = 0, kina = 0, stones = 0;
     n.forEach((x, k) => {
       if (!x) return;
       const [p, kn, st] = T.lv[k - 1], tr = tb.insertRow();
       all += x; kina += x * kn; stones += x * st;
-      [['+' + k, 'key'], [p + '%', ''], [fmtN(x, x % 1 ? 1 : 0), 'out'], [fmtN(kn), 'r'], [fmtN(st), 'r'], [fmtN(Math.round(x * kn)), 'out'], [fmtN(Math.round(x * st)), 'out']]
+      [['+' + k, 'key'], [p + '%', ''], [fmtN(x, x % 1 ? 1 : 0), 'out'], [fmtN(kn), 'r'], [fmtN(st), 'r'], [fmtN(Math.round(x * kn)), 'out'], [fmtN(Math.round(x * st)), 'out'],
+        [(gest ? '≈ ' : '') + gainText(gainAt(gkey, max, k)), 'gain']]
         .forEach(([text, cls]) => { const td = tr.insertCell(); td.className = cls; td.textContent = text; });
     });
     const tot = tb.insertRow(); tot.className = 'tot';
-    [[eu('total'), ''], ['', ''], [fmtN(all, all % 1 ? 1 : 0), 'out'], ['', ''], ['', ''], [fmtN(Math.round(kina)), 'out'], [fmtN(Math.round(stones)), 'out']]
+    const g0 = gainAt(gkey, max, c.from), diff = gainAt(gkey, max, c.to).map(([s, v, u]) => [s, Math.round((v - ((g0.find(x => x[0] === s) || [])[1] || 0)) * 10) / 10, u]);
+    [[eu('total'), ''], ['', ''], [fmtN(all, all % 1 ? 1 : 0), 'out'], ['', ''], ['', ''], [fmtN(Math.round(kina)), 'out'], [fmtN(Math.round(stones)), 'out'],
+      [(gest ? '≈ ' : '') + gainText(diff), 'gain']]
       .forEach(([text, cls]) => { const td = tot.insertCell(); td.className = cls; td.textContent = text; });
+    tot.lastChild.title = eu('gainTot');
     const chancy = T.lv.slice(c.from, c.to).some(x => x[0] < 100);
-    const notes = [T.scroll && eu('scroll').replace('{s}', T.scroll).replace('{n}', fmtN(all, all % 1 ? 1 : 0)), !chancy ? eu('sure') : T.drop ? eu('drop') : eu('pity').replace('{n}', T.pity)];
+    const notes = [gest && eu('est'), T.scroll && eu('scroll').replace('{s}', T.scroll).replace('{n}', fmtN(all, all % 1 ? 1 : 0)), !chancy ? eu('sure') : T.drop ? eu('drop') : eu('pity').replace('{n}', T.pity)];
     notes.filter(Boolean).forEach(text => enhHost.appendChild(make('p', 'note', text)));
     fitTables(enhHost);
   }
@@ -2120,7 +2166,8 @@ if (bldHost && BLD.classes) {
     const stop = () => { if (drag && drag.moved) setTimeout(() => { drag = null; }); else drag = null; view.classList.remove('dragging'); };
     view.addEventListener('pointerup', stop); view.addEventListener('pointercancel', stop);
     view.addEventListener('click', e => { if (drag && drag.moved) { e.stopPropagation(); e.preventDefault(); drag = null; } }, true);
-    zc.append(out, pct, inn); view.appendChild(svg); host.append(view, zc); setZoom();
+    const lens = make('span', 'zi'); lens.appendChild(pico('zoom', '')); zc.tabIndex = 0; zc.title = bu('zoomIn') + ' / ' + bu('zoomOut');
+    zc.append(lens, out, pct, inn); view.appendChild(svg); host.append(view, zc); setZoom();
     const restore = () => { if (dvKeep) [view.scrollLeft, view.scrollTop] = dvKeep; dvView = view; };
     const side = make('div', 'bfx'), fx = effects(b);
     side.appendChild(make('p', 'chead', bu('effects')));
@@ -2235,7 +2282,7 @@ function applyAccent() {
 // ---------- events of the day: São Paulo time, as published for the South America servers ----------
 const SP = 3 * 3600000, MIN = 60000, SEASON_END = Date.UTC(2026, 11, 16, 0, 0);
 const EVENTS = [
-  {id: 'shugo', name: 'Shugo Festival', len: 10, min: 0},
+  {id: 'shugo', name: 'Shugo Festival', len: 3, min: 0},  // only while the entry is open: 3 minutes on the hour
   {id: 'dim', name: 'Dimensional Invasion', len: 15, min: 30},
   {id: 'rift', name: 'Spacetime Rift', len: 60, min: 0, hours: [2, 5, 8, 11, 14, 17, 20, 23]},
   {id: 'kaira', name: 'Watcher Kaira', len: 30, min: 0, hours: [1, 4, 7, 10, 13, 16, 19, 22]},
@@ -2263,7 +2310,7 @@ const HUI = {
     tm: {title: 'Timers', where: 'América do Sul', city: 'São Paulo', resets: 'Resets', liveNow: 'Acontecendo agora', upNext: 'A seguir', dailyS: 'Diário', weeklyS: 'Semanal',
       ends: 'termina em', starts: 'começa em', today: 'Hoje', tomorrow: 'Amanhã', portal: 'portal fecha em {t}', open: 'Abrir os timers', close: 'Fechar',
       kinds: {rift: 'PvP', dim: 'Evento', shugo: 'Evento', kaira: 'Chefe', siege: 'Abyss', sboss: 'Chefe', nahma: 'Chefe'}},
-    today: 'Para fazer hoje', next: 'Próximos objetivos', news: 'Novidades', pages: 'Páginas', evNote: 'Horários do servidor da América do Sul, segundo o shugo.gg; a NCSOFT não publicou a tabela oficial.',
+    allTimes: 'Ver todos os horários', today: 'Para fazer hoje', next: 'Próximos objetivos', news: 'Novidades', pages: 'Páginas', evNote: 'Horários do servidor da América do Sul, segundo o shugo.gg; a NCSOFT não publicou a tabela oficial.',
     d: {rot: 'Entradas diárias e limites da semana, por personagem, com reset automático.', bld: 'Monte, salve e compartilhe a build de qualquer classe.',
       prog: 'Objetivos por faixa de Gear Score, com checklist.', asn: 'A build de PvE do Assassin, com barra, skills e Daevanion.', pvp: 'A build de PvP do Assassin, no mesmo modelo.',
       craft: 'Calculadoras de craft e de aprimoramento, linha Dragon Lord e Essence Extraction.', find: 'De onde vem cada material, item, Arcana e título.', set: 'Aparência do site, lembretes e dados salvos.'}},
@@ -2274,7 +2321,7 @@ const HUI = {
     tm: {title: 'Timers', where: 'South America', city: 'São Paulo', resets: 'Resets', liveNow: 'Live now', upNext: 'Up next', dailyS: 'Daily', weeklyS: 'Weekly',
       ends: 'ends in', starts: 'starts in', today: 'Today', tomorrow: 'Tomorrow', portal: 'portal closes in {t}', open: 'Open the timers', close: 'Close',
       kinds: {rift: 'PvP', dim: 'Event', shugo: 'Event', kaira: 'Boss', siege: 'Abyss', sboss: 'Boss', nahma: 'Boss'}},
-    today: 'To do today', next: 'Next objectives', news: 'News', pages: 'Pages', evNote: 'Times of the South America server, according to shugo.gg; NCSOFT has not published the official table.',
+    allTimes: 'See every time', today: 'To do today', next: 'Next objectives', news: 'News', pages: 'Pages', evNote: 'Times of the South America server, according to shugo.gg; NCSOFT has not published the official table.',
     d: {rot: 'Daily entries and weekly limits, per character, with automatic reset.', bld: 'Create, save and share the build of any class.',
       prog: 'Objectives by Gear Score bracket, with a checklist.', asn: 'The Assassin PvE build, with bar, skills and Daevanion.', pvp: 'The Assassin PvP build, in the same layout.',
       craft: 'Crafting and enhancement calculators, the Dragon Lord line and Essence Extraction.', find: 'Where each material, item, Arcana and title comes from.', set: 'Look of the site, reminders and saved data.'}},
@@ -2389,8 +2436,13 @@ function timerBell(e) {
 function paintTimers() {
   let pill = $('#tpill'), pane = $('#tpane');
   document.body.classList.toggle('hastimer', !!S.timer.show);
-  if (!S.timer.show) { if (pill) pill.remove(); if (pane) pane.remove(); return; }
+  if (!S.timer.show) {  // no pill; the panel only when the home page asked for it
+    if (pill) pill.remove();
+    pill = null;
+    if (!S.timer.open) { if (pane) pane.remove(); return; }
+  }
   const now = Date.now(), st = timerState(now), L = hu('tm');
+  if (S.timer.show) {
   if (!pill) {
     pill = make('button'); pill.id = 'tpill'; pill.type = 'button'; pill.title = L.open;
     pill.onclick = () => { S.timer.open = !S.timer.open; save(); paintTimers(); };
@@ -2408,6 +2460,7 @@ function paintTimers() {
   const resets = make('span', 'tpres');
   resets.append(pico('daily', ''), L.dailyS + ' ', make('b', '', clock(st.daily - now)), make('i'), pico('weekly', ''), L.weeklyS + ' ', make('b', '', clock(st.weekly - now)));
   pill.append(main, resets);
+  }
   // the panel
   if (!S.timer.open) { if (pane) pane.remove(); return; }
   if (!pane) { pane = make('div'); pane.id = 'tpane'; pane.setAttribute('role', 'dialog'); document.body.appendChild(pane); }
@@ -2469,19 +2522,23 @@ function paintHome() {
   }
   hero.append(mark, words);
   host.appendChild(hero);
-  // events
+  // events: what runs now and the next ones, in short; the full list is the timers panel
   host.appendChild(make('p', 'hhead', hu('events')));
-  const strip = make('div', 'hevents');
-  EVENTS.map(e => [e, occurrence(e, now)]).sort((a, b) => a[1][0] - b[1][0]).forEach(([e, [start, end]]) => {
-    const live = start <= now && end > now, card = make('div', 'hev' + (live ? ' live' : '')), when = make('span', 'when'), bell = make('button', 'bell' + (S.notify.ev[e.id] ? ' on' : ''));
-    bell.appendChild(pico('bell', ''));
-    if (live) card.appendChild(make('span', 'livetag', hu('live')));
-    card.appendChild(make('b', '', evName(e)));
-    when.append(make('strong', '', live ? hu('ends').replace('{t}', span(end - now)) : hu('inT').replace('{t}', span(start - now))), ' · ' + hhmm(live ? end : start));
-    bell.title = hu('remind'); bell.onclick = () => toggleRemind(e.id, paintHome);
-    card.append(when, bell); strip.appendChild(card);
+  const st = timerState(now), L = hu('tm'), card = make('div', 'hshort'), info = make('div', 'hsinfo'), open = make('button', 'sbtn hsopen');
+  st.live.slice(0, 2).forEach(x => {
+    const line = make('div', 'hsl live'), t1 = make('span', 'ttile'); t1.appendChild(pico(x.e.id, ''));
+    line.append(t1, make('span', 'livetag', hu('live')), make('b', '', evName(x.e)), make('span', 'hsw', hu('ends').replace('{t}', span(x.end - now)) + ' · ' + hhmm(x.end)));
+    info.appendChild(line);
   });
-  host.append(strip, make('p', 'note', hu('evNote')));
+  const nx = make('div', 'hsl'), t2 = make('span', 'ttile'); t2.appendChild(pico(st.next[0].e.id, ''));
+  nx.append(t2, make('span', 'nexttag', L.upNext), make('b', '', evName(st.next[0].e)), make('span', 'hsw', hu('inT').replace('{t}', span(st.next[0].start - now)) + ' · ' + hhmm(st.next[0].start)));
+  info.appendChild(nx);
+  const later = st.next.slice(1, 4).map(x => evName(x.e) + ' ' + hhmm(x.start)).join(' · ');
+  if (later) info.appendChild(make('p', 'hslater', later));
+  open.type = 'button'; open.append(pico('clock', ''), hu('allTimes'));
+  open.onclick = e => { e.stopPropagation(); S.timer.open = true; save(); paintTimers(); };
+  card.append(info, open);
+  host.appendChild(card);
   // to do today, and news
   const cols = make('div', 'hcols'), box = title => { const b = make('div', 'hbox'); b.appendChild(make('p', 'hhead', title)); b.appendChild(make('ul')); cols.appendChild(b); return b.lastChild; };
   if (homeStat.today) {
@@ -2747,14 +2804,12 @@ addEventListener('scroll', () => {
   if (tick) return;
   tick = requestAnimationFrame(() => {
     tick = 0;
-    $('#totop').hidden = scrollY < 600;
     if (searching) return;
     markCurrent();
     S.scroll[S.part] = Math.round(scrollY);
     clearTimeout(sTimer); sTimer = setTimeout(save, 400);
   });
 }, {passive: true});
-$('#totop').onclick = () => scrollTo({top: 0, behavior: 'smooth'});
 addEventListener('resize', () => fitTables());
 
 applyTheme();
