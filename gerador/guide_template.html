@@ -553,6 +553,7 @@ padding:2px 7px;margin-left:-8px;width:100%;max-width:440px}
 .bgear th:nth-child(1){width:140px}.bgear th:nth-child(2){width:330px}.bgear th:nth-child(3){width:180px}
 .bgear td:last-child{font-size:12.5px;line-height:1.35}
 .bgear td:nth-child(3){white-space:nowrap}
+.bgear b.enhb{color:var(--hl2);font-weight:600;white-space:nowrap}
 .bgear td:nth-child(3) .num{display:inline-flex;align-items:center;gap:4px;vertical-align:middle}
 .bgear td:nth-child(3) .num input{width:38px;padding-left:2px;padding-right:2px;text-align:center}
 .bgear td:nth-child(3) .num button{width:28px;padding:0}
@@ -675,6 +676,108 @@ color:var(--ink);background:color-mix(in srgb,var(--hl) 22%,var(--panel));border
 .tool button.sbtn.danger{color:var(--mute)}
 .tool button.sbtn.danger:hover{border-color:#ef4444;color:#f87171;background:color-mix(in srgb,#ef4444 10%,var(--panel))}
 .setfoot{display:flex;justify-content:flex-start;margin:6px 0 2px}
+/* timers: the pill in the corner and its panel */
+body.hastimer #totop{bottom:86px}
+#tpill{position:fixed;right:18px;bottom:16px;z-index:65;display:flex;flex-direction:column;gap:5px;min-width:250px;max-width:calc(100vw - 32px);padding:9px 12px 8px;
+border-radius:14px;border:1px solid color-mix(in srgb,var(--hl) 40%,var(--line));background:color-mix(in srgb,var(--hl) 8%,var(--panel));color:var(--ink);font:inherit;
+text-align:left;cursor:pointer;box-shadow:0 10px 28px #0007}
+#tpill:hover{border-color:var(--hl)}
+#tpill.live{border-color:color-mix(in srgb,var(--g) 60%,var(--line))}
+#tpill .tpmain{display:flex;align-items:center;gap:9px}
+#tpill .tpw{display:flex;flex-direction:column;line-height:1.15;min-width:0;flex:1}
+#tpill .tpw small{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+#tpill.live .tpw small{color:var(--g)}
+#tpill .tpw b{font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#tpill .tpmain>strong{font-size:13px;white-space:nowrap;color:var(--hl2);font-variant-numeric:tabular-nums}
+#tpill.live .tpmain>strong{color:var(--g)}
+#tpill .tchev{width:15px;height:15px;fill:none;stroke:var(--mute);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;transition:transform .15s}
+#tpill .tchev.up{transform:rotate(180deg)}
+#tpill .tpres{display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--mute);padding-left:45px;white-space:nowrap}
+#tpill .tpres b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+#tpill .tpres i{width:1px;height:11px;background:var(--line);margin:0 4px}
+#tpill .tpres svg{width:12px;height:12px;fill:none;stroke:var(--hl2);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tring{position:relative;display:grid;place-items:center;width:36px;height:36px;flex:none}
+.tring svg:first-child{position:absolute;inset:0;width:36px;height:36px;transform:rotate(-90deg)}
+.tring circle{fill:none;stroke-width:2.5}
+.tring circle.bg{stroke:color-mix(in srgb,var(--hl) 25%,var(--line));fill:color-mix(in srgb,var(--hl) 10%,var(--panel))}
+.tring circle.fg{stroke:var(--g);stroke-linecap:round}
+.tring .ti{width:16px;height:16px;fill:none;stroke:var(--hl2);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;position:relative}
+.trow.live .tring .ti,#tpill.live .tring .ti{stroke:var(--g)}
+#tpane{position:fixed;right:18px;bottom:96px;z-index:66;width:min(350px,calc(100vw - 32px));max-height:calc(100vh - 120px);display:flex;flex-direction:column;
+border-radius:16px;border:1px solid color-mix(in srgb,var(--hl) 40%,var(--line));background:var(--panel);box-shadow:0 18px 44px #000a;overflow:hidden;animation:toastin .18s ease-out}
+#tpane .thead{display:flex;align-items:center;gap:8px;padding:12px 12px 11px 14px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--hl) 10%,var(--panel))}
+#tpane .thico{width:17px;height:17px;fill:none;stroke:var(--hl2);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#tpane .ttitle{font-size:15px}
+#tpane .tchip{font-size:11.5px;padding:2px 9px;border-radius:999px;border:1px solid color-mix(in srgb,var(--hl) 45%,var(--line));color:var(--mute);white-space:nowrap}
+#tpane .tchip b{color:var(--hl2);font-weight:600}
+#tpane .tx{margin-left:auto;width:30px;height:30px;padding:0;display:grid;place-items:center;border-radius:9px;border:1px solid var(--line);background:none;color:var(--mute);cursor:pointer}
+#tpane .tx:hover{color:var(--ink);border-color:var(--hl)}
+#tpane .tx svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+#tpane .tbody{overflow-y:auto;padding:4px 12px 12px}
+#tpane .tsec{margin:12px 2px 7px;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+#tpane .tsec.livehead{color:var(--g)}
+#tpane .tsec.livehead::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--g);margin-right:7px;vertical-align:1px;box-shadow:0 0 0 3px color-mix(in srgb,var(--g) 25%,transparent)}
+#tpane .tresets{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#tpane .trc{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:12px;border:1px solid color-mix(in srgb,var(--hl) 35%,var(--line));background:color-mix(in srgb,var(--hl) 9%,var(--panel))}
+#tpane .trh{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--hl2);font-weight:600}
+#tpane .trh svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#tpane .trc>b{font-size:21px;font-variant-numeric:tabular-nums;line-height:1.2}
+#tpane .trc small{font-size:11.5px;color:var(--mute)}
+#tpane .trow{display:flex;align-items:center;gap:10px;padding:8px 10px;margin-bottom:6px;border-radius:12px;border:1px solid var(--line);background:color-mix(in srgb,var(--ink) 3%,var(--panel))}
+#tpane .trow.live{border-color:color-mix(in srgb,var(--g) 55%,var(--line));background:color-mix(in srgb,var(--g) 8%,var(--panel))}
+#tpane .tw{display:flex;flex-direction:column;min-width:0;flex:1;line-height:1.25}
+#tpane .tw b{font-size:13.5px}
+#tpane .tw small{font-size:11.5px;color:var(--mute)}
+#tpane .trow.live .tw small{color:var(--g)}
+#tpane .tcd{display:flex;flex-direction:column;align-items:flex-end;line-height:1.15;font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--hl2)}
+#tpane .tcd small{font-size:10.5px;font-weight:500;color:var(--mute)}
+#tpane .tw b,#tpane .tw small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#tpane .trow.live .tcd{color:var(--g)}
+#tpane .bell{width:28px;height:28px;padding:0;display:grid;place-items:center;border-radius:8px;border:1px solid var(--line);background:none;color:var(--mute);cursor:pointer;flex:none}
+#tpane .bell svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#tpane .bell.on{color:var(--hl2);border-color:var(--hl2);background:color-mix(in srgb,var(--hl) 14%,var(--panel))}
+#tpane .tnote{margin:10px 2px 0;font-size:11px;color:var(--mute);line-height:1.4}
+@media (max-width:600px){#tpill{right:12px;left:12px;min-width:0}#tpane{right:12px;left:12px;width:auto;bottom:92px}body.hastimer #totop{bottom:92px}#sndcall{bottom:100px}}
+@media print{#tpill,#tpane{display:none}}
+/* timers in the look of the site: gradient tiles, the hero glow, the brand gradient */
+#tpane{border-color:color-mix(in srgb,var(--hl) 50%,var(--line));background:radial-gradient(420px 220px at 0% 0%,color-mix(in srgb,var(--hl) 22%,transparent),transparent 70%),radial-gradient(380px 260px at 100% 100%,color-mix(in srgb,var(--hl2) 14%,transparent),transparent 70%),var(--panel)}
+#tpane::before{content:'';position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--hl2),var(--hl))}
+#tpane .thead{background:none;border-bottom-color:color-mix(in srgb,var(--hl) 30%,var(--line));padding:15px 12px 13px 14px}
+#tpane .tmark,.ttile{display:grid;place-items:center;flex:none;background:linear-gradient(135deg,var(--hl2),var(--hl));box-shadow:0 5px 16px color-mix(in srgb,var(--hl) 38%,transparent)}
+#tpane .tmark{width:32px;height:32px;border-radius:10px}
+#tpane .tmark svg,.ttile svg{fill:none;stroke:#fff;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+#tpane .tmark svg{width:18px;height:18px}
+#tpane .ttitle{font-size:17px;font-weight:800;background:linear-gradient(90deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ttile{width:36px;height:36px;border-radius:11px}
+.ttile svg{width:18px;height:18px}
+#tpane .tsec{display:flex;align-items:center;gap:8px}
+#tpane .tsec::before{content:'';width:14px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--hl2),var(--hl))}
+#tpane .tsec.livehead::before{width:7px;height:7px;border-radius:50%;margin-right:0;background:var(--g)}
+#tpane .trc{position:relative;overflow:hidden;background:radial-gradient(180px 90px at 100% 0%,color-mix(in srgb,var(--hl2) 18%,transparent),transparent 70%),color-mix(in srgb,var(--hl) 10%,var(--panel))}
+#tpane .trc>b{font-size:23px;font-weight:800;width:fit-content;background:linear-gradient(90deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
+#tpane .trow{background:color-mix(in srgb,var(--hl) 5%,var(--panel));transition:border-color .15s,transform .15s}
+#tpane .trow:hover{border-color:color-mix(in srgb,var(--hl) 55%,var(--line));transform:translateX(2px)}
+#tpane .trow.soon{border-color:color-mix(in srgb,var(--hl) 65%,var(--line));box-shadow:0 0 0 1px color-mix(in srgb,var(--hl) 35%,transparent),0 6px 18px color-mix(in srgb,var(--hl) 20%,transparent)}
+#tpane .trow.soon .tcd{font-weight:800;background:linear-gradient(90deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
+#tpill{background:radial-gradient(260px 90px at 0% 0%,color-mix(in srgb,var(--hl) 22%,transparent),transparent 70%),var(--panel);border-color:color-mix(in srgb,var(--hl) 50%,var(--line));overflow:hidden}
+#tpill::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,var(--hl2),var(--hl))}
+#tpill.live::before{background:var(--g)}
+#tpill .tpres{padding-left:45px}
+/* Daevanion board of the editor: zoom */
+.bboard{position:relative}
+.bboard .bzoom{overflow:auto;max-height:min(82vh,900px);border-radius:8px;overscroll-behavior:contain}
+.bboard .bzoom svg{margin:0}
+.bboard .bzoom.zoomed{border:1px solid color-mix(in srgb,var(--hl) 40%,var(--line))}
+.bboard .bzoom.zoomed svg{border:0;border-radius:0}
+.bboard .bzoom.zoomed{cursor:grab}
+.bboard .bzoom.zoomed g.nd{cursor:pointer}
+.bboard .bzoom.dragging,.bboard .bzoom.dragging g.nd{cursor:grabbing;user-select:none}
+.bboard .bzctl{position:absolute;left:10px;bottom:10px;display:flex;align-items:center;gap:2px;padding:3px;border-radius:11px;z-index:2;
+border:1px solid color-mix(in srgb,var(--hl) 45%,var(--line));background:color-mix(in srgb,var(--panel) 88%,transparent);backdrop-filter:blur(6px);box-shadow:0 6px 18px #0006}
+.bboard .bzctl button{width:30px;height:30px;padding:0;border:0;border-radius:8px;background:none;color:var(--ink);font-size:18px;font-weight:600;cursor:pointer}
+.bboard .bzctl button:hover:not(:disabled){background:color-mix(in srgb,var(--hl) 22%,transparent)}
+.bboard .bzctl button:disabled{opacity:.35;cursor:default}
+.bboard .bzctl button.pct{width:auto;min-width:48px;padding:0 6px;font-size:12px;font-variant-numeric:tabular-nums;color:var(--mute)}
 </style>
 </head>
 <body>
@@ -958,6 +1061,18 @@ const PICO = {
   copy: 'M9 9h11v11H9zM5 15H4V4h11v1',
   link: 'M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1',
   trash: 'M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3',
+  clock: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2',
+  close: 'M6 6l12 12M18 6 6 18',
+  down: 'M6 9l6 6 6-6',
+  daily: 'M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7',
+  weekly: 'M8 3v3M16 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z',
+  rift: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z',
+  dim: 'M13 2 4 14h7l-1 8 9-12h-7l1-8z',
+  shugo: 'M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3z',
+  kaira: 'M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z',
+  siege: 'M4 21V8l2.5-2L9 8V5h6v3l2.5-2L20 8v13zM10 21v-4a2 2 0 0 1 4 0v4M4 11h16',
+  sboss: 'M3 8l4 4 5-7 5 7 4-4-2 11H5L3 8z',
+  nahma: 'M12 3a8 8 0 0 0-8 8c0 2.6 1.3 4.6 3 5.8V20h10v-3.2c1.7-1.2 3-3.2 3-5.8a8 8 0 0 0-8-8zM8.5 11.5a1.5 1.5 0 1 0 3 0 1.5 1.5 0 1 0-3 0M12.5 11.5a1.5 1.5 0 1 0 3 0 1.5 1.5 0 1 0-3 0',
 };
 const pico = (id, cls) => { const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('class', cls);
   const p = document.createElementNS('http://www.w3.org/2000/svg', 'path'); p.setAttribute('d', PICO[id] || PICO.home); s.appendChild(p); return s; };
@@ -1713,7 +1828,7 @@ const BUI = {
     specSlots: '{a} de {b}', stigOn: '{a} de {b} ligadas · ligam sozinhas', stigAt: 'liga sozinha no nível {n}', specAt: 'abre no nível {n}', noSpecs: 'Specs a partir do nível 8', stigFull: 'Já há 4 stigmas equipados.',
     clear: 'Limpar este tabuleiro', all: 'Pegar tudo', nodes: '{a} de {b} nós', crystals: '{a} de {b} cristais', effects: 'Efeitos ativos', fxSkills: 'Níveis de skill', fxStats: 'Atributos', none: 'Nenhum nó pego ainda.',
     daevHow: 'Clique num nó para pegá-lo: se ele estiver longe, o caminho mais barato até ele é pego junto. Clique num nó pego para soltá-lo; o que ficar desligado do início sai também.',
-    slot: 'Slot', item: 'Item', enh: 'Aprimoramento', stats: 'Atributos', empty: '— vazio —', il: 'item level {n}', search: 'Digite para buscar…', noMatch: 'Nada com esse nome', maxEnh: 'máx. +{n}',
+    slot: 'Slot', item: 'Item', enh: 'Aprimoramento', stats: 'Atributos', empty: '— vazio —', il: 'item level {n}', search: 'Digite para buscar…', noMatch: 'Nada com esse nome', maxEnh: 'máx. +{n}', zoomIn: 'Aproximar', zoomOut: 'Afastar', zoomFit: 'Voltar ao tamanho normal', enhEst: 'Bônus de aprimoramento estimado: ninguém consultado usava esta raridade e item level, então o valor vem dos itens vizinhos e pode errar por 1 ou 2.',
     titles: 'Títulos equipados', Offensive: 'Ataque', Defensive: 'Defesa', Other: 'Outros', equipped: 'Efeito ao equipar', owned: 'Efeito por ter',
     arcana: 'Arcana', set: 'Conjunto', wings: 'Asas', pet: 'Pet', notesHint: 'Rotação, prioridade de atributos, Manastones, o que falta pegar…',
     slots: {main: 'Arma', off: 'Guard', Top: 'Top', Legs: 'Legs', Helm: 'Helm', Pauldrons: 'Pauldrons', Gloves: 'Gloves', Shoes: 'Shoes', Cloak: 'Cloak', Necklace: 'Necklace',
@@ -1729,7 +1844,7 @@ const BUI = {
     specSlots: '{a} of {b}', stigOn: '{a} of {b} on · they switch on by themselves', stigAt: 'switches on by itself at level {n}', specAt: 'opens at level {n}', noSpecs: 'Specs from level 8', stigFull: 'There are already 4 stigmas equipped.',
     clear: 'Clear this board', all: 'Take everything', nodes: '{a} of {b} nodes', crystals: '{a} of {b} crystals', effects: 'Active effects', fxSkills: 'Skill levels', fxStats: 'Stats', none: 'No node taken yet.',
     daevHow: 'Click a node to take it: if it is far away, the cheapest path to it is taken as well. Click a taken node to drop it; whatever gets cut off from the start goes too.',
-    slot: 'Slot', item: 'Item', enh: 'Enhancement', stats: 'Stats', empty: '— empty —', il: 'item level {n}', search: 'Type to search…', noMatch: 'Nothing by that name', maxEnh: 'max +{n}',
+    slot: 'Slot', item: 'Item', enh: 'Enhancement', stats: 'Stats', empty: '— empty —', il: 'item level {n}', search: 'Type to search…', noMatch: 'Nothing by that name', maxEnh: 'max +{n}', zoomIn: 'Zoom in', zoomOut: 'Zoom out', zoomFit: 'Back to the normal size', enhEst: 'Estimated Enhance bonus: nobody checked wore this grade and item level, so the value comes from the nearby items and may be off by 1 or 2.',
     titles: 'Equipped titles', Offensive: 'Attack', Defensive: 'Defence', Other: 'Other', equipped: 'Effect when equipped', owned: 'Effect when owned',
     arcana: 'Arcana', set: 'Set', wings: 'Wings', pet: 'Pet', notesHint: 'Rotation, stat priority, Manastones, what is still missing…',
     slots: {main: 'Weapon', off: 'Guard', Top: 'Top', Legs: 'Legs', Helm: 'Helm', Pauldrons: 'Pauldrons', Gloves: 'Gloves', Shoes: 'Shoes', Cloak: 'Cloak', Necklace: 'Necklace',
@@ -1838,7 +1953,8 @@ if (bldHost && BLD.classes) {
 
   // ----- the page
   let body = null;
-  const paintTab = () => { body.textContent = ''; ({skills: tabSkills, daev: tabDaev, gear: tabGear, extra: tabExtra, notes: tabNotes})[S.builds.tab](cur()); fitTables(bldHost); paintChips(); };
+  let dvView = null, dvKeep = null;  // the frame of the Daevanion board: where it was scrolled is kept when it is drawn again
+  const paintTab = () => { dvKeep = dvView && dvView.isConnected ? [dvView.scrollLeft, dvView.scrollTop] : null; body.textContent = ''; ({skills: tabSkills, daev: tabDaev, gear: tabGear, extra: tabExtra, notes: tabNotes})[S.builds.tab](cur()); fitTables(bldHost); paintChips(); };
   let sum = null;
   function paintChips() {
     const b = cur(), pve = [0, 1, 2, 3].reduce((s, i) => s + spent(b, i), 0), total = [0, 1, 2, 3].reduce((s, i) => s + BLD.boards[b.cls][i].nodes.reduce((a, n) => a + n[2], 0), 0);
@@ -1972,14 +2088,71 @@ if (bldHost && BLD.classes) {
       }
       svg.appendChild(g);
     });
-    host.appendChild(svg);
+    // zoom: − and + in the bottom left corner; the board scrolls inside its frame (Ctrl + wheel works too)
+    const view = make('div', 'bzoom'), zc = make('div', 'bzctl'), out = make('button', '', '−'), pct = make('button', 'pct'), inn = make('button', '', '+');
+    const Z = [1, 1.25, 1.5, 1.75, 2, 2.5, 3], zoomTo = z => {
+      const cx = (view.scrollLeft + view.clientWidth / 2) / view.scrollWidth, cy = (view.scrollTop + view.clientHeight / 2) / view.scrollHeight;
+      S.builds.zoom = z; save(); setZoom();
+      view.scrollLeft = cx * view.scrollWidth - view.clientWidth / 2; view.scrollTop = cy * view.scrollHeight - view.clientHeight / 2;
+    };
+    const setZoom = () => {
+      const z = S.builds.zoom || 1; svg.style.width = z * 100 + '%'; svg.style.maxWidth = 'none';
+      pct.textContent = Math.round(z * 100) + '%'; out.disabled = z <= Z[0]; inn.disabled = z >= Z[Z.length - 1]; view.classList.toggle('zoomed', z > 1);
+    };
+    const step = d => zoomTo(Z[Math.max(0, Math.min(Z.length - 1, Z.indexOf(S.builds.zoom || 1) + d))]);
+    [out, pct, inn].forEach(x => { x.type = 'button'; });
+    out.title = bu('zoomOut'); inn.title = bu('zoomIn'); pct.title = bu('zoomFit');
+    out.onclick = () => step(-1); inn.onclick = () => step(1); pct.onclick = () => zoomTo(1);
+    view.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); step(e.deltaY < 0 ? 1 : -1); }, {passive: false});
+    // drag to move around the zoomed board; a drag does not take or drop the node it started on
+    let drag = null;
+    view.addEventListener('pointerdown', e => {
+      if (e.button !== 0 || e.pointerType === 'touch' || !view.classList.contains('zoomed')) return;
+      drag = {x: e.clientX, y: e.clientY, l: view.scrollLeft, t: view.scrollTop, moved: false, id: e.pointerId};
+    });
+    view.addEventListener('pointermove', e => {
+      if (!drag) return;
+      const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+      if (!drag.moved && Math.abs(dx) + Math.abs(dy) < 5) return;
+      if (!drag.moved) { drag.moved = true; view.classList.add('dragging'); try { view.setPointerCapture(drag.id); } catch (x) {} }
+      view.scrollLeft = drag.l - dx; view.scrollTop = drag.t - dy;
+    });
+    const stop = () => { if (drag && drag.moved) setTimeout(() => { drag = null; }); else drag = null; view.classList.remove('dragging'); };
+    view.addEventListener('pointerup', stop); view.addEventListener('pointercancel', stop);
+    view.addEventListener('click', e => { if (drag && drag.moved) { e.stopPropagation(); e.preventDefault(); drag = null; } }, true);
+    zc.append(out, pct, inn); view.appendChild(svg); host.append(view, zc); setZoom();
+    const restore = () => { if (dvKeep) [view.scrollLeft, view.scrollTop] = dvKeep; dvView = view; };
     const side = make('div', 'bfx'), fx = effects(b);
     side.appendChild(make('p', 'chead', bu('effects')));
     const list = (title, rows) => { if (!rows.length) return; side.appendChild(make('p', 'bfxh', title)); const ul = make('ul'); rows.forEach(r => { const li = make('li'); li.append(...r); ul.appendChild(li); }); side.appendChild(ul); };
     list(bu('fxSkills'), Object.keys(fx.skills).sort().map(n => [bic(b, n) || '', n + ' ', make('b', '', '+' + fx.skills[n])]));
     list(bu('fxStats'), Object.keys(fx.stats).sort().map(k => [k.split('|')[0] + ' ', make('b', '', '+' + fmtN(fx.stats[k], fx.stats[k] % 1 ? 1 : 0) + k.split('|')[1])]));
     if (!Object.keys(fx.skills).length && !Object.keys(fx.stats).length) side.appendChild(make('p', 'note', bu('none')));
-    cols.append(host, side); body.appendChild(cols);
+    cols.append(host, side); body.appendChild(cols); restore();
+  }
+
+  // Enhance bonus (official armory, see enh_bonus.py): BLD.enh.top[group|grade|item level] = {stat: bonus at the top
+  // level}, spread over the levels in whole steps with the bigger steps last; the rune keeps every level in BLD.enh.lv
+  const ENHG = {Necklace: 'X', Earrings: 'X', Ring: 'X', Bracelet: 'X', Amulet: 'Am', Belt: 'Be', Rune: 'Ru'};
+  function enhBonus(set, it, lvl) {
+    const E = BLD.enh, out = {};
+    if (!E || !lvl) return out;
+    const key = (set === 'weapons' ? 'W' : set === 'armor' ? 'A' : ENHG[it[1]] || 'X') + '|' + BLD.grades[it[2]] + '|' + it[3];
+    if (E.lv[key]) Object.entries(E.lv[key]).forEach(([stat, v]) => { out[stat] = parseFloat(v[lvl - 1]) || 0; });
+    else Object.entries(E.top[key] || {}).forEach(([stat, T]) => { const n = it[4], b = Math.floor(T / n); out[stat] = b * lvl + Math.max(0, lvl - (n - (T - b * n))); });
+    return {add: out, est: E.est.includes(key)};
+  }
+  // the stats of a piece with its Enhance level: "Attack 407 ~ 512" at +7 reads "Attack 442 ~ 547 (+35)"
+  function gearStats(cell, set, it, lvl) {
+    const {add = {}, est} = enhBonus(set, it, lvl);
+    cell.textContent = ''; cell.title = est && Object.values(add).some(x => x) ? bu('enhEst') : '';
+    it[5].split(/, (?=[A-Z])/).forEach((part, k) => {
+      if (k) cell.append(', ');
+      const m = part.match(/^(.*?) ([\d,.]+)(%?)(?: ~ ([\d,.]+)%?)?$/), plus = m ? add[m[1]] || 0 : 0;
+      if (!plus) { cell.append(part); return; }
+      const n = x => x.toLocaleString(S.lang === 'en' ? 'en-US' : 'pt-BR', {maximumFractionDigits: 1}), f = x => n(parseFloat(x.replace(/,/g, '')) + plus) + m[3];
+      cell.append(m[1] + ' ' + f(m[2]) + (m[4] ? ' ~ ' + f(m[4]) : '') + ' ', make('b', 'enhb', '(' + (est ? '≈' : '') + '+' + n(plus) + m[3] + ')'));
+    });
   }
 
   function tabGear(b) {
@@ -1992,7 +2165,11 @@ if (bldHost && BLD.classes) {
         .map(x => [x[0], x[0] + ' · ' + bu('il').replace('{n}', x[3])])]).filter(([, rows]) => rows.length);
       c.appendChild(searchBox(it ? it[0] : '', groups, {search: bu('search'), empty: bu('empty'), none: bu('noMatch')},
         v => { if (v) b.gear[slot] = {n: v, e: 0}; else delete b.gear[slot]; }, paintTab));
-      if (it) { e.appendChild(numBox(() => Math.min(g.e || 0, it[4]), v => { g.e = v; }, 0, it[4], 1, false, () => {})); e.appendChild(make('span', 'of', bu('maxEnh').replace('{n}', it[4]))); s.textContent = it[5]; s.className = 'g' + it[2]; }
+      if (it) {
+        const lvl = () => Math.min(g.e || 0, it[4]);
+        e.appendChild(numBox(lvl, v => { g.e = v; }, 0, it[4], 1, false, () => gearStats(s, set, it, lvl())));
+        e.appendChild(make('span', 'of', bu('maxEnh').replace('{n}', it[4]))); gearStats(s, set, it, lvl()); s.className = 'g' + it[2];
+      }
       else { e.textContent = '—'; s.textContent = ''; tr.className = 'off'; }
     });
   }
@@ -2063,6 +2240,8 @@ const EVENTS = [
   {id: 'rift', name: 'Spacetime Rift', len: 60, min: 0, hours: [2, 5, 8, 11, 14, 17, 20, 23]},
   {id: 'kaira', name: 'Watcher Kaira', len: 30, min: 0, hours: [1, 4, 7, 10, 13, 16, 19, 22]},
   {id: 'siege', name: 'Artifact Siege', len: 30, min: 0, hours: [21], days: [1, 4, 6]},
+  {id: 'sboss', name: 'Siege Bosses', len: 30, min: 30, hours: [21], days: [1, 4, 6]},
+  {id: 'nahma', name: 'Guardian Lord Nahma', len: 30, min: 0, hours: [21], days: [0, 5]},
   {id: 'daily', len: 0, min: 0, hours: [4]},
   {id: 'weekly', len: 0, min: 0, hours: [4], days: [3]},
 ];
@@ -2081,6 +2260,9 @@ const HUI = {
     season: 'Season 1 termina em {t}', find: 'Onde consigo…? Digite um material ou item e aperte Enter', events: 'Agora e a seguir', live: 'AGORA', ends: 'termina em {t}', inT: 'em {t}',
     daily: 'Reset diário', weekly: 'Reset semanal', remind: 'Avisar antes de começar', soon: 'Começa em {t}, às {h}.', noNotify: 'Este navegador não deixa o site mandar avisos aqui. No site publicado funciona.',
     denied: 'O navegador bloqueou os avisos deste site. Libere nas permissões do site para usar os lembretes.',
+    tm: {title: 'Timers', where: 'América do Sul', city: 'São Paulo', resets: 'Resets', liveNow: 'Acontecendo agora', upNext: 'A seguir', dailyS: 'Diário', weeklyS: 'Semanal',
+      ends: 'termina em', starts: 'começa em', today: 'Hoje', tomorrow: 'Amanhã', portal: 'portal fecha em {t}', open: 'Abrir os timers', close: 'Fechar',
+      kinds: {rift: 'PvP', dim: 'Evento', shugo: 'Evento', kaira: 'Chefe', siege: 'Abyss', sboss: 'Chefe', nahma: 'Chefe'}},
     today: 'Para fazer hoje', next: 'Próximos objetivos', news: 'Novidades', pages: 'Páginas', evNote: 'Horários do servidor da América do Sul, segundo o shugo.gg; a NCSOFT não publicou a tabela oficial.',
     d: {rot: 'Entradas diárias e limites da semana, por personagem, com reset automático.', bld: 'Monte, salve e compartilhe a build de qualquer classe.',
       prog: 'Objetivos por faixa de Gear Score, com checklist.', asn: 'A build de PvE do Assassin, com barra, skills e Daevanion.', pvp: 'A build de PvP do Assassin, no mesmo modelo.',
@@ -2089,6 +2271,9 @@ const HUI = {
     season: 'Season 1 ends in {t}', find: 'Where do I get…? Type a material or item and press Enter', events: 'Now and next', live: 'NOW', ends: 'ends in {t}', inT: 'in {t}',
     daily: 'Daily reset', weekly: 'Weekly reset', remind: 'Remind me before it starts', soon: 'Starts in {t}, at {h}.', noNotify: 'This browser does not let the site send notifications here. On the published site it works.',
     denied: 'The browser blocked notifications from this site. Allow them in the site permissions to use the reminders.',
+    tm: {title: 'Timers', where: 'South America', city: 'São Paulo', resets: 'Resets', liveNow: 'Live now', upNext: 'Up next', dailyS: 'Daily', weeklyS: 'Weekly',
+      ends: 'ends in', starts: 'starts in', today: 'Today', tomorrow: 'Tomorrow', portal: 'portal closes in {t}', open: 'Open the timers', close: 'Close',
+      kinds: {rift: 'PvP', dim: 'Event', shugo: 'Event', kaira: 'Boss', siege: 'Abyss', sboss: 'Boss', nahma: 'Boss'}},
     today: 'To do today', next: 'Next objectives', news: 'News', pages: 'Pages', evNote: 'Times of the South America server, according to shugo.gg; NCSOFT has not published the official table.',
     d: {rot: 'Daily entries and weekly limits, per character, with automatic reset.', bld: 'Create, save and share the build of any class.',
       prog: 'Objectives by Gear Score bracket, with a checklist.', asn: 'The Assassin PvE build, with bar, skills and Daevanion.', pvp: 'The Assassin PvP build, in the same layout.',
@@ -2164,6 +2349,109 @@ function toggleRemind(id, after) {
   save(); after();
   if (S.notify.ev[id] && canNotify && Notification.permission === 'default') try { Notification.requestPermission().then(after, () => {}); } catch (e) {}
 }
+
+// ---------- timers: a pill in the corner that opens a panel with the resets, what runs now and what comes next ----------
+S.timer = Object.assign({show: true}, S.timer || {});
+const clock = ms => {  // 18:30 under an hour, 7h 18m under a day, 5d 7h after
+  const s = Math.max(0, Math.ceil(ms / 1000)), d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
+  return d ? d + 'd ' + h + 'h' : h ? h + 'h ' + m + 'm' : m + ':' + String(s % 60).padStart(2, '0');
+};
+function dayOf(t, now) {
+  const a = new Date(t), b = new Date(now), days = Math.round((new Date(a.getFullYear(), a.getMonth(), a.getDate()) - new Date(b.getFullYear(), b.getMonth(), b.getDate())) / 86400000);
+  if (days === 0) return hu('tm').today;
+  if (days === 1) return hu('tm').tomorrow;
+  const w = a.toLocaleDateString(S.lang === 'en' ? 'en-GB' : 'pt-BR', {weekday: 'short'}).replace('.', '');
+  return w.charAt(0).toUpperCase() + w.slice(1);
+}
+function ring(part, icon) {  // the event icon in a circle that fills while it runs
+  const box = make('span', 'tring'), svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', '0 0 36 36');
+  ['bg', 'fg'].forEach(k => {
+    const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    c.setAttribute('cx', 18); c.setAttribute('cy', 18); c.setAttribute('r', 16); c.setAttribute('class', k);
+    if (k === 'fg') { c.setAttribute('stroke-dasharray', (100.5 * part).toFixed(1) + ' 100.5'); }
+    svg.appendChild(c);
+  });
+  box.append(svg, pico(icon, 'ti'));
+  return box;
+}
+function timerState(now) {
+  const evs = EVENTS.filter(e => e.len).map(e => { const [start, end] = occurrence(e, now); return {e, start, end, live: start <= now && end > now}; });
+  return {live: evs.filter(x => x.live).sort((a, b) => a.end - b.end), next: evs.filter(x => !x.live).sort((a, b) => a.start - b.start),
+    daily: occurrence(EVENTS.find(e => e.id === 'daily'), now)[0], weekly: occurrence(EVENTS.find(e => e.id === 'weekly'), now)[0]};
+}
+function timerBell(e) {
+  const bell = make('button', 'bell' + (S.notify.ev[e.id] ? ' on' : '')); bell.type = 'button';
+  bell.appendChild(pico('bell', '')); bell.title = hu('remind');
+  bell.onclick = ev => { ev.stopPropagation(); toggleRemind(e.id, paintTimers); if ($('#home')) paintHome(); };
+  return bell;
+}
+function paintTimers() {
+  let pill = $('#tpill'), pane = $('#tpane');
+  document.body.classList.toggle('hastimer', !!S.timer.show);
+  if (!S.timer.show) { if (pill) pill.remove(); if (pane) pane.remove(); return; }
+  const now = Date.now(), st = timerState(now), L = hu('tm');
+  if (!pill) {
+    pill = make('button'); pill.id = 'tpill'; pill.type = 'button'; pill.title = L.open;
+    pill.onclick = () => { S.timer.open = !S.timer.open; save(); paintTimers(); };
+    document.body.appendChild(pill);
+  }
+  // the pill: the event running now that ends first, or the next one
+  const top = st.live[0] || st.next[0], live = !!st.live[0];
+  pill.className = live ? 'live' : '';
+  pill.textContent = '';
+  const main = make('span', 'tpmain'), words = make('span', 'tpw');
+  words.append(make('small', '', live ? hu('live') : L.upNext), make('b', '', evName(top.e)));
+  const ptile = make('span', 'ttile'); ptile.appendChild(pico(top.e.id, ''));
+  main.append(live ? ring((now - top.start) / (top.end - top.start), top.e.id) : ptile, words,
+    make('strong', '', (live ? L.ends : L.starts) + ' ' + clock((live ? top.end : top.start) - now)), pico('down', 'tchev' + (S.timer.open ? ' up' : '')));
+  const resets = make('span', 'tpres');
+  resets.append(pico('daily', ''), L.dailyS + ' ', make('b', '', clock(st.daily - now)), make('i'), pico('weekly', ''), L.weeklyS + ' ', make('b', '', clock(st.weekly - now)));
+  pill.append(main, resets);
+  // the panel
+  if (!S.timer.open) { if (pane) pane.remove(); return; }
+  if (!pane) { pane = make('div'); pane.id = 'tpane'; pane.setAttribute('role', 'dialog'); document.body.appendChild(pane); }
+  const kept = $('.tbody', pane) ? $('.tbody', pane).scrollTop : 0;  // rebuilt every second: keep where it was scrolled
+  pane.textContent = '';
+  const head = make('div', 'thead'), x = make('button', 'tx'); x.type = 'button'; x.title = L.close; x.appendChild(pico('close', ''));
+  x.onclick = () => { S.timer.open = false; save(); paintTimers(); };
+  const chip = make('span', 'tchip'); chip.append(make('b', '', L.where), ' ' + L.city);
+  const mark = make('span', 'tmark'); mark.appendChild(pico('clock', ''));
+  head.append(mark, make('b', 'ttitle', L.title), chip, x);
+  pane.appendChild(head);
+  const body = make('div', 'tbody'); pane.appendChild(body);
+  body.appendChild(make('p', 'tsec', L.resets));
+  const cards = make('div', 'tresets');
+  [['daily', st.daily], ['weekly', st.weekly]].forEach(([id, at]) => {
+    const c = make('div', 'trc'), h = make('span', 'trh');
+    h.append(pico(id, ''), hu(id));
+    c.append(h, make('b', '', clock(at - now)), make('small', '', dayOf(at, now) + ' ' + hhmm(at)));
+    cards.appendChild(c);
+  });
+  body.appendChild(cards);
+  const list = (title, rows, isLive) => {
+    if (!rows.length) return;
+    const p = make('p', 'tsec' + (isLive ? ' livehead' : ''), title); body.appendChild(p);
+    rows.forEach(({e, start, end}) => {
+      const r = make('div', 'trow' + (isLive ? ' live' : '')), w = make('span', 'tw'), when = make('strong', 'tcd');
+      let sub = isLive ? hhmm(start) + '–' + hhmm(end) : hhmm(start) + ' · ' + dayOf(start, now);
+      if (isLive && e.id === 'rift' && now < start + 10 * MIN) sub = L.portal.replace('{t}', clock(start + 10 * MIN - now));
+      w.append(make('b', '', evName(e)), make('small', '', (L.kinds[e.id] ? L.kinds[e.id] + ' · ' : '') + sub));
+      if (isLive) when.append(make('small', '', L.ends), clock(end - now)); else when.textContent = clock(start - now);
+      const tile = make('span', 'ttile'); tile.appendChild(pico(e.id, ''));
+      if (!isLive && start - now <= 15 * MIN) r.classList.add('soon');
+      r.append(isLive ? ring((now - start) / (end - start), e.id) : tile, w, when, timerBell(e));
+      body.appendChild(r);
+    });
+  };
+  list(L.liveNow, st.live, true);
+  list(L.upNext, st.next, false);
+  body.scrollTop = kept;
+}
+addEventListener('keydown', e => { if (e.key === 'Escape' && S.timer.open) { S.timer.open = false; save(); paintTimers(); } });
+addEventListener('pointerdown', e => { if (S.timer.open && !e.target.closest('#tpane, #tpill')) { S.timer.open = false; save(); paintTimers(); } });
+setInterval(paintTimers, 1000);
+setTimeout(paintTimers);
 
 // ---------- home page ----------
 function paintHome() {
@@ -2267,7 +2555,7 @@ if (findHost && FIND.length) {
 const setHost = $('#settings');
 if (setHost) {
   const XUI = {pt: {look: 'Aparência', theme: 'Tema', auto: 'Automático (o do sistema)', dark: 'Escuro', light: 'Claro', accent: 'Cor de destaque', lang: 'Idioma',
-      notif: 'Lembretes de evento', notifHow: 'Com o site aberto em uma aba: aviso na tela, som e notificação do navegador.', lead: 'Antecedência', mins: '{n} minutos', sound: 'Som', soundOn: 'Tocar um som', vol: 'Volume', listen: 'Ouvir', sounds: {chime: 'Sino', coin: 'Moeda', fanfare: 'Fanfarra', capture: 'Captura', off: 'Sem som'},
+      timer: 'Timers no canto', timerOpts: {on: 'Mostrar', off: 'Esconder'}, notif: 'Lembretes de evento', notifHow: 'Com o site aberto em uma aba: aviso na tela, som e notificação do navegador.', lead: 'Antecedência', mins: '{n} minutos', sound: 'Som', soundOn: 'Tocar um som', vol: 'Volume', listen: 'Ouvir', sounds: {chime: 'Sino', coin: 'Moeda', fanfare: 'Fanfarra', capture: 'Captura', off: 'Sem som'},
       locked: 'O navegador só libera o som depois de um clique na página: depois de abrir o site, clique em qualquer lugar uma vez.',
       perm: {granted: 'Notificação do navegador: permitida. Se ela não aparecer, ligue as notificações do navegador no Windows e desligue o Não perturbe.', denied: 'Notificação do navegador: bloqueada (cadeado ao lado do endereço). O aviso na tela continua funcionando.',
         default: 'Notificação do navegador: ainda não permitida. Clique em Testar aviso.', none: 'Este navegador não tem notificação; o aviso na tela funciona.'},
@@ -2275,7 +2563,7 @@ if (setHost) {
       wipe: 'Apagar tudo', wipeAsk: 'Apagar tudo que este site salvou neste navegador (marcações, rotina, builds)? Não dá para desfazer.',
       colors: {violet: 'Violeta e azul', blue: 'Azul', cyan: 'Ciano', emerald: 'Verde', lime: 'Lima', amber: 'Âmbar', red: 'Vermelho', rose: 'Rosa e laranja', purple: 'Roxo'}},
     en: {look: 'Look', theme: 'Theme', auto: 'Automatic (the system one)', dark: 'Dark', light: 'Light', accent: 'Accent colour', lang: 'Language',
-      notif: 'Event reminders', notifHow: 'With the site open in a tab: a card on the page, a sound and a browser notification.', lead: 'How long before', mins: '{n} minutes', sound: 'Sound', soundOn: 'Play a sound', vol: 'Volume', listen: 'Listen', sounds: {chime: 'Chime', coin: 'Coin', fanfare: 'Fanfare', capture: 'Capture', off: 'No sound'},
+      timer: 'Timers in the corner', timerOpts: {on: 'Show', off: 'Hide'}, notif: 'Event reminders', notifHow: 'With the site open in a tab: a card on the page, a sound and a browser notification.', lead: 'How long before', mins: '{n} minutes', sound: 'Sound', soundOn: 'Play a sound', vol: 'Volume', listen: 'Listen', sounds: {chime: 'Chime', coin: 'Coin', fanfare: 'Fanfare', capture: 'Capture', off: 'No sound'},
       locked: 'The browser only lets the page make sound after a click on it: after opening the site, click anywhere once.',
       perm: {granted: 'Browser notification: allowed. If it does not show, turn the browser notifications on in Windows and Do not disturb off.', denied: 'Browser notification: blocked (padlock beside the address). The card on the page still works.',
         default: 'Browser notification: not allowed yet. Click Test reminder.', none: 'This browser has no notifications; the card on the page works.'},
@@ -2298,6 +2586,7 @@ if (setHost) {
     row(xu('lang'), pickBox(S.lang, [['pt', 'Português'], ['en', 'English']], v => { S.lang = v; }, applyLang));
     setHost.appendChild(make('p', 'chead', xu('notif')));
     setHost.appendChild(make('p', 'note', xu('notifHow')));
+    row(xu('timer'), pickBox(S.timer.show ? 'on' : 'off', Object.entries(xu('timerOpts')), v => { S.timer.show = v === 'on'; }, paintTimers));
     row(xu('lead'), pickBox(String(S.notify.lead), [2, 5, 10, 15].map(n => [String(n), xu('mins').replace('{n}', n)]), v => { S.notify.lead = +v; }, () => {}));
     const evs = make('div', 'swatches');
     EVENTS.forEach(e => { const lab = make('label'), box = make('input'); box.type = 'checkbox'; box.checked = !!S.notify.ev[e.id]; box.onclick = ev => { ev.preventDefault(); toggleRemind(e.id, drawSettings); }; lab.append(box, evName(e)); evs.appendChild(lab); });

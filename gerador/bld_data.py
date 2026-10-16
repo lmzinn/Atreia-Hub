@@ -90,6 +90,8 @@ wings = sorted([r['grantsWing'] or r['name'], r.get('wingEquipped') or '', r.get
 pets = sorted({r['name'] for r in load('pets')})
 data = {'classes': CLASSES, 'weapon': WEAPON, 'grades': GRADES, 'skills': skills, 'boards': boards, 'weapons': weapons, 'armor': armor,
         'accessories': accessories, 'titles': titles, 'arcana': arcana, 'wings': wings, 'pets': pets}
+if os.path.exists('enh_bonus.json'):  # Enhance bonus of the gear, made by enh_bonus.py (run it again after new gear)
+    data['enh'] = json.load(open('enh_bonus.json', encoding='utf8'))
 json.dump(data, open('builder_data.json', 'w', encoding='utf8'), ensure_ascii=False, separators=(',', ':'))
 print('builder_data.json', os.path.getsize('builder_data.json') // 1024, 'KB |', len(weapons), 'weapons', len(armor), 'armor', len(accessories),
       'accessories', len(titles), 'titles', len(arcana), 'arcana', len(wings), 'wings', len(pets), 'pets')

@@ -60,11 +60,17 @@ def builder_part(strings, english):
          '<b>Stigmas:</b> tick “Equipped” on up to 4. Stigma specs are not chosen: each one switches on by itself when the '
          'stigma reaches its level (5, 10, 15 and 20).'),
         ('<b>Daevanion:</b> clicar num nó distante pega também o caminho mais barato até ele. Os quatro primeiros '
-         'tabuleiros somam nos Daevanion Crystals; o Azphel tem cristais próprios.',
+         'tabuleiros somam nos Daevanion Crystals; o Azphel tem cristais próprios. O − e o + no canto do tabuleiro dão '
+         'zoom (Ctrl + roda do mouse também); com zoom, clique e arraste para mover o tabuleiro.',
          '<b>Daevanion:</b> clicking a far node also takes the cheapest path to it. The first four boards add up under '
-         'Daevanion Crystals; Azphel has crystals of its own.'),
-        ('<b>Equipamento:</b> a lista de cada slot já vem filtrada pela arma da classe e pela facção.',
-         '<b>Gear:</b> the list of each slot is already filtered by the class weapon and by the faction.'),
+         'Daevanion Crystals; Azphel has crystals of its own. The − and + in the corner of the board zoom (Ctrl + mouse '
+         'wheel too); when zoomed, click and drag to move the board.'),
+        ('<b>Equipamento:</b> a lista de cada slot já vem filtrada pela arma da classe e pela facção. Ao subir o '
+         'aprimoramento, os atributos já mostram o valor com o bônus, e o bônus aparece entre parênteses (valores da '
+         'armaria oficial; com “≈” é estimado pelos itens vizinhos).',
+         '<b>Gear:</b> the list of each slot is already filtered by the class weapon and by the faction. Raising the '
+         'Enhancement shows the stats with the bonus, and the bonus in brackets (values from the official armory; '
+         'with “≈” it is estimated from the nearby items).'),
         ('<b>O que não tem campo próprio</b> (Manastones, Soul Binding, rotação, barra de skills) vai na aba Notas.',
          '<b>What has no field of its own</b> (Manastones, Soul Binding, rotation, skill bar) goes on the Notes tab.'),
         (f'Dados de skills, tabuleiros, itens, títulos, Arcana, asas e pets: {link}, lido em 13/out/2026. Depois de um '

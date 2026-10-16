@@ -1,0 +1,12581 @@
+{
+"Guard|Common|9": {
+"name": "Twilight Guard",
+"base": {
+"Attack": "17",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "1",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "2",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "3",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "5",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Top|Common|2": {
+"name": "Twilight Breastplate",
+"base": {
+"Defense": "7",
+"HP": "8"
+},
+"extra": [
+{
+"Defense": "1",
+"HP": "1"
+},
+{
+"Defense": "2",
+"HP": "2"
+},
+{
+"Defense": "3",
+"HP": "3"
+},
+{
+"Defense": "4",
+"HP": "4"
+},
+{
+"Defense": "5",
+"HP": "5"
+}
+]
+},
+"Legs|Common|2": {
+"name": "Twilight Greaves",
+"base": {
+"Defense": "6",
+"HP": "6"
+},
+"extra": [
+{
+"Defense": "1",
+"HP": "1"
+},
+{
+"Defense": "2",
+"HP": "2"
+},
+{
+"Defense": "3",
+"HP": "3"
+},
+{
+"Defense": "4",
+"HP": "4"
+},
+{
+"Defense": "5",
+"HP": "5"
+}
+]
+},
+"Helm|Common|7": {
+"name": "Twilight Helm",
+"base": {
+"Defense": "33",
+"HP": "18"
+},
+"extra": [
+{
+"Defense": "1",
+"HP": "1"
+},
+{
+"Defense": "3",
+"HP": "3"
+},
+{
+"Defense": "5",
+"HP": "5"
+},
+{
+"Defense": "7",
+"HP": "7"
+},
+{
+"Defense": "9",
+"HP": "9"
+}
+]
+},
+"Pauldrons|Common|7": {
+"name": "Twilight Pauldrons",
+"base": {
+"Defense": "33",
+"HP": "18"
+},
+"extra": [
+{
+"Defense": "1",
+"HP": "1"
+},
+{
+"Defense": "3",
+"HP": "3"
+},
+{
+"Defense": "5",
+"HP": "5"
+},
+{
+"Defense": "7",
+"HP": "7"
+},
+{
+"Defense": "9",
+"HP": "9"
+}
+]
+},
+"Shoes|Common|3": {
+"name": "Twilight Boots",
+"base": {
+"Defense": "10",
+"HP": "6"
+},
+"extra": [
+{
+"Defense": "1",
+"HP": "1"
+},
+{
+"Defense": "2",
+"HP": "2"
+},
+{
+"Defense": "3",
+"HP": "3"
+},
+{
+"Defense": "4",
+"HP": "4"
+},
+{
+"Defense": "5",
+"HP": "5"
+}
+]
+},
+"Gloves|Common|3": {
+"name": "Twilight Gloves",
+"base": {
+"Defense": "10",
+"HP": "6"
+},
+"extra": [
+{
+"Defense": "1",
+"HP": "1"
+},
+{
+"Defense": "2",
+"HP": "2"
+},
+{
+"Defense": "3",
+"HP": "3"
+},
+{
+"Defense": "4",
+"HP": "4"
+},
+{
+"Defense": "5",
+"HP": "5"
+}
+]
+},
+"Weapon|Epic|31": {
+"name": "Avenger Dagger",
+"base": {
+"Attack": "140",
+"Accuracy": "50",
+"Critical Hit": "200",
+"Block": "50"
+},
+"extra": [
+{
+"Attack": "3",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "6",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "9",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "12",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "15",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "19",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "23",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "27",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "31",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "35",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+}
+]
+},
+"Guard|Epic|31": {
+"name": "Avenger Guard",
+"base": {
+"Attack": "62",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "3",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "6",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "9",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "12",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "15",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "19",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "23",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "27",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "31",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "35",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Top|Epic|38": {
+"name": "Judicator Breastplate",
+"base": {
+"Defense": "277",
+"HP": "152"
+},
+"extra": [
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "21",
+"HP": "18"
+},
+{
+"Defense": "32",
+"HP": "27"
+},
+{
+"Defense": "43",
+"HP": "36"
+},
+{
+"Defense": "54",
+"HP": "45"
+},
+{
+"Defense": "65",
+"HP": "54"
+},
+{
+"Defense": "76",
+"HP": "63"
+},
+{
+"Defense": "87",
+"HP": "72"
+},
+{
+"Defense": "98",
+"HP": "81"
+},
+{
+"Defense": "109",
+"HP": "90"
+}
+]
+},
+"Legs|Epic|38": {
+"name": "Judicator Greaves",
+"base": {
+"Defense": "231",
+"HP": "114"
+},
+"extra": [
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "21",
+"HP": "18"
+},
+{
+"Defense": "32",
+"HP": "27"
+},
+{
+"Defense": "43",
+"HP": "36"
+},
+{
+"Defense": "54",
+"HP": "45"
+},
+{
+"Defense": "65",
+"HP": "54"
+},
+{
+"Defense": "76",
+"HP": "63"
+},
+{
+"Defense": "87",
+"HP": "72"
+},
+{
+"Defense": "98",
+"HP": "81"
+},
+{
+"Defense": "109",
+"HP": "90"
+}
+]
+},
+"Helm|Epic|38": {
+"name": "Discipline Helm",
+"base": {
+"Defense": "207",
+"HP": "95"
+},
+"extra": [
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "21",
+"HP": "18"
+},
+{
+"Defense": "32",
+"HP": "27"
+},
+{
+"Defense": "43",
+"HP": "36"
+},
+{
+"Defense": "54",
+"HP": "45"
+},
+{
+"Defense": "65",
+"HP": "54"
+},
+{
+"Defense": "76",
+"HP": "63"
+},
+{
+"Defense": "87",
+"HP": "72"
+},
+{
+"Defense": "98",
+"HP": "81"
+},
+{
+"Defense": "109",
+"HP": "90"
+}
+]
+},
+"Pauldrons|Epic|33": {
+"name": "Faith Pauldrons",
+"base": {
+"Defense": "179",
+"HP": "83"
+},
+"extra": [
+{
+"Defense": "9",
+"HP": "7"
+},
+{
+"Defense": "18",
+"HP": "14"
+},
+{
+"Defense": "27",
+"HP": "22"
+},
+{
+"Defense": "36",
+"HP": "30"
+},
+{
+"Defense": "45",
+"HP": "38"
+},
+{
+"Defense": "54",
+"HP": "46"
+},
+{
+"Defense": "64",
+"HP": "54"
+},
+{
+"Defense": "74",
+"HP": "62"
+},
+{
+"Defense": "84",
+"HP": "70"
+},
+{
+"Defense": "94",
+"HP": "78"
+}
+]
+},
+"Gloves|Epic|38": {
+"name": "Judicator Gloves",
+"base": {
+"Defense": "184",
+"HP": "76"
+},
+"extra": [
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "21",
+"HP": "18"
+},
+{
+"Defense": "32",
+"HP": "27"
+},
+{
+"Defense": "43",
+"HP": "36"
+},
+{
+"Defense": "54",
+"HP": "45"
+},
+{
+"Defense": "65",
+"HP": "54"
+},
+{
+"Defense": "76",
+"HP": "63"
+},
+{
+"Defense": "87",
+"HP": "72"
+},
+{
+"Defense": "98",
+"HP": "81"
+},
+{
+"Defense": "109",
+"HP": "90"
+}
+]
+},
+"Shoes|Epic|38": {
+"name": "Judicator Boots",
+"base": {
+"Defense": "184",
+"HP": "76"
+},
+"extra": [
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "21",
+"HP": "18"
+},
+{
+"Defense": "32",
+"HP": "27"
+},
+{
+"Defense": "43",
+"HP": "36"
+},
+{
+"Defense": "54",
+"HP": "45"
+},
+{
+"Defense": "65",
+"HP": "54"
+},
+{
+"Defense": "76",
+"HP": "63"
+},
+{
+"Defense": "87",
+"HP": "72"
+},
+{
+"Defense": "98",
+"HP": "81"
+},
+{
+"Defense": "109",
+"HP": "90"
+}
+]
+},
+"Cloak|Epic|38": {
+"name": "Judicator Cloak",
+"base": {
+"Defense": "184",
+"HP": "76"
+},
+"extra": [
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "21",
+"HP": "18"
+},
+{
+"Defense": "32",
+"HP": "27"
+},
+{
+"Defense": "43",
+"HP": "36"
+},
+{
+"Defense": "54",
+"HP": "45"
+},
+{
+"Defense": "65",
+"HP": "54"
+},
+{
+"Defense": "76",
+"HP": "63"
+},
+{
+"Defense": "87",
+"HP": "72"
+},
+{
+"Defense": "98",
+"HP": "81"
+},
+{
+"Defense": "109",
+"HP": "90"
+}
+]
+},
+"Necklace|Rare|19": {
+"name": "Outsider Necklace",
+"base": {
+"Attack": "28",
+"Defense": "68"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "2"
+},
+{
+"Attack": "2",
+"Defense": "4"
+},
+{
+"Attack": "3",
+"Defense": "7"
+},
+{
+"Attack": "4",
+"Defense": "10"
+},
+{
+"Attack": "6",
+"Defense": "13"
+}
+]
+},
+"Earrings|Rare|25": {
+"name": "Chaser Earrings",
+"base": {
+"Attack": "31",
+"Defense": "75"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "3"
+},
+{
+"Attack": "2",
+"Defense": "6"
+},
+{
+"Attack": "3",
+"Defense": "10"
+},
+{
+"Attack": "5",
+"Defense": "14"
+},
+{
+"Attack": "7",
+"Defense": "18"
+}
+]
+},
+"Earrings|Epic|33": {
+"name": "Avenger Earrings",
+"base": {
+"Attack": "42",
+"Defense": "100"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "4"
+},
+{
+"Attack": "2",
+"Defense": "8"
+},
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "6",
+"Defense": "16"
+},
+{
+"Attack": "8",
+"Defense": "21"
+},
+{
+"Attack": "10",
+"Defense": "26"
+},
+{
+"Attack": "12",
+"Defense": "31"
+},
+{
+"Attack": "14",
+"Defense": "36"
+},
+{
+"Attack": "16",
+"Defense": "41"
+},
+{
+"Attack": "18",
+"Defense": "46"
+}
+]
+},
+"Ring|Rare|25": {
+"name": "Chaser Ring",
+"base": {
+"Attack": "25",
+"Defense": "60"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "3"
+},
+{
+"Attack": "2",
+"Defense": "6"
+},
+{
+"Attack": "3",
+"Defense": "10"
+},
+{
+"Attack": "5",
+"Defense": "14"
+},
+{
+"Attack": "7",
+"Defense": "18"
+}
+]
+},
+"Ring|Epic|33": {
+"name": "Avenger Ring",
+"base": {
+"Attack": "33",
+"Defense": "80"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "4"
+},
+{
+"Attack": "2",
+"Defense": "8"
+},
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "6",
+"Defense": "16"
+},
+{
+"Attack": "8",
+"Defense": "21"
+},
+{
+"Attack": "10",
+"Defense": "26"
+},
+{
+"Attack": "12",
+"Defense": "31"
+},
+{
+"Attack": "14",
+"Defense": "36"
+},
+{
+"Attack": "16",
+"Defense": "41"
+},
+{
+"Attack": "18",
+"Defense": "46"
+}
+]
+},
+"Bracelet|Rare|25": {
+"name": "Chaser Bracelet",
+"base": {
+"Attack": "31",
+"Defense": "75"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "3"
+},
+{
+"Attack": "2",
+"Defense": "6"
+},
+{
+"Attack": "3",
+"Defense": "10"
+},
+{
+"Attack": "5",
+"Defense": "14"
+},
+{
+"Attack": "7",
+"Defense": "18"
+}
+]
+},
+"Weapon|Rare|9": {
+"name": "Strange Karma Dagger",
+"base": {
+"Attack": "38",
+"Accuracy": "50",
+"Critical Hit": "200",
+"Block": "50"
+},
+"extra": [
+{
+"Attack": "1",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "2",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "3",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "5",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+}
+]
+},
+"Top|Common|9": {
+"name": "Old Mercenary Commander Breastplate",
+"base": {
+"Defense": "61",
+"HP": "36"
+},
+"extra": [
+{
+"Defense": "2",
+"HP": "2"
+},
+{
+"Defense": "4",
+"HP": "4"
+},
+{
+"Defense": "6",
+"HP": "6"
+},
+{
+"Defense": "9",
+"HP": "8"
+},
+{
+"Defense": "12",
+"HP": "11"
+}
+]
+},
+"Gloves|Common|10": {
+"name": "Old Mercenary Commander Gloves",
+"base": {
+"Defense": "45",
+"HP": "20"
+},
+"extra": [
+{
+"Defense": "2",
+"HP": "2"
+},
+{
+"Defense": "5",
+"HP": "4"
+},
+{
+"Defense": "8",
+"HP": "6"
+},
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "14",
+"HP": "12"
+}
+]
+},
+"Legs|Common|13": {
+"name": "Shade Greaves",
+"base": {
+"Defense": "75",
+"HP": "39"
+},
+"extra": [
+{
+"Defense": "3",
+"HP": "3"
+},
+{
+"Defense": "6",
+"HP": "6"
+},
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "14",
+"HP": "12"
+},
+{
+"Defense": "18",
+"HP": "16"
+}
+]
+},
+"Shoes|Common|10": {
+"name": "Old Mercenary Commander Boots",
+"base": {
+"Defense": "45",
+"HP": "20"
+},
+"extra": [
+{
+"Defense": "2",
+"HP": "2"
+},
+{
+"Defense": "5",
+"HP": "4"
+},
+{
+"Defense": "8",
+"HP": "6"
+},
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "14",
+"HP": "12"
+}
+]
+},
+"Cloak|Common|11": {
+"name": "Old Mercenary Commander Cloak",
+"base": {
+"Defense": "50",
+"HP": "22"
+},
+"extra": [
+{
+"Defense": "3",
+"HP": "2"
+},
+{
+"Defense": "6",
+"HP": "4"
+},
+{
+"Defense": "9",
+"HP": "7"
+},
+{
+"Defense": "12",
+"HP": "10"
+},
+{
+"Defense": "15",
+"HP": "13"
+}
+]
+},
+"Weapon|Unique|45": {
+"name": "Spiritforged Greatsword",
+"base": {
+"Attack": "263",
+"Accuracy": "100",
+"Critical Hit": "150",
+"Block": "150"
+},
+"extra": [
+{
+"Attack": "5",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "10",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "15",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "20",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "25",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "30",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "35",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "40",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "45",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "50",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "55",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "60",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "65",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "70",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "76",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+}
+]
+},
+"Guard|Unique|45": {
+"name": "Spiritforged Guard",
+"base": {
+"Attack": "92",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "5",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "10",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "15",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "20",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "25",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "30",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "35",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "40",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "45",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "50",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "55",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "60",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "65",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "70",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "76",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Top|Unique|54": {
+"name": "Bakarma Breastplate",
+"base": {
+"Defense": "397",
+"HP": "216"
+},
+"extra": [
+{
+"Defense": "15",
+"HP": "12"
+},
+{
+"Defense": "30",
+"HP": "24"
+},
+{
+"Defense": "45",
+"HP": "36"
+},
+{
+"Defense": "60",
+"HP": "48"
+},
+{
+"Defense": "75",
+"HP": "61"
+},
+{
+"Defense": "90",
+"HP": "74"
+},
+{
+"Defense": "106",
+"HP": "87"
+},
+{
+"Defense": "122",
+"HP": "100"
+},
+{
+"Defense": "138",
+"HP": "113"
+},
+{
+"Defense": "154",
+"HP": "126"
+},
+{
+"Defense": "170",
+"HP": "139"
+},
+{
+"Defense": "186",
+"HP": "152"
+},
+{
+"Defense": "202",
+"HP": "165"
+},
+{
+"Defense": "218",
+"HP": "178"
+},
+{
+"Defense": "234",
+"HP": "191"
+}
+]
+},
+"Legs|Unique|54": {
+"name": "Bakarma Greaves",
+"base": {
+"Defense": "331",
+"HP": "162"
+},
+"extra": [
+{
+"Defense": "15",
+"HP": "12"
+},
+{
+"Defense": "30",
+"HP": "24"
+},
+{
+"Defense": "45",
+"HP": "36"
+},
+{
+"Defense": "60",
+"HP": "48"
+},
+{
+"Defense": "75",
+"HP": "61"
+},
+{
+"Defense": "90",
+"HP": "74"
+},
+{
+"Defense": "106",
+"HP": "87"
+},
+{
+"Defense": "122",
+"HP": "100"
+},
+{
+"Defense": "138",
+"HP": "113"
+},
+{
+"Defense": "154",
+"HP": "126"
+},
+{
+"Defense": "170",
+"HP": "139"
+},
+{
+"Defense": "186",
+"HP": "152"
+},
+{
+"Defense": "202",
+"HP": "165"
+},
+{
+"Defense": "218",
+"HP": "178"
+},
+{
+"Defense": "234",
+"HP": "191"
+}
+]
+},
+"Helm|Unique|54": {
+"name": "Bakarma Helm",
+"base": {
+"Defense": "298",
+"HP": "135"
+},
+"extra": [
+{
+"Defense": "15",
+"HP": "12"
+},
+{
+"Defense": "30",
+"HP": "24"
+},
+{
+"Defense": "45",
+"HP": "36"
+},
+{
+"Defense": "60",
+"HP": "48"
+},
+{
+"Defense": "75",
+"HP": "61"
+},
+{
+"Defense": "90",
+"HP": "74"
+},
+{
+"Defense": "106",
+"HP": "87"
+},
+{
+"Defense": "122",
+"HP": "100"
+},
+{
+"Defense": "138",
+"HP": "113"
+},
+{
+"Defense": "154",
+"HP": "126"
+},
+{
+"Defense": "170",
+"HP": "139"
+},
+{
+"Defense": "186",
+"HP": "152"
+},
+{
+"Defense": "202",
+"HP": "165"
+},
+{
+"Defense": "218",
+"HP": "178"
+},
+{
+"Defense": "234",
+"HP": "191"
+}
+]
+},
+"Pauldrons|Unique|54": {
+"name": "Bakarma Pauldrons",
+"base": {
+"Defense": "298",
+"HP": "135"
+},
+"extra": [
+{
+"Defense": "15",
+"HP": "12"
+},
+{
+"Defense": "30",
+"HP": "24"
+},
+{
+"Defense": "45",
+"HP": "36"
+},
+{
+"Defense": "60",
+"HP": "48"
+},
+{
+"Defense": "75",
+"HP": "61"
+},
+{
+"Defense": "90",
+"HP": "74"
+},
+{
+"Defense": "106",
+"HP": "87"
+},
+{
+"Defense": "122",
+"HP": "100"
+},
+{
+"Defense": "138",
+"HP": "113"
+},
+{
+"Defense": "154",
+"HP": "126"
+},
+{
+"Defense": "170",
+"HP": "139"
+},
+{
+"Defense": "186",
+"HP": "152"
+},
+{
+"Defense": "202",
+"HP": "165"
+},
+{
+"Defense": "218",
+"HP": "178"
+},
+{
+"Defense": "234",
+"HP": "191"
+}
+]
+},
+"Gloves|Unique|54": {
+"name": "Bakarma Gloves",
+"base": {
+"Defense": "265",
+"HP": "108"
+},
+"extra": [
+{
+"Defense": "15",
+"HP": "12"
+},
+{
+"Defense": "30",
+"HP": "24"
+},
+{
+"Defense": "45",
+"HP": "36"
+},
+{
+"Defense": "60",
+"HP": "48"
+},
+{
+"Defense": "75",
+"HP": "61"
+},
+{
+"Defense": "90",
+"HP": "74"
+},
+{
+"Defense": "106",
+"HP": "87"
+},
+{
+"Defense": "122",
+"HP": "100"
+},
+{
+"Defense": "138",
+"HP": "113"
+},
+{
+"Defense": "154",
+"HP": "126"
+},
+{
+"Defense": "170",
+"HP": "139"
+},
+{
+"Defense": "186",
+"HP": "152"
+},
+{
+"Defense": "202",
+"HP": "165"
+},
+{
+"Defense": "218",
+"HP": "178"
+},
+{
+"Defense": "234",
+"HP": "191"
+}
+]
+},
+"Shoes|Unique|54": {
+"name": "Bakarma Boots",
+"base": {
+"Defense": "265",
+"HP": "108"
+},
+"extra": [
+{
+"Defense": "15",
+"HP": "12"
+},
+{
+"Defense": "30",
+"HP": "24"
+},
+{
+"Defense": "45",
+"HP": "36"
+},
+{
+"Defense": "60",
+"HP": "48"
+},
+{
+"Defense": "75",
+"HP": "61"
+},
+{
+"Defense": "90",
+"HP": "74"
+},
+{
+"Defense": "106",
+"HP": "87"
+},
+{
+"Defense": "122",
+"HP": "100"
+},
+{
+"Defense": "138",
+"HP": "113"
+},
+{
+"Defense": "154",
+"HP": "126"
+},
+{
+"Defense": "170",
+"HP": "139"
+},
+{
+"Defense": "186",
+"HP": "152"
+},
+{
+"Defense": "202",
+"HP": "165"
+},
+{
+"Defense": "218",
+"HP": "178"
+},
+{
+"Defense": "234",
+"HP": "191"
+}
+]
+},
+"Necklace|Epic|43": {
+"name": "Liberator Necklace",
+"base": {
+"Attack": "65",
+"Defense": "157"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "6"
+},
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "6",
+"Defense": "18"
+},
+{
+"Attack": "8",
+"Defense": "24"
+},
+{
+"Attack": "10",
+"Defense": "30"
+},
+{
+"Attack": "12",
+"Defense": "36"
+},
+{
+"Attack": "15",
+"Defense": "42"
+},
+{
+"Attack": "18",
+"Defense": "48"
+},
+{
+"Attack": "21",
+"Defense": "54"
+},
+{
+"Attack": "24",
+"Defense": "61"
+}
+]
+},
+"Cloak|Unique|54": {
+"name": "Bakarma Cloak",
+"base": {
+"Defense": "265",
+"HP": "108"
+},
+"extra": [
+{
+"Defense": "15",
+"HP": "12"
+},
+{
+"Defense": "30",
+"HP": "24"
+},
+{
+"Defense": "45",
+"HP": "36"
+},
+{
+"Defense": "60",
+"HP": "48"
+},
+{
+"Defense": "75",
+"HP": "61"
+},
+{
+"Defense": "90",
+"HP": "74"
+},
+{
+"Defense": "106",
+"HP": "87"
+},
+{
+"Defense": "122",
+"HP": "100"
+},
+{
+"Defense": "138",
+"HP": "113"
+},
+{
+"Defense": "154",
+"HP": "126"
+},
+{
+"Defense": "170",
+"HP": "139"
+},
+{
+"Defense": "186",
+"HP": "152"
+},
+{
+"Defense": "202",
+"HP": "165"
+},
+{
+"Defense": "218",
+"HP": "178"
+},
+{
+"Defense": "234",
+"HP": "191"
+}
+]
+},
+"Earrings|Epic|43": {
+"name": "Liberator Earrings",
+"base": {
+"Attack": "55",
+"Defense": "131"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "6"
+},
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "6",
+"Defense": "18"
+},
+{
+"Attack": "8",
+"Defense": "24"
+},
+{
+"Attack": "10",
+"Defense": "30"
+},
+{
+"Attack": "12",
+"Defense": "36"
+},
+{
+"Attack": "15",
+"Defense": "42"
+},
+{
+"Attack": "18",
+"Defense": "48"
+},
+{
+"Attack": "21",
+"Defense": "54"
+},
+{
+"Attack": "24",
+"Defense": "61"
+}
+]
+},
+"Ring|Epic|43": {
+"name": "Liberator Ring",
+"base": {
+"Attack": "44",
+"Defense": "105"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "6"
+},
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "6",
+"Defense": "18"
+},
+{
+"Attack": "8",
+"Defense": "24"
+},
+{
+"Attack": "10",
+"Defense": "30"
+},
+{
+"Attack": "12",
+"Defense": "36"
+},
+{
+"Attack": "15",
+"Defense": "42"
+},
+{
+"Attack": "18",
+"Defense": "48"
+},
+{
+"Attack": "21",
+"Defense": "54"
+},
+{
+"Attack": "24",
+"Defense": "61"
+}
+]
+},
+"Bracelet|Unique|51": {
+"name": "Ascension Bracelet",
+"base": {
+"Attack": "65",
+"Defense": "156"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "7"
+},
+{
+"Attack": "4",
+"Defense": "14"
+},
+{
+"Attack": "7",
+"Defense": "21"
+},
+{
+"Attack": "10",
+"Defense": "28"
+},
+{
+"Attack": "13",
+"Defense": "35"
+},
+{
+"Attack": "16",
+"Defense": "42"
+},
+{
+"Attack": "19",
+"Defense": "49"
+},
+{
+"Attack": "22",
+"Defense": "56"
+},
+{
+"Attack": "25",
+"Defense": "63"
+},
+{
+"Attack": "28",
+"Defense": "70"
+},
+{
+"Attack": "31",
+"Defense": "77"
+},
+{
+"Attack": "34",
+"Defense": "84"
+},
+{
+"Attack": "37",
+"Defense": "92"
+},
+{
+"Attack": "40",
+"Defense": "100"
+},
+{
+"Attack": "43",
+"Defense": "108"
+}
+]
+},
+"Bracelet|Epic|43": {
+"name": "Liberator Bracelet",
+"base": {
+"Attack": "55",
+"Defense": "131"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "6"
+},
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "6",
+"Defense": "18"
+},
+{
+"Attack": "8",
+"Defense": "24"
+},
+{
+"Attack": "10",
+"Defense": "30"
+},
+{
+"Attack": "12",
+"Defense": "36"
+},
+{
+"Attack": "15",
+"Defense": "42"
+},
+{
+"Attack": "18",
+"Defense": "48"
+},
+{
+"Attack": "21",
+"Defense": "54"
+},
+{
+"Attack": "24",
+"Defense": "61"
+}
+]
+},
+"Legs|Common|9": {
+"name": "Dawn Greaves",
+"base": {
+"Defense": "51",
+"HP": "27"
+},
+"extra": [
+{
+"Defense": "2",
+"HP": "2"
+},
+{
+"Defense": "4",
+"HP": "4"
+},
+{
+"Defense": "6",
+"HP": "6"
+},
+{
+"Defense": "9",
+"HP": "8"
+},
+{
+"Defense": "12",
+"HP": "11"
+}
+]
+},
+"Weapon|Rare|15": {
+"name": "Dawn Spellbook",
+"base": {
+"Attack": "73",
+"Accuracy": "100",
+"Critical Hit": "100"
+},
+"extra": [
+{
+"Attack": "1",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "3",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "5",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "7",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "9",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Guard|Rare|19": {
+"name": "Facade Guard",
+"base": {
+"Attack": "38",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "2",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "6",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "8",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "11",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Top|Common|16": {
+"name": "Facade Breastplate",
+"base": {
+"Defense": "112",
+"HP": "64"
+},
+"extra": [
+{
+"Defense": "4",
+"HP": "3"
+},
+{
+"Defense": "8",
+"HP": "7"
+},
+{
+"Defense": "12",
+"HP": "11"
+},
+{
+"Defense": "17",
+"HP": "15"
+},
+{
+"Defense": "22",
+"HP": "19"
+}
+]
+},
+"Pauldrons|Common|18": {
+"name": "Facade Pauldrons",
+"base": {
+"Defense": "95",
+"HP": "45"
+},
+"extra": [
+{
+"Defense": "5",
+"HP": "4"
+},
+{
+"Defense": "10",
+"HP": "8"
+},
+{
+"Defense": "15",
+"HP": "12"
+},
+{
+"Defense": "20",
+"HP": "17"
+},
+{
+"Defense": "25",
+"HP": "22"
+}
+]
+},
+"Shoes|Common|16": {
+"name": "Facade Boots",
+"base": {
+"Defense": "75",
+"HP": "32"
+},
+"extra": [
+{
+"Defense": "4",
+"HP": "3"
+},
+{
+"Defense": "8",
+"HP": "7"
+},
+{
+"Defense": "12",
+"HP": "11"
+},
+{
+"Defense": "17",
+"HP": "15"
+},
+{
+"Defense": "22",
+"HP": "19"
+}
+]
+},
+"Cloak|Common|20": {
+"name": "Earth Cloak",
+"base": {
+"Defense": "95",
+"HP": "40"
+},
+"extra": [
+{
+"Defense": "5",
+"HP": "4"
+},
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "16",
+"HP": "14"
+},
+{
+"Defense": "22",
+"HP": "19"
+},
+{
+"Defense": "28",
+"HP": "24"
+}
+]
+},
+"Gloves|Epic|25": {
+"name": "Red Agate Gloves",
+"base": {
+"Defense": "120",
+"HP": "50"
+},
+"extra": [
+{
+"Defense": "7",
+"HP": "5"
+},
+{
+"Defense": "14",
+"HP": "11"
+},
+{
+"Defense": "21",
+"HP": "17"
+},
+{
+"Defense": "28",
+"HP": "23"
+},
+{
+"Defense": "35",
+"HP": "29"
+},
+{
+"Defense": "42",
+"HP": "35"
+},
+{
+"Defense": "49",
+"HP": "41"
+},
+{
+"Defense": "56",
+"HP": "47"
+},
+{
+"Defense": "63",
+"HP": "53"
+},
+{
+"Defense": "71",
+"HP": "59"
+}
+]
+},
+"Necklace|Common|14": {
+"name": "Dawn Necklace",
+"base": {
+"Attack": "20",
+"Defense": "49"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "2"
+},
+{
+"Attack": "2",
+"Defense": "4"
+},
+{
+"Attack": "3",
+"Defense": "6"
+},
+{
+"Attack": "4",
+"Defense": "8"
+},
+{
+"Attack": "5",
+"Defense": "10"
+}
+]
+},
+"Ring|Common|14": {
+"name": "Dawn Ring",
+"base": {
+"Attack": "14",
+"Defense": "33"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "2"
+},
+{
+"Attack": "2",
+"Defense": "4"
+},
+{
+"Attack": "3",
+"Defense": "6"
+},
+{
+"Attack": "4",
+"Defense": "8"
+},
+{
+"Attack": "5",
+"Defense": "10"
+}
+]
+},
+"Bracelet|Rare|19": {
+"name": "Facade Bracelet",
+"base": {
+"Attack": "24",
+"Defense": "57"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "2"
+},
+{
+"Attack": "2",
+"Defense": "4"
+},
+{
+"Attack": "3",
+"Defense": "7"
+},
+{
+"Attack": "4",
+"Defense": "10"
+},
+{
+"Attack": "6",
+"Defense": "13"
+}
+]
+},
+"Pauldrons|Common|12": {
+"name": "Old Mercenary Commander Pauldrons",
+"base": {
+"Defense": "62",
+"HP": "30"
+},
+"extra": [
+{
+"Defense": "3",
+"HP": "3"
+},
+{
+"Defense": "6",
+"HP": "6"
+},
+{
+"Defense": "9",
+"HP": "9"
+},
+{
+"Defense": "13",
+"HP": "12"
+},
+{
+"Defense": "17",
+"HP": "15"
+}
+]
+},
+"Guard|Rare|14": {
+"name": "Old Mercenary Commander Guard",
+"base": {
+"Attack": "27",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "1",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "2",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "6",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "8",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Helm|Common|12": {
+"name": "Old Mercenary Commander Helm",
+"base": {
+"Defense": "62",
+"HP": "30"
+},
+"extra": [
+{
+"Defense": "3",
+"HP": "3"
+},
+{
+"Defense": "6",
+"HP": "6"
+},
+{
+"Defense": "9",
+"HP": "9"
+},
+{
+"Defense": "13",
+"HP": "12"
+},
+{
+"Defense": "17",
+"HP": "15"
+}
+]
+},
+"Earrings|Common|14": {
+"name": "Old Mercenary Commander Earrings",
+"base": {
+"Attack": "17",
+"Defense": "41"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "2"
+},
+{
+"Attack": "2",
+"Defense": "4"
+},
+{
+"Attack": "3",
+"Defense": "6"
+},
+{
+"Attack": "4",
+"Defense": "8"
+},
+{
+"Attack": "5",
+"Defense": "10"
+}
+]
+},
+"Helm|Epic|41": {
+"name": "Pilgrim Helm",
+"base": {
+"Defense": "225",
+"HP": "103"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "34",
+"HP": "27"
+},
+{
+"Defense": "46",
+"HP": "37"
+},
+{
+"Defense": "58",
+"HP": "47"
+},
+{
+"Defense": "70",
+"HP": "57"
+},
+{
+"Defense": "82",
+"HP": "67"
+},
+{
+"Defense": "94",
+"HP": "77"
+},
+{
+"Defense": "106",
+"HP": "87"
+},
+{
+"Defense": "118",
+"HP": "97"
+}
+]
+},
+"Guard|Epic|39": {
+"name": "Pilgrim Guard",
+"base": {
+"Attack": "79",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "8",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "12",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "16",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "20",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "24",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "29",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "34",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "39",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "44",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Pauldrons|Epic|41": {
+"name": "Pilgrim Pauldrons",
+"base": {
+"Defense": "225",
+"HP": "103"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "34",
+"HP": "27"
+},
+{
+"Defense": "46",
+"HP": "37"
+},
+{
+"Defense": "58",
+"HP": "47"
+},
+{
+"Defense": "70",
+"HP": "57"
+},
+{
+"Defense": "82",
+"HP": "67"
+},
+{
+"Defense": "94",
+"HP": "77"
+},
+{
+"Defense": "106",
+"HP": "87"
+},
+{
+"Defense": "118",
+"HP": "97"
+}
+]
+},
+"Gloves|Epic|39": {
+"name": "Pilgrim Gloves",
+"base": {
+"Defense": "190",
+"HP": "78"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "33",
+"HP": "27"
+},
+{
+"Defense": "44",
+"HP": "36"
+},
+{
+"Defense": "55",
+"HP": "45"
+},
+{
+"Defense": "66",
+"HP": "54"
+},
+{
+"Defense": "77",
+"HP": "63"
+},
+{
+"Defense": "88",
+"HP": "72"
+},
+{
+"Defense": "100",
+"HP": "82"
+},
+{
+"Defense": "112",
+"HP": "92"
+}
+]
+},
+"Shoes|Epic|39": {
+"name": "Pilgrim Boots",
+"base": {
+"Defense": "190",
+"HP": "78"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "33",
+"HP": "27"
+},
+{
+"Defense": "44",
+"HP": "36"
+},
+{
+"Defense": "55",
+"HP": "45"
+},
+{
+"Defense": "66",
+"HP": "54"
+},
+{
+"Defense": "77",
+"HP": "63"
+},
+{
+"Defense": "88",
+"HP": "72"
+},
+{
+"Defense": "100",
+"HP": "82"
+},
+{
+"Defense": "112",
+"HP": "92"
+}
+]
+},
+"Cloak|Epic|40": {
+"name": "Pilgrim Cloak",
+"base": {
+"Defense": "195",
+"HP": "80"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "33",
+"HP": "27"
+},
+{
+"Defense": "44",
+"HP": "36"
+},
+{
+"Defense": "55",
+"HP": "45"
+},
+{
+"Defense": "67",
+"HP": "54"
+},
+{
+"Defense": "79",
+"HP": "64"
+},
+{
+"Defense": "91",
+"HP": "74"
+},
+{
+"Defense": "103",
+"HP": "84"
+},
+{
+"Defense": "115",
+"HP": "94"
+}
+]
+},
+"Necklace|Epic|33": {
+"name": "Drifter Necklace",
+"base": {
+"Attack": "50",
+"Defense": "119"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "4"
+},
+{
+"Attack": "2",
+"Defense": "8"
+},
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "6",
+"Defense": "16"
+},
+{
+"Attack": "8",
+"Defense": "21"
+},
+{
+"Attack": "10",
+"Defense": "26"
+},
+{
+"Attack": "12",
+"Defense": "31"
+},
+{
+"Attack": "14",
+"Defense": "36"
+},
+{
+"Attack": "16",
+"Defense": "41"
+},
+{
+"Attack": "18",
+"Defense": "46"
+}
+]
+},
+"Earrings|Epic|38": {
+"name": "Judicator Earrings",
+"base": {
+"Attack": "48",
+"Defense": "115"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "5"
+},
+{
+"Attack": "4",
+"Defense": "10"
+},
+{
+"Attack": "6",
+"Defense": "15"
+},
+{
+"Attack": "8",
+"Defense": "20"
+},
+{
+"Attack": "10",
+"Defense": "25"
+},
+{
+"Attack": "12",
+"Defense": "30"
+},
+{
+"Attack": "14",
+"Defense": "36"
+},
+{
+"Attack": "16",
+"Defense": "42"
+},
+{
+"Attack": "18",
+"Defense": "48"
+},
+{
+"Attack": "21",
+"Defense": "54"
+}
+]
+},
+"Bracelet|Epic|33": {
+"name": "Drifter Bracelet",
+"base": {
+"Attack": "42",
+"Defense": "100"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "4"
+},
+{
+"Attack": "2",
+"Defense": "8"
+},
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "6",
+"Defense": "16"
+},
+{
+"Attack": "8",
+"Defense": "21"
+},
+{
+"Attack": "10",
+"Defense": "26"
+},
+{
+"Attack": "12",
+"Defense": "31"
+},
+{
+"Attack": "14",
+"Defense": "36"
+},
+{
+"Attack": "16",
+"Defense": "41"
+},
+{
+"Attack": "18",
+"Defense": "46"
+}
+]
+},
+"Guard|Unique|36": {
+"name": "Fantasy Guard",
+"base": {
+"Attack": "73",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "8",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "12",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "16",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "20",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "24",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "28",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "32",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "36",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "40",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "44",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "48",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "52",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "56",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "61",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Legs|Unique|41": {
+"name": "Courage Greaves",
+"base": {
+"Defense": "250",
+"HP": "123"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "33",
+"HP": "27"
+},
+{
+"Defense": "44",
+"HP": "36"
+},
+{
+"Defense": "56",
+"HP": "45"
+},
+{
+"Defense": "68",
+"HP": "55"
+},
+{
+"Defense": "80",
+"HP": "65"
+},
+{
+"Defense": "92",
+"HP": "75"
+},
+{
+"Defense": "104",
+"HP": "85"
+},
+{
+"Defense": "116",
+"HP": "95"
+},
+{
+"Defense": "128",
+"HP": "105"
+},
+{
+"Defense": "140",
+"HP": "115"
+},
+{
+"Defense": "152",
+"HP": "125"
+},
+{
+"Defense": "164",
+"HP": "135"
+},
+{
+"Defense": "176",
+"HP": "145"
+}
+]
+},
+"Shoes|Epic|40": {
+"name": "Anguish Boots",
+"base": {
+"Defense": "195",
+"HP": "80"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "33",
+"HP": "27"
+},
+{
+"Defense": "44",
+"HP": "36"
+},
+{
+"Defense": "55",
+"HP": "45"
+},
+{
+"Defense": "67",
+"HP": "54"
+},
+{
+"Defense": "79",
+"HP": "64"
+},
+{
+"Defense": "91",
+"HP": "74"
+},
+{
+"Defense": "103",
+"HP": "84"
+},
+{
+"Defense": "115",
+"HP": "94"
+}
+]
+},
+"Helm|Unique|41": {
+"name": "Courage Helm",
+"base": {
+"Defense": "225",
+"HP": "103"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "33",
+"HP": "27"
+},
+{
+"Defense": "44",
+"HP": "36"
+},
+{
+"Defense": "56",
+"HP": "45"
+},
+{
+"Defense": "68",
+"HP": "55"
+},
+{
+"Defense": "80",
+"HP": "65"
+},
+{
+"Defense": "92",
+"HP": "75"
+},
+{
+"Defense": "104",
+"HP": "85"
+},
+{
+"Defense": "116",
+"HP": "95"
+},
+{
+"Defense": "128",
+"HP": "105"
+},
+{
+"Defense": "140",
+"HP": "115"
+},
+{
+"Defense": "152",
+"HP": "125"
+},
+{
+"Defense": "164",
+"HP": "135"
+},
+{
+"Defense": "176",
+"HP": "145"
+}
+]
+},
+"Earrings|Epic|40": {
+"name": "Division Earrings",
+"base": {
+"Attack": "51",
+"Defense": "122"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "5"
+},
+{
+"Attack": "4",
+"Defense": "10"
+},
+{
+"Attack": "6",
+"Defense": "15"
+},
+{
+"Attack": "8",
+"Defense": "21"
+},
+{
+"Attack": "10",
+"Defense": "27"
+},
+{
+"Attack": "12",
+"Defense": "33"
+},
+{
+"Attack": "14",
+"Defense": "39"
+},
+{
+"Attack": "16",
+"Defense": "45"
+},
+{
+"Attack": "19",
+"Defense": "51"
+},
+{
+"Attack": "22",
+"Defense": "57"
+}
+]
+},
+"Legs|Common|16": {
+"name": "Outsider Greaves",
+"base": {
+"Defense": "94",
+"HP": "48"
+},
+"extra": [
+{
+"Defense": "4",
+"HP": "3"
+},
+{
+"Defense": "8",
+"HP": "7"
+},
+{
+"Defense": "12",
+"HP": "11"
+},
+{
+"Defense": "17",
+"HP": "15"
+},
+{
+"Defense": "22",
+"HP": "19"
+}
+]
+},
+"Cloak|Common|13": {
+"name": "Forgotten Cloak",
+"base": {
+"Defense": "60",
+"HP": "26"
+},
+"extra": [
+{
+"Defense": "3",
+"HP": "3"
+},
+{
+"Defense": "6",
+"HP": "6"
+},
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "14",
+"HP": "12"
+},
+{
+"Defense": "18",
+"HP": "16"
+}
+]
+},
+"Gloves|Rare|15": {
+"name": "Tempest Gloves",
+"base": {
+"Defense": "70",
+"HP": "30"
+},
+"extra": [
+{
+"Defense": "4",
+"HP": "3"
+},
+{
+"Defense": "8",
+"HP": "6"
+},
+{
+"Defense": "12",
+"HP": "10"
+},
+{
+"Defense": "16",
+"HP": "14"
+},
+{
+"Defense": "21",
+"HP": "18"
+}
+]
+},
+"Weapon|Epic|39": {
+"name": "Pilgrim Mace",
+"base": {
+"Attack": "178",
+"Accuracy": "100",
+"Critical Hit": "50",
+"Block": "50"
+},
+"extra": [
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "8",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "12",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "16",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "20",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "24",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "29",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "34",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "39",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "44",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+}
+]
+},
+"Top|Common|20": {
+"name": "Earth Breastplate",
+"base": {
+"Defense": "143",
+"HP": "80"
+},
+"extra": [
+{
+"Defense": "5",
+"HP": "4"
+},
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "16",
+"HP": "14"
+},
+{
+"Defense": "22",
+"HP": "19"
+},
+{
+"Defense": "28",
+"HP": "24"
+}
+]
+},
+"Helm|Epic|33": {
+"name": "Faith Helm",
+"base": {
+"Defense": "179",
+"HP": "83"
+},
+"extra": [
+{
+"Defense": "9",
+"HP": "7"
+},
+{
+"Defense": "18",
+"HP": "14"
+},
+{
+"Defense": "27",
+"HP": "22"
+},
+{
+"Defense": "36",
+"HP": "30"
+},
+{
+"Defense": "45",
+"HP": "38"
+},
+{
+"Defense": "54",
+"HP": "46"
+},
+{
+"Defense": "64",
+"HP": "54"
+},
+{
+"Defense": "74",
+"HP": "62"
+},
+{
+"Defense": "84",
+"HP": "70"
+},
+{
+"Defense": "94",
+"HP": "78"
+}
+]
+},
+"Ring|Epic|38": {
+"name": "Rotan Ring",
+"base": {
+"Attack": "38",
+"Defense": "92"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "5"
+},
+{
+"Attack": "4",
+"Defense": "10"
+},
+{
+"Attack": "6",
+"Defense": "15"
+},
+{
+"Attack": "8",
+"Defense": "20"
+},
+{
+"Attack": "10",
+"Defense": "25"
+},
+{
+"Attack": "12",
+"Defense": "30"
+},
+{
+"Attack": "14",
+"Defense": "36"
+},
+{
+"Attack": "16",
+"Defense": "42"
+},
+{
+"Attack": "18",
+"Defense": "48"
+},
+{
+"Attack": "21",
+"Defense": "54"
+}
+]
+},
+"Legs|Common|18": {
+"name": "Riverside Greaves",
+"base": {
+"Defense": "106",
+"HP": "54"
+},
+"extra": [
+{
+"Defense": "5",
+"HP": "4"
+},
+{
+"Defense": "10",
+"HP": "8"
+},
+{
+"Defense": "15",
+"HP": "12"
+},
+{
+"Defense": "20",
+"HP": "17"
+},
+{
+"Defense": "25",
+"HP": "22"
+}
+]
+},
+"Helm|Common|18": {
+"name": "Facade Helm",
+"base": {
+"Defense": "95",
+"HP": "45"
+},
+"extra": [
+{
+"Defense": "5",
+"HP": "4"
+},
+{
+"Defense": "10",
+"HP": "8"
+},
+{
+"Defense": "15",
+"HP": "12"
+},
+{
+"Defense": "20",
+"HP": "17"
+},
+{
+"Defense": "25",
+"HP": "22"
+}
+]
+},
+"Gloves|Rare|20": {
+"name": "Frontline Gloves",
+"base": {
+"Defense": "95",
+"HP": "40"
+},
+"extra": [
+{
+"Defense": "5",
+"HP": "4"
+},
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "16",
+"HP": "14"
+},
+{
+"Defense": "22",
+"HP": "19"
+},
+{
+"Defense": "28",
+"HP": "24"
+}
+]
+},
+"Cloak|Common|17": {
+"name": "Facade Cloak",
+"base": {
+"Defense": "80",
+"HP": "34"
+},
+"extra": [
+{
+"Defense": "4",
+"HP": "4"
+},
+{
+"Defense": "9",
+"HP": "8"
+},
+{
+"Defense": "14",
+"HP": "12"
+},
+{
+"Defense": "19",
+"HP": "16"
+},
+{
+"Defense": "24",
+"HP": "20"
+}
+]
+},
+"Gloves|Common|16": {
+"name": "Outsider Gloves",
+"base": {
+"Defense": "75",
+"HP": "32"
+},
+"extra": [
+{
+"Defense": "4",
+"HP": "3"
+},
+{
+"Defense": "8",
+"HP": "7"
+},
+{
+"Defense": "12",
+"HP": "11"
+},
+{
+"Defense": "17",
+"HP": "15"
+},
+{
+"Defense": "22",
+"HP": "19"
+}
+]
+},
+"Bracelet|Common|14": {
+"name": "Old Mercenary Commander Bracelet",
+"base": {
+"Attack": "17",
+"Defense": "41"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "2"
+},
+{
+"Attack": "2",
+"Defense": "4"
+},
+{
+"Attack": "3",
+"Defense": "6"
+},
+{
+"Attack": "4",
+"Defense": "8"
+},
+{
+"Attack": "5",
+"Defense": "10"
+}
+]
+},
+"Pauldrons|Epic|42": {
+"name": "Unyielding Pauldrons",
+"base": {
+"Defense": "230",
+"HP": "105"
+},
+"extra": [
+{
+"Defense": "12",
+"HP": "9"
+},
+{
+"Defense": "24",
+"HP": "19"
+},
+{
+"Defense": "36",
+"HP": "29"
+},
+{
+"Defense": "48",
+"HP": "39"
+},
+{
+"Defense": "60",
+"HP": "49"
+},
+{
+"Defense": "72",
+"HP": "59"
+},
+{
+"Defense": "84",
+"HP": "69"
+},
+{
+"Defense": "96",
+"HP": "79"
+},
+{
+"Defense": "108",
+"HP": "89"
+},
+{
+"Defense": "121",
+"HP": "99"
+}
+]
+},
+"Earrings|Unique|70": {
+"name": "Aulamus Earrings",
+"base": {
+"Attack": "90",
+"Defense": "216"
+},
+"extra": [
+{
+"Attack": "3",
+"Defense": "9"
+},
+{
+"Attack": "7",
+"Defense": "19"
+},
+{
+"Attack": "11",
+"Defense": "29"
+},
+{
+"Attack": "15",
+"Defense": "39"
+},
+{
+"Attack": "19",
+"Defense": "49"
+},
+{
+"Attack": "23",
+"Defense": "59"
+},
+{
+"Attack": "27",
+"Defense": "69"
+},
+{
+"Attack": "31",
+"Defense": "79"
+},
+{
+"Attack": "35",
+"Defense": "89"
+},
+{
+"Attack": "39",
+"Defense": "99"
+},
+{
+"Attack": "43",
+"Defense": "109"
+},
+{
+"Attack": "47",
+"Defense": "119"
+},
+{
+"Attack": "51",
+"Defense": "129"
+},
+{
+"Attack": "55",
+"Defense": "139"
+},
+{
+"Attack": "59",
+"Defense": "149"
+}
+]
+},
+"Shoes|Unique|70": {
+"name": "Vakron Boots",
+"base": {
+"Defense": "345",
+"HP": "140"
+},
+"extra": [
+{
+"Defense": "20",
+"HP": "16"
+},
+{
+"Defense": "40",
+"HP": "32"
+},
+{
+"Defense": "60",
+"HP": "48"
+},
+{
+"Defense": "80",
+"HP": "64"
+},
+{
+"Defense": "100",
+"HP": "80"
+},
+{
+"Defense": "120",
+"HP": "96"
+},
+{
+"Defense": "140",
+"HP": "112"
+},
+{
+"Defense": "160",
+"HP": "128"
+},
+{
+"Defense": "180",
+"HP": "145"
+},
+{
+"Defense": "200",
+"HP": "162"
+},
+{
+"Defense": "220",
+"HP": "179"
+},
+{
+"Defense": "241",
+"HP": "196"
+},
+{
+"Defense": "262",
+"HP": "213"
+},
+{
+"Defense": "283",
+"HP": "230"
+},
+{
+"Defense": "304",
+"HP": "247"
+}
+]
+},
+"Cloak|Unique|70": {
+"name": "Vakron Cloak",
+"base": {
+"Defense": "345",
+"HP": "140"
+},
+"extra": [
+{
+"Defense": "20",
+"HP": "16"
+},
+{
+"Defense": "40",
+"HP": "32"
+},
+{
+"Defense": "60",
+"HP": "48"
+},
+{
+"Defense": "80",
+"HP": "64"
+},
+{
+"Defense": "100",
+"HP": "80"
+},
+{
+"Defense": "120",
+"HP": "96"
+},
+{
+"Defense": "140",
+"HP": "112"
+},
+{
+"Defense": "160",
+"HP": "128"
+},
+{
+"Defense": "180",
+"HP": "145"
+},
+{
+"Defense": "200",
+"HP": "162"
+},
+{
+"Defense": "220",
+"HP": "179"
+},
+{
+"Defense": "241",
+"HP": "196"
+},
+{
+"Defense": "262",
+"HP": "213"
+},
+{
+"Defense": "283",
+"HP": "230"
+},
+{
+"Defense": "304",
+"HP": "247"
+}
+]
+},
+"Weapon|Rare|20": {
+"name": "Faded Agate Staff",
+"base": {
+"Attack": "109",
+"Accuracy": "75",
+"Critical Hit": "100",
+"Block": "125"
+},
+"extra": [
+{
+"Attack": "2",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "6",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "8",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "11",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+}
+]
+},
+"Ring|Unique|70": {
+"name": "Aulamus Ring",
+"base": {
+"Attack": "72",
+"Defense": "172"
+},
+"extra": [
+{
+"Attack": "3",
+"Defense": "9"
+},
+{
+"Attack": "7",
+"Defense": "19"
+},
+{
+"Attack": "11",
+"Defense": "29"
+},
+{
+"Attack": "15",
+"Defense": "39"
+},
+{
+"Attack": "19",
+"Defense": "49"
+},
+{
+"Attack": "23",
+"Defense": "59"
+},
+{
+"Attack": "27",
+"Defense": "69"
+},
+{
+"Attack": "31",
+"Defense": "79"
+},
+{
+"Attack": "35",
+"Defense": "89"
+},
+{
+"Attack": "39",
+"Defense": "99"
+},
+{
+"Attack": "43",
+"Defense": "109"
+},
+{
+"Attack": "47",
+"Defense": "119"
+},
+{
+"Attack": "51",
+"Defense": "129"
+},
+{
+"Attack": "55",
+"Defense": "139"
+},
+{
+"Attack": "59",
+"Defense": "149"
+}
+]
+},
+"Legs|Rare|21": {
+"name": "Chaser Greaves",
+"base": {
+"Defense": "125",
+"HP": "63"
+},
+"extra": [
+{
+"Defense": "6",
+"HP": "5"
+},
+{
+"Defense": "12",
+"HP": "10"
+},
+{
+"Defense": "18",
+"HP": "15"
+},
+{
+"Defense": "24",
+"HP": "20"
+},
+{
+"Defense": "30",
+"HP": "25"
+}
+]
+},
+"Pauldrons|Rare|26": {
+"name": "Chaser Pauldrons",
+"base": {
+"Defense": "140",
+"HP": "65"
+},
+"extra": [
+{
+"Defense": "7",
+"HP": "6"
+},
+{
+"Defense": "14",
+"HP": "12"
+},
+{
+"Defense": "21",
+"HP": "18"
+},
+{
+"Defense": "29",
+"HP": "24"
+},
+{
+"Defense": "37",
+"HP": "31"
+}
+]
+},
+"Top|Epic|25": {
+"name": "Red Agate Breastplate",
+"base": {
+"Defense": "180",
+"HP": "100"
+},
+"extra": [
+{
+"Defense": "7",
+"HP": "5"
+},
+{
+"Defense": "14",
+"HP": "11"
+},
+{
+"Defense": "21",
+"HP": "17"
+},
+{
+"Defense": "28",
+"HP": "23"
+},
+{
+"Defense": "35",
+"HP": "29"
+},
+{
+"Defense": "42",
+"HP": "35"
+},
+{
+"Defense": "49",
+"HP": "41"
+},
+{
+"Defense": "56",
+"HP": "47"
+},
+{
+"Defense": "63",
+"HP": "53"
+},
+{
+"Defense": "71",
+"HP": "59"
+}
+]
+},
+"Gloves|Rare|21": {
+"name": "Chaser Gloves",
+"base": {
+"Defense": "100",
+"HP": "42"
+},
+"extra": [
+{
+"Defense": "6",
+"HP": "5"
+},
+{
+"Defense": "12",
+"HP": "10"
+},
+{
+"Defense": "18",
+"HP": "15"
+},
+{
+"Defense": "24",
+"HP": "20"
+},
+{
+"Defense": "30",
+"HP": "25"
+}
+]
+},
+"Shoes|Rare|21": {
+"name": "Chaser Boots",
+"base": {
+"Defense": "100",
+"HP": "42"
+},
+"extra": [
+{
+"Defense": "6",
+"HP": "5"
+},
+{
+"Defense": "12",
+"HP": "10"
+},
+{
+"Defense": "18",
+"HP": "15"
+},
+{
+"Defense": "24",
+"HP": "20"
+},
+{
+"Defense": "30",
+"HP": "25"
+}
+]
+},
+"Cloak|Rare|22": {
+"name": "Chaser Cloak",
+"base": {
+"Defense": "105",
+"HP": "44"
+},
+"extra": [
+{
+"Defense": "6",
+"HP": "5"
+},
+{
+"Defense": "12",
+"HP": "10"
+},
+{
+"Defense": "18",
+"HP": "15"
+},
+{
+"Defense": "24",
+"HP": "20"
+},
+{
+"Defense": "31",
+"HP": "26"
+}
+]
+},
+"Guard|Rare|25": {
+"name": "Wind Breeze Guard",
+"base": {
+"Attack": "50",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "2",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "5",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "8",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "11",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "14",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Helm|Rare|26": {
+"name": "Wind Breeze Helm",
+"base": {
+"Defense": "140",
+"HP": "65"
+},
+"extra": [
+{
+"Defense": "7",
+"HP": "6"
+},
+{
+"Defense": "14",
+"HP": "12"
+},
+{
+"Defense": "21",
+"HP": "18"
+},
+{
+"Defense": "29",
+"HP": "24"
+},
+{
+"Defense": "37",
+"HP": "31"
+}
+]
+},
+"Weapon|Epic|33": {
+"name": "Faith Mace",
+"base": {
+"Attack": "149",
+"Accuracy": "100",
+"Critical Hit": "50",
+"Block": "50"
+},
+"extra": [
+{
+"Attack": "3",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "6",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "9",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "13",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "17",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "21",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "25",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "29",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "33",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "37",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+}
+]
+},
+"Earrings|Rare|19": {
+"name": "Facade Earrings",
+"base": {
+"Attack": "24",
+"Defense": "57"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "2"
+},
+{
+"Attack": "2",
+"Defense": "4"
+},
+{
+"Attack": "3",
+"Defense": "7"
+},
+{
+"Attack": "4",
+"Defense": "10"
+},
+{
+"Attack": "6",
+"Defense": "13"
+}
+]
+},
+"Ring|Rare|19": {
+"name": "Facade Ring",
+"base": {
+"Attack": "19",
+"Defense": "45"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "2"
+},
+{
+"Attack": "2",
+"Defense": "4"
+},
+{
+"Attack": "3",
+"Defense": "7"
+},
+{
+"Attack": "4",
+"Defense": "10"
+},
+{
+"Attack": "6",
+"Defense": "13"
+}
+]
+},
+"Cloak|Epic|33": {
+"name": "Faith Cloak",
+"base": {
+"Defense": "159",
+"HP": "66"
+},
+"extra": [
+{
+"Defense": "9",
+"HP": "7"
+},
+{
+"Defense": "18",
+"HP": "14"
+},
+{
+"Defense": "27",
+"HP": "22"
+},
+{
+"Defense": "36",
+"HP": "30"
+},
+{
+"Defense": "45",
+"HP": "38"
+},
+{
+"Defense": "54",
+"HP": "46"
+},
+{
+"Defense": "64",
+"HP": "54"
+},
+{
+"Defense": "74",
+"HP": "62"
+},
+{
+"Defense": "84",
+"HP": "70"
+},
+{
+"Defense": "94",
+"HP": "78"
+}
+]
+},
+"Weapon|Rare|26": {
+"name": "Wind Breeze Dagger",
+"base": {
+"Attack": "117",
+"Accuracy": "50",
+"Critical Hit": "200",
+"Block": "50"
+},
+"extra": [
+{
+"Attack": "3",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "6",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "9",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "12",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "15",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+}
+]
+},
+"Helm|Rare|20": {
+"name": "Ethereal Helm",
+"base": {
+"Defense": "107",
+"HP": "50"
+},
+"extra": [
+{
+"Defense": "5",
+"HP": "4"
+},
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "16",
+"HP": "14"
+},
+{
+"Defense": "22",
+"HP": "19"
+},
+{
+"Defense": "28",
+"HP": "24"
+}
+]
+},
+"Legs|Epic|40": {
+"name": "Anguish Greaves",
+"base": {
+"Defense": "244",
+"HP": "120"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "33",
+"HP": "27"
+},
+{
+"Defense": "44",
+"HP": "36"
+},
+{
+"Defense": "55",
+"HP": "45"
+},
+{
+"Defense": "67",
+"HP": "54"
+},
+{
+"Defense": "79",
+"HP": "64"
+},
+{
+"Defense": "91",
+"HP": "74"
+},
+{
+"Defense": "103",
+"HP": "84"
+},
+{
+"Defense": "115",
+"HP": "94"
+}
+]
+},
+"Shoes|Rare|20": {
+"name": "Chaos Boots",
+"base": {
+"Defense": "95",
+"HP": "40"
+},
+"extra": [
+{
+"Defense": "5",
+"HP": "4"
+},
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "16",
+"HP": "14"
+},
+{
+"Defense": "22",
+"HP": "19"
+},
+{
+"Defense": "28",
+"HP": "24"
+}
+]
+},
+"Cloak|Unique|41": {
+"name": "Spectral Cloak",
+"base": {
+"Defense": "200",
+"HP": "82"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "33",
+"HP": "27"
+},
+{
+"Defense": "44",
+"HP": "36"
+},
+{
+"Defense": "56",
+"HP": "45"
+},
+{
+"Defense": "68",
+"HP": "55"
+},
+{
+"Defense": "80",
+"HP": "65"
+},
+{
+"Defense": "92",
+"HP": "75"
+},
+{
+"Defense": "104",
+"HP": "85"
+},
+{
+"Defense": "116",
+"HP": "95"
+},
+{
+"Defense": "128",
+"HP": "105"
+},
+{
+"Defense": "140",
+"HP": "115"
+},
+{
+"Defense": "152",
+"HP": "125"
+},
+{
+"Defense": "164",
+"HP": "135"
+},
+{
+"Defense": "176",
+"HP": "145"
+}
+]
+},
+"Legs|Rare|20": {
+"name": "Frontline Greaves",
+"base": {
+"Defense": "119",
+"HP": "60"
+},
+"extra": [
+{
+"Defense": "5",
+"HP": "4"
+},
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "16",
+"HP": "14"
+},
+{
+"Defense": "22",
+"HP": "19"
+},
+{
+"Defense": "28",
+"HP": "24"
+}
+]
+},
+"Gloves|Common|18": {
+"name": "Riverside Gloves",
+"base": {
+"Defense": "84",
+"HP": "36"
+},
+"extra": [
+{
+"Defense": "5",
+"HP": "4"
+},
+{
+"Defense": "10",
+"HP": "8"
+},
+{
+"Defense": "15",
+"HP": "12"
+},
+{
+"Defense": "20",
+"HP": "17"
+},
+{
+"Defense": "25",
+"HP": "22"
+}
+]
+},
+"Necklace|Epic|38": {
+"name": "Silent Necklace",
+"base": {
+"Attack": "58",
+"Defense": "138"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "5"
+},
+{
+"Attack": "4",
+"Defense": "10"
+},
+{
+"Attack": "6",
+"Defense": "15"
+},
+{
+"Attack": "8",
+"Defense": "20"
+},
+{
+"Attack": "10",
+"Defense": "25"
+},
+{
+"Attack": "12",
+"Defense": "30"
+},
+{
+"Attack": "14",
+"Defense": "36"
+},
+{
+"Attack": "16",
+"Defense": "42"
+},
+{
+"Attack": "18",
+"Defense": "48"
+},
+{
+"Attack": "21",
+"Defense": "54"
+}
+]
+},
+"Helm|Common|20": {
+"name": "Earth Helm",
+"base": {
+"Defense": "107",
+"HP": "50"
+},
+"extra": [
+{
+"Defense": "5",
+"HP": "4"
+},
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "16",
+"HP": "14"
+},
+{
+"Defense": "22",
+"HP": "19"
+},
+{
+"Defense": "28",
+"HP": "24"
+}
+]
+},
+"Pauldrons|Common|13": {
+"name": "Forgotten Pauldrons",
+"base": {
+"Defense": "67",
+"HP": "33"
+},
+"extra": [
+{
+"Defense": "3",
+"HP": "3"
+},
+{
+"Defense": "6",
+"HP": "6"
+},
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "14",
+"HP": "12"
+},
+{
+"Defense": "18",
+"HP": "16"
+}
+]
+},
+"Ring|Epic|25": {
+"name": "Incomplete Test Subject Ring",
+"base": {
+"Attack": "25",
+"Defense": "60"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "3"
+},
+{
+"Attack": "2",
+"Defense": "6"
+},
+{
+"Attack": "3",
+"Defense": "9"
+},
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "5",
+"Defense": "15"
+},
+{
+"Attack": "6",
+"Defense": "19"
+},
+{
+"Attack": "8",
+"Defense": "23"
+},
+{
+"Attack": "10",
+"Defense": "27"
+},
+{
+"Attack": "12",
+"Defense": "31"
+},
+{
+"Attack": "14",
+"Defense": "35"
+}
+]
+},
+"Top|Rare|21": {
+"name": "Chaser Breastplate",
+"base": {
+"Defense": "150",
+"HP": "84"
+},
+"extra": [
+{
+"Defense": "6",
+"HP": "5"
+},
+{
+"Defense": "12",
+"HP": "10"
+},
+{
+"Defense": "18",
+"HP": "15"
+},
+{
+"Defense": "24",
+"HP": "20"
+},
+{
+"Defense": "30",
+"HP": "25"
+}
+]
+},
+"Cloak|Common|18": {
+"name": "Phantasm Cloak",
+"base": {
+"Defense": "84",
+"HP": "36"
+},
+"extra": [
+{
+"Defense": "5",
+"HP": "4"
+},
+{
+"Defense": "10",
+"HP": "8"
+},
+{
+"Defense": "15",
+"HP": "12"
+},
+{
+"Defense": "20",
+"HP": "17"
+},
+{
+"Defense": "25",
+"HP": "22"
+}
+]
+},
+"Top|Common|18": {
+"name": "Phantasm Breastplate",
+"base": {
+"Defense": "127",
+"HP": "72"
+},
+"extra": [
+{
+"Defense": "5",
+"HP": "4"
+},
+{
+"Defense": "10",
+"HP": "8"
+},
+{
+"Defense": "15",
+"HP": "12"
+},
+{
+"Defense": "20",
+"HP": "17"
+},
+{
+"Defense": "25",
+"HP": "22"
+}
+]
+},
+"Pauldrons|Rare|15": {
+"name": "Rainy Forest Pauldrons",
+"base": {
+"Defense": "79",
+"HP": "38"
+},
+"extra": [
+{
+"Defense": "4",
+"HP": "3"
+},
+{
+"Defense": "8",
+"HP": "6"
+},
+{
+"Defense": "12",
+"HP": "10"
+},
+{
+"Defense": "16",
+"HP": "14"
+},
+{
+"Defense": "21",
+"HP": "18"
+}
+]
+},
+"Gloves|Common|13": {
+"name": "Forgotten Gloves",
+"base": {
+"Defense": "60",
+"HP": "26"
+},
+"extra": [
+{
+"Defense": "3",
+"HP": "3"
+},
+{
+"Defense": "6",
+"HP": "6"
+},
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "14",
+"HP": "12"
+},
+{
+"Defense": "18",
+"HP": "16"
+}
+]
+},
+"Helm|Rare|15": {
+"name": "Rainy Forest Helm",
+"base": {
+"Defense": "79",
+"HP": "38"
+},
+"extra": [
+{
+"Defense": "4",
+"HP": "3"
+},
+{
+"Defense": "8",
+"HP": "6"
+},
+{
+"Defense": "12",
+"HP": "10"
+},
+{
+"Defense": "16",
+"HP": "14"
+},
+{
+"Defense": "21",
+"HP": "18"
+}
+]
+},
+"Cloak|Epic|25": {
+"name": "Red Agate Cloak",
+"base": {
+"Defense": "120",
+"HP": "50"
+},
+"extra": [
+{
+"Defense": "7",
+"HP": "5"
+},
+{
+"Defense": "14",
+"HP": "11"
+},
+{
+"Defense": "21",
+"HP": "17"
+},
+{
+"Defense": "28",
+"HP": "23"
+},
+{
+"Defense": "35",
+"HP": "29"
+},
+{
+"Defense": "42",
+"HP": "35"
+},
+{
+"Defense": "49",
+"HP": "41"
+},
+{
+"Defense": "56",
+"HP": "47"
+},
+{
+"Defense": "63",
+"HP": "53"
+},
+{
+"Defense": "71",
+"HP": "59"
+}
+]
+},
+"Shoes|Epic|33": {
+"name": "Faith Boots",
+"base": {
+"Defense": "159",
+"HP": "66"
+},
+"extra": [
+{
+"Defense": "9",
+"HP": "7"
+},
+{
+"Defense": "18",
+"HP": "14"
+},
+{
+"Defense": "27",
+"HP": "22"
+},
+{
+"Defense": "36",
+"HP": "30"
+},
+{
+"Defense": "45",
+"HP": "38"
+},
+{
+"Defense": "54",
+"HP": "46"
+},
+{
+"Defense": "64",
+"HP": "54"
+},
+{
+"Defense": "74",
+"HP": "62"
+},
+{
+"Defense": "84",
+"HP": "70"
+},
+{
+"Defense": "94",
+"HP": "78"
+}
+]
+},
+"Ring|Epic|40": {
+"name": "Anguish Ring",
+"base": {
+"Attack": "41",
+"Defense": "97"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "5"
+},
+{
+"Attack": "4",
+"Defense": "10"
+},
+{
+"Attack": "6",
+"Defense": "15"
+},
+{
+"Attack": "8",
+"Defense": "21"
+},
+{
+"Attack": "10",
+"Defense": "27"
+},
+{
+"Attack": "12",
+"Defense": "33"
+},
+{
+"Attack": "14",
+"Defense": "39"
+},
+{
+"Attack": "16",
+"Defense": "45"
+},
+{
+"Attack": "19",
+"Defense": "51"
+},
+{
+"Attack": "22",
+"Defense": "57"
+}
+]
+},
+"Legs|Epic|29": {
+"name": "Drifter Greaves",
+"base": {
+"Defense": "175",
+"HP": "87"
+},
+"extra": [
+{
+"Defense": "8",
+"HP": "6"
+},
+{
+"Defense": "16",
+"HP": "13"
+},
+{
+"Defense": "24",
+"HP": "20"
+},
+{
+"Defense": "32",
+"HP": "27"
+},
+{
+"Defense": "40",
+"HP": "34"
+},
+{
+"Defense": "48",
+"HP": "41"
+},
+{
+"Defense": "56",
+"HP": "48"
+},
+{
+"Defense": "65",
+"HP": "55"
+},
+{
+"Defense": "74",
+"HP": "62"
+},
+{
+"Defense": "83",
+"HP": "69"
+}
+]
+},
+"Necklace|Rare|25": {
+"name": "Wind Breeze Necklace",
+"base": {
+"Attack": "38",
+"Defense": "90"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "3"
+},
+{
+"Attack": "2",
+"Defense": "6"
+},
+{
+"Attack": "3",
+"Defense": "10"
+},
+{
+"Attack": "5",
+"Defense": "14"
+},
+{
+"Attack": "7",
+"Defense": "18"
+}
+]
+},
+"Shoes|Epic|25": {
+"name": "Red Agate Boots",
+"base": {
+"Defense": "120",
+"HP": "50"
+},
+"extra": [
+{
+"Defense": "7",
+"HP": "5"
+},
+{
+"Defense": "14",
+"HP": "11"
+},
+{
+"Defense": "21",
+"HP": "17"
+},
+{
+"Defense": "28",
+"HP": "23"
+},
+{
+"Defense": "35",
+"HP": "29"
+},
+{
+"Defense": "42",
+"HP": "35"
+},
+{
+"Defense": "49",
+"HP": "41"
+},
+{
+"Defense": "56",
+"HP": "47"
+},
+{
+"Defense": "63",
+"HP": "53"
+},
+{
+"Defense": "71",
+"HP": "59"
+}
+]
+},
+"Gloves|Epic|29": {
+"name": "Avenger Gloves",
+"base": {
+"Defense": "140",
+"HP": "58"
+},
+"extra": [
+{
+"Defense": "8",
+"HP": "6"
+},
+{
+"Defense": "16",
+"HP": "13"
+},
+{
+"Defense": "24",
+"HP": "20"
+},
+{
+"Defense": "32",
+"HP": "27"
+},
+{
+"Defense": "40",
+"HP": "34"
+},
+{
+"Defense": "48",
+"HP": "41"
+},
+{
+"Defense": "56",
+"HP": "48"
+},
+{
+"Defense": "65",
+"HP": "55"
+},
+{
+"Defense": "74",
+"HP": "62"
+},
+{
+"Defense": "83",
+"HP": "69"
+}
+]
+},
+"Gloves|Epic|42": {
+"name": "Unyielding Gloves",
+"base": {
+"Defense": "204",
+"HP": "84"
+},
+"extra": [
+{
+"Defense": "12",
+"HP": "9"
+},
+{
+"Defense": "24",
+"HP": "19"
+},
+{
+"Defense": "36",
+"HP": "29"
+},
+{
+"Defense": "48",
+"HP": "39"
+},
+{
+"Defense": "60",
+"HP": "49"
+},
+{
+"Defense": "72",
+"HP": "59"
+},
+{
+"Defense": "84",
+"HP": "69"
+},
+{
+"Defense": "96",
+"HP": "79"
+},
+{
+"Defense": "108",
+"HP": "89"
+},
+{
+"Defense": "121",
+"HP": "99"
+}
+]
+},
+"Shoes|Epic|42": {
+"name": "Unyielding Boots",
+"base": {
+"Defense": "204",
+"HP": "84"
+},
+"extra": [
+{
+"Defense": "12",
+"HP": "9"
+},
+{
+"Defense": "24",
+"HP": "19"
+},
+{
+"Defense": "36",
+"HP": "29"
+},
+{
+"Defense": "48",
+"HP": "39"
+},
+{
+"Defense": "60",
+"HP": "49"
+},
+{
+"Defense": "72",
+"HP": "59"
+},
+{
+"Defense": "84",
+"HP": "69"
+},
+{
+"Defense": "96",
+"HP": "79"
+},
+{
+"Defense": "108",
+"HP": "89"
+},
+{
+"Defense": "121",
+"HP": "99"
+}
+]
+},
+"Cloak|Epic|42": {
+"name": "Unyielding Cloak",
+"base": {
+"Defense": "204",
+"HP": "84"
+},
+"extra": [
+{
+"Defense": "12",
+"HP": "9"
+},
+{
+"Defense": "24",
+"HP": "19"
+},
+{
+"Defense": "36",
+"HP": "29"
+},
+{
+"Defense": "48",
+"HP": "39"
+},
+{
+"Defense": "60",
+"HP": "49"
+},
+{
+"Defense": "72",
+"HP": "59"
+},
+{
+"Defense": "84",
+"HP": "69"
+},
+{
+"Defense": "96",
+"HP": "79"
+},
+{
+"Defense": "108",
+"HP": "89"
+},
+{
+"Defense": "121",
+"HP": "99"
+}
+]
+},
+"Helm|Epic|32": {
+"name": "Drifter Helm",
+"base": {
+"Defense": "174",
+"HP": "80"
+},
+"extra": [
+{
+"Defense": "9",
+"HP": "7"
+},
+{
+"Defense": "18",
+"HP": "14"
+},
+{
+"Defense": "27",
+"HP": "21"
+},
+{
+"Defense": "36",
+"HP": "28"
+},
+{
+"Defense": "45",
+"HP": "36"
+},
+{
+"Defense": "54",
+"HP": "44"
+},
+{
+"Defense": "63",
+"HP": "52"
+},
+{
+"Defense": "72",
+"HP": "60"
+},
+{
+"Defense": "81",
+"HP": "68"
+},
+{
+"Defense": "91",
+"HP": "76"
+}
+]
+},
+"Pauldrons|Epic|38": {
+"name": "Judicator Pauldrons",
+"base": {
+"Defense": "207",
+"HP": "95"
+},
+"extra": [
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "21",
+"HP": "18"
+},
+{
+"Defense": "32",
+"HP": "27"
+},
+{
+"Defense": "43",
+"HP": "36"
+},
+{
+"Defense": "54",
+"HP": "45"
+},
+{
+"Defense": "65",
+"HP": "54"
+},
+{
+"Defense": "76",
+"HP": "63"
+},
+{
+"Defense": "87",
+"HP": "72"
+},
+{
+"Defense": "98",
+"HP": "81"
+},
+{
+"Defense": "109",
+"HP": "90"
+}
+]
+},
+"Shoes|Epic|31": {
+"name": "Drifter Boots",
+"base": {
+"Defense": "150",
+"HP": "62"
+},
+"extra": [
+{
+"Defense": "8",
+"HP": "7"
+},
+{
+"Defense": "16",
+"HP": "14"
+},
+{
+"Defense": "25",
+"HP": "21"
+},
+{
+"Defense": "34",
+"HP": "28"
+},
+{
+"Defense": "43",
+"HP": "35"
+},
+{
+"Defense": "52",
+"HP": "42"
+},
+{
+"Defense": "61",
+"HP": "49"
+},
+{
+"Defense": "70",
+"HP": "57"
+},
+{
+"Defense": "79",
+"HP": "65"
+},
+{
+"Defense": "88",
+"HP": "73"
+}
+]
+},
+"Cloak|Epic|30": {
+"name": "Drifter Cloak",
+"base": {
+"Defense": "145",
+"HP": "60"
+},
+"extra": [
+{
+"Defense": "8",
+"HP": "7"
+},
+{
+"Defense": "16",
+"HP": "14"
+},
+{
+"Defense": "24",
+"HP": "21"
+},
+{
+"Defense": "32",
+"HP": "28"
+},
+{
+"Defense": "41",
+"HP": "35"
+},
+{
+"Defense": "50",
+"HP": "42"
+},
+{
+"Defense": "59",
+"HP": "49"
+},
+{
+"Defense": "68",
+"HP": "56"
+},
+{
+"Defense": "77",
+"HP": "63"
+},
+{
+"Defense": "86",
+"HP": "71"
+}
+]
+},
+"Weapon|Unique|54": {
+"name": "Rupture Jewel",
+"base": {
+"Attack": "331",
+"Accuracy": "50",
+"Critical Hit": "150"
+},
+"extra": [
+{
+"Attack": "6",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "12",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "18",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "24",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "30",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "36",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "42",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "48",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "54",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "60",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "66",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "72",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "78",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "85",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "92",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Earrings|Unique|54": {
+"name": "Berk Earrings",
+"base": {
+"Attack": "69",
+"Defense": "166"
+},
+"extra": [
+{
+"Attack": "3",
+"Defense": "7"
+},
+{
+"Attack": "6",
+"Defense": "14"
+},
+{
+"Attack": "9",
+"Defense": "21"
+},
+{
+"Attack": "12",
+"Defense": "28"
+},
+{
+"Attack": "15",
+"Defense": "35"
+},
+{
+"Attack": "18",
+"Defense": "43"
+},
+{
+"Attack": "21",
+"Defense": "51"
+},
+{
+"Attack": "24",
+"Defense": "59"
+},
+{
+"Attack": "27",
+"Defense": "67"
+},
+{
+"Attack": "30",
+"Defense": "75"
+},
+{
+"Attack": "33",
+"Defense": "83"
+},
+{
+"Attack": "36",
+"Defense": "91"
+},
+{
+"Attack": "39",
+"Defense": "99"
+},
+{
+"Attack": "42",
+"Defense": "107"
+},
+{
+"Attack": "45",
+"Defense": "115"
+}
+]
+},
+"Ring|Unique|54": {
+"name": "Berk Ring",
+"base": {
+"Attack": "55",
+"Defense": "132"
+},
+"extra": [
+{
+"Attack": "3",
+"Defense": "7"
+},
+{
+"Attack": "6",
+"Defense": "14"
+},
+{
+"Attack": "9",
+"Defense": "21"
+},
+{
+"Attack": "12",
+"Defense": "28"
+},
+{
+"Attack": "15",
+"Defense": "35"
+},
+{
+"Attack": "18",
+"Defense": "43"
+},
+{
+"Attack": "21",
+"Defense": "51"
+},
+{
+"Attack": "24",
+"Defense": "59"
+},
+{
+"Attack": "27",
+"Defense": "67"
+},
+{
+"Attack": "30",
+"Defense": "75"
+},
+{
+"Attack": "33",
+"Defense": "83"
+},
+{
+"Attack": "36",
+"Defense": "91"
+},
+{
+"Attack": "39",
+"Defense": "99"
+},
+{
+"Attack": "42",
+"Defense": "107"
+},
+{
+"Attack": "45",
+"Defense": "115"
+}
+]
+},
+"Top|Epic|33": {
+"name": "Faith Breastplate",
+"base": {
+"Defense": "239",
+"HP": "132"
+},
+"extra": [
+{
+"Defense": "9",
+"HP": "7"
+},
+{
+"Defense": "18",
+"HP": "14"
+},
+{
+"Defense": "27",
+"HP": "22"
+},
+{
+"Defense": "36",
+"HP": "30"
+},
+{
+"Defense": "45",
+"HP": "38"
+},
+{
+"Defense": "54",
+"HP": "46"
+},
+{
+"Defense": "64",
+"HP": "54"
+},
+{
+"Defense": "74",
+"HP": "62"
+},
+{
+"Defense": "84",
+"HP": "70"
+},
+{
+"Defense": "94",
+"HP": "78"
+}
+]
+},
+"Gloves|Epic|23": {
+"name": "Elder Gloves",
+"base": {
+"Defense": "110",
+"HP": "46"
+},
+"extra": [
+{
+"Defense": "6",
+"HP": "5"
+},
+{
+"Defense": "12",
+"HP": "10"
+},
+{
+"Defense": "18",
+"HP": "15"
+},
+{
+"Defense": "24",
+"HP": "20"
+},
+{
+"Defense": "30",
+"HP": "25"
+},
+{
+"Defense": "37",
+"HP": "31"
+},
+{
+"Defense": "44",
+"HP": "37"
+},
+{
+"Defense": "51",
+"HP": "43"
+},
+{
+"Defense": "58",
+"HP": "49"
+},
+{
+"Defense": "65",
+"HP": "55"
+}
+]
+},
+"Cloak|Rare|25": {
+"name": "Comet Cloak",
+"base": {
+"Defense": "120",
+"HP": "50"
+},
+"extra": [
+{
+"Defense": "7",
+"HP": "6"
+},
+{
+"Defense": "14",
+"HP": "12"
+},
+{
+"Defense": "21",
+"HP": "18"
+},
+{
+"Defense": "28",
+"HP": "24"
+},
+{
+"Defense": "36",
+"HP": "30"
+}
+]
+},
+"Helm|Epic|45": {
+"name": "Corrupted Judicator Helm",
+"base": {
+"Defense": "248",
+"HP": "113"
+},
+"extra": [
+{
+"Defense": "13",
+"HP": "10"
+},
+{
+"Defense": "26",
+"HP": "20"
+},
+{
+"Defense": "39",
+"HP": "30"
+},
+{
+"Defense": "52",
+"HP": "40"
+},
+{
+"Defense": "65",
+"HP": "51"
+},
+{
+"Defense": "78",
+"HP": "62"
+},
+{
+"Defense": "91",
+"HP": "73"
+},
+{
+"Defense": "104",
+"HP": "84"
+},
+{
+"Defense": "117",
+"HP": "95"
+},
+{
+"Defense": "130",
+"HP": "106"
+}
+]
+},
+"Gloves|Unique|70": {
+"name": "Vakron Gloves",
+"base": {
+"Defense": "345",
+"HP": "140"
+},
+"extra": [
+{
+"Defense": "20",
+"HP": "16"
+},
+{
+"Defense": "40",
+"HP": "32"
+},
+{
+"Defense": "60",
+"HP": "48"
+},
+{
+"Defense": "80",
+"HP": "64"
+},
+{
+"Defense": "100",
+"HP": "80"
+},
+{
+"Defense": "120",
+"HP": "96"
+},
+{
+"Defense": "140",
+"HP": "112"
+},
+{
+"Defense": "160",
+"HP": "128"
+},
+{
+"Defense": "180",
+"HP": "145"
+},
+{
+"Defense": "200",
+"HP": "162"
+},
+{
+"Defense": "220",
+"HP": "179"
+},
+{
+"Defense": "241",
+"HP": "196"
+},
+{
+"Defense": "262",
+"HP": "213"
+},
+{
+"Defense": "283",
+"HP": "230"
+},
+{
+"Defense": "304",
+"HP": "247"
+}
+]
+},
+"Pauldrons|Unique|70": {
+"name": "Gartua Pauldrons",
+"base": {
+"Defense": "388",
+"HP": "175"
+},
+"extra": [
+{
+"Defense": "20",
+"HP": "16"
+},
+{
+"Defense": "40",
+"HP": "32"
+},
+{
+"Defense": "60",
+"HP": "48"
+},
+{
+"Defense": "80",
+"HP": "64"
+},
+{
+"Defense": "100",
+"HP": "80"
+},
+{
+"Defense": "120",
+"HP": "96"
+},
+{
+"Defense": "140",
+"HP": "112"
+},
+{
+"Defense": "160",
+"HP": "128"
+},
+{
+"Defense": "180",
+"HP": "145"
+},
+{
+"Defense": "200",
+"HP": "162"
+},
+{
+"Defense": "220",
+"HP": "179"
+},
+{
+"Defense": "241",
+"HP": "196"
+},
+{
+"Defense": "262",
+"HP": "213"
+},
+{
+"Defense": "283",
+"HP": "230"
+},
+{
+"Defense": "304",
+"HP": "247"
+}
+]
+},
+"Necklace|Unique|86": {
+"name": "Enraged Kromede Necklace",
+"base": {
+"Attack": "133",
+"Defense": "318"
+},
+"extra": [
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "8",
+"Defense": "24"
+},
+{
+"Attack": "12",
+"Defense": "36"
+},
+{
+"Attack": "17",
+"Defense": "48"
+},
+{
+"Attack": "22",
+"Defense": "60"
+},
+{
+"Attack": "27",
+"Defense": "72"
+},
+{
+"Attack": "32",
+"Defense": "84"
+},
+{
+"Attack": "37",
+"Defense": "96"
+},
+{
+"Attack": "42",
+"Defense": "108"
+},
+{
+"Attack": "47",
+"Defense": "120"
+},
+{
+"Attack": "52",
+"Defense": "132"
+},
+{
+"Attack": "57",
+"Defense": "145"
+},
+{
+"Attack": "62",
+"Defense": "158"
+},
+{
+"Attack": "67",
+"Defense": "171"
+},
+{
+"Attack": "72",
+"Defense": "184"
+}
+]
+},
+"Helm|Unique|70": {
+"name": "Vakron Helm",
+"base": {
+"Defense": "388",
+"HP": "175"
+},
+"extra": [
+{
+"Defense": "20",
+"HP": "16"
+},
+{
+"Defense": "40",
+"HP": "32"
+},
+{
+"Defense": "60",
+"HP": "48"
+},
+{
+"Defense": "80",
+"HP": "64"
+},
+{
+"Defense": "100",
+"HP": "80"
+},
+{
+"Defense": "120",
+"HP": "96"
+},
+{
+"Defense": "140",
+"HP": "112"
+},
+{
+"Defense": "160",
+"HP": "128"
+},
+{
+"Defense": "180",
+"HP": "145"
+},
+{
+"Defense": "200",
+"HP": "162"
+},
+{
+"Defense": "220",
+"HP": "179"
+},
+{
+"Defense": "241",
+"HP": "196"
+},
+{
+"Defense": "262",
+"HP": "213"
+},
+{
+"Defense": "283",
+"HP": "230"
+},
+{
+"Defense": "304",
+"HP": "247"
+}
+]
+},
+"Necklace|Epic|42": {
+"name": "Divine Canyon Necklace",
+"base": {
+"Attack": "64",
+"Defense": "153"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "5"
+},
+{
+"Attack": "4",
+"Defense": "11"
+},
+{
+"Attack": "6",
+"Defense": "17"
+},
+{
+"Attack": "8",
+"Defense": "23"
+},
+{
+"Attack": "10",
+"Defense": "29"
+},
+{
+"Attack": "12",
+"Defense": "35"
+},
+{
+"Attack": "15",
+"Defense": "41"
+},
+{
+"Attack": "18",
+"Defense": "47"
+},
+{
+"Attack": "21",
+"Defense": "53"
+},
+{
+"Attack": "24",
+"Defense": "59"
+}
+]
+},
+"Ring|Epic|42": {
+"name": "Divine Canyon Ring",
+"base": {
+"Attack": "43",
+"Defense": "102"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "5"
+},
+{
+"Attack": "4",
+"Defense": "11"
+},
+{
+"Attack": "6",
+"Defense": "17"
+},
+{
+"Attack": "8",
+"Defense": "23"
+},
+{
+"Attack": "10",
+"Defense": "29"
+},
+{
+"Attack": "12",
+"Defense": "35"
+},
+{
+"Attack": "15",
+"Defense": "41"
+},
+{
+"Attack": "18",
+"Defense": "47"
+},
+{
+"Attack": "21",
+"Defense": "53"
+},
+{
+"Attack": "24",
+"Defense": "59"
+}
+]
+},
+"Gloves|Epic|40": {
+"name": "Anguish Gloves",
+"base": {
+"Defense": "195",
+"HP": "80"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "33",
+"HP": "27"
+},
+{
+"Defense": "44",
+"HP": "36"
+},
+{
+"Defense": "55",
+"HP": "45"
+},
+{
+"Defense": "67",
+"HP": "54"
+},
+{
+"Defense": "79",
+"HP": "64"
+},
+{
+"Defense": "91",
+"HP": "74"
+},
+{
+"Defense": "103",
+"HP": "84"
+},
+{
+"Defense": "115",
+"HP": "94"
+}
+]
+},
+"Cloak|Unique|46": {
+"name": "High Commander Lagta Cloak",
+"base": {
+"Defense": "225",
+"HP": "92"
+},
+"extra": [
+{
+"Defense": "13",
+"HP": "10"
+},
+{
+"Defense": "26",
+"HP": "20"
+},
+{
+"Defense": "39",
+"HP": "31"
+},
+{
+"Defense": "52",
+"HP": "42"
+},
+{
+"Defense": "65",
+"HP": "53"
+},
+{
+"Defense": "78",
+"HP": "64"
+},
+{
+"Defense": "91",
+"HP": "75"
+},
+{
+"Defense": "104",
+"HP": "86"
+},
+{
+"Defense": "117",
+"HP": "97"
+},
+{
+"Defense": "130",
+"HP": "108"
+},
+{
+"Defense": "143",
+"HP": "119"
+},
+{
+"Defense": "157",
+"HP": "130"
+},
+{
+"Defense": "171",
+"HP": "141"
+},
+{
+"Defense": "185",
+"HP": "152"
+},
+{
+"Defense": "199",
+"HP": "163"
+}
+]
+},
+"Pauldrons|Unique|86": {
+"name": "Nuakum Pauldrons",
+"base": {
+"Defense": "477",
+"HP": "215"
+},
+"extra": [
+{
+"Defense": "25",
+"HP": "20"
+},
+{
+"Defense": "50",
+"HP": "40"
+},
+{
+"Defense": "75",
+"HP": "60"
+},
+{
+"Defense": "100",
+"HP": "80"
+},
+{
+"Defense": "125",
+"HP": "100"
+},
+{
+"Defense": "150",
+"HP": "120"
+},
+{
+"Defense": "175",
+"HP": "140"
+},
+{
+"Defense": "200",
+"HP": "160"
+},
+{
+"Defense": "225",
+"HP": "180"
+},
+{
+"Defense": "250",
+"HP": "200"
+},
+{
+"Defense": "275",
+"HP": "220"
+},
+{
+"Defense": "300",
+"HP": "241"
+},
+{
+"Defense": "325",
+"HP": "262"
+},
+{
+"Defense": "350",
+"HP": "283"
+},
+{
+"Defense": "375",
+"HP": "304"
+}
+]
+},
+"Earrings|Unique|86": {
+"name": "Enraged Kromede Earrings",
+"base": {
+"Attack": "111",
+"Defense": "265"
+},
+"extra": [
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "8",
+"Defense": "24"
+},
+{
+"Attack": "12",
+"Defense": "36"
+},
+{
+"Attack": "17",
+"Defense": "48"
+},
+{
+"Attack": "22",
+"Defense": "60"
+},
+{
+"Attack": "27",
+"Defense": "72"
+},
+{
+"Attack": "32",
+"Defense": "84"
+},
+{
+"Attack": "37",
+"Defense": "96"
+},
+{
+"Attack": "42",
+"Defense": "108"
+},
+{
+"Attack": "47",
+"Defense": "120"
+},
+{
+"Attack": "52",
+"Defense": "132"
+},
+{
+"Attack": "57",
+"Defense": "145"
+},
+{
+"Attack": "62",
+"Defense": "158"
+},
+{
+"Attack": "67",
+"Defense": "171"
+},
+{
+"Attack": "72",
+"Defense": "184"
+}
+]
+},
+"Cloak|Unique|86": {
+"name": "Nuakum Cloak",
+"base": {
+"Defense": "424",
+"HP": "172"
+},
+"extra": [
+{
+"Defense": "25",
+"HP": "20"
+},
+{
+"Defense": "50",
+"HP": "40"
+},
+{
+"Defense": "75",
+"HP": "60"
+},
+{
+"Defense": "100",
+"HP": "80"
+},
+{
+"Defense": "125",
+"HP": "100"
+},
+{
+"Defense": "150",
+"HP": "120"
+},
+{
+"Defense": "175",
+"HP": "140"
+},
+{
+"Defense": "200",
+"HP": "160"
+},
+{
+"Defense": "225",
+"HP": "180"
+},
+{
+"Defense": "250",
+"HP": "200"
+},
+{
+"Defense": "275",
+"HP": "220"
+},
+{
+"Defense": "300",
+"HP": "241"
+},
+{
+"Defense": "325",
+"HP": "262"
+},
+{
+"Defense": "350",
+"HP": "283"
+},
+{
+"Defense": "375",
+"HP": "304"
+}
+]
+},
+"Earrings|Epic|45": {
+"name": "Murute Earrings",
+"base": {
+"Attack": "57",
+"Defense": "138"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "6"
+},
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "6",
+"Defense": "18"
+},
+{
+"Attack": "8",
+"Defense": "24"
+},
+{
+"Attack": "10",
+"Defense": "30"
+},
+{
+"Attack": "13",
+"Defense": "36"
+},
+{
+"Attack": "16",
+"Defense": "43"
+},
+{
+"Attack": "19",
+"Defense": "50"
+},
+{
+"Attack": "22",
+"Defense": "57"
+},
+{
+"Attack": "25",
+"Defense": "64"
+}
+]
+},
+"Legs|Unique|86": {
+"name": "Nuakum Greaves",
+"base": {
+"Defense": "531",
+"HP": "258"
+},
+"extra": [
+{
+"Defense": "25",
+"HP": "20"
+},
+{
+"Defense": "50",
+"HP": "40"
+},
+{
+"Defense": "75",
+"HP": "60"
+},
+{
+"Defense": "100",
+"HP": "80"
+},
+{
+"Defense": "125",
+"HP": "100"
+},
+{
+"Defense": "150",
+"HP": "120"
+},
+{
+"Defense": "175",
+"HP": "140"
+},
+{
+"Defense": "200",
+"HP": "160"
+},
+{
+"Defense": "225",
+"HP": "180"
+},
+{
+"Defense": "250",
+"HP": "200"
+},
+{
+"Defense": "275",
+"HP": "220"
+},
+{
+"Defense": "300",
+"HP": "241"
+},
+{
+"Defense": "325",
+"HP": "262"
+},
+{
+"Defense": "350",
+"HP": "283"
+},
+{
+"Defense": "375",
+"HP": "304"
+}
+]
+},
+"Shoes|Unique|86": {
+"name": "Nuakum Boots",
+"base": {
+"Defense": "424",
+"HP": "172"
+},
+"extra": [
+{
+"Defense": "25",
+"HP": "20"
+},
+{
+"Defense": "50",
+"HP": "40"
+},
+{
+"Defense": "75",
+"HP": "60"
+},
+{
+"Defense": "100",
+"HP": "80"
+},
+{
+"Defense": "125",
+"HP": "100"
+},
+{
+"Defense": "150",
+"HP": "120"
+},
+{
+"Defense": "175",
+"HP": "140"
+},
+{
+"Defense": "200",
+"HP": "160"
+},
+{
+"Defense": "225",
+"HP": "180"
+},
+{
+"Defense": "250",
+"HP": "200"
+},
+{
+"Defense": "275",
+"HP": "220"
+},
+{
+"Defense": "300",
+"HP": "241"
+},
+{
+"Defense": "325",
+"HP": "262"
+},
+{
+"Defense": "350",
+"HP": "283"
+},
+{
+"Defense": "375",
+"HP": "304"
+}
+]
+},
+"Guard|Epic|40": {
+"name": "Anguish Guard",
+"base": {
+"Attack": "81",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "8",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "12",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "16",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "20",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "25",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "30",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "35",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "40",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "45",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Guard|Unique|86": {
+"name": "Nuakum Guard",
+"base": {
+"Attack": "177",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "9",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "18",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "27",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "36",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "46",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "56",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "66",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "76",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "86",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "96",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "106",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "116",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "126",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "136",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "146",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Guard|Unique|70": {
+"name": "Vakron Guard",
+"base": {
+"Attack": "144",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "7",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "15",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "23",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "31",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "39",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "47",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "55",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "63",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "71",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "79",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "87",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "95",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "103",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "111",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "119",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Legs|Unique|70": {
+"name": "Vakron Greaves",
+"base": {
+"Defense": "431",
+"HP": "210"
+},
+"extra": [
+{
+"Defense": "20",
+"HP": "16"
+},
+{
+"Defense": "40",
+"HP": "32"
+},
+{
+"Defense": "60",
+"HP": "48"
+},
+{
+"Defense": "80",
+"HP": "64"
+},
+{
+"Defense": "100",
+"HP": "80"
+},
+{
+"Defense": "120",
+"HP": "96"
+},
+{
+"Defense": "140",
+"HP": "112"
+},
+{
+"Defense": "160",
+"HP": "128"
+},
+{
+"Defense": "180",
+"HP": "145"
+},
+{
+"Defense": "200",
+"HP": "162"
+},
+{
+"Defense": "220",
+"HP": "179"
+},
+{
+"Defense": "241",
+"HP": "196"
+},
+{
+"Defense": "262",
+"HP": "213"
+},
+{
+"Defense": "283",
+"HP": "230"
+},
+{
+"Defense": "304",
+"HP": "247"
+}
+]
+},
+"Helm|Epic|42": {
+"name": "Unyielding Helm",
+"base": {
+"Defense": "230",
+"HP": "105"
+},
+"extra": [
+{
+"Defense": "12",
+"HP": "9"
+},
+{
+"Defense": "24",
+"HP": "19"
+},
+{
+"Defense": "36",
+"HP": "29"
+},
+{
+"Defense": "48",
+"HP": "39"
+},
+{
+"Defense": "60",
+"HP": "49"
+},
+{
+"Defense": "72",
+"HP": "59"
+},
+{
+"Defense": "84",
+"HP": "69"
+},
+{
+"Defense": "96",
+"HP": "79"
+},
+{
+"Defense": "108",
+"HP": "89"
+},
+{
+"Defense": "121",
+"HP": "99"
+}
+]
+},
+"Guard|Epic|25": {
+"name": "Red Agate Guard",
+"base": {
+"Attack": "50",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "2",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "7",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "10",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "13",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "16",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "19",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "22",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "25",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "28",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Weapon|Epic|25": {
+"name": "Red Agate Longsword",
+"base": {
+"Attack": "125",
+"Accuracy": "150",
+"Critical Hit": "50",
+"Block": "200"
+},
+"extra": [
+{
+"Attack": "2",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "7",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "10",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "13",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "16",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "19",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "22",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "25",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "28",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+}
+]
+},
+"Weapon|Epic|23": {
+"name": "Elder Staff",
+"base": {
+"Attack": "125",
+"Accuracy": "75",
+"Critical Hit": "100",
+"Block": "125"
+},
+"extra": [
+{
+"Attack": "2",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "6",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "8",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "11",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "14",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "17",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "20",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "23",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "26",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+}
+]
+},
+"Guard|Common|20": {
+"name": "Earth Guard",
+"base": {
+"Attack": "40",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "2",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "6",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "8",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "11",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Helm|Common|13": {
+"name": "Shade Helm",
+"base": {
+"Defense": "67",
+"HP": "33"
+},
+"extra": [
+{
+"Defense": "3",
+"HP": "3"
+},
+{
+"Defense": "6",
+"HP": "6"
+},
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "14",
+"HP": "12"
+},
+{
+"Defense": "18",
+"HP": "16"
+}
+]
+},
+"Gloves|Epic|33": {
+"name": "Faith Gloves",
+"base": {
+"Defense": "159",
+"HP": "66"
+},
+"extra": [
+{
+"Defense": "9",
+"HP": "7"
+},
+{
+"Defense": "18",
+"HP": "14"
+},
+{
+"Defense": "27",
+"HP": "22"
+},
+{
+"Defense": "36",
+"HP": "30"
+},
+{
+"Defense": "45",
+"HP": "38"
+},
+{
+"Defense": "54",
+"HP": "46"
+},
+{
+"Defense": "64",
+"HP": "54"
+},
+{
+"Defense": "74",
+"HP": "62"
+},
+{
+"Defense": "84",
+"HP": "70"
+},
+{
+"Defense": "94",
+"HP": "78"
+}
+]
+},
+"Top|Epic|40": {
+"name": "Anguish Breastplate",
+"base": {
+"Defense": "292",
+"HP": "160"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "33",
+"HP": "27"
+},
+{
+"Defense": "44",
+"HP": "36"
+},
+{
+"Defense": "55",
+"HP": "45"
+},
+{
+"Defense": "67",
+"HP": "54"
+},
+{
+"Defense": "79",
+"HP": "64"
+},
+{
+"Defense": "91",
+"HP": "74"
+},
+{
+"Defense": "103",
+"HP": "84"
+},
+{
+"Defense": "115",
+"HP": "94"
+}
+]
+},
+"Shoes|Rare|25": {
+"name": "Intruder Boots",
+"base": {
+"Defense": "120",
+"HP": "50"
+},
+"extra": [
+{
+"Defense": "7",
+"HP": "6"
+},
+{
+"Defense": "14",
+"HP": "12"
+},
+{
+"Defense": "21",
+"HP": "18"
+},
+{
+"Defense": "28",
+"HP": "24"
+},
+{
+"Defense": "36",
+"HP": "30"
+}
+]
+},
+"Guard|Rare|15": {
+"name": "Rainy Forest Guard",
+"base": {
+"Attack": "29",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "1",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "3",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "5",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "7",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "9",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Pauldrons|Epic|32": {
+"name": "Avenger Pauldrons",
+"base": {
+"Defense": "174",
+"HP": "80"
+},
+"extra": [
+{
+"Defense": "9",
+"HP": "7"
+},
+{
+"Defense": "18",
+"HP": "14"
+},
+{
+"Defense": "27",
+"HP": "21"
+},
+{
+"Defense": "36",
+"HP": "28"
+},
+{
+"Defense": "45",
+"HP": "36"
+},
+{
+"Defense": "54",
+"HP": "44"
+},
+{
+"Defense": "63",
+"HP": "52"
+},
+{
+"Defense": "72",
+"HP": "60"
+},
+{
+"Defense": "81",
+"HP": "68"
+},
+{
+"Defense": "91",
+"HP": "76"
+}
+]
+},
+"Shoes|Common|13": {
+"name": "Shade Boots",
+"base": {
+"Defense": "60",
+"HP": "26"
+},
+"extra": [
+{
+"Defense": "3",
+"HP": "3"
+},
+{
+"Defense": "6",
+"HP": "6"
+},
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "14",
+"HP": "12"
+},
+{
+"Defense": "18",
+"HP": "16"
+}
+]
+},
+"Top|Common|13": {
+"name": "Forgotten Breastplate",
+"base": {
+"Defense": "89",
+"HP": "52"
+},
+"extra": [
+{
+"Defense": "3",
+"HP": "3"
+},
+{
+"Defense": "6",
+"HP": "6"
+},
+{
+"Defense": "10",
+"HP": "9"
+},
+{
+"Defense": "14",
+"HP": "12"
+},
+{
+"Defense": "18",
+"HP": "16"
+}
+]
+},
+"Top|Epic|31": {
+"name": "Avenger Breastplate",
+"base": {
+"Defense": "224",
+"HP": "124"
+},
+"extra": [
+{
+"Defense": "8",
+"HP": "7"
+},
+{
+"Defense": "16",
+"HP": "14"
+},
+{
+"Defense": "25",
+"HP": "21"
+},
+{
+"Defense": "34",
+"HP": "28"
+},
+{
+"Defense": "43",
+"HP": "35"
+},
+{
+"Defense": "52",
+"HP": "42"
+},
+{
+"Defense": "61",
+"HP": "49"
+},
+{
+"Defense": "70",
+"HP": "57"
+},
+{
+"Defense": "79",
+"HP": "65"
+},
+{
+"Defense": "88",
+"HP": "73"
+}
+]
+},
+"Guard|Epic|33": {
+"name": "Faith Guard",
+"base": {
+"Attack": "66",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "3",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "6",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "9",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "13",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "17",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "21",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "25",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "29",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "33",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "37",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Shoes|Unique|41": {
+"name": "Spectral Boots",
+"base": {
+"Defense": "200",
+"HP": "82"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "33",
+"HP": "27"
+},
+{
+"Defense": "44",
+"HP": "36"
+},
+{
+"Defense": "56",
+"HP": "45"
+},
+{
+"Defense": "68",
+"HP": "55"
+},
+{
+"Defense": "80",
+"HP": "65"
+},
+{
+"Defense": "92",
+"HP": "75"
+},
+{
+"Defense": "104",
+"HP": "85"
+},
+{
+"Defense": "116",
+"HP": "95"
+},
+{
+"Defense": "128",
+"HP": "105"
+},
+{
+"Defense": "140",
+"HP": "115"
+},
+{
+"Defense": "152",
+"HP": "125"
+},
+{
+"Defense": "164",
+"HP": "135"
+},
+{
+"Defense": "176",
+"HP": "145"
+}
+]
+},
+"Pauldrons|Epic|25": {
+"name": "Red Agate Pauldrons",
+"base": {
+"Defense": "135",
+"HP": "63"
+},
+"extra": [
+{
+"Defense": "7",
+"HP": "5"
+},
+{
+"Defense": "14",
+"HP": "11"
+},
+{
+"Defense": "21",
+"HP": "17"
+},
+{
+"Defense": "28",
+"HP": "23"
+},
+{
+"Defense": "35",
+"HP": "29"
+},
+{
+"Defense": "42",
+"HP": "35"
+},
+{
+"Defense": "49",
+"HP": "41"
+},
+{
+"Defense": "56",
+"HP": "47"
+},
+{
+"Defense": "63",
+"HP": "53"
+},
+{
+"Defense": "71",
+"HP": "59"
+}
+]
+},
+"Helm|Epic|25": {
+"name": "Red Agate Helm",
+"base": {
+"Defense": "135",
+"HP": "63"
+},
+"extra": [
+{
+"Defense": "7",
+"HP": "5"
+},
+{
+"Defense": "14",
+"HP": "11"
+},
+{
+"Defense": "21",
+"HP": "17"
+},
+{
+"Defense": "28",
+"HP": "23"
+},
+{
+"Defense": "35",
+"HP": "29"
+},
+{
+"Defense": "42",
+"HP": "35"
+},
+{
+"Defense": "49",
+"HP": "41"
+},
+{
+"Defense": "56",
+"HP": "47"
+},
+{
+"Defense": "63",
+"HP": "53"
+},
+{
+"Defense": "71",
+"HP": "59"
+}
+]
+},
+"Legs|Rare|15": {
+"name": "Tempest Greaves",
+"base": {
+"Defense": "88",
+"HP": "45"
+},
+"extra": [
+{
+"Defense": "4",
+"HP": "3"
+},
+{
+"Defense": "8",
+"HP": "6"
+},
+{
+"Defense": "12",
+"HP": "10"
+},
+{
+"Defense": "16",
+"HP": "14"
+},
+{
+"Defense": "21",
+"HP": "18"
+}
+]
+},
+"Shoes|Rare|15": {
+"name": "Tempest Boots",
+"base": {
+"Defense": "70",
+"HP": "30"
+},
+"extra": [
+{
+"Defense": "4",
+"HP": "3"
+},
+{
+"Defense": "8",
+"HP": "6"
+},
+{
+"Defense": "12",
+"HP": "10"
+},
+{
+"Defense": "16",
+"HP": "14"
+},
+{
+"Defense": "21",
+"HP": "18"
+}
+]
+},
+"Necklace|Unique|54": {
+"name": "Berk Necklace",
+"base": {
+"Attack": "83",
+"Defense": "199"
+},
+"extra": [
+{
+"Attack": "3",
+"Defense": "7"
+},
+{
+"Attack": "6",
+"Defense": "14"
+},
+{
+"Attack": "9",
+"Defense": "21"
+},
+{
+"Attack": "12",
+"Defense": "28"
+},
+{
+"Attack": "15",
+"Defense": "35"
+},
+{
+"Attack": "18",
+"Defense": "43"
+},
+{
+"Attack": "21",
+"Defense": "51"
+},
+{
+"Attack": "24",
+"Defense": "59"
+},
+{
+"Attack": "27",
+"Defense": "67"
+},
+{
+"Attack": "30",
+"Defense": "75"
+},
+{
+"Attack": "33",
+"Defense": "83"
+},
+{
+"Attack": "36",
+"Defense": "91"
+},
+{
+"Attack": "39",
+"Defense": "99"
+},
+{
+"Attack": "42",
+"Defense": "107"
+},
+{
+"Attack": "45",
+"Defense": "115"
+}
+]
+},
+"Necklace|Unique|70": {
+"name": "Aulamus Necklace",
+"base": {
+"Attack": "108",
+"Defense": "259"
+},
+"extra": [
+{
+"Attack": "3",
+"Defense": "9"
+},
+{
+"Attack": "7",
+"Defense": "19"
+},
+{
+"Attack": "11",
+"Defense": "29"
+},
+{
+"Attack": "15",
+"Defense": "39"
+},
+{
+"Attack": "19",
+"Defense": "49"
+},
+{
+"Attack": "23",
+"Defense": "59"
+},
+{
+"Attack": "27",
+"Defense": "69"
+},
+{
+"Attack": "31",
+"Defense": "79"
+},
+{
+"Attack": "35",
+"Defense": "89"
+},
+{
+"Attack": "39",
+"Defense": "99"
+},
+{
+"Attack": "43",
+"Defense": "109"
+},
+{
+"Attack": "47",
+"Defense": "119"
+},
+{
+"Attack": "51",
+"Defense": "129"
+},
+{
+"Attack": "55",
+"Defense": "139"
+},
+{
+"Attack": "59",
+"Defense": "149"
+}
+]
+},
+"Weapon|Unique|102": {
+"name": "Splendent Ebony Dragon Lord Greatsword",
+"base": {
+"Attack": "604",
+"Accuracy": "100",
+"Critical Hit": "150",
+"Block": "150"
+},
+"extra": [
+{
+"Attack": "11",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "22",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "33",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "44",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "55",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "66",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "78",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "90",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "102",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "114",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "126",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "138",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "150",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "162",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "174",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+}
+]
+},
+"Guard|Unique|102": {
+"name": "Splendent Ebony Dragon Lord Guard",
+"base": {
+"Attack": "210",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "11",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "22",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "33",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "44",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "55",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "66",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "78",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "90",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "102",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "114",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "126",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "138",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "150",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "162",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "174",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Top|Unique|102": {
+"name": "Splendent Ebony Dragon Lord Breastplate",
+"base": {
+"Defense": "756",
+"HP": "408"
+},
+"extra": [
+{
+"Defense": "29",
+"HP": "24"
+},
+{
+"Defense": "58",
+"HP": "48"
+},
+{
+"Defense": "87",
+"HP": "72"
+},
+{
+"Defense": "116",
+"HP": "96"
+},
+{
+"Defense": "145",
+"HP": "120"
+},
+{
+"Defense": "175",
+"HP": "144"
+},
+{
+"Defense": "205",
+"HP": "168"
+},
+{
+"Defense": "235",
+"HP": "192"
+},
+{
+"Defense": "265",
+"HP": "216"
+},
+{
+"Defense": "295",
+"HP": "240"
+},
+{
+"Defense": "325",
+"HP": "264"
+},
+{
+"Defense": "355",
+"HP": "288"
+},
+{
+"Defense": "385",
+"HP": "312"
+},
+{
+"Defense": "415",
+"HP": "336"
+},
+{
+"Defense": "445",
+"HP": "360"
+}
+]
+},
+"Legs|Unique|102": {
+"name": "Splendent Ebony Dragon Lord Greaves",
+"base": {
+"Defense": "630",
+"HP": "306"
+},
+"extra": [
+{
+"Defense": "29",
+"HP": "24"
+},
+{
+"Defense": "58",
+"HP": "48"
+},
+{
+"Defense": "87",
+"HP": "72"
+},
+{
+"Defense": "116",
+"HP": "96"
+},
+{
+"Defense": "145",
+"HP": "120"
+},
+{
+"Defense": "175",
+"HP": "144"
+},
+{
+"Defense": "205",
+"HP": "168"
+},
+{
+"Defense": "235",
+"HP": "192"
+},
+{
+"Defense": "265",
+"HP": "216"
+},
+{
+"Defense": "295",
+"HP": "240"
+},
+{
+"Defense": "325",
+"HP": "264"
+},
+{
+"Defense": "355",
+"HP": "288"
+},
+{
+"Defense": "385",
+"HP": "312"
+},
+{
+"Defense": "415",
+"HP": "336"
+},
+{
+"Defense": "445",
+"HP": "360"
+}
+]
+},
+"Helm|Unique|102": {
+"name": "Splendent Ebony Dragon Lord Helm",
+"base": {
+"Defense": "567",
+"HP": "255"
+},
+"extra": [
+{
+"Defense": "29",
+"HP": "24"
+},
+{
+"Defense": "58",
+"HP": "48"
+},
+{
+"Defense": "87",
+"HP": "72"
+},
+{
+"Defense": "116",
+"HP": "96"
+},
+{
+"Defense": "145",
+"HP": "120"
+},
+{
+"Defense": "175",
+"HP": "144"
+},
+{
+"Defense": "205",
+"HP": "168"
+},
+{
+"Defense": "235",
+"HP": "192"
+},
+{
+"Defense": "265",
+"HP": "216"
+},
+{
+"Defense": "295",
+"HP": "240"
+},
+{
+"Defense": "325",
+"HP": "264"
+},
+{
+"Defense": "355",
+"HP": "288"
+},
+{
+"Defense": "385",
+"HP": "312"
+},
+{
+"Defense": "415",
+"HP": "336"
+},
+{
+"Defense": "445",
+"HP": "360"
+}
+]
+},
+"Pauldrons|Unique|102": {
+"name": "Splendent Ebony Dragon Lord Pauldrons",
+"base": {
+"Defense": "567",
+"HP": "255"
+},
+"extra": [
+{
+"Defense": "29",
+"HP": "24"
+},
+{
+"Defense": "58",
+"HP": "48"
+},
+{
+"Defense": "87",
+"HP": "72"
+},
+{
+"Defense": "116",
+"HP": "96"
+},
+{
+"Defense": "145",
+"HP": "120"
+},
+{
+"Defense": "175",
+"HP": "144"
+},
+{
+"Defense": "205",
+"HP": "168"
+},
+{
+"Defense": "235",
+"HP": "192"
+},
+{
+"Defense": "265",
+"HP": "216"
+},
+{
+"Defense": "295",
+"HP": "240"
+},
+{
+"Defense": "325",
+"HP": "264"
+},
+{
+"Defense": "355",
+"HP": "288"
+},
+{
+"Defense": "385",
+"HP": "312"
+},
+{
+"Defense": "415",
+"HP": "336"
+},
+{
+"Defense": "445",
+"HP": "360"
+}
+]
+},
+"Gloves|Unique|102": {
+"name": "Splendent Ebony Dragon Lord Gloves",
+"base": {
+"Defense": "504",
+"HP": "204"
+},
+"extra": [
+{
+"Defense": "29",
+"HP": "24"
+},
+{
+"Defense": "58",
+"HP": "48"
+},
+{
+"Defense": "87",
+"HP": "72"
+},
+{
+"Defense": "116",
+"HP": "96"
+},
+{
+"Defense": "145",
+"HP": "120"
+},
+{
+"Defense": "175",
+"HP": "144"
+},
+{
+"Defense": "205",
+"HP": "168"
+},
+{
+"Defense": "235",
+"HP": "192"
+},
+{
+"Defense": "265",
+"HP": "216"
+},
+{
+"Defense": "295",
+"HP": "240"
+},
+{
+"Defense": "325",
+"HP": "264"
+},
+{
+"Defense": "355",
+"HP": "288"
+},
+{
+"Defense": "385",
+"HP": "312"
+},
+{
+"Defense": "415",
+"HP": "336"
+},
+{
+"Defense": "445",
+"HP": "360"
+}
+]
+},
+"Shoes|Unique|102": {
+"name": "Splendent Ebony Dragon Lord Boots",
+"base": {
+"Defense": "504",
+"HP": "204"
+},
+"extra": [
+{
+"Defense": "29",
+"HP": "24"
+},
+{
+"Defense": "58",
+"HP": "48"
+},
+{
+"Defense": "87",
+"HP": "72"
+},
+{
+"Defense": "116",
+"HP": "96"
+},
+{
+"Defense": "145",
+"HP": "120"
+},
+{
+"Defense": "175",
+"HP": "144"
+},
+{
+"Defense": "205",
+"HP": "168"
+},
+{
+"Defense": "235",
+"HP": "192"
+},
+{
+"Defense": "265",
+"HP": "216"
+},
+{
+"Defense": "295",
+"HP": "240"
+},
+{
+"Defense": "325",
+"HP": "264"
+},
+{
+"Defense": "355",
+"HP": "288"
+},
+{
+"Defense": "385",
+"HP": "312"
+},
+{
+"Defense": "415",
+"HP": "336"
+},
+{
+"Defense": "445",
+"HP": "360"
+}
+]
+},
+"Ring|Unique|102": {
+"name": "Splendent Ebony Dragon Lord Ring",
+"base": {
+"Attack": "105",
+"Defense": "252"
+},
+"extra": [
+{
+"Attack": "5",
+"Defense": "14"
+},
+{
+"Attack": "10",
+"Defense": "28"
+},
+{
+"Attack": "15",
+"Defense": "42"
+},
+{
+"Attack": "20",
+"Defense": "56"
+},
+{
+"Attack": "26",
+"Defense": "70"
+},
+{
+"Attack": "32",
+"Defense": "84"
+},
+{
+"Attack": "38",
+"Defense": "98"
+},
+{
+"Attack": "44",
+"Defense": "113"
+},
+{
+"Attack": "50",
+"Defense": "128"
+},
+{
+"Attack": "56",
+"Defense": "143"
+},
+{
+"Attack": "62",
+"Defense": "158"
+},
+{
+"Attack": "68",
+"Defense": "173"
+},
+{
+"Attack": "74",
+"Defense": "188"
+},
+{
+"Attack": "80",
+"Defense": "203"
+},
+{
+"Attack": "86",
+"Defense": "218"
+}
+]
+},
+"Cloak|Unique|102": {
+"name": "Splendent Ebony Dragon Lord Cloak",
+"base": {
+"Defense": "504",
+"HP": "204"
+},
+"extra": [
+{
+"Defense": "29",
+"HP": "24"
+},
+{
+"Defense": "58",
+"HP": "48"
+},
+{
+"Defense": "87",
+"HP": "72"
+},
+{
+"Defense": "116",
+"HP": "96"
+},
+{
+"Defense": "145",
+"HP": "120"
+},
+{
+"Defense": "175",
+"HP": "144"
+},
+{
+"Defense": "205",
+"HP": "168"
+},
+{
+"Defense": "235",
+"HP": "192"
+},
+{
+"Defense": "265",
+"HP": "216"
+},
+{
+"Defense": "295",
+"HP": "240"
+},
+{
+"Defense": "325",
+"HP": "264"
+},
+{
+"Defense": "355",
+"HP": "288"
+},
+{
+"Defense": "385",
+"HP": "312"
+},
+{
+"Defense": "415",
+"HP": "336"
+},
+{
+"Defense": "445",
+"HP": "360"
+}
+]
+},
+"Necklace|Unique|102": {
+"name": "Splendent Ebony Dragon Lord Necklace",
+"base": {
+"Attack": "158",
+"Defense": "378"
+},
+"extra": [
+{
+"Attack": "5",
+"Defense": "14"
+},
+{
+"Attack": "10",
+"Defense": "28"
+},
+{
+"Attack": "15",
+"Defense": "42"
+},
+{
+"Attack": "20",
+"Defense": "56"
+},
+{
+"Attack": "26",
+"Defense": "70"
+},
+{
+"Attack": "32",
+"Defense": "84"
+},
+{
+"Attack": "38",
+"Defense": "98"
+},
+{
+"Attack": "44",
+"Defense": "113"
+},
+{
+"Attack": "50",
+"Defense": "128"
+},
+{
+"Attack": "56",
+"Defense": "143"
+},
+{
+"Attack": "62",
+"Defense": "158"
+},
+{
+"Attack": "68",
+"Defense": "173"
+},
+{
+"Attack": "74",
+"Defense": "188"
+},
+{
+"Attack": "80",
+"Defense": "203"
+},
+{
+"Attack": "86",
+"Defense": "218"
+}
+]
+},
+"Earrings|Unique|102": {
+"name": "Splendent Ebony Dragon Lord Earrings",
+"base": {
+"Attack": "131",
+"Defense": "315"
+},
+"extra": [
+{
+"Attack": "5",
+"Defense": "14"
+},
+{
+"Attack": "10",
+"Defense": "28"
+},
+{
+"Attack": "15",
+"Defense": "42"
+},
+{
+"Attack": "20",
+"Defense": "56"
+},
+{
+"Attack": "26",
+"Defense": "70"
+},
+{
+"Attack": "32",
+"Defense": "84"
+},
+{
+"Attack": "38",
+"Defense": "98"
+},
+{
+"Attack": "44",
+"Defense": "113"
+},
+{
+"Attack": "50",
+"Defense": "128"
+},
+{
+"Attack": "56",
+"Defense": "143"
+},
+{
+"Attack": "62",
+"Defense": "158"
+},
+{
+"Attack": "68",
+"Defense": "173"
+},
+{
+"Attack": "74",
+"Defense": "188"
+},
+{
+"Attack": "80",
+"Defense": "203"
+},
+{
+"Attack": "86",
+"Defense": "218"
+}
+]
+},
+"Top|Unique|86": {
+"name": "Nuakum Breastplate",
+"base": {
+"Defense": "637",
+"HP": "344"
+},
+"extra": [
+{
+"Defense": "25",
+"HP": "20"
+},
+{
+"Defense": "50",
+"HP": "40"
+},
+{
+"Defense": "75",
+"HP": "60"
+},
+{
+"Defense": "100",
+"HP": "80"
+},
+{
+"Defense": "125",
+"HP": "100"
+},
+{
+"Defense": "150",
+"HP": "120"
+},
+{
+"Defense": "175",
+"HP": "140"
+},
+{
+"Defense": "200",
+"HP": "160"
+},
+{
+"Defense": "225",
+"HP": "180"
+},
+{
+"Defense": "250",
+"HP": "200"
+},
+{
+"Defense": "275",
+"HP": "220"
+},
+{
+"Defense": "300",
+"HP": "241"
+},
+{
+"Defense": "325",
+"HP": "262"
+},
+{
+"Defense": "350",
+"HP": "283"
+},
+{
+"Defense": "375",
+"HP": "304"
+}
+]
+},
+"Helm|Unique|86": {
+"name": "Nuakum Helm",
+"base": {
+"Defense": "477",
+"HP": "215"
+},
+"extra": [
+{
+"Defense": "25",
+"HP": "20"
+},
+{
+"Defense": "50",
+"HP": "40"
+},
+{
+"Defense": "75",
+"HP": "60"
+},
+{
+"Defense": "100",
+"HP": "80"
+},
+{
+"Defense": "125",
+"HP": "100"
+},
+{
+"Defense": "150",
+"HP": "120"
+},
+{
+"Defense": "175",
+"HP": "140"
+},
+{
+"Defense": "200",
+"HP": "160"
+},
+{
+"Defense": "225",
+"HP": "180"
+},
+{
+"Defense": "250",
+"HP": "200"
+},
+{
+"Defense": "275",
+"HP": "220"
+},
+{
+"Defense": "300",
+"HP": "241"
+},
+{
+"Defense": "325",
+"HP": "262"
+},
+{
+"Defense": "350",
+"HP": "283"
+},
+{
+"Defense": "375",
+"HP": "304"
+}
+]
+},
+"Weapon|Unique|86": {
+"name": "Enraged Kromede Claymore",
+"base": {
+"Attack": "508",
+"Accuracy": "100",
+"Critical Hit": "150",
+"Block": "150"
+},
+"extra": [
+{
+"Attack": "9",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "18",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "27",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "36",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "46",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "56",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "66",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "76",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "86",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "96",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "106",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "116",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "126",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "136",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "146",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+}
+]
+},
+"Gloves|Unique|86": {
+"name": "Nuakum Gloves",
+"base": {
+"Defense": "424",
+"HP": "172"
+},
+"extra": [
+{
+"Defense": "25",
+"HP": "20"
+},
+{
+"Defense": "50",
+"HP": "40"
+},
+{
+"Defense": "75",
+"HP": "60"
+},
+{
+"Defense": "100",
+"HP": "80"
+},
+{
+"Defense": "125",
+"HP": "100"
+},
+{
+"Defense": "150",
+"HP": "120"
+},
+{
+"Defense": "175",
+"HP": "140"
+},
+{
+"Defense": "200",
+"HP": "160"
+},
+{
+"Defense": "225",
+"HP": "180"
+},
+{
+"Defense": "250",
+"HP": "200"
+},
+{
+"Defense": "275",
+"HP": "220"
+},
+{
+"Defense": "300",
+"HP": "241"
+},
+{
+"Defense": "325",
+"HP": "262"
+},
+{
+"Defense": "350",
+"HP": "283"
+},
+{
+"Defense": "375",
+"HP": "304"
+}
+]
+},
+"Ring|Unique|86": {
+"name": "Enraged Kromede Ring",
+"base": {
+"Attack": "88",
+"Defense": "212"
+},
+"extra": [
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "8",
+"Defense": "24"
+},
+{
+"Attack": "12",
+"Defense": "36"
+},
+{
+"Attack": "17",
+"Defense": "48"
+},
+{
+"Attack": "22",
+"Defense": "60"
+},
+{
+"Attack": "27",
+"Defense": "72"
+},
+{
+"Attack": "32",
+"Defense": "84"
+},
+{
+"Attack": "37",
+"Defense": "96"
+},
+{
+"Attack": "42",
+"Defense": "108"
+},
+{
+"Attack": "47",
+"Defense": "120"
+},
+{
+"Attack": "52",
+"Defense": "132"
+},
+{
+"Attack": "57",
+"Defense": "145"
+},
+{
+"Attack": "62",
+"Defense": "158"
+},
+{
+"Attack": "67",
+"Defense": "171"
+},
+{
+"Attack": "72",
+"Defense": "184"
+}
+]
+},
+"Gloves|Epic|45": {
+"name": "Black Claw Gloves",
+"base": {
+"Defense": "220",
+"HP": "90"
+},
+"extra": [
+{
+"Defense": "13",
+"HP": "10"
+},
+{
+"Defense": "26",
+"HP": "20"
+},
+{
+"Defense": "39",
+"HP": "30"
+},
+{
+"Defense": "52",
+"HP": "40"
+},
+{
+"Defense": "65",
+"HP": "51"
+},
+{
+"Defense": "78",
+"HP": "62"
+},
+{
+"Defense": "91",
+"HP": "73"
+},
+{
+"Defense": "104",
+"HP": "84"
+},
+{
+"Defense": "117",
+"HP": "95"
+},
+{
+"Defense": "130",
+"HP": "106"
+}
+]
+},
+"Top|Unique|70": {
+"name": "Vakron Breastplate",
+"base": {
+"Defense": "517",
+"HP": "280"
+},
+"extra": [
+{
+"Defense": "20",
+"HP": "16"
+},
+{
+"Defense": "40",
+"HP": "32"
+},
+{
+"Defense": "60",
+"HP": "48"
+},
+{
+"Defense": "80",
+"HP": "64"
+},
+{
+"Defense": "100",
+"HP": "80"
+},
+{
+"Defense": "120",
+"HP": "96"
+},
+{
+"Defense": "140",
+"HP": "112"
+},
+{
+"Defense": "160",
+"HP": "128"
+},
+{
+"Defense": "180",
+"HP": "145"
+},
+{
+"Defense": "200",
+"HP": "162"
+},
+{
+"Defense": "220",
+"HP": "179"
+},
+{
+"Defense": "241",
+"HP": "196"
+},
+{
+"Defense": "262",
+"HP": "213"
+},
+{
+"Defense": "283",
+"HP": "230"
+},
+{
+"Defense": "304",
+"HP": "247"
+}
+]
+},
+"Weapon|Unique|70": {
+"name": "Aulamus Greatsword",
+"base": {
+"Attack": "413",
+"Accuracy": "100",
+"Critical Hit": "150",
+"Block": "150"
+},
+"extra": [
+{
+"Attack": "7",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "15",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "23",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "31",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "39",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "47",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "55",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "63",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "71",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "79",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "87",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "95",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "103",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "111",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "119",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+}
+]
+},
+"Legs|Unique|46": {
+"name": "Kashapa Greaves",
+"base": {
+"Defense": "281",
+"HP": "138"
+},
+"extra": [
+{
+"Defense": "13",
+"HP": "10"
+},
+{
+"Defense": "26",
+"HP": "20"
+},
+{
+"Defense": "39",
+"HP": "31"
+},
+{
+"Defense": "52",
+"HP": "42"
+},
+{
+"Defense": "65",
+"HP": "53"
+},
+{
+"Defense": "78",
+"HP": "64"
+},
+{
+"Defense": "91",
+"HP": "75"
+},
+{
+"Defense": "104",
+"HP": "86"
+},
+{
+"Defense": "117",
+"HP": "97"
+},
+{
+"Defense": "130",
+"HP": "108"
+},
+{
+"Defense": "143",
+"HP": "119"
+},
+{
+"Defense": "157",
+"HP": "130"
+},
+{
+"Defense": "171",
+"HP": "141"
+},
+{
+"Defense": "185",
+"HP": "152"
+},
+{
+"Defense": "199",
+"HP": "163"
+}
+]
+},
+"Earrings|Epic|42": {
+"name": "Unyielding Earrings",
+"base": {
+"Attack": "53",
+"Defense": "128"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "5"
+},
+{
+"Attack": "4",
+"Defense": "11"
+},
+{
+"Attack": "6",
+"Defense": "17"
+},
+{
+"Attack": "8",
+"Defense": "23"
+},
+{
+"Attack": "10",
+"Defense": "29"
+},
+{
+"Attack": "12",
+"Defense": "35"
+},
+{
+"Attack": "15",
+"Defense": "41"
+},
+{
+"Attack": "18",
+"Defense": "47"
+},
+{
+"Attack": "21",
+"Defense": "53"
+},
+{
+"Attack": "24",
+"Defense": "59"
+}
+]
+},
+"Ring|Epic|45": {
+"name": "Black Claw Ring",
+"base": {
+"Attack": "46",
+"Defense": "110"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "6"
+},
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "6",
+"Defense": "18"
+},
+{
+"Attack": "8",
+"Defense": "24"
+},
+{
+"Attack": "10",
+"Defense": "30"
+},
+{
+"Attack": "13",
+"Defense": "36"
+},
+{
+"Attack": "16",
+"Defense": "43"
+},
+{
+"Attack": "19",
+"Defense": "50"
+},
+{
+"Attack": "22",
+"Defense": "57"
+},
+{
+"Attack": "25",
+"Defense": "64"
+}
+]
+},
+"Legs|Epic|42": {
+"name": "Unyielding Greaves",
+"base": {
+"Defense": "256",
+"HP": "126"
+},
+"extra": [
+{
+"Defense": "12",
+"HP": "9"
+},
+{
+"Defense": "24",
+"HP": "19"
+},
+{
+"Defense": "36",
+"HP": "29"
+},
+{
+"Defense": "48",
+"HP": "39"
+},
+{
+"Defense": "60",
+"HP": "49"
+},
+{
+"Defense": "72",
+"HP": "59"
+},
+{
+"Defense": "84",
+"HP": "69"
+},
+{
+"Defense": "96",
+"HP": "79"
+},
+{
+"Defense": "108",
+"HP": "89"
+},
+{
+"Defense": "121",
+"HP": "99"
+}
+]
+},
+"Shoes|Unique|46": {
+"name": "High Commander Lagta Boots",
+"base": {
+"Defense": "225",
+"HP": "92"
+},
+"extra": [
+{
+"Defense": "13",
+"HP": "10"
+},
+{
+"Defense": "26",
+"HP": "20"
+},
+{
+"Defense": "39",
+"HP": "31"
+},
+{
+"Defense": "52",
+"HP": "42"
+},
+{
+"Defense": "65",
+"HP": "53"
+},
+{
+"Defense": "78",
+"HP": "64"
+},
+{
+"Defense": "91",
+"HP": "75"
+},
+{
+"Defense": "104",
+"HP": "86"
+},
+{
+"Defense": "117",
+"HP": "97"
+},
+{
+"Defense": "130",
+"HP": "108"
+},
+{
+"Defense": "143",
+"HP": "119"
+},
+{
+"Defense": "157",
+"HP": "130"
+},
+{
+"Defense": "171",
+"HP": "141"
+},
+{
+"Defense": "185",
+"HP": "152"
+},
+{
+"Defense": "199",
+"HP": "163"
+}
+]
+},
+"Earrings|Unique|46": {
+"name": "Kashapa Earrings",
+"base": {
+"Attack": "59",
+"Defense": "141"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "6"
+},
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "6",
+"Defense": "18"
+},
+{
+"Attack": "8",
+"Defense": "24"
+},
+{
+"Attack": "10",
+"Defense": "30"
+},
+{
+"Attack": "12",
+"Defense": "36"
+},
+{
+"Attack": "14",
+"Defense": "42"
+},
+{
+"Attack": "17",
+"Defense": "48"
+},
+{
+"Attack": "20",
+"Defense": "55"
+},
+{
+"Attack": "23",
+"Defense": "62"
+},
+{
+"Attack": "26",
+"Defense": "69"
+},
+{
+"Attack": "29",
+"Defense": "76"
+},
+{
+"Attack": "32",
+"Defense": "83"
+},
+{
+"Attack": "35",
+"Defense": "90"
+},
+{
+"Attack": "38",
+"Defense": "97"
+}
+]
+},
+"Guard|Epic|45": {
+"name": "Black Claw Guard",
+"base": {
+"Attack": "92",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "5",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "10",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "15",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "20",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "25",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "30",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "35",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "40",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "45",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "51",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Weapon|Epic|45": {
+"name": "Black Claw Longsword",
+"base": {
+"Attack": "229",
+"Accuracy": "150",
+"Critical Hit": "50",
+"Block": "200"
+},
+"extra": [
+{
+"Attack": "5",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "10",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "15",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "20",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "25",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "30",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "35",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "40",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "45",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "51",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+}
+]
+},
+"Gloves|Unique|46": {
+"name": "Dartan Gloves",
+"base": {
+"Defense": "225",
+"HP": "92"
+},
+"extra": [
+{
+"Defense": "13",
+"HP": "10"
+},
+{
+"Defense": "26",
+"HP": "20"
+},
+{
+"Defense": "39",
+"HP": "31"
+},
+{
+"Defense": "52",
+"HP": "42"
+},
+{
+"Defense": "65",
+"HP": "53"
+},
+{
+"Defense": "78",
+"HP": "64"
+},
+{
+"Defense": "91",
+"HP": "75"
+},
+{
+"Defense": "104",
+"HP": "86"
+},
+{
+"Defense": "117",
+"HP": "97"
+},
+{
+"Defense": "130",
+"HP": "108"
+},
+{
+"Defense": "143",
+"HP": "119"
+},
+{
+"Defense": "157",
+"HP": "130"
+},
+{
+"Defense": "171",
+"HP": "141"
+},
+{
+"Defense": "185",
+"HP": "152"
+},
+{
+"Defense": "199",
+"HP": "163"
+}
+]
+},
+"Guard|Unique|54": {
+"name": "Bakarma Guard",
+"base": {
+"Attack": "110",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "6",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "12",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "18",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "24",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "30",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "36",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "42",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "48",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "54",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "60",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "66",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "72",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "78",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "85",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "92",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Top|Unique|44": {
+"name": "Artisan's Splendent Orichalcum Breastplate",
+"base": {
+"Defense": "323",
+"HP": "176"
+},
+"extra": [
+{
+"Defense": "12",
+"HP": "10"
+},
+{
+"Defense": "24",
+"HP": "20"
+},
+{
+"Defense": "36",
+"HP": "30"
+},
+{
+"Defense": "48",
+"HP": "40"
+},
+{
+"Defense": "60",
+"HP": "50"
+},
+{
+"Defense": "73",
+"HP": "60"
+},
+{
+"Defense": "86",
+"HP": "70"
+},
+{
+"Defense": "99",
+"HP": "80"
+},
+{
+"Defense": "112",
+"HP": "90"
+},
+{
+"Defense": "125",
+"HP": "101"
+},
+{
+"Defense": "138",
+"HP": "112"
+},
+{
+"Defense": "151",
+"HP": "123"
+},
+{
+"Defense": "164",
+"HP": "134"
+},
+{
+"Defense": "177",
+"HP": "145"
+},
+{
+"Defense": "190",
+"HP": "156"
+}
+]
+},
+"Top|Unique|41": {
+"name": "Holy Spirit Breastplate",
+"base": {
+"Defense": "299",
+"HP": "164"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "33",
+"HP": "27"
+},
+{
+"Defense": "44",
+"HP": "36"
+},
+{
+"Defense": "56",
+"HP": "45"
+},
+{
+"Defense": "68",
+"HP": "55"
+},
+{
+"Defense": "80",
+"HP": "65"
+},
+{
+"Defense": "92",
+"HP": "75"
+},
+{
+"Defense": "104",
+"HP": "85"
+},
+{
+"Defense": "116",
+"HP": "95"
+},
+{
+"Defense": "128",
+"HP": "105"
+},
+{
+"Defense": "140",
+"HP": "115"
+},
+{
+"Defense": "152",
+"HP": "125"
+},
+{
+"Defense": "164",
+"HP": "135"
+},
+{
+"Defense": "176",
+"HP": "145"
+}
+]
+},
+"Legs|Unique|62": {
+"name": "Star Dragon Lord Greaves",
+"base": {
+"Defense": "381",
+"HP": "186"
+},
+"extra": [
+{
+"Defense": "17",
+"HP": "14"
+},
+{
+"Defense": "35",
+"HP": "28"
+},
+{
+"Defense": "53",
+"HP": "42"
+},
+{
+"Defense": "71",
+"HP": "56"
+},
+{
+"Defense": "89",
+"HP": "70"
+},
+{
+"Defense": "107",
+"HP": "84"
+},
+{
+"Defense": "125",
+"HP": "99"
+},
+{
+"Defense": "143",
+"HP": "114"
+},
+{
+"Defense": "161",
+"HP": "129"
+},
+{
+"Defense": "179",
+"HP": "144"
+},
+{
+"Defense": "197",
+"HP": "159"
+},
+{
+"Defense": "215",
+"HP": "174"
+},
+{
+"Defense": "233",
+"HP": "189"
+},
+{
+"Defense": "251",
+"HP": "204"
+},
+{
+"Defense": "269",
+"HP": "219"
+}
+]
+},
+"Cloak|Unique|62": {
+"name": "Star Dragon Lord Cloak",
+"base": {
+"Defense": "304",
+"HP": "124"
+},
+"extra": [
+{
+"Defense": "17",
+"HP": "14"
+},
+{
+"Defense": "35",
+"HP": "28"
+},
+{
+"Defense": "53",
+"HP": "42"
+},
+{
+"Defense": "71",
+"HP": "56"
+},
+{
+"Defense": "89",
+"HP": "70"
+},
+{
+"Defense": "107",
+"HP": "84"
+},
+{
+"Defense": "125",
+"HP": "99"
+},
+{
+"Defense": "143",
+"HP": "114"
+},
+{
+"Defense": "161",
+"HP": "129"
+},
+{
+"Defense": "179",
+"HP": "144"
+},
+{
+"Defense": "197",
+"HP": "159"
+},
+{
+"Defense": "215",
+"HP": "174"
+},
+{
+"Defense": "233",
+"HP": "189"
+},
+{
+"Defense": "251",
+"HP": "204"
+},
+{
+"Defense": "269",
+"HP": "219"
+}
+]
+},
+"Helm|Unique|46": {
+"name": "Dartan Helm",
+"base": {
+"Defense": "253",
+"HP": "115"
+},
+"extra": [
+{
+"Defense": "13",
+"HP": "10"
+},
+{
+"Defense": "26",
+"HP": "20"
+},
+{
+"Defense": "39",
+"HP": "31"
+},
+{
+"Defense": "52",
+"HP": "42"
+},
+{
+"Defense": "65",
+"HP": "53"
+},
+{
+"Defense": "78",
+"HP": "64"
+},
+{
+"Defense": "91",
+"HP": "75"
+},
+{
+"Defense": "104",
+"HP": "86"
+},
+{
+"Defense": "117",
+"HP": "97"
+},
+{
+"Defense": "130",
+"HP": "108"
+},
+{
+"Defense": "143",
+"HP": "119"
+},
+{
+"Defense": "157",
+"HP": "130"
+},
+{
+"Defense": "171",
+"HP": "141"
+},
+{
+"Defense": "185",
+"HP": "152"
+},
+{
+"Defense": "199",
+"HP": "163"
+}
+]
+},
+"Top|Epic|42": {
+"name": "Unyielding Breastplate",
+"base": {
+"Defense": "307",
+"HP": "168"
+},
+"extra": [
+{
+"Defense": "12",
+"HP": "9"
+},
+{
+"Defense": "24",
+"HP": "19"
+},
+{
+"Defense": "36",
+"HP": "29"
+},
+{
+"Defense": "48",
+"HP": "39"
+},
+{
+"Defense": "60",
+"HP": "49"
+},
+{
+"Defense": "72",
+"HP": "59"
+},
+{
+"Defense": "84",
+"HP": "69"
+},
+{
+"Defense": "96",
+"HP": "79"
+},
+{
+"Defense": "108",
+"HP": "89"
+},
+{
+"Defense": "121",
+"HP": "99"
+}
+]
+},
+"Weapon|Unique|62": {
+"name": "Star Dragon Lord Bow",
+"base": {
+"Attack": "309",
+"Accuracy": "100",
+"Critical Hit": "100"
+},
+"extra": [
+{
+"Attack": "7",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "14",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "21",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "28",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "35",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "42",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "49",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "56",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "63",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "70",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "77",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "84",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "91",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "98",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "105",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Necklace|Epic|45": {
+"name": "Corrupted Judicator Necklace",
+"base": {
+"Attack": "69",
+"Defense": "165"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "6"
+},
+{
+"Attack": "4",
+"Defense": "12"
+},
+{
+"Attack": "6",
+"Defense": "18"
+},
+{
+"Attack": "8",
+"Defense": "24"
+},
+{
+"Attack": "10",
+"Defense": "30"
+},
+{
+"Attack": "13",
+"Defense": "36"
+},
+{
+"Attack": "16",
+"Defense": "43"
+},
+{
+"Attack": "19",
+"Defense": "50"
+},
+{
+"Attack": "22",
+"Defense": "57"
+},
+{
+"Attack": "25",
+"Defense": "64"
+}
+]
+},
+"Ring|Unique|62": {
+"name": "Star Dragon Lord Ring",
+"base": {
+"Attack": "63",
+"Defense": "152"
+},
+"extra": [
+{
+"Attack": "3",
+"Defense": "8"
+},
+{
+"Attack": "6",
+"Defense": "16"
+},
+{
+"Attack": "9",
+"Defense": "24"
+},
+{
+"Attack": "12",
+"Defense": "33"
+},
+{
+"Attack": "15",
+"Defense": "42"
+},
+{
+"Attack": "18",
+"Defense": "51"
+},
+{
+"Attack": "21",
+"Defense": "60"
+},
+{
+"Attack": "24",
+"Defense": "69"
+},
+{
+"Attack": "28",
+"Defense": "78"
+},
+{
+"Attack": "32",
+"Defense": "87"
+},
+{
+"Attack": "36",
+"Defense": "96"
+},
+{
+"Attack": "40",
+"Defense": "105"
+},
+{
+"Attack": "44",
+"Defense": "114"
+},
+{
+"Attack": "48",
+"Defense": "123"
+},
+{
+"Attack": "52",
+"Defense": "132"
+}
+]
+},
+"Pauldrons|Unique|41": {
+"name": "Holy Spirit Pauldrons",
+"base": {
+"Defense": "225",
+"HP": "103"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "33",
+"HP": "27"
+},
+{
+"Defense": "44",
+"HP": "36"
+},
+{
+"Defense": "56",
+"HP": "45"
+},
+{
+"Defense": "68",
+"HP": "55"
+},
+{
+"Defense": "80",
+"HP": "65"
+},
+{
+"Defense": "92",
+"HP": "75"
+},
+{
+"Defense": "104",
+"HP": "85"
+},
+{
+"Defense": "116",
+"HP": "95"
+},
+{
+"Defense": "128",
+"HP": "105"
+},
+{
+"Defense": "140",
+"HP": "115"
+},
+{
+"Defense": "152",
+"HP": "125"
+},
+{
+"Defense": "164",
+"HP": "135"
+},
+{
+"Defense": "176",
+"HP": "145"
+}
+]
+},
+"Shoes|Epic|45": {
+"name": "Black Claw Boots",
+"base": {
+"Defense": "220",
+"HP": "90"
+},
+"extra": [
+{
+"Defense": "13",
+"HP": "10"
+},
+{
+"Defense": "26",
+"HP": "20"
+},
+{
+"Defense": "39",
+"HP": "30"
+},
+{
+"Defense": "52",
+"HP": "40"
+},
+{
+"Defense": "65",
+"HP": "51"
+},
+{
+"Defense": "78",
+"HP": "62"
+},
+{
+"Defense": "91",
+"HP": "73"
+},
+{
+"Defense": "104",
+"HP": "84"
+},
+{
+"Defense": "117",
+"HP": "95"
+},
+{
+"Defense": "130",
+"HP": "106"
+}
+]
+},
+"Cloak|Epic|45": {
+"name": "Corrupted Judicator Cloak",
+"base": {
+"Defense": "220",
+"HP": "90"
+},
+"extra": [
+{
+"Defense": "13",
+"HP": "10"
+},
+{
+"Defense": "26",
+"HP": "20"
+},
+{
+"Defense": "39",
+"HP": "30"
+},
+{
+"Defense": "52",
+"HP": "40"
+},
+{
+"Defense": "65",
+"HP": "51"
+},
+{
+"Defense": "78",
+"HP": "62"
+},
+{
+"Defense": "91",
+"HP": "73"
+},
+{
+"Defense": "104",
+"HP": "84"
+},
+{
+"Defense": "117",
+"HP": "95"
+},
+{
+"Defense": "130",
+"HP": "106"
+}
+]
+},
+"Pauldrons|Epic|45": {
+"name": "Corrupted Judicator Pauldrons",
+"base": {
+"Defense": "248",
+"HP": "113"
+},
+"extra": [
+{
+"Defense": "13",
+"HP": "10"
+},
+{
+"Defense": "26",
+"HP": "20"
+},
+{
+"Defense": "39",
+"HP": "30"
+},
+{
+"Defense": "52",
+"HP": "40"
+},
+{
+"Defense": "65",
+"HP": "51"
+},
+{
+"Defense": "78",
+"HP": "62"
+},
+{
+"Defense": "91",
+"HP": "73"
+},
+{
+"Defense": "104",
+"HP": "84"
+},
+{
+"Defense": "117",
+"HP": "95"
+},
+{
+"Defense": "130",
+"HP": "106"
+}
+]
+},
+"Pauldrons|Epic|40": {
+"name": "Division Pauldrons",
+"base": {
+"Defense": "219",
+"HP": "100"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "33",
+"HP": "27"
+},
+{
+"Defense": "44",
+"HP": "36"
+},
+{
+"Defense": "55",
+"HP": "45"
+},
+{
+"Defense": "67",
+"HP": "54"
+},
+{
+"Defense": "79",
+"HP": "64"
+},
+{
+"Defense": "91",
+"HP": "74"
+},
+{
+"Defense": "103",
+"HP": "84"
+},
+{
+"Defense": "115",
+"HP": "94"
+}
+]
+},
+"Necklace|Epic|40": {
+"name": "Lakshmi Necklace",
+"base": {
+"Attack": "61",
+"Defense": "146"
+},
+"extra": [
+{
+"Attack": "2",
+"Defense": "5"
+},
+{
+"Attack": "4",
+"Defense": "10"
+},
+{
+"Attack": "6",
+"Defense": "15"
+},
+{
+"Attack": "8",
+"Defense": "21"
+},
+{
+"Attack": "10",
+"Defense": "27"
+},
+{
+"Attack": "12",
+"Defense": "33"
+},
+{
+"Attack": "14",
+"Defense": "39"
+},
+{
+"Attack": "16",
+"Defense": "45"
+},
+{
+"Attack": "19",
+"Defense": "51"
+},
+{
+"Attack": "22",
+"Defense": "57"
+}
+]
+},
+"Gloves|Unique|41": {
+"name": "Spectral Gloves",
+"base": {
+"Defense": "200",
+"HP": "82"
+},
+"extra": [
+{
+"Defense": "11",
+"HP": "9"
+},
+{
+"Defense": "22",
+"HP": "18"
+},
+{
+"Defense": "33",
+"HP": "27"
+},
+{
+"Defense": "44",
+"HP": "36"
+},
+{
+"Defense": "56",
+"HP": "45"
+},
+{
+"Defense": "68",
+"HP": "55"
+},
+{
+"Defense": "80",
+"HP": "65"
+},
+{
+"Defense": "92",
+"HP": "75"
+},
+{
+"Defense": "104",
+"HP": "85"
+},
+{
+"Defense": "116",
+"HP": "95"
+},
+{
+"Defense": "128",
+"HP": "105"
+},
+{
+"Defense": "140",
+"HP": "115"
+},
+{
+"Defense": "152",
+"HP": "125"
+},
+{
+"Defense": "164",
+"HP": "135"
+},
+{
+"Defense": "176",
+"HP": "145"
+}
+]
+},
+"Earrings|Unique|62": {
+"name": "True Dragon Lord Earrings",
+"base": {
+"Attack": "79",
+"Defense": "190"
+},
+"extra": [
+{
+"Attack": "3",
+"Defense": "8"
+},
+{
+"Attack": "6",
+"Defense": "16"
+},
+{
+"Attack": "9",
+"Defense": "24"
+},
+{
+"Attack": "12",
+"Defense": "33"
+},
+{
+"Attack": "15",
+"Defense": "42"
+},
+{
+"Attack": "18",
+"Defense": "51"
+},
+{
+"Attack": "21",
+"Defense": "60"
+},
+{
+"Attack": "24",
+"Defense": "69"
+},
+{
+"Attack": "28",
+"Defense": "78"
+},
+{
+"Attack": "32",
+"Defense": "87"
+},
+{
+"Attack": "36",
+"Defense": "96"
+},
+{
+"Attack": "40",
+"Defense": "105"
+},
+{
+"Attack": "44",
+"Defense": "114"
+},
+{
+"Attack": "48",
+"Defense": "123"
+},
+{
+"Attack": "52",
+"Defense": "132"
+}
+]
+},
+"Pauldrons|Unique|46": {
+"name": "Dartan Pauldrons",
+"base": {
+"Defense": "253",
+"HP": "115"
+},
+"extra": [
+{
+"Defense": "13",
+"HP": "10"
+},
+{
+"Defense": "26",
+"HP": "20"
+},
+{
+"Defense": "39",
+"HP": "31"
+},
+{
+"Defense": "52",
+"HP": "42"
+},
+{
+"Defense": "65",
+"HP": "53"
+},
+{
+"Defense": "78",
+"HP": "64"
+},
+{
+"Defense": "91",
+"HP": "75"
+},
+{
+"Defense": "104",
+"HP": "86"
+},
+{
+"Defense": "117",
+"HP": "97"
+},
+{
+"Defense": "130",
+"HP": "108"
+},
+{
+"Defense": "143",
+"HP": "119"
+},
+{
+"Defense": "157",
+"HP": "130"
+},
+{
+"Defense": "171",
+"HP": "141"
+},
+{
+"Defense": "185",
+"HP": "152"
+},
+{
+"Defense": "199",
+"HP": "163"
+}
+]
+},
+"Weapon|Unique|94": {
+"name": "Wise Dragon Lord Staff",
+"base": {
+"Attack": "532",
+"Accuracy": "75",
+"Critical Hit": "100",
+"Block": "125"
+},
+"extra": [
+{
+"Attack": "10",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "20",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "30",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "40",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "50",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "61",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "72",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "83",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "94",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "105",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "116",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "127",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "138",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "149",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "160",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+}
+]
+},
+"Guard|Epic|42": {
+"name": "Unyielding Guard",
+"base": {
+"Attack": "85",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "8",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "12",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "17",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "22",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "27",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "32",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "37",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "42",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "47",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Belt|Unique|65": {
+"name": "Noble Belt",
+"base": {
+"Defense": "500",
+"HP": "1100",
+"HP Potion Recovery increase": "30%",
+"Regeneration": "5%"
+},
+"extra": [
+{
+"Defense": "30",
+"HP": "50",
+"HP Potion Recovery increase": "0%",
+"Regeneration": "0%"
+},
+{
+"Defense": "60",
+"HP": "100",
+"HP Potion Recovery increase": "0%",
+"Regeneration": "0%"
+},
+{
+"Defense": "90",
+"HP": "150",
+"HP Potion Recovery increase": "0%",
+"Regeneration": "0%"
+},
+{
+"Defense": "120",
+"HP": "200",
+"HP Potion Recovery increase": "0%",
+"Regeneration": "0%"
+},
+{
+"Defense": "150",
+"HP": "250",
+"HP Potion Recovery increase": "0%",
+"Regeneration": "0%"
+},
+{
+"Defense": "180",
+"HP": "300",
+"HP Potion Recovery increase": "0%",
+"Regeneration": "0%"
+},
+{
+"Defense": "210",
+"HP": "350",
+"HP Potion Recovery increase": "0%",
+"Regeneration": "0%"
+},
+{
+"Defense": "240",
+"HP": "400",
+"HP Potion Recovery increase": "0%",
+"Regeneration": "0%"
+},
+{
+"Defense": "270",
+"HP": "450",
+"HP Potion Recovery increase": "0%",
+"Regeneration": "0%"
+},
+{
+"Defense": "300",
+"HP": "500",
+"HP Potion Recovery increase": "0%",
+"Regeneration": "0%"
+}
+]
+},
+"Amulet|Unique|65": {
+"name": "Revelation Amulet",
+"base": {
+"Penetration": "700",
+"Power Shard Damage Bonus": "40",
+"Weapon Damage Boost": "10%",
+"Perfect Chance": "5%"
+},
+"extra": [
+{
+"Penetration": "30",
+"Power Shard Damage Bonus": "3",
+"Weapon Damage Boost": "0%",
+"Perfect Chance": "0%"
+},
+{
+"Penetration": "60",
+"Power Shard Damage Bonus": "6",
+"Weapon Damage Boost": "0%",
+"Perfect Chance": "0%"
+},
+{
+"Penetration": "90",
+"Power Shard Damage Bonus": "9",
+"Weapon Damage Boost": "0%",
+"Perfect Chance": "0%"
+},
+{
+"Penetration": "120",
+"Power Shard Damage Bonus": "12",
+"Weapon Damage Boost": "0%",
+"Perfect Chance": "0%"
+},
+{
+"Penetration": "150",
+"Power Shard Damage Bonus": "15",
+"Weapon Damage Boost": "0%",
+"Perfect Chance": "0%"
+},
+{
+"Penetration": "180",
+"Power Shard Damage Bonus": "18",
+"Weapon Damage Boost": "0%",
+"Perfect Chance": "0%"
+},
+{
+"Penetration": "210",
+"Power Shard Damage Bonus": "21",
+"Weapon Damage Boost": "0%",
+"Perfect Chance": "0%"
+},
+{
+"Penetration": "240",
+"Power Shard Damage Bonus": "24",
+"Weapon Damage Boost": "0%",
+"Perfect Chance": "0%"
+},
+{
+"Penetration": "270",
+"Power Shard Damage Bonus": "27",
+"Weapon Damage Boost": "0%",
+"Perfect Chance": "0%"
+},
+{
+"Penetration": "300",
+"Power Shard Damage Bonus": "30",
+"Weapon Damage Boost": "0%",
+"Perfect Chance": "0%"
+}
+]
+},
+"Amulet|Rare|13": {
+"name": "Fierce Battle Amulet",
+"base": {
+"Penetration": "100",
+"PvP Damage Boost": "10%"
+},
+"extra": [
+{
+"Penetration": "30",
+"PvP Damage Boost": "0%"
+},
+{
+"Penetration": "60",
+"PvP Damage Boost": "0%"
+},
+{
+"Penetration": "90",
+"PvP Damage Boost": "0%"
+},
+{
+"Penetration": "120",
+"PvP Damage Boost": "0%"
+},
+{
+"Penetration": "150",
+"PvP Damage Boost": "0%"
+},
+{
+"Penetration": "180",
+"PvP Damage Boost": "0%"
+},
+{
+"Penetration": "210",
+"PvP Damage Boost": "0%"
+},
+{
+"Penetration": "240",
+"PvP Damage Boost": "0%"
+},
+{
+"Penetration": "270",
+"PvP Damage Boost": "0%"
+},
+{
+"Penetration": "300",
+"PvP Damage Boost": "0%"
+}
+]
+},
+"Rune|Special|40": {
+"name": "Clash Rune",
+"base": {
+"Combat Speed": "1%",
+"Penetration": "100",
+"Multi-hit Chance": "1%",
+"PvE Damage Boost": "0.5%",
+"PvE Damage Tolerance": "0.5%"
+},
+"extra": [
+{
+"Combat Speed": "0%",
+"Penetration": "0",
+"Multi-hit Chance": "0%",
+"PvE Damage Boost": "0%",
+"PvE Damage Tolerance": "0.5%"
+},
+{
+"Combat Speed": "0%",
+"Penetration": "0",
+"Multi-hit Chance": "0%",
+"PvE Damage Boost": "0%",
+"PvE Damage Tolerance": "1%"
+},
+{
+"Combat Speed": "0%",
+"Penetration": "0",
+"Multi-hit Chance": "0%",
+"PvE Damage Boost": "0.5%",
+"PvE Damage Tolerance": "1.5%"
+},
+{
+"Combat Speed": "0%",
+"Penetration": "0",
+"Multi-hit Chance": "0%",
+"PvE Damage Boost": "1%",
+"PvE Damage Tolerance": "2%"
+},
+{
+"Combat Speed": "0%",
+"Penetration": "50",
+"Multi-hit Chance": "0%",
+"PvE Damage Boost": "1.5%",
+"PvE Damage Tolerance": "2.5%"
+},
+{
+"Combat Speed": "0%",
+"Penetration": "100",
+"Multi-hit Chance": "0%",
+"PvE Damage Boost": "2%",
+"PvE Damage Tolerance": "3%"
+},
+{
+"Combat Speed": "1%",
+"Penetration": "150",
+"Multi-hit Chance": "0%",
+"PvE Damage Boost": "2.5%",
+"PvE Damage Tolerance": "3.5%"
+},
+{
+"Combat Speed": "2%",
+"Penetration": "200",
+"Multi-hit Chance": "0%",
+"PvE Damage Boost": "3%",
+"PvE Damage Tolerance": "4%"
+},
+{
+"Combat Speed": "3%",
+"Penetration": "300",
+"Multi-hit Chance": "2%",
+"PvE Damage Boost": "4%",
+"PvE Damage Tolerance": "4.5%"
+},
+{
+"Combat Speed": "4%",
+"Penetration": "400",
+"Multi-hit Chance": "4%",
+"PvE Damage Boost": "5%",
+"PvE Damage Tolerance": "5%"
+}
+]
+},
+"Belt|Epic|36": {
+"name": "Noble Belt",
+"base": {
+"Defense": "200",
+"HP": "600",
+"HP Potion Recovery increase": "20%"
+},
+"extra": [
+{
+"Defense": "30",
+"HP": "50",
+"HP Potion Recovery increase": "0%"
+},
+{
+"Defense": "60",
+"HP": "100",
+"HP Potion Recovery increase": "0%"
+},
+{
+"Defense": "90",
+"HP": "150",
+"HP Potion Recovery increase": "0%"
+},
+{
+"Defense": "120",
+"HP": "200",
+"HP Potion Recovery increase": "0%"
+},
+{
+"Defense": "150",
+"HP": "250",
+"HP Potion Recovery increase": "0%"
+},
+{
+"Defense": "180",
+"HP": "300",
+"HP Potion Recovery increase": "0%"
+},
+{
+"Defense": "210",
+"HP": "350",
+"HP Potion Recovery increase": "0%"
+},
+{
+"Defense": "240",
+"HP": "400",
+"HP Potion Recovery increase": "0%"
+},
+{
+"Defense": "270",
+"HP": "450",
+"HP Potion Recovery increase": "0%"
+},
+{
+"Defense": "300",
+"HP": "500",
+"HP Potion Recovery increase": "0%"
+}
+]
+},
+"Amulet|Epic|36": {
+"name": "Revelation Amulet",
+"base": {
+"Penetration": "400",
+"Power Shard Damage Bonus": "10",
+"Weapon Damage Boost": "7.5%"
+},
+"extra": [
+{
+"Penetration": "30",
+"Power Shard Damage Bonus": "3",
+"Weapon Damage Boost": "0%"
+},
+{
+"Penetration": "60",
+"Power Shard Damage Bonus": "6",
+"Weapon Damage Boost": "0%"
+},
+{
+"Penetration": "90",
+"Power Shard Damage Bonus": "9",
+"Weapon Damage Boost": "0%"
+},
+{
+"Penetration": "120",
+"Power Shard Damage Bonus": "12",
+"Weapon Damage Boost": "0%"
+},
+{
+"Penetration": "150",
+"Power Shard Damage Bonus": "15",
+"Weapon Damage Boost": "0%"
+},
+{
+"Penetration": "180",
+"Power Shard Damage Bonus": "18",
+"Weapon Damage Boost": "0%"
+},
+{
+"Penetration": "210",
+"Power Shard Damage Bonus": "21",
+"Weapon Damage Boost": "0%"
+},
+{
+"Penetration": "240",
+"Power Shard Damage Bonus": "24",
+"Weapon Damage Boost": "0%"
+},
+{
+"Penetration": "270",
+"Power Shard Damage Bonus": "27",
+"Weapon Damage Boost": "0%"
+},
+{
+"Penetration": "300",
+"Power Shard Damage Bonus": "30",
+"Weapon Damage Boost": "0%"
+}
+]
+},
+"Belt|Rare|13": {
+"name": "Noble Belt",
+"base": {
+"HP": "100",
+"HP Potion Recovery increase": "10%"
+},
+"extra": [
+{
+"HP": "50",
+"HP Potion Recovery increase": "0%"
+},
+{
+"HP": "100",
+"HP Potion Recovery increase": "0%"
+},
+{
+"HP": "150",
+"HP Potion Recovery increase": "0%"
+},
+{
+"HP": "200",
+"HP Potion Recovery increase": "0%"
+},
+{
+"HP": "250",
+"HP Potion Recovery increase": "0%"
+},
+{
+"HP": "300",
+"HP Potion Recovery increase": "0%"
+},
+{
+"HP": "350",
+"HP Potion Recovery increase": "0%"
+},
+{
+"HP": "400",
+"HP Potion Recovery increase": "0%"
+},
+{
+"HP": "450",
+"HP Potion Recovery increase": "0%"
+},
+{
+"HP": "500",
+"HP Potion Recovery increase": "0%"
+}
+]
+},
+"Legs|Epic|33": {
+"name": "Faith Greaves",
+"base": {
+"Defense": "199",
+"HP": "99"
+},
+"extra": [
+{
+"Defense": "9",
+"HP": "7"
+},
+{
+"Defense": "18",
+"HP": "14"
+},
+{
+"Defense": "27",
+"HP": "22"
+},
+{
+"Defense": "36",
+"HP": "30"
+},
+{
+"Defense": "45",
+"HP": "38"
+},
+{
+"Defense": "54",
+"HP": "46"
+},
+{
+"Defense": "64",
+"HP": "54"
+},
+{
+"Defense": "74",
+"HP": "62"
+},
+{
+"Defense": "84",
+"HP": "70"
+},
+{
+"Defense": "94",
+"HP": "78"
+}
+]
+},
+"Earrings|Common|16": {
+"name": "Diamond Earrings",
+"base": {
+"Attack": "20",
+"Defense": "47"
+},
+"extra": [
+{
+"Attack": "1",
+"Defense": "2"
+},
+{
+"Attack": "2",
+"Defense": "4"
+},
+{
+"Attack": "3",
+"Defense": "6"
+},
+{
+"Attack": "4",
+"Defense": "8"
+},
+{
+"Attack": "5",
+"Defense": "11"
+}
+]
+},
+"Legs|Epic|25": {
+"name": "Red Agate Greaves",
+"base": {
+"Defense": "150",
+"HP": "75"
+},
+"extra": [
+{
+"Defense": "7",
+"HP": "5"
+},
+{
+"Defense": "14",
+"HP": "11"
+},
+{
+"Defense": "21",
+"HP": "17"
+},
+{
+"Defense": "28",
+"HP": "23"
+},
+{
+"Defense": "35",
+"HP": "29"
+},
+{
+"Defense": "42",
+"HP": "35"
+},
+{
+"Defense": "49",
+"HP": "41"
+},
+{
+"Defense": "56",
+"HP": "47"
+},
+{
+"Defense": "63",
+"HP": "53"
+},
+{
+"Defense": "71",
+"HP": "59"
+}
+]
+},
+"Weapon|Epic|38": {
+"name": "Discipline Dagger",
+"base": {
+"Attack": "173",
+"Accuracy": "50",
+"Critical Hit": "200",
+"Block": "50"
+},
+"extra": [
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "8",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "12",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "16",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "20",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "24",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "28",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "33",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "38",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+},
+{
+"Attack": "43",
+"Accuracy": "0",
+"Critical Hit": "0",
+"Block": "0"
+}
+]
+},
+"Guard|Unique|41": {
+"name": "Spectral Guard",
+"base": {
+"Attack": "83",
+"Accuracy": "50",
+"Critical Hit": "50"
+},
+"extra": [
+{
+"Attack": "4",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "8",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "12",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "16",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "20",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "24",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "29",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "34",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "39",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "44",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "49",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "54",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "59",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "64",
+"Accuracy": "0",
+"Critical Hit": "0"
+},
+{
+"Attack": "69",
+"Accuracy": "0",
+"Critical Hit": "0"
+}
+]
+},
+"Legs|Rare|25": {
+"name": "Intruder Greaves",
+"base": {
+"Defense": "150",
+"HP": "75"
+},
+"extra": [
+{
+"Defense": "7",
+"HP": "6"
+},
+{
+"Defense": "14",
+"HP": "12"
+},
+{
+"Defense": "21",
+"HP": "18"
+},
+{
+"Defense": "28",
+"HP": "24"
+},
+{
+"Defense": "36",
+"HP": "30"
+}
+]
+}
+}
