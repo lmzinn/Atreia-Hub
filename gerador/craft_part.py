@@ -134,6 +134,10 @@ def craft_part(strings, english):
              '<b>Amulet, belt and rune</b> also spend 1 Enhance Scroll (Bound) of the item itself per attempt.'),
             ('<b>Clash Rune:</b> a falha baixa o nível. A conta supõe 1 nível por falha; não achei confirmação.',
              '<b>Clash Rune:</b> a failure lowers the level. The maths assumes 1 level per failure; I found no confirmation.'),
+            ('<b>Ariel Fragment:</b> cada um vira 5 Enhance Stones no Substance Morph (Special > Consumables), sem limite. '
+             'Vale para os fragmentos do modo Hard que sobrarem depois dos 30 Daevanion Crystal: Ariel.',
+             '<b>Ariel Fragment:</b> each one turns into 5 Enhance Stones at Substance Morph (Special > Consumables), with no '
+             'limit. It is for the Hard mode fragments left after the 30 Daevanion Crystal: Ariel.'),
             ('<b>Atributos no nível:</b> o bônus total da peça naquele nível, da armaria oficial do jogo (o mesmo do editor '
              'de build). Arma e guarda ganham igual; todas as partes de armadura também; e colar, brinco, anel e bracelete '
              'também. Por isso, nas peças comuns, escolha o tipo.',
@@ -383,9 +387,11 @@ def craft_part(strings, english):
             (same('Wrathful Mind'), ('Expeditions no modo Conquest', 'Expeditions in Conquest mode'),
              ('As seis Expeditions e o Abyssal Forge: Ludra', 'All six Expeditions and Abyssal Forge: Ludra')),
             (same('Wrathful Will'), ('Expeditions no modo Conquest', 'Expeditions in Conquest mode'),
-             same('Urugugu Canyon, Fire Temple, Vakron Sky Island, Ferocious Horn Den, Abyssal Forge: Ludra')),
+             ('Urugugu Canyon, Fire Temple, Vakron Sky Island, Ferocious Horn Den, Abyssal Forge: Ludra; Krao Cave e Draupnir no modo Hard',
+              'Urugugu Canyon, Fire Temple, Vakron Sky Island, Ferocious Horn Den, Abyssal Forge: Ludra; Krao Cave and Draupnir on Hard')),
             (same('Wrathful Ego'), ('Expeditions no modo Conquest', 'Expeditions in Conquest mode'),
-             same('Fire Temple, Ferocious Horn Den, Abyssal Forge: Ludra')),
+             ('Fire Temple, Ferocious Horn Den, Abyssal Forge: Ludra; Krao Cave e Draupnir no modo Hard',
+              'Fire Temple, Ferocious Horn Den, Abyssal Forge: Ludra; Krao Cave and Draupnir on Hard')),
             (same("Balaur's Essence"), ('Chefes de campo de nível 45 e Expeditions (Conquest)', 'Level 45 field bosses and Expeditions (Conquest)'),
              ('60,7% por chefe em Verteron; 2 viram 1 Balaur Horn, Leather ou Scale',
               '60.7% per boss in Verteron; 2 become 1 Balaur Horn, Leather or Scale')),

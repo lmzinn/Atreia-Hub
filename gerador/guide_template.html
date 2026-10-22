@@ -805,6 +805,7 @@ body:not(.hastimer) #tpane{bottom:18px}
 /* enhancement calculator: the stats column */
 .cenh td.gain{font-size:12.5px;color:var(--hl2);white-space:normal;min-width:150px}
 .cenh tr.tot td.gain{font-weight:700}
+.bchip.warn{border-color:#ef4444}.bchip.warn b{color:#f87171}
 </style>
 </head>
 <body>
@@ -1709,7 +1710,7 @@ const RUI = {
   pt: {chars: 'Personagens', name: 'Nome', main: 'Main', alt: 'Alt {n}', choose: 'Escolher o que aparece', chosen: 'Pronto', show: 'Mostrar',
     daily: 'Reset diário em', weekly: 'Reset semanal em', at: 'às {t}', d: 'd', h: 'h', min: 'min',
     charges: 'Diário', weeks: 'Semanal', act: 'Atividade', rate: 'Recarga', stored: 'Guardadas', limit: 'Limite', doneCol: 'Feitas', status: 'Situação',
-    perDay: '{n} por dia, até {c}', perWeek: '{n} por semana', perWeekH: '{n} h por semana',
+    perDay: '{n} por dia, até {c}', perWeek: '{n} por semana', perKeep: '{n} no total, não zera', perWeekH: '{n} h por semana',
     full: 'Sem marcar há dias: deve estar no máximo, e a próxima recarga se perde', fullCount: '{n} no máximo', today: 'Para fazer hoje', tFull: 'Deve estar no máximo, faça primeiro',
     tick: 'Marcar como feito', tWeek: 'Semana: {a} de {b} feitos', tDaily: 'Diárias por fazer: {n}', tDailyDone: 'Diárias de hoje feitas',
     sub: 'Tenho Membership', subHow: 'Com a assinatura: Shugo Festival guarda até 21, Abyss time passa para 14 horas e aparece a compra de Odyle Energy.', doneOf: '{a} de {b} feitos', resetsAt: 'zera {d} às {t}', dayWord: ['hoje', 'amanhã'], resetIn: 'reset em {t}', srv: 'por servidor', tagSrv: 'SERVIDOR', tagChar: 'PERSONAGEM', perDayFlat: '{n} por dia, não acumula', empty: 'Sem entradas', done: 'Completo', none: 'Nada escolhido nesta lista.',
@@ -1717,7 +1718,7 @@ const RUI = {
   en: {chars: 'Characters', name: 'Name', main: 'Main', alt: 'Alt {n}', choose: 'Choose what shows', chosen: 'Done', show: 'Show',
     daily: 'Daily reset in', weekly: 'Weekly reset in', at: 'at {t}', d: 'd', h: 'h', min: 'min',
     charges: 'Daily', weeks: 'Weekly', act: 'Activity', rate: 'Recharge', stored: 'Stored', limit: 'Limit', doneCol: 'Done', status: 'Status',
-    perDay: '{n} a day, up to {c}', perWeek: '{n} a week', perWeekH: '{n} h a week',
+    perDay: '{n} a day, up to {c}', perWeek: '{n} a week', perKeep: '{n} in all, never resets', perWeekH: '{n} h a week',
     full: 'Not ticked for days: it should be at its cap, and the next recharge is lost', fullCount: '{n} at the cap', today: 'To do today', tFull: 'Should be at the cap, do it first',
     tick: 'Mark as done', tWeek: 'Week: {a} of {b} done', tDaily: 'Dailies left: {n}', tDailyDone: 'Dailies done for today',
     sub: 'I have the Membership', subHow: 'With the subscription: Shugo Festival stores up to 21, Abyss time goes to 14 hours and the Odyle Energy purchase shows up.', doneOf: '{a} of {b} done', resetsAt: 'resets {d} at {t}', dayWord: ['today', 'tomorrow'], resetIn: 'reset in {t}', srv: 'per server', tagSrv: 'SERVER', tagChar: 'CHAR', perDayFlat: '{n} a day, does not stack', empty: 'No entries', done: 'Complete', none: 'Nothing chosen in this list.',
@@ -1733,7 +1734,7 @@ if (rtHost && ROUTINE.length) {
   const daily = a => a.per === 'day', stacks = a => daily(a) && !!a.cap, vals = i => S.rt.v[i] || (S.rt.v[i] = {});
   const capOf = a => S.rt.sub && a.capSub ? a.capSub : a.cap, limOf = a => S.rt.sub && a.nSub ? a.nSub : a.n, maxOf = a => stacks(a) ? capOf(a) : limOf(a);
   const own = (i, a) => vals(a.srv ? 'srv' : i);  // some counters belong to the server, not to the character
-  const live = a => !a.subOnly || !!S.rt.sub;  // some counters exist only with the Membership
+  const live = a => (!a.subOnly || !!S.rt.sub) && !(a.until && Date.now() >= Date.parse(a.until));  // Membership only, or an event that ended
   // what shows is chosen per character: the first one keeps the old choices (S.rt.hide), the others S.rt.hideBy[index]
   const hideMap = () => { const i = S.rt.cur || 0; if (!i) return S.rt.hide; S.rt.hideBy = S.rt.hideBy || {}; return S.rt.hideBy[i] || (S.rt.hideBy[i] = {}); };
   const rname = a => S.lang === 'en' ? a.name : a.pt || a.name;  // the counter's name in the page's language
@@ -1774,7 +1775,7 @@ if (rtHost && ROUTINE.length) {
       if (stacks(a)) v[a.id] = Math.min(capOf(a), (v[a.id] != null ? v[a.id] : a.n) + a.n * (day - r.day)); else delete v[a.id];
       changed = true;
     }));
-    if (r.week != null && week > r.week) Object.values(r.v).forEach(v => ROUTINE.filter(a => !daily(a)).forEach(a => { delete v[a.id]; changed = true; }));
+    if (r.week != null && week > r.week) Object.values(r.v).forEach(v => ROUTINE.filter(a => !daily(a) && !a.keep).forEach(a => { delete v[a.id]; changed = true; }));
     if (r.day !== day || r.week !== week) { r.day = day; r.week = week; save(); }
     return changed;
   }
@@ -1838,7 +1839,7 @@ if (rtHost && ROUTINE.length) {
         const title = make('b', '', rname(a)); if (rname(a) !== a.name) title.title = a.name;  // the game's English name on hover
         if (a.srv || a.both) title.prepend(make('span', 'rtag srv', ru('tagSrv')));
         if (!a.srv || a.both) title.prepend(make('span', 'rtag', ru('tagChar')));
-        const rate = stacks(a) ? ru('perDay').replace('{n}', a.n).replace('{c}', max) : daily(a) ? ru('perDayFlat').replace('{n}', max) : ru(a.unit ? 'perWeekH' : 'perWeek').replace('{n}', max);
+        const rate = a.keep ? ru('perKeep').replace('{n}', max) : stacks(a) ? ru('perDay').replace('{n}', a.n).replace('{c}', max) : daily(a) ? ru('perDayFlat').replace('{n}', max) : ru(a.unit ? 'perWeekH' : 'perWeek').replace('{n}', max);
         words.append(title, make('small', '', a.note ? a.note[S.lang === 'en' ? 1 : 0].replace('{c}', max) : rate));
         let before = a.n;  // what a stacking entry held before the tick, given back if the tick is undone
         const mark = () => { const full = stacks(a) && val(r.cur, a) >= max, done = isDone(r.cur, a);
@@ -1869,7 +1870,9 @@ const BUI = {
     barTitle: 'Barra de skills', row: 'Linha {n}', key: 'Tecla', macro: 'Macro', macroCol: 'Coluna que a macro dispara', lmb: 'Clique esquerdo', rmb: 'Clique direito', side: 'Botão lateral',
     kSkill: 'Skill', kStig: 'Stigma', kMacro: 'Disparada pela macro', keyName: 'Nome da tecla',
     barHow: 'Clique num espaço para escolher a skill: aparecem as ativas e os stigmas marcados como equipados na aba Skills. Clique em M para marcar a coluna que a macro dispara. A linha 0 é a de baixo, encostada na tecla, como no jogo; os nomes da segunda barra você pode trocar.',
-    sumPoints: 'Skill Points gastos', sumShards: 'Stigma Shards gastos', sumCrystals: 'Daevanion Crystals', sumAzphel: 'Crystals do Azphel', sumStig: 'Stigmas equipados',
+    sumPoints: 'Skill Points gastos', sumShards: 'Stigma Shards gastos', sumCrystals: 'Daevanion Crystals', sumAzphel: 'Crystals do Azphel', sumAriel: 'Crystals do Ariel', arielOver: 'Passou de {n}: hoje cada personagem só consegue {n} cristais de Ariel.',
+    arielNote: 'Ariel: tabuleiro de PvE e chefes, com cristais próprios. Eles vêm só dos Ariel Fragments do modo Hard de Krao Cave e Draupnir (100 fragmentos = 1 cristal no Substance Morph), no máximo 30 por personagem por enquanto: escolha bem os 30 primeiros pontos.',
+    azphelNote: 'Azphel: tabuleiro de PvP, com cristais próprios.', sumStig: 'Stigmas equipados',
     A: 'Skills ativas', P: 'Passivas', S: 'Stigmas', skill: 'Skill', trained: 'Nível treinado', fromDaev: '+ Daevanion', fromGear: '+ equipamento', final: 'Nível final', specs: 'Specs', on: 'Equipado',
     specSlots: '{a} de {b}', stigOn: '{a} de {b} ligadas · ligam sozinhas', stigAt: 'liga sozinha no nível {n}', specAt: 'abre no nível {n}', noSpecs: 'Specs a partir do nível 8', stigFull: 'Já há 4 stigmas equipados.',
     clear: 'Limpar este tabuleiro', all: 'Pegar tudo', nodes: '{a} de {b} nós', crystals: '{a} de {b} cristais', effects: 'Efeitos ativos', fxSkills: 'Níveis de skill', fxStats: 'Atributos', none: 'Nenhum nó pego ainda.',
@@ -1885,7 +1888,9 @@ const BUI = {
     barTitle: 'Skill bar', row: 'Row {n}', key: 'Key', macro: 'Macro', macroCol: 'Column the macro fires', lmb: 'Left click', rmb: 'Right click', side: 'Side button',
     kSkill: 'Skill', kStig: 'Stigma', kMacro: 'Fired by the macro', keyName: 'Key name',
     barHow: 'Click a slot to choose the skill: the active skills and the stigmas ticked as equipped on the Skills tab show up. Click M to mark the column the macro fires. Row 0 is the bottom one, next to the key, as in the game; you can rename the keys of the second bar.',
-    sumPoints: 'Skill Points spent', sumShards: 'Stigma Shards spent', sumCrystals: 'Daevanion Crystals', sumAzphel: 'Azphel crystals', sumStig: 'Stigmas equipped',
+    sumPoints: 'Skill Points spent', sumShards: 'Stigma Shards spent', sumCrystals: 'Daevanion Crystals', sumAzphel: 'Azphel crystals', sumAriel: 'Ariel crystals', arielOver: 'Over {n}: for now each character can only get {n} Ariel crystals.',
+    arielNote: 'Ariel: a PvE and boss board, with crystals of its own. They come only from the Ariel Fragments of Krao Cave and Draupnir on Hard (100 fragments = 1 crystal at Substance Morph), at most 30 per character for now: pick the first 30 points well.',
+    azphelNote: 'Azphel: a PvP board, with crystals of its own.', sumStig: 'Stigmas equipped',
     A: 'Active skills', P: 'Passives', S: 'Stigmas', skill: 'Skill', trained: 'Trained level', fromDaev: '+ Daevanion', fromGear: '+ gear', final: 'Final level', specs: 'Specs', on: 'Equipped',
     specSlots: '{a} of {b}', stigOn: '{a} of {b} on · they switch on by themselves', stigAt: 'switches on by itself at level {n}', specAt: 'opens at level {n}', noSpecs: 'Specs from level 8', stigFull: 'There are already 4 stigmas equipped.',
     clear: 'Clear this board', all: 'Take everything', nodes: '{a} of {b} nodes', crystals: '{a} of {b} crystals', effects: 'Active effects', fxSkills: 'Skill levels', fxStats: 'Stats', none: 'No node taken yet.',
@@ -2002,11 +2007,15 @@ if (bldHost && BLD.classes) {
   let dvView = null, dvKeep = null;  // the frame of the Daevanion board: where it was scrolled is kept when it is drawn again
   const paintTab = () => { dvKeep = dvView && dvView.isConnected ? [dvView.scrollLeft, dvView.scrollTop] : null; body.textContent = ''; ({skills: tabSkills, daev: tabDaev, gear: tabGear, extra: tabExtra, notes: tabNotes})[S.builds.tab](cur()); fitTables(bldHost); paintChips(); };
   let sum = null;
+  const ARIEL_MAX = 30;  // Daevanion Crystal: Ariel a character can morph (patch of 21 Oct 2026)
   function paintChips() {
     const b = cur(), pve = [0, 1, 2, 3].reduce((s, i) => s + spent(b, i), 0), total = [0, 1, 2, 3].reduce((s, i) => s + BLD.boards[b.cls][i].nodes.reduce((a, n) => a + n[2], 0), 0);
     sum.textContent = ''; drawBar();
     [[bu('sumPoints'), paid(b, 'A')], [bu('sumShards'), paid(b, 'S')], [bu('sumStig'), b.stig.length + ' / 4'], [bu('sumCrystals'), pve + ' / ' + total], [bu('sumAzphel'), spent(b, 4) + ' / ' + BLD.boards[b.cls][4].nodes.reduce((a, n) => a + n[2], 0)]]
+      .concat(BLD.boards[b.cls][5] ? [[bu('sumAriel'), spent(b, 5) + ' / ' + BLD.boards[b.cls][5].nodes.reduce((a, n) => a + n[2], 0)]] : [])
       .forEach(([label, value]) => { const chip = make('span', 'bchip'); chip.append(make('b', '', value), make('small', '', label)); sum.appendChild(chip); });
+    const ariel = sum.lastChild;  // Ariel: only 30 crystals can be had for now
+    if (BLD.boards[b.cls][5] && spent(b, 5) > ARIEL_MAX) { ariel.classList.add('warn'); ariel.title = bu('arielOver').replace(/\{n\}/g, ARIEL_MAX); }
   }
   function render() {
     const B = S.builds, b = cur(); B.cur = b.id;
@@ -2115,6 +2124,8 @@ if (bldHost && BLD.classes) {
     all.onclick = () => { N.forEach((n, j) => { if (j !== I.start) I.taken[j] = 1; }); save(); paintTab(); };
     bar.append(make('b', '', bu('nodes').replace('{a}', Object.keys(I.taken).length).replace('{b}', N.length - 1)), make('b', '', bu('crystals').replace('{a}', spent(b, i)).replace('{b}', N.reduce((a, n) => a + n[2], 0))), clear, all);
     body.append(pick, bar, make('p', 'note', bu('daevHow')));
+    const own = {Azphel: 'azphelNote', Ariel: 'arielNote'}[I.B.name];  // the boards with crystals of their own
+    if (own) body.appendChild(make('p', 'note bown', bu(own)));
     const cols = make('div', 'bcols'), host = make('div', 'board bboard'), svg = el('svg', {viewBox: '0 0 ' + I.B.size * CELL + ' ' + I.B.size * CELL});
     N.forEach((n, j) => near(I, j).filter(v => v > j).forEach(v => svg.appendChild(el('line', {class: 'edge' + ((I.taken[j] || j === I.start) && (I.taken[v] || v === I.start) ? ' lit' : ''),
       x1: n[0] * CELL + CELL / 2, y1: n[1] * CELL + CELL / 2, x2: N[v][0] * CELL + CELL / 2, y2: N[v][1] * CELL + CELL / 2}))));

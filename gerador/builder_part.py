@@ -60,10 +60,10 @@ def builder_part(strings, english):
          '<b>Stigmas:</b> tick “Equipped” on up to 4. Stigma specs are not chosen: each one switches on by itself when the '
          'stigma reaches its level (5, 10, 15 and 20).'),
         ('<b>Daevanion:</b> clicar num nó distante pega também o caminho mais barato até ele. Os quatro primeiros '
-         'tabuleiros somam nos Daevanion Crystals; o Azphel tem cristais próprios. A lupa abaixo do tabuleiro dá zoom '
+         'tabuleiros somam nos Daevanion Crystals; o Azphel (PvP) e o Ariel (PvE e chefes) têm cristais próprios. A lupa abaixo do tabuleiro dá zoom '
          '(passe o mouse nela para ver o − e o +; Ctrl + roda do mouse também); com zoom, clique e arraste para mover o tabuleiro.',
          '<b>Daevanion:</b> clicking a far node also takes the cheapest path to it. The first four boards add up under '
-         'Daevanion Crystals; Azphel has crystals of its own. The lens below the board zooms (hover it for the − and '
+         'Daevanion Crystals; Azphel (PvP) and Ariel (PvE and bosses) have crystals of their own. The lens below the board zooms (hover it for the − and '
          '+; Ctrl + mouse wheel too); when zoomed, click and drag to move the board.'),
         ('<b>Equipamento:</b> a lista de cada slot já vem filtrada pela arma da classe e pela facção. Ao subir o '
          'aprimoramento, os atributos já mostram o valor com o bônus, e o bônus aparece entre parênteses (valores da '

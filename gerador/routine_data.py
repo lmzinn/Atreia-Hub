@@ -7,7 +7,8 @@ What is paid with Odyle Energy (Conquest and Transcendence cubes) is left out: i
 
 Fields: per 'day' with cap = stacks up; per 'day' without cap = daily limit; per 'week' = weekly limit. capSub / nSub =
 the value with the Membership. srv = counted per server, not per character; both = part per server, part per
-character. subOnly = exists only with the Membership. off = hidden until the reader turns it on. pic = the game item
+character. subOnly = exists only with the Membership. keep = never resets (a limit for the whole season). until = gone after that
+moment (an event). off = hidden until the reader turns it on. pic = the game item
 whose icon stands for the counter (icons_data.py downloads it as 'rt:<id>'). note = what it is, in Portuguese and
 English ({c} = the cap or limit in force)."""
 import json
@@ -53,6 +54,16 @@ ROWS = [
      'dá Abyss Entry Stone (desde o patch de 14/out/2026). O Nahma aparece sexta e domingo às 21:00.',
      'Season Missions > Abyss > Weekly: “Spend 1 Hour in the Abyss” and “Defeat the Boss Guardian Lord Nahma Once”. Each one '
      'gives Abyss Entry Stones (since the 14 Oct 2026 patch). Nahma shows up on Friday and Sunday at 21:00.'),
+    ('', 'Ariel crystals (Substance Morph)', 'week', 30, {'keep': 1, 'pic': 'Daevanion Crystal: Ariel (Bound)'},
+     'Daevanion Crystal: Ariel feitos no Substance Morph (Special > Daevanion): 100 Ariel Fragments do modo Hard de Krao Cave '
+     'e Draupnir para cada um, até 30 por personagem. Não zera. O que sobrar de fragmento vira 5 Enhance Stones cada.',
+     'Daevanion Crystal: Ariel made at Substance Morph (Special > Daevanion): 100 Ariel Fragments from Krao Cave and Draupnir '
+     'on Hard for each one, up to 30 per character. It does not reset. Spare fragments turn into 5 Enhance Stones each.'),
+    ('', 'Resurrection Spiritstone for Kinah (event)', 'week', 60, {'srv': 1, 'until': '2026-12-16T06:00:00Z', 'pic': 'Resurrection Spiritstone (Bound)'},
+     'Evento Rise to the Challenge: Shop > Wind Breeze Merchants vende Resurrection Spiritstone (Season 1) por Kinah, 30 por '
+     '25.000 e mais 30 por 50.000, por servidor e por semana. Some sozinho quando o evento acabar (15/dez).',
+     'Rise to the Challenge event: Shop > Wind Breeze Merchants sells Resurrection Spiritstone (Season 1) for Kinah, 30 at '
+     '25,000 and 30 more at 50,000, per server and per week. It goes away by itself when the event ends (15 Dec).'),
     ('', 'Duty Commands (bought scrolls)', 'week', 32, {'srv': 1, 'pic': 'Latesran Eastern Root Command: Elite (Bound)'},
      'Pergaminhos de Command comprados: 12 na capital e 5 de cada grau em cada raiz do Lower Abyss.',
      'Command scrolls bought: 12 in the capital and 5 of each grade at each Lower Abyss root.'),
@@ -114,7 +125,8 @@ PT = {
     'Odyle Energy bought (Wind Breeze Merchant, membership)': 'Odyle Energy comprada (Membership)',
     'Unknown Fissure (daily dungeon)': 'Unknown Fissure (dungeon diária)', 'Ascension Trial': 'Ascension Trial',
     'Abyss time': 'Tempo no Abyss', 'Abyss Supply: Weekly Requests': 'Abyss: pedidos semanais',
-    'Abyss Entry Stone missions': 'Abyss: missões da Entry Stone', 'Duty Commands (bought scrolls)': 'Pergaminhos de comando comprados', 'Arena': 'Arena', 'Battlefield': 'Campo de batalha',
+    'Abyss Entry Stone missions': 'Abyss: missões da Entry Stone', 'Ariel crystals (Substance Morph)': 'Ariel: cristais convertidos',
+    'Resurrection Spiritstone for Kinah (event)': 'Resurrection Spiritstone por Kinah (evento)', 'Duty Commands (bought scrolls)': 'Pergaminhos de comando comprados', 'Arena': 'Arena', 'Battlefield': 'Campo de batalha',
     'Daeva Pass EXP': 'EXP do Daeva Pass', 'Abyss Corridors': 'Corredores do Abyss', 'Dimensional Invasion': 'Invasão Dimensional',
     'Subjugation': 'Subjugação', 'Silent Graveyard': 'Silent Graveyard', 'Fafnite Amphitheater': 'Fafnite Amphitheater',
     'Remaining Unobtained Cube Count': 'Cubos ainda não pegos', 'Conquest final bosses': 'Chefes finais do Conquest',

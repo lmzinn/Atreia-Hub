@@ -193,6 +193,37 @@
   ]
  },
  {
+  "id": "ariel-crystals-substance-morph",
+  "group": "",
+  "name": "Ariel crystals (Substance Morph)",
+  "pt": "Ariel: cristais convertidos",
+  "per": "week",
+  "n": 30,
+  "ico": "dungeon",
+  "note": [
+   "Daevanion Crystal: Ariel feitos no Substance Morph (Special > Daevanion): 100 Ariel Fragments do modo Hard de Krao Cave e Draupnir para cada um, até 30 por personagem. Não zera. O que sobrar de fragmento vira 5 Enhance Stones cada.",
+   "Daevanion Crystal: Ariel made at Substance Morph (Special > Daevanion): 100 Ariel Fragments from Krao Cave and Draupnir on Hard for each one, up to 30 per character. It does not reset. Spare fragments turn into 5 Enhance Stones each."
+  ],
+  "keep": 1,
+  "pic": "Daevanion Crystal: Ariel (Bound)"
+ },
+ {
+  "id": "resurrection-spiritstone-for-kinah-event",
+  "group": "",
+  "name": "Resurrection Spiritstone for Kinah (event)",
+  "pt": "Resurrection Spiritstone por Kinah (evento)",
+  "per": "week",
+  "n": 60,
+  "ico": "dungeon",
+  "note": [
+   "Evento Rise to the Challenge: Shop > Wind Breeze Merchants vende Resurrection Spiritstone (Season 1) por Kinah, 30 por 25.000 e mais 30 por 50.000, por servidor e por semana. Some sozinho quando o evento acabar (15/dez).",
+   "Rise to the Challenge event: Shop > Wind Breeze Merchants sells Resurrection Spiritstone (Season 1) for Kinah, 30 at 25,000 and 30 more at 50,000, per server and per week. It goes away by itself when the event ends (15 Dec)."
+  ],
+  "srv": 1,
+  "until": "2026-12-16T06:00:00Z",
+  "pic": "Resurrection Spiritstone (Bound)"
+ },
+ {
   "id": "duty-commands-bought-scrolls",
   "group": "",
   "name": "Duty Commands (bought scrolls)",

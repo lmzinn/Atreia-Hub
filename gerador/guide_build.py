@@ -125,6 +125,31 @@ def folders(want):
     opened = want
 
 
+def hard_mode(strings, own_en):
+    """The step the patch of 21 Oct 2026 added inside the 6th objective: Krao Cave and Draupnir on Hard."""
+    def t(pt, en):
+        strings.append(pt)
+        own_en[pt] = en
+        return ' data-t="%d"' % (len(strings) - 1)
+    rows = ''.join('<tr><td%s><span class="g"><b>%s</b></span></td><td%s><span class="g"><b>Hard</b></span></td><td%s>%s</td></tr>' % (
+        t(name, name), name, t('Hard', 'Hard'), t(pt, en), pt) for name, pt, en in (
+        ('Krao Cave', 'Ariel Fragment, Philosopher’s Stone: Revelation (dá para escolher como recompensa garantida) e todos os materiais Unique de craft (Wrathful Mind, Will e Ego)',
+         'Ariel Fragment, Philosopher’s Stone: Revelation (it can be picked as the guaranteed reward) and every Unique crafting material (Wrathful Mind, Will and Ego)'),
+        ('Draupnir', 'O mesmo, com o Ariel Fragment desta dungeon (cada uma tem o seu)', 'The same, with this dungeon’s own Ariel Fragment (each has its own)')))
+    head = ''.join('<th class="head"%s><b>%s</b></th>' % (t(pt, en), pt) for pt, en in (('Dungeon', 'Dungeon'), ('Modo', 'Mode'), ('O que dá', 'What it gives')))
+    check = ('<div class="checks"><label class="chk"><input type="checkbox" data-k="prog|6o-objetivo-2-800-gs|modo-hard-ariel"><span%s>%s</span></label></div>'
+             % (t('Converter os Ariel Fragments em Daevanion Crystal: Ariel (100 para 1, até 30 por personagem) e gastar no tabuleiro Ariel',
+                  'Turn the Ariel Fragments into Daevanion Crystal: Ariel (100 to 1, up to 30 per character) and spend them on the Ariel board'),
+                'Converter os Ariel Fragments em Daevanion Crystal: Ariel (100 para 1, até 30 por personagem) e gastar no tabuleiro Ariel'))
+    intro_pt = ('Novo no patch de 21/out/2026. Pede 2.600 GS (item level); os chefes entram em Frenzy aos 4 minutos e cada jogador tem 3 '
+                'revives. É de onde vem o tabuleiro Ariel.')
+    intro_en = ('New in the 21 Oct 2026 patch. It asks for 2,600 GS (item level); bosses go into Frenzy after 4 minutes and each player has '
+                '3 revives. It is where the Ariel board comes from.')
+    title_pt = 'Modo Hard: Krao Cave e Draupnir (2.600 GS)'
+    return ('<h3%s>%s</h3><p%s>%s</p><div class="tw"><table class="data"><tr>%s</tr>%s</table></div>%s'
+            % (t(title_pt, 'Hard mode: Krao Cave and Draupnir (2,600 GS)'), title_pt, t(intro_pt, intro_en), intro_pt, head, rows, check))
+
+
 for pid, name, path in PARTS:
     folders(FOLDER.get(pid, ()))
     if pid == 'craft':
@@ -147,6 +172,7 @@ for pid, name, path in PARTS:
             strings.append(pt)
             own_en[pt] = en
             first['html'] += f'<p class="note" data-t="{len(strings) - 1}">{pt}</p>'
+            doc['sections'][last]['html'] += hard_mode(strings, own_en)
         if PUBLIC and pid == 'cfg':  # the last section only points at the owner's build pages
             doc['subtitle'] = 'Configurações de referência, para repetir em cada personagem'
             doc['sections'] = [sec for sec in doc['sections'] if not sec['title'].startswith('5.')]

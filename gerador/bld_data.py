@@ -15,7 +15,7 @@ UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.3
 CLASSES = ['Gladiator', 'Templar', 'Assassin', 'Ranger', 'Sorcerer', 'Spiritmaster', 'Cleric', 'Chanter']
 WEAPON = {'Gladiator': 'Greatsword', 'Templar': 'Longsword', 'Assassin': 'Dagger', 'Ranger': 'Bow', 'Sorcerer': 'Spellbook',
           'Spiritmaster': 'Orb', 'Cleric': 'Mace', 'Chanter': 'Staff'}
-BOARDS = ['Nezekan', 'Zikel', 'Vaizel', 'Triniel', 'Azphel']
+BOARDS = ['Nezekan', 'Zikel', 'Vaizel', 'Triniel', 'Azphel', 'Ariel']
 GRADES = ['Common', 'Rare', 'Epic', 'Unique', 'Special']
 
 

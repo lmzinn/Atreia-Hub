@@ -3,7 +3,7 @@
 Site de apoio para Aion 2 (servidores Global), feito por fãs: tudo num lugar só.
 
 - **Rotina:** entradas diárias e limites semanais por personagem, com reset automático.
-- **Minha build:** editor de build para as 8 classes (skills, specs, stigmas, barra de skills, Daevanion com zoom, equipamento com o bônus de aprimoramento, títulos, Arcana, asas), compartilhado por link.
+- **Minha build:** editor de build para as 8 classes (skills, specs, stigmas, barra de skills, Daevanion com zoom e os seis tabuleiros, Ariel incluído, equipamento com o bônus de aprimoramento, títulos, Arcana, asas), compartilhado por link.
 - **Progressão:** objetivos por faixa de Gear Score, com checklist.
 - **Crafting:** calculadora de craft para qualquer classe e facção (armas, armadura e joias da linha Dragon Lord), calculadora de aprimoramento e onde pôr os pontos de Essence Extraction.
 - **Onde consigo?:** de onde vem cada material, item, Arcana e título, com o ícone de cada um.

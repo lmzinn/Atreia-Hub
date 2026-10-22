@@ -1,4 +1,4 @@
-"""Download from wikily.gg what the build editor needs: the datasets (raw, as the API gives them) and the 40
+"""Download from wikily.gg what the build editor needs: the datasets (raw, as the API gives them) and the 48
 Daevanion board pages. Everything lands in wikily/."""
 import json
 import os
@@ -8,7 +8,7 @@ import urllib.request
 sys.stdout.reconfigure(encoding='utf8', errors='replace')
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36', 'Accept': '*/*'}
 CLASSES = ['gladiator', 'templar', 'assassin', 'ranger', 'sorcerer', 'spiritmaster', 'cleric', 'chanter']
-BOARDS = ['nezekan', 'zikel', 'vaizel', 'triniel', 'azphel']
+BOARDS = ['nezekan', 'zikel', 'vaizel', 'triniel', 'azphel', 'ariel']
 
 
 def get(path):
