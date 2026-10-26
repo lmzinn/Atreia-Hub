@@ -2013,10 +2013,11 @@ if (bldHost && BLD.classes) {
   function paintChips() {
     const b = cur(), pve = [0, 1, 2, 3].reduce((s, i) => s + spent(b, i), 0), total = [0, 1, 2, 3].reduce((s, i) => s + BLD.boards[b.cls][i].nodes.reduce((a, n) => a + n[2], 0), 0);
     sum.textContent = ''; drawBar();
-    [[bu('sumPoints'), paid(b, 'A')], [bu('sumShards'), paid(b, 'S')], [bu('sumStig'), b.stig.length + ' / 4'], [bu('sumCrystals'), pve + ' / ' + total], [bu('sumAzphel'), spent(b, 4) + ' / ' + BLD.boards[b.cls][4].nodes.reduce((a, n) => a + n[2], 0)]]
+    [[bu('sumPoints'), paid(b, 'A')], [bu('sumShards'), paid(b, 'S')], [bu('sumStig'), b.stig.length + ' / 4'], [bu('sumCrystals'), pve + ' / ' + total]]
       .concat(BLD.boards[b.cls][5] ? [[bu('sumAriel'), spent(b, 5) + ' / ' + BLD.boards[b.cls][5].nodes.reduce((a, n) => a + n[2], 0)]] : [])
+      .concat([[bu('sumAzphel'), spent(b, 4) + ' / ' + BLD.boards[b.cls][4].nodes.reduce((a, n) => a + n[2], 0)]])
       .forEach(([label, value]) => { const chip = make('span', 'bchip'); chip.append(make('b', '', value), make('small', '', label)); sum.appendChild(chip); });
-    const ariel = sum.lastChild;  // Ariel: only 30 crystals can be had for now
+    const ariel = sum.children[4];  // Ariel: only 30 crystals can be had for now
     if (BLD.boards[b.cls][5] && spent(b, 5) > ARIEL_MAX) { ariel.classList.add('warn'); ariel.title = bu('arielOver').replace(/\{n\}/g, ARIEL_MAX); }
   }
   function render() {
@@ -2120,7 +2121,9 @@ if (bldHost && BLD.classes) {
   function tabDaev(b) {
     const Bs = BLD.boards[b.cls], i = Math.min(S.builds.board || 0, Bs.length - 1), I = board(b, i), N = I.B.nodes, CELL = 56;
     const pick = make('div', 'btabs sub');
-    Bs.forEach((B, j) => { const t = make('button', j === i ? 'on' : '', B.name); t.appendChild(make('small', '', ' ' + spent(b, j) + ' / ' + B.nodes.reduce((x, n) => x + n[2], 0))); t.onclick = () => { S.builds.board = j; save(); paintTab(); }; pick.appendChild(t); });
+    // the game's order: Ariel before Azphel; the builds keep each board at its old index (Azphel 4, Ariel 5)
+    const shown = Bs.map((B, j) => j).sort((x, y) => (Bs[x].name === 'Ariel' && Bs[y].name === 'Azphel' ? -1 : Bs[x].name === 'Azphel' && Bs[y].name === 'Ariel' ? 1 : x - y));
+    shown.forEach(j => { const B = Bs[j], t = make('button', j === i ? 'on' : '', B.name); t.appendChild(make('small', '', ' ' + spent(b, j) + ' / ' + B.nodes.reduce((x, n) => x + n[2], 0))); t.onclick = () => { S.builds.board = j; save(); paintTab(); }; pick.appendChild(t); });
     const bar = make('div', 'bbar'), clear = make('button', '', bu('clear')), all = make('button', '', bu('all'));
     clear.onclick = () => { b.dv[i] = {}; save(); paintTab(); };
     all.onclick = () => { N.forEach((n, j) => { if (j !== I.start) I.taken[j] = 1; }); save(); paintTab(); };
