@@ -833,7 +833,7 @@ const UI = {
     pHow: 'Cada personagem tem as próprias marcações. Os personagens são os mesmos da Rotina.',
     next: 'Próximo item não marcado', hide: 'Esconder os marcados', alldone: 'Tudo marcado nesta parte.',
     theme: 'Tema claro/escuro', home: 'Início', fold: 'Recolher ou abrir os tópicos', badLink: 'Não consegui abrir o que veio nesse link.', mine: 'Seu valor', credit: 'Site de fãs, sem vínculo com a NCSOFT. Dados e imagens do jogo: wikily.gg e metabot.gg.', subs: 'Abrir ou recolher os subtópicos', lang: 'Idioma: português / inglês',
-    crystals: 'Cristais', upTo: 'Vai até o nº {n} de {t}', upNone: 'Nenhum nó ainda', siteGoal: 'Meta do site', topGoal: 'Topo do Global', markUpTo: 'Marcar como pegos até aqui', clearTaken: 'Limpar pegos',
+    crystals: 'Cristais', upTo: 'Vai até o nº {n} de {t}', upNone: 'Nenhum nó ainda', siteGoal: 'Meta do site', dmgGoal: 'Rota de dano', topGoal: 'Topo do Global', markUpTo: 'Marcar como pegos até aqui', clearTaken: 'Limpar pegos',
     clearAsk: 'Limpar os nós marcados como pegos em {b}?', takenHere: 'Pegos neste tabuleiro', node: ['nó', 'nós'], crystal: ['cristal', 'cristais'],
     start: 'Início', no: 'Nº', topKR: 'dos top KR', cumul: 'acumulado', tipHint: 'Clique para marcar como pego', tipUn: 'Pego. Clique para desmarcar',
     have: 'Tenho', plan: 'Plano (soma das barras)', left: 'sobram', short: 'faltam', spentAll: 'Já marcados como pegos'},
@@ -843,7 +843,7 @@ const UI = {
     pHow: 'Each character has its own marks. The characters are the same as in the Routine.',
     next: 'Next unmarked item', hide: 'Hide marked items', alldone: 'Everything in this part is marked.',
     theme: 'Light/dark theme', home: 'Home', fold: 'Fold or open the topics', badLink: 'Could not open what came in that link.', mine: 'Your value', credit: 'Fan site, not affiliated with NCSOFT. Game data and pictures: wikily.gg and metabot.gg.', subs: 'Open or fold the subtopics', lang: 'Language: Portuguese / English',
-    crystals: 'Crystals', upTo: 'Goes up to No. {n} of {t}', upNone: 'No nodes yet', siteGoal: 'Site target', topGoal: 'Global top', markUpTo: 'Mark as taken up to here', clearTaken: 'Clear taken',
+    crystals: 'Crystals', upTo: 'Goes up to No. {n} of {t}', upNone: 'No nodes yet', siteGoal: 'Site target', dmgGoal: 'Damage route', topGoal: 'Global top', markUpTo: 'Mark as taken up to here', clearTaken: 'Clear taken',
     clearAsk: 'Clear the nodes marked as taken on {b}?', takenHere: 'Taken on this board', node: ['node', 'nodes'], crystal: ['crystal', 'crystals'],
     start: 'Start', no: 'No.', topKR: 'of top KR players', cumul: 'running total', tipHint: 'Click to mark as taken', tipUn: 'Taken. Click to unmark',
     have: 'I have', plan: 'Plan (sum of the sliders)', left: 'left over', short: 'short', spentAll: 'Already marked as taken'},
@@ -1178,6 +1178,8 @@ function paintSum() {
 }
 $$('.board[data-board]').forEach(host => {
   const b = BOARDS[host.dataset.board]; if (!b) return;
+  S.bver = S.bver || {};
+  if (b.ver && S.bver[b.name] !== b.ver) { delete S.taken[b.name]; delete S.budget[b.name]; S.bver[b.name] = b.ver; save(); }  // marks are by number: a new order starts clean
   const taken = S.taken[b.name] = S.taken[b.name] || {};
   let budget = b.def;
   const same = () => boards.filter(x => x.name === b.name).forEach(x => x.paint());
@@ -1209,7 +1211,7 @@ $$('.board[data-board]').forEach(host => {
     budget = S.budget[b.name] != null ? S.budget[b.name] : b.def;
     range.value = budget; $('.bv', host).textContent = budget;
     $('.bl', host).textContent = u('crystals');
-    $('.bdef', host).textContent = u('siteGoal') + ' (' + b.def + ')';
+    $('.bdef', host).textContent = u(b.ver ? 'dmgGoal' : 'siteGoal') + ' (' + b.def + ')';
     $('.btop', host).textContent = u('topGoal') + ' (' + b.top + ')';
     $('.bmark', host).textContent = u('markUpTo'); $('.bclr', host).textContent = u('clearTaken');
     if (startText) startText.textContent = u('start');
@@ -2118,7 +2120,7 @@ if (bldHost && BLD.classes) {
   function tabDaev(b) {
     const Bs = BLD.boards[b.cls], i = Math.min(S.builds.board || 0, Bs.length - 1), I = board(b, i), N = I.B.nodes, CELL = 56;
     const pick = make('div', 'btabs sub');
-    Bs.forEach((B, j) => { const t = make('button', j === i ? 'on' : '', B.name); t.appendChild(make('small', '', ' ' + Object.keys(b.dv[j] || {}).length + '/' + (B.nodes.length - 1))); t.onclick = () => { S.builds.board = j; save(); paintTab(); }; pick.appendChild(t); });
+    Bs.forEach((B, j) => { const t = make('button', j === i ? 'on' : '', B.name); t.appendChild(make('small', '', ' ' + spent(b, j) + ' / ' + B.nodes.reduce((x, n) => x + n[2], 0))); t.onclick = () => { S.builds.board = j; save(); paintTab(); }; pick.appendChild(t); });
     const bar = make('div', 'bbar'), clear = make('button', '', bu('clear')), all = make('button', '', bu('all'));
     clear.onclick = () => { b.dv[i] = {}; save(); paintTab(); };
     all.onclick = () => { N.forEach((n, j) => { if (j !== I.start) I.taken[j] = 1; }); save(); paintTab(); };

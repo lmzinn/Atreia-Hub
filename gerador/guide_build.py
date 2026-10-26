@@ -234,7 +234,9 @@ for cls, path, prefix in CLASS_BOARDS:
         boards[prefix + b['name']] = {
             'name': prefix + b['name'], 'cls': cls, 'size': b['size'], 'total': b['crystals'], 'def': max(n['spent'] for n in first),
             'own': b['name'] == 'Azphel',  # PvP board: crystals of its own, kept out of the PvE total
-            'top': max(n['spent'] for n in b['nodes'] if n['kind'] != 'start' and n['order'] <= TOP_NODES[cls][b['name']]),
+            # the crystals the top 10 spent (a board in its own order, as the Ranger's damage route, says it itself)
+            'top': b.get('topSpent') or max(n['spent'] for n in b['nodes'] if n['kind'] != 'start' and n['order'] <= TOP_NODES[cls][b['name']]),
+            **({'ver': b['ver']} if b.get('ver') else {}),  # a new order of the numbers: the marks saved under the old one go
             'edges': b['edges'],
             'nodes': [{'c': n['col'], 'r': n['row'], 'k': n['kind'], 'o': n['order'], 'l': SHORT.get(n['name'], n['name']),
                        't': n['tip'].split('\n')[0].split('. In the game')[0], 'x': n['cost'], 'p': n['pct'], 's': n['spent'],
