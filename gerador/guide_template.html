@@ -3190,7 +3190,7 @@ if (dbHost) {
 // ---------- my character: the in-game sheet from the official site, and its import into the build editor ----------
 // The official site only answers its own pages. On this computer gerador/servidor_local.py passes the lookups on;
 // on the published site the Cloudflare Worker of gerador/aion2_worker.js does, at the address in API_REMOTE.
-const API_REMOTE = '';
+const API_REMOTE = 'https://atreia-hub.lucasmach838.workers.dev';
 const AAPI = location.protocol === 'file:' ? 'http://127.0.0.1:5176/aion2' : /^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? '/aion2' : API_REMOTE;
 const meHost = $('#me');
 if (meHost) {
