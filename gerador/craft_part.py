@@ -13,6 +13,7 @@ import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, 'craft_data.json')
 ENH = os.path.join(HERE, 'enhance_data.json')  # made by enh_data.py
+REC = os.path.join(HERE, 'recipes.json')  # every recipe of the game, made by db_data.py
 SHEET = 'https://docs.google.com/spreadsheets/d/1bNxC1wd0S_ILGYAyWnO0aTo_G_AOrjkv7bTcOj_NRz8/'
 WIKILY = 'https://wikily.gg/aion-2/'
 
@@ -21,6 +22,8 @@ def calc_data():
     data = json.load(open(DATA, encoding='utf8'))
     if os.path.exists(ENH):
         data['enh'] = json.load(open(ENH, encoding='utf8'))
+    if os.path.exists(REC):
+        data['rec'] = json.load(open(REC, encoding='utf8'))
     return data
 
 
@@ -62,40 +65,44 @@ def craft_part(strings, english):
 
     # ---------- 1: calculator ----------
     calc = (
-        p('Escolha a facção e a classe, clique nas peças que vai fabricar e diga até onde quer levar cada uma. A lista de '
-          'material soma todas; em “Tenho”, digite o que já juntou para ver o que falta.',
-          'Pick the faction and the class, click the pieces you are going to craft and say how far to take each one. The '
-          'material list adds them all up; under “I have”, enter what you have gathered to see what is missing.')
+        p('Como no jogo: escolha a profissão, abra o tipo e clique nas receitas para pôr na sua lista. O material total soma '
+          'tudo; em “Tenho”, digite o que já juntou para ver o que falta.',
+          'As in the game: pick the profession, open the kind and click the recipes to put them on your list. The total '
+          'material adds it all up; under “I have”, enter what you have gathered to see what is missing.')
         + '<div id="calc" class="tool"></div>'
         + more('Como ler a calculadora', 'How to read the calculator', ul(
-            ('<b>Facção e classe:</b> a facção troca os nomes da linha (True, White, Wise ou Star, Dark, Ebony) e a madeira do '
-             'Bow e do Staff. A classe define a arma; “Todas as armas” mostra as oito, para quem fabrica para vender.',
-             '<b>Faction and class:</b> the faction changes the names of the line (True, White, Wise or Star, Dark, Ebony) and '
-             'the wood of the Bow and the Staff. The class sets the weapon; “All weapons” shows all eight, for those who craft to sell.'),
-            ('<b>Peças escolhidas:</b> “Quero chegar em” é a versão final; “Já tenho” é a versão que você já possui. '
-             'Quantidade 0 tira a peça da lista.',
-             '<b>Chosen pieces:</b> “I want to reach” is the final version; “I have” is the version you already own. A '
-             'quantity of 0 takes the piece off the list.'),
+            ('<b>Profissões e facção:</b> cada profissão mostra as receitas dela por tipo, do menor nível ao maior; o número ao '
+             'lado do tipo diz quantas há e quantas já estão na lista (✓). As receitas de uma facção só aparecem marcadas '
+             '(Elyos ou Asmodian), a de Elyos primeiro e a de Asmodian logo abaixo.',
+             '<b>Professions and faction:</b> each profession shows its recipes by kind, lowest level first; the number by the '
+             'kind says how many there are and how many are already on the list (✓). The recipes of one faction are marked '
+             '(Elyos or Asmodian), the Elyos one first and the Asmodian one right below.'),
+            ('<b>Minha lista:</b> as peças da linha Dragon Lord têm “Receita” (até onde quer levar) e “Já tenho” (a versão que '
+             "você já possui); embaixo, quantas Splendent, Expert's Splendent e Artisan's Splendent da base você tem guardadas "
+             '(cada True, White e Wise gasta uma Artisan\'s Splendent). As outras receitas têm a quantidade e, quando há mais de uma, como fazer. A lixeira tira da lista.',
+             '<b>My list:</b> the Dragon Lord pieces have “Recipe” (how far to take it) and “I have” (the version you already '
+             "own); below it, how many Splendent, Expert's Splendent and Artisan's Splendent pieces of the base line you have "
+             'in stock (each True, White and Wise takes one Artisan\'s Splendent). The other recipes have the quantity and, when there is more than one, how to make it. The bin takes it off the list.'),
             ('<b>Tenho e Falta:</b> digite quanto já tem de cada material. “Falta” conta só o que falta.',
              '<b>I have and Missing:</b> enter how much of each material you have. “Missing” counts only what is missing.'),
             ('<b>Mostrar custo em Kina:</b> abre as colunas de preço e custo. Os itens de Merchant já vêm com o preço do NPC; '
              'nos outros, digite o preço que você paga.',
              '<b>Show the cost in Kina:</b> opens the price and cost columns. Merchant items already come with the NPC '
              'price; for the others, enter the price you pay.'),
-            ('<b>Etapas, chances e peças Splendent guardadas:</b> mostra os crafts de uma peça por vez e deixa trocar os '
-             'números da conta.',
-             '<b>Steps, chances and Splendent pieces in stock:</b> shows the crafts of one piece at a time and lets you '
-             'change the numbers of the maths.'),
-            ('<b>Sucesso %:</b> está na janela Crafting Chance da receita, na linha da diferença entre a sua proficiência '
-             'e a exigida. Vem em 80% porque é o que os guias dão para diferença zero; troque pelo seu número. O valor '
-             'vale para a mesma etapa de todas as peças da profissão.',
-             '<b>Success %:</b> it is in the recipe\'s Crafting Chance window, on the row of the difference between your '
-             'proficiency and the required one. It starts at 80% because that is what the guides give for a difference of '
-             'zero; replace it with your number. The value applies to the same step of every piece of that profession.'),
-            ('<b>Combo %:</b> a chance de a peça sair na versão Splendent. Os 25% vêm da planilha do Screamheart; troque '
-             'se o jogo mostrar outro número.',
-             '<b>Combo %:</b> the chance of the piece coming out as the Splendent version. The 25% comes from '
-             'Screamheart\'s spreadsheet; replace it if the game shows another number.'),
+            ('<b>Etapas, chance de sucesso e peças Splendent guardadas:</b> mostra os crafts de uma peça por vez e '
+             'deixa trocar os números da conta.',
+             '<b>Steps, success chance and Splendent pieces in stock:</b> shows the crafts of one piece at a time and '
+             'lets you change the numbers of the maths.'),
+            ('<b>Sua chance de sucesso:</b> está na janela Crafting Chance da receita. É um número só, que vale para todas '
+             'as etapas e peças, e aceita decimal (93,33). Vem em 80% porque é o que os guias dão; troque pelo seu.',
+             "<b>Your success chance:</b> it is in the recipe's Crafting"
+             ' Chance window. It is a single number that applies '
+             'to every step and piece, and it takes decimals (93.33). It starts at 80% because that is what the guides '
+             'give; replace it with yours.'),
+            ('<b>Combo:</b> a chance de a peça sair na versão Splendent é fixa em 25% nas receitas de equipamento, '
+             'não muda com a proficiência; a conta já usa esse número.',
+             '<b>Combo:</b> the chance of the piece coming out as the Splendent version is a set 25% on the equipment '
+             'recipes, not tied to proficiency; the maths already uses it.'),
             ('<b>Já tenho (nas etapas):</b> quantas peças Splendent daquela etapa você já guardou. A conta desconta.',
              '<b>I have (on the steps):</b> how many Splendent pieces of that step you already keep. They are deducted.'),
             ('<b>É uma média, e do lado pessimista.</b> A conta supõe que um craft que falha gasta o material e a peça '

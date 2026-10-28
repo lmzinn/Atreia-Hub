@@ -51,11 +51,14 @@ else:
     RGRP = os.path.join(PRIVATE, 'bldrgr', 'Ranger PvP - Aion 2 Global.docx')
 # the routine and crafting parts have no DOCX: their text is in routine_part.py and craft_part.py, their data in JSON
 TOOLS = tool_parts.__file__  # the parts written there always exist
-PARTS = [('rot', 'Rotina', ROUTINE), ('bld', 'Minha build', BUILDER), ('prog', 'Progressão', PROG),
-         ('asn', 'Assassin PvE', ASN), ('pvp', 'Assassin PvP', PVP), ('rgr', 'Ranger PvE', RGR), ('rgrp', 'Ranger PvP', RGRP), ('craft', 'Crafting', CRAFT), ('find', 'Onde consigo?', tool_parts.FINDER),
+PARTS = [('rot', 'Rotina', ROUTINE), ('me', 'Meu personagem', TOOLS), ('bld', 'Minha build', BUILDER), ('prog', 'Progressão', PROG),
+         ('craft', 'Crafting', CRAFT), ('find', 'Database', TOOLS),
+         ('asn', 'Assassin PvE', ASN), ('pvp', 'Assassin PvP', PVP), ('rgr', 'Ranger PvE', RGR), ('rgrp', 'Ranger PvP', RGRP),
          ('set', 'Configurações', TOOLS)]
 PARTS = [part for part in PARTS if part[2] and os.path.exists(part[2])]
 # folders of the left menu: the pages of a class sit inside Classes > <class>
+# topics of the left menu: a small heading before the first page of each one; '-' is a plain line (before the settings)
+GROUP = {'me': ('Personagem', 'Character'), 'craft': ('Ferramentas', 'Tools'), 'set': '-'}
 FOLDER = {'asn': ('Classes', 'Assassin'), 'pvp': ('Classes', 'Assassin'), 'rgr': ('Classes', 'Ranger'), 'rgrp': ('Classes', 'Ranger')}
 SHORT = {
     'Critical Hit': 'Crit Hit', 'Critical Hit Resist': 'Crit Resist', 'Max HP': 'HP', 'Max MP': 'MP',
@@ -152,14 +155,19 @@ def hard_mode(strings, own_en):
 
 for pid, name, path in PARTS:
     folders(FOLDER.get(pid, ()))
+    if GROUP.get(pid) == '-':
+        nav.append('<hr class="navsep">')
+    elif pid in GROUP:
+        own_en[GROUP[pid][0]] = GROUP[pid][1]
+        nav.append(f'<div class="navh"{t(GROUP[pid][0])}>{html.escape(GROUP[pid][0])}</div>')
     if pid == 'craft':
         doc = craft_part(strings, own_en)
     elif pid == 'rot':
         doc = routine_part(strings, own_en)
     elif pid == 'bld':
         doc = builder_part(strings, own_en)
-    elif pid in ('find', 'set'):
-        doc = {'find': tool_parts.finder_part, 'set': tool_parts.settings_part}[pid](strings, own_en)
+    elif pid in ('find', 'set', 'me'):
+        doc = {'find': tool_parts.finder_part, 'set': tool_parts.settings_part, 'me': tool_parts.me_part}[pid](strings, own_en)
     else:
         doc = convert(path, pid, boxes=pid not in NO_BOXES, drop=DROP if pid in NO_BOXES else (), swap=((PUBLIC_SWAP if PUBLIC else ()) + SWAP) if pid in NO_BOXES else (), strings=strings)
         if pid == 'prog':  # the page ends at the last Gear Score goal; what the DOCX has after it is left out
@@ -249,25 +257,25 @@ def js(value):
     return json.dumps(value, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
 
-# the pictures of 'Onde consigo?' are files beside the page (finder_data.py makes them): they go with every copy of it
-SHEETS = os.path.join(ROOT, 'finder_icons')
-sheets = sorted(os.listdir(SHEETS)) if os.path.isdir(SHEETS) else []
-sheets_version = hashlib.sha1(b''.join(open(os.path.join(SHEETS, f), 'rb').read() for f in sheets)).hexdigest()[:8]
+# the Database (db_data.py): db.js and the picture sheets, beside the page too; the version keeps browsers from old copies
+DB = os.path.join(ROOT, 'database')
+db_files = sorted(os.path.join(d, f) for d, _, fs in os.walk(DB) for f in fs) if os.path.isdir(DB) else []
+db_version = hashlib.sha1(b''.join(open(f, 'rb').read() for f in db_files)).hexdigest()[:8]
 page = open(os.path.join(HERE, 'guide_template.html'), encoding='utf8').read()
 for token, value in (('__NAV__', ''.join(nav)), ('__TOC__', ''.join(toc)), ('__CONTENT__', ''.join(content)), ('__BOARDS__', js(boards)),
                      ('__EN__', js(english)), ('__ICONS__', js(icons)), ('__CALC__', js(calc_data() if os.path.exists(CRAFT) else {})),
                      ('__ROUTINE__', js(routine_data() if os.path.exists(ROUTINE) else [])),
-                     ('__PUBLIC__', 'true' if PUBLIC else 'false'), ('__FIND__', js(tool_parts.finder_data())), ('__NEWS__', js(tool_parts.news_data())), ('__FICV__', sheets_version),
+                     ('__PUBLIC__', 'true' if PUBLIC else 'false'), ('__NEWS__', js(tool_parts.news_data())), ('__DBV__', db_version),
                      ('__TIC__', js(json.load(open(os.path.join(HERE, 'term_icons.json'), encoding='utf8'))
                                     if os.path.exists(os.path.join(HERE, 'term_icons.json')) else {})),  # pictures, made by icons_data.py
                      ('__BLD__', js(builder_data() if os.path.exists(BUILDER) else {})), ('__BIC__', js(builder_icons())), ('__BUILT__', datetime.date.today().strftime('%d/%m/%Y'))):
     assert page.count(token) == 1, token
     page = page.replace(token, value)
 open(OUT, 'w', encoding='utf8', newline='\n').write(page)
-beside = os.path.join(os.path.dirname(os.path.abspath(OUT)), 'finder_icons')
-if sheets and os.path.normcase(beside) != os.path.normcase(SHEETS):
+beside = os.path.join(os.path.dirname(os.path.abspath(OUT)), 'database')
+if db_files and os.path.normcase(beside) != os.path.normcase(DB):
     shutil.rmtree(beside, ignore_errors=True)
-    shutil.copytree(SHEETS, beside)
+    shutil.copytree(DB, beside)
 if PUBLIC and i18n_path != i18n_public:
     used = {s: i18n[s] for s in dict.fromkeys(strings) if s in i18n and s not in own_en}
     json.dump(used, open(i18n_public, 'w', encoding='utf8', newline='\n'), ensure_ascii=False, indent=0, sort_keys=True)

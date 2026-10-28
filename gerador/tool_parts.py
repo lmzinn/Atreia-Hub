@@ -1,16 +1,10 @@
-"""Small parts drawn by the page script: 'Onde consigo?' (#finder: where a material or item comes from; data in
-finder_data.json, made by finder_data.py from wikily.gg) and the site settings (#settings). The text lives here, in
-Portuguese and English."""
+"""Small parts drawn by the page script: the Database (#db: data in ../database, made by db_data.py from wikily.gg),
+Meu personagem (#me) and the site settings (#settings). The text lives here, in Portuguese and English."""
 import json
 import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-FINDER = os.path.join(HERE, 'finder_data.json')
 NEWS = os.path.join(HERE, 'novidades.json')
-
-
-def finder_data():
-    return json.load(open(FINDER, encoding='utf8')) if os.path.exists(FINDER) else []
 
 
 def news_data():
@@ -28,18 +22,31 @@ def _writer(strings, english):
 
 def finder_part(strings, english):
     el = _writer(strings, english)
-    tool = (
-        el('p', 'Digite o nome de um material, item, Arcana, asa ou título para ver de onde ele vem.',
-           'Type the name of a material, item, Arcana, wings or title to see where it comes from.')
-        + '<div id="finder" class="tool"></div>'
-        + el('p', 'Origens segundo o <a href="https://wikily.gg/aion-2/items" target="_blank" rel="noopener">wikily.gg</a>, lido em '
-                  '13/out/2026. Mostra até seis origens por item.',
-             'Sources according to <a href="https://wikily.gg/aion-2/items" target="_blank" rel="noopener">wikily.gg</a>, read on '
-             '13 Oct 2026. It shows up to six sources per item.', 'note'))
-    english.update({'Onde consigo?': 'Where do I get it?', 'De onde vem cada material, item e título': 'Where each material, item and title comes from',
-                    'Busca de origem': 'Source search'})
-    return {'title': 'Onde consigo?', 'subtitle': 'De onde vem cada material, item e título',
-            'sections': [{'id': 'find-busca', 'title': 'Busca de origem', 'meta': '', 'html': tool}]}
+    tool = (el('p', 'Itens, monstros, dungeons, skills e títulos do jogo: busque pelo nome ou abra uma categoria. No item com '
+                    'receita, “Ir para o Crafting” leva ele para a calculadora.',
+               'Items, monsters, dungeons, skills and titles of the game: search by name or open a category. On an item with a '
+               'recipe, “Go to Crafting” takes it to the calculator.')
+            + '<div id="db" class="tool"></div>')
+    english.update({'Database': 'Database', 'Itens, monstros, dungeons, skills e títulos do jogo': 'Items, monsters, dungeons, skills and titles of the game'})
+    return {'title': 'Database', 'subtitle': 'Itens, monstros, dungeons, skills e títulos do jogo',
+            'sections': [{'id': 'find-db', 'title': 'Database', 'meta': '', 'html': tool}]}
+
+
+def me_part(strings, english):
+    el = _writer(strings, english)
+    tool = (el('p', 'Busque o seu personagem pelo nome para ver a ficha do jogo e levar equipamento, skills e Daevanion '
+                    'para o editor de build.',
+               'Look up your character by name to see its in-game sheet and take its gear, skills and Daevanion to the '
+               'build editor.')
+            + '<div id="me" class="tool"></div>'
+            + el('p', 'Os dados vêm da página oficial de personagens do Aion 2 (aion2.plaync.com), na hora em que você busca. '
+                      'Ficam salvos só neste navegador.',
+                 'The data comes from the official Aion 2 character page (aion2.plaync.com) at the moment you look it up. '
+                 'It is saved in this browser only.', 'note'))
+    english.update({'Meu personagem': 'My character', 'A ficha do jogo e a importação para o editor de build': 'The in-game sheet and the import to the build editor',
+                    'Ficha do personagem': 'Character sheet'})
+    return {'title': 'Meu personagem', 'subtitle': 'A ficha do jogo e a importação para o editor de build',
+            'sections': [{'id': 'me-ficha', 'title': 'Ficha do personagem', 'meta': '', 'html': tool}]}
 
 
 def settings_part(strings, english):

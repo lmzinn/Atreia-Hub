@@ -26,6 +26,8 @@ a{color:var(--accent)}
 #qn{position:absolute;right:9px;top:9px;font-size:12.5px;color:var(--side-mute)}
 .partbtn{display:flex;justify-content:space-between;align-items:center;width:100%;background:none;border:0;color:inherit;font:600 15px/1.3 inherit;padding:9px 8px;border-radius:6px;cursor:pointer;text-align:left}
 .partbtn:hover,.partbtn.on{background:var(--side-hover)}
+.navh{margin:14px 8px 4px;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--side-mute)}
+.navsep{border:0;border-top:1px solid var(--side-line);margin:12px 8px}
 .fold>summary{display:flex;align-items:center;gap:7px;list-style:none;cursor:pointer;font-weight:600;font-size:15px;line-height:1.3;padding:9px 8px;border-radius:6px}
 .fold>summary::-webkit-details-marker{display:none}
 .fold>summary::before{content:"▸";color:var(--side-mute);font-size:12px;width:9px}
@@ -37,6 +39,144 @@ a{color:var(--accent)}
 .partbtn small,.toc small{font-weight:400;font-size:12px;white-space:nowrap;margin-left:8px}
 .partbtn small{color:var(--side-mute)}
 #wrap{display:grid;grid-template-columns:minmax(calc(var(--ow) + 30px),1fr) minmax(0,1180px) minmax(0,1fr);align-items:start}
+.mepill{display:flex;gap:6px}
+.mepill.corner{position:fixed;top:20px;right:22px;z-index:40}
+.mepill button{display:inline-flex;align-items:center;gap:8px;height:36px;min-width:36px;border-radius:18px;border:1px solid color-mix(in srgb,var(--hl) 35%,var(--line));
+background:color-mix(in srgb,var(--hl) 8%,var(--panel));color:var(--ink);cursor:pointer;font:13px inherit;backdrop-filter:blur(6px)}
+.mepill button:hover{border-color:var(--hl)}
+.mepill .mewho{padding:0 14px 0 4px;max-width:220px}
+.mepill .mewho:has(svg){padding-left:12px}
+.mepill .mewho span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.mepill img{width:28px;height:28px;border-radius:50%;object-fit:cover}
+.mepill svg,.memenu svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.mepill .merf{padding:0;width:36px;justify-content:center}
+.mepill .merf.busy svg{animation:mespin 1s linear infinite}
+@keyframes mespin{to{transform:rotate(360deg)}}
+.memenu{position:fixed;z-index:50;min-width:230px;display:flex;flex-direction:column;gap:4px;padding:6px;border-radius:14px;border:1px solid color-mix(in srgb,var(--hl) 35%,var(--line));
+background:var(--panel);box-shadow:0 14px 34px #0005}
+.memenu button{display:flex;align-items:center;gap:9px;padding:6px 9px;border-radius:10px;border:1px solid transparent;background:none;color:var(--ink);font:13px inherit;text-align:left;cursor:pointer}
+.memenu button:hover{background:var(--tint)}.memenu button.on{border-color:var(--hl);background:color-mix(in srgb,var(--hl) 14%,var(--panel))}
+.memenu img{width:30px;height:30px;border-radius:50%;object-fit:cover}
+.memenu span{display:flex;flex-direction:column}.memenu small{color:var(--mute);font-size:11.5px}
+.memenu .meall{color:var(--hl2);border-top:1px solid var(--line);border-radius:0 0 10px 10px;margin-top:2px}
+@media (max-width:700px){.mepill .mewho span{max-width:90px}}
+.dbic{display:inline-block;width:24px;height:24px;flex:none;vertical-align:middle;margin-right:6px;border-radius:5px;background-repeat:no-repeat;
+background-size:480px auto;background-position:calc(var(--x) * -24px) calc(var(--y) * -24px)}
+.dbic.big{width:40px;height:40px;background-size:800px auto;background-position:calc(var(--x) * -40px) calc(var(--y) * -40px)}
+.cfind{max-width:520px;margin:0 0 10px}
+.cextra .pic{display:flex;align-items:center;gap:8px}
+.tool .cextra button.cdel{display:inline-grid;place-items:center;width:32px;height:32px;padding:0}
+.tool .cextra button.cdel svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tool .cextra button.cdel:hover{border-color:#ef4444;color:#f87171}
+.cmats a.dblink{color:inherit;text-decoration:none;border-bottom:1px dotted color-mix(in srgb,var(--hl) 60%,transparent)}
+.cmats a.dblink:hover{color:var(--hl2)}
+.chead .csucc{display:inline-flex;align-items:center;gap:8px;margin-left:18px;font-weight:400}
+/* Database */
+#db>.fq{width:100%;max-width:none;margin:4px 0 12px}
+.dbcats{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin:0 0 16px}
+.tool button.dbcat{display:flex;flex-direction:column;align-items:stretch;gap:6px;padding:13px 15px;border-radius:13px;text-align:left;
+border:1px solid color-mix(in srgb,var(--hl) 25%,var(--line));background:color-mix(in srgb,var(--hl) 6%,var(--panel));transition:border-color .15s,transform .15s}
+.tool button.dbcat:hover{border-color:var(--hl);transform:translateY(-1px)}
+.dbct{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.dbct b{font-size:15px;color:var(--navy)}.dbct small{color:var(--hl2);font-weight:600}
+.dbcd{color:var(--mute);font-size:12.5px;line-height:1.35}
+.dbcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 10px;font-size:13.5px}
+.dbcrumb a{color:var(--hl2);text-decoration:none}.dbcrumb a:hover{text-decoration:underline}.dbcrumb .sep{color:var(--mute)}
+.dblist{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
+.tool button.dbrow{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:11px;text-align:left;
+border:1px solid color-mix(in srgb,var(--hl) 18%,var(--line));background:color-mix(in srgb,var(--hl) 4%,var(--panel))}
+.tool button.dbrow:hover{border-color:var(--hl)}
+.dbrow span{display:flex;flex-direction:column;min-width:0}.dbrow b{font-size:13.5px;line-height:1.25}.dbrow small{color:var(--mute);font-size:12px}
+.dbrow .dbic,.dbhead .dbic{margin:0}
+.tool button.dbmore{margin:12px auto 0;display:block;padding:8px 18px;border-radius:10px}
+.dbhead{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;padding:14px 16px;margin:0 0 12px;border-radius:16px;border:1px solid color-mix(in srgb,var(--hl) 38%,var(--line));
+background:radial-gradient(120% 140% at 0% 0%,color-mix(in srgb,var(--hl) 18%,var(--panel)),color-mix(in srgb,var(--hl2) 6%,var(--panel)) 65%)}
+.dbic.huge{width:64px;height:64px;border-radius:12px;background-size:1280px auto;background-position:calc(var(--x) * -64px) calc(var(--y) * -64px);
+background-color:color-mix(in srgb,var(--hl) 10%,var(--panel))}
+.dbwords{flex:1 1 260px;display:flex;flex-direction:column;gap:3px}.dbtitle{font-size:20px;color:var(--navy)}.dbsub{color:var(--ink)}.dbwords small{color:var(--mute)}
+.dbacts{display:flex;flex-wrap:wrap;gap:6px}
+.tool .dbacts button{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 13px;border-radius:10px}
+.tool .dbacts button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tool .dbacts button.dbgo{border-color:var(--hl);background:color-mix(in srgb,var(--hl) 22%,var(--panel));font-weight:600}
+.dbdesc{white-space:pre-line}
+.dbblock{margin:0 0 6px}
+ul.dbul{margin:4px 0 10px;padding-left:18px}ul.dbul li{margin:3px 0}ul.dbul small{color:var(--mute)}ul.dbul .dbic{width:20px;height:20px;background-size:400px auto;background-position:calc(var(--x) * -20px) calc(var(--y) * -20px);margin-right:5px}
+a.dbname{color:inherit;text-decoration:none;border-bottom:1px dotted color-mix(in srgb,var(--hl) 60%,transparent)}a.dbname:hover{color:var(--hl2)}
+a.dbname.g3,b.g3{color:var(--rar-u)}a.dbname.g2,b.g2{color:var(--rar-e)}a.dbname.g1,b.g1{color:var(--rar-r)}a.dbname.g4,b.g4{color:var(--rar-s)}
+.dbtags{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}.dbtag{padding:3px 9px;border-radius:999px;border:1px solid color-mix(in srgb,var(--hl) 25%,var(--line));font-size:12.5px}
+.dbrecipe{padding:8px 12px;margin:0 0 8px;border-radius:11px;border:1px solid color-mix(in srgb,var(--hl) 20%,var(--line));background:color-mix(in srgb,var(--hl) 4%,var(--panel))}
+.dbfilters{margin-bottom:8px}
+#db>.dbfq{width:100%;max-width:none;margin:0 0 8px}
+.dbtabs{display:flex;flex-wrap:wrap;gap:2px 4px;margin:0 0 6px;border-bottom:1px solid var(--line)}
+.tool .dbtabs button{height:34px;padding:0 11px;border:0;border-bottom:2px solid transparent;border-radius:0;background:none;color:var(--mute);font-size:13.5px;margin-bottom:-1px}
+.tool .dbtabs button:hover{color:var(--ink);background:none}
+.tool .dbtabs button.on{color:var(--ink);font-weight:600;border-bottom-color:var(--hl)}
+table.dbtable{width:100%;border-collapse:collapse;font-size:14px}
+.dbtable th{background:var(--panel)!important;border-radius:0!important;text-align:left;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.dbtable th.sort{cursor:pointer;user-select:none}.dbtable th.sort:hover{color:var(--ink)}
+.dbarrow{margin-left:5px;color:var(--hl2)}
+.dbtable td{padding:6px 10px;border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent);vertical-align:middle}
+.dbtable tbody tr{cursor:pointer}.dbtable tbody tr:hover,.dbtable tbody tr:focus-visible{background:color-mix(in srgb,var(--hl) 8%,transparent);outline:none}
+.dbtable .dblv{text-align:right;width:1%;white-space:nowrap}
+.dbtable .dbg{width:1%;white-space:nowrap}
+.dbtable .dbg .g1{color:var(--rar-r)}.dbtable .dbg .g2{color:var(--rar-e)}.dbtable .dbg .g3{color:var(--rar-u)}.dbtable .dbg .g4{color:var(--rar-s)}
+.dbtable .dbsrc{width:1%}
+td.dbsrc{white-space:nowrap}
+.dbit{display:flex;align-items:center;gap:10px}.dbit .dbic{margin:0;flex:none}
+.dbit span{display:flex;flex-direction:column;min-width:0}.dbit b{font-size:14px;line-height:1.25}.dbit small{color:var(--mute);font-size:12px}
+.dbchip{display:inline-block;margin:2px 4px 2px 0;padding:2px 8px;border-radius:6px;border:1px solid color-mix(in srgb,var(--hl) 25%,var(--line));
+background:color-mix(in srgb,var(--hl) 6%,var(--panel));font-size:12px;white-space:nowrap}
+@media (max-width:640px){.dbtable .dbsrc,.dbtable .dbg{display:none}}
+.cprofs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tool .cprofs button{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px;border-radius:999px;font-size:13.5px}
+.tool .cprofs button small{color:var(--mute);font-size:12px}
+.tool .cprofs button.on{border-color:var(--hl);background:color-mix(in srgb,var(--hl) 22%,var(--panel));box-shadow:inset 0 0 0 1px var(--hl)}
+.tool .cprofs button.on small{color:var(--hl2)}
+#calc input.cq{margin:2px 0 8px}
+.crecs details.crgrp{margin:6px 0}
+.clhead{display:flex;align-items:center;gap:12px}.tool .clhead button.creset{margin-left:auto;font-weight:400;font-size:12.5px}
+.crgrp>summary small{color:var(--hl2);font-weight:600;margin-left:4px}
+.crlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:6px}
+.tool button.crec{display:flex;align-items:center;gap:10px;padding:6px 10px;border-radius:11px;text-align:left;
+border:1px solid color-mix(in srgb,var(--hl) 16%,var(--line));background:color-mix(in srgb,var(--hl) 3%,var(--panel))}
+.tool button.crec:hover{border-color:var(--hl)}
+.tool button.crec.on{border-color:var(--hl);background:color-mix(in srgb,var(--hl) 16%,var(--panel))}
+.crec span:not(.crmark):not(.dbic){display:flex;flex-direction:column;min-width:0;flex:1}.crec b{font-size:13px;line-height:1.25}.crec small{color:var(--mute);font-size:11.5px}
+.crec b.g3{color:var(--rar-u)}.crec b.g2{color:var(--rar-e)}.crec b.g1{color:var(--rar-r)}.crec b.g4{color:var(--rar-s)}
+.crmark{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:var(--hl2);border:1px solid color-mix(in srgb,var(--hl) 40%,var(--line))}
+.crec.on .crmark{background:var(--hl);color:#fff;border-color:var(--hl)}
+.crec .dbic{margin:0}
+.clist .pic{display:flex;align-items:center;gap:8px}.clist .pic span{display:flex;flex-direction:column}.clist .pic small{color:var(--mute);font-size:12px}
+.clist tr.cnob td{border-bottom:0}
+.tool .clist select{max-width:210px}
+.clist tr.cstock td{padding-top:0;padding-bottom:10px;background:none}
+.cstbox{padding:8px 12px 10px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.cstock .csl{display:block;color:var(--mute);font-size:12.5px;margin:0 0 6px}
+.cstgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 16px}
+.cstock .cst{display:flex;flex-direction:column;align-items:flex-start;gap:4px;font-size:13px;color:var(--ink)}
+.clist b.g3{color:var(--rar-u)}.clist b.g2{color:var(--rar-e)}.clist b.g1{color:var(--rar-r)}.clist b.g4{color:var(--rar-s)}
+.tool .clist button.cdel{display:inline-grid;place-items:center;width:32px;height:32px;padding:0}
+.tool .clist button.cdel svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tool .clist button.cdel:hover{border-color:#ef4444;color:#f87171}
+/* my character */
+.mesearch{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:4px 0 10px}
+.mesearch .fq{margin:0;flex:1 1 260px}
+.tool .mesearch select{height:40px;border-radius:11px;padding:0 12px}
+.tool .mesearch button.mego{display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 16px;border-radius:11px;font-weight:600}
+.tool .mesearch button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.memsg{margin:6px 0 10px;color:var(--hl2);font-weight:600}
+.mehits{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin:0 0 14px}
+.tool button.mehit{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:12px;text-align:left}
+.mehit img{width:40px;height:40px;flex:none;border-radius:10px;object-fit:cover;background:var(--tint)}
+.mehit span,.metile span{display:flex;flex-direction:column;min-width:0}
+.mehit small,.metile small{color:var(--mute);font-size:12px}
+.meswitch{margin:4px 0 12px}.tool .meswitch button .tic{object-fit:cover}
+.mecard .bemb{overflow:hidden;padding:0}.mecard .mepic{width:100%;height:100%;object-fit:cover}
+.mename{font-size:21px;color:var(--navy)}.meat{color:var(--mute);font-size:12px}
+.megear{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;margin:0 0 14px}
+.metile{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:12px;border:1px solid color-mix(in srgb,var(--hl) 22%,var(--line));background:color-mix(in srgb,var(--hl) 5%,var(--panel))}
+.metile img{width:40px;height:40px;flex:none;border-radius:8px;background:var(--tint)}
+.metile b{font-size:13.5px;line-height:1.25}.metile b.g3{color:var(--rar-u)}.metile b.g2{color:var(--rar-e)}.metile b.g1{color:var(--rar-r)}.metile b.g4{color:var(--rar-s)}
+.meskills td:nth-child(2),.meskills td:nth-child(3){white-space:nowrap;color:var(--mute)}
 #outline{position:sticky;top:22px;justify-self:end;overscroll-behavior:contain;width:var(--ow);max-height:calc(100vh - 44px);overflow-y:auto;scrollbar-width:thin;margin:22px 0 0 16px;padding:10px 10px 12px;background:var(--panel);border:1px solid color-mix(in srgb,var(--hl) 35%,var(--line));border-radius:10px;box-shadow:0 8px 26px #0004}
 #ohead{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 4px 8px;padding-bottom:7px;border-bottom:2px solid;border-image:linear-gradient(90deg,var(--hl2),var(--hl)) 1}
 #otitle{font-weight:700;font-size:15px;color:var(--navy)}
@@ -169,10 +309,14 @@ tr:has(td.box input:checked) td:not(.box){color:var(--mute)}
 .tool input[type=text]{width:130px}
 .num{display:inline-flex;gap:3px;align-items:center;white-space:nowrap}
 .num input{width:72px;text-align:center}
+.csucc{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .tool button{font:13px inherit;padding:5px 9px;border-radius:5px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
 .tool button:hover{border-color:var(--hl)}
 .num button{width:28px;padding:5px 0;font-weight:700}
 .cprice{width:110px;text-align:right}
+.num input.cprice{width:64px;text-align:center}
+.cmats .num input.cprice{width:96px}
+.cmats td:nth-child(3) .num input.cprice{width:64px}
 .cbar{margin:0 0 6px}
 .chead{color:var(--navy);font-weight:650;font-size:15.5px;margin:18px 0 8px;border-bottom:1px solid var(--line);padding-bottom:3px}
 .chead select{margin-left:6px;font-weight:400}
@@ -217,7 +361,7 @@ tr:has(td.box input:checked) td:not(.box){color:var(--mute)}
 .bfxh{margin:8px 0 4px;font-weight:600;color:var(--mute);font-size:12.5px;text-transform:uppercase;letter-spacing:.04em}
 .bgear select{width:100%;max-width:420px}
 .bgear tr.off td.key{color:var(--mute)}
-.bgear td.g3{color:var(--y)}.bgear td.g2{color:var(--accent)}.bgear td.g1{color:var(--g)}
+.bgear td.g3{color:var(--rar-u)}.bgear td.g2{color:var(--rar-e)}.bgear td.g1{color:var(--rar-r)}
 .brow{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin:6px 0}
 .brow .bl{min-width:110px;font-weight:600}
 .brow select{min-width:260px;max-width:100%}
@@ -244,6 +388,9 @@ mark.hit.cur{background:#38bdf8;outline:2px solid #38bdf8}
 @media (max-width:760px){body{padding-left:0}#side{position:static;width:auto;inset:auto}#wrap{display:block}#outline{position:static;width:auto;max-height:none;margin:10px 14px 0}main{padding:14px}#top{top:12px;right:14px}.toc{columns:2}}
 @media print{#side,#outline,#top,.resetrow,.bctl,.pbar,.tabs,.cctl{display:none}body{padding-left:0}#wrap{display:block}main{margin:0;max-width:none}.part{display:block}details.sec{break-inside:avoid}.tabpane{display:block!important}}
 /* ---------- look: glow, cards, icons (kept at the end so it wins over the rules above) ---------- */
+/* item grades: the colours of the game, the same in every theme (Rare green, Epic blue, Unique gold, Special cyan) */
+:root{--rar-r:#1f8a3b;--rar-e:#1769c2;--rar-u:#a87408;--rar-s:#00839a}
+:root[data-theme="dark"]{--rar-r:#5ee07a;--rar-e:#63bdff;--rar-u:#ffd166;--rar-s:#3fd0ff}
 :root{--g1:color-mix(in srgb,var(--hl2) 70%,#000);--g2:color-mix(in srgb,var(--hl) 80%,#000);--tint:color-mix(in srgb,var(--hl) 8%,transparent)}
 :root[data-theme="dark"]{--g1:color-mix(in srgb,var(--hl2) 62%,#fff);--g2:color-mix(in srgb,var(--hl) 55%,#fff);--tint:color-mix(in srgb,var(--hl) 12%,transparent)}
 body{background:radial-gradient(1100px 560px at 88% -10%,color-mix(in srgb,var(--hl2) 13%,transparent),transparent 62%),radial-gradient(900px 520px at 22% -8%,color-mix(in srgb,var(--hl) 15%,transparent),transparent 60%),var(--bg);background-attachment:fixed}
@@ -825,7 +972,7 @@ __CONTENT__
 </div>
 <div id="tip" hidden></div>
 <script>
-const BOARDS = __BOARDS__, EN = __EN__, ICONS = __ICONS__, CALC = __CALC__, ROUTINE = __ROUTINE__, BLD = __BLD__, BIC = __BIC__, PUBLIC = __PUBLIC__, FIND = __FIND__, NEWS = __NEWS__, TIC = __TIC__, BUILT = '__BUILT__';
+const BOARDS = __BOARDS__, EN = __EN__, ICONS = __ICONS__, CALC = __CALC__, ROUTINE = __ROUTINE__, BLD = __BLD__, BIC = __BIC__, PUBLIC = __PUBLIC__, NEWS = __NEWS__, TIC = __TIC__, BUILT = '__BUILT__';
 const UI = {
   pt: {search: 'Buscar…  ( / )', openall: 'Abrir tudo', closeall: 'Fechar tudo', exp: 'Exportar marcações', imp: 'Importar marcações',
     foot: 'Gerado em {d}. As marcações ficam salvas neste navegador.', badfile: 'Não consegui ler esse arquivo.',
@@ -1083,6 +1230,7 @@ const PICO = {
   craft: 'M3 21l8.5-8.5M12 6l6 6M14 4l6 6-3 3-6-6 3-3zM5 15l4 4',
   set: 'M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1M15 4v4M9 10v4M17 16v4',
   find: 'M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM20 20l-4-4',
+  me: 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0',
   bell: 'M6 16v-5a6 6 0 0 1 12 0v5l2 2H4l2-2zM10 21a2 2 0 0 0 4 0',
   plus: 'M12 5v14M5 12h14',
   copy: 'M9 9h11v11H9zM5 15H4V4h11v1',
@@ -1260,8 +1408,11 @@ if (boards.length) {
 const fmtN = (x, d) => x.toLocaleString(S.lang === 'en' ? 'en-US' : 'pt-BR', {maximumFractionDigits: d || 0, minimumFractionDigits: d || 0});
 function numBox(get, set, min, max, step, dec, after) {
   const w = make('span', 'num'), down = make('button', '', '−'), inp = make('input'), up = make('button', '', '+');
-  const put = v => { const f = dec ? 100 : 1; v = Math.max(min, Math.min(max, Math.round((+v || 0) * f) / f)); set(v); inp.value = v; save(); after(); };
-  inp.type = 'number'; inp.min = min; inp.max = max; inp.step = dec ? 0.01 : 1; inp.value = get();
+  // decimal boxes take a comma or a dot (93,33 or 93.33) and show the comma in Portuguese
+  const show = v => dec && S.lang !== 'en' ? String(v).replace('.', ',') : v;
+  const put = v => { const f = dec ? 100 : 1; v = Math.max(min, Math.min(max, Math.round((+String(v).replace(',', '.') || 0) * f) / f)); set(v); inp.value = show(v); save(); after(); };
+  if (dec) { inp.type = 'text'; inp.inputMode = 'decimal'; } else { inp.type = 'number'; inp.min = min; inp.max = max; inp.step = 1; }
+  inp.value = show(get());
   down.onclick = () => put(get() - step); up.onclick = () => put(get() + step); inp.onchange = () => put(inp.value);
   w.append(down, inp, up); return w;
 }
@@ -1443,52 +1594,107 @@ if (progPart) { progPart.insertBefore(progBar, $('details.sec', progPart)); draw
 
 // ---------- crafting calculator ----------
 const CUI = {
-  pt: {race: 'Facção', cls: 'Classe', allW: 'Todas as armas', pick: 'Clique nas peças que vai fabricar', kina: 'Mostrar custo em Kina', stepsSum: 'Etapas, chances e peças Splendent guardadas (opcional)',
+  pt: {race: 'Facção', cls: 'Classe', allW: 'Todas as armas', pick: 'Clique nas peças que vai fabricar', kina: 'Mostrar custo em Kina', stepsSum: 'Etapas da linha Dragon Lord e peças Splendent guardadas (opcional)',
     groups: {weapon: 'Arma e Guard', armor: 'Armadura', acc: 'Joias'},
     pieces: 'Peças escolhidas', homeStat: '{n} peça(s) na calculadora', piece: 'Peça', target: 'Quero chegar em', own: 'Já tenho', none: 'Nenhuma', qty: 'Quantidade', reset: 'Voltar ao padrão',
-    resetAsk: 'Voltar a calculadora ao padrão? Isso apaga a classe, as peças escolhidas, as chances, os preços e o que você marcou em "Tenho".',
-    stepsOf: 'Etapas de', step: 'Etapa', recipe: 'Receita (por craft)', succ: 'Sucesso %', combo: 'Combo %', have: 'Já tenho', crafts: 'Crafts em média',
+    resetAsk: 'Voltar a calculadora ao padrão? Isso apaga a classe, as peças escolhidas, a chance, os preços e o que você marcou em "Tenho".',
+    stepsOf: 'Etapas de', step: 'Etapa', recipe: 'Receita (por craft)', succ: 'Sucesso %', succAll: 'Sua chance de sucesso (%):', combo: 'Combo %', have: 'Já tenho', crafts: 'Crafts em média',
     lv: '{p} nível {n}', tc: '{p}, Transfer Crafting', onlyS: 'Só a versão Splendent segue adiante', onlyMiss: 'Só para as que não saíram Splendent no combo',
-    turns: 'Transforma: {g}', done: 'Você já tem essa peça, ou uma melhor.', nothing: 'Nenhuma peça escolhida ainda.',
+    turns: 'Transforma: {g}', done: 'Você já tem essa peça, ou uma melhor.', nothing: 'Nada na lista ainda: escolha uma profissão e clique nas receitas.',
+    stock: 'Peças da base que você já tem:', profPh: 'Buscar em {p}…', add: 'Pôr na lista', list: 'Minha lista', item: 'Item', how: 'Receita', dlTag: 'linha Dragon Lord', dlLine: 'Linha Dragon Lord · {p}',
+    other: 'Outras receitas do jogo', otherPh: 'Buscar receita: item, material, consumível…', noRec: 'Nenhuma receita com esse nome.', pickNone: '—',
+    recBox: 'Receitas escolhidas', recCol: 'Receita', variant: 'Como fazer', made: 'faz {n}', del: 'Tirar da lista',
+    cats: {weapons: 'Armas', armor: 'Armaduras', accessories: 'Joias', consumables: 'Consumíveis', materials: 'Materiais', stones: 'Pedras', wings: 'Asas'},
+    noteGen: 'Peças de equipamento contam a sua chance de sucesso (e o combo, na linha Dragon Lord); materiais e consumíveis contam os crafts exatos.',
+    succTop: 'Chance de sucesso (%):', toDb: 'Ver a origem no Database',
     mats: 'Material total, em média', mat: 'Material', need: 'Preciso', inv: 'Tenho', miss: 'Falta', from: 'De onde vem', price: 'Preço por unidade (Kina)', cost: 'Custo do que falta (Kina)', total: 'Total',
-    src: {ore: 'Essence Extraction: Ore', log: 'Essence Extraction: Log', gem: 'Essence Extraction: Gem', odyle: 'Essence Extraction: Odyle', mob: 'Drop de monstros',
+    src: {made: 'Processados (o que você já tem abate o material de que são feitos)', ore: 'Essence Extraction: Ore', log: 'Essence Extraction: Log', gem: 'Essence Extraction: Gem', odyle: 'Essence Extraction: Odyle', mob: 'Drop de monstros',
       stone: 'Monstros e Expeditions (Conquest)', exped: 'Expeditions (Conquest)', essence: 'Chefes de campo de nível 45 e Expeditions (Conquest)',
-      npc: 'Merchant da profissão ou Shop do menu'}},
-  en: {race: 'Faction', cls: 'Class', allW: 'All weapons', pick: 'Click the pieces you are going to craft', kina: 'Show the cost in Kina', stepsSum: 'Steps, chances and Splendent pieces in stock (optional)',
+      npc: 'Merchant da profissão ou Shop do menu', kina: 'Kina', other: 'Outros (clique no nome para ver a origem no Database)'}},
+  en: {race: 'Faction', cls: 'Class', allW: 'All weapons', pick: 'Click the pieces you are going to craft', kina: 'Show the cost in Kina', stepsSum: 'Steps of the Dragon Lord line and Splendent pieces in stock (optional)',
     groups: {weapon: 'Weapon and Guard', armor: 'Armour', acc: 'Jewellery'},
     pieces: 'Chosen pieces', homeStat: '{n} piece(s) in the calculator', piece: 'Piece', target: 'I want to reach', own: 'I have', none: 'None', qty: 'Quantity', reset: 'Back to defaults',
-    resetAsk: 'Put the calculator back to its defaults? This clears the class, the chosen pieces, the chances, the prices and what you entered under "I have".',
-    stepsOf: 'Steps of', step: 'Step', recipe: 'Recipe (per craft)', succ: 'Success %', combo: 'Combo %', have: 'I have', crafts: 'Crafts on average',
+    resetAsk: 'Put the calculator back to its defaults? This clears the class, the chosen pieces, the chance, the prices and what you entered under "I have".',
+    stepsOf: 'Steps of', step: 'Step', recipe: 'Recipe (per craft)', succ: 'Success %', succAll: 'Your success chance (%):', combo: 'Combo %', have: 'I have', crafts: 'Crafts on average',
     lv: '{p} level {n}', tc: '{p}, Transfer Crafting', onlyS: 'Only the Splendent version moves on', onlyMiss: 'Only for the ones that did not come out Splendent on the combo',
-    turns: 'Transforms: {g}', done: 'You already have this piece, or a better one.', nothing: 'No piece chosen yet.',
+    turns: 'Transforms: {g}', done: 'You already have this piece, or a better one.', nothing: 'Nothing on the list yet: pick a profession and click the recipes.',
+    stock: 'Base pieces you already have:', profPh: 'Search in {p}…', add: 'Add to the list', list: 'My list', item: 'Item', how: 'Recipe', dlTag: 'Dragon Lord line', dlLine: 'Dragon Lord line · {p}',
+    other: 'Other recipes of the game', otherPh: 'Search a recipe: item, material, consumable…', noRec: 'No recipe with that name.', pickNone: '—',
+    recBox: 'Chosen recipes', recCol: 'Recipe', variant: 'How to make it', made: 'makes {n}', del: 'Remove from the list',
+    cats: {weapons: 'Weapons', armor: 'Armour', accessories: 'Jewellery', consumables: 'Consumables', materials: 'Materials', stones: 'Stones', wings: 'Wings'},
+    noteGen: 'Gear pieces count your success chance (and the combo, on the Dragon Lord line); materials and consumables count the exact crafts.',
+    succTop: 'Success chance (%):', toDb: 'See where it comes from in the Database',
     mats: 'Total material, on average', mat: 'Material', need: 'I need', inv: 'I have', miss: 'Missing', from: 'Where it comes from', price: 'Price per unit (Kina)', cost: 'Cost of what is missing (Kina)', total: 'Total',
-    src: {ore: 'Essence Extraction: Ore', log: 'Essence Extraction: Log', gem: 'Essence Extraction: Gem', odyle: 'Essence Extraction: Odyle', mob: 'Monster drops',
+    src: {made: 'Processed (what you already have comes off the material they are made of)', ore: 'Essence Extraction: Ore', log: 'Essence Extraction: Log', gem: 'Essence Extraction: Gem', odyle: 'Essence Extraction: Odyle', mob: 'Monster drops',
       stone: 'Monsters and Expeditions (Conquest)', exped: 'Expeditions (Conquest)', essence: 'Level 45 field bosses and Expeditions (Conquest)',
-      npc: 'Profession Merchant or the menu Shop'}},
+      npc: 'Profession Merchant or the menu Shop', kina: 'Kina', other: 'Others (click the name to see where it comes from in the Database)'}},
 };
+const COMBO = 0.25;  // the Splendent combo: a set 25% on the equipment recipes, not tied to proficiency
 const RANK = ['none', 'true', 'trueS', 'white', 'whiteS', 'wise', 'wiseS'], STAGES = [['true', 'trueS'], ['white', 'whiteS'], ['wise', 'wiseS']], CHAIN = ['base', 'expert', 'artisan'];
+const DBV = '__DBV__';  // version of the Database files (guide_build.py)
+// a picture of the Database sheets (db_data.py): 200 squares of 40 px a sheet, 20 a row
+const dbIcon = (i, cls) => { if (i == null || i < 0) return null; const s = make('span', 'dbic' + (cls ? ' ' + cls : ''));
+  s.style.backgroundImage = 'url(database/icons/' + Math.floor(i / 200) + '.webp?v=' + DBV + ')'; s.style.setProperty('--x', i % 20); s.style.setProperty('--y', Math.floor(i % 200 / 20)); return s; };
 const calcHost = $('#calc');
 if (calcHost && CALC.pieces) {
   const CLASSES = [...new Set(CALC.pieces.map(P => P.cls).filter(Boolean))], RACES = [...new Set(CALC.pieces.map(P => P.race))];
   const builds = S.builds && S.builds.list || [], mine = (builds.find(b => b.id === S.builds.cur) || builds[0] || {}).cls;  // the class of the build being edited
-  const fresh = () => ({race: RACES[0], cls: CLASSES.includes(mine) ? mine : CLASSES[0], list: {}, view: '', succ: {}, combo: {}, have: {}, price: {}, inv: {}, kina: false, stepsOpen: false});
+  const fresh = () => ({race: RACES[0], cls: CLASSES.includes(mine) ? mine : CLASSES[0], list: {}, view: '', succAll: 80, have: {}, price: {}, inv: {}, kina: false, stepsOpen: false, extra: []});
   const old = S.craft || {};
   S.craft = Object.assign(fresh(), old.piece ? {list: {[old.piece]: {qty: old.qty || 1, target: old.target || 'true', own: old.own || 'none'}}, view: old.piece} : {}, old);
   ['piece', 'target', 'own', 'qty'].forEach(k => delete S.craft[k]);  // the calculator used to hold a single piece
   if (!old.cls && Object.values(old.list || {}).some(e => e.qty)) S.craft.cls = 'Assassin';  // lists from before the class could be chosen
+  if (old.succAll == null) S.craft.succAll = Object.values(old.succ || {})[0] || 80;  // the chance used to be set per step
+  delete S.craft.succ; delete S.craft.combo;
+  if (!Array.isArray(S.craft.extra)) S.craft.extra = [];
   if (!RACES.includes(S.craft.race)) S.craft.race = RACES[0];
   if (S.craft.cls !== 'all' && !CLASSES.includes(S.craft.cls)) S.craft.cls = CLASSES[0];
+  const pk = P => P.race[0] + ':' + P.piece;  // E:Bow, A:Bow
+  {
+    const c = S.craft, was = c.race[0];  // lists from when one faction was chosen at a time
+    Object.keys(c.list).forEach(k => { if (!k.includes(':')) { c.list[was + ':' + k] = c.list[was + ':' + k] || c.list[k]; delete c.list[k]; } });
+    Object.keys(c.have).forEach(k => { if (k.split(':').length === 2) { c.have[was + ':' + k] = c.have[k]; delete c.have[k]; } });
+    if (c.view && !c.view.includes(':')) c.view = was + ':' + c.view;
+    Object.entries(c.list).forEach(([k, e]) => { if (CHAIN.includes(e.own)) { c.have[k + ':' + e.own] = (c.have[k + ':' + e.own] || 0) + (e.qty || 1); e.own = 'none'; } });
+  }
   const cu = k => (CUI[S.lang] || CUI.pt)[k];
-  const entry = name => S.craft.list[name] || (S.craft.list[name] = {qty: 0, target: 'true', own: 'none'});
-  const pct = (map, key, def) => Math.max(1, Math.min(100, map[key] != null ? map[key] : def));
-  // the pieces of the chosen faction: every armour piece and jewel, the guard, and the weapon of the chosen class
-  const offered = () => CALC.pieces.filter(P => P.race === S.craft.race && (P.group !== 'weapon' || S.craft.cls === 'all' || P.cls === S.craft.cls));
-  const active = () => offered().filter(P => entry(P.piece).qty > 0);
+  const entry = P => { const k = pk(P); return S.craft.list[k] || (S.craft.list[k] = {qty: 0, target: 'true', own: 'none'}); };
+  // every recipe of the game (db_data.py): name -> [category, picture, [[how, quantity made, [[material, quantity], ...]], ...], faction]
+  const REC = CALC.rec || {}, RPIC = REC['@pics'] || {}, GEAR = {weapons: 1, armor: 1, accessories: 1};
+  // a processed material opens into what it is made of: a recipe of a profession that is not a piece of gear
+  const madeBy = n => { if (CALC.sub[n]) return [n, 1, CALC.sub[n]];
+    const r = n[0] !== '@' && REC[n]; if (!r || GEAR[r[0]]) return null;
+    return r[2].find(v => /Lv\. \d+/.test(v[0]) && !/Substance Morph|Crafting Combo/.test(v[0])) || null; };
+  const succ = () => Math.max(1, Math.min(100, +S.craft.succAll || 80)) / 100;
+  const PROFS = ['Blacksmithing', 'Armorsmithing', 'Handicrafting', 'Alchemy', 'Cooking', 'Substance Morph'];
+  const GRADEC = {Rare: 'g1', Epic: 'g2', Legend: 'g2', Unique: 'g3', Special: 'g4'};
+  const real = n => (REC[n] ? REC[n][2] : []).filter(v => !/Crafting Combo/.test(v[0]));  // a combo result is not a recipe of its own in the game
+  const profsOf = n => PROFS.filter(p => real(n).some(v => v[0].includes(p)));
+  const lvOf = (n, p) => Math.min(...real(n).filter(v => v[0].includes(p)).map(v => +((v[0].match(/Lv\. (\d+)/) || [])[1] || 100)));
+  // a Dragon Lord piece from a name: the steps the line's maths handles (True, White, Wise and their Splendent; each faction has its own names)
+  const dlOf = name => { for (const P of CALC.pieces) {
+    const st = P.steps.find(x => x.name === name); if (st && RANK.includes(st.tier)) return [P, st.tier]; } return null; };
+  const inList = n => { const d = dlOf(n); if (d) { const e = entry(d[0]); return e.qty > 0 && e.target === d[1]; } return S.craft.extra.some(x => x.n === n); };
+  function addTo(n) {
+    const c = S.craft, d = dlOf(n);
+    if (d) { const e = entry(d[0]); e.qty = Math.max(1, e.qty); e.target = d[1]; if (RANK.indexOf(e.own) >= RANK.indexOf(d[1])) e.own = 'none'; }
+    else if (REC[n] && !c.extra.some(x => x.n === n)) c.extra.push({n, v: 0, q: 1});
+  }
+  function dropFrom(n) { const d = dlOf(n); if (d) entry(d[0]).qty = 0; else S.craft.extra = S.craft.extra.filter(x => x.n !== n); }
+  // the chosen recipes: [name, how, crafts]; gear counts the success chance (and the combo), the rest exact crafts
+  const extras = () => S.craft.extra.filter(x => REC[x.n] && x.q > 0).map(x => {
+    const r = REC[x.n], v = r[2][x.v] || r[2][0];
+    let crafts = x.q / v[1];
+    if (GEAR[r[0]]) crafts /= succ(); else crafts = Math.ceil(crafts - 1e-9);
+    if (/Crafting Combo/.test(v[0])) crafts /= COMBO;
+    return [x.n, v, crafts];
+  });
+  const active = () => CALC.pieces.filter(P => entry(P).qty > 0);
   // average number of crafts of every step that the target of this piece needs
   function plan(P) {
-    const c = S.craft, e = entry(P.piece), key = t => P.prof + ':' + t;
-    const s = t => pct(c.succ, key(t), 80) / 100, k = t => pct(c.combo, key(t), 25) / 100;
-    const t = RANK.indexOf(e.target), o = RANK.indexOf(e.own), crafts = {};
+    const c = S.craft, e = entry(P);
+    const s = succ, k = () => COMBO;
+    const t = RANK.indexOf(e.target), o = Math.max(0, RANK.indexOf(e.own)), crafts = {};
     if (o >= t) return {P, crafts, steps: [], done: true};
     let chain = 0;
     STAGES.forEach(([n, sp], i) => {
@@ -1497,85 +1703,178 @@ if (calcHost && CALC.pieces) {
       if (t >= rs && o < rs) crafts[sp] = (o < rn ? e.qty * (1 - k(n)) : e.qty) / s(sp);
     });
     if (chain) [...CHAIN].reverse().forEach(tier => {
-      crafts[tier] = Math.max(0, chain - (c.have[P.piece + ':' + tier] || 0)) / (s(tier) * k(tier));
+      crafts[tier] = Math.max(0, chain - (c.have[pk(P) + ':' + tier] || 0)) / (s(tier) * k(tier));
       chain = crafts[tier];
     });
     return {P, crafts, steps: P.steps.filter(x => x.tier in crafts), t, o};
   }
-  const price = name => S.craft.price[name] != null ? S.craft.price[name] : CALC.npc[name] || 0;
-  function totals(plans) {
-    const sum = {};
-    plans.forEach(pl => pl.steps.forEach(st => st.mats.forEach(([name, q]) =>
-      (CALC.sub[name] || [[name, 1]]).forEach(([raw, n]) => { sum[raw] = (sum[raw] || 0) + pl.crafts[st.tier] * q * n; }))));
-    return sum;
+  const price = name => name === 'Kina' ? 1 : S.craft.price[name] != null ? S.craft.price[name] : CALC.npc[name] || 0;
+  // sum = raw material, mid = processed material (Wood, Ingot, Decoration…); the processed material already
+  // in "I have" comes off the raw material it is made of
+  // level by level: what a processed material still lacks after "I have" is crafted, and its material joins the next level
+  function totals(plans, noInv) {
+    const put = (box, n, x) => { box[n] = (box[n] || 0) + x; }, sum = {}, mid = {}, used = {};
+    let want = {};
+    plans.forEach(pl => pl.steps.forEach(st => st.mats.forEach(([n, q]) => put(want, n, pl.crafts[st.tier] * q))));
+    extras().forEach(([, v, crafts]) => v[2].forEach(([n, q]) => put(want, n, crafts * q)));
+    for (let depth = 0; depth < 6 && Object.keys(want).length; depth++) {
+      const next = {};
+      Object.entries(want).forEach(([n, x]) => {
+        const v = madeBy(n);
+        if (!v) { put(sum, n, x); return; }
+        put(mid, n, x);
+        const whole = Math.ceil(x - 1e-9), have = noInv ? 0 : Math.max(0, (S.craft.inv[n] || 0) - (used[n] || 0));
+        used[n] = (used[n] || 0) + Math.min(have, whole);
+        const crafts = Math.ceil(Math.max(0, whole - have) / v[1] - 1e-9);
+        v[2].forEach(([m, q]) => { put(next, m, crafts * q); if (!madeBy(m) && !(m in sum)) sum[m] = 0; });  // keeps the rows in recipe order
+      });
+      want = next;
+    }
+    return {sum, mid};
   }
-  const viewed = () => { const a = active(); return a.find(P => P.piece === S.craft.view) || a[0]; };
-  homeStat.craft = () => cu('homeStat').replace('{n}', active().length);
+  const srcOf = n => madeBy(n) ? 'made' : n === 'Kina' ? 'kina' : CALC.src[n] || 'other';
+  const picOf = (n, cls) => tic(n, cls) || dbIcon(RPIC[n] != null ? RPIC[n] : REC[n] && REC[n][1], cls);
+  // from the Database: a Dragon Lord piece goes to its button, any other recipe to the list
+  window.toCraft = name => {
+    const c = S.craft, r = REC[name];
+    const P = CALC.pieces.find(Q => Q.steps.some(x => x.name === name));
+    c.prof = profsOf(name)[0] || (P && P.prof) || c.prof; c.q = '';
+    addTo(name); save(); render(); location.hash = '#craft-calculadora';
+  };
+  window.canCraft = name => real(name).length > 0 || CALC.pieces.some(Q => Q.steps.some(x => x.name === name && RANK.includes(x.tier)));
+  const viewed = () => { const a = active(); return a.find(P => pk(P) === S.craft.view) || a[0]; };
+  homeStat.craft = () => cu('homeStat').replace('{n}', active().length + S.craft.extra.length);
   const outs = [];  // cells that only change their number
   function paint() {
-    const sum = totals(active().map(plan)), view = viewed(), vp = view && plan(view);
+    const {sum, mid} = totals(active().map(plan)), view = viewed(), vp = view && plan(view);
     let all = 0;
     outs.forEach(([cell, kind, key]) => {
       if (kind === 'crafts') { const x = vp && vp.crafts[key] || 0; cell.textContent = fmtN(x, x && x < 10 ? 1 : 0); return; }
-      const need = Math.ceil((sum[key] || 0) - 1e-9) || 0, miss = Math.max(0, need - (S.craft.inv[key] || 0));
+      const need = Math.ceil(((key in mid ? mid : sum)[key] || 0) - 1e-9) || 0, miss = Math.max(0, need - (S.craft.inv[key] || 0));
       if (kind === 'need') cell.textContent = fmtN(need);
       if (kind === 'miss') { cell.textContent = fmtN(miss); cell.classList.toggle('ok', !miss); }
       if (kind === 'cost') { const v = miss * price(key); all += v; cell.textContent = v ? fmtN(v) : '—'; }
       if (kind === 'total') cell.textContent = all ? fmtN(all) : '—';
     });
   }
+  const KINDS = ['Bow', 'Dagger', 'Greatsword', 'Longsword', 'Mace', 'Orb', 'Spellbook', 'Staff', 'Guard',
+    'Helm', 'Pauldrons', 'Top', 'Gloves', 'Legs', 'Shoes', 'Cloak', 'Necklace', 'Earrings', 'Ring', 'Bracelet', 'Amulet', 'Belt'];
+  const CATORD = Object.keys(cu('cats'));
+  const kindOf = n => REC[n][6] || cu('cats')[REC[n][0]] || REC[n][0];
+  const kindRank = k => { const i = KINDS.indexOf(k); if (i >= 0) return i; const n = Object.keys(REC).find(x => kindOf(x) === k); return 100 + 10 * CATORD.indexOf(REC[n][0]); };
   function render() {
     const c = S.craft;
     outs.length = 0; calcHost.textContent = '';
-    // ----- faction, class and the pieces to click
-    const ctl = make('div', 'cctl'), reset = make('button', '', cu('reset'));
-    reset.onclick = () => { if (confirm(cu('resetAsk'))) { S.craft = fresh(); save(); render(); } };
-    ctl.append(labeled(cu('race'), pickBox(c.race, RACES.map(x => [x, x]), v => { c.race = v; }, render)),
-      labeled(cu('cls'), pickBox(c.cls, CLASSES.map(x => [x, x]).concat([['all', cu('allW')]]), v => { c.cls = v; }, render)), reset);
-    calcHost.append(ctl, make('p', 'chead', cu('pick')));
-    const tiles = make('div', 'ptiles'), shownNow = offered(); calcHost.appendChild(tiles);
-    ['weapon', 'armor', 'acc'].forEach(g => {
-      const grp = make('div', 'pgroup'), row = make('div', 'prow');
-      shownNow.filter(P => (P.group === 'guard' ? 'weapon' : P.group) === g).forEach(P => {
-        const e = entry(P.piece), b = make('button', 'ptile' + (e.qty ? ' on' : ''));
-        b.type = 'button'; b.title = P.prof; b.setAttribute('aria-pressed', e.qty ? 'true' : 'false');
-        b.append(tic('piece:' + P.piece, 'tic big') || '', make('span', '', P.piece));
-        b.onclick = () => { e.qty = e.qty ? 0 : 1; save(); render(); };
-        row.appendChild(b);
-      });
-      grp.append(make('small', '', cu('groups')[g]), row); tiles.appendChild(grp);
+    // ----- faction and the professions, as in the game's crafting window
+    const ours = n => n[0] !== '@' && real(n).length > 0;
+    const sideOf = n => ({E: 'Elyos', A: 'Asmodian'})[REC[n][3]] || '';
+    if (!PROFS.includes(c.prof)) { const W = CALC.pieces.find(Q => Q.cls === c.cls); c.prof = W ? W.prof : PROFS[0]; }
+    const pool = Object.keys(REC).filter(ours), tabs = make('div', 'cprofs');
+    PROFS.forEach(pr => {
+      const b = make('button', pr === c.prof ? 'on' : ''); b.type = 'button';
+      b.append(make('b', '', pr), make('small', '', pool.filter(n => profsOf(n).includes(pr)).length));
+      b.onclick = () => { c.prof = pr; c.q = ''; save(); render(); }; tabs.appendChild(b);
     });
-    const act = active();
-    if (!act.length) { calcHost.appendChild(make('p', 'note', cu('nothing'))); return; }
-    // ----- the chosen ones: how many, up to where, and what is already owned
-    calcHost.appendChild(make('p', 'chead', cu('pieces')));
-    const pieces = toolTable(calcHost, [cu('piece'), cu('qty'), cu('target'), cu('own')], 'cpieces');
+    calcHost.appendChild(tabs);
+    // ----- the recipes of that profession, by kind, lowest level first
+    const q = make('input', 'fq cq'), box = make('div', 'crecs');
+    q.type = 'search'; q.placeholder = cu('profPh').replace('{p}', c.prof); q.value = c.q || ''; q.autocomplete = 'off';
+    calcHost.append(q, box);
+    const drawRecs = () => {
+      box.textContent = '';
+      const term = fold((c.q || '').trim());
+      const names = pool.filter(n => profsOf(n).includes(c.prof) && (!term || fold(n).includes(term)))
+        .sort((x, y) => lvOf(x, c.prof) - lvOf(y, c.prof) || (+REC[x][5] || 0) - (+REC[y][5] || 0) || 'EA'.indexOf(REC[x][3]) - 'EA'.indexOf(REC[y][3]) || x.localeCompare(y));
+      // one group per kind of item, as the game lists them: Bow, Staff, Helm...
+      const kinds = [...new Set(names.map(kindOf))].sort((x, y) => kindRank(x) - kindRank(y) || x.localeCompare(y));
+      kinds.forEach(kind => {
+        const list = names.filter(n => kindOf(n) === kind);
+        const d = make('details', 'more crgrp'), inner = make('div', 'in crlist'), key = c.prof + ':' + kind, head = make('summary');
+        d.open = !!term || !!(c.openCat || {})[key];
+        d.ontoggle = () => { if (term) return; c.openCat = c.openCat || {}; if (d.open) c.openCat[key] = 1; else delete c.openCat[key]; save(); };
+        head.append(kind + ' ', make('small', '', list.length + (list.some(inList) ? ' · ' + list.filter(inList).length + ' ✓' : '')));
+        d.append(head, inner);
+        list.forEach(n => {
+          const r = REC[n], on = inList(n), b = make('button', 'crec' + (on ? ' on' : '')), words = make('span'), lv = lvOf(n, c.prof);
+          b.type = 'button'; b.title = on ? cu('del') : cu('add');
+          words.append(make('b', GRADEC[r[4]] || '', n), make('small', '', [lv < 100 ? 'Lv. ' + lv : '', r[5] ? 'Item level ' + r[5] : '', sideOf(n), dlOf(n) ? cu('dlTag') : ''].filter(Boolean).join(' · ')));
+          b.append(dbIcon(r[1], 'big') || make('span', 'dbic big'), words, make('span', 'crmark', on ? '✓' : '+'));
+          b.onclick = () => { if (on) dropFrom(n); else addTo(n); save(); render(); };
+          inner.appendChild(b);
+        });
+        box.appendChild(d);
+      });
+      if (!names.length) box.appendChild(make('p', 'note', cu('noRec')));
+    };
+    q.oninput = () => { c.q = q.value; drawRecs(); };
+    drawRecs();
+    // ----- my list: the Dragon Lord pieces (up to where, what is owned) and the other recipes (how, how many)
+    const act = active(), ex = c.extra.filter(x => REC[x.n]);
+    const lhead = make('p', 'chead clhead'), reset = make('button', 'creset', cu('reset')); reset.type = 'button';
+    reset.onclick = () => { if (confirm(cu('resetAsk'))) { S.craft = fresh(); save(); render(); } };
+    lhead.append(make('span', '', cu('list')), reset); calcHost.appendChild(lhead);
+    if (!act.length && !ex.length) { calcHost.appendChild(make('p', 'note', cu('nothing'))); return; }
+    const tb = toolTable(calcHost, [cu('item'), cu('qty'), cu('how'), cu('own'), ''], 'clist');
+    const del = fn => { const d = make('button', 'cdel'); d.type = 'button'; d.title = cu('del'); d.appendChild(pico('trash', '')); d.onclick = () => { fn(); save(); render(); }; return d; };
     act.forEach(P => {
-      const e = entry(P.piece), tr = pieces.insertRow(), name = t => P.steps.find(x => x.tier === t).name;
-      const a = tr.insertCell(), box = make('div', 'pic'), words = make('span'); a.className = 'key';
-      words.append(make('b', '', P.piece), make('small', '', P.prof)); box.append(tic('piece:' + P.piece, 'tic big') || '', words); a.appendChild(box);
+      const e = entry(P), tr = tb.insertRow(), name = t => P.steps.find(x => x.tier === t).name;
+      const a = tr.insertCell(), box2 = make('div', 'pic'), words = make('span'); a.className = 'key';
+      words.append(make('b', '', P.piece), make('small', '', cu('dlLine').replace('{p}', P.prof) + ' · ' + (P.race === 'Asmodians' ? 'Asmodian' : 'Elyos'))); box2.append(tic('piece:' + P.piece, 'tic big') || '', words); a.appendChild(box2);
       tr.insertCell().appendChild(numBox(() => e.qty, v => { e.qty = v; }, 0, 20, 1, false, render));
       tr.insertCell().appendChild(pickBox(e.target, RANK.slice(1).map(t => [t, name(t)]), v => { e.target = v; if (RANK.indexOf(e.own) >= RANK.indexOf(v)) e.own = 'none'; }, render));
       tr.insertCell().appendChild(pickBox(e.own, RANK.slice(0, 6).map(t => [t, t === 'none' ? cu('none') : name(t), RANK.indexOf(t) >= RANK.indexOf(e.target)]), v => { e.own = v; }, render));
+      tr.insertCell().appendChild(del(() => { e.qty = 0; }));
+      // how many Splendent pieces of the base line are in the bag: each True, White and Wise craft takes one Artisan's Splendent
+      const t = RANK.indexOf(e.target), o = RANK.indexOf(e.own);
+      if (!STAGES.some((x, i) => t >= 2 * i + 1 && o < 2 * i + 1)) return;
+      const st = tb.insertRow(), cell = st.insertCell(); st.className = 'cstock'; cell.colSpan = 5; tr.classList.add('cnob');
+      const box = make('div', 'cstbox'), grid = make('div', 'cstgrid');
+      box.append(make('span', 'csl', cu('stock')), grid); cell.appendChild(box);
+      CHAIN.forEach(tier => {
+        const sn = P.steps[P.steps.findIndex(x => x.tier === tier) + 1].chain, hk = pk(P) + ':' + tier, lab = make('div', 'cst');
+        lab.append(make('b', GRADEC[(REC[sn] || [])[4]] || '', sn), numBox(() => c.have[hk] || 0, v => { c.have[hk] = v; }, 0, 999, 1, false, render));
+        grid.appendChild(lab);
+      });
     });
+    const how = y => y[0] + (y[1] > 1 ? ' · ' + cu('made').replace('{n}', y[1]) : '');
+    ex.forEach(x => {
+      const r = REC[x.n], tr = tb.insertRow(), a = tr.insertCell(), box2 = make('div', 'pic'), words = make('span'); a.className = 'key';
+      words.append(make('b', GRADEC[r[4]] || '', x.n), make('small', '', profsOf(x.n).concat(sideOf(x.n) || []).join(' · '))); box2.append(dbIcon(r[1], 'big') || '', words); a.appendChild(box2);
+      tr.insertCell().appendChild(numBox(() => x.q, val => { x.q = val; }, 1, 9999, 1, false, render));
+      const v = tr.insertCell();
+      if (r[2].length > 1) v.appendChild(pickBox(String(x.v), r[2].map((y, i) => [String(i), how(y)]), val => { x.v = +val; }, render)); else v.textContent = how(r[2][0]);
+      tr.insertCell().textContent = '—';
+      tr.insertCell().appendChild(del(() => { c.extra = c.extra.filter(y => y !== x); }));
+    });
+    calcHost.appendChild(make('p', 'note', cu('noteGen')));
     // ----- the material of all of them
     const mhead = make('p', 'chead'), klab = make('label'), kbox = make('input');
     kbox.type = 'checkbox'; kbox.checked = !!c.kina; kbox.onchange = () => { c.kina = kbox.checked; save(); render(); };
-    klab.append(kbox, cu('kina')); mhead.append(cu('mats'), klab); calcHost.appendChild(mhead);  // not an h3: the menu lists those and this one is redrawn
+    const sbox = make('span', 'csucc'); sbox.append(cu('succTop'), numBox(() => c.succAll, v => { c.succAll = v; }, 1, 100, 1, true, paint));
+    klab.append(kbox, cu('kina')); mhead.append(cu('mats'), klab, sbox); calcHost.appendChild(mhead);  // not an h3: the menu lists those and this one is redrawn
     const mats = toolTable(calcHost, [cu('mat'), cu('need'), cu('inv'), cu('miss')].concat(c.kina ? [cu('price'), cu('cost')] : []), 'cmats');
     const field = (map, n, shown) => {
-      const inp = make('input', 'cprice'); inp.type = 'number'; inp.min = 0; inp.value = shown || ''; inp.placeholder = '0';
-      inp.oninput = () => { if (inp.value === '') delete map[n]; else map[n] = Math.max(0, +inp.value || 0); save(); paint(); };
-      return inp;
+      // same − / + box as numBox, but it keeps focus while typing and an empty field means "not set"
+      const w = make('span', 'num'), down = make('button', '', '−'), inp = make('input', 'cprice'), up = make('button', '', '+');
+      inp.type = 'number'; inp.min = 0; inp.value = shown || ''; inp.placeholder = '0';
+      const put = v => { if (v === '') delete map[n]; else map[n] = Math.max(0, Math.round(+v || 0)); save(); paint(); };
+      const nudge = d => { const v = Math.max(0, (+inp.value || +inp.placeholder || 0) + d); inp.value = v; put(String(v)); };
+      [down, up].forEach(b => { b.type = 'button'; });
+      down.onclick = () => nudge(-1); up.onclick = () => nudge(1); inp.oninput = () => put(inp.value);
+      w.append(down, inp, up); return w;
     };
-    const order = Object.keys(cu('src')), names = Object.keys(totals(act.map(plan))).sort((x, y) => order.indexOf(CALC.src[x]) - order.indexOf(CALC.src[y]));
+    const order = Object.keys(cu('src')), all = totals(act.map(plan), true);  // without "I have", so no row vanishes while typing
+    const names = Object.keys(all.mid).concat(Object.keys(all.sum)).sort((x, y) => order.indexOf(srcOf(x)) - order.indexOf(srcOf(y)));
     names.forEach((n, at) => {
-      if (!at || CALC.src[n] !== CALC.src[names[at - 1]]) { const g = mats.insertRow().insertCell(); g.parentNode.className = 'grp'; g.colSpan = c.kina ? 6 : 4; g.textContent = cu('src')[CALC.src[n]] || ''; }
+      if (!at || srcOf(n) !== srcOf(names[at - 1])) { const g = mats.insertRow().insertCell(); g.parentNode.className = 'grp'; g.colSpan = c.kina ? 6 : 4; g.textContent = cu('src')[srcOf(n)] || ''; }
       const tr = mats.insertRow(), a = tr.insertCell(), b = tr.insertCell(), i = tr.insertCell(), m = tr.insertCell();
-      a.className = 'key'; a.append(tic(n) || '', n); b.className = 'out'; m.className = 'out miss';
+      a.className = 'key'; a.append(picOf(n) || '');
+      if (window.goDb && n !== 'Kina') { const l = make('a', 'dblink', n); l.href = '#'; l.title = cu('toDb'); l.onclick = e => { e.preventDefault(); goDb(n); }; a.appendChild(l); } else a.append(n);
+      b.className = 'out'; m.className = 'out miss';
       i.appendChild(field(c.inv, n, c.inv[n]));
       outs.push([b, 'need', n], [m, 'miss', n]);
-      if (c.kina) { const p = tr.insertCell(), k = tr.insertCell(); k.className = 'out'; p.appendChild(field(c.price, n, price(n))); outs.push([k, 'cost', n]); }
+      if (c.kina && (madeBy(n) || n === 'Kina')) { tr.insertCell(); const k = tr.insertCell(); k.className = 'out'; if (n === 'Kina') outs.push([k, 'cost', n]); }  // priced through what it is made of
+      else if (c.kina) { const p = tr.insertCell(), k = tr.insertCell(); k.className = 'out'; p.appendChild(field(c.price, n, price(n))); outs.push([k, 'cost', n]); }
     });
     if (c.kina) {
       const tot = mats.insertRow(); tot.className = 'tot';
@@ -1583,17 +1882,19 @@ if (calcHost && CALC.pieces) {
       const tv = tot.insertCell(); tv.className = 'out'; outs.push([tv, 'total']);
     }
     // ----- the steps of one of them, for whoever wants to tune the chances
+    if (!act.length) { paint(); fitTables(calcHost); return; }
     const more = make('details', 'more'), inner = make('div', 'in');
     more.open = !!c.stepsOpen; more.ontoggle = () => { if (c.stepsOpen !== more.open) { c.stepsOpen = more.open; save(); } fitTables(more); };
     more.append(make('summary', '', cu('stepsSum')), inner); calcHost.appendChild(more);
     const P = viewed(), pl = plan(P), head = make('p', 'chead');
-    head.append(cu('stepsOf') + ' ', pickBox(P.piece, act.map(x => [x.piece, x.piece]), v => { c.view = v; }, render));
+    const two = new Set(act.map(x => x.race)).size > 1;
+    head.append(cu('stepsOf') + ' ', pickBox(pk(P), act.map(x => [pk(x), x.piece + (two ? ' · ' + (x.race === 'Asmodians' ? 'Asmodian' : 'Elyos') : '')]), v => { c.view = v; }, render));
     inner.appendChild(head);
     if (pl.done) inner.appendChild(make('p', 'note', cu('done')));
     else {
-      const steps = toolTable(inner, [cu('step'), cu('recipe'), cu('succ'), cu('combo'), cu('have'), cu('crafts')], 'csteps');
+      const steps = toolTable(inner, [cu('step'), cu('recipe'), cu('have'), cu('crafts')], 'csteps');
       pl.steps.forEach(st => {
-        const tr = steps.insertRow(), key = P.prof + ':' + st.tier, chain = CHAIN.includes(st.tier);
+        const tr = steps.insertRow(), chain = CHAIN.includes(st.tier);
         const stage = STAGES.findIndex(x => x.includes(st.tier)), isS = stage >= 0 && STAGES[stage][1] === st.tier;
         const a = tr.insertCell(); a.className = 'key'; a.appendChild(make('b', '', st.name));
         a.appendChild(make('small', '', cu(st.lv ? 'lv' : 'tc').replace('{p}', P.prof).replace('{n}', st.lv)));
@@ -1602,12 +1903,7 @@ if (calcHost && CALC.pieces) {
         const b = tr.insertCell();
         b.appendChild(make('span', '', (st.chain ? ['1 ' + st.chain] : []).concat(st.mats.map(([n, q]) => q + ' ' + n)).join(' · ')));
         if (st.gear) b.appendChild(make('small', '', cu('turns').replace('{g}', st.gear)));
-        tr.insertCell().appendChild(numBox(() => pct(c.succ, key, 80), v => { c.succ[key] = v; }, 1, 100, 5, true, paint));
-        // the combo only matters where the Splendent version is what moves on
-        const needsCombo = chain || (stage >= 0 && !isS && pl.t >= 2 * stage + 2);
-        const d = tr.insertCell();
-        if (needsCombo) d.appendChild(numBox(() => pct(c.combo, key, 25), v => { c.combo[key] = v; }, 1, 100, 5, true, paint)); else d.textContent = '—';
-        const e = tr.insertCell(), hk = P.piece + ':' + st.tier;
+        const e = tr.insertCell(), hk = pk(P) + ':' + st.tier;
         if (chain) e.appendChild(numBox(() => c.have[hk] || 0, v => { c.have[hk] = v; }, 0, 999, 1, false, paint)); else e.textContent = '—';
         const f = tr.insertCell(); f.className = 'out'; outs.push([f, 'crafts', st.tier]);
       });
@@ -1617,17 +1913,20 @@ if (calcHost && CALC.pieces) {
   repaint.push(render);
 }
 
+// the active character of "Meu personagem": its block fills these in (now() gives the saved sheet or null)
+const ME = {now: () => null, enhSync: () => {}};
+
 // ---------- enhancement calculator ----------
 const EUI = {
   pt: {item: 'Peça', from: 'Do nível', to: 'Até o nível', lvl: 'Nível', chance: 'Chance', tries: 'Tentativas em média', kina1: 'Kina por tentativa', st1: 'Enhance Stone por tentativa',
     kina: 'Kina em média', st: 'Enhance Stone em média', total: 'Total', scroll: 'Também gasta 1 {s} por tentativa: {n} em média.',
-    gUnique: 'Unique: armas, armaduras e joias', gEpic: 'Epic: armas, armaduras e joias', gOwn: 'Amuleto, cinto, bracelete e runa', il: 'Item level {n} · ex.: {x}', own: '{g} {r} · item level {n}',
+    gUnique: 'Unique: armas, armaduras e joias', gEpic: 'Epic: armas, armaduras e joias', gOwn: 'Amuleto, cinto, bracelete e runa', il: 'Item level {n} · ex.: {x}', own: '{g} {r} · item level {n}', mine: 'Peça de {n}', mineNone: 'Outra (escolher abaixo)', maxed: 'Esta peça já está no nível máximo.',
     kind: 'Tipo', kinds: {W: 'Arma ou guarda', A: 'Armadura', X: 'Colar, brinco, anel ou bracelete'}, gain: 'Atributos no nível', gainTot: 'Ganho no intervalo',
     est: '≈ estimado: ninguém consultado na armaria oficial usava esta raridade e item level; o valor vem dos itens vizinhos.',
     pity: 'Do +11 em diante cada falha soma {n}% na tentativa seguinte; a média já conta isso.', drop: 'Nesta peça a falha baixa o nível. A conta supõe que baixa 1 nível por falha.', sure: 'Todos os níveis deste intervalo têm 100% de chance.'},
   en: {item: 'Piece', from: 'From level', to: 'Up to level', lvl: 'Level', chance: 'Chance', tries: 'Attempts on average', kina1: 'Kina per attempt', st1: 'Enhance Stone per attempt',
     kina: 'Kina on average', st: 'Enhance Stone on average', total: 'Total', scroll: 'It also spends 1 {s} per attempt: {n} on average.',
-    gUnique: 'Unique: weapons, armour and jewellery', gEpic: 'Epic: weapons, armour and jewellery', gOwn: 'Amulet, belt, bracelet and rune', il: 'Item level {n} · e.g. {x}', own: '{g} {r} · item level {n}',
+    gUnique: 'Unique: weapons, armour and jewellery', gEpic: 'Epic: weapons, armour and jewellery', gOwn: 'Amulet, belt, bracelet and rune', il: 'Item level {n} · e.g. {x}', own: '{g} {r} · item level {n}', mine: 'Piece of {n}', mineNone: 'Another (choose below)', maxed: 'This piece is already at the top level.',
     kind: 'Type', kinds: {W: 'Weapon or guard', A: 'Armour', X: 'Necklace, earring, ring or bracelet'}, gain: 'Stats at the level', gainTot: 'Gain in the range',
     est: '≈ estimated: nobody checked in the official armory wore this grade and item level; the value comes from the nearby items.',
     pity: 'From +11 onwards each failure adds {n}% to the next attempt; the average already counts that.', drop: 'On this piece a failure lowers the level. The maths assumes it drops 1 level per failure.', sure: 'Every level in this range has a 100% chance.'},
@@ -1647,6 +1946,20 @@ if (enhHost && CALC.enh) {
   const gainText = list => list.filter(x => x[1]).map(([s, v, u]) => s + ' +' + v.toLocaleString(S.lang === 'en' ? 'en-US' : 'pt-BR', {maximumFractionDigits: 1}) + u).join(', ') || '—';
   const eu = k => (EUI[S.lang] || EUI.pt)[k];
   const tier = () => E.tiers.find(t => t.id === S.enh.tier) || E.tiers[0];
+  // a piece of the active character: its grade and item level pick the row of the table, its level is the starting one
+  const ITEMS = {};
+  ['weapons', 'armor', 'accessories'].forEach(k => (BLD[k] || []).forEach(x => { ITEMS[x[0]] = [x, k]; }));
+  function usePiece(me, slot) {
+    const g = me.gear.find(x => x[0] === slot), hit = g && (ITEMS[g[1]] || ITEMS[g[1] + ' (' + g[2] + ')']);
+    if (!hit) return false;
+    const [x, set] = hit, grade = BLD.grades[x[2]], own = E.tiers.filter(t => t.gear === x[1] && t.grade === grade);
+    const pool = own.length ? own : E.tiers.filter(t => !t.gear && t.grade === grade);
+    if (!pool.length) return false;
+    const T = pool.reduce((a, t) => (Math.abs(t.ilvl - x[3]) < Math.abs(a.ilvl - x[3]) ? t : a));
+    Object.assign(S.enh, {tier: T.id, kind: set === 'weapons' ? 'W' : set === 'armor' ? 'A' : 'X', to: T.lv.length, from: Math.min(g[3], T.lv.length - 1), top: g[3] >= T.lv.length});
+    return true;
+  }
+  ME.enhSync = me => { if (S.enh.piece && !usePiece(me, S.enh.piece)) S.enh.piece = ''; };
   // average number of attempts at every level to take the piece from level a to level b
   function tries(T, a, b) {
     const n = Array(T.lv.length + 1).fill(0);
@@ -1676,8 +1989,10 @@ if (enhHost && CALC.enh) {
       groups[g].forEach(t => { const o = make('option', '', t.gear ? eu('own').replace('{g}', t.gear).replace('{r}', t.grade).replace('{n}', t.ilvl) : eu('il').replace('{n}', t.ilvl).replace('{x}', t.ex)); o.value = t.id; og.appendChild(o); });
       sel.appendChild(og);
     });
-    sel.value = T.id; sel.onchange = () => { c.tier = sel.value; save(); render(); };
-    const ctl = make('div', 'cctl');
+    sel.value = T.id; sel.onchange = () => { c.tier = sel.value; c.piece = ''; save(); render(); };
+    const ctl = make('div', 'cctl'), me = ME.now(), mine = me ? me.gear.filter(g => !/^Arcana/.test(g[0])) : [];
+    if (mine.length) ctl.appendChild(labeled(eu('mine').replace('{n}', me.p.characterName), pickBox(c.piece || '',
+      [['', eu('mineNone')]].concat(mine.map(g => [g[0], g[1] + (g[3] ? ' +' + g[3] : '')])), v => { c.piece = v; c.top = false; if (v && !usePiece(me, v)) c.piece = ''; }, render)));
     ctl.append(labeled(eu('item'), sel), labeled(eu('from'), numBox(() => c.from, v => { c.from = v; }, 0, max - 1, 1, false, () => { if (c.to <= c.from) c.to = c.from + 1; save(); render(); })),
       labeled(eu('to'), numBox(() => c.to, v => { c.to = v; }, 1, max, 1, false, () => { if (c.from >= c.to) c.from = c.to - 1; save(); render(); })));
     if (!T.gear) ctl.appendChild(labeled(eu('kind'), pickBox(c.kind, Object.entries(eu('kinds')), v => { c.kind = v; }, render)));
@@ -1700,7 +2015,7 @@ if (enhHost && CALC.enh) {
       .forEach(([text, cls]) => { const td = tot.insertCell(); td.className = cls; td.textContent = text; });
     tot.lastChild.title = eu('gainTot');
     const chancy = T.lv.slice(c.from, c.to).some(x => x[0] < 100);
-    const notes = [gest && eu('est'), T.scroll && eu('scroll').replace('{s}', T.scroll).replace('{n}', fmtN(all, all % 1 ? 1 : 0)), !chancy ? eu('sure') : T.drop ? eu('drop') : eu('pity').replace('{n}', T.pity)];
+    const notes = [c.piece && c.top && eu('maxed'), gest && eu('est'), T.scroll && eu('scroll').replace('{s}', T.scroll).replace('{n}', fmtN(all, all % 1 ? 1 : 0)), !chancy ? eu('sure') : T.drop ? eu('drop') : eu('pity').replace('{n}', T.pity)];
     notes.filter(Boolean).forEach(text => enhHost.appendChild(make('p', 'note', text)));
     fitTables(enhHost);
   }
@@ -2320,7 +2635,7 @@ function occurrence(e, now) {  // [start, end] of the one running now, or of the
 }
 const HUI = {
   pt: {tag: 'Tudo de Aion 2 num lugar só: rotina, build, progressão e crafting.', sub: 'Aion 2 · servidores Global', done: '{a} de {b} marcados',
-    season: 'Season 1 termina em {t}', find: 'Onde consigo…? Digite um material ou item e aperte Enter', events: 'Agora e a seguir', live: 'AGORA', ends: 'termina em {t}', inT: 'em {t}',
+    season: 'Season 1 termina em {t}', find: 'Buscar no Database: digite um item, monstro ou dungeon e aperte Enter', events: 'Agora e a seguir', live: 'AGORA', ends: 'termina em {t}', inT: 'em {t}',
     daily: 'Reset diário', weekly: 'Reset semanal', remind: 'Avisar antes de começar', soon: 'Começa em {t}, às {h}.', noNotify: 'Este navegador não deixa o site mandar avisos aqui. No site publicado funciona.',
     denied: 'O navegador bloqueou os avisos deste site. Libere nas permissões do site para usar os lembretes.',
     tm: {title: 'Timers', where: 'América do Sul', city: 'São Paulo', resets: 'Resets', liveNow: 'Acontecendo agora', upNext: 'A seguir', dailyS: 'Diário', weeklyS: 'Semanal',
@@ -2329,9 +2644,9 @@ const HUI = {
     allTimes: 'Ver todos os horários', today: 'Para fazer hoje', next: 'Próximos objetivos', news: 'Novidades', pages: 'Páginas', evNote: 'Horários do servidor da América do Sul, segundo o shugo.gg; a NCSOFT não publicou a tabela oficial.',
     d: {rot: 'Entradas diárias e limites da semana, por personagem, com reset automático.', bld: 'Monte, salve e compartilhe a build de qualquer classe.',
       prog: 'Objetivos por faixa de Gear Score, com checklist.', asn: 'A build de PvE do Assassin, com barra, skills e Daevanion.', pvp: 'A build de PvP do Assassin, no mesmo modelo.',
-      craft: 'Calculadoras de craft e de aprimoramento, linha Dragon Lord e Essence Extraction.', find: 'De onde vem cada material, item, Arcana e título.', set: 'Aparência do site, lembretes e dados salvos.'}},
+      craft: 'Calculadoras de craft e de aprimoramento, linha Dragon Lord e Essence Extraction.', find: 'Itens, monstros, dungeons, skills e títulos do jogo, com origem e receita.', me: 'A ficha do seu personagem no jogo, importada para o editor de build.', set: 'Aparência do site, lembretes e dados salvos.'}},
   en: {tag: 'Everything for Aion 2 in one place: routine, build, progression and crafting.', sub: 'Aion 2 · Global servers', done: '{a} of {b} marked',
-    season: 'Season 1 ends in {t}', find: 'Where do I get…? Type a material or item and press Enter', events: 'Now and next', live: 'NOW', ends: 'ends in {t}', inT: 'in {t}',
+    season: 'Season 1 ends in {t}', find: 'Search the Database: type an item, monster or dungeon and press Enter', events: 'Now and next', live: 'NOW', ends: 'ends in {t}', inT: 'in {t}',
     daily: 'Daily reset', weekly: 'Weekly reset', remind: 'Remind me before it starts', soon: 'Starts in {t}, at {h}.', noNotify: 'This browser does not let the site send notifications here. On the published site it works.',
     denied: 'The browser blocked notifications from this site. Allow them in the site permissions to use the reminders.',
     tm: {title: 'Timers', where: 'South America', city: 'São Paulo', resets: 'Resets', liveNow: 'Live now', upNext: 'Up next', dailyS: 'Daily', weeklyS: 'Weekly',
@@ -2340,7 +2655,7 @@ const HUI = {
     allTimes: 'See every time', today: 'To do today', next: 'Next objectives', news: 'News', pages: 'Pages', evNote: 'Times of the South America server, according to shugo.gg; NCSOFT has not published the official table.',
     d: {rot: 'Daily entries and weekly limits, per character, with automatic reset.', bld: 'Create, save and share the build of any class.',
       prog: 'Objectives by Gear Score bracket, with a checklist.', asn: 'The Assassin PvE build, with bar, skills and Daevanion.', pvp: 'The Assassin PvP build, in the same layout.',
-      craft: 'Crafting and enhancement calculators, the Dragon Lord line and Essence Extraction.', find: 'Where each material, item, Arcana and title comes from.', set: 'Look of the site, reminders and saved data.'}},
+      craft: 'Crafting and enhancement calculators, the Dragon Lord line and Essence Extraction.', find: 'Items, monsters, dungeons, skills and titles of the game, with sources and recipes.', me: 'Your in-game character sheet, imported into the build editor.', set: 'Look of the site, reminders and saved data.'}},
 };
 const hu = k => (HUI[S.lang] || HUI.pt)[k];
 const span = ms => { const m = Math.max(0, Math.ceil(ms / MIN)), d = Math.floor(m / 1440), h = Math.floor(m % 1440 / 60); return (d ? d + ' d ' : '') + (d || h ? h + ' h ' : '') + (d ? '' : m % 60 + ' min'); };
@@ -2533,7 +2848,7 @@ function paintHome() {
   if (SEASON_END > now) words.appendChild(make('span', 'hchip', hu('season').replace('{t}', span(SEASON_END - now))));
   if ($('.partbtn[data-part=find]')) {
     const q = make('input'); q.id = 'hq'; q.type = 'search'; q.placeholder = hu('find'); q.autocomplete = 'off';
-    q.onkeydown = e => { if (e.key === 'Enter' && q.value.trim()) { S.findQ = q.value.trim(); save(); q.blur(); $('.partbtn[data-part=find]').click(); } };
+    q.onkeydown = e => { if (e.key === 'Enter' && q.value.trim()) { S.findQ = q.value.trim(); if (S.db) S.db.item = ''; save(); q.blur(); $('.partbtn[data-part=find]').click(); } };
     words.appendChild(make('div')).appendChild(q);
   }
   hero.append(mark, words);
@@ -2590,38 +2905,607 @@ repaint.push(() => { if (S.part === 'home') paintHome(); });
 setInterval(() => { if (S.part === 'home' && !document.hidden) paintHome(); }, 20000);
 $('.brand').onclick = () => $('.partbtn[data-part=home]').click();
 
-// ---------- "where do I get it?" ----------
-const findHost = $('#finder');
-if (findHost && FIND.length) {
-  const FUI = {pt: {ph: 'Nome do material, item, Arcana, asa ou título', hint: 'Digite pelo menos duas letras.', none: 'Nada encontrado com esse nome.', more: 'Mostrando os 40 primeiros; digite mais para afinar.'},
-    en: {ph: 'Name of the material, item, Arcana, wings or title', hint: 'Type at least two letters.', none: 'Nothing found with that name.', more: 'Showing the first 40; type more to narrow it down.'}};
-  const fu = k => (FUI[S.lang] || FUI.pt)[k];
-  const drawFinder = () => {
-    findHost.textContent = '';
-    const inp = make('input', 'fq'), res = make('div', 'fres'), note = make('p', 'note');
-    inp.type = 'search'; inp.placeholder = fu('ph'); inp.value = S.findQ || ''; inp.autocomplete = 'off';
-    const run = () => {
-      S.findQ = inp.value; save();
-      const term = fold(inp.value.trim());
-      res.textContent = ''; note.textContent = '';
-      if (term.length < 2) { note.textContent = fu('hint'); return; }
-      const all = FIND.filter(r => fold(r[0]).includes(term)).sort((a, b) => (fold(a[0]).startsWith(term) ? 0 : 1) - (fold(b[0]).startsWith(term) ? 0 : 1));
-      if (!all.length) { note.textContent = fu('none'); return; }
-      if (all.length > 40) note.textContent = fu('more');
-      all.slice(0, 40).forEach(([name, kind, sources, pic]) => {
-        const card = make('div', 'fitem'), head = make('div', 'fhead'), ul = make('ul'), art = make('span', 'fic');
-        // the pictures are in sheets of 200 squares, 20 a row, 40px each (finder_data.py)
-        if (pic >= 0) { art.style.backgroundImage = 'url(finder_icons/' + Math.floor(pic / 200) + '.webp?v=__FICV__)'; art.style.backgroundPosition = -(pic % 20) * 40 + 'px ' + -Math.floor(pic % 200 / 20) * 40 + 'px'; }
-        head.append(art, make('b', '', name), make('span', 'fkind', kind));
-        sources.forEach(s => ul.appendChild(make('li', '', s)));
-        card.append(head, ul); res.appendChild(card);
-      });
-    };
-    inp.oninput = run;
-    findHost.append(inp, note, res); run();
+// ---------- Database: every item, monster, dungeon, skill and title (db_data.py), loaded when the page opens ----------
+const dbHost = $('#db');
+if (dbHost) {
+  const DUI = {
+    pt: {ph: 'Buscar item, material, monstro, dungeon, skill, título…', home: 'Database', loading: 'Carregando o Database…',
+      fail: 'Não consegui carregar o Database (arquivo database/db.js ao lado do site).', none: 'Nada encontrado.', more: 'Mostrar mais',
+      count: '{n} itens', back: 'Voltar', toCraft: 'Ir para o Crafting', any: 'Todas', anyT: 'Todos',
+      groups: {equip: 'Equipamento', coll: 'Coleção', items: 'Itens', world: 'Mundo'},
+      cats: {weapons: ['Armas', 'Toda arma, com atributos e de onde vem.'], armor: ['Armaduras', 'Elmos, peitorais, calças, botas, luvas, ombreiras e capas.'],
+        accessories: ['Joias', 'Colares, brincos, anéis, braceletes, amuletos, cintos e runas.'], arcana: ['Arcanas', 'As cartas de Arcana e os conjuntos.'],
+        pets: ['Pets', 'Pets e montarias, com o Pet Insight.'], wings: ['Asas', 'Toda asa, com o efeito equipada e o de coleção.'],
+        titles: ['Títulos', 'O que cada título dá e como conseguir.'], consumables: ['Consumíveis', 'Poções, pergaminhos, comida, baús e outros usáveis.'],
+        materials: ['Materiais', 'Materiais de craft e de coleta.'], stones: ['Pedras', 'Manastones e outras pedras.'],
+        skills: ['Skills', 'As skills de cada classe.'], dungeons: ['Dungeons', 'Modos, chefes, entradas e recompensas.'],
+        monsters: ['Monstros e chefes', 'Nível, região e o que cai de cada um.'], recipes: ['Receitas', 'Tudo que se fabrica, por profissão.']},
+      f: {grade: 'Raridade', type: 'Tipo', cls: 'Classe', race: 'Facção', prof: 'Profissão', src: 'Origem', sort: 'Ordenar'}, races: {E: 'Elyos', A: 'Asmodian'},
+      inCat: 'Filtrar em {c}…', sorts: {'lv-d': 'Nível: maior primeiro', 'lv-a': 'Nível: menor primeiro', 'g-d': 'Raridade: maior primeiro',
+        'g-a': 'Raridade: menor primeiro', 'n-a': 'Nome: A → Z', 'n-d': 'Nome: Z → A'},
+      col: {item: 'Item', grade: 'Raridade', src: 'Como consegue'},
+      srcs: {craft: 'Craft', dungeon: 'Dungeon', drop: 'Monstro', quest: 'Quest', chest: 'Baú', shop: 'Loja', achieve: 'Conquista', gather: 'Coleta', other: 'Outro'},
+      il: 'Item level', rl: 'Nível necessário', lv: 'Nível', klass: 'Classe', stats: 'Atributos', sub: 'Atributos extras possíveis', ms: 'Slots de Manastone',
+      me: 'Aprimoramento máximo', recipe: 'Receita', makes: 'faz {n}', src: 'De onde vem', used: 'Usado em', set: 'Conjunto', setB: 'Bônus do conjunto',
+      cd: 'Recarga', range: 'Alcance', maxLv: 'Nível máximo', acq: 'Como aprende', te: 'Equipado', to: 'Só por ter', pi: 'Pet Insight', we: 'Equipada', wo: 'Só por ter',
+      ss: 'Atributos possíveis', ct: 'Conteúdo', players: 'Jogadores', region: 'Região', energy: 'Energia', modes: 'Modos', mode: 'Modo', entry: 'Entrada',
+      bosses: 'Chefes', rewards: 'Recompensas', drops: 'O que cai', gear: 'Equipamento que pode cair', respawn: 'Reaparece', where: 'Onde fica',
+      credit: 'Dados do wikily.gg, lidos em 22/out/2026.'},
+    en: {ph: 'Search an item, material, monster, dungeon, skill, title…', home: 'Database', loading: 'Loading the Database…',
+      fail: 'Could not load the Database (the database/db.js file beside the site).', none: 'Nothing found.', more: 'Show more',
+      count: '{n} entries', back: 'Back', toCraft: 'Go to Crafting', any: 'All', anyT: 'All',
+      groups: {equip: 'Equipment', coll: 'Collection', items: 'Items', world: 'World'},
+      cats: {weapons: ['Weapons', 'Every weapon, with its stats and where it comes from.'], armor: ['Armour', 'Helmets, chests, legs, boots, gloves, shoulders and cloaks.'],
+        accessories: ['Jewellery', 'Necklaces, earrings, rings, bracelets, amulets, belts and runes.'], arcana: ['Arcana', 'The Arcana cards and their sets.'],
+        pets: ['Pets', 'Pets and mounts, with the Pet Insight.'], wings: ['Wings', 'Every pair of wings, equipped and collection effects.'],
+        titles: ['Titles', 'What each title gives and how to get it.'], consumables: ['Consumables', 'Potions, scrolls, food, chests and other usables.'],
+        materials: ['Materials', 'Crafting and gathering materials.'], stones: ['Stones', 'Manastones and other stones.'],
+        skills: ['Skills', 'The skills of every class.'], dungeons: ['Dungeons', 'Modes, bosses, entries and rewards.'],
+        monsters: ['Monsters and bosses', 'Level, region and what each one drops.'], recipes: ['Recipes', 'Everything that can be crafted, by profession.']},
+      f: {grade: 'Grade', type: 'Type', cls: 'Class', race: 'Faction', prof: 'Profession', src: 'Source', sort: 'Sort'}, races: {E: 'Elyos', A: 'Asmodian'},
+      inCat: 'Filter {c}…', sorts: {'lv-d': 'Level: high to low', 'lv-a': 'Level: low to high', 'g-d': 'Grade: high to low',
+        'g-a': 'Grade: low to high', 'n-a': 'Name: A → Z', 'n-d': 'Name: Z → A'},
+      col: {item: 'Item', grade: 'Grade', src: 'Obtainable by'},
+      srcs: {craft: 'Craft', dungeon: 'Dungeon', drop: 'Monster', quest: 'Quest', chest: 'Chest', shop: 'Shop', achieve: 'Achievement', gather: 'Gathering', other: 'Other'},
+      il: 'Item level', rl: 'Required level', lv: 'Level', klass: 'Class', stats: 'Stats', sub: 'Possible extra stats', ms: 'Manastone slots',
+      me: 'Top enhancement', recipe: 'Recipe', makes: 'makes {n}', src: 'Where it comes from', used: 'Used in', set: 'Set', setB: 'Set bonus',
+      cd: 'Cooldown', range: 'Range', maxLv: 'Top level', acq: 'How it is learned', te: 'Equipped', to: 'Just for owning it', pi: 'Pet Insight', we: 'Equipped', wo: 'Just for owning it',
+      ss: 'Possible stats', ct: 'Contents', players: 'Players', region: 'Region', energy: 'Energy', modes: 'Modes', mode: 'Mode', entry: 'Entry',
+      bosses: 'Bosses', rewards: 'Rewards', drops: 'Drops', gear: 'Gear that can drop', respawn: 'Respawn', where: 'Where',
+      credit: 'Data from wikily.gg, read on 22 Oct 2026.'},
   };
-  repaint.push(drawFinder);
-  shown.find = drawFinder;
+  const du = k => (DUI[S.lang] || DUI.pt)[k];
+  const GROUPS = {equip: ['weapons', 'armor', 'accessories', 'arcana'], coll: ['pets', 'wings', 'titles'], items: ['consumables', 'materials', 'stones'],
+    world: ['skills', 'dungeons', 'monsters', 'recipes']};
+  const GRADE = {Rare: 'g1', Epic: 'g2', Legend: 'g2', Legendary: 'g2', Unique: 'g3', Heroic: 'g3', Special: 'g4', Mythic: 'g4'};
+  S.db = Object.assign({cat: '', item: '', f: {}}, S.db || {});
+  let DB = null, byName = null, failed = false, loading = false, limit = 60;
+  const items = cat => cat === 'recipes' ? DB.items.filter(e => e.rc) : DB.items.filter(e => e.c === cat);
+  const typeOf = e => e.t || e.ty || e.sc || e.dc || e.tc || e.pt || '';
+  const profOf = e => (e.rc && e.rc[0][0].match(/(Armorsmithing|Blacksmithing|Handicrafting|Alchemy|Cooking|Tailoring|Substance Morph)/) || [])[1] || '';
+  const sub = e => [typeOf(e), e.g, e.l ? du('il') + ' ' + e.l : e.lv ? du('lv') + ' ' + e.lv : '', e.k, e.rg].filter(Boolean).join(' · ');
+  function load() {
+    if (DB || loading || failed) return;
+    loading = true;
+    const tag = document.createElement('script');
+    tag.src = 'database/db.js?v=' + DBV;
+    tag.onload = () => { DB = window.ADB; byName = {}; DB.items.forEach(e => { if (!byName[e.n]) byName[e.n] = e; }); loading = false; draw(); };
+    tag.onerror = () => { failed = true; loading = false; draw(); };
+    document.head.appendChild(tag);
+  }
+  const go = patch => { Object.assign(S.db, patch); limit = 60; save(); draw(); const top = $('#find-db'); if (top) top.scrollIntoView({block: 'start'}); };
+  window.goDb = name => { S.db.item = name; S.findQ = ''; save(); location.hash = '#find-db'; draw(); };
+  // a name of the Database becomes a link to its entry; anything else stays text
+  const named = (text, cls) => {
+    const e = byName && byName[text];
+    if (!e) return make('span', cls || '', text);
+    const a = make('a', 'dbname ' + (GRADE[e.g] || '') + (cls ? ' ' + cls : ''), text); a.href = '#';
+    a.onclick = ev => { ev.preventDefault(); go({item: text}); }; return a;
+  };
+  const row = e => {
+    const b = make('button', 'dbrow'), words = make('span'); b.type = 'button';
+    b.append(dbIcon(e.i, 'big') || make('span', 'dbic big'));
+    words.append(make('b', GRADE[e.g] || '', e.n), make('small', '', sub(e)));
+    b.appendChild(words); b.onclick = () => go({item: e.n}); return b;
+  };
+  const listOf = (host, list) => {
+    const box = make('div', 'dblist');
+    list.slice(0, limit).forEach(e => box.appendChild(row(e)));
+    host.appendChild(box);
+    if (list.length > limit) { const m = make('button', 'dbmore', du('more')); m.type = 'button'; m.onclick = () => { limit += 120; draw(); }; host.appendChild(m); }
+  };
+  const crumb = parts => {
+    const nav = make('div', 'dbcrumb');
+    parts.forEach(([text, fn], i) => {
+      if (i) nav.appendChild(make('span', 'sep', '›'));
+      if (fn) { const a = make('a', '', text); a.href = '#'; a.onclick = ev => { ev.preventDefault(); fn(); }; nav.appendChild(a); } else nav.appendChild(make('b', '', text));
+    });
+    dbHost.appendChild(nav);
+  };
+
+  function home() {
+    Object.entries(GROUPS).forEach(([g, cats]) => {
+      dbHost.appendChild(make('p', 'chead', du('groups')[g]));
+      const grid = make('div', 'dbcats');
+      cats.forEach(cat => {
+        const [title, text] = du('cats')[cat], b = make('button', 'dbcat'), head = make('span', 'dbct');
+        b.type = 'button'; head.append(make('b', '', title), make('small', '', fmtN(items(cat).length)));
+        b.append(head, make('span', 'dbcd', text)); b.onclick = () => go({cat, item: '', f: {}}); grid.appendChild(b);
+      });
+      dbHost.appendChild(grid);
+    });
+  }
+  // how an item is obtained, from the source lines of wikily: craft, dungeon, monster drop, quest, chest, shop...
+  const GORD = {Common: 1, Rare: 2, Epic: 3, Legend: 3, Legendary: 3, Heroic: 3, Unique: 4, Special: 5, Mythic: 6};
+  const SRCS = ['craft', 'dungeon', 'drop', 'quest', 'chest', 'shop', 'achieve', 'gather', 'other'];
+  const CRAFTS = /^(Armorsmithing|Blacksmithing|Handicrafting|Alchemy|Cooking|Substance Morph|Crafting Combo)$/;
+  const srcKinds = e => {
+    if (e._k) return e._k;
+    const k = new Set(e.rc ? ['craft'] : []);
+    (e.o || []).forEach(o => {
+      if (/^\+ \d+$/.test(o)) return;
+      const [title, more = ''] = o.split(' — ');
+      k.add(CRAFTS.test(title) || /Transfer Crafting|Crafting quest/.test(more) ? 'craft'
+        : /Monster drop/.test(more) ? 'drop'
+        : /Ascension Trial|Expedition|Sanctuary|Sealed Dungeon|Transcendence|Nightmare|Monolith|Dungeon/.test(more) ? 'dungeon'
+        : /quest/i.test(more) ? 'quest'
+        : /from this chest|Hidden Cube/.test(o) ? 'chest'
+        : /tabs?$|Shop|Pass|Founder/.test(o) ? 'shop'
+        : /Achievement|Rank reward|Attendance|Season/.test(o) ? 'achieve'
+        : /Gathering/.test(o) ? 'gather' : 'other');
+    });
+    return (e._k = SRCS.filter(x => k.has(x)));
+  };
+  const level = e => +(e.l || String(e.lv || e.rl || '').split(' ')[0] || 0);
+  const TABORD = ['Longsword', 'Greatsword', 'Dagger', 'Bow', 'Spellbook', 'Orb', 'Staff', 'Mace', 'Guard', 'Shield', 'Gauntlet',
+    'Helm', 'Pauldrons', 'Top', 'Gloves', 'Legs', 'Shoes', 'Cloak', 'Necklace', 'Earrings', 'Ring', 'Bracelet', 'Amulet', 'Belt', 'Rune'];
+  const tabRank = k => { const i = TABORD.indexOf(k); return i < 0 ? 99 : i; };
+  function category(cat) {
+    crumb([[du('home'), () => go({cat: '', item: ''})], [du('cats')[cat][0]]]);
+    const all = items(cat), f = S.db.f;
+    const tabKey = cat === 'recipes' ? 'prof' : 'type', tabOf = cat === 'recipes' ? profOf : typeOf;
+    const hasLv = all.some(level), hasG = all.some(e => e.g), hasSrc = !['monsters', 'dungeons', 'skills', 'titles'].includes(cat) && all.some(e => e.o || e.rc);
+    // a filter by name, inside this category
+    const q = make('input', 'fq dbfq'); q.type = 'search'; q.autocomplete = 'off'; q.value = f.q || '';
+    q.placeholder = du('inCat').replace('{c}', du('cats')[cat][0]);
+    q.oninput = () => { f.q = q.value; limit = 60; save(); fill(); };
+    dbHost.appendChild(q);
+    // the kinds as tabs: All, Longsword, Greatsword, Bow...
+    const kinds = [...new Set(all.map(tabOf).filter(Boolean))].sort((x, y) => tabRank(x) - tabRank(y) || x.localeCompare(y));
+    if (kinds.length > 1 && kinds.length <= 12) {
+      const tabs = make('div', 'dbtabs');
+      [''].concat(kinds).forEach(k => {
+        const b = make('button', (f[tabKey] || '') === k ? 'on' : '', k || du('anyT')); b.type = 'button';
+        b.onclick = () => { f[tabKey] = k; limit = 60; save(); draw(); }; tabs.appendChild(b);
+      });
+      dbHost.appendChild(tabs);
+    }
+    // grade, source, class, faction and the order
+    const bar = make('div', 'cctl dbfilters');
+    const pick = (key, label, opts) => {
+      if (opts.length < 2 && !f[key]) return;
+      bar.appendChild(labeled(label, pickBox(f[key] || '', [['', du('any')]].concat(opts), v => { f[key] = v; limit = 60; }, draw)));
+    };
+    const vals = get => [...new Set(all.map(get).filter(Boolean))];
+    if (kinds.length > 12) pick(tabKey, du('f')[tabKey], kinds.map(v => [v, v]));  // too many kinds for tabs
+    pick('grade', du('f').grade, vals(e => e.g).sort((x, y) => (GORD[x] || 0) - (GORD[y] || 0)).map(v => [v, v]));
+    if (hasSrc) pick('src', du('f').src, SRCS.filter(k => all.some(e => srcKinds(e).includes(k))).map(k => [k, du('srcs')[k]]));
+    pick('cls', du('f').cls, vals(e => e.k).sort().map(v => [v, v]));
+    const sorts = [].concat(hasLv ? ['lv-d', 'lv-a'] : [], hasG ? ['g-d', 'g-a'] : [], ['n-a', 'n-d']);
+    if (!sorts.includes(f.sort)) f.sort = sorts[0];
+    if (bar.children.length) dbHost.appendChild(bar);
+    const body = make('div');
+    dbHost.appendChild(body);
+    function fill() {
+      body.textContent = '';
+      const term = fold((f.q || '').trim());
+      const list = all.filter(e => (!term || fold(e.n).includes(term)) && (!f[tabKey] || tabOf(e) === f[tabKey]) && (!f.grade || e.g === f.grade)
+        && (!f.src || srcKinds(e).includes(f.src)) && (!f.cls || e.k === f.cls));
+      const [by, dir] = f.sort.split('-'), sign = dir === 'd' ? -1 : 1;
+      const key = by === 'lv' ? level : by === 'g' ? (e => GORD[e.g] || 0) : null;
+      list.sort((x, y) => (key ? sign * (key(x) - key(y)) : 0) || (by === 'n' ? sign : 1) * x.n.localeCompare(y.n));
+      body.appendChild(make('p', 'note', du('count').replace('{n}', fmtN(list.length))));
+      if (!list.length) return;
+      // the table: a click on a heading sorts by it, a second click turns the order around
+      const t = make('table', 'dbtable'), hr = t.createTHead().insertRow(), [cb, cd] = f.sort.split('-');
+      const col = (text, by, cls) => {
+        const th = make('th', cls || '', text);
+        if (by) {
+          th.classList.add('sort'); th.tabIndex = 0;
+          if (cb === by) th.appendChild(make('span', 'dbarrow', cd === 'd' ? '↓' : '↑'));
+          th.onclick = th.onkeydown = ev => {
+            if (ev.type === 'keydown' && ev.key !== 'Enter') return;
+            f.sort = by + '-' + (cb === by ? (cd === 'd' ? 'a' : 'd') : by === 'n' ? 'a' : 'd'); save(); draw();
+          };
+        }
+        hr.appendChild(th);
+      };
+      col(du('col').item, 'n');
+      if (hasG) col(du('col').grade, 'g', 'dbg');
+      if (hasLv) col(['monsters', 'dungeons'].includes(cat) ? du('lv') : du('il'), 'lv', 'dblv');
+      if (hasSrc) col(du('col').src, '', 'dbsrc');
+      const tb = t.createTBody();
+      list.slice(0, limit).forEach(e => {
+        const tr = tb.insertRow(), a = tr.insertCell(), box = make('div', 'dbit'), words = make('span');
+        tr.tabIndex = 0; tr.onclick = () => go({item: e.n}); tr.onkeydown = ev => { if (ev.key === 'Enter') go({item: e.n}); };
+        words.append(make('b', GRADE[e.g] || '', e.n), make('small', '', [typeOf(e), e.k, e.r && du('races')[e.r], e.rg].filter(Boolean).join(' · ')));
+        box.append(dbIcon(e.i, 'big') || make('span', 'dbic big'), words); a.appendChild(box);
+        if (hasG) { const c = tr.insertCell(); c.className = 'dbg'; if (e.g) c.appendChild(make('span', GRADE[e.g] || '', e.g)); }
+        if (hasLv) { const c = tr.insertCell(); c.className = 'dblv'; c.textContent = level(e) || ''; }
+        if (hasSrc) { const c = tr.insertCell(); c.className = 'dbsrc'; srcKinds(e).forEach(k => c.appendChild(make('span', 'dbchip', du('srcs')[k]))); }
+      });
+      body.appendChild(t);
+      if (list.length > limit) { const m = make('button', 'dbmore', du('more')); m.type = 'button'; m.onclick = () => { limit += 120; fill(); }; body.appendChild(m); }
+    }
+    fill();
+  }
+  function results(q) {
+    const term = fold(q), list = DB.items.filter(e => fold(e.n).includes(term))
+      .sort((a, b) => (fold(a.n).startsWith(term) ? 0 : 1) - (fold(b.n).startsWith(term) ? 0 : 1) || a.n.localeCompare(b.n));
+    if (!list.length) { dbHost.appendChild(make('p', 'note', du('none'))); return; }
+    dbHost.appendChild(make('p', 'note', du('count').replace('{n}', fmtN(list.length))));
+    listOf(dbHost, list);
+  }
+  function entry(e) {
+    const cat = e.c;
+    crumb([[du('home'), () => go({cat: '', item: ''})], [du('cats')[cat][0], () => go({cat, item: ''})], [e.n]]);
+    const head = make('div', 'dbhead'), words = make('div', 'dbwords'), acts = make('div', 'dbacts');
+    head.appendChild(dbIcon(e.i, 'huge') || make('span', 'dbic huge'));
+    words.append(make('b', 'dbtitle ' + (GRADE[e.g] || ''), e.n), make('span', 'dbsub', sub(e)));
+    if (e.r) words.appendChild(make('small', '', du('races')[e.r]));
+    head.appendChild(words);
+    if (window.canCraft && canCraft(e.n)) { const b = make('button', 'dbgo'); b.type = 'button'; b.append(pico('craft', ''), du('toCraft')); b.onclick = () => toCraft(e.n); acts.appendChild(b); }
+    const back = make('button'); back.type = 'button'; back.append(du('back')); back.onclick = () => go({item: ''}); acts.appendChild(back);
+    head.appendChild(acts); dbHost.appendChild(head);
+    const block = (title, fill) => { const box = make('div', 'dbblock'); box.appendChild(make('p', 'chead', title)); fill(box); dbHost.appendChild(box); };
+    const facts = rows => { const dl = make('div', 'bsum'); rows.filter(r => r[1]).forEach(([k, v]) => { const d = make('div', 'bchip'); d.append(make('b', '', String(v)), make('small', '', k)); dl.appendChild(d); }); return dl; };
+    const pairs = (host, list, linkFirst) => { const ul = make('ul', 'dbul'); list.forEach(([a, b]) => { const li = make('li'); li.appendChild(linkFirst ? named(a) : make('span', '', a)); if (b) li.appendChild(make('small', '', ' ' + b)); ul.appendChild(li); }); host.appendChild(ul); };
+    const top = [[du('il'), e.l], [du('rl'), e.q], [du('klass'), e.k], [du('ms'), e.ms], [du('me'), e.me], [du('lv'), e.lv || e.rl],
+      [cat === 'skills' ? du('range') : du('region'), e.rg], [du('players'), e.pl], [du('cd'), e.cd], [du('maxLv'), e.ml], [du('respawn'), e.rs]];
+    if (top.some(r => r[1])) dbHost.appendChild(facts(top));
+    if (e.d) dbHost.appendChild(make('p', 'dbdesc', e.d));
+    if (e.ac) dbHost.appendChild(make('p', 'note', du('acq') + ': ' + e.ac));
+    if (e.s && e.s.length) block(du('stats'), host => host.appendChild(facts(e.s)));
+    if (e.we || e.wo) block(du('stats'), host => pairs(host, [[du('we') + ':', e.we], [du('wo') + ':', e.wo]].filter(x => x[1])));
+    if ((e.te && e.te.length) || (e.to && e.to.length)) block(du('stats'), host => pairs(host, (e.te || []).map(([n, v]) => [du('te') + ': ' + n, v]).concat((e.to || []).map(([n, v]) => [du('to') + ': ' + n, v]))));
+    if (e.sb && e.sb.length) block(du('setB') + (e.set ? ' · ' + e.set : ''), host => pairs(host, e.sb));
+    if (e.ss && e.ss.length) block(du('ss'), host => { const tb = toolTable(host, [du('stats'), '%', ''], 'dbtab'); e.ss.forEach(r => { const tr = tb.insertRow(); r.forEach((x, i) => { const td = tr.insertCell(); td.textContent = x || ''; if (!i) td.className = 'key'; }); }); if (e.sn) host.appendChild(make('p', 'note', e.sn)); });
+    if (e.pi && e.pi.length) block(du('pi'), host => pairs(host, e.pi));
+    if (e.md && e.md.length) block(du('modes'), host => { const tb = toolTable(host, [du('mode'), du('lv'), du('il'), du('players'), du('entry')], 'dbtab'); e.md.forEach(r => { const tr = tb.insertRow(); r.forEach((x, i) => { const td = tr.insertCell(); td.textContent = x || ''; if (!i) td.className = 'key'; }); }); if (e.en) host.appendChild(make('p', 'note', du('energy') + ': ' + e.en)); });
+    if (e.bo && e.bo.length) block(du('bosses'), host => pairs(host, e.bo, true));
+    if (e.rw && e.rw.length) block(du('rewards'), host => { const box = make('div', 'dbtags'); e.rw.forEach(n => box.appendChild(named(n, 'dbtag'))); host.appendChild(box); });
+    if (e.dr && e.dr.length) block(du('drops'), host => pairs(host, e.dr, true));
+    if (e.gl && e.gl.length) block(du('gear'), host => pairs(host, e.gl.map(([a, b]) => [b, a])));
+    if (e.pc && e.pc.length) block(du('where'), host => pairs(host, e.pc.map(x => [x, ''])));
+    if (e.ct && e.ct.length) block(du('ct'), host => { const box = make('div', 'dbtags'); e.ct.forEach(n => box.appendChild(named(n, 'dbtag'))); host.appendChild(box); });
+    if (e.rc) block(du('recipe'), host => e.rc.forEach(([how, made, mats]) => {
+      const card = make('div', 'dbrecipe'); card.appendChild(make('b', '', how + (made > 1 ? ' · ' + du('makes').replace('{n}', made) : '')));
+      const ul = make('ul', 'dbul'); mats.forEach(([n, q]) => { const li = make('li'); const m = byName[n]; if (m) li.appendChild(dbIcon(m.i) || ''); li.append(fmtN(q) + ' × '); li.appendChild(named(n)); ul.appendChild(li); });
+      card.appendChild(ul); host.appendChild(card); }));
+    if (e.x && e.x.length) { const d = make('details', 'more'), inner = make('div', 'in'); d.append(make('summary', '', du('sub')), inner); inner.appendChild(facts(e.x)); dbHost.appendChild(d); }
+    if (e.o && e.o.length) block(du('src'), host => { const ul = make('ul', 'dbul'); e.o.forEach(t => { const [a, b] = t.split(' — '), li = make('li'); li.appendChild(named(a)); if (b) li.appendChild(make('small', '', ' — ' + b)); ul.appendChild(li); }); host.appendChild(ul); });
+    if (e.u && e.u.length) block(du('used'), host => pairs(host, e.u, true));
+  }
+
+  function draw() {
+    dbHost.textContent = '';
+    const q = make('input', 'fq'); q.type = 'search'; q.placeholder = du('ph'); q.value = S.findQ || ''; q.autocomplete = 'off';
+    let timer = 0;
+    q.oninput = () => { clearTimeout(timer); timer = setTimeout(() => { S.findQ = q.value; S.db.item = ''; limit = 60; save(); draw(); const n = $('#db .fq'); n.focus(); n.setSelectionRange(n.value.length, n.value.length); }, 180); };
+    dbHost.appendChild(q);
+    if (failed) { dbHost.appendChild(make('p', 'note', du('fail'))); return; }
+    if (!DB) { dbHost.appendChild(make('p', 'note', du('loading'))); load(); return; }
+    const e = S.db.item && byName[S.db.item], term = (S.findQ || '').trim();
+    if (e) entry(e);
+    else if (term.length >= 2) results(term);
+    else if (S.db.cat && du('cats')[S.db.cat]) category(S.db.cat);
+    else home();
+    dbHost.appendChild(make('p', 'note dbcredit', du('credit')));
+    fitTables(dbHost);
+  }
+  repaint.push(draw);
+  shown.find = draw;
+}
+
+// ---------- my character: the in-game sheet from the official site, and its import into the build editor ----------
+// The official site only answers its own pages. On this computer gerador/servidor_local.py passes the lookups on;
+// on the published site the Cloudflare Worker of gerador/aion2_worker.js does, at the address in API_REMOTE.
+const API_REMOTE = '';
+const AAPI = location.protocol === 'file:' ? 'http://127.0.0.1:5176/aion2' : /^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? '/aion2' : API_REMOTE;
+const meHost = $('#me');
+if (meHost) {
+  const MUI = {
+    pt: {name: 'Nome do personagem', all: 'Todos os servidores', find: 'Buscar', finding: 'Buscando…', none: 'Nenhum personagem com esse nome.',
+      loading: 'Carregando a ficha…', fail: 'O site oficial não respondeu. Tente de novo daqui a pouco.',
+      offLocal: 'Para buscar personagens nesta cópia, deixe o servidor local aberto (py -I gerador/servidor_local.py).',
+      offRemote: 'A busca de personagens ainda não está ligada no site publicado.', lv: 'Nível {n}',
+      upd: 'Atualizar', toBuild: 'Criar build', toRt: 'Pôr na Rotina', del: 'Remover', delAsk: 'Remover {n} desta lista? A build e a Rotina não mudam.',
+      at: 'Ficha de {d}', cp: 'Combat Power', titles: 'Títulos', gear: 'Equipamento', arcana: 'Arcanas', dv: 'Daevanion (nós abertos)',
+      skills: 'Skills', stats: 'Atributos', extra: 'Títulos equipados, asas e pet', wing: 'Asas', pet: 'Pet', on: 'na barra',
+      built: 'Build “{n}” criada no editor.', rebuilt: 'Build “{n}” atualizada no editor.', missing: 'Não achei no editor: {l}.',
+      rtDone: '{n} está na Rotina e na Progressão.', pillTip: 'Personagem ativo: trocar ou atualizar', pillNone: 'Adicionar personagem', pillMore: 'Adicionar personagem', rtFull: 'A Rotina já tem 6 personagens. Apague um para pôr este.',
+      noCls: 'O editor de build ainda não tem a classe {c}.', note: 'Importado da ficha oficial em {d}.',
+      cats: {Active: 'Ativa', Passive: 'Passiva', Dp: 'Stigma'}, races: {1: 'Elyos', 2: 'Asmodian'}},
+    en: {name: 'Character name', all: 'All servers', find: 'Search', finding: 'Searching…', none: 'No character with that name.',
+      loading: 'Loading the sheet…', fail: 'The official site did not answer. Try again in a moment.',
+      offLocal: 'To look up characters in this copy, keep the local server running (py -I gerador/servidor_local.py).',
+      offRemote: 'Character lookup is not switched on for the published site yet.', lv: 'Level {n}',
+      upd: 'Refresh', toBuild: 'Create build', toRt: 'Add to Routine', del: 'Remove', delAsk: 'Remove {n} from this list? The build and the Routine do not change.',
+      at: 'Sheet from {d}', cp: 'Combat Power', titles: 'Titles', gear: 'Gear', arcana: 'Arcana', dv: 'Daevanion (open nodes)',
+      skills: 'Skills', stats: 'Attributes', extra: 'Equipped titles, wings and pet', wing: 'Wings', pet: 'Pet', on: 'on the bar',
+      built: 'Build “{n}” created in the editor.', rebuilt: 'Build “{n}” updated in the editor.', missing: 'Not found in the editor: {l}.',
+      rtDone: '{n} is in the Routine and the Progression.', pillTip: 'Active character: change or refresh', pillNone: 'Add character', pillMore: 'Add character', rtFull: 'The Routine already has 6 characters. Delete one to add this one.',
+      noCls: 'The build editor does not have the {c} class yet.', note: 'Imported from the official sheet on {d}.',
+      cats: {Active: 'Active', Passive: 'Passive', Dp: 'Stigma'}, races: {1: 'Elyos', 2: 'Asmodian'}},
+  };
+  const mu = k => (MUI[S.lang] || MUI.pt)[k];
+  S.me = Object.assign({list: [], cur: '', q: '', server: ''}, S.me || {});
+  const BOARD_AT = {31: 0, 32: 1, 33: 2, 34: 3, 36: 4, 35: 5};  // official board id -> its place in BLD.boards[class]
+  const CLS = {Elementalist: 'Spiritmaster'};
+  const SLOT = {MainHand: 'main', SubHand: 'off', Torso: 'Top', Pants: 'Legs', Helmet: 'Helm', Shoulder: 'Pauldrons', Gloves: 'Gloves', Boots: 'Shoes',
+    Cape: 'Cloak', Necklace: 'Necklace', Earring1: 'Earrings1', Earring2: 'Earrings2', Ring1: 'Ring1', Ring2: 'Ring2', Bracelet1: 'Bracelet1',
+    Bracelet2: 'Bracelet2', Amulet: 'Amulet', Belt: 'Belt', Rune1: 'Rune1', Rune2: 'Rune2'};
+  const TITLE = {Attack: 'Offensive', Defense: 'Defensive', Etc: 'Other'};
+  const GRADE = {Rare: 'g1', Epic: 'g2', Legend: 'g2', Unique: 'g3', Special: 'g4'};
+  const key = c => c.cid + '@' + c.sid, curChar = () => S.me.list.find(c => key(c) === S.me.cur) || S.me.list[0];
+  const clsOf = c => CLS[c.p.className] || c.p.className;
+  const where = c => (mu('races')[c.p.raceId] || c.p.raceName) + ' - ' + c.p.serverName;  // faction first: quicker to read
+  const when = t => new Date(t).toLocaleString(S.lang === 'en' ? 'en-GB' : 'pt-BR', {day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'});
+  const get = async (route, params) => {
+    const r = await fetch(AAPI + '/' + route + '?' + new URLSearchParams(params));
+    if (!r.ok) throw new Error(route + ' ' + r.status);
+    return r.json();
+  };
+  let servers = null, hits = null, msg = '', busy = false;
+  const say = (text, then) => { msg = text; busy = false; draw(); if (then) setTimeout(() => { if (msg === text) { msg = ''; draw(); } }, then); };
+
+  async function fetchChar(cid, sid) {
+    const q = {lang: 'en-US', characterId: cid, serverId: sid, region: 'la'};
+    const [info, eq] = await Promise.all([get('info', q), get('equipment', q)]);
+    const boards = (info.daevanion && info.daevanion.boardList) || [], dv = {};
+    await Promise.all(boards.filter(x => x.openNodeCount).map(async x => {
+      dv[x.id] = ((await get('daevanion', {...q, boardId: x.id})).nodeList || []).filter(n => n.open).map(n => [n.col, n.row]); }));
+    const t = info.title || {}, pw = eq.petwing || {};
+    return {cid, sid, at: Date.now(), p: info.profile, dv,
+      stats: ((info.stat && info.stat.statList) || []).map(s => [s.name, s.value]),
+      titles: {owned: t.ownedCount || 0, total: t.totalCount || 0, on: (t.titleList || []).map(x => [x.equipCategory, x.name, x.grade])},
+      boards: boards.map(x => [x.id, x.name, x.openNodeCount, x.totalNodeCount]),
+      gear: ((eq.equipment && eq.equipment.equipmentList) || []).map(x => [x.slotPosName, x.name, x.grade, x.enchantLevel || 0, x.icon]),
+      skills: ((eq.skill && eq.skill.skillList) || []).filter(s => s.acquired).map(s => [s.name, s.category, s.skillLevel, s.equip, s.icon]),
+      wing: pw.wing ? [pw.wing.name, pw.wing.enchantLevel || 0, pw.wing.icon] : null, pet: pw.pet ? [pw.pet.name, pw.pet.level, pw.pet.icon] : null};
+  }
+  async function open(cid, sid) {
+    msg = mu('loading'); busy = true; draw(); drawPill();
+    try {
+      const c = await fetchChar(cid, sid), at = S.me.list.findIndex(x => key(x) === key(c));
+      if (at >= 0) S.me.list[at] = c; else S.me.list.push(c);
+      hits = null; msg = ''; busy = false; S.me.q = ''; setActive(key(c));
+    } catch (e) { say(mu('fail')); drawPill(); }
+  }
+  // what the sheet fills in by itself: the build made from it, the crafting class and pieces, the crystals, the enhancement piece
+  function applyChar(c) {
+    const cls = clsOf(c), race = c.p.raceId === 2 ? 'Asmodians' : 'Elyos';
+    if (S.builds && S.builds.list.some(b => b.src === key(c))) toBuild(c, true);
+    if (CALC.pieces && CALC.pieces.some(P => P.cls === cls)) {
+      S.craft = S.craft || {}; S.craft.cls = cls; S.craft.race = race; S.craft.list = S.craft.list || {};
+      const worn = new Set(c.gear.map(g => g[1])), RANKS = ['none', 'true', 'trueS', 'white', 'whiteS', 'wise', 'wiseS'];
+      CALC.pieces.filter(P => P.race === race).forEach(P => {
+        const st = P.steps.filter(x => RANKS.includes(x.tier) && worn.has(x.name)).pop(); if (!st) return;
+        const k = race[0] + ':' + P.piece, e = S.craft.list[k] = S.craft.list[k] || {qty: 0, target: 'true', own: 'none'};
+        if (RANKS.indexOf(st.tier) > RANKS.indexOf(e.own)) e.own = st.tier;
+      });
+    }
+    if (BLD.boards && BLD.boards[cls]) {
+      const sum = Object.entries(c.dv).reduce((t, [id, cells]) => { const i = BOARD_AT[id], B = BLD.boards[cls][i]; if (!B || i > 3) return t;
+        const off = (15 - B.size) / 2, at = {}; B.nodes.forEach(n => { at[n[0] + ',' + n[1]] = n[2]; });
+        return t + cells.reduce((x, [col, row]) => x + (at[(col - 1 - off) + ',' + (row - 1 - off)] || 0), 0); }, 0);
+      if (cls === 'Assassin') S.crystals = sum; else (S.crystalsBy = S.crystalsBy || {})[cls] = sum;
+    }
+    ME.enhSync(c);
+  }
+  // the active character: the Routine, the Progressão and the build editor follow it when they have it
+  function setActive(k) {
+    const c = S.me.list.find(x => key(x) === k); if (!c) return;
+    S.me.cur = k; S.me.q = ''; hits = null; applyChar(c);
+    const names = (S.rt && S.rt.names) || [], i = names.findIndex(n => (n || '').toLowerCase() === c.p.characterName.toLowerCase());
+    if (i >= 0 && i < progChars()) { S.rt.cur = i; S.progChar = i; }
+    const b = S.builds && S.builds.list.find(x => x.src === k); if (b) S.builds.cur = b.id;
+    save(); charsChanged();
+  }
+  ME.now = () => curChar() || null;
+  async function search(name, sid) {
+    msg = mu('finding'); busy = true; draw();
+    try {
+      const r = await get('search', {keyword: name, ...(sid ? {serverId: sid} : {}), page: 1, size: 20, region: 'la', localeInfo: 'en-US'});
+      hits = (r.list || []).map(h => ({cid: decodeURIComponent(h.characterId), sid: h.serverId, name: h.name.replace(/<[^>]+>/g, ''), lv: h.level, server: h.serverName,
+        pic: h.profileImageUrl ? 'https://profileimg.plaync.com' + h.profileImageUrl : ''}));
+      say(hits.length ? '' : mu('none'));
+    } catch (e) { say(mu('fail')); }
+  }
+
+  // ----- into the build editor: gear, Arcana, skill levels, Stigmas, titles, wings, pet and the Daevanion nodes
+  function toBuild(c, quiet) {
+    const cls = clsOf(c);
+    if (!BLD.skills || !BLD.skills[cls]) { if (!quiet) say(mu('noCls').replace('{c}', c.p.className)); return; }
+    const b = {id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), src: key(c), name: c.p.characterName, cls, race: c.p.raceId === 2 ? 2 : 1,
+      lvl: {}, eq: {}, sp: {}, stig: [], dv: {}, gear: {}, titles: {}, arcana: {}, wings: '', pet: '', notes: mu('note').replace('{d}', when(c.at))};
+    const miss = [], items = {};
+    ['weapons', 'armor', 'accessories'].forEach(k => BLD[k].forEach(x => { items[x[0]] = x; }));
+    c.gear.forEach(([slot, name, grade, enh]) => {
+      const withGrade = name + ' (' + grade + ')';
+      if (SLOT[slot]) { const n = items[name] ? name : items[withGrade] ? withGrade : ''; if (n) b.gear[SLOT[slot]] = {n, e: Math.min(enh, items[n][4])}; else miss.push(name); }
+      else if (/^Arcana/.test(slot)) { if (BLD.arcana.some(a => a[0] === withGrade)) b.arcana[name.split(' ')[0]] = withGrade; else miss.push(name); }
+    });
+    // the official boards are 15 x 15 squares; the smaller ones sit in the middle of that grid
+    Object.entries(c.dv).forEach(([id, cells]) => {
+      const i = BOARD_AT[id], B = i != null && BLD.boards[cls][i]; if (!B) return;
+      const off = (15 - B.size) / 2, at = {}, taken = {};
+      B.nodes.forEach((n, j) => { at[n[0] + ',' + n[1]] = j; });
+      cells.forEach(([col, row]) => { const j = at[(col - 1 - off) + ',' + (row - 1 - off)]; if (j != null && B.nodes[j][2]) taken[j] = 1; });
+      b.dv[i] = taken;
+    });
+    // the sheet shows the final skill level: what the Daevanion adds comes off, and what is left above the trainable top is gear
+    const names = new Set(BLD.skills[cls].map(s => s.n)), fromDv = {}, sheet = {};
+    BLD.boards[cls].forEach((B, i) => Object.keys(b.dv[i] || {}).forEach(j => B.nodes[j][3].split('. ').forEach(part => {
+      const m = /^(.*?) \+(\d+)$/.exec(part); if (m && names.has(m[1])) fromDv[m[1]] = (fromDv[m[1]] || 0) + +m[2]; })));
+    c.skills.forEach(([n, cat, lv, on]) => { sheet[n] = [lv, on]; });
+    BLD.skills[cls].forEach(s => {
+      const got = sheet[s.n]; if (!got) return;
+      const total = got[0] - (fromDv[s.n] || 0), lv = Math.max(s.c === 'S' ? 0 : 1, Math.min(s.cost.length, total));
+      b.lvl[s.n] = lv; if (total > lv && lv) b.eq[s.n] = total - lv;
+      if (s.c === 'S' && got[1] && b.stig.length < 4) b.stig.push(s.n);
+    });
+    c.titles.on.forEach(([cat, name]) => { if (TITLE[cat] && BLD.titles.some(t => t[0] === name)) b.titles[TITLE[cat]] = name; });
+    if (c.wing && BLD.wings.some(w => w[0] === c.wing[0])) b.wings = c.wing[0];
+    if (c.pet && BLD.pets.includes(c.pet[0])) b.pet = c.pet[0];
+    S.builds = Object.assign({list: [], cur: null, tab: 'skills', board: 0}, S.builds || {});
+    const old = S.builds.list.findIndex(x => x.src === b.src);
+    if (old >= 0) { b.id = S.builds.list[old].id; S.builds.list[old] = b; } else S.builds.list.push(b);
+    if (quiet) return;
+    S.builds.cur = b.id; save();
+    say(mu(old >= 0 ? 'rebuilt' : 'built').replace('{n}', b.name) + (miss.length ? ' ' + mu('missing').replace('{l}', miss.join(', ')) : ''));
+    repaint.forEach(f => f());
+    if (!miss.length) location.hash = '#bld-editor';
+  }
+  // ----- into the Routine and the Progressão: the one with the same name, or the first one still unnamed, or a new one
+  function toRoutine(c) {
+    S.rt = S.rt || {}; S.rt.names = S.rt.names || []; S.rt.pics = S.rt.pics || {};
+    const n = progChars(), name = c.p.characterName.slice(0, 16), cls = clsOf(c);
+    let i = [...Array(n).keys()].find(j => (S.rt.names[j] || '').toLowerCase() === name.toLowerCase());
+    if (i == null && !S.rt.names[0]) i = 0;
+    if (i == null) { if (n >= 6) { say(mu('rtFull')); return; } i = n; S.rt.chars = n + 1; }
+    S.rt.names[i] = name;
+    if (BLD.weapon && TIC['type:' + BLD.weapon[cls]]) S.rt.pics[i] = 'type:' + BLD.weapon[cls];
+    save(); charsChanged(); say(mu('rtDone').replace('{n}', name), 6000);
+  }
+
+  const pic = (src, cls) => { const im = make('img', cls || ''); im.src = src; im.alt = ''; im.loading = 'lazy'; return im; };
+  function draw() {
+    meHost.textContent = '';
+    // ----- search
+    const bar = make('div', 'mesearch'), q = make('input', 'fq'), sel = make('select'), go = make('button', 'mego');
+    q.type = 'search'; q.placeholder = mu('name'); q.value = S.me.q || ''; q.autocomplete = 'off';
+    // one group per faction, in the game's order; the servers alphabetical inside it
+    const opt = (v, t, host) => { const o = make('option', '', t); o.value = v; host.appendChild(o); };
+    opt('', mu('all'), sel);
+    [1, 2].forEach(race => {
+      const list = (servers || []).filter(x => x.raceId === race).sort((x, y) => x.serverName.localeCompare(y.serverName));
+      if (!list.length) return;
+      const g = make('optgroup'); g.label = mu('races')[race]; list.forEach(x => opt(String(x.serverId), x.serverName, g)); sel.appendChild(g);
+    });
+    sel.value = S.me.server || ''; sel.onchange = () => { S.me.server = sel.value; save(); };
+    go.type = 'button'; go.append(pico('find', ''), mu('find')); go.disabled = busy || !AAPI;
+    const run = () => { const v = q.value.trim(); S.me.q = v; save(); if (v.length >= 2 && AAPI) search(v, sel.value); };
+    go.onclick = run; q.onkeydown = e => { if (e.key === 'Enter') run(); };
+    bar.append(q, sel, go); meHost.appendChild(bar);
+    if (!AAPI) meHost.appendChild(make('p', 'note', mu(location.protocol === 'file:' ? 'offLocal' : 'offRemote')));
+    if (msg) meHost.appendChild(make('p', 'memsg' + (busy ? ' busy' : ''), msg));
+    if (hits && hits.length) {
+      const list = make('div', 'mehits');
+      hits.forEach(h => {
+        const b = make('button', 'mehit'), words = make('span'); b.type = 'button';
+        if (h.pic) b.appendChild(pic(h.pic));
+        words.append(make('b', '', h.name), make('small', '', mu('lv').replace('{n}', h.lv) + ' · ' + h.server));
+        b.appendChild(words); b.onclick = () => open(h.cid, h.sid); list.appendChild(b);
+      });
+      meHost.appendChild(list);
+    }
+    const c = curChar();
+    if (!c) return;
+    // ----- the saved characters, then the open one
+    // same switcher as the Routine's: picture and name on each pill, and one to add another character
+    const sw = make('div', 'bswitch meswitch');
+    S.me.list.forEach(x => {
+      const b = make('button', key(x) === key(c) ? 'on' : ''); b.type = 'button'; b.title = clsOf(x) + ' · ' + where(x);
+      b.append(x.p.profileImage ? pic(x.p.profileImage, 'tic') : pico('me', ''), make('span', '', x.p.characterName));
+      b.onclick = () => setActive(key(x)); sw.appendChild(b);
+    });
+    const add = make('button', 'newb'); add.type = 'button'; add.append(pico('plus', ''), mu('pillMore'));
+    add.onclick = () => { const f = $('#me .fq'); f.focus(); f.select(); }; sw.appendChild(add);
+    meHost.appendChild(sw);
+    const card = make('div', 'bcard mecard'), emb = make('span', 'bemb'), main = make('div', 'bmain'), acts = make('div', 'bacts'), p = c.p;
+    if (p.profileImage) emb.appendChild(pic(p.profileImage, 'mepic'));
+    main.append(make('b', 'mename', p.characterName),
+      make('span', 'memeta', [clsOf(c), mu('lv').replace('{n}', p.characterLevel), where(c)].join(' · ')),
+      make('small', 'meat', mu('at').replace('{d}', when(c.at))));
+    const btn = (icon, text, fn, cls) => { const b = make('button', cls || ''); b.type = 'button'; b.append(pico(icon, ''), text); b.onclick = fn; b.disabled = busy; acts.appendChild(b); return b; };
+    btn('daily', mu('upd'), () => open(c.cid, c.sid)).disabled = busy || !AAPI;
+    btn('bld', mu('toBuild'), () => toBuild(c));
+    btn('rot', mu('toRt'), () => toRoutine(c));
+    btn('trash', mu('del'), () => { if (confirm(mu('delAsk').replace('{n}', p.characterName))) { S.me.list = S.me.list.filter(x => x !== c); S.me.cur = ''; save(); charsChanged(); } }, 'danger');
+    card.append(emb, main, acts); meHost.appendChild(card);
+    // ----- numbers at a glance
+    const chips = (title, rows) => {
+      if (title) meHost.appendChild(make('p', 'chead', title));
+      const box = make('div', 'bsum');
+      rows.forEach(([v, label]) => { const d = make('div', 'bchip'); d.append(make('b', '', v), make('small', '', label)); box.appendChild(d); });
+      meHost.appendChild(box);
+    };
+    chips('', [[fmtN(p.combatPower || 0), mu('cp')], [c.titles.owned + ' / ' + c.titles.total, mu('titles')]]);
+    chips(mu('dv'), c.boards.map(([, name, open, total]) => [open + ' / ' + total, name]));
+    // ----- gear and Arcana as tiles
+    const tiles = (title, rows) => {
+      meHost.appendChild(make('p', 'chead', title));
+      const grid = make('div', 'megear');
+      rows.forEach(([slot, name, grade, enh, icon]) => {
+        const t = make('div', 'metile'), words = make('span');
+        if (icon) t.appendChild(pic(icon));
+        words.append(make('b', GRADE[grade] || '', name), make('small', '', (enh ? '+' + enh + ' · ' : '') + grade));
+        t.appendChild(words); t.title = slot; grid.appendChild(t);
+      });
+      meHost.appendChild(grid);
+    };
+    tiles(mu('gear'), c.gear.filter(g => !/^Arcana/.test(g[0])));
+    tiles(mu('arcana'), c.gear.filter(g => /^Arcana/.test(g[0])));
+    // ----- the rest, closed
+    const more = (title, fill) => { const d = make('details', 'more'), inner = make('div', 'in'); d.append(make('summary', '', title), inner); fill(inner); meHost.appendChild(d); };
+    more(mu('skills'), host => {
+      const tb = toolTable(host, [mu('skills'), '', ''], 'meskills');
+      c.skills.filter(s => s[1] !== 'Passive' && (s[2] || s[3])).concat(c.skills.filter(s => s[1] === 'Passive')).forEach(([n, cat, lv, on, icon]) => {
+        const tr = tb.insertRow(), a = tr.insertCell();
+        a.className = 'key'; if (icon) a.appendChild(pic(icon, 'bic')); a.append(n);
+        tr.insertCell().textContent = mu('lv').replace('{n}', lv);
+        tr.insertCell().textContent = (mu('cats')[cat] || cat) + (on ? ' · ' + mu('on') : '');
+      });
+    });
+    more(mu('stats'), host => {
+      const box = make('div', 'bsum');
+      c.stats.forEach(([n, v]) => { const d = make('div', 'bchip'); d.append(make('b', '', fmtN(+v || 0)), make('small', '', n)); box.appendChild(d); });
+      host.appendChild(box);
+    });
+    more(mu('extra'), host => {
+      const ul = make('ul');
+      c.titles.on.forEach(([cat, name, grade]) => ul.appendChild(make('li', '', name + ' (' + cat + ', ' + grade + ')')));
+      if (c.wing) ul.appendChild(make('li', '', mu('wing') + ': ' + c.wing[0] + (c.wing[1] ? ' +' + c.wing[1] : '')));
+      if (c.pet) ul.appendChild(make('li', '', mu('pet') + ': ' + c.pet[0] + ' · ' + mu('lv').replace('{n}', c.pet[1])));
+      host.appendChild(ul);
+    });
+  }
+  // ----- the pill in the window's top right corner: refresh, then the active character with a menu to change it or add one.
+  // When the page is too narrow to leave that corner free, it sits with the language and theme buttons instead.
+  const pill = make('div', 'mepill'), menu = make('div', 'memenu');
+  menu.hidden = true; document.body.append(pill, menu);
+  const placePill = () => {
+    const free = innerWidth - $('#top').getBoundingClientRect().right >= 260;  // #top ends where the page cards end
+    if (free && pill.parentNode !== document.body) document.body.appendChild(pill);
+    if (!free && pill.parentNode !== $('#top')) $('#top').prepend(pill);
+    pill.classList.toggle('corner', free);
+  };
+  addEventListener('resize', () => { placePill(); menu.hidden = true; });
+  addEventListener('load', () => setTimeout(placePill, 200));
+  const closeMenu = e => { if (!menu.hidden && !menu.contains(e.target) && !pill.contains(e.target)) menu.hidden = true; };
+  document.addEventListener('click', closeMenu);
+  function drawPill() {
+    pill.textContent = ''; menu.textContent = '';
+    const c = curChar(), who = make('button', 'mewho');
+    who.type = 'button'; who.title = mu('pillTip');
+    if (c) { who.appendChild(c.p.profileImage ? pic(c.p.profileImage) : pico('me', '')); who.appendChild(make('span', '', c.p.characterName)); }
+    else who.append(pico('plus', ''), make('span', '', mu('pillNone')));
+    who.onclick = () => {
+      if (!c) { location.hash = '#me-ficha'; return; }
+      menu.hidden = !menu.hidden;
+      const r = who.getBoundingClientRect(); menu.style.top = (r.bottom + 6) + 'px'; menu.style.right = Math.max(8, innerWidth - r.right) + 'px';
+    };
+    if (c && AAPI) {
+      const rf = make('button', 'merf' + (busy ? ' busy' : '')); rf.type = 'button'; rf.title = mu('upd') + ' · ' + mu('at').replace('{d}', when(c.at));
+      rf.appendChild(pico('daily', '')); rf.disabled = busy; rf.onclick = () => open(c.cid, c.sid); pill.appendChild(rf);
+    }
+    pill.appendChild(who); setTimeout(placePill);
+    S.me.list.forEach(x => {
+      const b = make('button', key(x) === (c && key(c)) ? 'on' : ''), words = make('span'); b.type = 'button';
+      if (x.p.profileImage) b.appendChild(pic(x.p.profileImage));
+      words.append(make('b', '', x.p.characterName), make('small', '', clsOf(x) + ' · ' + where(x))); b.appendChild(words);
+      b.onclick = () => { menu.hidden = true; setActive(key(x)); }; menu.appendChild(b);
+    });
+    const more = make('button', 'meall'); more.type = 'button'; more.append(pico('plus', ''), mu('pillMore'));
+    more.onclick = () => { menu.hidden = true; location.hash = '#me-ficha'; }; menu.appendChild(more);
+  }
+  repaint.push(drawPill);
+
+  const showMe = () => { draw(); if (AAPI && !servers) get('servers', {lang: 'en-US', region: 'la'}).then(r => { servers = r.serverList || []; draw(); }).catch(() => { servers = []; }); };
+  repaint.push(draw);
+  shown.me = showMe;
+  homeStat.me = () => { const c = curChar(); return c ? c.p.characterName + ' · ' + fmtN(c.p.combatPower || 0) + ' CP' : ''; };
 }
 
 // ---------- site settings ----------
