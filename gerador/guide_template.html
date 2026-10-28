@@ -3199,7 +3199,7 @@ if (meHost) {
       loading: 'Carregando a ficha…', fail: 'O site oficial não respondeu. Tente de novo daqui a pouco.',
       offLocal: 'Para buscar personagens nesta cópia, deixe o servidor local aberto (py -I gerador/servidor_local.py).',
       offRemote: 'A busca de personagens ainda não está ligada no site publicado.', lv: 'Nível {n}',
-      upd: 'Atualizar', toBuild: 'Criar build', toRt: 'Pôr na Rotina', del: 'Remover', delAsk: 'Remover {n} desta lista? A build e a Rotina não mudam.',
+      upd: 'Atualizar', wait: 'Dá para atualizar de novo em {m} min', toBuild: 'Criar build', toRt: 'Pôr na Rotina', del: 'Remover', delAsk: 'Remover {n} desta lista? A build e a Rotina não mudam.',
       at: 'Ficha de {d}', cp: 'Combat Power', titles: 'Títulos', gear: 'Equipamento', arcana: 'Arcanas', dv: 'Daevanion (nós abertos)',
       skills: 'Skills', stats: 'Atributos', extra: 'Títulos equipados, asas e pet', wing: 'Asas', pet: 'Pet', on: 'na barra',
       built: 'Build “{n}” criada no editor.', rebuilt: 'Build “{n}” atualizada no editor.', missing: 'Não achei no editor: {l}.',
@@ -3210,7 +3210,7 @@ if (meHost) {
       loading: 'Loading the sheet…', fail: 'The official site did not answer. Try again in a moment.',
       offLocal: 'To look up characters in this copy, keep the local server running (py -I gerador/servidor_local.py).',
       offRemote: 'Character lookup is not switched on for the published site yet.', lv: 'Level {n}',
-      upd: 'Refresh', toBuild: 'Create build', toRt: 'Add to Routine', del: 'Remove', delAsk: 'Remove {n} from this list? The build and the Routine do not change.',
+      upd: 'Refresh', wait: 'You can refresh again in {m} min', toBuild: 'Create build', toRt: 'Add to Routine', del: 'Remove', delAsk: 'Remove {n} from this list? The build and the Routine do not change.',
       at: 'Sheet from {d}', cp: 'Combat Power', titles: 'Titles', gear: 'Gear', arcana: 'Arcana', dv: 'Daevanion (open nodes)',
       skills: 'Skills', stats: 'Attributes', extra: 'Equipped titles, wings and pet', wing: 'Wings', pet: 'Pet', on: 'on the bar',
       built: 'Build “{n}” created in the editor.', rebuilt: 'Build “{n}” updated in the editor.', missing: 'Not found in the editor: {l}.',
@@ -3237,6 +3237,16 @@ if (meHost) {
     return r.json();
   };
   let servers = null, hits = null, msg = '', busy = false;
+  // one refresh per character every 5 minutes, so the official site is not asked over and over; the time is in the saved sheet (c.at)
+  const COOL = 5 * 60000, left = c => Math.max(0, COOL - (Date.now() - (c.at || 0))), mins = ms => Math.ceil(ms / 60000);
+  const paintCool = b => {
+    const c = S.me.list.find(x => key(x) === b.dataset.cool), l = c ? left(c) : 0;
+    b.disabled = busy || !AAPI || l > 0;
+    if (b.dataset.label) b.lastChild.textContent = b.dataset.label + (l ? ' (' + mins(l) + ' min)' : '');
+    b.title = (b.dataset.tip || mu('upd')) + (l ? ' · ' + mu('wait').replace('{m}', mins(l)) : '');
+  };
+  const cool = (b, c, label, tip) => { b.dataset.cool = key(c); if (label) b.dataset.label = label; if (tip) b.dataset.tip = tip; paintCool(b); return b; };
+  setInterval(() => document.querySelectorAll('[data-cool]').forEach(paintCool), 10000);
   const say = (text, then) => { msg = text; busy = false; draw(); if (then) setTimeout(() => { if (msg === text) { msg = ''; draw(); } }, then); };
 
   async function fetchChar(cid, sid) {
@@ -3255,6 +3265,8 @@ if (meHost) {
       wing: pw.wing ? [pw.wing.name, pw.wing.enchantLevel || 0, pw.wing.icon] : null, pet: pw.pet ? [pw.pet.name, pw.pet.level, pw.pet.icon] : null};
   }
   async function open(cid, sid) {
+    const had = S.me.list.find(x => key(x) === cid + '@' + sid);
+    if (had && left(had)) { hits = null; msg = ''; S.me.q = ''; setActive(key(had)); return; }  // refreshed a moment ago: show the saved sheet
     msg = mu('loading'); busy = true; draw(); drawPill();
     try {
       const c = await fetchChar(cid, sid), at = S.me.list.findIndex(x => key(x) === key(c));
@@ -3409,7 +3421,7 @@ if (meHost) {
       make('span', 'memeta', [clsOf(c), mu('lv').replace('{n}', p.characterLevel), where(c)].join(' · ')),
       make('small', 'meat', mu('at').replace('{d}', when(c.at))));
     const btn = (icon, text, fn, cls) => { const b = make('button', cls || ''); b.type = 'button'; b.append(pico(icon, ''), text); b.onclick = fn; b.disabled = busy; acts.appendChild(b); return b; };
-    btn('daily', mu('upd'), () => open(c.cid, c.sid)).disabled = busy || !AAPI;
+    cool(btn('daily', mu('upd'), () => open(c.cid, c.sid)), c, mu('upd'));
     btn('bld', mu('toBuild'), () => toBuild(c));
     btn('rot', mu('toRt'), () => toRoutine(c));
     btn('trash', mu('del'), () => { if (confirm(mu('delAsk').replace('{n}', p.characterName))) { S.me.list = S.me.list.filter(x => x !== c); S.me.cur = ''; save(); charsChanged(); } }, 'danger');
@@ -3488,7 +3500,7 @@ if (meHost) {
     };
     if (c && AAPI) {
       const rf = make('button', 'merf' + (busy ? ' busy' : '')); rf.type = 'button'; rf.title = mu('upd') + ' · ' + mu('at').replace('{d}', when(c.at));
-      rf.appendChild(pico('daily', '')); rf.disabled = busy; rf.onclick = () => open(c.cid, c.sid); pill.appendChild(rf);
+      rf.appendChild(pico('daily', '')); rf.onclick = () => open(c.cid, c.sid); cool(rf, c, '', rf.title); pill.appendChild(rf);
     }
     pill.appendChild(who); setTimeout(placePill);
     S.me.list.forEach(x => {
